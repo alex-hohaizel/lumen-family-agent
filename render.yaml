@@ -1,0 +1,46 @@
+# All credentials are provided through Render secrets, never committed here.
+services:
+  - type: worker
+    name: lumen-family-agent
+    runtime: node
+    region: frankfurt
+    plan: 0.5c-512mb
+    numInstances: 1
+    autoDeployTrigger: "off"
+    buildCommand: npm ci --include=dev && npm test && npm prune --omit=dev
+    startCommand: npm start
+    disk:
+      name: lumen-credentials
+      mountPath: /var/data/lumen
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: "24.22.1"
+      - key: NODE_ENV
+        value: production
+      - key: RUNTIME_DIR
+        value: /var/data/lumen
+      - key: DATABASE_URL
+        fromDatabase:
+          name: lumen-family-memory
+          property: connectionString
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: LUMEN_PAIRING_CODE
+        generateValue: true
+      - key: AUTH_MODE
+        value: chatgpt
+      - key: TIMEZONE
+        value: Europe/Kyiv
+      - key: OPENAI_MODEL
+        sync: false
+databases:
+  - name: lumen-family-memory
+    region: frankfurt
+    plan: 0.1c-256mb
+    postgresMajorVersion: "17"
+    databaseName: lumen
+    user: lumen
+    diskSizeGB: 1
+    storageAutoscalingEnabled: false
+    ipAllowList: []
