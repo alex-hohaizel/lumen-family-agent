@@ -1,0 +1,57 @@
+[
+  {
+    "file": "lumen-avatar.mp4",
+    "codec": "h264",
+    "fps": 60,
+    "frames": 234,
+    "resolution": "800x800",
+    "seconds": 3.9,
+    "bytes": 378214,
+    "loop_mean_difference_0_255": 0.682,
+    "loop_check": true
+  },
+  {
+    "file": "lumen-happy.mp4",
+    "codec": "h264",
+    "fps": 60,
+    "frames": 121,
+    "resolution": "512x512",
+    "seconds": 2.016667,
+    "bytes": 317775,
+    "loop_mean_difference_0_255": 1.2217,
+    "loop_check": true
+  },
+  {
+    "file": "lumen-idle.mp4",
+    "codec": "h264",
+    "fps": 60,
+    "frames": 234,
+    "resolution": "512x512",
+    "seconds": 3.9,
+    "bytes": 218638,
+    "loop_mean_difference_0_255": 0.9353,
+    "loop_check": true
+  },
+  {
+    "file": "lumen-thinking.mp4",
+    "codec": "h264",
+    "fps": 60,
+    "frames": 137,
+    "resolution": "512x512",
+    "seconds": 2.283333,
+    "bytes": 255033,
+    "loop_mean_difference_0_255": 1.0044,
+    "loop_check": true
+  },
+  {
+    "file": "lumen-waving.mp4",
+    "codec": "h264",
+    "fps": 60,
+    "frames": 131,
+    "resolution": "512x512",
+    "seconds": 2.183333,
+    "bytes": 277144,
+    "loop_mean_difference_0_255": 0.9377,
+    "loop_check": true
+  }
+]
