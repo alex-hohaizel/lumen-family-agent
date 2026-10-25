@@ -1,0 +1,57 @@
+[
+  {
+    "file": "lumen-idle.mp4",
+    "source": "lumen-idle.gif",
+    "width": 512,
+    "height": 512,
+    "fps": "60/1",
+    "frames": 234,
+    "seconds": 3.9,
+    "bytes": 218638,
+    "source_keyframes": 6
+  },
+  {
+    "file": "lumen-avatar.mp4",
+    "source": "lumen-avatar-source.gif",
+    "width": 800,
+    "height": 800,
+    "fps": "60/1",
+    "frames": 234,
+    "seconds": 3.9,
+    "bytes": 378214,
+    "source_keyframes": 6
+  },
+  {
+    "file": "lumen-waving.mp4",
+    "source": "lumen-waving.gif",
+    "width": 512,
+    "height": 512,
+    "fps": "60/1",
+    "frames": 131,
+    "seconds": 2.183333,
+    "bytes": 277144,
+    "source_keyframes": 7
+  },
+  {
+    "file": "lumen-happy.mp4",
+    "source": "lumen-happy.gif",
+    "width": 512,
+    "height": 512,
+    "fps": "60/1",
+    "frames": 121,
+    "seconds": 2.016667,
+    "bytes": 317775,
+    "source_keyframes": 7
+  },
+  {
+    "file": "lumen-thinking.mp4",
+    "source": "lumen-thinking.gif",
+    "width": 512,
+    "height": 512,
+    "fps": "60/1",
+    "frames": 137,
+    "seconds": 2.283333,
+    "bytes": 255033,
+    "source_keyframes": 6
+  }
+]
