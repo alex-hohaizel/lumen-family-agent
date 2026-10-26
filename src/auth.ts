@@ -170,7 +170,7 @@ export async function models(config: Config, auth: ChatGPTAuth, fetcher: typeof 
   if(Array.isArray(json.models)) return json.models.filter((x:any)=>x.visibility==='list').map((x:any)=>({id:String(x.slug),name:String(x.display_name)}));
   return (json.data || []).map((x:any)=>({id:String(x.id),name:String(x.id)}));
 }
-if(process.argv[1] && resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
+async function runAuthCommand() {
   try {
     const config=await loadConfig(); const auth=new ChatGPTAuth(config.runtimeDir);
     const command=process.argv[2];
@@ -185,3 +185,5 @@ if(process.argv[1] && resolve(process.argv[1])===fileURLToPath(import.meta.url))
     } else throw new ModelError('unknown_auth_command');
   } catch(e) { console.error(e instanceof ModelError?e.code:'auth_failed'); process.exitCode=1; }
 }
+// Finish module evaluation before probe imports model.js, which itself imports auth.js.
+if(process.argv[1] && resolve(process.argv[1])===fileURLToPath(import.meta.url)) void runAuthCommand();

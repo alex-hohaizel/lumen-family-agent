@@ -4,6 +4,7 @@ import { Telegram } from './telegram.js';
 import { ChatGPTAuth, models, ModelError } from './auth.js';
 import { OpenAIModel } from './model.js';
 import { Postgres, state } from './db.js';
+import { ChatRegistry } from './registry.js';
 import { errorCode } from './engine.js';
 
 const config = await loadConfig();
@@ -31,12 +32,14 @@ await check('Long polling', async () => {
 });
 await check('Database and group', async () => {
   if (!config.databaseUrl) throw new ModelError('database_url_missing');
-  db = new Postgres(config.databaseUrl); group = await state(db);
-  if (!group?.chat_id) throw new ModelError('group_not_bound');
-  if (group.paused || group.participants.length !== 2 || group.consent.length !== 2) throw new ModelError('group_consent_incomplete');
+  db = new Postgres(config.databaseUrl);const registry=new ChatRegistry(db);
+  const chats=await registry.list();const selected=process.env.LUMEN_SMOKE_CHAT_ID?chats.find(c=>c.chat_id===process.env.LUMEN_SMOKE_CHAT_ID):chats[0];
+  if(!selected)return 'database ready; no group connected yet';
+  group=await state(registry.database(selected));
+  if(group.paused)throw new ModelError('group_memory_paused');
   const chat = await telegram.call<{ type: string }>('getChat', { chat_id: group.chat_id });
   if (!['group', 'supergroup'].includes(chat.type)) throw new ModelError('unexpected_chat_type');
-  return 'bound group, two consents';
+  return `connected groups: ${chats.length}; scoped memory, mention-only replies`;
 });
 await check('ChatGPT model response', async () => {
   const selected = group?.model || config.model;

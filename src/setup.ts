@@ -7,6 +7,7 @@ import { ChatGPTAuth, models, secureEqual } from './auth.js';
 import { Telegram } from './telegram.js';
 import { OpenAIModel } from './model.js';
 import { errorCode } from './engine.js';
+import {setupPayload,ownerSetupLink} from './ui.js';
 
 const port=8787;const origin=`http://127.0.0.1:${port}`;
 const secret=randomBytes(32).toString('base64url');
@@ -62,8 +63,8 @@ const server=createServer(async(req,res)=>{
       }
       await save();savedBot ||= await new Telegram(c.token).call('getMe');
       await writeFile(resolve(c.runtimeDir,'setup-complete'),'1\n',{mode:0o600});
-      send(200,{ok:true,command:`/bind ${pin}`,url:`https://t.me/${savedBot.username}?startgroup=true`});
-      // Stay open so the human can copy the pairing command. The Done button closes it.
+      send(200,{ok:true,command:'Відкрийте Люмена, натисніть Start і додайте в групу його кнопкою.',url:ownerSetupLink(savedBot.username,c),groupUrl:`https://t.me/${savedBot.username}?startgroup=${setupPayload(c)}`});
+      // The private activation link establishes the owner without publishing a server secret in a group.
       return;
     }
     if(path==='/api/close' && req.method==='POST'){send(200,{ok:true});server.close();return;}

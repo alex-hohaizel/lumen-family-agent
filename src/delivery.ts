@@ -35,13 +35,19 @@ export class Delivery {
       const current=await state(this.db);
       const exists=await one(this.db,'SELECT id FROM outbox WHERE id=$1',[row.id]);
       if(!exists || current.memory_revision!==row.revision || (current.paused&&!row.service))return true;
-      const sent=bytes?await this.telegram.upload(animated?'sendAnimation':'sendPhoto',row.chatId,bytes,animated?row.body.caption || '': 'Люмен ✨',animated?'video/mp4':'image/png'):await this.telegram.text(row.chatId,row.body.text);
-      const deliveredText=animated?`[анімація Люмена: ${row.body.asset}]`:row.kind==='image'?'[зображення Люмена]':row.body.text;
+      let sent:{message_id:number};
+      if(row.kind==='reaction'){
+        await this.telegram.call('setMessageReaction',{chat_id:row.chatId,message_id:row.body.messageId,reaction:[{type:'emoji',emoji:row.body.emoji}],is_big:false});sent={message_id:row.body.messageId};
+      }else if(row.kind==='sticker')sent=await this.telegram.sticker(row.chatId,row.body.fileId,row.body.threadId,row.body.replyToMessageId);
+      else if(bytes)sent=await this.telegram.upload(animated?'sendAnimation':'sendPhoto',row.chatId,bytes,animated?row.body.caption || '': 'Люмен ✨',animated?'video/mp4':'image/png',row.body.threadId);
+      else if(row.kind==='poll')sent=await this.telegram.poll(row.chatId,row.body.question,row.body.options,row.body.threadId,row.body.quiz);
+      else sent=await this.telegram.text(row.chatId,row.body.text,{replyMarkup:row.body.replyMarkup,replyToMessageId:row.body.replyToMessageId,threadId:row.body.threadId,entities:row.body.entities});
+      const deliveredText=animated?`[анімація Люмена: ${row.body.asset}]`:row.kind==='image'?'[зображення Люмена]':row.kind==='reaction'?`[реакція Люмена: ${row.body.emoji}]`:row.kind==='sticker'?`[стікер Люмена: ${row.body.emoji || ''}]`:row.kind==='poll'?`[${row.body.quiz?'вікторина':'опитування'}] ${row.body.question}\n${row.body.options.join(' · ')}`:row.body.text;
       await this.db.tx(async sql=>{
         const live=await state(sql,true);if(live.memory_revision!==row.revision)return;
         const still=await one(sql,'SELECT id FROM outbox WHERE id=$1',[row.id]);if(!still)return;
         await sql.query("UPDATE outbox SET status='sent',telegram_id=$1,body=$2 WHERE id=$3",[sent.message_id,JSON.stringify({text:deliveredText}),row.id]);
-        if(!row.service && !live.paused)await sql.query("INSERT INTO messages (telegram_id,user_id,author,role,body) VALUES ($1,'lumen','Люмен','assistant',$2) ON CONFLICT DO NOTHING",[sent.message_id,deliveredText]);
+        if(!row.service && !live.paused)await sql.query("INSERT INTO messages (telegram_id,user_id,author,role,body,topic_id) VALUES ($1,'lumen','Люмен','assistant',$2,$3) ON CONFLICT DO NOTHING",[sent.message_id,deliveredText,String(row.body.threadId || 0)]);
         const match=/^reminder:(\d+):/.exec(row.dedup_key);
         if(match)await sql.query("UPDATE reminders SET status='sent' WHERE id=$1",[match[1]]);
       });

@@ -1,45 +1,38 @@
 import { createServer } from 'node:http';
 import { setTimeout as delay } from 'node:timers/promises';
 import { loadConfig, requireRuntime } from './config.js';
-import { Postgres, migrate, state,queueText } from './db.js';
+import { Postgres } from './db.js';
 import { Telegram } from './telegram.js';
-import { OpenAIModel } from './model.js';
-import { Lumen, errorCode } from './engine.js';
-import { Delivery } from './delivery.js';
+import { errorCode } from './engine.js';
 import { hostId } from './auth.js';
-import { Memory } from './memory.js';
+import {ChatRegistry} from './registry.js';
+import {ChatRouter,type ChatRuntime} from './router.js';
 import { prepareCredentials } from './bootstrap.js';
 import { ensureAvatar } from './profile.js';
 
 async function main(){
   const config=await loadConfig();requireRuntime(config);await prepareCredentials(config);await hostId(config.runtimeDir);
-  const db=new Postgres(config.databaseUrl);await migrate(db);
+  const db=new Postgres(config.databaseUrl);
   // One persistent connection owns the bot lifecycle. A second replica exits instead of racing the poller or refresh token.
   const lease=await db.pool.connect();
   const {rows}=await lease.query('SELECT pg_try_advisory_lock(719463201) AS locked');
   if(!rows[0]?.locked)throw new Error('another_instance_running');
   let leaseLost=false;lease.on('error',()=>{leaseLost=true;});
-  await db.query("UPDATE inbox SET status='pending' WHERE status='processing'");
-  await db.query("UPDATE outbox SET status='uncertain',error_code='restart_during_delivery' WHERE status='sending'");
-  const initial=await state(db);
-  if(initial.chat_id && !initial.paused && initial.last_poll_at && Date.now()-new Date(initial.last_poll_at).getTime()>86400000){
-    await queueText(db,'Був тривалий період без зв’язку з Telegram. Частина повідомлень могла не дійти до мене. Якщо за цей час були важливі домовленості, перекажіть їх.',initial.memory_revision,`gap:${new Date(initial.last_poll_at).toISOString()}`,true);
-  }
   const telegram=new Telegram(config.token);
   const bot=await telegram.call<{id:number;username:string;can_read_all_group_messages?:boolean}>('getMe');
   if(bot.username.toLowerCase()!=='lumen_family_agent')throw new Error('unexpected_telegram_bot');
   const webhook=await telegram.call<{url:string}>('getWebhookInfo');
   if(webhook.url)throw new Error('existing_webhook_remove_explicitly');
   await telegram.call('setMyName',{name:'Люмен'});
-  await telegram.call('setMyDescription',{description:'Люмен — співрозмовник для вашої приватної групи: ігри, спільна пам’ять, нотатки та нагадування.'});
+  await telegram.call('setMyDescription',{description:'Люмен — співрозмовник для ваших груп: допомога, ігри, опитування, нотатки й нагадування. Звертайтеся на ім’я або через @згадку. У кожної групи окрема пам’ять.'});
   await telegram.call('setMyCommands',{commands:[
-    {command:'help',description:'Можливості Люмена'},{command:'consent',description:'Почати або відновити спільну пам’ять'},
-    {command:'games',description:'П’ять ігор на двох'},{command:'notes',description:'Спільні нотатки'},
+    {command:'menu',description:'Можливості та кнопки'},{command:'help',description:'Як спілкуватися з Люменом'},
+    {command:'games',description:'Ігри для компанії'},{command:'notes',description:'Нотатки цієї групи'},
     {command:'reminders',description:'Заплановані нагадування'},{command:'pause',description:'Пауза пам’яті'},
-    {command:'forget_all',description:'Очистити спільну пам’ять'},{command:'status',description:'Стан підключення'}
+    {command:'privacy',description:'Пам’ять і приватність'},{command:'status',description:'Стан підключення'}
   ]});
   try{await ensureAvatar(telegram,config,bot);}catch(e){console.error(JSON.stringify({event:'profile_update_failed',code:errorCode(e)}));}
-  const brain=new OpenAIModel(config);const engine=new Lumen(db,config,telegram,brain,bot);const delivery=new Delivery(db,telegram,config);const memory=new Memory(db,brain);
+  const registry=new ChatRegistry(db);const router=new ChatRouter(registry,config,telegram,bot);await router.init();
   let running=true;let lastPoll=Date.now();
   const health=createServer(async (req,res)=>{
     if(req.url!=='/health'){res.writeHead(404).end();return;}
@@ -50,21 +43,37 @@ async function main(){
   const poll=async()=>{
     while(running&&!leaseLost){
       try{
-        const s=await state(db);const updates=await telegram.updates(Number(s.poll_offset));
+        const s=await registry.transport();const updates=await telegram.updates(Number(s.poll_offset));
         for(const update of updates){
           if(!running)break;
-          await engine.receive(update);
+          await router.receive(update);
           // The Telegram offset advances only after receive's transaction commits.
-          await db.query('UPDATE app_state SET poll_offset=$1,last_poll_at=now() WHERE id=1',[update.update_id+1]);
+          await registry.advance(update.update_id+1);
         }
-        await db.query('UPDATE app_state SET last_poll_at=now() WHERE id=1');lastPoll=Date.now();
+        await registry.polled();lastPoll=Date.now();
       }catch(e){console.error(JSON.stringify({event:'poll_error',code:errorCode(e)}));await delay(3000);}
     }
   };
-  const work=async()=>{while(running&&!leaseLost){try{if(!await engine.processNext())await delay(500);}catch(e){console.error(JSON.stringify({event:'worker_error',code:errorCode(e)}));await delay(2000);}}};
-  const send=async()=>{while(running&&!leaseLost){try{await engine.scheduleDue();await delivery.next();}catch(e){console.error(JSON.stringify({event:'delivery_error',code:errorCode(e)}));}await delay(1100);}};
+  // One in-flight answer per group preserves ordering; three groups may think concurrently.
+  const busy=new Set<string>();const pending=new Set<Promise<void>>();let workCursor=0;
+  const work=async()=>{
+    while(running&&!leaseLost){
+      const active=await router.active();const order=active.slice(workCursor).concat(active.slice(0,workCursor));
+      for(const runtime of order){
+        const id=runtime.chat.chat_id;if(busy.has(id)||busy.size>=3)continue;
+        busy.add(id);workCursor=(active.indexOf(runtime)+1)%active.length;let task:Promise<void>;
+        task=runtime.engine.processNext().then(()=>{}).catch(e=>{console.error(JSON.stringify({event:'worker_error',code:errorCode(e)}));}).finally(()=>{busy.delete(id);pending.delete(task);});pending.add(task);
+      }
+      await delay(400);
+    }
+    await Promise.allSettled(pending);
+  };
+  const each=async(event:string,operation:(runtime:ChatRuntime)=>Promise<unknown>)=>{
+    for(const runtime of await router.active())try{await operation(runtime);}catch(e){console.error(JSON.stringify({event,code:errorCode(e)}));}
+  };
+  const send=async()=>{while(running&&!leaseLost){await each('delivery_error',async r=>{await r.engine.scheduleDue();await r.delivery.next();});await delay(1100);}};
   console.log(JSON.stringify({event:'lumen_started',username:bot.username}));
-  const compact=async()=>{while(running&&!leaseLost){try{await memory.compact();}catch(e){console.error(JSON.stringify({event:'memory_error',code:errorCode(e)}));}for(let i=0;i<60&&running&&!leaseLost;i++)await delay(1000);}};
+  const compact=async()=>{while(running&&!leaseLost){await each('memory_error',r=>r.memory.compact());for(let i=0;i<60&&running&&!leaseLost;i++)await delay(1000);}};
   await Promise.all([poll(),work(),send(),compact()]);health.close();lease.release();await db.close();
   if(leaseLost)process.exitCode=1;
 }
