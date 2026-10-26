@@ -39,7 +39,15 @@ fi
 if ! command -v node >/dev/null 2>&1 || ! node -e 'process.exit(Number(process.versions.node.split(".")[0])>=24?0:1)' || ! command -v tar >/dev/null 2>&1; then
   echo 'Установлюю безкоштовний Node.js із пакетів Termux…'
   pkg update -y
-  pkg install -y nodejs-lts tar
+  # Termux is a rolling release: update existing libraries before installing Node.
+  pkg upgrade -y
+  pkg install -y libc++ nodejs-lts tar
+fi
+if ! node -e 'process.exit(Number(process.versions.node.split(".")[0])>=24?0:1)'; then
+  echo 'Node.js ще не запускається або його версія нижча за 24. Вхід не розпочато.'
+  echo 'Спробуйте: pkg update -y && pkg upgrade -y && pkg reinstall -y libc++ nodejs-lts'
+  echo 'Потім повторно запустіть цей файл.'
+  exit 1
 fi
 LUMEN_PHONE_DIR="$HOME/lumen-phone-login"
 mkdir -p "$LUMEN_PHONE_DIR"
