@@ -11,6 +11,7 @@ export const ConfigSchema = z.object({
   webSearch: z.boolean().default(false), timezone: z.string().default('Europe/Kyiv'),
   quietStart: z.number().int().min(0).max(23).default(23),
   quietEnd: z.number().int().min(0).max(23).default(9),
+  dailyTurnLimit:z.number().int().min(0).default(0),
   runtimeDir: z.string().default(resolve('runtime')), healthPort: z.number().int().default(8080)
 });
 export type Config = z.infer<typeof ConfigSchema>;
@@ -38,6 +39,7 @@ export async function loadConfig(): Promise<Config> {
   if (env.QUIET_START) override.quietStart = Number(env.QUIET_START);
   if (env.QUIET_END) override.quietEnd = Number(env.QUIET_END);
   if (env.HEALTH_PORT || env.PORT) override.healthPort = Number(env.HEALTH_PORT || env.PORT);
+  if (env.LUMEN_DAILY_TURN_LIMIT) override.dailyTurnLimit=Number(env.LUMEN_DAILY_TURN_LIMIT);
   if (env.LUMEN_PAIRING_CODE) override.pairCodeHash=createHash('sha256').update(env.LUMEN_PAIRING_CODE).digest('hex');
   const config = ConfigSchema.parse({ ...file, ...override });
   new Intl.DateTimeFormat('uk', { timeZone: config.timezone });

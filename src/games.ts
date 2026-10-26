@@ -42,13 +42,11 @@ const DEBATES=['Краще спонтанна подорож чи ретельн
 function normalize(text:string){return text.toLowerCase().normalize('NFKC').replace(/[^\p{L}\p{N} ]/gu,' ').replace(/\s+/g,' ').trim();}
 function matches(text:string,answer:string){const n=normalize(text);return n===answer || (answer.length>2 && ` ${n} `.includes(` ${answer} `));}
 function scores(s:any){return s.players.map((p:Player)=>`${p.name}: ${s.scores[p.id] || 0}`).join(' · ');}
-export async function startGame(sql:SQL,kind:string,players:Player[],title?:string,topicId='0'){
+export async function startGame(sql:SQL,kind:string,players:Player[],title?:string,topicId='0',openJoin=false){
   if(!GAME_NAMES[kind])throw new Error('game_unknown');
   if(players.length<1)return 'Спочатку познайоммося хоча б з одним гравцем.';
-  if(players.length>20)return 'Для цієї гри оберіть до 20 гравців.';
-  if(kind==='debate'&&players.length!==2)return 'Для «Аргументів» потрібні двоє гравців. Оберіть іншу гру для всієї компанії.';
   if(await one(sql,"SELECT id FROM games WHERE status='active' AND topic_id=$1",[topicId]))return 'Гра в цій темі вже триває. Спочатку /stopgame або дограємо її.';
-  const s:any={players,scores:Object.fromEntries(players.map(x=>[x.id,0])),turn:0,segments:[]};let reply='';
+  const s:any={players,scores:Object.fromEntries(players.map(x=>[x.id,0])),turn:0,segments:[],open_join:openJoin};let reply='';
   if(kind==='quiz'){
     const order=QUIZ.map((_,i)=>i);for(let i=order.length-1;i>0;i--){const j=randomInt(i+1);[order[i],order[j]]=[order[j]!,order[i]!];}
     s.order=order.slice(0,5);s.round=0;s.answers={};
@@ -60,23 +58,29 @@ export async function startGame(sql:SQL,kind:string,players:Player[],title?:stri
     s.secret=randomInt(THINGS.length);s.questions=0;
     reply='Я загадав предмет або живу істоту. У вас 20 запитань разом. Питайте про ознаки: живе, тварина, рослина, матеріал, розмір, призначення. Щоб відгадати, просто назвіть відповідь.';
   }else if(kind==='story'){
-    s.limit=12;s.segments=['Одного вечора у двері подзвонив листоноша. Він тримав лист, надісланий із завтрашнього дня.'];
-    reply=`Пишемо по черзі, по 1–3 речення. 12 ходів, після яких завершимо історію.\n${s.segments[0]}\nПочинає ${players[0]!.name}.`;
+    s.limit=Math.max(12,players.length*2);s.segments=['Одного вечора у двері подзвонив листоноша. Він тримав лист, надісланий із завтрашнього дня.'];
+    reply=`Пишемо по черзі, по 1–3 речення. ${s.limit} ходів, після яких завершимо історію.\n${s.segments[0]}\nПочинає ${players[0]!.name}.`;
   }else if(kind==='debate'){
-    s.topic=DEBATES[randomInt(DEBATES.length)];s.limit=4;
-    reply=`${s.topic}\n${players[0]!.name} захищає першу позицію, ${players[1]!.name} — другу. По два аргументи, по черзі, без переходів на особистості. Наприкінці можна попросити мене порівняти аргументи. Починає ${players[0]!.name}.`;
+    s.topic=DEBATES[randomInt(DEBATES.length)];s.limit=Math.max(2,players.length*2);
+    reply=`${s.topic}\n${players.map((p,i)=>`${p.name} — ${i%2?'друга':'перша'} позиція`).join('; ')}. По два аргументи, по черзі, без переходів на особистості. Наприкінці можна попросити мене порівняти аргументи. Починає ${players[0]!.name}.`;
   }else{
     const rule=await one(sql,'SELECT * FROM rules WHERE lower(title)=lower($1)',[title || '']);
     if(!rule)return 'Спочатку надішліть правила: «Люмен, вивчи гру: назва, правила…». Збережені правила — /rules.';
-    s.title=rule.title;s.rules=rule.content;s.limit=20;
-    reply=`Гра «${s.title}». Правила:\n${s.rules}\nЯ зберігаю черговість і текст ходів. Для складної механіки поки можу бути оповідачем; автоматично підтримую лише текстові ходи по черзі. Починає ${players[0]!.name}. /stopgame — завершити.`;
+    s.title=rule.title;s.rules=rule.content;s.limit=null;
+    reply=`Гра «${s.title}». Правила:\n${s.rules}\nЗберігаю черговість і текст ходів. Починає ${players[0]!.name}. Коли захочеться завершити чи змінити формат — просто скажіть.`;
   }
   await sql.query('INSERT INTO games (kind,state,topic_id) VALUES ($1,$2,$3)',[kind,JSON.stringify(s),topicId]);
   return reply;
 }
-export async function gameTurn(sql:SQL,userId:string,raw:string,topicId='0'){
+export async function gameTurn(sql:SQL,userId:string,raw:string,topicId='0',joining?:Player){
   const row=await one(sql,"SELECT * FROM games WHERE status='active' AND topic_id=$1 FOR UPDATE",[topicId]);if(!row)return 'Зараз у цій темі немає активної гри. /games — оберемо.';
-  const s=row.state;const kind=row.kind;const player:Player|undefined=s.players.find((p:Player)=>p.id===userId);
+  const s=row.state;const kind=row.kind;let player:Player|undefined=s.players.find((p:Player)=>p.id===userId);
+  if(!player&&s.open_join&&joining?.id===userId){
+    player=joining;s.players.push(joining);s.scores[userId]=0;
+    if(kind==='story')s.limit=Math.max(s.limit,s.players.length*2);
+    if(kind==='debate')s.limit=s.players.length*2;
+    await sql.query('UPDATE games SET state=$1,updated_at=now() WHERE id=$2',[JSON.stringify(s),row.id]);
+  }
   if(!player)return 'Тебе ще немає серед гравців цієї партії. Наступну можемо почати разом.';
   const text=raw.replace(/^\s*(люмене?|lumen)[,!: ]*/iu,'').replace(/^@\w+\s*[,!:]?\s*/,'').trim();let reply='',ended=false;
   if(kind==='quiz'){
@@ -109,15 +113,16 @@ export async function gameTurn(sql:SQL,userId:string,raw:string,topicId='0'){
     const expected:Player=s.players[s.turn % s.players.length];if(expected.id!==userId)return `Зараз хід ${expected.name}.`;
     if(!text || text.length>2000)return 'Для одного ходу потрібно від 1 до 2000 символів.';
     s.segments.push(text);s.turn++;
-    if(s.turn>=s.limit){ended=true;reply=kind==='story'?`Історію завершено:\n${s.segments.join('\n\n')}`:kind==='debate'?'У кожного було по два аргументи. Можу порівняти їх за логікою, прикладами й відповідями на заперечення.':`Дійшли до 20 текстових ходів. Завершив партію «${s.title}». Правила залишаються збереженими.`;}
-    else reply=`Хід записав. Далі ${s.players[s.turn % s.players.length].name}.${kind==='debate'?` Аргумент ${s.turn+1}/4.`:''}`;
+    if(s.limit&&s.turn>=s.limit){ended=true;reply=kind==='story'?`Історію завершено:\n${s.segments.join('\n\n')}`:kind==='debate'?'У кожного було по два аргументи. Можу порівняти їх за логікою, прикладами й відповідями на заперечення.':`Завершив партію «${s.title}». Правила залишаються збереженими.`;}
+    else reply=`Хід записав. Далі ${s.players[s.turn % s.players.length].name}.${kind==='debate'?` Аргумент ${s.turn+1}/${s.limit}.`:''}`;
   }
   await sql.query('UPDATE games SET state=$1,status=$2,updated_at=now() WHERE id=$3',[JSON.stringify(s),ended?'completed':'active',row.id]);
   return reply;
 }
-export function publicGame(row:any){
+export function publicGame(row:any,currentUserId?:string){
   if(!row)return null;
-  const {secret,caseIndex,order,...s}=row.state;
+  const {secret,caseIndex,order,players=[],scores={},segments=[],...s}=row.state;
+  const important=players.filter((p:Player,i:number)=>i<30||p.id===currentUserId||i===s.turn%players.length);
   // Answers, objects and solutions never enter the general model context.
-  return {id:row.id,kind:row.kind,...s};
+  return {id:row.id,kind:row.kind,...s,players:important,players_total:players.length,scores:Object.fromEntries(important.map((p:Player)=>[p.id,scores[p.id] || 0])),segments:segments.slice(-8)};
 }

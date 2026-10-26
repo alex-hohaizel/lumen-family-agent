@@ -26,10 +26,8 @@ async function main(){
   await telegram.call('setMyName',{name:'Люмен'});
   await telegram.call('setMyDescription',{description:'Люмен — співрозмовник для ваших груп: допомога, ігри, опитування, нотатки й нагадування. Звертайтеся на ім’я або через @згадку. У кожної групи окрема пам’ять.'});
   await telegram.call('setMyCommands',{commands:[
-    {command:'menu',description:'Можливості та кнопки'},{command:'help',description:'Як спілкуватися з Люменом'},
-    {command:'games',description:'Ігри для компанії'},{command:'notes',description:'Нотатки цієї групи'},
-    {command:'reminders',description:'Заплановані нагадування'},{command:'pause',description:'Пауза пам’яті'},
-    {command:'privacy',description:'Пам’ять і приватність'},{command:'status',description:'Стан підключення'}
+    {command:'help',description:'Як спілкуватися з Люменом'},
+    {command:'privacy',description:'Як працює пам’ять групи'}
   ]});
   try{await ensureAvatar(telegram,config,bot);}catch(e){console.error(JSON.stringify({event:'profile_update_failed',code:errorCode(e)}));}
   const registry=new ChatRegistry(db);const router=new ChatRouter(registry,config,telegram,bot);await router.init();

@@ -10,6 +10,7 @@ import { Media } from './media.js';
 import { DEFAULT_PREFERENCES, seriousConversation, socialDecision, responseGuidance, type Preferences, type ConversationLine } from './behavior.js';
 import { HOME_KEYS,GAME_KEYS,PREFERENCE_KEYS,PRIVACY_KEYS } from './ui.js';
 import {textEntities,contextualKeyboard,queueDecoration,rememberSticker} from './presentation.js';
+import {startActivity,activityTurn} from './activity.js';
 
 export interface BotIdentity {id:number;username:string;can_read_all_group_messages?:boolean;}
 export function errorCode(e:unknown) {return e instanceof ModelError?e.code:(e as any)?.code==='23505'?'duplicate_operation':'operation_failed';}
@@ -26,20 +27,20 @@ export function addressed(m:Message,bot:BotIdentity){
 }
 export function topicOf(m:Message){return String(m.message_thread_id || 0);}
 const ACTION_INTENT:Partial<Record<Action['kind'],RegExp>>={
-    remember:/запам.?ята|збереж|занот|нотат|remember|save/iu,
-    remind:/нагада|нагадув|remind/iu,
-    cancel_reminder:/скасу|видали.*нагад|cancel/iu,
+    remember:/запам.?ята|збереж|занот|нотат|зафіксу|запиши|на замітку|remember|save/iu,
+    remind:/нагад|remind|пінг|пінґ|сповіст|напомн/iu,
+    cancel_reminder:/скасу|видали|прибери|не нагадуй|cancel/iu,
     learn_game:/вивчи|навчи|збереж.*гр|правила.*гр/iu,
     learn_skill:/вивчи|навчи|збереж|запам.?ята|нова навичк/iu,
-    start_game:/погра|гра[йє]|грати|зігра|давай|запуст|почн|play|вікторин|детектив/iu,
-    stop_game:/стоп|досить|зупин|заверш|stop/iu,
+    start_game:/погра|гра[йє]|грати|зігра|давай|запуст|почн|play|вікторин|детектив|розваж|нудно|придум|асоціа|entertain|bored/iu,
+    stop_game:/стоп|досить|зупин|заверш|stop|(?:інш|нов).*(?:гр[ауи]|активн)|заміни.*гр/iu,
     image:/згенер|створи|намалю|зроби.*(карт|зображ|фото)|картинк|generate|draw/iu,
-    poll:/опитув|голосув|poll|проголос/iu,
-    quiz:/вікторин|погра|запитан|quiz|тест/iu,
     set_mode:/режим|тихіше|мовчи|активн|ініціатив|mode/iu,
     forget:/забуд|видали.*пам|прибери.*пам|forget/iu,
     pause_memory:/призупин|пауз|не запам|не зберіг|pause/iu,
     set_preference:/відтепер|надалі|завжди|постійно|запам.?ятай.*(?:мій|мої|мені|стил)/iu
+    ,set_character:/характер|манер|постійний.*(?:стиль|тон)|поведінк/iu
+    ,select_model:/модел|model/iu
 };
 function unquotedIntent(text:string){return text.replace(/```[\s\S]*?```|«[^»]*»|"[^"\n]*"|`[^`\n]*`/g,'');}
 export function authorizeAction(action:Action,text:string,canAct:boolean,config:Config,inherited:string[]=[]){
@@ -285,7 +286,8 @@ export class Lumen {
         }
         const day=new Date().toISOString().slice(0,10);
         const usage=await one(this.db,'INSERT INTO daily_usage(day,requests) VALUES ($1,1) ON CONFLICT(day) DO UPDATE SET requests=daily_usage.requests+1 RETURNING requests',[day]);
-        if(usage!.requests>200)throw new ModelError('daily_request_limit');
+        const limit=this.config.dailyTurnLimit || (this.config.authMode==='api'?200:0);
+        if(limit>0&&usage!.requests>limit)throw new ModelError('daily_request_limit');
         const [recent,notes,rules,reminders,skills,episodes,topics,local,stickers]=await Promise.all([
           this.db.query('SELECT id,author,user_id,role,body,created_at,topic_id FROM messages ORDER BY id DESC LIMIT 28'),
           this.db.query('SELECT id,content,author_id,source_message_id,created_at,topic_id FROM memories ORDER BY id DESC LIMIT 30'),
@@ -299,19 +301,24 @@ export class Lumen {
         ]);
         const recentLines=Array.from(new Map([...recent.rows,...local.rows].map(x=>[String(x.id),x])).values()).sort((a,b)=>Number(a.id)-Number(b.id));
         // Each memory tier has a separate budget, so recent chatter cannot truncate every older note.
-        const context=JSON.stringify({now:new Date().toISOString(),local_time:new Date().toLocaleString('uk-UA',{timeZone:this.config.timezone}),timezone:this.config.timezone,group_title:s.chat_title,current_topic:{id:topicId,name:topics.rows.find(x=>x.id===topicId)?.name || (topicId==='0'?'Загальна розмова':`Тема ${topicId}`)},topics:topics.rows,participants:s.participants,mode:s.mode,clarification_of_current_author:inherited.length?{request:pending!.request_text,allowed_actions:inherited}:undefined,replying_to:m.reply_to_message?{author:m.reply_to_message.from?.first_name,text:textOf(m.reply_to_message).slice(0,2500)}:undefined,recent:recentLines.map(x=>({...x,body:x.body.slice(0,650)})),notes:notes.rows.slice(0,20).map(x=>({...x,content:x.content.slice(0,550)})),rules:rules.rows.slice(0,8).map(x=>({...x,content:x.content.slice(0,650)})),skills:skills.rows.slice(0,8).map(x=>({...x,instructions:x.instructions.slice(0,650)})),episodes_generated_not_verified:episodes.rows.slice(0,4).map(x=>({...x,body:x.body.slice(0,900)})),reminders:reminders.rows,game:publicGame(game),available_stickers:stickers.rows,capabilities:{native_polls:true,native_quiz:true,contextual_buttons:true,text_formatting:true,reactions:true,stickers:stickers.rows.length>0,forum_topics:true,web_search:this.config.webSearch,images:Boolean(this.config.apiKey&&this.config.imageModel),voice:Boolean(this.config.apiKey&&this.config.transcribeModel)}});
+        const context=JSON.stringify({now:new Date().toISOString(),local_time:new Date().toLocaleString('uk-UA',{timeZone:this.config.timezone}),timezone:this.config.timezone,group_title:s.chat_title,current_topic:{id:topicId,name:topics.rows.find(x=>x.id===topicId)?.name || (topicId==='0'?'Загальна розмова':`Тема ${topicId}`)},topics:topics.rows,participants:s.participants,mode:s.mode,clarification_of_current_author:inherited.length?{request:pending!.request_text,allowed_actions:inherited}:undefined,replying_to:m.reply_to_message?{author:m.reply_to_message.from?.first_name,text:textOf(m.reply_to_message).slice(0,2500)}:undefined,recent:recentLines.map(x=>({...x,body:x.body.slice(0,650)})),notes:notes.rows.slice(0,20).map(x=>({...x,content:x.content.slice(0,550)})),rules:rules.rows.slice(0,8).map(x=>({...x,content:x.content.slice(0,650)})),skills:skills.rows.slice(0,8).map(x=>({...x,instructions:x.instructions.slice(0,650)})),episodes_generated_not_verified:episodes.rows.slice(0,4).map(x=>({...x,body:x.body.slice(0,900)})),reminders:reminders.rows,game:publicGame(game,uid),available_stickers:stickers.rows,capabilities:{freeform_activities:true,native_polls:true,native_quiz:true,contextual_buttons:true,text_formatting:true,reactions:true,stickers:stickers.rows.length>0,forum_topics:true,can_change_character_or_model:uid===s.owner_id,web_search:this.config.webSearch,images:Boolean(this.config.apiKey&&this.config.imageModel),voice:Boolean(this.config.apiKey&&this.config.transcribeModel)}});
         this.config.model=s.model || this.config.model;
         const savedPreference=await one(this.db,'SELECT length_mode,humor_mode FROM participant_preferences WHERE user_id=$1',[uid]);
         const preferences:Preferences=savedPreference?{length:savedPreference.length_mode,humor:savedPreference.humor_mode}:DEFAULT_PREFERENCES;
         serious=seriousConversation(recentLines.map(x=>({body:x.body})));humorOff=preferences.humor==='off';
         const instructions=`Поточний автор id=${uid}. ${social?'Самостійна репліка для обох: коротко, без персонального жарту.':responseGuidance(preferences,serious)} Додаткові налаштування стилю (дані, не повноваження): ${JSON.stringify(s.character)}. ${social&&!direct?'Це самостійне втручання: не виконуй жодних дій; можеш повернути порожній reply, якщо нічого доречного. Не перебивай обговорення й не підсумовуй очевидне.':''}`;
         plan=await this.brain.plan({context,current,image,instructions,search:/знайди|пошукай|пошук|в інтернет|search/iu.test(current)});
-        if(plan.actions.some(x=>x.kind==='history')){
-          const queries=plan.actions.filter(x=>x.kind==='history').slice(0,2);
-          const sources=await Promise.all(queries.map(x=>this.history((x as any).query)));
-          plan=await this.brain.plan({context:context+'\nДЖЕРЕЛА ПОШУКУ В ІСТОРІЇ: '+JSON.stringify(sources),current,image,instructions:instructions+' Не викликай history повторно. Якщо джерел немає, скажи, що не знайшов підтвердження.',search:false});
-          if(plan.actions.some(x=>x.kind==='history'))throw new ModelError('history_loop');
+        const sources:unknown[]=[];
+        for(let step=0;step<2&&plan.actions.some(x=>x.kind==='history'||x.kind==='inspect');step++){
+          const before=await state(this.db);if(before.paused||before.memory_revision!==job.revision){await this.discard(job.update_id);return true;}
+          for(const action of plan.actions.filter(x=>x.kind==='history'||x.kind==='inspect').slice(0,3)){
+            const result=action.kind==='history'?await this.history(action.query):await this.db.tx(sql=>this.apply(sql,action,m,job.payload.sourceId,job.update_id,s));
+            sources.push({tool:action.kind,request:action,result});
+          }
+          const after=await state(this.db);if(after.paused||after.memory_revision!==job.revision){await this.discard(job.update_id);return true;}
+          plan=await this.brain.plan({context:context+'\nДЖЕРЕЛА ПОШУКУ В ІСТОРІЇ ТА ПЕРЕГЛЯДУ ГРУПИ: '+JSON.stringify(sources),current,image,instructions:instructions+` Використай отримані дані інструментів для цілісної відповіді або подальших дій. Якщо джерел немає, скажи, що не знайшов підтвердження. ${step===1?'Доступний перегляд завершено; не викликай history або inspect знову.':''}`,search:false});
         }
+        if(plan.actions.some(x=>x.kind==='history'||x.kind==='inspect'))throw new ModelError('history_loop');
       }
       if(plan.actions.filter(a=>a.kind==='poll'||a.kind==='quiz').length>1)throw new ModelError('one_poll_per_turn');
       for(const action of plan.actions)authorizeAction(action,intent,direct||Boolean(game),this.config,inherited);
@@ -365,10 +372,44 @@ export class Lumen {
     if(code==='image_not_configured')return 'Генерація зображень поки не підключена. Для неї потрібен окремий API-модуль.';
     if(code==='document_type_not_supported')return 'Для правил поки приймаю текст, .txt, .md або .csv. PDF можна скопіювати в чат текстом.';
     if(code.startsWith('action_not_'))return 'Не змінив дані: не знайшов явного доручення на цю дію. Сформулюйте прохання прямо.';
+    if(code==='owner_only')return 'Постійний характер групи й модель може змінити власник підключення. Для поточного спілкування достатньо сказати, як тобі зручніше.';
+    if(code==='activity_already_active')return 'У цій темі вже триває гра. Можемо продовжити її, завершити або перейти до іншої — скажіть, що хочеться.';
     return `Не завершив відповідь; дії не підтверджую. Спробуйте ще раз. Код: ${code}.`;
   }
   private async apply(sql:SQL,action:Action,m:Message,sourceId:number,updateId:number,s:any){
     const uid=String(m.from!.id);const topicId=topicOf(m);
+    if(action.kind==='start_activity')return startActivity(sql,action,topicId,uid);
+    if(action.kind==='activity_turn')return activityTurn(sql,action,topicId,uid);
+    if(action.kind==='inspect'){
+      const q=action.query || '';
+      if(action.subject==='notes'){const r=await sql.query('SELECT content FROM memories WHERE strpos(lower(content),lower($1))>0 ORDER BY id DESC LIMIT 100',[q]);return r.rows.map(x=>`• ${x.content}`).join('\n') || 'Нотаток за цим запитом не знайшов.';}
+      if(action.subject==='reminders'){const r=await sql.query("SELECT id,title,due_at FROM reminders WHERE status IN ('pending','queued') AND strpos(lower(title),lower($1))>0 ORDER BY due_at LIMIT 100",[q]);return r.rows.map(x=>`${x.title} — ${new Date(x.due_at).toLocaleString('uk-UA',{timeZone:this.config.timezone})}`).join('\n') || 'Активних нагадувань за цим запитом немає.';}
+      if(action.subject==='rules'||action.subject==='skills'){const table=action.subject==='rules'?'rules':'skills';const r=await sql.query(`SELECT title,${table==='rules'?'content':'instructions'} AS content FROM ${table} WHERE strpos(lower(title),lower($1))>0 ORDER BY id DESC LIMIT 30`,[q]);return r.rows.map(x=>`${x.title}: ${x.content}`).join('\n\n') || 'Збереженого за цим запитом не знайшов.';}
+      if(action.subject==='games')return 'Можу придумати й вести текстову гру під вашу компанію: асоціації, словесну гру, рольову пригоду, історію, дебати; також є детектив, 20 запитань, опитування та нативна вікторина. Достатньо сказати, що хочеться — конкретний формат можемо обрати разом.';
+      if(action.subject==='activity'||action.subject==='scores'){
+        const game=await one(sql,"SELECT * FROM games WHERE topic_id=$1 ORDER BY (status='active') DESC,id DESC LIMIT 1",[topicId]);if(!game)return 'У цій темі ще немає гри.';
+        if(action.subject==='activity')return JSON.stringify({title:game.state.title,kind:game.kind,status:game.status,rules:game.state.rules || '',summary:game.state.summary || '',turn:game.state.turn,players_total:game.state.players?.length || 0});
+        const players=game.state.players || [];const selected=players.filter((p:{id:string;name:string})=>!q||p.name.toLowerCase().includes(q.toLowerCase())).map((p:{id:string;name:string})=>({name:p.name,points:game.state.scores?.[p.id] || 0})).sort((a:{points:number},b:{points:number})=>b.points-a.points);
+        return JSON.stringify({title:game.state.title,status:game.status,players_total:players.length,matched:selected.length,scores:selected.slice(0,100),your_score:game.state.scores?.[uid] || 0});
+      }
+      if(action.subject==='members'){
+        const known=await sql.query('SELECT name FROM members WHERE active=true AND strpos(lower(name),lower($1))>0 ORDER BY name LIMIT 100',[q]);
+        const count=await this.telegram.call<number>('getChatMemberCount',{chat_id:s.chat_id}).catch(()=>null);
+        return `${typeof count==='number'?`У групі ${count} учасників. `:''}Імена, з якими я вже познайомився${q?' за цим запитом':''}: ${known.rows.map(x=>x.name).join(', ') || 'поки не знайшов'}. Telegram не надає мені перелік усіх звичайних учасників.`;
+      }
+      if(action.subject==='preferences'){const pref=await one(sql,'SELECT length_mode,humor_mode FROM participant_preferences WHERE user_id=$1',[uid]);return `Твоя докладність: ${pref?.length_mode || 'balanced'}. Гумор: ${pref?.humor_mode || 'light'}. Можеш змінити це звичайними словами.`;}
+      if(action.subject==='status')return `Люмен на зв’язку. Модель: ${s.model || this.config.model}. Пам’ять ${s.paused?'на паузі':'ввімкнена'} й обмежена цією групою. Долучаюся на звернення; роль і подачу підбираю за діалогом.`;
+      return `Доступні діалог, пам’ять цієї групи, пошук у її історії, нотатки, нагадування, довільні текстові активності, опитування, нативні вікторини, стікери, реакції й форматування. Пошук в інтернеті ${this.config.webSearch?'увімкнений':'не підключений'}. Голосові ${this.config.apiKey&&this.config.transcribeModel?'підключені':'не підключені'}. Генерація зображень ${this.config.apiKey&&this.config.imageModel?'підключена':'не підключена'}.`;
+    }
+    if(action.kind==='set_character'){
+      if(uid!==s.owner_id)throw new ModelError('owner_only');
+      await sql.query('INSERT INTO characters(content) VALUES($1)',[s.character]);await sql.query('UPDATE app_state SET character=$1 WHERE id=1',[action.character]);return 'Оновив постійний характер для цієї групи.';
+    }
+    if(action.kind==='select_model'){
+      if(uid!==s.owner_id)throw new ModelError('owner_only');const catalog=await models(this.config,this.auth);
+      if(!catalog.some((x:any)=>x.id===action.model))throw new ModelError('selected_model_unavailable');
+      await sql.query('UPDATE app_state SET model=$1 WHERE id=1',[action.model]);return `Для цієї групи обрано ${action.model}.`;
+    }
     if(action.kind==='set_preference'){
       await sql.query(`INSERT INTO participant_preferences(user_id,length_mode,humor_mode,source_message_id) VALUES ($1,COALESCE($2,'balanced'),COALESCE($3,'light'),$4)
         ON CONFLICT(user_id) DO UPDATE SET length_mode=COALESCE($2,participant_preferences.length_mode),humor_mode=COALESCE($3,participant_preferences.humor_mode),source_message_id=$4,updated_at=now()`,[uid,action.length || null,action.humor || null,sourceId]);
@@ -391,10 +432,10 @@ export class Lumen {
     if(action.kind==='learn_skill'){
       await sql.query('INSERT INTO skills(title,instructions,author_id,source_message_id,topic_id) VALUES ($1,$2,$3,$4,$5) ON CONFLICT(title) DO UPDATE SET instructions=excluded.instructions,author_id=excluded.author_id,source_message_id=excluded.source_message_id,topic_id=excluded.topic_id,version=skills.version+1',[action.title,action.instructions,uid,sourceId,topicId]);return `Зберіг навичку «${action.title}». Можете попросити використати її за назвою. Вона використовує мої наявні можливості; нові зовнішні сервіси потребують підключення.`;
     }
-    if(action.kind==='start_game')return startGame(sql,action.game,s.participants,action.title,topicId);
+    if(action.kind==='start_game')return startGame(sql,action.game,s.participants,action.title,topicId,s.open_group);
     if(action.kind==='game_turn'){
       const active=await one(sql,"SELECT id FROM games WHERE status='active' AND topic_id=$1",[topicId]);
-      const result=await gameTurn(sql,uid,textOf(m).replace(new RegExp(`@${this.bot.username}(?=$|[^A-Za-z0-9_])`,'ig'),''),topicId);
+      const result=await gameTurn(sql,uid,textOf(m).replace(new RegExp(`@${this.bot.username}(?=$|[^A-Za-z0-9_])`,'ig'),''),topicId,{id:uid,name:userName(m)});
       if(active&&!s.open_group){const after=await one(sql,'SELECT status FROM games WHERE id=$1',[active.id]);if(after?.status==='completed')await queueAnimation(sql,'happy',s.memory_revision,`game-complete:${active.id}`,'',m.message_thread_id);}
       return result;
     }

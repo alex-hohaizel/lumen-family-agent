@@ -30,7 +30,7 @@ export class ChatRouter {
     // Model selection is per group. Only the transport's token-refresh manager is shared.
     const initial=await state(db);const config={...this.config,model:initial.model||this.config.model};
     const brain=this.brainFactory?.(config,chat.chat_id) || new OpenAIModel(config,this.auth);
-    runtime={chat,db,engine:new Lumen(db,config,this.telegram,brain,this.bot,undefined,this.auth),delivery:new Delivery(db,this.telegram,config),memory:new Memory(db,brain)};
+    runtime={chat,db,engine:new Lumen(db,config,this.telegram,brain,this.bot,undefined,this.auth),delivery:new Delivery(db,this.telegram,config),memory:new Memory(db,brain,config.dailyTurnLimit || (config.authMode==='api'?200:0))};
     this.runtimes.set(chat.chat_id,runtime);
     if(!await one(db,'SELECT id FROM stickers LIMIT 1')){
       // A fixed public starter set is an asset, never imported memory from another group.
