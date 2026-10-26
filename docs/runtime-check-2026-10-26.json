@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-10-26T13:34:51.533Z",
+  "source": "Read-only command in Render Web Shell; no Telegram getUpdates or messages sent by the check",
+  "service_id": "srv-dbfl0je7bikc73dvg0qg",
+  "postgres_id": "dpg-dbfkvt67bikc73dvda00-a",
+  "deploy_id": "dep-dbfl0ju7bikc73dvg2g0",
+  "running_commit": "87d5a74f787a6caf78c863201ab67ff7221babfd",
+  "deploy_status": "live",
+  "render_build_tests": {"tests": 93, "passed": 93, "failed": 0},
+  "http_status": 200,
+  "health": {"status": "ok"},
+  "database": {"group_bound": false, "consents": 0, "poll_age_seconds": 21},
+  "chatgpt_credentials": false,
+  "model_selected": false,
+  "live_group_dialogue_verified": false,
+  "avatar_sha256": "d15b72f26149d9e78612a1c2cbd8de97b7ac53e481fcb17851ed4a49837f6d7f",
+  "cost_control": {
+    "base_monthly_usd_approved": 13.55,
+    "workspace_plan": "Hobby",
+    "worker_instances": 1,
+    "worker_auto_deploy": "off",
+    "blueprint_auto_sync": false,
+    "postgres_storage_autoscaling": false,
+    "additional_build_spend_limit_usd": 0,
+    "included_monthly_outbound_gb": 5,
+    "outbound_overage_usd_per_gb": 0.15,
+    "hard_total_bill_cap": false
+  }
+}
