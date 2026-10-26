@@ -185,4 +185,36 @@ describe('Окремі групи, природні звернення та те
     brains.get('-200')!.replies.push({reply:'',actions:[{kind:'remind',title:'Квитки',due_at:new Date(Date.now()+3600000).toISOString()}]});await ask(a,msg('Люмен, о 08:30',-200,22,101));assert.equal((await a.db.query('SELECT * FROM reminders')).rows.length,0);
     brains.get('-200')!.replies.push({reply:'',actions:[{kind:'remind',title:'Квитки',due_at:new Date(Date.now()+3600000).toISOString()}]});await ask(a,msg('Люмен, о 08:30',-200,11,101));assert.equal((await a.db.query('SELECT * FROM reminders')).rows.length,1);assert.equal((await a.db.query('SELECT * FROM pending_intents')).rows.length,0);
   });
+  it('придумує й починає вільну активність на живе прохання без назви гри чи команди',async()=>{
+    const a=await add();brains.get('-200')!.replies.push({reply:'Давайте асоціації! Почну зі слова «море».',actions:[{kind:'start_activity',title:'Асоціації',rules:'Наступний учасник називає асоціацію до попереднього слова; повтори не використовуємо.',summary:'Перше слово — море. Чекаємо асоціацію будь-кого з компанії.'}]});await ask(a,msg('Люмен, нам нудно, придумай щось',-200,11,101));const row=await one(a.db,'SELECT * FROM games');assert.equal(row!.kind,'freeform');assert.equal(row!.topic_id,'101');assert.match(row!.state.rules,/асоціаці/);assert.equal((await one(a.db,'SELECT status FROM inbox'))!.status,'done');
+  });
+  it('вільна активність зберігає стан, приймає нових учасників і не має межі у 20 ходів',async()=>{
+    const a=await add();brains.get('-200')!.replies.push({reply:'Починаємо.',actions:[{kind:'start_activity',title:'Пригода',rules:'Разом досліджуємо острів; Люмен реагує на рішення учасників і веде історію.',summary:'Команда висадилася на острів.'}]});await ask(a,msg('Люмен, почни пригоду',-200,11,101));
+    for(let i=0;i<24;i++){const uid=i%3+11;brains.get('-200')!.replies.push({reply:`Подія ${i}.`,actions:[{kind:'activity_turn',summary:`Герої дійшли до етапу ${i}.`,score_changes:[{user_id:String(uid),delta:1}]}]});await ask(a,msg(`Люмен, досліджую місце ${i}`,-200,uid,101));}
+    const row=await one(a.db,'SELECT * FROM games');assert.equal(row!.status,'active');assert.equal(row!.state.turn,24);assert.equal(row!.state.players.length,3);assert.equal(row!.state.scores['11'],8);assert.match(row!.state.summary,/23/);
+    const fresh=new ChatRouter(registry,h.config,h.tg as unknown as Telegram,bot,()=>new FakeBrain());await fresh.init();assert.equal((await one((await fresh.active())[0]!.db,'SELECT state FROM games'))!.state.turn,24);
+  });
+  it('активність не додає балів учаснику з іншої групи й не змінює стан при помилці',async()=>{
+    const a=await add(),b=await add(-300);await router.receive(msg('Повідомлення іншої групи',-300,77));
+    brains.get('-200')!.replies.push({reply:'Почали.',actions:[{kind:'start_activity',title:'Гра',rules:'За змістовний хід додаємо бал, потім продовжуємо.',summary:'Очікуємо перший хід.'}]});await ask(a,msg('Люмен, починай гру',-200,11,101));
+    brains.get('-200')!.replies.push({reply:'',actions:[{kind:'activity_turn',summary:'Стан, який не можна зберегти.',score_changes:[{user_id:'77',delta:5}]}]});await ask(a,msg('Люмен, ось мій хід',-200,11,101));const row=await one(a.db,'SELECT state FROM games');assert.equal(row!.state.turn,0);assert.equal(row!.state.scores['77'],undefined);assert.match(row!.state.summary,/перший/);assert.equal((await b.db.query('SELECT * FROM games')).rows.length,0);
+  });
+  it('звичайне прохання показати нотатки викликає перегляд лише своєї групи',async()=>{
+    const a=await add(),b=await add(-300);await a.db.query("INSERT INTO memories(content,author_id) VALUES('Наші квитки','11')");await b.db.query("INSERT INTO memories(content,author_id) VALUES('Чужий пароль','11')");brains.get('-200')!.replies.push({reply:'',actions:[{kind:'inspect',subject:'notes'}]},{reply:'Наші квитки — ось що зберегли.',actions:[]});await ask(a,msg('Люмен, покажи наші нотатки'));const sources=brains.get('-200')!.calls[1]!.context;assert.match(sources,/Наші квитки/);assert.doesNotMatch(sources,/Чужий пароль/);const replies=JSON.stringify((await a.db.query('SELECT body FROM outbox')).rows);assert.match(replies,/Наші квитки/);assert.doesNotMatch(replies,/Чужий пароль/);
+  });
+  it('постійний характер змінюється живою мовою лише власником',async()=>{
+    const a=await add();brains.get('-200')!.replies.push({reply:'',actions:[{kind:'set_character',character:'Стриманий гумор і короткі пояснення.'}]});await ask(a,msg('Люмен, зміни постійний характер: стриманий гумор',-200,11));assert.match((await state(a.db)).character,/Стриманий/);
+    brains.get('-200')!.replies.push({reply:'',actions:[{kind:'set_character',character:'Змінити чужі правила.'}]});await ask(a,msg('Люмен, зміни характер',-200,22));assert.match((await state(a.db)).character,/Стриманий/);assert.doesNotMatch((await state(a.db)).character,/чужі/);
+  });
+  it('група зі 120 учасниками не відхиляє звернення через робочу вибірку контексту',async()=>{
+    const a=await add();for(let i=0;i<120;i++)await router.receive(msg(`Репліка ${i}`,-200,1000+i));await ask(a,msg('Люмен, привіт',-200,1000));assert.equal((await a.db.query('SELECT * FROM members')).rows.length,120);assert.equal(brains.get('-200')!.calls.length,1);assert.ok(JSON.parse(brains.get('-200')!.calls[0]!.context).participants.some((p:any)=>p.id==='1000'));
+  });
+  it('ChatGPT не має штучної межі 200 звернень, а явний бюджет власника діє',async()=>{
+    const a=await add();const day=new Date().toISOString().slice(0,10);await a.db.query('INSERT INTO daily_usage(day,requests) VALUES($1,200)',[day]);await ask(a,msg('Люмен, привіт'));assert.equal(brains.get('-200')!.calls.length,1);
+    a.engine.config.dailyTurnLimit=201;await ask(a,msg('Люмен, ще одне питання'));assert.equal(brains.get('-200')!.calls.length,1);assert.equal((await state(a.db)).last_model_error,'daily_request_limit');
+  });
+  it('правила вільної гри адаптуються на прохання й стан зберігає нову версію',async()=>{
+    const a=await add();brains.get('-200')!.replies.push({reply:'Граємо.',actions:[{kind:'start_activity',title:'Командна історія',rules:'Учасники розповідають історію по одному реченню.',summary:'Починаємо історію.'}]});await ask(a,msg('Люмен, почни гру'));
+    brains.get('-200')!.replies.push({reply:'Тепер граємо командами.',actions:[{kind:'activity_turn',rules:'Об’єднуємося у дві команди; кожна додає абзац по черзі.',summary:'Перейшли до командного формату. Першою пише перша команда.'}]});await ask(a,msg('Люмен, підлаштуй правила під дві команди'));const row=await one(a.db,'SELECT state FROM games');assert.match(row!.state.rules,/дві команди/);assert.equal(row!.state.turn,1);
+  });
 });

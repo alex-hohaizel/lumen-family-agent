@@ -35,6 +35,18 @@ describe('Ігри, навички й довга пам’ять',()=>{
   it('аргументи дають кожному рівно два ходи',async()=>{
     await db.tx(sql=>startGame(sql,'debate',players));for(let i=0;i<4;i++)await db.tx(sql=>gameTurn(sql,i%2?'22':'11',`Аргумент ${i+1}`));assert.equal((await one(db,'SELECT status FROM games'))!.status,'completed');
   });
+  it('вікторина приймає понад двадцять гравців без штучної межі',async()=>{
+    const many=Array.from({length:31},(_,i)=>({id:String(100+i),name:`Гравець ${i}`}));await db.tx(sql=>startGame(sql,'quiz',many));for(const p of many)await db.tx(sql=>gameTurn(sql,p.id,'пас'));const row=await one(db,'SELECT state FROM games');assert.equal(row!.state.players.length,31);assert.equal(row!.state.round,1);
+  });
+  it('аргументи працюють для компанії й дають кожному два ходи',async()=>{
+    const company=Array.from({length:5},(_,i)=>({id:String(100+i),name:`Гравець ${i}`}));await db.tx(sql=>startGame(sql,'debate',company));for(let i=0;i<10;i++)await db.tx(sql=>gameTurn(sql,company[i%5]!.id,`Аргумент ${i}`));const row=await one(db,'SELECT * FROM games');assert.equal(row!.state.players.length,5);assert.equal(row!.status,'completed');assert.equal(row!.state.turn,10);
+  });
+  it('відкрита партія приймає нового гравця під час гри',async()=>{
+    await db.tx(sql=>startGame(sql,'quiz',players,undefined,'0',true));await db.tx(sql=>gameTurn(sql,'33','пас','0',{id:'33',name:'Новий гравець'}));await db.tx(sql=>gameTurn(sql,'11','пас'));await db.tx(sql=>gameTurn(sql,'22','пас'));const row=await one(db,'SELECT state FROM games');assert.equal(row!.state.players.length,3);assert.equal(row!.state.round,1);
+  });
+  it('гра за збереженими правилами не закінчується примусово після 20 ходів',async()=>{
+    await db.query("INSERT INTO rules(title,content,author_id) VALUES('Без кінця','Додаємо по слову, поки не вирішимо завершити.','11')");await db.tx(sql=>startGame(sql,'custom',players,'Без кінця'));for(let i=0;i<24;i++)await db.tx(sql=>gameTurn(sql,players[i%2]!.id,`Слово ${i}`));const row=await one(db,'SELECT * FROM games');assert.equal(row!.status,'active');assert.equal(row!.state.turn,24);
+  });
   it('зберігає нові правила та запускає саме збережену гру',async()=>{
     h.brain.replies.push({reply:'',actions:[{kind:'learn_game',title:'Одне слово',rules:'По черзі додаємо по слову до спільної історії. Після 20 ходів читаємо її разом.'}]});await h.lumen.receive(message('Люмен, вивчи гру «Одне слово»: додаємо слова по черзі.'));await h.lumen.processNext();await h.lumen.receive(message('/game Одне слово'));
     const row=await one(db,'SELECT * FROM games');assert.equal(row!.kind,'custom');assert.equal(row!.state.title,'Одне слово');assert.match(row!.state.rules,/По черзі/);
