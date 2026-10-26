@@ -34,4 +34,22 @@ describe('OAuth та завершені Responses API потоки',()=>{
     const model=new OpenAIModel(ConfigSchema.parse({authMode:'api',apiKey:'test',model:'m'}),undefined,(async()=>stream([{type:'response.output_text.delta',delta:'```json\n{"reply":"Ось дужка }","actions":[]}\n```'},{type:'response.completed',response:{output:[]}}])) as typeof fetch);
     assert.equal((await model.plan({context:'',current:'ping'})).reply,'Ось дужка }');
   });
+  it('після звичайного тексту замість JSON один раз повторює те саме звернення без підміни моделі',async()=>{
+    const requests:any[]=[];const expected={reply:'Ділимося на дві команди.',actions:[{kind:'activity_turn',summary:'Хід команди Хвиля; останнє слово — море.',rules:'Дві команди ходять по черзі, без повторення слів.'}]};
+    const model=new OpenAIModel(ConfigSchema.parse({authMode:'api',apiKey:'test',model:'gpt-6.1-sol'}),undefined,(async(_url:any,init:any)=>{requests.push(JSON.parse(init.body));return stream([{type:'response.output_text.delta',delta:requests.length===1?'Граємо двома командами.':JSON.stringify(expected)},{type:'response.completed',response:{output:[]}}]);}) as typeof fetch);
+    assert.deepEqual(await model.plan({context:'лише група А',current:'Люмен, зміни правила для двох команд'}),expected);
+    assert.equal(requests.length,2);assert.deepEqual(requests[0].input,requests[1].input);assert.ok(requests.every(x=>x.model==='gpt-6.1-sol'));assert.match(requests[1].instructions,/Попередня відповідь/);assert.ok(!requests[1].instructions.includes('Граємо двома командами.'));
+  });
+  it('відхиляє неправильні дії та приймає лише перевірений повторний план',async()=>{
+    let calls=0;const model=new OpenAIModel(ConfigSchema.parse({authMode:'api',apiKey:'test',model:'m'}),undefined,(async()=>stream([{type:'response.output_text.delta',delta:JSON.stringify(++calls===1?{reply:'',actions:[{kind:'shell',command:'ls'}]}:{reply:'Можу допомогти словами.',actions:[]})},{type:'response.completed',response:{output:[]}}])) as typeof fetch);
+    assert.deepEqual(await model.plan({context:'',current:'поговорімо'}),{reply:'Можу допомогти словами.',actions:[]});assert.equal(calls,2);
+  });
+  it('дві неправильні відповіді завершуються помилкою без нескінченних повторів',async()=>{
+    let calls=0;const model=new OpenAIModel(ConfigSchema.parse({authMode:'api',apiKey:'test',model:'m'}),undefined,(async()=>{calls++;return stream([{type:'response.output_text.delta',delta:'не JSON'},{type:'response.completed',response:{output:[]}}]);}) as typeof fetch);
+    await assert.rejects(()=>model.plan({context:'',current:'ping'}),/invalid_plan/);assert.equal(calls,2);
+  });
+  it('ліміт підписки не спричиняє повторного запиту чи іншої моделі',async()=>{
+    let calls=0;const model=new OpenAIModel(ConfigSchema.parse({authMode:'api',apiKey:'test',model:'gpt-6.1-sol'}),undefined,(async()=>{calls++;return new Response('',{status:429});}) as typeof fetch);
+    await assert.rejects(()=>model.plan({context:'',current:'ping'}),/usage_limit/);assert.equal(calls,1);
+  });
 });
