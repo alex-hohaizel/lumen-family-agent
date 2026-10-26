@@ -3,9 +3,52 @@ import assert from 'node:assert/strict';
 import { mkdtemp, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { resolve } from 'node:path';
-import { createPhoneCopyServer } from '../src/phone-login.js';
+import { runInNewContext } from 'node:vm';
+import { createPhoneCopyServer, phonePage } from '../src/phone-login.js';
+
+async function loadCopyPage(raw: string, writeText: (value: string) => Promise<void>) {
+  const fields: Record<string, any> = {};
+  for (const id of ['status', 'copy', 'fallback', 'manual']) {
+    fields[id] = { disabled: id === 'copy' || id === 'fallback', hidden: id === 'manual', value: '', textContent: '', focus() {}, select() {} };
+  }
+  const script = phonePage('synthetic_nonce').match(/<script nonce="[^"]+">([\s\S]*?)<\/script>/)?.[1];
+  assert.ok(script);
+  runInNewContext(script, {
+    document: { getElementById: (id: string) => fields[id] },
+    location: { hash: '#synthetic_local_key', pathname: '/' },
+    history: { replaceState() {} },
+    navigator: { clipboard: { writeText } },
+    fetch: async () => ({ ok: true, text: async () => raw })
+  });
+  await new Promise<void>(done => setImmediate(done));
+  return fields;
+}
 
 describe('Локальне перенесення підключення з телефона', () => {
+  it('копіює повний JSON і дозволяє ручне копіювання навіть після успіху Clipboard API', async () => {
+    const raw = JSON.stringify({ selected: 'synthetic_client', registrations: [{ client_id: 'synthetic_client', access_token: 'never_real_credentials' }] });
+    let clipboard = '';
+    const fields = await loadCopyPage(raw, async value => { clipboard = value; });
+    assert.equal(fields.copy.disabled, false);
+    assert.equal(fields.fallback.disabled, false);
+    assert.equal(fields.manual.hidden, true);
+    await fields.copy.onclick();
+    assert.equal(clipboard, raw);
+    fields.fallback.onclick();
+    assert.equal(fields.manual.hidden, false);
+    assert.equal(fields.manual.value, raw);
+  });
+  it('показує ручне поле, якщо Clipboard API відмовив, і відхиляє назву файла замість сесії', async () => {
+    const raw = JSON.stringify({ selected: 'synthetic_client', registrations: [{ client_id: 'synthetic_client' }] });
+    const fields = await loadCopyPage(raw, async () => { throw new Error('clipboard_denied'); });
+    await fields.copy.onclick();
+    assert.equal(fields.manual.hidden, false);
+    assert.equal(fields.manual.value, raw);
+    const invalid = await loadCopyPage('chatgpt-accounts.json', async () => { throw new Error('must_not_copy'); });
+    assert.equal(invalid.copy.disabled, true);
+    assert.equal(invalid.fallback.disabled, true);
+    assert.equal(invalid.manual.value, '');
+  });
   it('не включає сесію в HTML і не віддає її без окремого локального ключа', async () => {
     const dir = await mkdtemp(resolve(tmpdir(), 'lumen-phone-test-'));
     const path = resolve(dir, 'accounts.json');
