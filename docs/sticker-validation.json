@@ -1,0 +1,186 @@
+{
+  "count": 30,
+  "all_valid": true,
+  "stickers": [
+    {
+      "id": "01_wave",
+      "bytes": 110215,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "02_laugh",
+      "bytes": 98418,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "03_rofl",
+      "bytes": 112355,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "04_loveeyes",
+      "bytes": 104736,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "05_hug",
+      "bytes": 88817,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "06_heart",
+      "bytes": 87355,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "07_kiss",
+      "bytes": 100808,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "08_cool",
+      "bytes": 102678,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "09_think",
+      "bytes": 112537,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "10_suspect",
+      "bytes": 105496,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "11_smirk",
+      "bytes": 92288,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "12_eyeroll",
+      "bytes": 77739,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "13_phew",
+      "bytes": 95251,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "14_cringe",
+      "bytes": 85279,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "15_melt",
+      "bytes": 96892,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "16_braveface",
+      "bytes": 97519,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "17_drama",
+      "bytes": 141450,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "18_angry",
+      "bytes": 116179,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "19_mindblown",
+      "bytes": 122092,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "20_panic",
+      "bytes": 103994,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "21_facepalm",
+      "bytes": 82172,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "22_shrug",
+      "bytes": 96707,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "23_yes",
+      "bytes": 97213,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "24_no",
+      "bytes": 107088,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "25_clap",
+      "bytes": 92978,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "26_please",
+      "bytes": 95359,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "27_strong",
+      "bytes": 112258,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "28_fire",
+      "bytes": 104265,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "29_party",
+      "bytes": 166373,
+      "duration": "2.800000",
+      "alpha": true
+    },
+    {
+      "id": "30_sleep",
+      "bytes": 93466,
+      "duration": "2.800000",
+      "alpha": true
+    }
+  ]
+}
