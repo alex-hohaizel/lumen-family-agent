@@ -6,3 +6,5 @@ runtime/*
 backups/*
 !backups/.gitkeep
 *.log
+__pycache__/
+*.py[cod]
