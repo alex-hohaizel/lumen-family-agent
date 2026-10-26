@@ -1,17 +1,28 @@
 {
-  "checked_at": "2026-10-26T13:34:51.533Z",
+  "checked_at": "2026-10-26T20:00:23.904Z",
   "source": "Read-only command in Render Web Shell; no Telegram getUpdates or messages sent by the check",
   "service_id": "srv-dbfl0je7bikc73dvg0qg",
   "postgres_id": "dpg-dbfkvt67bikc73dvda00-a",
-  "deploy_id": "dep-dbfl0ju7bikc73dvg2g0",
-  "running_commit": "87d5a74f787a6caf78c863201ab67ff7221babfd",
+  "deploy_id": "dep-dbfr1erl550s73906630",
+  "running_commit": "dae1352df0b21b1b14089dcfc745ad6087e69e5a",
   "deploy_status": "live",
-  "render_build_tests": {"tests": 93, "passed": 93, "failed": 0},
+  "render_build_tests": {
+    "tests": 95,
+    "passed": 95,
+    "failed": 0
+  },
   "http_status": 200,
-  "health": {"status": "ok"},
-  "database": {"group_bound": false, "consents": 0, "poll_age_seconds": 21},
-  "chatgpt_credentials": false,
-  "model_selected": false,
+  "health": {
+    "status": "ok"
+  },
+  "database": {
+    "group_bound": false,
+    "participants": 0,
+    "consents": 0,
+    "poll_age_seconds": 25
+  },
+  "chatgpt_credentials": true,
+  "model_selected": true,
   "live_group_dialogue_verified": false,
   "avatar_sha256": "d15b72f26149d9e78612a1c2cbd8de97b7ac53e481fcb17851ed4a49837f6d7f",
   "cost_control": {
@@ -25,5 +36,19 @@
     "included_monthly_outbound_gb": 5,
     "outbound_overage_usd_per_gb": 0.15,
     "hard_total_bill_cap": false
+  },
+  "local_package_tests": {
+    "tests": 98,
+    "passed": 98,
+    "failed": 0
+  },
+  "credentials_file_mode": "0600",
+  "model": "gpt-6.1-sol",
+  "auth_mode": "chatgpt",
+  "model_probe": {
+    "completed": true,
+    "elapsed_ms": 4379,
+    "valid_plan": true,
+    "actions": 0
   }
 }
