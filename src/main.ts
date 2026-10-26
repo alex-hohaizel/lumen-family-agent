@@ -9,6 +9,7 @@ import {ChatRegistry} from './registry.js';
 import {ChatRouter,type ChatRuntime} from './router.js';
 import { prepareCredentials } from './bootstrap.js';
 import { ensureAvatar } from './profile.js';
+import {ensureStickerPack} from './sticker-pack.js';
 
 async function main(){
   const config=await loadConfig();requireRuntime(config);await prepareCredentials(config);await hostId(config.runtimeDir);
@@ -30,7 +31,10 @@ async function main(){
     {command:'privacy',description:'Як працює пам’ять групи'}
   ]});
   try{await ensureAvatar(telegram,config,bot);}catch(e){console.error(JSON.stringify({event:'profile_update_failed',code:errorCode(e)}));}
-  const registry=new ChatRegistry(db);const router=new ChatRouter(registry,config,telegram,bot);await router.init();
+  const registry=new ChatRegistry(db);await registry.init();
+  let pack:Awaited<ReturnType<typeof ensureStickerPack>>|undefined;const owner=(await registry.transport()).owner_user_id;
+  if(owner)try{pack=await ensureStickerPack(telegram,owner);console.log(JSON.stringify({event:'sticker_pack_ready',name:pack.name,count:pack.stickers.length}));}catch(e){console.error(JSON.stringify({event:'sticker_pack_failed',code:errorCode(e)}));}
+  const router=new ChatRouter(registry,config,telegram,bot);if(pack)router.setStickerPack(pack);await router.init();
   let running=true;let lastPoll=Date.now();
   const health=createServer(async (req,res)=>{
     if(req.url!=='/health'){res.writeHead(404).end();return;}
@@ -72,7 +76,9 @@ async function main(){
   const send=async()=>{while(running&&!leaseLost){await each('delivery_error',async r=>{await r.engine.scheduleDue();await r.delivery.next();});await delay(1100);}};
   console.log(JSON.stringify({event:'lumen_started',username:bot.username}));
   const compact=async()=>{while(running&&!leaseLost){await each('memory_error',r=>r.memory.compact());for(let i=0;i<60&&running&&!leaseLost;i++)await delay(1000);}};
-  await Promise.all([poll(),work(),send(),compact()]);health.close();lease.release();await db.close();
+  const mediaBusy=new Set<string>();const mediaPending=new Set<Promise<void>>();let mediaCursor=0;
+  const mediaWork=async()=>{while(running&&!leaseLost){const active=await router.active();const order=active.slice(mediaCursor).concat(active.slice(0,mediaCursor));for(const r of order){if(mediaBusy.has(r.chat.chat_id)||mediaBusy.size>=2)continue;mediaBusy.add(r.chat.chat_id);mediaCursor=(active.indexOf(r)+1)%active.length;let task:Promise<void>;task=(async()=>{if(!await r.images.next())await r.visual.next();})().catch(e=>console.error(JSON.stringify({event:'media_error',code:errorCode(e)}))).finally(()=>{mediaBusy.delete(r.chat.chat_id);mediaPending.delete(task);});mediaPending.add(task);}await delay(1500);}await Promise.allSettled(mediaPending);};
+  await Promise.all([poll(),work(),send(),compact(),mediaWork()]);health.close();lease.release();await db.close();
   if(leaseLost)process.exitCode=1;
 }
 main().catch(e=>{console.error(JSON.stringify({event:'startup_failed',code:/^[a-z_]+$/.test(e.message)?e.message:errorCode(e)}));process.exit(1);});

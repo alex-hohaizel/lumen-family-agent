@@ -1,7 +1,7 @@
 import {createHash} from 'node:crypto';
 import type {Config} from './config.js';
 import {ChatRegistry,type RegisteredChat} from './registry.js';
-import {state,one,queueText,type Database} from './db.js';
+import {state,one,queueText,applySchema,type Database} from './db.js';
 import {Lumen,type BotIdentity} from './engine.js';
 import {Telegram,type Update,type TGChat,type TGSticker} from './telegram.js';
 import {ChatGPTAuth,secureEqual} from './auth.js';
@@ -11,12 +11,17 @@ import {Memory} from './memory.js';
 import {callbackCommand,groupSetupKeys,validSetupPayload} from './ui.js';
 import {rememberSticker} from './presentation.js';
 import {GROUP_WELCOME} from './personality.js';
+import {VisualMemory} from './visual.js';
+import {ImageJobs} from './image-jobs.js';
+import {seedStickerPack,type LumenPack} from './sticker-pack.js';
 
-export interface ChatRuntime {chat:RegisteredChat;db:Database;engine:Lumen;delivery:Delivery;memory:Memory;}
+export interface ChatRuntime {chat:RegisteredChat;db:Database;engine:Lumen;delivery:Delivery;memory:Memory;visual:VisualMemory;images:ImageJobs;}
 export class ChatRouter {
   private runtimes=new Map<string,ChatRuntime>();
   private auth:ChatGPTAuth;
   private publicStickers?:Promise<TGSticker[]>;
+  private lumenPack?:LumenPack;
+  setStickerPack(pack:LumenPack){this.lumenPack=pack;}
   constructor(public registry:ChatRegistry,private config:Config,private telegram:Telegram,private bot:BotIdentity,private brainFactory?:(config:Config,chatId:string)=>Brain){this.auth=new ChatGPTAuth(config.runtimeDir);}
   async init(){
     await this.registry.init();
@@ -27,10 +32,12 @@ export class ChatRouter {
     let runtime=this.runtimes.get(chat.chat_id);
     if(runtime){runtime.chat=chat;return runtime;}
     const db=this.registry.database(chat);
+    await db.tx(applySchema);
     // Model selection is per group. Only the transport's token-refresh manager is shared.
     const initial=await state(db);const config={...this.config,model:initial.model||this.config.model};
     const brain=this.brainFactory?.(config,chat.chat_id) || new OpenAIModel(config,this.auth);
-    runtime={chat,db,engine:new Lumen(db,config,this.telegram,brain,this.bot,undefined,this.auth),delivery:new Delivery(db,this.telegram,config),memory:new Memory(db,brain,config.dailyTurnLimit || (config.authMode==='api'?200:0))};
+    const visual=new VisualMemory(db,this.telegram,brain);
+    runtime={chat,db,engine:new Lumen(db,config,this.telegram,brain,this.bot,undefined,this.auth),delivery:new Delivery(db,this.telegram,config),memory:new Memory(db,brain,config.dailyTurnLimit || (config.authMode==='api'?200:0)),visual,images:new ImageJobs(db,config,this.telegram,visual)};
     this.runtimes.set(chat.chat_id,runtime);
     if(!await one(db,'SELECT id FROM stickers LIMIT 1')){
       // A fixed public starter set is an asset, never imported memory from another group.
@@ -38,7 +45,10 @@ export class ChatRouter {
       const stickers=await this.publicStickers;
       if(stickers.length)await db.tx(async sql=>{for(const sticker of stickers)await rememberSticker(sql,sticker,null);});
     }
+    if(this.lumenPack)await seedStickerPack(db,this.lumenPack);
     await db.query("UPDATE inbox SET status='pending' WHERE status='processing'");
+    await db.query("UPDATE attachments SET status='pending' WHERE status='processing'");
+    await db.query("UPDATE image_jobs SET status='uncertain',error_code='restart_during_generation' WHERE status='processing'");
     await db.query("UPDATE outbox SET status='uncertain',error_code='restart_during_delivery' WHERE status='sending'");
     return runtime;
   }
@@ -59,6 +69,16 @@ export class ChatRouter {
     return runtime;
   }
   async receive(update:Update){
+    if(update.poll_answer||update.poll){
+      const answer=update.poll_answer;const id=answer?.poll_id || update.poll!.id;
+      for(const runtime of await this.active()){
+        const poll=await one(runtime.db,'SELECT * FROM polls WHERE poll_id=$1',[id]);if(!poll)continue;
+        await runtime.db.tx(async sql=>{const s=await state(sql,true);if(s.paused||s.memory_revision!==poll.revision||await one(sql,'SELECT update_id FROM receipts WHERE update_id=$1',[update.update_id]))return;await sql.query('INSERT INTO receipts(update_id) VALUES($1)',[update.update_id]);
+          if(update.poll?.is_closed)await sql.query('UPDATE polls SET closed=true WHERE poll_id=$1',[id]);
+          if(answer?.user&&!answer.user.is_bot&&answer.option_ids.every(i=>Number.isInteger(i)&&i>=0&&i<poll.options.length))await sql.query('INSERT INTO poll_votes(poll_id,user_id,name,option_ids) VALUES($1,$2,$3,$4) ON CONFLICT(poll_id,user_id) DO UPDATE SET name=excluded.name,option_ids=excluded.option_ids,updated_at=now()',[id,String(answer.user.id),[answer.user.first_name,answer.user.last_name].filter(Boolean).join(' '),JSON.stringify(answer.option_ids)]);
+        });return;
+      }return;
+    }
     const cb=update.callback_query;
     if(cb){
       // Acknowledge immediately, including stale or unrecognized buttons.
@@ -71,7 +91,12 @@ export class ChatRouter {
       if(choiceId){
         const choice=await one(runtime.db,"SELECT * FROM choices WHERE id=$1 AND created_at>now()-interval '1 day'",[choiceId]);const s=await state(runtime.db);
         if(!choice||s.paused||choice.revision!==s.memory_revision||choice.topic_id!==String(cb.message.message_thread_id || 0))return;
-        await runtime.engine.receive({update_id:update.update_id,message:{message_id:-update.update_id,chat:cb.message.chat,date:Math.floor(Date.now()/1000),from:cb.from,text:choice.label,message_thread_id:cb.message.message_thread_id,reply_to_message:cb.message}});return;
+        if(choice.audience==='personal'&&choice.target_user_id!==String(cb.from.id))return;
+        if(await one(runtime.db,'SELECT update_id FROM receipts WHERE update_id=$1',[update.update_id]))return;
+        const menu=choice.menu_id || choice.id;
+        await runtime.db.query('INSERT INTO choice_votes(menu_id,user_id,name,label) VALUES($1,$2,$3,$4) ON CONFLICT(menu_id,user_id) DO UPDATE SET label=excluded.label,name=excluded.name,updated_at=now()',[menu,String(cb.from.id),[cb.from.first_name,cb.from.last_name].filter(Boolean).join(' ').slice(0,80),choice.label]);
+        const votes=await runtime.db.query('SELECT user_id,name,label FROM choice_votes WHERE menu_id=$1 ORDER BY updated_at',[menu]);
+        await runtime.engine.receive({update_id:update.update_id,message:{message_id:-update.update_id,chat:cb.message.chat,date:Math.floor(Date.now()/1000),from:cb.from,text:choice.label,message_thread_id:cb.message.message_thread_id,reply_to_message:cb.message,lumen_choice:{menu_id:menu,question:choice.question || cb.message.text || '',audience:choice.audience,selected:votes.rows as {user_id:string;name:string;label:string}[]}}});return;
       }
       const administrator=String(cb.from.id)===registered.owner_id || await this.admin(registered.chat_id,String(cb.from.id));
       await runtime.engine.receive({update_id:update.update_id,message:{message_id:cb.message.message_id,chat:cb.message.chat,date:Math.floor(Date.now()/1000),from:cb.from,text:command!,message_thread_id:cb.message.message_thread_id}},administrator);
@@ -85,7 +110,7 @@ export class ChatRouter {
       if(['left','kicked'].includes(status)){
         if(prior){await this.registry.disable(id);const runtime=await this.runtime({...prior,enabled:false});await runtime.db.tx(async sql=>{
           await sql.query("UPDATE app_state SET paused=true,memory_revision=memory_revision+1 WHERE id=1");
-          await sql.query('DELETE FROM inbox');await sql.query('DELETE FROM choices');await sql.query('DELETE FROM pending_intents');await sql.query("DELETE FROM outbox WHERE status<>'sent'");
+          await sql.query('DELETE FROM inbox');await sql.query('DELETE FROM choices');await sql.query('DELETE FROM pending_intents');await sql.query('DELETE FROM dialogues');await sql.query('DELETE FROM image_jobs');await sql.query("DELETE FROM outbox WHERE status<>'sent'");
           await sql.query("UPDATE reminders SET status='pending' WHERE status='queued'");
         });}return;
       }
