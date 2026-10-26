@@ -11,19 +11,23 @@ import { prepareCredentials } from './bootstrap.js';
 import { ensureAvatar } from './profile.js';
 import {ensureStickerPack} from './sticker-pack.js';
 
+let startupStage='configuration';
 async function main(){
   const config=await loadConfig();requireRuntime(config);await prepareCredentials(config);await hostId(config.runtimeDir);
+  startupStage='database_lease';
   const db=new Postgres(config.databaseUrl);
   // One persistent connection owns the bot lifecycle. A second replica exits instead of racing the poller or refresh token.
   const lease=await db.pool.connect();
   const {rows}=await lease.query('SELECT pg_try_advisory_lock(719463201) AS locked');
   if(!rows[0]?.locked)throw new Error('another_instance_running');
   let leaseLost=false;lease.on('error',()=>{leaseLost=true;});
+  startupStage='telegram_identity';
   const telegram=new Telegram(config.token);
   const bot=await telegram.call<{id:number;username:string;can_read_all_group_messages?:boolean}>('getMe');
   if(bot.username.toLowerCase()!=='lumen_family_agent')throw new Error('unexpected_telegram_bot');
   const webhook=await telegram.call<{url:string}>('getWebhookInfo');
   if(webhook.url)throw new Error('existing_webhook_remove_explicitly');
+  startupStage='telegram_profile';
   await telegram.call('setMyName',{name:'Люмен'});
   await telegram.call('setMyDescription',{description:'Люмен — співрозмовник для ваших груп: допомога, ігри, опитування, нотатки й нагадування. Звертайтеся на ім’я або через @згадку. У кожної групи окрема пам’ять.'});
   await telegram.call('setMyCommands',{commands:[
@@ -31,9 +35,12 @@ async function main(){
     {command:'privacy',description:'Як працює пам’ять групи'}
   ]});
   try{await ensureAvatar(telegram,config,bot);}catch(e){console.error(JSON.stringify({event:'profile_update_failed',code:errorCode(e)}));}
+  startupStage='registry_migration';
   const registry=new ChatRegistry(db);await registry.init();
+  startupStage='sticker_pack';
   let pack:Awaited<ReturnType<typeof ensureStickerPack>>|undefined;const owner=(await registry.transport()).owner_user_id;
   if(owner)try{pack=await ensureStickerPack(telegram,owner);console.log(JSON.stringify({event:'sticker_pack_ready',name:pack.name,count:pack.stickers.length}));}catch(e){console.error(JSON.stringify({event:'sticker_pack_failed',code:errorCode(e)}));}
+  startupStage='group_runtimes';
   const router=new ChatRouter(registry,config,telegram,bot);if(pack)router.setStickerPack(pack);await router.init();
   let running=true;let lastPoll=Date.now();
   const health=createServer(async (req,res)=>{
@@ -81,4 +88,4 @@ async function main(){
   await Promise.all([poll(),work(),send(),compact(),mediaWork()]);health.close();lease.release();await db.close();
   if(leaseLost)process.exitCode=1;
 }
-main().catch(e=>{console.error(JSON.stringify({event:'startup_failed',code:/^[a-z_]+$/.test(e.message)?e.message:errorCode(e)}));process.exit(1);});
+main().catch(e=>{console.error(JSON.stringify({event:'startup_failed',stage:startupStage,native_code:/^[A-Za-z0-9_]{1,60}$/.test(e.code||'')?e.code:undefined,frames:typeof e.stack==='string'?e.stack.split('\n').slice(1,4):undefined,code:/^[a-z_]+$/.test(e.message)?e.message:errorCode(e)}));process.exit(1);});
