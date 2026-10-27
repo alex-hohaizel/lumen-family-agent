@@ -65,6 +65,15 @@ export class ChatRouter {
     const result=await new OpenAIModel(config,this.auth).searchWeb('Find the official Node.js website. Return its URL.');
     return {searched:result.searched,sources:result.sources};
   }
+  async probeFreshnessChoice(){
+    const runtime=(await this.active())[0];const config={...(runtime?.engine.config || this.config),webSearch:true};
+    if(runtime){const {reserveModelCall}=await import('./model-budget.js');await reserveModelCall(runtime.db,config);}
+    let searched=false;
+    const model=new OpenAIModel(config,this.auth,undefined,event=>{if(String(event.type).startsWith('response.web_search_call')||(event.response?.output || []).some((x:any)=>x.type==='web_search_call')||event.item?.type==='web_search_call')searched=true;});
+    const plan=await model.plan({current:'Люмен, яка стабільна версія Node.js доступна для завантаження?',context:JSON.stringify({now:new Date().toISOString(),capabilities:{web_search:true},available_tools:runtime?.agent.tools.catalog() || []}),instructions:'Це перевірка вибору інструмента для звичайного публічного питання. Жодних особистих даних, повідомлень у Telegram чи зовнішніх записів.',search:true});
+    const selected=plan.actions.filter(a=>a.kind==='tool').map(a=>a.name);if(!searched&&!selected.some(n=>n==='web.search'||n==='web.read'))throw new Error('freshness_search_not_selected');
+    return {automatic_search_selected:true,native_search_executed:searched,selected_tools:selected};
+  }
   private async owner(uid:string){return (await this.registry.transport()).owner_user_id===uid;}
   private async admin(chatId:string,uid:string){
     try{const member=await this.telegram.call<{status:string}>('getChatMember',{chat_id:chatId,user_id:Number(uid)});return ['creator','administrator'].includes(member.status);}catch{return false;}

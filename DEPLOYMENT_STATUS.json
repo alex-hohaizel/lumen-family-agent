@@ -1,14 +1,14 @@
 {
   "version": "1.5.0",
-  "status": "verified_ready_for_publication",
-  "published": false,
+  "status": "live_followup_verified_pending_deploy",
+  "published": true,
   "repository": "alex-hohaizel/lumen-family-agent",
   "branch": "main",
   "render_service_id": "srv-dbfl0je7bikc73dvg0qg",
-  "verified_live_commit": "36d421ec055cac1a2807f270854f8235fda87336",
-  "verified_live_version": "1.4.0",
+  "verified_live_commit": "abe06eeea7a1c340634b9b3ee98527885261118e",
+  "verified_live_version": "1.5.0",
   "tests": {
-    "passed": 237,
+    "passed": 239,
     "failed": 0,
     "suites": 19,
     "render_build": false
@@ -20,5 +20,6 @@
     "motion_version": 2
   },
   "new_paid_resources": false,
-  "live_verification_pending": true
+  "live_verification_pending": true,
+  "native_search_enabled": true
 }

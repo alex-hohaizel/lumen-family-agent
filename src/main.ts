@@ -87,7 +87,7 @@ async function main(){
   const mediaBusy=new Set<string>();const mediaPending=new Set<Promise<void>>();let mediaCursor=0;
   const mediaWork=async()=>{while(running&&!leaseLost){const active=await router.active();const order=active.slice(mediaCursor).concat(active.slice(0,mediaCursor));for(const r of order){if(mediaBusy.has(r.chat.chat_id)||mediaBusy.size>=2)continue;mediaBusy.add(r.chat.chat_id);mediaCursor=(active.indexOf(r)+1)%active.length;let task:Promise<void>;task=(async()=>{if(!await r.images.next())await r.visual.next();})().catch(e=>console.error(JSON.stringify({event:'media_error',code:errorCode(e)}))).finally(()=>{mediaBusy.delete(r.chat.chat_id);mediaPending.delete(task);});mediaPending.add(task);}await delay(1500);}await Promise.allSettled(mediaPending);};
   const automationWork=async()=>{while(running&&!leaseLost){await each('agent_error',async r=>{if(!await r.agent.next())await r.monitors.next();});await delay(1500);}};
-  const check=runtimeChecks(config.runtimeDir,()=>router.probeNativeSearch()).then(result=>{checks=result;}).catch(()=>{checks={status:'failed'};console.error(JSON.stringify({event:'runtime_checks_failed'}));});
+  const check=runtimeChecks(config.runtimeDir,()=>router.probeNativeSearch(),()=>router.probeFreshnessChoice()).then(result=>{checks=result;}).catch(()=>{checks={status:'failed'};console.error(JSON.stringify({event:'runtime_checks_failed'}));});
   await Promise.all([poll(),work(),send(),compact(),mediaWork(),automationWork(),check]);await browsers.close();health.close();lease.release();await db.close();
   if(leaseLost)process.exitCode=1;
 }

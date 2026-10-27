@@ -1,3 +1,4 @@
+import {gzipSync,brotliCompressSync} from 'node:zlib';
 import {describe,it,before,after,beforeEach} from 'node:test';
 import assert from 'node:assert/strict';
 import {mkdtemp,rm,stat} from 'node:fs/promises';
@@ -5,7 +6,7 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {randomUUID} from 'node:crypto';
 import {TestDB,harness,paired,message,FakeBrain} from './helpers.js';
-import {publicIP,publicURL,type HTTPRequest} from '../src/safe-http.js';
+import {publicIP,publicURL,decodedHTTP,type HTTPRequest} from '../src/safe-http.js';
 import {pageContent,readWeb} from '../src/web.js';
 import {MCPClient} from '../src/mcp-client.js';
 import {ConnectorVault} from '../src/connector-vault.js';
@@ -18,6 +19,14 @@ import {ConfigSchema} from '../src/config.js';
 import {OpenAIModel} from '../src/model.js';
 
 describe('Зовнішні інструменти: мережа й протокол',()=>{
+ it('декодує gzip/Brotli відповіді навіть коли сервер ігнорує identity, з обмеженням розпакованого розміру',()=>{
+   for(const [encoding,encode] of [['gzip',gzipSync],['br',brotliCompressSync]] as const){const r=decodedHTTP({url:'https://example.com',status:200,headers:{'content-encoding':encoding},body:encode(Buffer.from('Example Domain'))},100);assert.equal(r.body.toString(),'Example Domain');assert.equal(r.headers['content-encoding'],undefined);}
+   assert.throws(()=>decodedHTTP({url:'https://example.com',status:200,headers:{'content-encoding':'gzip'},body:gzipSync(Buffer.from('a'.repeat(10000)))},100),/oversized_compressed_response/);
+ });
+ it('нативний пошук збирає джерела з потокової анотації та текстового посилання',async()=>{
+   const config=ConfigSchema.parse({authMode:'api',apiKey:'test',model:'account-model',webSearch:true});const model=new OpenAIModel(config,undefined,async()=>new Response(['data: '+JSON.stringify({type:'response.web_search_call.completed'}),'data: '+JSON.stringify({type:'response.output_text.annotation.added',annotation:{type:'url_citation',url:'https://example.org'}}),'data: '+JSON.stringify({type:'response.output_text.delta',delta:'Офіційний сайт: https://nodejs.org/.'}),'data: '+JSON.stringify({type:'response.completed',response:{output:[]}})].join('\n\n')+'\n\n'));const r=await model.searchWeb('офіційний сайт');assert.deepEqual(r.sources,['https://example.org','https://nodejs.org/']);
+ });
+
  it('відкидає локальні, приватні, закодовані IP та URL зі сторонніми схемами',()=>{
    for(const value of ['127.0.0.1','10.0.2.1','169.254.169.254','192.168.1.1','172.20.0.1','100.64.0.1','::1','fc00::1','::ffff:127.0.0.1'])assert.equal(publicIP(value),false,value);
    for(const value of ['http://2130706433','http://0x7f000001','http://[::1]','file:///etc/passwd','https://name:secret@example.com','http://metadata.internal','http://localhost','http://example.com:8080'])assert.throws(()=>publicURL(value));

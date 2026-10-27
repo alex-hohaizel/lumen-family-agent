@@ -2,6 +2,7 @@ import {lookup} from 'node:dns/promises';
 import {isIP} from 'node:net';
 import https from 'node:https';
 import http from 'node:http';
+import {gunzipSync,inflateSync,brotliDecompressSync} from 'node:zlib';
 
 export class ToolError extends Error {constructor(public code:string){super(code);}}
 export function publicIP(ip:string):boolean {
@@ -21,6 +22,16 @@ export function publicURL(input:string){
   u.hash='';return u;
 }
 export interface HTTPResult {url:string;status:number;headers:Record<string,string>;body:Buffer;}
+export function decodedHTTP(response:HTTPResult,maxBytes:number):HTTPResult {
+  const encodings=(response.headers['content-encoding'] || '').toLowerCase().split(',').map(v=>v.trim()).filter(v=>v&&v!=='identity');
+  if(!encodings.length)return response;if(encodings.length>3)throw new ToolError('unsupported_content_encoding');
+  let body=response.body;
+  for(const encoding of encodings.reverse())try{
+    const options={maxOutputLength:maxBytes};
+    body=encoding==='gzip'?gunzipSync(body,options):encoding==='deflate'?inflateSync(body,options):encoding==='br'?brotliDecompressSync(body,options):(()=>{throw new ToolError('unsupported_content_encoding');})();
+  }catch(e){if(e instanceof ToolError)throw e;throw new ToolError('invalid_or_oversized_compressed_response');}
+  const headers={...response.headers};delete headers['content-encoding'];delete headers['content-length'];return {...response,headers,body};
+}
 export type HTTPRequest=(url:string,options?:{method?:string;body?:string;headers?:Record<string,string>;maxBytes?:number;timeout?:number;redirects?:number})=>Promise<HTTPResult>;
 export const safeRequest:HTTPRequest=async(input,options={})=>{
   let url=publicURL(input);let method=options.method || 'GET';let body=options.body;
@@ -46,7 +57,7 @@ export const safeRequest:HTTPRequest=async(input,options={})=>{
       if(next.origin!==url.origin&&Object.keys(options.headers || {}).some(h=>/authorization|cookie|api.key/i.test(h)))throw new ToolError('authenticated_redirect_blocked');
       if(response.status===303){method='GET';body=undefined;}url=next;continue;
     }
-    return response;
+    return decodedHTTP(response,options.maxBytes || 2500000);
   }
   throw new ToolError('too_many_redirects');
 };
