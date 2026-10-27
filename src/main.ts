@@ -8,7 +8,7 @@ import { hostId } from './auth.js';
 import {ChatRegistry} from './registry.js';
 import {ChatRouter,type ChatRuntime} from './router.js';
 import { prepareCredentials } from './bootstrap.js';
-import { ensureAvatar } from './profile.js';
+import { ensureAvatar,ensureTextProfile } from './profile.js';
 import {ensureStickerPack} from './sticker-pack.js';
 
 let startupStage='configuration';
@@ -28,12 +28,7 @@ async function main(){
   const webhook=await telegram.call<{url:string}>('getWebhookInfo');
   if(webhook.url)throw new Error('existing_webhook_remove_explicitly');
   startupStage='telegram_profile';
-  await telegram.call('setMyName',{name:'Люмен'});
-  await telegram.call('setMyDescription',{description:'Люмен — співрозмовник для ваших груп: допомога, ігри, опитування, нотатки й нагадування. Звертайтеся на ім’я або через @згадку. У кожної групи окрема пам’ять.'});
-  await telegram.call('setMyCommands',{commands:[
-    {command:'help',description:'Як спілкуватися з Люменом'},
-    {command:'privacy',description:'Як працює пам’ять групи'}
-  ]});
+  try{await ensureTextProfile(telegram,config,bot);}catch(e:any){console.error(JSON.stringify({event:'text_profile_deferred',code:/^[a-z_0-9]+$/.test(e.code||'')?e.code:errorCode(e)}));}
   try{await ensureAvatar(telegram,config,bot);}catch(e){console.error(JSON.stringify({event:'profile_update_failed',code:errorCode(e)}));}
   startupStage='registry_migration';
   const registry=new ChatRegistry(db);await registry.init();

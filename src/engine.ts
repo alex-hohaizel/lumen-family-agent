@@ -336,7 +336,7 @@ export class Lumen {
         }
         if(plan.actions.some(x=>['history','inspect','view_media','view_avatar'].includes(x.kind)))throw new ModelError('history_loop');
       }
-      if(proactive){plan.actions=[];plan.presentation=undefined;}
+      if(proactive){plan.actions=[];plan.presentation=undefined;if(plan.reply)plan.dialogue ||= {kind:'question',audience:'group',expecting:plan.reply.slice(0,2000)};}
       if((followup||proactive)&&plan.engagement?.respond===false){await this.discard(job.update_id);return true;}
       if(plan.actions.filter(a=>a.kind==='poll'||a.kind==='quiz').length>1)throw new ModelError('one_poll_per_turn');
       for(const action of plan.actions)authorizeAction(action,intent,direct||Boolean(game),this.config,inherited);

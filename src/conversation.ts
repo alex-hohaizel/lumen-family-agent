@@ -14,6 +14,13 @@ export async function continuation(sql:SQL,m:Message,revision:number){
   }
   const pending=await one(sql,"SELECT * FROM pending_intents WHERE user_id=$1 AND topic_id=$2 AND revision=$3 AND created_at>now()-interval '10 minutes'",[uid,topic,revision]);
   if(pending)return {question:pending.request_text,allowed:pending.allowed,audience:'personal',kind:'question',user_id:uid};
+  // A clear follow-up can refer to a statement, not only to a question.
+  const text=(m.text || m.caption || '').trim();
+  if(/^(?:а (?:як|чому|що|можна|якщо|ти|це)|чому|тобто|поясни|детальніше|докладніше|не зрозумі|а зроби|а покажи|звідки|що ти маєш на увазі)/iu.test(text)){
+    const previous=await one(sql,"SELECT a.body AS question,a.created_at,u.user_id FROM messages a JOIN messages u ON u.id=a.source_message_id WHERE a.role='assistant' AND a.topic_id=$1 AND a.created_at>now()-interval '3 minutes' ORDER BY a.id DESC LIMIT 1",[topic]);
+    if(previous){const later=await one(sql,'SELECT count(*) AS n FROM messages WHERE topic_id=$1 AND created_at>$2',[topic,previous.created_at]);if(Number(later?.n || 0)<=4)return {question:previous.question,allowed:[],audience:previous.user_id===uid?'personal':'group',kind:'question',user_id:uid};}
+  }
+
 }
 export async function helpfulCandidate(sql:SQL,m:Message,s:Record<string,any>,timezone:string){
   if(!s.open_group||s.proactive_mode==='off'||m.reply_to_message||Date.now()-m.date*1000>90000)return false;
