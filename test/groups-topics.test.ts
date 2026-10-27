@@ -41,14 +41,19 @@ describe('Окремі групи, природні звернення та те
     const rows=(await r.db.query('SELECT body FROM outbox')).rows;assert.equal(rows.length,1);assert.match(rows[0]!.body.text,/Привіт, я Люмен/);assert.equal(rows[0]!.body.replyMarkup,undefined);
     const s=await state(r.db);assert.equal(s.open_group,true);assert.equal(s.mention_only,true);assert.equal(s.paused,false);
   });
+  it('перезапуск оголошує нову версію в наявній групі один раз, навіть без старого onboarding',async()=>{
+    const a=await add();await a.db.query('DELETE FROM onboarding_chats');await a.db.query('DELETE FROM release_notices');await a.db.query('DELETE FROM outbox');
+    const restart=()=>new ChatRouter(registry,h.config,h.tg as unknown as Telegram,bot,()=>brains.get('-200')!);
+    await restart().init();await restart().init();const rows=(await a.db.query('SELECT * FROM outbox')).rows;assert.equal(rows.length,1);assert.match(rows[0]!.body.text,/вуха ті самі/);assert.equal(rows[0]!.service,true);
+  });
   it('не підключає чужу групу чи чужий приватний акаунт за підробленим посиланням',async()=>{
     await router.receive({update_id:seq++,message:{...msg('',-300,22).message!,new_chat_members:[{id:999,first_name:'Люмен'}]}});
     await router.receive(message(`/start ${setupPayload(h.config)}`,22,22,'private'));
     assert.equal(await registry.find('-300'),undefined);assert.equal((await registry.transport()).owner_user_id,'11');assert.equal((await registry.list()).length,0);
   });
   it('більше двох учасників можуть знайомитися; звичайна розмова зберігається мовчки',async()=>{
-    const a=await add();for(let i=0;i<24;i++)await router.receive(msg(`Розмова ${i}`,-200,11+i%4));
-    assert.equal((await a.db.query('SELECT * FROM messages')).rows.length,24);assert.equal((await a.db.query('SELECT * FROM inbox')).rows.length,0);assert.equal(brains.get('-200')!.calls.length,0);assert.equal((await a.db.query('SELECT * FROM outbox')).rows.length,0);
+    const a=await add();await a.db.query('UPDATE app_state SET quiet_start=0,quiet_end=0');for(let i=0;i<24;i++)await router.receive(msg(`Розмова ${i}`,-200,11+i%4));
+    assert.equal((await a.db.query('SELECT * FROM messages')).rows.length,24);assert.equal((await a.db.query("SELECT * FROM inbox WHERE payload->'engagement'->>'reason'<>'ambient'")).rows.length,0);assert.equal(brains.get('-200')!.calls.length,0);assert.equal((await a.db.query('SELECT * FROM outbox')).rows.length,0);
     await ask(a,msg('А що скажеш, Люмен?',-200,44));assert.equal(brains.get('-200')!.calls.length,1);assert.equal((await state(a.db)).participants.length,5);
   });
   it('два чати з однаковими учасниками не обмінюються повідомленнями, нотатками чи стилями',async()=>{
@@ -61,6 +66,20 @@ describe('Окремі групи, природні звернення та те
     assert.match(ac.context,/альфа/);assert.doesNotMatch(ac.context,/бета/);assert.match(bc.context,/бета/);assert.doesNotMatch(bc.context,/альфа/);
     assert.match(ac.instructions!,/корот/);assert.match(bc.instructions!,/послідовно з конкретними прикладами/);assert.equal((await one(a.db,'SELECT length_mode FROM participant_preferences'))!.length_mode,'short');assert.equal((await one(b.db,'SELECT length_mode FROM participant_preferences'))!.length_mode,'detailed');assert.ok(!ac.context.includes(h.config.token));assert.ok(!ac.context.includes(h.config.pairCodeHash));
     assert.equal((await a.engine.history('бета')).length,0);assert.equal((await b.engine.history('альфа')).length,0);
+  });
+  it('самостійна оцінка повернення до старої теми не читає сусідню групу',async()=>{
+    const a=await add(),b=await add(-300);
+    for(const [runtime,secret,id] of [[a,'Таємниця альфа',90101],[b,'Таємниця бета',90102]] as const){await runtime.db.query('UPDATE app_state SET quiet_start=0,quiet_end=0');await runtime.db.query("INSERT INTO messages(telegram_id,user_id,author,role,body,created_at) VALUES($1,'999','Люмен','assistant',$2,now()-interval '2 days')",[id,secret+' про зефір']);}
+    await router.receive(msg('Знову обговорюємо зефір',-200));await router.receive(msg('Знову обговорюємо зефір',-300));
+    for(const runtime of [a,b]){await runtime.db.query('UPDATE inbox SET available_at=now()');await runtime.engine.processNext();}
+    const ac=brains.get('-200')!.calls[0]!.context,bc=brains.get('-300')!.calls[0]!.context;assert.match(ac,/Таємниця альфа/);assert.doesNotMatch(ac,/Таємниця бета/);assert.match(bc,/Таємниця бета/);assert.doesNotMatch(bc,/Таємниця альфа/);
+  });
+  it('людська реакція стає контекстом правильної теми, а не обов’язковим зверненням',async()=>{
+    const a=await add(),b=await add(-300);await a.db.query('UPDATE app_state SET quiet_start=0,quiet_end=0');await b.db.query('UPDATE app_state SET quiet_start=0,quiet_end=0');const original=msg('Ось наша кумедна історія',-200,11,101);await router.receive(original);
+    const reaction:Update={update_id:seq++,message_reaction:{chat:original.message!.chat,message_id:original.message!.message_id,date:Math.floor(Date.now()/1000),user:{id:22,first_name:'Олена'},old_reaction:[],new_reaction:[{type:'emoji',emoji:'🤣'}]}};
+    await router.receive(reaction);await router.receive(reaction);const row=await one(a.db,"SELECT payload FROM inbox WHERE status='pending'");assert.equal(row!.payload.message.lumen_event.kind,'reaction');assert.equal(row!.payload.message.message_thread_id,101);assert.equal(row!.payload.engagement.reason,'ambient');assert.equal(addressed(row!.payload.message,bot),false);
+    await router.receive({...reaction,update_id:seq++,message_reaction:{...reaction.message_reaction!,chat:{id:-300,type:'supergroup'}}});assert.equal((await b.db.query('SELECT * FROM inbox')).rows.length,0);
+    await router.receive({...reaction,update_id:seq++,message_reaction:{...reaction.message_reaction!,user:undefined}});assert.equal((await a.db.query("SELECT * FROM messages WHERE body LIKE '[Зміна реакції%'")).rows.length,1);
   });
   it('не підхоплює public-таблиці, якщо в групі бракує власної таблиці',async()=>{
     const a=await add();await root.query("INSERT INTO memories(content,author_id) VALUES('Чужий секрет із public','11')");
@@ -99,7 +118,7 @@ describe('Окремі групи, природні звернення та те
   it('окремі теми ведуть дві гри; стороння репліка не стає ходом',async()=>{
     const a=await add();await router.receive(msg('/game twenty',-200,11,101));await router.receive(msg('/game story',-200,11,202));
     await migrate(a.db);assert.equal((await a.db.query("SELECT * FROM games WHERE status='active'")).rows.length,2);
-    await router.receive(msg('Це тварина?',-200,11,101));assert.equal((await a.db.query('SELECT * FROM inbox')).rows.length,0);
+    await router.receive(msg('Це тварина?',-200,11,101));assert.equal((await a.db.query("SELECT * FROM inbox WHERE payload->'engagement'->>'reason'<>'ambient'")).rows.length,0);assert.equal(brains.get('-200')!.calls.length,0);
     await router.receive(msg('/stopgame',-200,11,101));assert.equal((await one(a.db,"SELECT status FROM games WHERE topic_id='101'"))!.status,'stopped');assert.equal((await one(a.db,"SELECT status FROM games WHERE topic_id='202'"))!.status,'active');
   });
   it('можна попросити нагадування під час гри без перетворення прохання на хід',async()=>{
@@ -157,7 +176,7 @@ describe('Окремі групи, природні звернення та те
   });
   it('підхоплює стікери лише у своєму чаті та не відправляє їх під час фонового читання',async()=>{
     const a=await add(),b=await add(-300);const incoming=msg('',-200,22,101);incoming.message!.sticker={file_id:'group_alpha_sticker',file_unique_id:'alpha_unique',emoji:'🙂',type:'regular'};await router.receive(incoming);
-    assert.equal((await a.db.query('SELECT * FROM stickers')).rows.length,1);assert.equal((await b.db.query('SELECT * FROM stickers')).rows.length,0);assert.equal((await a.db.query('SELECT * FROM inbox')).rows.length,0);
+    assert.equal((await a.db.query('SELECT * FROM stickers')).rows.length,1);assert.equal((await b.db.query('SELECT * FROM stickers')).rows.length,0);assert.equal((await a.db.query('SELECT * FROM outbox')).rows.length,0);assert.equal(brains.get('-200')!.calls.length,0);
     const sticker=(await one(a.db,'SELECT id FROM stickers'))!;brains.get('-200')!.replies.push({reply:'',actions:[],presentation:{sticker_id:Number(sticker.id)}});await ask(a,msg('Люмен, привіт',-200,11,101));await a.delivery.next();assert.deepEqual(h.tg.stickers,[{chatId:'-200',fileId:'group_alpha_sticker',threadId:101}]);
   });
   it('не допускає частих реакцій та стримує їх у серйозних темах',async()=>{

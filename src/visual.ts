@@ -38,13 +38,17 @@ export class VisualMemory {
     }
     return {images,mode:images.length?mode:'unavailable'};
   }
-  async prepare(m:Message,sourceId:number){
+  async prepare(m:Message,sourceId:number,includeRecent=false){
     const rows=await this.db.query(`SELECT a.id,a.kind,a.file_id,a.mime,a.metadata,a.description FROM attachments a JOIN messages m ON m.id=a.source_message_id WHERE a.source_message_id=$1 OR ($2::bigint IS NOT NULL AND m.telegram_id=$2 AND m.role='user') OR ($3::text IS NOT NULL AND a.metadata->>'album'=$3) ORDER BY a.id LIMIT 8`,[sourceId,m.reply_to_message?.message_id || null,m.media_group_id || null]);
+    if(includeRecent){
+      const recent=await this.db.query("SELECT a.id,a.kind,a.file_id,a.mime,a.metadata,a.description,m.author,m.user_id FROM attachments a JOIN messages m ON m.id=a.source_message_id WHERE a.topic_id=$1 AND m.created_at>now()-interval '2 minutes' AND a.revision=$2 ORDER BY a.id DESC LIMIT 3",[String(m.message_thread_id || 0),(await state(this.db)).memory_revision]);
+      rows.rows=Array.from(new Map([...rows.rows,...recent.rows].map(x=>[String(x.id),x])).values()).slice(0,6);
+    }
     return this.load(rows.rows);
   }
   async load(rows:Record<string,any>[]){
     const images:string[]=[],items:Record<string,any>[]=[];
-    for(const row of rows){const f=await this.frames(row);items.push({id:row.id,kind:row.kind,description:row.description,visual_mode:f.mode,frames:f.images.length});images.push(...f.images);if(images.length>=12)break;}
+    for(const row of rows){const f=await this.frames(row);items.push({id:row.id,kind:row.kind,description:row.description,author:row.author,user_id:row.user_id,visual_mode:f.mode,frames:f.images.length});images.push(...f.images);if(images.length>=12)break;}
     return {images:images.slice(0,12),items};
   }
   async view(ids:number[]){const rows=await this.db.query('SELECT * FROM attachments WHERE id=ANY($1::bigint[]) ORDER BY id LIMIT 6',[ids]);return this.load(rows.rows);}

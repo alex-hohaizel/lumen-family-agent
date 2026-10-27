@@ -56,14 +56,14 @@ export async function queueAnimation(sql:SQL,asset:'waving'|'happy'|'thinking',r
 export async function pauseMemory(sql:SQL){
   await sql.query("UPDATE app_state SET paused=true,consent='[]',memory_revision=memory_revision+1 WHERE id=1");
   await sql.query("UPDATE reminders SET status='pending' WHERE status='queued'");
-  for(const table of ['inbox','outbox','choices','choice_votes','pending_intents','dialogues'])await sql.query(`DELETE FROM ${table}`);
+  for(const table of ['inbox','outbox','choices','choice_votes','pending_intents','dialogues','topic_attention'])await sql.query(`DELETE FROM ${table}`);
   await sql.query("UPDATE image_jobs SET cancelled=true,status='cancelled',updated_at=now() WHERE status IN ('pending','processing','ready')");
   const s=await state(sql);
   await sql.query("UPDATE attachments SET revision=$1,status=CASE WHEN status='processing' THEN 'pending' ELSE status END",[s.memory_revision]);
 }
 export async function eraseAll(sql: SQL) {
   // Remove all derived data, generated drafts, pending deliveries and attachment IDs too.
-  for (const table of ['image_jobs','poll_votes','polls','avatars','attachments','dialogues','choice_votes','participant_preferences','memories','rules','games','reminders','skills','episodes','stickers','choices','pending_intents','messages','outbox','inbox','topics','members']) await sql.query(`DELETE FROM ${table}`);
+  for (const table of ['topic_attention','image_jobs','poll_votes','polls','avatars','attachments','dialogues','choice_votes','participant_preferences','memories','rules','games','reminders','skills','episodes','stickers','choices','pending_intents','messages','outbox','inbox','topics','members']) await sql.query(`DELETE FROM ${table}`);
   await sql.query(`UPDATE app_state SET memory_revision=memory_revision+1, character='', mode=CASE WHEN mention_only THEN 'quiet' ELSE 'social' END, since_bot=0,last_social_at=NULL,participants=CASE WHEN open_group THEN '[]'::jsonb ELSE participants END WHERE id=1`);
   await sql.query('DELETE FROM characters');
 }
@@ -72,7 +72,7 @@ export async function forgetPhrase(sql: SQL, phrase: string) {
   // Clear all derived stories/rules/drafts to avoid retaining paraphrases of the removed source.
   await sql.query(`DELETE FROM messages WHERE strpos(lower(body),lower($1)) > 0`, [phrase]);
   await sql.query("DELETE FROM messages WHERE role='assistant'");
-  for (const table of ['image_jobs','poll_votes','polls','avatars','attachments','dialogues','choice_votes','participant_preferences','memories','rules','games','reminders','skills','episodes','outbox','inbox','characters','choices','pending_intents']) await sql.query(`DELETE FROM ${table}`);
+  for (const table of ['topic_attention','image_jobs','poll_votes','polls','avatars','attachments','dialogues','choice_votes','participant_preferences','memories','rules','games','reminders','skills','episodes','outbox','inbox','characters','choices','pending_intents']) await sql.query(`DELETE FROM ${table}`);
   await sql.query(`UPDATE app_state SET memory_revision=memory_revision+1, character='' WHERE id=1`);
 }
 export async function reviseSource(sql:SQL,sourceId:number,text:string){
@@ -88,7 +88,7 @@ export async function reviseSource(sql:SQL,sourceId:number,text:string){
   await sql.query('DELETE FROM choices WHERE source_message_id=$1',[sourceId]);
   await sql.query('DELETE FROM outbox WHERE source_message_id=$1',[sourceId]);
   await sql.query("DELETE FROM messages WHERE role='assistant' AND source_message_id=$1",[sourceId]);
-  await sql.query('DELETE FROM inbox');await sql.query('DELETE FROM pending_intents');
+  await sql.query('DELETE FROM topic_attention');await sql.query('DELETE FROM inbox');await sql.query('DELETE FROM pending_intents');
   await sql.query('UPDATE app_state SET memory_revision=memory_revision+1 WHERE id=1');
   const s=await state(sql);
   await sql.query('UPDATE outbox SET revision=$1 WHERE source_message_id IS DISTINCT FROM $2',[s.memory_revision,sourceId]);

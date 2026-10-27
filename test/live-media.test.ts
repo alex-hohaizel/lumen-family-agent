@@ -36,7 +36,7 @@ describe('Живі продовження, спільні рішення та м
   });
   it('особисте уточнення не приймає чужу відповідь і відповідь з іншої теми',async()=>{
     h.brain.replies.push({reply:'О котрій годині?',actions:[]});await ask(message('Люмен, нагадай завтра про квитки'));await h.lumen.receive(message('О восьмій',22));const other=message('О восьмій');other.message!.message_thread_id=202;await h.lumen.receive(other);
-    assert.equal((await db.query("SELECT * FROM inbox WHERE status='pending'")).rows.length,0);
+    const candidates=(await db.query("SELECT * FROM inbox WHERE status='pending'")).rows;assert.ok(candidates.every(x=>x.payload.engagement.reason==='ambient'&&!x.payload.engagement.dialogue));assert.equal((await db.query('SELECT * FROM reminders')).rows.length,0);
   });
   it('не втручається, якщо модель визначила кандидат продовження як чужу розмову',async()=>{
     h.brain.replies.push({reply:'Який колір обереш?',actions:[]});await ask(message('Люмен, допоможи обрати колір'));await db.query('DELETE FROM outbox');
@@ -56,7 +56,7 @@ describe('Живі продовження, спільні рішення та м
     h.brain.replies.push({reply:'Для тебе простіше чи складніше?',actions:[],presentation:{choices:['Простіше','Складніше'],audience:'personal'}});await ask(message('Люмен, допоможи мені з грою'));const c=await one(db,'SELECT id FROM choices LIMIT 1');const r=await router();await r.receive(callback('lumen:choice:'+c!.id));assert.equal((await db.query('SELECT * FROM choice_votes')).rows.length,0);
   });
   it('фото без звернення зберігає як медіа, не відповідаючи в чат',async()=>{
-    const u=message('');u.message!.photo=[{file_id:'group-photo'}];await h.lumen.receive(u);assert.equal((await db.query('SELECT * FROM attachments')).rows.length,1);assert.equal((await db.query('SELECT * FROM inbox')).rows.length,0);assert.equal(h.brain.calls.length,0);
+    const u=message('');u.message!.photo=[{file_id:'group-photo'}];await h.lumen.receive(u);assert.equal((await db.query('SELECT * FROM attachments')).rows.length,1);assert.equal(h.brain.calls.length,0);assert.equal((await db.query('SELECT * FROM outbox')).rows.length,0);assert.equal(h.brain.calls.length,0);
   });
   it('розуміє картинку, надіслану файлом, і передає її моделі як зображення',async()=>{
     const png=await sharp({create:{width:64,height:64,channels:4,background:'#29b6c8'}}).png().toBuffer();h.tg.file=async()=>png;
@@ -83,7 +83,7 @@ describe('Живі продовження, спільні рішення та м
   });
   it('голоси неанонімного опитування записує без зайвих повідомлень і враховує зміну',async()=>{
     await db.query("INSERT INTO polls(poll_id,message_id,question,options,revision) VALUES('poll',500,'Куди?','[\"Львів\",\"Карпати\"]',0)");const r=await router();for(const option_ids of [[0],[1],[]])await r.receive({update_id:sequence++,poll_answer:{poll_id:'poll',user:{id:22,first_name:'Олена'},option_ids}});
-    const vote=await one(db,'SELECT * FROM poll_votes');assert.equal(vote!.name,'Олена');assert.deepEqual(vote!.option_ids,[]);assert.equal((await db.query('SELECT * FROM outbox')).rows.length,0);
+    const vote=await one(db,'SELECT * FROM poll_votes');assert.equal(vote!.name,'Олена');assert.deepEqual(vote!.option_ids,[]);assert.equal((await db.query('SELECT * FROM outbox WHERE service=false')).rows.length,0);assert.equal((await db.query("SELECT * FROM outbox WHERE dedup_key LIKE 'release:%'")).rows.length,1);assert.equal(h.brain.calls.length,0);
   });
   it('редагування одного джерела зберігає незалежні нотатки та нагадування',async()=>{
     const a=message('Люмен, запам’ятай: зустріч у п’ятницю'),b=message('Люмен, запам’ятай: квитки в неділю');h.brain.replies.push({reply:'',actions:[{kind:'remember',content:'Зустріч у п’ятницю'}]},{reply:'',actions:[{kind:'remember',content:'Квитки в неділю'}]});await ask(a);await ask(b);const sources=(await db.query("SELECT id FROM messages WHERE role='user' ORDER BY id")).rows;await db.query('INSERT INTO reminders(title,due_at,author_id,source_message_id) VALUES($1,now()+interval \'1 day\',\'11\',$2)',['Квитки в неділю',sources[1]!.id]);

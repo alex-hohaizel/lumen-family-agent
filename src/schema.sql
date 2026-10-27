@@ -130,4 +130,8 @@ INSERT INTO schema_version VALUES (6) ON CONFLICT DO NOTHING;
 ALTER TABLE app_state ADD COLUMN IF NOT EXISTS conversation_style text NOT NULL DEFAULT 'adaptive';
 ALTER TABLE app_state ADD COLUMN IF NOT EXISTS conversation_window_minutes integer NOT NULL DEFAULT 10;
 INSERT INTO schema_version VALUES (7) ON CONFLICT DO NOTHING;
+ALTER TABLE app_state ADD COLUMN IF NOT EXISTS ambient_gap_seconds integer NOT NULL DEFAULT 120;
+CREATE TABLE IF NOT EXISTS topic_attention (topic_id text PRIMARY KEY,checked_at timestamptz,checked_source_id bigint REFERENCES messages(id) ON DELETE SET NULL,spoke_at timestamptz,spoke_source_id bigint REFERENCES messages(id) ON DELETE SET NULL,last_reply text NOT NULL DEFAULT '');
+UPDATE app_state SET ambient_gap_seconds=GREATEST(60,proactive_gap_minutes*60) WHERE proactive_gap_minutes<>45 AND NOT EXISTS(SELECT 1 FROM schema_version WHERE version=8);
+INSERT INTO schema_version VALUES (8) ON CONFLICT DO NOTHING;
 COMMIT;

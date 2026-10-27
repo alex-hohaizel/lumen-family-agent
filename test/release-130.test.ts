@@ -4,7 +4,7 @@ import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {TestDB,harness,paired,message} from './helpers.js';
 import {one,state} from '../src/db.js';
-import {helpfulCandidate} from '../src/conversation.js';
+import {ambientEnabled} from '../src/attention.js';
 import {queueReleaseNotice} from '../src/release.js';
 import {Delivery} from '../src/delivery.js';
 import {VisualMemory} from '../src/visual.js';
@@ -21,15 +21,17 @@ describe('Публікація 1.3, реальні відеокадри та т�
   async function context(){for(let i=0;i<6;i++)await h.lumen.receive(message(i%2?'треба обрати маршрут поїздки':'плануємо їхати у Львів',i%2?11:22));}
   it('ініціативна відповідь лише пропонує допомогу, не виконує непроханих дій та має паузу',async()=>{
     await context();h.brain.replies.push({reply:'Можу зібрати ваші варіанти маршруту в коротке порівняння.',actions:[{kind:'remember',content:'непроханий запис'}],engagement:{respond:true,reason:'helpful'},presentation:{choices:['Так','Ні']}});
-    await h.lumen.receive(message('Як нам краще спланувати маршрут?',22));assert.equal(await h.lumen.processNext(),true);assert.equal(JSON.parse(h.brain.calls[0]!.context).engagement_context.reason,'helpful');assert.equal((await db.query('SELECT * FROM memories')).rows.length,0);assert.equal((await db.query('SELECT * FROM choices')).rows.length,0);
-    const s=await state(db);assert.equal(await helpfulCandidate(db,message('треба обрати маршрут').message!,{...s,since_bot:20},'Europe/Kyiv'),false);
+    await h.lumen.receive(message('Як нам краще спланувати маршрут?',22));await db.query('UPDATE inbox SET available_at=now()');assert.equal(await h.lumen.processNext(),true);assert.equal(JSON.parse(h.brain.calls[0]!.context).engagement_context.reason,'ambient');assert.equal((await db.query('SELECT * FROM memories')).rows.length,0);assert.equal((await db.query('SELECT * FROM choices')).rows.length,0);
+    assert.ok((await one(db,"SELECT body FROM outbox WHERE kind='text'"))!.body.ambient);
   });
-  it('не пропонує ініціативу в серйозній бесіді, у тиху годину чи після відмови',async()=>{
-    await context();await db.query("UPDATE app_state SET since_bot=20,last_social_at=NULL,last_bot_at=NULL WHERE id=1");const m=message('треба обрати маршрут').message!,s=await state(db);
-    assert.equal(await helpfulCandidate(db,m,s,'Europe/Kyiv'),true);
-    assert.equal(await helpfulCandidate(db,m,{...s,proactive_mode:'off'},'Europe/Kyiv'),false);
-    const hour=Number(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Kyiv',hour:'2-digit',hourCycle:'h23'}).format(new Date()));assert.equal(await helpfulCandidate(db,m,{...s,quiet_start:hour,quiet_end:(hour+1)%24},'Europe/Kyiv'),false);
-    await db.query("INSERT INTO messages(telegram_id,user_id,author,role,body) VALUES(992211,'11','А','user','Мені дуже важко, помер близький, горе')");assert.equal(await helpfulCandidate(db,m,s,'Europe/Kyiv'),false);
+  it('поважає вимкнення й тихі години та стримує прикраси у складній розмові',async()=>{
+    const m=message('треба обрати маршрут').message!,s=await state(db);
+    assert.equal(ambientEnabled(s,m,'Europe/Kyiv'),true);
+    assert.equal(ambientEnabled({...s,proactive_mode:'off'},m,'Europe/Kyiv'),false);
+    const hour=Number(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Kyiv',hour:'2-digit',hourCycle:'h23'}).format(new Date()));assert.equal(ambientEnabled({...s,quiet_start:hour,quiet_end:(hour+1)%24},m,'Europe/Kyiv'),false);
+    await h.lumen.receive(message('Мені дуже важко, помер близький'));
+    h.brain.replies.push({reply:'Можу допомогти з організаційними питаннями, якщо потрібно.',actions:[],presentation:{reaction:'😁'},engagement:{respond:true,reason:'helpful'}});await db.query('UPDATE inbox SET available_at=now()');await h.lumen.processNext();
+    assert.equal((await db.query("SELECT * FROM outbox WHERE kind='reaction'")).rows.length,0);assert.match(h.brain.calls[0]!.instructions!,/без жартів/);
   });
   it('одноразове оголошення стає sent лише після підтвердженої доставки',async()=>{
     assert.equal(await queueReleaseNotice(db,'https://t.me/addstickers/'+STICKER_SET),true);assert.equal(await queueReleaseNotice(db),false);assert.equal((await one(db,'SELECT status FROM release_notices'))!.status,'pending');const d=new Delivery(db,h.tg as unknown as Telegram,h.config);await d.next();assert.equal(h.tg.sent.length,1);assert.match(h.tg.sent[0]!.text,/вуха ті самі/);assert.equal((await one(db,'SELECT status FROM release_notices'))!.status,'sent');assert.equal(await queueReleaseNotice(db),false);

@@ -3,8 +3,10 @@ import { Telegram, TelegramError } from './telegram.js';
 import { Media } from './media.js';
 import type { Config } from './config.js';
 import { errorCode } from './engine.js';
+import {ambientStillRelevant} from './attention.js';
 import {activityFor} from './activity-status.js';
 import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 
 export class Delivery {
   constructor(private db:Database,private telegram:Telegram,private config:Config,private media=new Media(config)){}
@@ -29,6 +31,12 @@ export class Delivery {
       if(!row || !s.chat_id)return null;
       if(row.revision!==s.memory_revision || (s.paused && !row.service)){
         await sql.query("DELETE FROM outbox WHERE id=$1",[row.id]);return null;
+      }
+      if(row.body.ambient){
+        const source=await one(sql,'SELECT telegram_id,user_id,author,created_at,topic_id FROM messages WHERE id=$1',[row.source_message_id]);
+        if(!source||!await ambientStillRelevant(sql,{message_id:Number(source.telegram_id),date:Math.floor(new Date(source.created_at).getTime()/1000),from:{id:Number(source.user_id),first_name:source.author},chat:{id:Number(s.chat_id),type:'supergroup'},message_thread_id:source.topic_id==='0'?undefined:Number(source.topic_id)},Number(row.source_message_id),s,this.config.timezone,true)){
+          await sql.query("DELETE FROM outbox WHERE source_message_id=$1 AND body->>'ambient'='true' AND status='pending'",[row.source_message_id]);return null;
+        }
       }
       await sql.query("UPDATE outbox SET status='sending',attempts=attempts+1 WHERE id=$1",[row.id]);return {...row,chatId:s.chat_id};
     });
@@ -74,7 +82,7 @@ export class Delivery {
         if(notice?.telegram_id)try{await this.telegram.call('deleteMessage',{chat_id:row.chatId,message_id:Number(notice.telegram_id)});await this.db.query("UPDATE outbox SET status='cleared' WHERE id=$1",[notice.id]);}catch{}
       }
       const deliveredText=row.kind==='telegram'?`[дія Telegram: ${row.body.operation}] ${row.body.text || row.body.caption || ''}`:animated?`[анімація Люмена: ${row.body.asset}]`:row.kind==='image'?`[зображення Люмена] ${row.body.prompt || ''}`:row.kind==='reaction'?`[реакція Люмена: ${row.body.emoji}]`:row.kind==='sticker'?`[стікер Люмена: ${row.body.emoji || ''}]`:row.kind==='poll'?`[${row.body.quiz?'вікторина':'опитування'}] ${row.body.question}\n${row.body.options.join(' · ')}`:row.body.text;
-      await this.db.tx(async sql=>{
+      const deliveredRelease=await this.db.tx(async sql=>{
         const live=await state(sql,true);if(live.memory_revision!==row.revision)return;
         const still=await one(sql,'SELECT id FROM outbox WHERE id=$1',[row.id]);if(!still)return;
         await sql.query("UPDATE outbox SET status='sent',telegram_id=$1,body=$2 WHERE id=$3",[sent.message_id,JSON.stringify({text:deliveredText}),row.id]);
@@ -85,14 +93,17 @@ export class Delivery {
         if(row.kind==='telegram'&&['pin_message','unpin_message','stop_poll','edit_message'].includes(row.body.operation)){const verbs:Record<string,string>={pin_message:'закріпив повідомлення',unpin_message:'відкріпив повідомлення',stop_poll:'завершив голосування',edit_message:'оновив повідомлення'};await import('./db.js').then(({queueText})=>queueText(sql,`${row.body.actor_name || 'Готово'}, ${verbs[row.body.operation]}.`,live.memory_revision,`native-done:${row.id}`,false,{threadId:row.body.threadId,sourceMessageId:row.source_message_id,actorId:row.actor_id}));}
         const match=/^reminder:(\d+):/.exec(row.dedup_key);
         if(match)await sql.query("UPDATE reminders SET status='sent' WHERE id=$1",[match[1]]);
-        const release=/^release:(.+):0$/.exec(row.dedup_key);if(release)await sql.query("UPDATE release_notices SET status='sent',telegram_id=$1 WHERE version=$2",[sent.message_id,release[1]]);
+        const release=/^release:(.+):0$/.exec(row.dedup_key);
+        if(release){const result=await sql.query("UPDATE release_notices SET status='sent',telegram_id=$1 WHERE version=$2 RETURNING version",[sent.message_id,release[1]]);return result.rows[0]?.version as string|undefined;}
       });
+      if(deliveredRelease)console.log(JSON.stringify({event:'release_notice_delivered',version:deliveredRelease,group:createHash('sha256').update(String(row.chatId)).digest('hex').slice(0,16)}));
     }catch(e){
       const tg=e instanceof TelegramError?e:null;
       const retry=tg?.retryAfter || 0;
       // Ambiguous deliveries are not retried automatically: Telegram has no sendMessage idempotency key.
       const status=tg?.uncertain?'uncertain':retry?'pending':'failed';
       await this.db.query("UPDATE outbox SET status=$1,error_code=$2,available_at=now()+($3 * interval '1 second') WHERE id=$4",[status,tg?.code || errorCode(e),Math.max(1,retry),row.id]);
+      const release=/^release:(.+):0$/.exec(row.dedup_key);if(release)console.error(JSON.stringify({event:'release_notice_delivery_error',version:release[1],group:createHash('sha256').update(String(row.chatId)).digest('hex').slice(0,16),status,code:tg?.code || errorCode(e)}));
       if(!retry&&!tg?.uncertain&&row.kind==='telegram')await this.db.tx(async sql=>{const s=await state(sql,true);if(!s.paused&&s.memory_revision===row.revision)await import('./db.js').then(({queueText})=>queueText(sql,'Telegram не дозволив цю дію. Можливо, бракує прав або повідомлення вже недоступне; можемо продовжити текстом.',s.memory_revision,`native-error:${row.id}`,false,{threadId:row.body.threadId,sourceMessageId:row.source_message_id,actorId:row.actor_id}));});
     }
     return true;

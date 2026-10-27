@@ -5,7 +5,7 @@ import {Telegram,TelegramError} from '../src/telegram.js';import {TestDB} from '
 
 describe('Оновлення 30 стікерів без зміни посилання',()=>{
   it('замінює в тому самому наборі, відновлюється після збою та не повторює виконане',async()=>{
-    const assets=await stickerAssets();assert.ok(assets.every(a=>a.motion_version===2));const dir=await mkdtemp(join(tmpdir(),'lumen-sticker-upgrade-'));
+    const assets=await stickerAssets();assert.ok(assets.every(a=>a.motion_version===5));const dir=await mkdtemp(join(tmpdir(),'lumen-sticker-upgrade-'));
     const pack={name:STICKER_SET,stickers:assets.map((a,i)=>({file_id:'old-'+i,file_unique_id:'old-unique-'+i,is_video:true,emoji:a.emoji}))};let temporaryFailure=true;const attempts=new Map<number,number>();
     const tg={call:async(method:string)=>{assert.equal(method,'getStickerSet');return structuredClone(pack);},multipart:async(method:string,form:FormData)=>{assert.equal(method,'replaceStickerInSet');assert.equal(form.get('name'),STICKER_SET);const old=String(form.get('old_sticker'));const i=pack.stickers.findIndex(s=>s.file_id===old);assert.ok(i>=0);attempts.set(i,(attempts.get(i)||0)+1);const spec=JSON.parse(String(form.get('sticker')));assert.equal(spec.format,'video');assert.equal(spec.emoji_list[0],assets[i]!.emoji);assert.ok((form.get('video') as Blob).size<=256*1024);
       if(i===7&&temporaryFailure){temporaryFailure=false;throw new TelegramError('telegram_429',1);}

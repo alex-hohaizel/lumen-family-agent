@@ -12,6 +12,7 @@ import {callbackCommand,groupSetupKeys,validSetupPayload} from './ui.js';
 import {rememberSticker} from './presentation.js';
 import {GROUP_WELCOME} from './personality.js';
 import {VisualMemory} from './visual.js';
+import {queueReleaseNotice,RELEASE} from './release.js';
 import {ImageJobs} from './image-jobs.js';
 import {seedStickerPack,type LumenPack} from './sticker-pack.js';
 
@@ -26,7 +27,7 @@ export class ChatRouter {
   async init(){
     await this.registry.init();
     if(this.config.ownerId)await this.registry.claimOwner(this.config.ownerId);
-    for(const chat of await this.registry.list())await this.runtime(chat);
+    for(const chat of await this.registry.list()){const runtime=await this.runtime(chat);if(chat.enabled)await queueReleaseNotice(runtime.db,this.lumenPack?'https://t.me/addstickers/'+this.lumenPack.name:undefined);}
   }
   async runtime(chat:RegisteredChat){
     let runtime=this.runtimes.get(chat.chat_id);
@@ -64,19 +65,33 @@ export class ChatRouter {
       const inserted=await sql.query('INSERT INTO onboarding_chats(chat_id,inviter_id) VALUES($1,$2) ON CONFLICT DO NOTHING RETURNING chat_id',[String(chat.id),uid]);
       if(!inserted.rows.length)return;
       const s=await state(sql,true);
+      await sql.query("INSERT INTO release_notices(version,status) VALUES($1,'included_onboarding') ON CONFLICT DO NOTHING",[RELEASE]);
       await queueText(sql,GROUP_WELCOME+(this.bot.can_read_all_group_messages?'':'\nЩоб читати фонову розмову, мені потрібні права адміністратора або вимкнений Privacy Mode у BotFather.'),s.memory_revision,`onboarding:${updateId}`,true);
     });
     return runtime;
   }
   async receive(update:Update){
+    const reaction=update.message_reaction;
+    if(reaction){
+      if(!reaction.user||reaction.user.is_bot)return;
+      const chat=await this.registry.find(String(reaction.chat.id));if(!chat?.enabled)return;
+      const runtime=await this.runtime(chat);
+      const target=await one(runtime.db,'SELECT telegram_id,user_id,author,body,role,topic_id FROM messages WHERE telegram_id=$1 ORDER BY id DESC LIMIT 1',[reaction.message_id]);
+      if(!target)return; // Never invent the missing message or its topic/author.
+      const details=reaction.new_reaction.map(x=>x.type==='emoji'?x.emoji:x.type==='custom_emoji'?'[власний емодзі]':'[інша реакція]').join(' ') || '[реакцію прибрано]';
+      await runtime.engine.receive({update_id:update.update_id,message:{message_id:-update.update_id,date:reaction.date,chat:reaction.chat,from:reaction.user,text:`[Зміна реакції на повідомлення] ${details}`,message_thread_id:target.topic_id==='0'?undefined:Number(target.topic_id),reply_to_message:{message_id:reaction.message_id,from:{id:target.role==='assistant'?this.bot.id:Number(target.user_id),first_name:target.author,is_bot:target.role==='assistant'},text:target.body},lumen_event:{kind:'reaction',target_message_id:reaction.message_id,details}}});return;
+    }
     if(update.poll_answer||update.poll){
       const answer=update.poll_answer;const id=answer?.poll_id || update.poll!.id;
       for(const runtime of await this.active()){
         const poll=await one(runtime.db,'SELECT * FROM polls WHERE poll_id=$1',[id]);if(!poll)continue;
-        await runtime.db.tx(async sql=>{const s=await state(sql,true);if(s.paused||s.memory_revision!==poll.revision||await one(sql,'SELECT update_id FROM receipts WHERE update_id=$1',[update.update_id]))return;await sql.query('INSERT INTO receipts(update_id) VALUES($1)',[update.update_id]);
+        let voteEvent=false;
+        await runtime.db.tx(async sql=>{const s=await state(sql,true);if(s.paused||s.memory_revision!==poll.revision||await one(sql,'SELECT update_id FROM receipts WHERE update_id=$1',[update.update_id]))return;voteEvent=Boolean(answer?.user&&!answer.user.is_bot&&answer.option_ids.every(i=>Number.isInteger(i)&&i>=0&&i<poll.options.length));if(!voteEvent)await sql.query('INSERT INTO receipts(update_id) VALUES($1)',[update.update_id]);
           if(update.poll?.is_closed)await sql.query('UPDATE polls SET closed=true WHERE poll_id=$1',[id]);
           if(answer?.user&&!answer.user.is_bot&&answer.option_ids.every(i=>Number.isInteger(i)&&i>=0&&i<poll.options.length))await sql.query('INSERT INTO poll_votes(poll_id,user_id,name,option_ids) VALUES($1,$2,$3,$4) ON CONFLICT(poll_id,user_id) DO UPDATE SET name=excluded.name,option_ids=excluded.option_ids,updated_at=now()',[id,String(answer.user.id),[answer.user.first_name,answer.user.last_name].filter(Boolean).join(' '),JSON.stringify(answer.option_ids)]);
-        });return;
+        });
+        if(voteEvent&&answer?.user){const details=answer.option_ids.map(i=>String(poll.options[i])).join(', ') || 'відкликав голос';await runtime.engine.receive({update_id:update.update_id,message:{message_id:-update.update_id,date:Math.floor(Date.now()/1000),chat:{id:Number(runtime.chat.chat_id),type:'supergroup'},from:answer.user,text:`[Голос в опитуванні «${poll.question}»] ${details}`,message_thread_id:poll.topic_id==='0'?undefined:Number(poll.topic_id),lumen_event:{kind:'poll_vote',target_message_id:Number(poll.message_id),details}}});}
+        return;
       }return;
     }
     const cb=update.callback_query;

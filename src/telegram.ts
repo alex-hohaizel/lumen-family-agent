@@ -8,6 +8,7 @@ export interface Message {
   message_id: number; date: number; edit_date?: number; from?: TGUser; chat: TGChat;
   text?: string; caption?: string; reply_to_message?: Partial<Message> & {message_id:number};
   photo?: { file_id: string; file_size?: number }[];
+  lumen_event?:{kind:'reaction'|'poll_vote';target_message_id:number;details:string};
   media_group_id?:string;
   animation?:{file_id:string;file_unique_id?:string;file_size?:number;mime_type?:string;thumbnail?:{file_id:string}};
   video?:{file_id:string;file_unique_id?:string;file_size?:number;mime_type?:string;thumbnail?:{file_id:string}};
@@ -26,7 +27,7 @@ export interface Message {
 }
 export interface MemberUpdate { chat: TGChat; from: TGUser; date: number; old_chat_member: { status: string; is_member?: boolean }; new_chat_member: { status: string; is_member?: boolean }; }
 export interface CallbackQuery { id: string; from: TGUser; data?: string; message?: Message; }
-export interface Update { update_id: number; message?: Message; edited_message?: Message; my_chat_member?: MemberUpdate; callback_query?: CallbackQuery;poll_answer?:{poll_id:string;user?:TGUser;option_ids:number[]};poll?:{id:string;is_closed?:boolean}; }
+export interface Update { update_id: number; message_reaction?:{chat:TGChat;message_id:number;user?:TGUser;date:number;old_reaction:{type:string;emoji?:string}[];new_reaction:{type:string;emoji?:string}[]}; message?: Message; edited_message?: Message; my_chat_member?: MemberUpdate; callback_query?: CallbackQuery;poll_answer?:{poll_id:string;user?:TGUser;option_ids:number[]};poll?:{id:string;is_closed?:boolean}; }
 export class TelegramError extends Error {
   constructor(public code: string, public retryAfter = 0, public uncertain = false) { super(code); }
 }
@@ -45,7 +46,7 @@ export class Telegram {
     return json.result as T;
   }
   async updates(offset: number) {
-    return this.call<Update[]>('getUpdates', { offset, timeout: 30, limit: 50, allowed_updates: ['message','edited_message','my_chat_member','callback_query','poll','poll_answer'] }, 40000);
+    return this.call<Update[]>('getUpdates', { offset, timeout: 30, limit: 50, allowed_updates: ['message','edited_message','my_chat_member','callback_query','poll','poll_answer','message_reaction'] }, 40000);
   }
   async multipart<T=any>(method:'createNewStickerSet'|'uploadStickerFile'|'addStickerToSet'|'replaceStickerInSet',form:FormData):Promise<T>{
     let response:Response;try{response=await this.fetcher(`https://api.telegram.org/bot${this.token}/${method}`,{method:'POST',body:form,signal:AbortSignal.timeout(180000)});}catch{throw new TelegramError('telegram_upload_uncertain',0,true);}

@@ -10,6 +10,7 @@ import {ChatRouter,type ChatRuntime} from './router.js';
 import { prepareCredentials } from './bootstrap.js';
 import { ensureAvatar,ensureTextProfile } from './profile.js';
 import {ensureStickerPack} from './sticker-pack.js';
+import {RELEASE} from './release.js';
 
 let startupStage='configuration';
 async function main(){
@@ -76,7 +77,9 @@ async function main(){
     for(const runtime of await router.active())try{await operation(runtime);}catch(e){console.error(JSON.stringify({event,code:errorCode(e)}));}
   };
   const send=async()=>{while(running&&!leaseLost){await each('delivery_error',async r=>{await r.engine.scheduleDue();await r.delivery.next();});await delay(1100);}};
-  console.log(JSON.stringify({event:'lumen_started',username:bot.username}));
+  const activeGroups=await router.active();
+  const releaseNotices=await Promise.all(activeGroups.map(async r=>(await r.db.query('SELECT status FROM release_notices WHERE version=$1',[RELEASE])).rows[0]?.status));
+  console.log(JSON.stringify({event:'lumen_started',username:bot.username,version:RELEASE,groups:activeGroups.length,release_notices_pending:releaseNotices.filter(s=>s==='pending').length,release_notices_sent:releaseNotices.filter(s=>s==='sent').length}));
   const compact=async()=>{while(running&&!leaseLost){await each('memory_error',r=>r.memory.compact());for(let i=0;i<60&&running&&!leaseLost;i++)await delay(1000);}};
   const mediaBusy=new Set<string>();const mediaPending=new Set<Promise<void>>();let mediaCursor=0;
   const mediaWork=async()=>{while(running&&!leaseLost){const active=await router.active();const order=active.slice(mediaCursor).concat(active.slice(0,mediaCursor));for(const r of order){if(mediaBusy.has(r.chat.chat_id)||mediaBusy.size>=2)continue;mediaBusy.add(r.chat.chat_id);mediaCursor=(active.indexOf(r)+1)%active.length;let task:Promise<void>;task=(async()=>{if(!await r.images.next())await r.visual.next();})().catch(e=>console.error(JSON.stringify({event:'media_error',code:errorCode(e)}))).finally(()=>{mediaBusy.delete(r.chat.chat_id);mediaPending.delete(task);});mediaPending.add(task);}await delay(1500);}await Promise.allSettled(mediaPending);};

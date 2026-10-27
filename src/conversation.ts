@@ -1,7 +1,6 @@
 import {one,state,type SQL} from './db.js';
 import type {Message} from './telegram.js';
 import type {Plan} from './model.js';
-import {seriousConversation} from './behavior.js';
 
 export async function continuation(sql:SQL,m:Message,revision:number){
   if(!m.from||m.reply_to_message&&!m.reply_to_message.from?.is_bot)return;
@@ -22,16 +21,6 @@ export async function continuation(sql:SQL,m:Message,revision:number){
     const later=await one(sql,"SELECT count(*) AS n FROM messages WHERE topic_id=$1 AND id>$2 AND role='user'",[topic,previous.id]);
     if(Number(later?.n || 0)<=40)return {question:previous.question,allowed:[],audience:previous.user_id===uid?'personal':'group',kind:'reaction',user_id:uid,origin:'recent_bot_turn',message_id:previous.telegram_id};
   }
-}
-export async function helpfulCandidate(sql:SQL,m:Message,s:Record<string,any>,timezone:string){
-  if(!s.open_group||s.proactive_mode==='off'||m.reply_to_message||Date.now()-m.date*1000>90000)return false;
-  const hour=Number(new Intl.DateTimeFormat('en-GB',{timeZone:timezone,hour:'2-digit',hourCycle:'h23'}).format(new Date()));
-  if(s.quiet_start!==s.quiet_end&&(s.quiet_start<s.quiet_end?hour>=s.quiet_start&&hour<s.quiet_end:hour>=s.quiet_start||hour<s.quiet_end))return false;
-  const gap=Math.max(10,Number(s.proactive_gap_minutes || 45))*60000;
-  if(Date.now()-Math.max(s.last_social_at?new Date(s.last_social_at).getTime():0,s.last_bot_at?new Date(s.last_bot_at).getTime():0)<gap||s.since_bot<6)return false;
-  const recent=await sql.query("SELECT user_id,body FROM messages WHERE topic_id=$1 AND created_at>now()-interval '5 minutes' ORDER BY id DESC LIMIT 10",[String(m.message_thread_id || 0)]);
-  if(new Set(recent.rows.map(x=>x.user_id)).size<2||seriousConversation([...recent.rows].reverse().map(x=>({body:String(x.body || '')}))))return false;
-  return /не виходить|помилк|як (?:нам|це|краще)|треба (?:обрати|вирішити|зібрати|спланувати)|потрібно (?:обрати|вирішити|зібрати)|їдемо|плануємо|зустріч|святку|скину.*варіант|не можемо (?:обрати|домовит)/iu.test(recent.rows.map(x=>x.body).join('\n'));
 }
 export async function saveDialogue(sql:SQL,plan:Plan,m:Message,sourceId:number,revision:number,allowed:string[]){
   const explicit=plan.dialogue;const question=explicit?.expecting || plan.reply;
