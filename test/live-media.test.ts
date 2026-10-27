@@ -30,6 +30,10 @@ describe('Живі продовження, спільні рішення та м
     h.brain.replies.push({reply:'',actions:[{kind:'remind',title:'Квитки',due_at:new Date(Date.now()+3600000).toISOString()}]});await ask(message('О восьмій'));
     assert.equal((await db.query('SELECT * FROM reminders')).rows.length,1);assert.equal(JSON.parse(h.brain.calls[1]!.context).engagement_context.reason,'continuation');
   });
+  it('розуміє очевидне уточнення до своєї відповіді, яка не містила питання',async()=>{
+    h.brain.replies.push({reply:'Північне сяйво виникає через взаємодію заряджених частинок з атмосферою.',actions:[]});await ask(message('Люмен, що таке північне сяйво'));const delivery=new Delivery(db,h.tg as unknown as Telegram,h.config);await delivery.next();
+    h.brain.replies.push({reply:'Кисень і азот світяться різними кольорами.',actions:[]});await ask(message('А чому воно різнокольорове?'));assert.equal(h.brain.calls.length,2);assert.equal(JSON.parse(h.brain.calls[1]!.context).engagement_context.reason,'continuation');
+  });
   it('особисте уточнення не приймає чужу відповідь і відповідь з іншої теми',async()=>{
     h.brain.replies.push({reply:'О котрій годині?',actions:[]});await ask(message('Люмен, нагадай завтра про квитки'));await h.lumen.receive(message('О восьмій',22));const other=message('О восьмій');other.message!.message_thread_id=202;await h.lumen.receive(other);
     assert.equal((await db.query("SELECT * FROM inbox WHERE status='pending'")).rows.length,0);
