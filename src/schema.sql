@@ -127,4 +127,7 @@ ALTER TABLE image_jobs ADD COLUMN IF NOT EXISTS generation_version integer NOT N
 ALTER TABLE polls ADD COLUMN IF NOT EXISTS source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE;
 ALTER TABLE daily_usage ADD COLUMN IF NOT EXISTS images integer NOT NULL DEFAULT 0;
 INSERT INTO schema_version VALUES (6) ON CONFLICT DO NOTHING;
+ALTER TABLE app_state ADD COLUMN IF NOT EXISTS conversation_style text NOT NULL DEFAULT 'adaptive';
+ALTER TABLE app_state ADD COLUMN IF NOT EXISTS conversation_window_minutes integer NOT NULL DEFAULT 10;
+INSERT INTO schema_version VALUES (7) ON CONFLICT DO NOTHING;
 COMMIT;

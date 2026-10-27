@@ -3,6 +3,7 @@ import { Telegram, TelegramError } from './telegram.js';
 import { Media } from './media.js';
 import type { Config } from './config.js';
 import { errorCode } from './engine.js';
+import {activityFor} from './activity-status.js';
 import { readFile } from 'node:fs/promises';
 
 export class Delivery {
@@ -49,6 +50,9 @@ export class Delivery {
       const current=await state(this.db);
       const exists=await one(this.db,'SELECT id FROM outbox WHERE id=$1',[row.id]);
       if(!exists || current.memory_revision!==row.revision || (current.paused&&!row.service))return true;
+      const progress=/^progress:/.test(row.dedup_key);
+      if(current.paused)await activityFor(this.db,this.telegram).stopAll();
+      if(!progress&&row.source_message_id)await activityFor(this.db,this.telegram).stopSource(Number(row.source_message_id));
       let sent:{message_id:number};
       if(row.kind==='telegram')sent=await this.native(row);
       else if(row.kind==='reaction'){
@@ -56,7 +60,19 @@ export class Delivery {
       }else if(row.kind==='sticker')sent=await this.telegram.sticker(row.chatId,row.body.fileId,row.body.threadId,row.body.replyToMessageId);
       else if(bytes)sent=await this.telegram.upload(animated?'sendAnimation':'sendPhoto',row.chatId,bytes,animated?row.body.caption || '': 'Люмен ✨',animated?'video/mp4':'image/png',row.body.threadId);
       else if(row.kind==='poll')sent=await this.telegram.poll(row.chatId,row.body.question,row.body.options,row.body.threadId,row.body.quiz);
-      else sent=await this.telegram.text(row.chatId,row.body.text,{replyMarkup:row.body.replyMarkup,replyToMessageId:row.body.replyToMessageId,threadId:row.body.threadId,entities:row.body.entities});
+      else {
+        const answer=/^(?:answer|error):(\d+):0$/.exec(row.dedup_key);
+        const previous=answer?await one(this.db,"SELECT telegram_id FROM outbox WHERE dedup_key=$1 AND status='sent'",[`progress:${answer[1]}:0`]):undefined;
+        if(previous?.telegram_id){
+          try{await this.telegram.call('editMessageText',{chat_id:row.chatId,message_id:Number(previous.telegram_id),text:row.body.text,entities:row.body.entities || [],reply_markup:row.body.replyMarkup || {inline_keyboard:[]},link_preview_options:{is_disabled:true}});sent={message_id:Number(previous.telegram_id)};}
+          catch(e){if(!(e instanceof TelegramError)||e.code!=='telegram_400')throw e;sent=await this.telegram.text(row.chatId,row.body.text,{replyMarkup:row.body.replyMarkup,replyToMessageId:row.body.replyToMessageId,threadId:row.body.threadId,entities:row.body.entities});}
+        }else sent=await this.telegram.text(row.chatId,row.body.text,{replyMarkup:row.body.replyMarkup,replyToMessageId:row.body.replyToMessageId,threadId:row.body.threadId,entities:row.body.entities});
+      }
+      if(!progress&&row.kind!=='text'&&row.source_message_id){
+        const waiting=await one(this.db,"SELECT id FROM outbox WHERE source_message_id=$1 AND kind='text' AND status IN ('pending','sending') AND dedup_key NOT LIKE 'progress:%' LIMIT 1",[row.source_message_id]);
+        const notice=!waiting?await one(this.db,"SELECT id,telegram_id FROM outbox WHERE source_message_id=$1 AND dedup_key LIKE 'progress:%' AND status='sent' LIMIT 1",[row.source_message_id]):undefined;
+        if(notice?.telegram_id)try{await this.telegram.call('deleteMessage',{chat_id:row.chatId,message_id:Number(notice.telegram_id)});await this.db.query("UPDATE outbox SET status='cleared' WHERE id=$1",[notice.id]);}catch{}
+      }
       const deliveredText=row.kind==='telegram'?`[дія Telegram: ${row.body.operation}] ${row.body.text || row.body.caption || ''}`:animated?`[анімація Люмена: ${row.body.asset}]`:row.kind==='image'?`[зображення Люмена] ${row.body.prompt || ''}`:row.kind==='reaction'?`[реакція Люмена: ${row.body.emoji}]`:row.kind==='sticker'?`[стікер Люмена: ${row.body.emoji || ''}]`:row.kind==='poll'?`[${row.body.quiz?'вікторина':'опитування'}] ${row.body.question}\n${row.body.options.join(' · ')}`:row.body.text;
       await this.db.tx(async sql=>{
         const live=await state(sql,true);if(live.memory_revision!==row.revision)return;
@@ -65,7 +81,7 @@ export class Delivery {
         if(row.kind==='poll'&&(sent as any).poll?.id)await sql.query('INSERT INTO polls(poll_id,message_id,topic_id,question,options,correct,revision,source_message_id) VALUES($1,$2,$3,$4,$5,$6,$7,$8) ON CONFLICT DO NOTHING',[(sent as any).poll.id,sent.message_id,String(row.body.threadId || 0),row.body.question,JSON.stringify(row.body.options),row.body.quiz?.correct ?? null,row.revision,row.source_message_id]);
         if(row.kind==='telegram'&&row.body.operation==='stop_poll')await sql.query('UPDATE polls SET closed=true WHERE message_id=$1',[row.body.message_id]);
         if(row.kind==='telegram'&&row.body.operation==='edit_message')await sql.query("UPDATE messages SET body=$1,edited_at=now() WHERE role='assistant' AND telegram_id=$2",[row.body.text,row.body.message_id]);
-        if(!row.service && !live.paused)await sql.query("INSERT INTO messages (telegram_id,user_id,author,role,body,topic_id,source_message_id) VALUES ($1,'lumen','Люмен','assistant',$2,$3,$4) ON CONFLICT DO NOTHING",[sent.message_id,deliveredText,String(row.body.threadId || 0),row.source_message_id]);
+        if(!row.service && !live.paused && !progress)await sql.query("INSERT INTO messages (telegram_id,user_id,author,role,body,topic_id,source_message_id) VALUES ($1,'lumen','Люмен','assistant',$2,$3,$4) ON CONFLICT DO NOTHING",[sent.message_id,deliveredText,String(row.body.threadId || 0),row.source_message_id]);
         if(row.kind==='telegram'&&['pin_message','unpin_message','stop_poll','edit_message'].includes(row.body.operation)){const verbs:Record<string,string>={pin_message:'закріпив повідомлення',unpin_message:'відкріпив повідомлення',stop_poll:'завершив голосування',edit_message:'оновив повідомлення'};await import('./db.js').then(({queueText})=>queueText(sql,`${row.body.actor_name || 'Готово'}, ${verbs[row.body.operation]}.`,live.memory_revision,`native-done:${row.id}`,false,{threadId:row.body.threadId,sourceMessageId:row.source_message_id,actorId:row.actor_id}));}
         const match=/^reminder:(\d+):/.exec(row.dedup_key);
         if(match)await sql.query("UPDATE reminders SET status='sent' WHERE id=$1",[match[1]]);

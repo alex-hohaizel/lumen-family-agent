@@ -6,21 +6,22 @@ import {seriousConversation} from './behavior.js';
 export async function continuation(sql:SQL,m:Message,revision:number){
   if(!m.from||m.reply_to_message&&!m.reply_to_message.from?.is_bot)return;
   if(/@[A-Za-z0-9_]+/.test(m.text || '')&&!m.reply_to_message?.from?.is_bot)return;
-  const topic=String(m.message_thread_id || 0),uid=String(m.from.id);
+  const topic=String(m.message_thread_id || 0),uid=String(m.from.id),s=await state(sql);
+  if(s.conversation_style==='addressed')return;
   const d=await one(sql,"SELECT * FROM dialogues WHERE topic_id=$1 AND revision=$2 AND expires_at>now() AND (user_id=$3 OR audience='group') ORDER BY (user_id=$3) DESC,created_at DESC LIMIT 1",[topic,revision,uid]);
   if(d){
     const later=await one(sql,'SELECT count(*) AS n FROM messages WHERE topic_id=$1 AND created_at>$2',[topic,d.created_at]);
-    if(Number(later?.n || 0)<=12||d.kind==='activity')return d;
+    if(Number(later?.n || 0)<=12||d.kind==='activity')return {...d,origin:'active_dialogue'};
   }
   const pending=await one(sql,"SELECT * FROM pending_intents WHERE user_id=$1 AND topic_id=$2 AND revision=$3 AND created_at>now()-interval '10 minutes'",[uid,topic,revision]);
-  if(pending)return {question:pending.request_text,allowed:pending.allowed,audience:'personal',kind:'question',user_id:uid};
-  // A clear follow-up can refer to a statement, not only to a question.
-  const text=(m.text || m.caption || '').trim();
-  if(/^(?:а (?:як|чому|що|можна|якщо|ти|це)|чому|тобто|поясни|детальніше|докладніше|не зрозумі|а зроби|а покажи|звідки|що ти маєш на увазі)/iu.test(text)){
-    const previous=await one(sql,"SELECT a.body AS question,a.created_at,u.user_id FROM messages a JOIN messages u ON u.id=a.source_message_id WHERE a.role='assistant' AND a.topic_id=$1 AND a.created_at>now()-interval '3 minutes' ORDER BY a.id DESC LIMIT 1",[topic]);
-    if(previous){const later=await one(sql,'SELECT count(*) AS n FROM messages WHERE topic_id=$1 AND created_at>$2',[topic,previous.created_at]);if(Number(later?.n || 0)<=4)return {question:previous.question,allowed:[],audience:previous.user_id===uid?'personal':'group',kind:'question',user_id:uid};}
+  if(pending)return {question:pending.request_text,allowed:pending.allowed,audience:'personal',kind:'question',user_id:uid,origin:'pending_request'};
+  // Any participant can react to a recent delivered bot turn. Wording, punctuation
+  // and a repeated name are not intent tests; the model decides topical relevance.
+  const previous=await one(sql,"SELECT a.id,a.telegram_id,a.body AS question,a.created_at,u.user_id FROM messages a JOIN messages u ON u.id=a.source_message_id WHERE a.role='assistant' AND a.topic_id=$1 AND a.created_at>now()-($2 * interval '1 minute') ORDER BY a.id DESC LIMIT 1",[topic,Math.max(1,Math.min(15,Number(s.conversation_window_minutes || 10)))]);
+  if(previous){
+    const later=await one(sql,"SELECT count(*) AS n FROM messages WHERE topic_id=$1 AND id>$2 AND role='user'",[topic,previous.id]);
+    if(Number(later?.n || 0)<=40)return {question:previous.question,allowed:[],audience:previous.user_id===uid?'personal':'group',kind:'reaction',user_id:uid,origin:'recent_bot_turn',message_id:previous.telegram_id};
   }
-
 }
 export async function helpfulCandidate(sql:SQL,m:Message,s:Record<string,any>,timezone:string){
   if(!s.open_group||s.proactive_mode==='off'||m.reply_to_message||Date.now()-m.date*1000>90000)return false;

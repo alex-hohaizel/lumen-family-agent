@@ -47,7 +47,7 @@ export class Telegram {
   async updates(offset: number) {
     return this.call<Update[]>('getUpdates', { offset, timeout: 30, limit: 50, allowed_updates: ['message','edited_message','my_chat_member','callback_query','poll','poll_answer'] }, 40000);
   }
-  async multipart<T=any>(method:'createNewStickerSet'|'uploadStickerFile'|'addStickerToSet',form:FormData):Promise<T>{
+  async multipart<T=any>(method:'createNewStickerSet'|'uploadStickerFile'|'addStickerToSet'|'replaceStickerInSet',form:FormData):Promise<T>{
     let response:Response;try{response=await this.fetcher(`https://api.telegram.org/bot${this.token}/${method}`,{method:'POST',body:form,signal:AbortSignal.timeout(180000)});}catch{throw new TelegramError('telegram_upload_uncertain',0,true);}
     const json:any=await response.json().catch(()=>null);if(!json?.ok)throw new TelegramError(`telegram_${json?.error_code || response.status}`,Number(json?.parameters?.retry_after || 0),response.status>=500);return json.result as T;
   }
