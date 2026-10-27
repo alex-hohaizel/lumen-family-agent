@@ -15,8 +15,12 @@ import {VisualMemory} from './visual.js';
 import {queueReleaseNotice,RELEASE} from './release.js';
 import {ImageJobs} from './image-jobs.js';
 import {seedStickerPack,type LumenPack} from './sticker-pack.js';
+import {AgentTasks} from './agent-tasks.js';
+import {WebMonitors} from './web-monitors.js';
+import {ConnectorVault} from './connector-vault.js';
+import {MCPClient} from './mcp-client.js';
 
-export interface ChatRuntime {chat:RegisteredChat;db:Database;engine:Lumen;delivery:Delivery;memory:Memory;visual:VisualMemory;images:ImageJobs;}
+export interface ChatRuntime {chat:RegisteredChat;db:Database;engine:Lumen;delivery:Delivery;memory:Memory;visual:VisualMemory;images:ImageJobs;agent:AgentTasks;monitors:WebMonitors;}
 export class ChatRouter {
   private runtimes=new Map<string,ChatRuntime>();
   private auth:ChatGPTAuth;
@@ -38,7 +42,7 @@ export class ChatRouter {
     const initial=await state(db);const config={...this.config,model:initial.model||this.config.model};
     const brain=this.brainFactory?.(config,chat.chat_id) || new OpenAIModel(config,this.auth);
     const visual=new VisualMemory(db,this.telegram,brain);
-    runtime={chat,db,engine:new Lumen(db,config,this.telegram,brain,this.bot,undefined,this.auth),delivery:new Delivery(db,this.telegram,config),memory:new Memory(db,brain,config.dailyTurnLimit || (config.authMode==='api'?200:0)),visual,images:new ImageJobs(db,config,this.telegram,visual)};
+    runtime={chat,db,engine:new Lumen(db,config,this.telegram,brain,this.bot,undefined,this.auth),delivery:new Delivery(db,this.telegram,config),memory:new Memory(db,brain,config.dailyTurnLimit || (config.authMode==='api'?200:0)),visual,images:new ImageJobs(db,config,this.telegram,visual),agent:new AgentTasks(db,config,brain),monitors:new WebMonitors(db,config)};
     this.runtimes.set(chat.chat_id,runtime);
     if(!await one(db,'SELECT id FROM stickers LIMIT 1')){
       // A fixed public starter set is an asset, never imported memory from another group.
@@ -51,9 +55,16 @@ export class ChatRouter {
     await db.query("UPDATE attachments SET status='pending' WHERE status='processing'");
     await db.query("UPDATE image_jobs SET status='uncertain',error_code='restart_during_generation' WHERE status='processing'");
     await db.query("UPDATE outbox SET status='uncertain',error_code='restart_during_delivery' WHERE status='sending'");
+    await runtime.agent.recover();
     return runtime;
   }
   async active(){return Array.from(this.runtimes.values()).filter(x=>x.chat.enabled);}
+  async probeNativeSearch(){
+    const runtime=(await this.active())[0];const config={...(runtime?.engine.config || this.config),webSearch:true};
+    if(runtime){const {reserveModelCall}=await import('./model-budget.js');await reserveModelCall(runtime.db,config);}
+    const result=await new OpenAIModel(config,this.auth).searchWeb('Find the official Node.js website. Return its URL.');
+    return {searched:result.searched,sources:result.sources};
+  }
   private async owner(uid:string){return (await this.registry.transport()).owner_user_id===uid;}
   private async admin(chatId:string,uid:string){
     try{const member=await this.telegram.call<{status:string}>('getChatMember',{chat_id:chatId,user_id:Number(uid)});return ['creator','administrator'].includes(member.status);}catch{return false;}
@@ -98,6 +109,14 @@ export class ChatRouter {
     if(cb){
       // Acknowledge immediately, including stale or unrecognized buttons.
       await this.telegram.call('answerCallbackQuery',{callback_query_id:cb.id}).catch(()=>{});
+      const approval=/^lumen:(approve|reject):([0-9a-f-]{36})$/.exec(cb.data || '');
+      if(approval&&cb.message&&cb.message.from?.id===this.bot.id&&!cb.from.is_bot){
+        const registered=await this.registry.find(String(cb.message.chat.id));if(!registered?.enabled)return;
+        const runtime=await this.runtime(registered);await runtime.db.tx(async sql=>{const s=await state(sql,true);if(s.paused)return;
+          const row=await one(sql,"UPDATE tool_approvals SET status=$1 WHERE id=$2 AND actor_id=$3 AND revision=$4 AND topic_id=$5 AND status='pending' AND expires_at>now() RETURNING task_id",[approval[1]==='approve'?'approved':'cancelled',approval[2],String(cb.from.id),s.memory_revision,String(cb.message!.message_thread_id || 0)]);
+          if(row?.task_id&&approval[1]==='reject')await sql.query("UPDATE agent_tasks SET status='needs_input',error_code='action_rejected',updated_at=now() WHERE id=$1 AND status='waiting'",[row.task_id]);
+        });return;
+      }
       const command=cb.data&&callbackCommand(cb.data);
       const choiceId=/^lumen:choice:([0-9a-f-]{36})$/.exec(cb.data || '')?.[1];
       if((!command&&!choiceId) || !cb.message || cb.message.from?.id!==this.bot.id || cb.from.is_bot)return;
@@ -135,6 +154,25 @@ export class ChatRouter {
     const m=update.message || update.edited_message;if(!m?.from||m.from.is_bot)return;
     const uid=String(m.from.id),chatId=String(m.chat.id),text=m.text || '';
     if(m.chat.type==='private'){
+      const connect=/^\/start(?:@\w+)?\s+connect_([0-9a-f-]{36})$/.exec(text);
+      if(connect){
+        for(const r of await this.active())await r.db.query("UPDATE connection_setups SET status='pending' WHERE actor_id=$1 AND status='awaiting_token'",[uid]);
+        for(const r of await this.active()){
+          const request=await one(r.db,"UPDATE connection_setups SET status='awaiting_token' WHERE id=$1 AND actor_id=$2 AND expires_at>now() AND status='pending' RETURNING name,endpoint",[connect[1],uid]);
+          if(request){await this.telegram.text(chatId,`Особисте підключення «${request.name}»\nСервер: ${request.endpoint}\n\nНадішли токен доступу одним повідомленням, або - для публічного сервера без токена. Він буде зашифрований і не потрапить у групу чи запит моделі. /cancel скасовує налаштування.`);return;}
+        }await this.telegram.text(chatId,'Посилання підключення недоступне або прострочене. Попроси підготувати нове.');return;
+      }
+      for(const r of await this.active()){
+        const pending=await one(r.db,"SELECT * FROM connection_setups WHERE actor_id=$1 AND status='awaiting_token' AND expires_at>now() ORDER BY created_at DESC LIMIT 1",[uid]);if(!pending)continue;
+        if(text==='/cancel'){await r.db.query("UPDATE connection_setups SET status='cancelled' WHERE id=$1",[pending.id]);await this.telegram.text(chatId,'Підключення скасоване.');return;}
+        if(!text||text.length>20000||text.startsWith('/')){await this.telegram.text(chatId,'Очікую токен одним повідомленням або /cancel.');return;}
+        const token=text.trim()==='-'?undefined:text.trim();const vault=new ConnectorVault(r.db,this.config.runtimeDir);
+        if(token)await vault.put(uid,pending.name,token);
+        await r.db.query('INSERT INTO tool_connections(id,owner_id,endpoint,credential_name) VALUES($1,$2,$3,$4) ON CONFLICT(owner_id,id) DO UPDATE SET endpoint=excluded.endpoint,credential_name=excluded.credential_name,enabled=true',[pending.name,uid,pending.endpoint,token?pending.name:null]);
+        await r.db.query("UPDATE connection_setups SET status='completed' WHERE id=$1",[pending.id]);
+        try{const tools=await new MCPClient(pending.endpoint,token).list();await this.telegram.text(chatId,`Підключення «${pending.name}» перевірене: доступно ${tools.length} інструментів. Особистий токен у групу не передаю.`);}catch{await this.telegram.text(chatId,`Підключення «${pending.name}» збережене, але сервер не підтвердив доступ. Перевір токен та адресу; робочим його поки не вважаю.`);}
+        try{await this.telegram.call('deleteMessage',{chat_id:chatId,message_id:m.message_id});}catch{}return;
+      }
       if(!/^\/(?:start|id|help)(?:@\w+)?(?:\s|$)/i.test(text))return;
       const payload=text.trim().split(/\s+/)[1] || '';
       if(validSetupPayload(payload,this.config)&&(!this.config.ownerId||this.config.ownerId===uid))await this.registry.claimOwner(uid);

@@ -99,7 +99,7 @@ describe('Реальна PostgreSQL-логіка приватної групи',
   });
   it('пошук історії повертає першоджерело й автора, а не вигадану пам’ять',async()=>{
     await paired(h);await h.lumen.receive(message('Подорож запланована у Львів.',22));await h.lumen.processNext();h.brain.replies.push({reply:'',actions:[{kind:'history',query:'Львів'}]},{reply:'Про Львів говорив другий учасник.',actions:[]});
-    await h.lumen.receive(message('Люмен, що ми домовлялися про Львів?'));await h.lumen.processNext();assert.match(h.brain.calls[1]!.context,/ДЖЕРЕЛА ПОШУКУ/);assert.match(h.brain.calls[1]!.context,/"user_id":"22"/);
+    await h.lumen.receive(message('Люмен, що ми домовлялися про Львів?'));await h.lumen.processNext();const sources=JSON.parse(h.brain.calls[1]!.context).tool_results_untrusted;assert.equal(sources[0].tool,'history');assert.equal(sources[0].result[0].user_id,'22');assert.match(sources[0].result[0].body,/Подорож запланована у Львів/);
   });
   it('нагадування ставиться в чергу один раз і зберігається до доставки',async()=>{
     await paired(h);await db.query("INSERT INTO reminders(title,due_at,author_id) VALUES ('чай',now()-interval '1 minute','11')");await h.lumen.scheduleDue();await h.lumen.scheduleDue();assert.equal((await db.query('SELECT * FROM outbox')).rows.length,1);assert.equal((await one(db,'SELECT status FROM reminders'))!.status,'queued');

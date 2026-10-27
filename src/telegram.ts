@@ -76,12 +76,12 @@ export class Telegram {
     try { json = await response.json(); } catch { throw new TelegramError('telegram_bad_response'); }
     if (!response.ok || !json.ok || json.result !== true) throw new TelegramError(`telegram_${json.error_code || response.status}`);
   }
-  async upload(method: 'sendPhoto' | 'sendVoice' | 'sendAnimation', chatId: string, bytes: Uint8Array, caption: string, mime: string, threadId?:number) {
-    const field = method === 'sendPhoto' ? 'photo' : method==='sendAnimation' ? 'animation' : 'voice';
+  async upload(method: 'sendPhoto' | 'sendVoice' | 'sendAnimation' | 'sendDocument', chatId: string, bytes: Uint8Array, caption: string, mime: string, threadId?:number,fileName?:string) {
+    const field = method === 'sendPhoto' ? 'photo' : method==='sendAnimation' ? 'animation' : method==='sendDocument'?'document':'voice';
     const form = new FormData();
     form.set('chat_id', chatId); form.set('caption', caption.slice(0,900));
     if(threadId)form.set('message_thread_id',String(threadId));
-    form.set(field, new Blob([bytes as BlobPart], { type: mime }), method === 'sendPhoto' ? 'lumen.png' : method==='sendAnimation'?(mime==='video/mp4'?'lumen.mp4':'lumen.gif'):'lumen.ogg');
+    form.set(field, new Blob([bytes as BlobPart], { type: mime }), fileName || (method === 'sendPhoto' ? 'lumen.png' : method==='sendAnimation'?(mime==='video/mp4'?'lumen.mp4':'lumen.gif'):method==='sendDocument'?'lumen.txt':'lumen.ogg'));
     let response: Response;
     try { response = await this.fetcher(`https://api.telegram.org/bot${this.token}/${method}`, { method:'POST', body:form, signal:AbortSignal.timeout(120000) }); }
     catch { throw new TelegramError('telegram_upload_uncertain',0,true); }

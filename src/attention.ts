@@ -50,8 +50,11 @@ export async function ambientStillRelevant(sql:SQL,m:Message,sourceId:number,s:R
 
 const STOP=new Set('this that with have what when where your you our the and for are was were from або але мене тебе його вона вони було були буде буде який яка які щось просто також тоді тепер давай треба можна дуже вже тут там про для без щоб тому коли чому його свою свої цими всіх який це цей цієї этом это этой того что как там тут для или тоже уже мне тебя его она они было были будет очень просто давай нужно можно'.split(/\s+/));
 export async function relatedDiscussions(sql:SQL,text:string,sourceId:number){
-  const words=[...new Set((text.toLowerCase().match(/[\p{L}\p{N}]+/gu) || []).filter(w=>w.length>=4&&!STOP.has(w)))].slice(0,12);
+  let words=[...new Set((text.toLowerCase().match(/[\p{L}\p{N}]+/gu) || []).filter(w=>w.length>=4&&!STOP.has(w)))].slice(0,12);
   if(!words.length)return [];
+  const learned=await sql.query('SELECT alternatives FROM memory_terms WHERE term=ANY($1::text[]) LIMIT 8',[words]);
+  const expanded=learned.rows.flatMap(r=>(Array.isArray(r.alternatives)?r.alternatives:[]).flatMap((v:unknown)=>typeof v==='string'?(v.match(/[\p{L}\p{N}]+/gu) || []):[]));
+  words=[...new Set([...words,...expanded.filter(w=>w.length>=3)])].slice(0,24);
   const result=await sql.query(`SELECT id,telegram_id AS message_id,author,user_id,role,body,created_at,topic_id FROM messages WHERE id<$1 AND to_tsvector('simple',body) @@ to_tsquery('simple',$2) ORDER BY ts_rank_cd(to_tsvector('simple',body),to_tsquery('simple',$2)) DESC,id DESC LIMIT 8`,[sourceId,words.map(w=>(w.length>=6?w.slice(0,-2):w)+':*').join(' | ')]);
   return result.rows.map(row=>({...row,body:String(row.body).slice(0,1000)}));
 }

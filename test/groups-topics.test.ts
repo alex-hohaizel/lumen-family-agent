@@ -236,4 +236,13 @@ describe('Окремі групи, природні звернення та те
     const a=await add();brains.get('-200')!.replies.push({reply:'Граємо.',actions:[{kind:'start_activity',title:'Командна історія',rules:'Учасники розповідають історію по одному реченню.',summary:'Починаємо історію.'}]});await ask(a,msg('Люмен, почни гру'));
     brains.get('-200')!.replies.push({reply:'Тепер граємо командами.',actions:[{kind:'activity_turn',rules:'Об’єднуємося у дві команди; кожна додає абзац по черзі.',summary:'Перейшли до командного формату. Першою пише перша команда.'}]});await ask(a,msg('Люмен, підлаштуй правила під дві команди'));const row=await one(a.db,'SELECT state FROM games');assert.match(row!.state.rules,/дві команди/);assert.equal(row!.state.turn,1);
   });
+  it('підтвердити зовнішню дію може тільки її автор у тій самій темі',async()=>{
+    const a=await add();const id='10203040-1020-4020-8020-102030405060';
+    await a.db.query("INSERT INTO tool_approvals(id,actor_id,tool,arguments,argument_hash,summary,revision,topic_id) VALUES($1,'11','browser.commit','{}','hash','Підтвердити дію',0,'77')",[id]);
+    const click=async(uid:number,topic:number)=>router.receive({update_id:seq++,callback_query:{id:'approval'+seq,from:{id:uid,first_name:'Учасник'},data:'lumen:approve:'+id,message:{message_id:123,chat:{id:-200,type:'supergroup'},from:{...bot,first_name:'Люмен'},date:Math.floor(Date.now()/1000),message_thread_id:topic}}});
+    await click(22,77);assert.equal((await one(a.db,'SELECT status FROM tool_approvals'))!.status,'pending');
+    await click(11,88);assert.equal((await one(a.db,'SELECT status FROM tool_approvals'))!.status,'pending');
+    await click(11,77);assert.equal((await one(a.db,'SELECT status FROM tool_approvals'))!.status,'approved');
+  });
+
 });

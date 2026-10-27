@@ -11,6 +11,8 @@ import { prepareCredentials } from './bootstrap.js';
 import { ensureAvatar,ensureTextProfile } from './profile.js';
 import {ensureStickerPack} from './sticker-pack.js';
 import {RELEASE} from './release.js';
+import {browsers} from './browser.js';
+import {runtimeChecks} from './runtime-checks.js';
 
 let startupStage='configuration';
 async function main(){
@@ -38,8 +40,9 @@ async function main(){
   if(owner)try{pack=await ensureStickerPack(telegram,owner,config.runtimeDir);console.log(JSON.stringify({event:'sticker_pack_ready',name:pack.name,count:pack.stickers.length}));}catch(e){console.error(JSON.stringify({event:'sticker_pack_failed',code:errorCode(e)}));}
   startupStage='group_runtimes';
   const router=new ChatRouter(registry,config,telegram,bot);if(pack)router.setStickerPack(pack);await router.init();
-  let running=true;let lastPoll=Date.now();
+  let running=true;let lastPoll=Date.now();let checks:unknown={status:'pending'};
   const health=createServer(async (req,res)=>{
+    if(req.url==='/ready'){res.writeHead(200,{'Content-Type':'application/json','Cache-Control':'no-store'}).end(JSON.stringify({version:RELEASE,checks}));return;}
     if(req.url!=='/health'){res.writeHead(404).end();return;}
     const ok=running&&!leaseLost&&Date.now()-lastPoll<180000;
     res.writeHead(ok?200:503,{'Content-Type':'application/json','Cache-Control':'no-store'}).end(JSON.stringify({status:ok?'ok':'unavailable'}));
@@ -83,7 +86,9 @@ async function main(){
   const compact=async()=>{while(running&&!leaseLost){await each('memory_error',r=>r.memory.compact());for(let i=0;i<60&&running&&!leaseLost;i++)await delay(1000);}};
   const mediaBusy=new Set<string>();const mediaPending=new Set<Promise<void>>();let mediaCursor=0;
   const mediaWork=async()=>{while(running&&!leaseLost){const active=await router.active();const order=active.slice(mediaCursor).concat(active.slice(0,mediaCursor));for(const r of order){if(mediaBusy.has(r.chat.chat_id)||mediaBusy.size>=2)continue;mediaBusy.add(r.chat.chat_id);mediaCursor=(active.indexOf(r)+1)%active.length;let task:Promise<void>;task=(async()=>{if(!await r.images.next())await r.visual.next();})().catch(e=>console.error(JSON.stringify({event:'media_error',code:errorCode(e)}))).finally(()=>{mediaBusy.delete(r.chat.chat_id);mediaPending.delete(task);});mediaPending.add(task);}await delay(1500);}await Promise.allSettled(mediaPending);};
-  await Promise.all([poll(),work(),send(),compact(),mediaWork()]);health.close();lease.release();await db.close();
+  const automationWork=async()=>{while(running&&!leaseLost){await each('agent_error',async r=>{if(!await r.agent.next())await r.monitors.next();});await delay(1500);}};
+  const check=runtimeChecks(config.runtimeDir,()=>router.probeNativeSearch()).then(result=>{checks=result;}).catch(()=>{checks={status:'failed'};console.error(JSON.stringify({event:'runtime_checks_failed'}));});
+  await Promise.all([poll(),work(),send(),compact(),mediaWork(),automationWork(),check]);await browsers.close();health.close();lease.release();await db.close();
   if(leaseLost)process.exitCode=1;
 }
 main().catch(e=>{console.error(JSON.stringify({event:'startup_failed',stage:startupStage,native_code:/^[A-Za-z0-9_]{1,60}$/.test(e.code||'')?e.code:undefined,frames:typeof e.stack==='string'?e.stack.split('\n').slice(1,4):undefined,code:/^[a-z_]+$/.test(e.message)?e.message:errorCode(e)}));process.exit(1);});

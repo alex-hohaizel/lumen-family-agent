@@ -62,7 +62,11 @@ export class Delivery {
       if(current.paused)await activityFor(this.db,this.telegram).stopAll();
       if(!progress&&row.source_message_id)await activityFor(this.db,this.telegram).stopSource(Number(row.source_message_id));
       let sent:{message_id:number};
-      if(row.kind==='telegram')sent=await this.native(row);
+      if(row.kind==='artifact'){
+        const artifact=await one(this.db,'SELECT name,mime,content,revision FROM agent_artifacts WHERE id=$1 AND actor_id=$2',[row.body.id,row.actor_id]);
+        if(!artifact||artifact.revision!==row.revision)throw Error('artifact_not_available');
+        sent=await this.telegram.upload('sendDocument',row.chatId,Buffer.from(artifact.content,'utf8'),artifact.name,artifact.mime,row.body.threadId,artifact.name);
+      }else if(row.kind==='telegram')sent=await this.native(row);
       else if(row.kind==='reaction'){
         await this.telegram.call('setMessageReaction',{chat_id:row.chatId,message_id:row.body.messageId,reaction:[{type:'emoji',emoji:row.body.emoji}],is_big:false});sent={message_id:row.body.messageId};
       }else if(row.kind==='sticker')sent=await this.telegram.sticker(row.chatId,row.body.fileId,row.body.threadId,row.body.replyToMessageId);
@@ -81,7 +85,7 @@ export class Delivery {
         const notice=!waiting?await one(this.db,"SELECT id,telegram_id FROM outbox WHERE source_message_id=$1 AND dedup_key LIKE 'progress:%' AND status='sent' LIMIT 1",[row.source_message_id]):undefined;
         if(notice?.telegram_id)try{await this.telegram.call('deleteMessage',{chat_id:row.chatId,message_id:Number(notice.telegram_id)});await this.db.query("UPDATE outbox SET status='cleared' WHERE id=$1",[notice.id]);}catch{}
       }
-      const deliveredText=row.kind==='telegram'?`[дія Telegram: ${row.body.operation}] ${row.body.text || row.body.caption || ''}`:animated?`[анімація Люмена: ${row.body.asset}]`:row.kind==='image'?`[зображення Люмена] ${row.body.prompt || ''}`:row.kind==='reaction'?`[реакція Люмена: ${row.body.emoji}]`:row.kind==='sticker'?`[стікер Люмена: ${row.body.emoji || ''}]`:row.kind==='poll'?`[${row.body.quiz?'вікторина':'опитування'}] ${row.body.question}\n${row.body.options.join(' · ')}`:row.body.text;
+      const deliveredText=row.kind==='artifact'?`[файл Люмена: ${row.body.id}]`:row.kind==='telegram'?`[дія Telegram: ${row.body.operation}] ${row.body.text || row.body.caption || ''}`:animated?`[анімація Люмена: ${row.body.asset}]`:row.kind==='image'?`[зображення Люмена] ${row.body.prompt || ''}`:row.kind==='reaction'?`[реакція Люмена: ${row.body.emoji}]`:row.kind==='sticker'?`[стікер Люмена: ${row.body.emoji || ''}]`:row.kind==='poll'?`[${row.body.quiz?'вікторина':'опитування'}] ${row.body.question}\n${row.body.options.join(' · ')}`:row.body.text;
       const deliveredRelease=await this.db.tx(async sql=>{
         const live=await state(sql,true);if(live.memory_revision!==row.revision)return;
         const still=await one(sql,'SELECT id FROM outbox WHERE id=$1',[row.id]);if(!still)return;

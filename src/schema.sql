@@ -134,4 +134,49 @@ ALTER TABLE app_state ADD COLUMN IF NOT EXISTS ambient_gap_seconds integer NOT N
 CREATE TABLE IF NOT EXISTS topic_attention (topic_id text PRIMARY KEY,checked_at timestamptz,checked_source_id bigint REFERENCES messages(id) ON DELETE SET NULL,spoke_at timestamptz,spoke_source_id bigint REFERENCES messages(id) ON DELETE SET NULL,last_reply text NOT NULL DEFAULT '');
 UPDATE app_state SET ambient_gap_seconds=GREATEST(60,proactive_gap_minutes*60) WHERE proactive_gap_minutes<>45 AND NOT EXISTS(SELECT 1 FROM schema_version WHERE version=8);
 INSERT INTO schema_version VALUES (8) ON CONFLICT DO NOTHING;
+CREATE TABLE IF NOT EXISTS agent_tasks (
+ id uuid PRIMARY KEY,dedup_key text NOT NULL UNIQUE,actor_id text NOT NULL,topic_id text NOT NULL DEFAULT '0',
+ title text NOT NULL,goal text NOT NULL,status text NOT NULL DEFAULT 'pending',revision integer NOT NULL,
+ source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,step integer NOT NULL DEFAULT 0,max_steps integer NOT NULL DEFAULT 16,
+ result text NOT NULL DEFAULT '',error_code text,available_at timestamptz NOT NULL DEFAULT now(),deadline timestamptz NOT NULL DEFAULT now()+interval '30 minutes',
+ created_at timestamptz NOT NULL DEFAULT now(),updated_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS agent_tasks_pending ON agent_tasks(status,available_at);
+CREATE TABLE IF NOT EXISTS tool_runs (
+ id bigserial PRIMARY KEY,dedup_key text NOT NULL UNIQUE,task_id uuid REFERENCES agent_tasks(id) ON DELETE CASCADE,
+ actor_id text NOT NULL,tool text NOT NULL,arguments jsonb NOT NULL,status text NOT NULL DEFAULT 'running',
+ result jsonb,error_code text,revision integer NOT NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,
+ created_at timestamptz NOT NULL DEFAULT now(),finished_at timestamptz
+);
+CREATE TABLE IF NOT EXISTS tool_approvals (
+ id uuid PRIMARY KEY,actor_id text NOT NULL,task_id uuid REFERENCES agent_tasks(id) ON DELETE CASCADE,
+ tool text NOT NULL,arguments jsonb NOT NULL,argument_hash text NOT NULL,summary text NOT NULL,
+ status text NOT NULL DEFAULT 'pending',revision integer NOT NULL,topic_id text NOT NULL,
+ source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,expires_at timestamptz NOT NULL DEFAULT now()+interval '15 minutes',
+ created_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS tool_credentials (owner_id text NOT NULL,name text NOT NULL,ciphertext text NOT NULL,iv text NOT NULL,tag text NOT NULL,updated_at timestamptz NOT NULL DEFAULT now(),PRIMARY KEY(owner_id,name));
+CREATE TABLE IF NOT EXISTS tool_connections (id text NOT NULL,owner_id text NOT NULL,endpoint text NOT NULL,credential_name text,enabled boolean NOT NULL DEFAULT true,created_at timestamptz NOT NULL DEFAULT now(),PRIMARY KEY(owner_id,id));
+CREATE TABLE IF NOT EXISTS tool_grants (
+ id uuid PRIMARY KEY,actor_id text NOT NULL,connection_id text NOT NULL,tool text NOT NULL,
+ expires_at timestamptz NOT NULL,daily_limit integer NOT NULL CHECK(daily_limit BETWEEN 1 AND 100),
+ used_day date NOT NULL DEFAULT CURRENT_DATE,used_calls integer NOT NULL DEFAULT 0,revision integer NOT NULL,
+ source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,
+ FOREIGN KEY(actor_id,connection_id) REFERENCES tool_connections(owner_id,id) ON DELETE CASCADE,
+ UNIQUE(actor_id,connection_id,tool)
+);
+CREATE TABLE IF NOT EXISTS agent_workflows (id uuid PRIMARY KEY,title text NOT NULL,actor_id text NOT NULL,steps jsonb NOT NULL,status text NOT NULL DEFAULT 'draft',version integer NOT NULL DEFAULT 1,verified_runs integer NOT NULL DEFAULT 0,last_error text,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS web_monitors (
+ id uuid PRIMARY KEY,actor_id text NOT NULL,topic_id text NOT NULL,url text NOT NULL,label text NOT NULL,
+ condition text NOT NULL DEFAULT 'change',needle text NOT NULL DEFAULT '',threshold numeric,
+ interval_minutes integer NOT NULL DEFAULT 60,next_check_at timestamptz NOT NULL DEFAULT now(),expires_at timestamptz NOT NULL,
+ last_hash text,last_excerpt text NOT NULL DEFAULT '',last_notified_at timestamptz,status text NOT NULL DEFAULT 'active',
+ revision integer NOT NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,error_code text,failures integer NOT NULL DEFAULT 0,created_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS agent_artifacts (id uuid PRIMARY KEY,actor_id text NOT NULL,topic_id text NOT NULL,name text NOT NULL,mime text NOT NULL,content text NOT NULL,revision integer NOT NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS group_events (id uuid PRIMARY KEY,actor_id text NOT NULL,title text NOT NULL,details jsonb NOT NULL,status text NOT NULL DEFAULT 'planning',version integer NOT NULL DEFAULT 1,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,topic_id text NOT NULL DEFAULT '0',created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS agent_feedback (id bigserial PRIMARY KEY,actor_id text NOT NULL,content text NOT NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS memory_terms (term text PRIMARY KEY,alternatives jsonb NOT NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE);
+CREATE TABLE IF NOT EXISTS connection_setups (id uuid PRIMARY KEY,actor_id text NOT NULL,name text NOT NULL,endpoint text NOT NULL,status text NOT NULL DEFAULT 'pending',expires_at timestamptz NOT NULL DEFAULT now()+interval '15 minutes',created_at timestamptz NOT NULL DEFAULT now());
+INSERT INTO schema_version VALUES (9) ON CONFLICT DO NOTHING;
 COMMIT;

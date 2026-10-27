@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 import type { TextOptions } from './telegram.js';
 
 export type Row = Record<string, any>;
+export const AGENT_TABLES=['tool_grants','tool_runs','tool_approvals','agent_tasks','web_monitors','agent_workflows','agent_artifacts','group_events','agent_feedback','memory_terms','connection_setups','tool_connections','tool_credentials'];
 export interface SQL {
   query<T extends Row = Row>(sql: string, args?: any[]): Promise<{ rows: T[] }>;
   script?(sql:string):Promise<void>;
@@ -58,16 +59,20 @@ export async function pauseMemory(sql:SQL){
   await sql.query("UPDATE reminders SET status='pending' WHERE status='queued'");
   for(const table of ['inbox','outbox','choices','choice_votes','pending_intents','dialogues','topic_attention'])await sql.query(`DELETE FROM ${table}`);
   await sql.query("UPDATE image_jobs SET cancelled=true,status='cancelled',updated_at=now() WHERE status IN ('pending','processing','ready')");
+  await sql.query("UPDATE agent_tasks SET status='cancelled',updated_at=now() WHERE status IN ('pending','running','waiting')");
+  await sql.query("UPDATE web_monitors SET status='paused' WHERE status='active'");
+  await sql.query("UPDATE tool_approvals SET status='cancelled' WHERE status IN ('pending','approved')");
   const s=await state(sql);
   await sql.query("UPDATE attachments SET revision=$1,status=CASE WHEN status='processing' THEN 'pending' ELSE status END",[s.memory_revision]);
 }
 export async function eraseAll(sql: SQL) {
   // Remove all derived data, generated drafts, pending deliveries and attachment IDs too.
-  for (const table of ['topic_attention','image_jobs','poll_votes','polls','avatars','attachments','dialogues','choice_votes','participant_preferences','memories','rules','games','reminders','skills','episodes','stickers','choices','pending_intents','messages','outbox','inbox','topics','members']) await sql.query(`DELETE FROM ${table}`);
+  for (const table of [...AGENT_TABLES,'topic_attention','image_jobs','poll_votes','polls','avatars','attachments','dialogues','choice_votes','participant_preferences','memories','rules','games','reminders','skills','episodes','stickers','choices','pending_intents','messages','outbox','inbox','topics','members']) await sql.query(`DELETE FROM ${table}`);
   await sql.query(`UPDATE app_state SET memory_revision=memory_revision+1, character='', mode=CASE WHEN mention_only THEN 'quiet' ELSE 'social' END, since_bot=0,last_social_at=NULL,participants=CASE WHEN open_group THEN '[]'::jsonb ELSE participants END WHERE id=1`);
   await sql.query('DELETE FROM characters');
 }
 export async function forgetPhrase(sql: SQL, phrase: string) {
+  for(const table of AGENT_TABLES)await sql.query(`DELETE FROM ${table}`);
   // SQL parameters plus literal substring matching: '%' and '_' carry no wildcard authority.
   // Clear all derived stories/rules/drafts to avoid retaining paraphrases of the removed source.
   await sql.query(`DELETE FROM messages WHERE strpos(lower(body),lower($1)) > 0`, [phrase]);
@@ -76,6 +81,9 @@ export async function forgetPhrase(sql: SQL, phrase: string) {
   await sql.query(`UPDATE app_state SET memory_revision=memory_revision+1, character='' WHERE id=1`);
 }
 export async function reviseSource(sql:SQL,sourceId:number,text:string){
+  for(const table of ['tool_grants','tool_runs','tool_approvals','agent_tasks','web_monitors','agent_workflows','agent_artifacts','group_events','agent_feedback','memory_terms'])await sql.query(`DELETE FROM ${table} WHERE source_message_id=$1`,[sourceId]);
+  await sql.query("UPDATE agent_tasks SET status='cancelled' WHERE status IN ('pending','running','waiting')");
+  await sql.query("UPDATE web_monitors SET status='paused' WHERE status='active'");
   const original=await one(sql,'SELECT body FROM messages WHERE id=$1',[sourceId]);
   // Older releases did not record reminder provenance. Match only a complete,
   // sufficiently specific title present in this exact original source.
