@@ -2,7 +2,7 @@ import {safeRequest,publicURL,ToolError,type HTTPRequest} from './safe-http.js';
 
 export class MCPClient {
   private session?:string;private id=0;private initialized=false;private protocol='2025-06-18';
-  constructor(private endpoint:string,private token?:string,private request:HTTPRequest=safeRequest){publicURL(endpoint);}
+  constructor(private endpoint:string,private token?:string,private request:HTTPRequest=safeRequest){if(publicURL(endpoint).protocol!=='https:'&&token)throw new ToolError('connector_https_required');}
   private async rpc(method:string,params:unknown={},notification=false):Promise<any>{
     const id=++this.id;
     const r=await this.request(this.endpoint,{method:'POST',headers:{accept:'application/json, text/event-stream','content-type':'application/json','MCP-Protocol-Version':this.protocol,...(this.session?{'Mcp-Session-Id':this.session}:{}),...(this.token?{authorization:'Bearer '+this.token}:{})},body:JSON.stringify({jsonrpc:'2.0',...(!notification?{id}:{}),method,params}),redirects:0,timeout:30000,maxBytes:1500000});
@@ -18,5 +18,5 @@ export class MCPClient {
   async list(){await this.init();const tools:any[]=[];let cursor:string|undefined;
     for(let i=0;i<5;i++){const r=await this.rpc('tools/list',cursor?{cursor}:{});tools.push(...(r.tools || []));cursor=r.nextCursor;if(!cursor)break;}return tools.slice(0,100);
   }
-  async call(name:string,args:unknown){await this.init();const result=await this.rpc('tools/call',{name,arguments:args});const json=JSON.stringify(result);return this.token?JSON.parse(json.split(this.token).join('[redacted]')):result;}
+  async call(name:string,args:unknown){await this.init();const result=await this.rpc('tools/call',{name,arguments:args});if(result?.isError)throw new ToolError('connector_tool_error');const json=JSON.stringify(result);return this.token?JSON.parse(json.split(this.token).join('[redacted]')):result;}
 }

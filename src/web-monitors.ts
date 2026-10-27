@@ -1,3 +1,5 @@
+import {fieldAt} from './confirmation.js';
+import {ToolError} from './safe-http.js';
 import {createHash} from 'node:crypto';
 import {one,state,queueText,type Database} from './db.js';
 import {readWeb} from './web.js';
@@ -21,8 +23,8 @@ export class WebMonitors {
       await sql.query("UPDATE web_monitors SET next_check_at=now()+(interval_minutes*interval '1 minute') WHERE id=$1",[r.id]);return r;
     });if(!row)return false;
     try{
-      const page=await this.reader(row.url);const text=page.text;const hash=createHash('sha256').update(text).digest('hex');
-      const measurement=row.condition==='below'?monitoredNumber(text,row.needle):undefined;
+      const page=await this.reader(row.url);let text=page.text;let jsonValue:any;if(row.json_path){let data;try{data=JSON.parse(text);}catch{throw new ToolError('monitor_json_invalid');}jsonValue=fieldAt(data,row.json_path);if(jsonValue===undefined||jsonValue!==null&&typeof jsonValue==='object')throw new ToolError('monitor_json_field_missing');text=String(jsonValue);}const hash=createHash('sha256').update(text).digest('hex');
+      const measurement=row.condition==='below'?(row.json_path&&typeof jsonValue==='number'?{value:jsonValue,excerpt:row.json_path+': '+jsonValue}:monitoredNumber(text,row.needle)):undefined;
       const number=measurement?.value??NaN;
       const matched=row.condition==='change'?Boolean(row.last_hash&&row.last_hash!==hash):row.condition==='contains'?text.toLowerCase().includes(row.needle.toLowerCase()):Number.isFinite(number)&&number<Number(row.threshold);
       await this.db.tx(async sql=>{const s=await state(sql,true),current=await one(sql,'SELECT status FROM web_monitors WHERE id=$1',[row.id]);if(s.paused||s.memory_revision!==row.revision||current?.status!=='active')return;

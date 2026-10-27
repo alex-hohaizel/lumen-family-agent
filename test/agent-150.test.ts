@@ -67,7 +67,7 @@ describe('Автономні задачі 1.5, приватність і пер�
  it('відкидає дію без поточного доручення й неправильні параметри до мережі',async()=>{await assert.rejects(()=>tools.execute('tasks.create',{title:'Назва',goal:'Завдання'},{...c,requested:false}),/tool_not_requested/);await assert.rejects(()=>tools.execute('web.read',{url:'wrong'},c),/invalid_tool_arguments/);});
  it('черга тривалого завдання переживає відновлення й доставляє завершений результат',async()=>{
    const task=await tools.execute('tasks.create',{title:'Перевірити події',goal:'Покажи наявні події нашої групи'},c);const brain=new FakeBrain();brain.replies=[{reply:'',actions:[{kind:'tool',name:'event.list',arguments:'{}'}]},{reply:'Запланованих подій немає.',actions:[]}];
-   const runner=new AgentTasks(db,h.config,brain);assert.equal(await runner.next(),true);await db.query('UPDATE agent_tasks SET available_at=now() WHERE id=$1',[task.id]);await runner.recover();assert.equal(await runner.next(),true);const row=(await db.query('SELECT * FROM agent_tasks WHERE id=$1',[task.id])).rows[0];assert.equal(row?.status,'completed');assert.ok((await db.query("SELECT * FROM outbox WHERE dedup_key LIKE 'task-result:%'")).rows.length===1);
+   const runner=new AgentTasks(db,h.config,brain);assert.equal(await runner.next(),true);await db.query('UPDATE agent_tasks SET available_at=now() WHERE id=$1',[task.id]);await runner.recover();assert.equal(await runner.next(),true);const row=(await db.query('SELECT * FROM agent_tasks WHERE id=$1',[task.id])).rows[0];assert.equal(row?.status,'delivering');assert.ok((await db.query("SELECT * FROM outbox WHERE dedup_key LIKE 'task-result:%'")).rows.length===1);const delivery=new Delivery(db,h.tg as any,h.config);for(let i=0;i<5;i++)await delivery.next();assert.equal((await db.query('SELECT status FROM agent_tasks WHERE id=$1',[task.id])).rows[0]?.status,'completed');
  });
  it('інший учасник не скасовує й не читає власні задачі першого',async()=>{
    const task=await tools.execute('tasks.create',{title:'Особисте',goal:'Дослідити місця'},c);const other={...c,actorId:'22',updateId:randomUUID()};assert.deepEqual(await tools.execute('tasks.cancel',{id:task.id},other),{cancelled:false});assert.deepEqual(await tools.execute('tasks.list',{},other),[]);
@@ -97,17 +97,17 @@ describe('Автономні задачі 1.5, приватність і пер�
    await monitors.next();assert.equal((await db.query("SELECT * FROM outbox WHERE dedup_key LIKE 'watch:%'")).rows.length,0);text='Є два місця';await db.query('UPDATE web_monitors SET next_check_at=now() WHERE id=$1',[a.id]);await monitors.next();await db.query('UPDATE web_monitors SET next_check_at=now() WHERE id=$1',[a.id]);await monitors.next();assert.equal((await db.query("SELECT * FROM outbox WHERE dedup_key LIKE 'watch:%'")).rows.length,1);
  });
  it('постійне читання вимагає погодження власника, має добовий ліміт і відкликається',async()=>{
-   await db.query("INSERT INTO tool_connections(owner_id,id,endpoint) VALUES('11','calendar','https://example.com')");let calls=0;
+   await db.query("INSERT INTO tool_connections(owner_id,id,endpoint,trusted_read_tools) VALUES('11','calendar','https://example.com','[\"lookup\"]')");let calls=0;
    (tools as any).connector=async(owner:string)=>{assert.equal(owner,'11');return {list:async()=>[{name:'lookup',annotations:{readOnlyHint:true}}],call:async()=>({ok:true,call:++calls})};};
-   const args={connection:'calendar',tool:'lookup',expires_at:new Date(Date.now()+86400000).toISOString(),daily_limit:1};
+   const args={connection:'calendar',tool:'lookup',expires_at:new Date(Date.now()+86400000).toISOString(),daily_limit:1,share_to_group:true};
    const proposal=await tools.execute('access.grant_read',args,c);assert.equal(proposal.needs_approval,true);assert.equal((await db.query('SELECT * FROM tool_grants')).rows.length,0);
    await db.query("UPDATE tool_approvals SET status='approved' WHERE id=$1",[proposal.approval_id]);
    const grant=await tools.execute('access.grant_read',args,{...c,updateId:'grant-approved',approvalId:proposal.approval_id});
-   assert.equal((await tools.execute('connector.call',{connection:'calendar',tool:'lookup',arguments:'{}'},{...c,updateId:'read-1'})).ok,true);assert.equal(calls,1);
-   await assert.rejects(()=>tools.execute('connector.call',{connection:'calendar',tool:'lookup',arguments:'{}'},{...c,updateId:'read-2'}),/standing_permission_daily_limit/);
-   const other=await tools.execute('connector.call',{connection:'calendar',tool:'lookup',arguments:'{}'},{...c,actorId:'22',updateId:'other-actor'});assert.equal(other.needs_approval,true);assert.equal(calls,1);
+   assert.equal((await tools.execute('connector.call',{connection:'calendar',tool:'lookup',arguments:'{}',share_result:true},{...c,updateId:'read-1'})).ok,true);assert.equal(calls,1);
+   await assert.rejects(()=>tools.execute('connector.call',{connection:'calendar',tool:'lookup',arguments:'{}',share_result:true},{...c,updateId:'read-2'}),/standing_permission_daily_limit/);
+   const other=await tools.execute('connector.call',{connection:'calendar',tool:'lookup',arguments:'{}',share_result:true},{...c,actorId:'22',updateId:'other-actor'});assert.equal(other.needs_approval,true);assert.equal(calls,1);
    assert.equal((await tools.execute('access.revoke',{id:grant.id},{...c,updateId:'revoke'})).revoked,true);
-   const again=await tools.execute('connector.call',{connection:'calendar',tool:'lookup',arguments:'{}'},{...c,updateId:'after-revoke'});assert.equal(again.needs_approval,true);
+   const again=await tools.execute('connector.call',{connection:'calendar',tool:'lookup',arguments:'{}',share_result:true},{...c,updateId:'after-revoke'});assert.equal(again.needs_approval,true);
  });
  it('прострочене погодження переводить задачу з очікування до needs_input',async()=>{
    const job=await tools.execute('tasks.create',{title:'Запис',goal:'Погодити запис на подію'},c);

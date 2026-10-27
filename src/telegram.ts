@@ -1,10 +1,12 @@
+import {operationSignal} from './operations.js';
 export interface TGUser { id: number; first_name: string; last_name?: string; username?: string; is_bot?: boolean; }
 export interface TGChat { id: number; type: string; title?: string; is_forum?: boolean; }
 export interface InlineKeyboard { inline_keyboard: { text: string; callback_data?: string; url?: string }[][]; }
 export interface TextEntity {type:string;offset:number;length:number;url?:string;}
 export interface TGSticker {file_id:string;file_unique_id:string;type?:string;emoji?:string;set_name?:string;is_animated?:boolean;is_video?:boolean;thumbnail?:{file_id:string;file_unique_id?:string};}
-export interface TextOptions { replyMarkup?: InlineKeyboard; replyToMessageId?: number; targetChatId?: string; threadId?: number; entities?:TextEntity[]; sourceMessageId?:number;actorId?:string;audience?:'personal'|'group'; }
+export interface TextOptions {sourceIds?:number[];taskId?:string;goalVersion?:number; replyMarkup?: InlineKeyboard; replyToMessageId?: number; targetChatId?: string; threadId?: number; entities?:TextEntity[]; sourceMessageId?:number;actorId?:string;audience?:'personal'|'group'|'private'; }
 export interface Message {
+  receiver_user?:TGUser;ephemeral_message_id?:number;
   message_id: number; date: number; edit_date?: number; from?: TGUser; chat: TGChat;
   text?: string; caption?: string; reply_to_message?: Partial<Message> & {message_id:number};
   photo?: { file_id: string; file_size?: number }[];
@@ -37,7 +39,7 @@ export class Telegram {
     let response: Response;
     try {
       response = await this.fetcher(`https://api.telegram.org/bot${this.token}/${method}`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body), signal: AbortSignal.timeout(timeout)
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body), signal: operationSignal(timeout)
       });
     } catch { throw new TelegramError('telegram_network', 0, /^(send|edit)/.test(method)); }
     let json: any;
@@ -96,7 +98,7 @@ export class Telegram {
     // Only Telegram-returned paths, fixed host and bounded streaming body.
     if (!/^[\w/.-]+$/.test(meta.file_path) || meta.file_path.includes('..')) throw new TelegramError('file_path_invalid');
     let res: Response;
-    try { res = await this.fetcher(`https://api.telegram.org/file/bot${this.token}/${meta.file_path}`, { signal:AbortSignal.timeout(30000), redirect:'error' }); }
+    try { res = await this.fetcher(`https://api.telegram.org/file/bot${this.token}/${meta.file_path}`, { signal:operationSignal(30000), redirect:'error' }); }
     catch { throw new TelegramError('file_download_failed'); }
     if (!res.ok || !res.body) throw new TelegramError('file_download_failed');
     const chunks: Uint8Array[] = []; let total = 0;

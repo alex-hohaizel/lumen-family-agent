@@ -1,3 +1,4 @@
+import {operationSignal} from './operations.js';
 import type { Config } from './config.js';
 import { ModelError } from './auth.js';
 export class Media {
@@ -7,11 +8,16 @@ export class Media {
     const form=new FormData();form.set('model',this.config.transcribeModel);
     form.set('file',new Blob([bytes as BlobPart],{type:mime}),'voice.ogg');
     let res;
-    try{res=await this.fetcher('https://api.openai.com/v1/audio/transcriptions',{method:'POST',headers:{Authorization:`Bearer ${this.config.apiKey}`},body:form,signal:AbortSignal.timeout(90000)});}
+    try{res=await this.fetcher('https://api.openai.com/v1/audio/transcriptions',{method:'POST',headers:{Authorization:`Bearer ${this.config.apiKey}`},body:form,signal:operationSignal(90000)});}
     catch{throw new ModelError('voice_network');}
     if(!res.ok)throw new ModelError(`voice_http_${res.status}`);
     const json:any=await res.json();if(typeof json.text!=='string')throw new ModelError('voice_invalid_result');
     return json.text.slice(0,12000);
+  }
+  async speak(text:string){
+    if(!this.config.apiKey||!this.config.speechModel)throw new ModelError('speech_not_configured');
+    const res=await this.fetcher('https://api.openai.com/v1/audio/speech',{method:'POST',headers:{Authorization:`Bearer ${this.config.apiKey}`,'Content-Type':'application/json'},body:JSON.stringify({model:this.config.speechModel,voice:this.config.speechVoice,input:text,response_format:'mp3'}),signal:operationSignal(90000)});
+    if(!res.ok)throw new ModelError('speech_http_'+res.status);const bytes=Buffer.from(await res.arrayBuffer());if(bytes.length>8_000_000)throw new ModelError('speech_result_too_large');return bytes;
   }
   async image(prompt:string,references:string[]=[],signal?:AbortSignal) {
     if(!this.config.apiKey || !this.config.imageModel)throw new ModelError('image_not_configured');

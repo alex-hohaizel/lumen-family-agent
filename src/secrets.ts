@@ -1,0 +1,1 @@
+export function looksLikeCredential(text: string) { return /(?:^|\s)(?:sk-(?:proj-)?[A-Za-z0-9_-]{16,}|gh[pousr]_[A-Za-z0-9_]{20,}|xox[baprs]-[A-Za-z0-9-]{16,}|Bearer\s+[A-Za-z0-9._~-]{16,})|"(?:access_token|refresh_token|client_secret|api_key)"\s*:\s*"[^"\s]{12,}"|^eyJ[A-Za-z0-9_-]{16,}\.[A-Za-z0-9_-]{16,}\.[A-Za-z0-9_-]{16,}$/m.test(text); }

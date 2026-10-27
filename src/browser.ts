@@ -1,3 +1,4 @@
+import {operationSignal,checkOperation} from './operations.js';
 import {createHash} from 'node:crypto';
 import type {Browser,BrowserContext,Page} from 'playwright-core';
 import {safeRequest,publicURL,ToolError,type HTTPRequest} from './safe-http.js';
@@ -19,7 +20,7 @@ export class BrowserTools {
     return this.browser;
   }
   private async session(scope:string){
-    for(const [key,s] of this.sessions)if(Date.now()-s.last>120000){await s.context.close().catch(()=>{});this.sessions.delete(key);}
+    for(const [key,s] of this.sessions)if(Date.now()-s.last>20*60000){await s.context.close().catch(()=>{});this.sessions.delete(key);}
     let s=this.sessions.get(scope);if(s){s.last=Date.now();return s;}
     if(this.sessions.size>=3)throw new ToolError('browser_busy');
     const browser=await this.start();const context=await browser.newContext({acceptDownloads:false,serviceWorkers:'block',locale:'uk-UA',viewport:{width:1100,height:760}});
@@ -41,9 +42,10 @@ export class BrowserTools {
     this.sessions.set(scope,s);return s;
   }
   private async perform(scope:string,op:string,args:Record<string,any>,approvedOrigin?:string){
-    clearTimeout(this.idle);
+    checkOperation();clearTimeout(this.idle);
     if(op==='close'&&!this.sessions.has(scope))return {closed:true};
     const s=await this.session(scope);s.writeOrigin=approvedOrigin;const writesBefore=s.writes;
+    const signal=operationSignal();const abort=()=>{void s.context.close().catch(()=>{});};signal?.addEventListener('abort',abort,{once:true});
     const timer=setTimeout(()=>void s.context.close().catch(()=>{}),45000);timer.unref();
     try{
       if(op==='open')await s.page.goto(publicURL(args.url).href,{waitUntil:'domcontentloaded',timeout:20000});
@@ -73,8 +75,13 @@ export class BrowserTools {
       });
       return {...snapshot,fingerprint:createHash('sha256').update(JSON.stringify(snapshot)).digest('hex'),blocked_write_requests:s.blockedWrites,submitted_requests:s.writes,last_write_status:s.lastWriteStatus,content_is_untrusted:true,retrieved_at:new Date().toISOString()};
     }catch(e){if(e instanceof ToolError)throw e;throw new ToolError('browser_operation_failed');}
-    finally{clearTimeout(timer);s.writeOrigin=undefined;s.last=Date.now();if(!s.context.pages().length)this.sessions.delete(scope);this.idle=setTimeout(()=>void this.close().catch(()=>{}),120000);this.idle.unref();}
+    finally{signal?.removeEventListener('abort',abort);clearTimeout(timer);s.writeOrigin=undefined;s.last=Date.now();if(!s.context.pages().length)this.sessions.delete(scope);this.idle=setTimeout(()=>void this.close().catch(()=>{}),120000);this.idle.unref();}
   }
+  async pdf(html:string){
+    const task=this.tail.catch(()=>{}).then(async()=>{checkOperation();const browser=await this.start(),context=await browser.newContext({serviceWorkers:'block',javaScriptEnabled:false});await context.route('**/*',r=>r.abort());const signal=operationSignal();const abort=()=>{void context.close().catch(()=>{});};signal?.addEventListener('abort',abort,{once:true});const timer=setTimeout(abort,25000);timer.unref();try{const page=await context.newPage();await page.setContent(html,{waitUntil:'domcontentloaded',timeout:15000});return await page.pdf({format:'A4',margin:{top:'18mm',right:'18mm',bottom:'18mm',left:'18mm'},printBackground:true});}finally{clearTimeout(timer);signal?.removeEventListener('abort',abort);await context.close().catch(()=>{});}});this.tail=task;return task;
+  }
+  async trim(){const task=this.tail.catch(()=>{}).then(async()=>{if(!this.sessions.size)await this.close();});this.tail=task;return task;}
+  async closeScope(prefix:string){for(const [key,s] of this.sessions)if(key===prefix||key.startsWith(prefix+':')){await s.context.close().catch(()=>{});this.sessions.delete(key);}}
   async close(){clearTimeout(this.idle);await this.browser?.close();this.sessions.clear();this.browser=undefined;}
 }
 export const browsers=new BrowserTools();

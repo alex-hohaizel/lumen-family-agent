@@ -7,7 +7,7 @@ export const ConfigSchema = z.object({
   token: z.string().default(''), ownerId: z.string().regex(/^\d*$/).default(''),
   databaseUrl: z.string().default(''), authMode: z.enum(['chatgpt', 'api']).default('chatgpt'),
   model: z.string().default(''), apiKey: z.string().default(''), pairCodeHash: z.string().default(''),
-  imageModel: z.string().default(''), transcribeModel: z.string().default(''),
+  imageModel: z.string().default(''), transcribeModel: z.string().default(''),speechModel:z.string().default(''),speechVoice:z.string().default('alloy'),
   webSearch: z.boolean().default(false), timezone: z.string().default('Europe/Kyiv'),
   quietStart: z.number().int().min(0).max(23).default(23),
   quietEnd: z.number().int().min(0).max(23).default(9),
@@ -33,7 +33,7 @@ export async function loadConfig(): Promise<Config> {
   for (const [key, val] of Object.entries({
     token: env.TELEGRAM_BOT_TOKEN, ownerId: env.OWNER_TELEGRAM_ID,
     databaseUrl: env.DATABASE_URL, authMode: env.AUTH_MODE, model: env.OPENAI_MODEL,
-    apiKey: env.OPENAI_API_KEY, imageModel: env.IMAGE_MODEL, transcribeModel: env.TRANSCRIBE_MODEL,
+    apiKey: env.OPENAI_API_KEY, imageModel: env.IMAGE_MODEL, transcribeModel: env.TRANSCRIBE_MODEL,speechModel:env.SPEECH_MODEL,speechVoice:env.SPEECH_VOICE,
     timezone: env.TIMEZONE
   })) if (val) override[key] = val;
   if (env.ENABLE_WEB_SEARCH) override.webSearch = env.ENABLE_WEB_SEARCH === 'true';

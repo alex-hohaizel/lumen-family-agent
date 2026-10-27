@@ -27,6 +27,7 @@ export class ChatRegistry {
   async init(){
     await this.root.tx(async sql=>{
       const script=`CREATE TABLE IF NOT EXISTS public.lumen_transport_state(id integer PRIMARY KEY CHECK(id=1),poll_offset bigint NOT NULL DEFAULT 0,last_poll_at timestamptz,owner_user_id text);
+      CREATE TABLE IF NOT EXISTS public.lumen_private_consumed(update_id bigint PRIMARY KEY,actor_id text NOT NULL,purpose text NOT NULL,created_at timestamptz NOT NULL DEFAULT now());
       CREATE TABLE IF NOT EXISTS public.lumen_chats(chat_id text PRIMARY KEY,schema_name text NOT NULL UNIQUE,owner_id text NOT NULL,title text NOT NULL DEFAULT '',enabled boolean NOT NULL DEFAULT true,created_at timestamptz NOT NULL DEFAULT now());`;
       if(sql.script)await sql.script(script);else await sql.query(script);
       const old=await one(sql,"SELECT to_regclass('public.app_state') AS existing");
@@ -41,6 +42,8 @@ export class ChatRegistry {
       await db.query("UPDATE app_state SET open_group=true,mention_only=true,mode='quiet' WHERE id=1 AND NOT open_group");
     }
   }
+  async privateConsumed(updateId:number,actor:string){return Boolean(await one(this.root,'SELECT update_id FROM public.lumen_private_consumed WHERE update_id=$1 AND actor_id=$2',[updateId,actor]));}
+  async consumePrivate(updateId:number,actor:string,purpose:string){return (await this.root.query('INSERT INTO public.lumen_private_consumed(update_id,actor_id,purpose) VALUES($1,$2,$3) ON CONFLICT DO NOTHING RETURNING update_id',[updateId,actor,purpose])).rows.length===1;}
   async transport(){return (await one(this.root,'SELECT * FROM public.lumen_transport_state WHERE id=1'))!;}
   async advance(offset:number){await this.root.query('UPDATE public.lumen_transport_state SET poll_offset=$1,last_poll_at=now() WHERE id=1',[offset]);}
   async polled(){await this.root.query('UPDATE public.lumen_transport_state SET last_poll_at=now() WHERE id=1');}
@@ -51,7 +54,7 @@ export class ChatRegistry {
       await sql.query('UPDATE public.lumen_transport_state SET owner_user_id=$1 WHERE id=1',[uid]);return true;
     });
   }
-  async list(){return (await this.root.query<RegisteredChat>('SELECT * FROM public.lumen_chats WHERE enabled=true ORDER BY created_at')).rows;}
+  async list(includeDisabled=false){return (await this.root.query<RegisteredChat>(`SELECT * FROM public.lumen_chats ${includeDisabled?'':'WHERE enabled=true'} ORDER BY created_at`)).rows;}
   async find(chatId:string){return await one(this.root,'SELECT * FROM public.lumen_chats WHERE chat_id=$1',[chatId]) as RegisteredChat|undefined;}
   database(chat:RegisteredChat){return new ChatDatabase(this.root,chat.schema_name);}
   async ensure(chatId:string,ownerId:string,title=''){

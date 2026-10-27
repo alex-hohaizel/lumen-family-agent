@@ -1,3 +1,4 @@
+import {operationSignal} from './operations.js';
 import {lookup} from 'node:dns/promises';
 import {isIP} from 'node:net';
 import https from 'node:https';
@@ -43,7 +44,7 @@ export const safeRequest:HTTPRequest=async(input,options={})=>{
     const address=addresses[0]!;const remaining=deadline-Date.now();if(remaining<=0)throw new ToolError('http_timeout');
     const response:HTTPResult=await new Promise((resolve,reject)=>{
       const transport=url.protocol==='https:'?https:http;
-      const req=transport.request(url,{method,family:address.family,headers:{'user-agent':'Lumen/1.5 (user-requested assistant)','accept':'text/html,application/json,text/plain,application/pdf,*/*;q=0.5',...options.headers,'accept-encoding':'identity'},lookup:(_host,_opts,cb:any)=>cb(null,address.address,address.family),timeout:remaining},res=>{
+      const req=transport.request(url,{signal:operationSignal(),method,family:address.family,headers:{'user-agent':'Lumen/1.6 (user-requested assistant)','accept':'text/html,application/json,text/plain,application/pdf,*/*;q=0.5',...options.headers,'accept-encoding':'identity'},lookup:(_host,_opts,cb:any)=>cb(null,address.address,address.family),timeout:remaining},res=>{
         const chunks:Buffer[]=[];let total=0;res.on('data',(b:Buffer)=>{total+=b.length;if(total>(options.maxBytes || 2500000)){req.destroy(new ToolError('response_too_large'));return;}chunks.push(b);});
         res.on('end',()=>resolve({url:url.href,status:res.statusCode || 0,headers:Object.fromEntries(Object.entries(res.headers).map(([k,v])=>[k,Array.isArray(v)?v.join(', '):v || ''])),body:Buffer.concat(chunks)}));
         res.on('error',()=>reject(new ToolError('http_interrupted')));
