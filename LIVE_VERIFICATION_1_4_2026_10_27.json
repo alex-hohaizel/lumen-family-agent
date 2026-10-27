@@ -1,0 +1,40 @@
+{
+  "version": "1.4.0",
+  "date": "2026-10-27",
+  "timezone": "Europe/Kyiv",
+  "repository": "alex-hohaizel/lumen-family-agent",
+  "branch": "main",
+  "commit": "36d421ec055cac1a2807f270854f8235fda87336",
+  "tree": "7f185e7e845f5d47616ac1f1734cff8bf8987917",
+  "deploy_id": "dep-dbgfh53bc2fs739ooa40",
+  "deploy_status": "live",
+  "live_at": "2026-10-27T19:18:41.125828Z",
+  "runtime_started": true,
+  "runtime_started_at": "2026-10-27T19:19:06.076775593Z",
+  "runtime_instance": "srv-dbfl0je7bikc73dvg0qg-rksnj",
+  "active_groups": 1,
+  "tests": {
+    "passed": 207,
+    "total": 207,
+    "failed": 0,
+    "suites": 17,
+    "local": true,
+    "render_build": true
+  },
+  "sticker_pack": "Lumen_Moods_by_lumen_family_agent",
+  "sticker_pack_count": 30,
+  "sticker_pack_ready_at": "2026-10-27T19:19:05.43645914Z",
+  "motion_version": 5,
+  "release_notice_delivered": true,
+  "release_notice_delivered_at": "2026-10-27T19:19:06.874656492Z",
+  "remote_files_verified": 91,
+  "remote_file_mismatches": [],
+  "approved_by_user": true,
+  "model": "gpt-6.1-sol",
+  "runtime_errors_after_start": 0,
+  "verification_limits": [
+    "Internal /health and polling age were not directly read in this run; the private database rejects external connections. Startup, group initialization and notice delivery are confirmed by runtime logs.",
+    "Semantic behavior in a real group conversation was not exercised with a synthetic user message in this run; 207 automated checks passed locally and in the Render build."
+  ],
+  "runtime_error_check": "no_error_logs_since_runtime_start"
+}
