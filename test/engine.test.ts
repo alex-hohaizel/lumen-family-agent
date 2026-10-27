@@ -62,7 +62,7 @@ describe('Реальна PostgreSQL-логіка приватної групи',
   it('помилка в другій дії відкочує першу без удаваного успіху',async()=>{
     await paired(h);h.brain.replies.push({reply:'',actions:[{kind:'remember',content:'тест'},{kind:'remind',title:'минуле',due_at:'2020-01-01T00:00:00Z'}]});
     await h.lumen.receive(message('Люмен, запам’ятай тест і нагадай про нього'));await h.lumen.processNext();assert.equal((await db.query('SELECT * FROM memories')).rows.length,0);assert.equal((await db.query('SELECT * FROM reminders')).rows.length,0);
-    assert.match((await one(db,'SELECT body FROM outbox'))!.body.text,/Не завершив/);
+    assert.match((await one(db,'SELECT body FROM outbox'))!.body.text,/затримка/);
   });
   it('пауза скасовує незавершену відповідь моделі та потребує двох повторних згод',async()=>{
     await paired(h);let resolve!:(p:any)=>void;h.brain.block=()=>new Promise(r=>{resolve=r;});await h.lumen.receive(message('Люмен, запам’ятай секрет'));const processing=h.lumen.processNext();
