@@ -1,186 +1,339 @@
 {
+  "version": "1.3.1",
   "count": 30,
   "all_valid": true,
+  "motion_version": 2,
+  "fps": 30,
   "stickers": [
     {
       "id": "01_wave",
-      "bytes": 110215,
+      "bytes": 253383,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 2.8377,
+      "maximum_step": 3.9067
     },
     {
       "id": "02_laugh",
-      "bytes": 98418,
+      "bytes": 225841,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 3.9089,
+      "maximum_step": 7.5515
     },
     {
       "id": "03_rofl",
-      "bytes": 112355,
-      "duration": "2.800000",
-      "alpha": true
+      "bytes": 203102,
+      "duration": "2.400000",
+      "fps": 30,
+      "frames": 72,
+      "decoded_unique_frames": 72,
+      "alpha": true,
+      "loop_delta": 13.1469,
+      "maximum_step": 13.2969
     },
     {
       "id": "04_loveeyes",
-      "bytes": 104736,
+      "bytes": 246384,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 2.7132,
+      "maximum_step": 2.9462
     },
     {
       "id": "05_hug",
-      "bytes": 88817,
+      "bytes": 241916,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 1.8043,
+      "maximum_step": 1.8216
     },
     {
       "id": "06_heart",
-      "bytes": 87355,
+      "bytes": 260341,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 1.4583,
+      "maximum_step": 1.9101
     },
     {
       "id": "07_kiss",
-      "bytes": 100808,
+      "bytes": 224167,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 3.6899,
+      "maximum_step": 3.6899
     },
     {
       "id": "08_cool",
-      "bytes": 102678,
+      "bytes": 245308,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 3.8201,
+      "maximum_step": 3.8201
     },
     {
       "id": "09_think",
-      "bytes": 112537,
+      "bytes": 232319,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 3.6376,
+      "maximum_step": 4.0418
     },
     {
       "id": "10_suspect",
-      "bytes": 105496,
+      "bytes": 244532,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 4.376,
+      "maximum_step": 4.376
     },
     {
       "id": "11_smirk",
-      "bytes": 92288,
+      "bytes": 211540,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 3.0166,
+      "maximum_step": 3.0166
     },
     {
       "id": "12_eyeroll",
-      "bytes": 77739,
+      "bytes": 236145,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 2.3968,
+      "maximum_step": 2.4244
     },
     {
       "id": "13_phew",
-      "bytes": 95251,
+      "bytes": 217970,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 4.0824,
+      "maximum_step": 4.1175
     },
     {
       "id": "14_cringe",
-      "bytes": 85279,
+      "bytes": 222639,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 2.2276,
+      "maximum_step": 3.3811
     },
     {
       "id": "15_melt",
-      "bytes": 96892,
+      "bytes": 211835,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 2.2431,
+      "maximum_step": 2.3195
     },
     {
       "id": "16_braveface",
-      "bytes": 97519,
+      "bytes": 242318,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 3.3585,
+      "maximum_step": 3.3636
     },
     {
       "id": "17_drama",
-      "bytes": 141450,
+      "bytes": 219523,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 4.852,
+      "maximum_step": 5.2315
     },
     {
       "id": "18_angry",
-      "bytes": 116179,
+      "bytes": 218382,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 5.3935,
+      "maximum_step": 5.833
     },
     {
       "id": "19_mindblown",
-      "bytes": 122092,
+      "bytes": 225987,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 4.8061,
+      "maximum_step": 5.1433
     },
     {
       "id": "20_panic",
-      "bytes": 103994,
+      "bytes": 229423,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 4.6452,
+      "maximum_step": 7.2397
     },
     {
       "id": "21_facepalm",
-      "bytes": 82172,
+      "bytes": 257563,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 2.187,
+      "maximum_step": 3.8635
     },
     {
       "id": "22_shrug",
-      "bytes": 96707,
+      "bytes": 225026,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 3.7494,
+      "maximum_step": 3.7494
     },
     {
       "id": "23_yes",
-      "bytes": 97213,
+      "bytes": 220350,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 4.9069,
+      "maximum_step": 6.1042
     },
     {
       "id": "24_no",
-      "bytes": 107088,
+      "bytes": 241208,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 4.3245,
+      "maximum_step": 4.782
     },
     {
       "id": "25_clap",
-      "bytes": 92978,
+      "bytes": 224274,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 4.3499,
+      "maximum_step": 5.0436
     },
     {
       "id": "26_please",
-      "bytes": 95359,
+      "bytes": 216005,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 2.6972,
+      "maximum_step": 2.7854
     },
     {
       "id": "27_strong",
-      "bytes": 112258,
+      "bytes": 214912,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 6.2781,
+      "maximum_step": 6.4745
     },
     {
       "id": "28_fire",
-      "bytes": 104265,
+      "bytes": 228898,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 3.1909,
+      "maximum_step": 3.8646
     },
     {
       "id": "29_party",
-      "bytes": 166373,
+      "bytes": 198623,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 8.8229,
+      "maximum_step": 11.7639
     },
     {
       "id": "30_sleep",
-      "bytes": 93466,
+      "bytes": 171665,
       "duration": "2.800000",
-      "alpha": true
+      "fps": 30,
+      "frames": 84,
+      "decoded_unique_frames": 84,
+      "alpha": true,
+      "loop_delta": 0.8681,
+      "maximum_step": 0.8681
     }
   ]
 }
