@@ -1,3 +1,4 @@
+import {withWorkerSlot} from './work-slots.js';
 import { Worker } from 'node:worker_threads';
 import { randomUUID, createHash } from 'node:crypto';
 import { documentText } from './documents.js';
@@ -13,6 +14,7 @@ import { reserveModelCall } from './model-budget.js';
 export async function scannedPages(bytes: Uint8Array) {
     if (bytes.length > 3000000)
         throw new ToolError('document_too_large');
+    return withWorkerSlot(async()=>{
     const worker = new Worker(new URL('./document-worker.js', import.meta.url), { execArgv: [], workerData: { data: Uint8Array.from(bytes), screenshots: true }, resourceLimits: { maxOldGenerationSizeMb: 160 } });
     return new Promise<{
         page: number;
@@ -61,6 +63,7 @@ export async function scannedPages(bytes: Uint8Array) {
                 reject(new ToolError('document_render_failed'));
             }
         });
+    });
     });
 }
 export async function analyzeDocument(bytes: Uint8Array, name: string, brain: Brain, db: Database, config: Config) {

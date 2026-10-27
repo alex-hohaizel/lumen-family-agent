@@ -1,3 +1,4 @@
+import {withWorkerSlot} from './work-slots.js';
 import {operationSignal,checkOperation} from './operations.js';
 import {Worker} from 'node:worker_threads';
 import {ToolError} from './safe-http.js';
@@ -6,6 +7,7 @@ import {ToolError} from './safe-http.js';
 export async function compute(code:string,input:unknown){
   checkOperation();const json=JSON.stringify(input??null);
   if(code.length>16000||json.length>64000)throw new ToolError('compute_input_too_large');
+  return withWorkerSlot(async()=>{
   const worker=new Worker(new URL('./compute-worker.js',import.meta.url),{execArgv:[],workerData:{code,input:json},resourceLimits:{maxOldGenerationSizeMb:96}});
   return new Promise<unknown>((resolve,reject)=>{
     let settled=false;const signal=operationSignal();const abort=()=>finish('compute_cancelled');
@@ -14,5 +16,6 @@ export async function compute(code:string,input:unknown){
     worker.once('message',m=>finish(m?.error,m?.result));
     worker.once('error',()=>finish('compute_failed'));
     worker.once('exit',()=>{if(!settled)finish('compute_failed');});
+  });
   });
 }

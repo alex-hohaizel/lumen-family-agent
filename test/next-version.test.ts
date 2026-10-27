@@ -1,3 +1,4 @@
+import {withWorkerSlot} from '../src/work-slots.js';
 import { describe, it, before, after, beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtemp, rm } from 'node:fs/promises';
@@ -353,4 +354,13 @@ describe('Люмен 1.6: спільна робота, приватність і
         assert.equal(await registry.find('444'), undefined);
         assert.ok(h.tg.sent.at(-1)!.text.includes('учасникам підключених груп'));
     });
+    it('важкі процеси виконуються по одному, а очікування можна скасувати',async()=>{
+      let release!:()=>void,started=false;
+      const first=withWorkerSlot(()=>new Promise<void>(resolve=>{release=resolve;}));
+      for(let i=0;i<100&&!release;i++)await delay(2);
+      const second=runOperation(db,'queued-worker',()=>withWorkerSlot(async()=>{started=true;}));
+      const rejected=assert.rejects(()=>second,/operation_cancelled/);cancelOperations(db,'queued-worker');await rejected;assert.equal(started,false);release();await first;
+      await withWorkerSlot(async()=>{started=true;});assert.equal(started,true);
+    });
+
 });
