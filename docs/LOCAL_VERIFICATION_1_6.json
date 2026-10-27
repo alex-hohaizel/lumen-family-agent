@@ -1,0 +1,68 @@
+{
+  "version": "1.6.0",
+  "code_commit": "578eac278ce407acaf061c5882a03c9376fa9f49",
+  "tree_sha": "efa1e229d031ff8d6fa54d720f1abb4e260404b1",
+  "node": "24.22.1",
+  "tests": {
+    "tests": 286,
+    "suites": 20,
+    "pass": 286,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "passed": true,
+    "checks": [
+      "UTF-8 page",
+      "read controls",
+      "fill",
+      "select",
+      "session isolation",
+      "unapproved POST blocked",
+      "confirmed POST"
+    ],
+    "writes": 1,
+    "node_rss_mb": 122
+  },
+  "office": {
+    "passed": true,
+    "checked_at": "2026-10-27T23:34:38.262Z",
+    "checks": [
+      "DOCX Unicode readback",
+      "XLSX numeric readback",
+      "XLSX literal formula text",
+      "Chromium PDF generation",
+      "PDF Unicode readback",
+      "PDF scan rendering"
+    ],
+    "files": [
+      {
+        "format": "docx",
+        "bytes": 1691,
+        "sha256": "6182a50d09759a3b2d7f23d3d1a43464991a159b0fe165853a00cf6f56507e82"
+      },
+      {
+        "format": "xlsx",
+        "bytes": 2679,
+        "sha256": "32e9d813e88e322a77c1413c58bd37fa4b3e42d52e3aef0340f87389da57ad84"
+      },
+      {
+        "format": "pdf",
+        "bytes": 12978,
+        "sha256": "f3de4217d3587961a59fea85cc36b78cbae93026a1bee5ed6470a51a14775045"
+      }
+    ],
+    "scan_pages": 1,
+    "node_rss_mb": 228
+  },
+  "independent_office_readers": {
+    "passed": true,
+    "docx_reader": "python-docx",
+    "xlsx_reader": "openpyxl",
+    "unicode_preserved": true,
+    "numeric_cell": 12.3,
+    "formula_text_cell_type": "s"
+  },
+  "remote_source_files_verified": 222
+}
