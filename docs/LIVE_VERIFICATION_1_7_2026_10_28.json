@@ -1,0 +1,284 @@
+{
+  "version": "1.7.0",
+  "code_commit": "b1567fb97c28f55c5bb535672f694670f22906a0",
+  "deploy_id": "dep-dbh26849v7es73bl84v0",
+  "status": "live",
+  "live_at": "2026-10-28T16:33:27.848511Z",
+  "service_id": "srv-dbfl0je7bikc73dvg0qg",
+  "build_verification": {
+    "tests": 321,
+    "passed": 321,
+    "failed": 0,
+    "suites": 21,
+    "summary_events": [
+      {
+        "at": "2026-10-28T16:33:00.000766147Z",
+        "message": "ℹ tests 321"
+      },
+      {
+        "at": "2026-10-28T16:33:00.000772655Z",
+        "message": "ℹ suites 21"
+      },
+      {
+        "at": "2026-10-28T16:33:00.000774132Z",
+        "message": "ℹ pass 321"
+      },
+      {
+        "at": "2026-10-28T16:33:00.000775525Z",
+        "message": "ℹ fail 0"
+      },
+      {
+        "at": "2026-10-28T16:33:00.000776832Z",
+        "message": "ℹ cancelled 0"
+      },
+      {
+        "at": "2026-10-28T16:33:00.00077845Z",
+        "message": "ℹ skipped 0"
+      }
+    ]
+  },
+  "runtime_checks_passed": 8,
+  "checks": {
+    "web_read": {
+      "ok": true,
+      "proof": {
+        "url": "https://example.com/",
+        "title": "Example Domain",
+        "characters": 156
+      }
+    },
+    "public_search": {
+      "ok": true,
+      "proof": {
+        "provider": "Bing RSS",
+        "sources": [
+          "https://banyox.de/waschtisch-unterschrank-masse",
+          "https://www.badshop.de/waschtischunterschrank",
+          "https://absolut-bad.de/Waschtischunterschraenke",
+          "https://absolut-bad.de/32-37-cm",
+          "https://www.idealo.de/preisvergleich/ProductCategory/30961F106945941I16-15.html",
+          "https://www.badicum.de/waschbeckenunterschraenke",
+          "https://www.spiegel21.de/Moebel/Bad-Unterschraenke:::48_121.html",
+          "https://www.otto.de/moebel/schraenke/?s=waschtischunterschraenke"
+        ]
+      }
+    },
+    "native_search": {
+      "ok": true,
+      "proof": {
+        "searched": true,
+        "sources": [
+          "https://nodejs.org/en/about?utm_source=openai",
+          "https://nodejs.org/"
+        ]
+      }
+    },
+    "automatic_freshness_choice": {
+      "ok": true,
+      "proof": {
+        "automatic_search_selected": true,
+        "native_search_executed": true,
+        "selected_tools": []
+      }
+    },
+    "browser": {
+      "ok": true,
+      "proof": {
+        "title": "Example Domain",
+        "url": "https://example.com/",
+        "characters": 917
+      }
+    },
+    "compute": {
+      "ok": true,
+      "proof": {
+        "result": 14
+      }
+    },
+    "documents": {
+      "ok": true,
+      "proof": {
+        "docx_readback": true,
+        "xlsx_readback": true,
+        "pdf_readback": true,
+        "scan_pages": 1,
+        "vision_ocr": true,
+        "number": "31415"
+      }
+    },
+    "interactions": {
+      "ok": true,
+      "proof": {
+        "parallel": true,
+        "max_choices_per_participant": 2,
+        "individual_roles": 2,
+        "compact_characters": 469,
+        "private_data_used": false
+      }
+    }
+  },
+  "events": [
+    {
+      "at": "2026-10-28T16:33:29.677956512Z",
+      "event": "sticker_pack_ready",
+      "name": "Lumen_Moods_by_lumen_family_agent",
+      "count": 30
+    },
+    {
+      "at": "2026-10-28T16:33:30.061309663Z",
+      "event": "lumen_started",
+      "username": "lumen_family_agent",
+      "version": "1.7.0",
+      "groups": 1,
+      "release_notices_pending": 1,
+      "release_notices_sent": 0
+    },
+    {
+      "at": "2026-10-28T16:33:30.13131252Z",
+      "event": "public_page_observation",
+      "check": "web_read",
+      "url": "https://example.com/",
+      "title": "Example Domain",
+      "characters": 156,
+      "excerpt": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes."
+    },
+    {
+      "at": "2026-10-28T16:33:30.131374982Z",
+      "event": "runtime_check",
+      "check": "web_read",
+      "result": {
+        "ok": true,
+        "proof": {
+          "url": "https://example.com/",
+          "title": "Example Domain",
+          "characters": 156
+        }
+      }
+    },
+    {
+      "at": "2026-10-28T16:33:30.334711376Z",
+      "event": "runtime_check",
+      "check": "public_search",
+      "result": {
+        "ok": true,
+        "proof": {
+          "provider": "Bing RSS",
+          "sources": [
+            "https://banyox.de/waschtisch-unterschrank-masse",
+            "https://www.badshop.de/waschtischunterschrank",
+            "https://absolut-bad.de/Waschtischunterschraenke",
+            "https://absolut-bad.de/32-37-cm",
+            "https://www.idealo.de/preisvergleich/ProductCategory/30961F106945941I16-15.html",
+            "https://www.badicum.de/waschbeckenunterschraenke",
+            "https://www.spiegel21.de/Moebel/Bad-Unterschraenke:::48_121.html",
+            "https://www.otto.de/moebel/schraenke/?s=waschtischunterschraenke"
+          ]
+        }
+      }
+    },
+    {
+      "at": "2026-10-28T16:33:30.940489994Z",
+      "event": "release_notice_delivered",
+      "version": "1.7.0",
+      "group": "7d9cc1fa5a3fe01d"
+    },
+    {
+      "at": "2026-10-28T16:33:41.288767046Z",
+      "event": "runtime_check",
+      "check": "native_search",
+      "result": {
+        "ok": true,
+        "proof": {
+          "searched": true,
+          "sources": [
+            "https://nodejs.org/en/about?utm_source=openai",
+            "https://nodejs.org/"
+          ]
+        }
+      }
+    },
+    {
+      "at": "2026-10-28T16:33:53.774398305Z",
+      "event": "runtime_check",
+      "check": "automatic_freshness_choice",
+      "result": {
+        "ok": true,
+        "proof": {
+          "automatic_search_selected": true,
+          "native_search_executed": true,
+          "selected_tools": []
+        }
+      }
+    },
+    {
+      "at": "2026-10-28T16:34:04.286653179Z",
+      "event": "public_page_observation",
+      "check": "browser",
+      "url": "https://example.com/",
+      "title": "Example Domain",
+      "characters": 917,
+      "excerpt": "This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.\n\nهذا النطاق مُخصص للاست"
+    },
+    {
+      "at": "2026-10-28T16:34:04.29177064Z",
+      "event": "runtime_check",
+      "check": "browser",
+      "result": {
+        "ok": true,
+        "proof": {
+          "title": "Example Domain",
+          "url": "https://example.com/",
+          "characters": 917
+        }
+      }
+    },
+    {
+      "at": "2026-10-28T16:34:04.69444963Z",
+      "event": "runtime_check",
+      "check": "compute",
+      "result": {
+        "ok": true,
+        "proof": {
+          "result": 14
+        }
+      }
+    },
+    {
+      "at": "2026-10-28T16:34:11.152120318Z",
+      "event": "runtime_check",
+      "check": "documents",
+      "result": {
+        "ok": true,
+        "proof": {
+          "docx_readback": true,
+          "xlsx_readback": true,
+          "pdf_readback": true,
+          "scan_pages": 1,
+          "vision_ocr": true,
+          "number": "31415"
+        }
+      }
+    },
+    {
+      "at": "2026-10-28T16:34:32.441329896Z",
+      "event": "runtime_check",
+      "check": "interactions",
+      "result": {
+        "ok": true,
+        "proof": {
+          "parallel": true,
+          "max_choices_per_participant": 2,
+          "individual_roles": 2,
+          "compact_characters": 469,
+          "private_data_used": false
+        }
+      }
+    }
+  ],
+  "notes": [
+    "The interaction probe checks an actual model plan with two fictional participants; it does not start a real group game.",
+    "The public_search check verifies transport and candidate extraction, not result relevance. Native search separately returned official Node.js sources.",
+    "No additional worker, OAuth manager, paid service, or local production poller was started.",
+    "Existing server plan and persistent data were retained."
+  ]
+}
