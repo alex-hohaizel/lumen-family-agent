@@ -43,6 +43,6 @@ def validate(kind):
 if __name__=='__main__':
     results=[validate(x) for x in ['laugh','love']]
     plan=json.loads((ROOT/'research/top50-plan.json').read_text());assert len(plan['rows'])==50 and len({x['emoji'] for x in plan['rows']})==50
-    assert sum(x['status']=='prototype_ready' for x in plan['rows'])==2 and not plan['artwork_approved'] and not plan['animation_approved']
-    data={'status':'prototypes_awaiting_user_approval','checks':results,'emoji_concepts':50,'produced_stickers':2,'production_pack_untouched':True,'not_a_telegram_server_upload_test':True}
+    assert sum(x['status'] in ['prototype_ready','prototype_rejected'] for x in plan['rows'])==2 and not plan['artwork_approved'] and not plan['animation_approved']
+    data={'status':'artistic_review_rejected' if plan.get('prototype_review')=='rejected_by_user' else 'prototypes_awaiting_user_approval','checks':results,'emoji_concepts':50,'produced_stickers':2,'production_pack_untouched':True,'not_a_telegram_server_upload_test':True}
     (ROOT/'QA_REPORT.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n');print(json.dumps(data,ensure_ascii=False))

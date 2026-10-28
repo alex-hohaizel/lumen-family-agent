@@ -10,7 +10,7 @@
       "name": "face with tears of joy",
       "title": "Не стримався",
       "story": "Розсміюється, тримається за живіт, з очей летять сльозинки; наприкінці витирає щоку.",
-      "status": "prototype_ready",
+      "status": "prototype_rejected",
       "primary_emoji_unique": true
     },
     {
@@ -80,7 +80,7 @@
       "name": "smiling face with hearts",
       "title": "Ніжні обійми",
       "story": "Притискає серце до грудей, заплющує очі та м’яко схиляє голову; навколо спливають сердечка.",
-      "status": "prototype_ready",
+      "status": "prototype_rejected",
       "primary_emoji_unique": true
     },
     {
@@ -508,5 +508,11 @@
   "production_count_target": 50,
   "artwork_approved": false,
   "animation_approved": false,
-  "deployment_authorized_after_prototype_approval": true
+  "deployment_authorized_after_prototype_approval": true,
+  "prototype_review": "rejected_by_user",
+  "rejection_reasons": [
+    "Original Lumen identity lost",
+    "Mechanical, disjointed animation",
+    "Animatronic appearance; insufficient expression and appeal"
+  ]
 }
