@@ -1,0 +1,47 @@
+{
+  "status": "prototypes_awaiting_user_approval",
+  "checks": [
+    {
+      "kind": "laugh",
+      "emoji": "😂",
+      "tgs_bytes": 6426,
+      "native_fps": 60,
+      "native_duration": 2.8,
+      "layers": 43,
+      "valid_parent_tree": true,
+      "unsupported_features": [],
+      "transparent_video_decoded": true,
+      "vp9_bytes": 208824,
+      "video_fps": 30,
+      "gif_frames": 84,
+      "gif_duration_ms": 2800,
+      "preview_mp4_fps": 60,
+      "loop_delta": 0.00278,
+      "tgs_sha256": "ad7714dc343b5dc12b99d2a57dbe5f9a99bab32c351515f648917ed5457f0b46",
+      "passed": true
+    },
+    {
+      "kind": "love",
+      "emoji": "🥰",
+      "tgs_bytes": 5760,
+      "native_fps": 60,
+      "native_duration": 2.8,
+      "layers": 40,
+      "valid_parent_tree": true,
+      "unsupported_features": [],
+      "transparent_video_decoded": true,
+      "vp9_bytes": 217327,
+      "video_fps": 30,
+      "gif_frames": 84,
+      "gif_duration_ms": 2800,
+      "preview_mp4_fps": 60,
+      "loop_delta": 0.01342,
+      "tgs_sha256": "24b0fe55051d763d357cfb3111a67d40d5f1de2e348294e13bd6b5ebb66e72ed",
+      "passed": true
+    }
+  ],
+  "emoji_concepts": 50,
+  "produced_stickers": 2,
+  "production_pack_untouched": true,
+  "not_a_telegram_server_upload_test": true
+}
