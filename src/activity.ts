@@ -18,7 +18,7 @@ export async function activityTurn(sql:SQL,action:Extract<Action,{kind:'activity
   for(const id of ids){
     const member=await one(sql,'SELECT name FROM members WHERE user_id=$1 AND active=true',[id]);
     if(!member)throw new ModelError('activity_unknown_participant');
-    if(!s.players.some((p:{id:string})=>p.id===id))s.players.push({id,name:member.name});
+    if(!s.players.some((p:{id:string})=>p.id===id)){if(id!==userId)throw new ModelError('activity_participant_not_joined');s.players.push({id,name:member.name});}
     s.scores[id] ||= 0;
   }
   for(const change of action.score_changes || [])s.scores[change.user_id]+=change.delta;

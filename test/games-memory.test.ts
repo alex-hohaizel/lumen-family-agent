@@ -48,7 +48,7 @@ describe('Ігри, навички й довга пам’ять',()=>{
     await db.query("INSERT INTO rules(title,content,author_id) VALUES('Без кінця','Додаємо по слову, поки не вирішимо завершити.','11')");await db.tx(sql=>startGame(sql,'custom',players,'Без кінця'));for(let i=0;i<24;i++)await db.tx(sql=>gameTurn(sql,players[i%2]!.id,`Слово ${i}`));const row=await one(db,'SELECT * FROM games');assert.equal(row!.status,'active');assert.equal(row!.state.turn,24);
   });
   it('зберігає нові правила та запускає саме збережену гру',async()=>{
-    h.brain.replies.push({reply:'',actions:[{kind:'learn_game',title:'Одне слово',rules:'По черзі додаємо по слову до спільної історії. Після 20 ходів читаємо її разом.'}]});await h.lumen.receive(message('Люмен, вивчи гру «Одне слово»: додаємо слова по черзі.'));await h.lumen.processNext();await h.lumen.receive(message('/game Одне слово'));
+    h.brain.replies.push({reply:'',actions:[{kind:'learn_game',title:'Одне слово',rules:'По черзі додаємо по слову до спільної історії. Після 20 ходів читаємо її разом.'}]});await h.lumen.receive(message('Люмен, вивчи гру «Одне слово»: додаємо слова по черзі.'));await h.lumen.processNext();await h.lumen.receive(message('/game Одне слово'));await h.lumen.receive(message('Так',22));await h.lumen.processNext();
     const row=await one(db,'SELECT * FROM games');assert.equal(row!.kind,'custom');assert.equal(row!.state.title,'Одне слово');assert.match(row!.state.rules,/По черзі/);
   });
   it('нова навичка потрапляє в наступний контекст і переживає перезапуск',async()=>{

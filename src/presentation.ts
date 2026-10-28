@@ -30,8 +30,8 @@ export async function contextualKeyboard(sql:SQL,presentation:Plan['presentation
   if(labels.length<2)return undefined;
   await sql.query("DELETE FROM choices WHERE created_at<now()-interval '1 day'");
   const buttons=[];const menu=randomUUID();const audience=presentation?.audience || 'group';
-  for(const label of labels){const id=randomUUID();await sql.query('INSERT INTO choices(id,label,topic_id,revision,menu_id,question,audience,target_user_id,source_message_id) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)',[id,label,String(m.message_thread_id || 0),revision,menu,question.slice(0,2500),audience,audience==='personal'?String(m.from!.id):null,sourceId || null]);buttons.push({text:label,callback_data:`lumen:choice:${id}`});}
-  const keyboard:InlineKeyboard={inline_keyboard:[]};for(let i=0;i<buttons.length;i+=2)keyboard.inline_keyboard.push(buttons.slice(i,i+2));return keyboard;
+  for(const label of labels){const id=randomUUID();await sql.query('INSERT INTO choices(id,label,topic_id,revision,menu_id,question,audience,target_user_id,source_message_id) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)',[id,label,String(m.message_thread_id || 0),revision,menu,question.slice(0,2500),audience,audience==='personal'?String(m.from!.id):null,sourceId || null]);buttons.push({text:label.length<=22?label:`Варіант ${buttons.length+1}`,callback_data:`lumen:choice:${id}`});}
+  const keyboard:InlineKeyboard={inline_keyboard:[]};for(let i=0;i<buttons.length;i+=(buttons.every(x=>x.text.length<=14)?2:1))keyboard.inline_keyboard.push(buttons.slice(i,i+(buttons.every(x=>x.text.length<=14)?2:1)));return keyboard;
 }
 export async function rememberSticker(sql:SQL,sticker:TGSticker,sourceId:number|null){
   if(sticker.type&&sticker.type!=='regular')return;

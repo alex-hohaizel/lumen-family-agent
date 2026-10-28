@@ -62,6 +62,7 @@ export async function pauseMemory(sql:SQL){
   for(const table of ['inbox','outbox','choices','choice_votes','pending_intents','dialogues','topic_attention'])await sql.query(`DELETE FROM ${table}`);
   await sql.query("UPDATE image_jobs SET cancelled=true,status='cancelled',updated_at=now() WHERE status IN ('pending','processing','ready')");
   await sql.query("UPDATE agent_tasks SET status='cancelled',updated_at=now() WHERE status IN ('pending','running','waiting')");
+  await sql.query("UPDATE interactions SET phase='paused',version=version+1 WHERE phase IN ('collecting','ready','active')");
   await sql.query("UPDATE web_monitors SET status='paused' WHERE status='active'");
   await sql.query("UPDATE tool_approvals SET status='cancelled' WHERE status IN ('pending','approved')");
   const s=await state(sql);
@@ -69,11 +70,11 @@ export async function pauseMemory(sql:SQL){
 }
 export async function eraseAll(sql: SQL) {
   // Remove all derived data, generated drafts, pending deliveries and attachment IDs too.
-  for (const table of ['result_receipts','signals','proactivity_preferences','skill_versions','research_cache','activity_moves','activity_players','activity_sessions','decision_ballots','decisions','project_tasks','projects','knowledge_facts','private_requests','task_events','task_stages','capability_health','private_results','provenance_edges','coordination_offers','oauth_setups',...AGENT_TABLES,'topic_attention','image_jobs','poll_votes','polls','avatars','attachments','dialogues','choice_votes','participant_preferences','memories','rules','games','reminders','skills','episodes','stickers','choices','pending_intents','messages','outbox','inbox','topics','members']) await sql.query(`DELETE FROM ${table}`);
+  for (const table of ['interaction_responses','interactions','message_panels','result_receipts','signals','proactivity_preferences','skill_versions','research_cache','activity_moves','activity_players','activity_sessions','decision_ballots','decisions','project_tasks','projects','knowledge_facts','private_requests','task_events','task_stages','capability_health','private_results','provenance_edges','coordination_offers','oauth_setups',...AGENT_TABLES,'topic_attention','image_jobs','poll_votes','polls','avatars','attachments','dialogues','choice_votes','participant_preferences','memories','rules','games','reminders','skills','episodes','stickers','choices','pending_intents','messages','outbox','inbox','topics','members']) await sql.query(`DELETE FROM ${table}`);
   await sql.query(`UPDATE app_state SET memory_revision=memory_revision+1, character='', mode=CASE WHEN mention_only THEN 'quiet' ELSE 'social' END, since_bot=0,last_social_at=NULL,participants=CASE WHEN open_group THEN '[]'::jsonb ELSE participants END WHERE id=1`);
   await sql.query('DELETE FROM characters');
 }
-const SOURCE_TABLES=['tool_grants','tool_runs','tool_approvals','agent_tasks','web_monitors','agent_workflows','agent_artifacts','group_events','agent_feedback','memory_terms','private_requests','knowledge_facts','projects','decisions','activity_sessions','signals','result_receipts','coordination_offers'];
+const SOURCE_TABLES=['tool_grants','tool_runs','tool_approvals','agent_tasks','web_monitors','agent_workflows','agent_artifacts','group_events','agent_feedback','memory_terms','private_requests','knowledge_facts','projects','decisions','activity_sessions','signals','result_receipts','coordination_offers','interactions','message_panels'];
 async function invalidateSource(sql:SQL,sourceId:number){
   await invalidateProvenance(sql,sourceId);
   await sql.query("DELETE FROM tool_credentials WHERE name IN (SELECT answer FROM private_requests WHERE source_message_id=$1 AND answer IS NOT NULL)",[sourceId]);
@@ -94,7 +95,7 @@ async function refreshRevision(sql:SQL){
   await sql.query('DELETE FROM pending_intents');
   await sql.query("UPDATE inbox SET status=CASE WHEN status='processing' THEN 'pending' ELSE status END,revision=$1,plan=NULL WHERE status IN ('pending','processing')",[s.memory_revision]);
   await sql.query("UPDATE outbox SET revision=$1,status=CASE WHEN status='sending' THEN 'uncertain' ELSE status END",[s.memory_revision]);
-  for(const table of ['choices','dialogues','attachments','polls','agent_tasks','web_monitors','tool_grants','private_requests','agent_artifacts'])await sql.query(`UPDATE ${table} SET revision=$1`,[s.memory_revision]);
+  for(const table of ['choices','dialogues','attachments','polls','agent_tasks','web_monitors','tool_grants','private_requests','agent_artifacts','interactions','message_panels'])await sql.query(`UPDATE ${table} SET revision=$1`,[s.memory_revision]);
   await sql.query("UPDATE tool_approvals SET status='cancelled' WHERE status IN ('pending','approved')");
   await sql.query("UPDATE agent_tasks SET status='needs_input',error_code='context_changed' WHERE status IN ('running','waiting')");
   await sql.query("UPDATE image_jobs SET status=CASE WHEN status='processing' THEN 'uncertain' ELSE status END,revision=$1 WHERE status IN ('pending','ready','processing')",[s.memory_revision]);

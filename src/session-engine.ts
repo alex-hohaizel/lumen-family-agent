@@ -1,3 +1,4 @@
+import {launchConsent,interactionView,answerInteraction,queueInteraction} from './interactions.js';
 import { randomInt, randomUUID } from 'node:crypto';
 import { one, state, queueText, type Database } from './db.js';
 import type { ToolContext } from './agent-tools.js';
@@ -18,8 +19,9 @@ export class SessionEngine {
             throw new ToolError('activity_already_active');
         if (a.quiz?.some((q: any) => q.correct_index >= q.options.length))
             throw new ToolError('quiz_correct_option_invalid');
+        if(a.max_choices_per_player>1&&(!['quest','dilemmas'].includes(a.template)||a.response_mode!=='parallel'))throw new ToolError('multiple_choices_not_valid_for_template');
         const id = randomUUID();
-        const settings = { options: a.options || [], prompts: a.prompts || [], seconds: a.seconds || 180, _quiz: a.quiz || [] };
+        const settings = { response_mode:a.response_mode||'shared',max_choices_per_player:a.max_choices_per_player||1, options: a.options || [], prompts: a.prompts || [], seconds: a.seconds || 180, _quiz: a.quiz || [] };
         if (['ranking', 'prediction', 'dilemmas'].includes(a.template) && settings.options.length < 2)
             throw new ToolError('activity_options_required');
         await this.db.query('INSERT INTO activity_sessions(id,actor_id,topic_id,template,title,max_rounds,settings,source_message_id) VALUES($1,$2,$3,$4,$5,$6,$7,$8)', [id, c.actorId, c.topicId, a.template, a.title, ['roles', 'quotes', 'captions'].includes(a.template) ? 2 : a.rounds || 3, JSON.stringify(settings), c.sourceId || null]);
@@ -59,6 +61,8 @@ export class SessionEngine {
     }
     async start(id: string, c: ToolContext) {
         const existing = await one(this.db, 'SELECT * FROM activity_sessions WHERE id=$1 AND actor_id=$2', [id, c.actorId]);
+        if(!existing)throw new ToolError('session_host_required');
+        if(c.requestText&&existing.phase==='lobby'){const allowed=await this.db.tx(async sql=>{const gate=await launchConsent(sql,{tool:'activity.start',session_id:id},c,existing.title);if(!gate.allowed){for(const player of (await sql.query("SELECT user_id FROM activity_players WHERE session_id=$1 AND status='joined'",[id])).rows)await sql.query("INSERT INTO interaction_responses(interaction_id,version,user_id,decision,submitted) VALUES($1,$2,$3,'agree',true) ON CONFLICT DO NOTHING",[gate.interaction!.id,gate.interaction!.version,player.user_id]);const v=await answerInteraction(sql,{id:gate.interaction!.id,version:gate.interaction!.version,decision:'agree'},c);await queueInteraction(sql,v.id);return v.ready?v:undefined;}return gate.interaction||{participants:gate.participants};});if(!allowed)return {needs_participants:true,session_id:id,status:'waiting_for_consent'};for(const p of allowed.participants)await this.join(id,p.id,p.name);if(allowed.id)await this.db.query("UPDATE interactions SET phase='active' WHERE id=$1 AND phase='ready'",[allowed.id]);}
         if (existing?.phase === 'collect')
             return this.issuePrompts(existing, c);
         await this.db.tx(async (sql) => {
@@ -116,6 +120,7 @@ export class SessionEngine {
                 question = s.round === 1 ? question + '\nНадішли свій підпис. Для участі у голосуванні дозволь розкрити його після раунду.' : 'Обери номер найкращого підпису:\n' + (s.public_state.entries || []).map((x: any, i: number) => `${i + 1}. ${x.text}`).join('\n');
             else if (s.template === 'quotes')
                 question = s.round === 1 ? 'Надішли власну коротку фразу для гри «Хто це сказав?». Для включення в раунд обери розкриття після раунду.' : (s.public_state.entries || []).map((x: any, i: number) => `${i + 1}. ${x.text}`).join('\n') + '\nВгадай авторів: JSON {"1":1,"2":2}, де значення — номер гравця:\n' + players.map((x, i) => `${i + 1}. ${x.name}`).join('\n');
+            if(s.settings.max_choices_per_player>1)question+='\nКожен має власну гілку: обери одну або дві різні дії, номери через кому.';
             const prior = await one(this.db, "SELECT id FROM private_requests WHERE session_id=$1 AND recipient_id=$2 AND payload->>'round'=$3 AND status<>'revoked'", [id, p.user_id, String(s.round)]);
             if (!prior)
                 await this.inbox.ask(c, p.user_id, question, `Гра «${s.title}», раунд ${s.round}`, { activity_id: id, round: s.round, version: s.version }, id);
@@ -131,8 +136,7 @@ export class SessionEngine {
         if (s.template === 'story')
             return;
         const options = (['quest', 'prediction', 'dilemmas'].includes(s.template) || s.template === 'roles' && s.round === 2) ? (s.template === 'roles' ? Number((await one(this.db, 'SELECT count(*) n FROM activity_players WHERE session_id=$1', [s.id]))?.n) : s.template === 'quest' ? 3 : s.settings.options.length) : s.template === 'captions' && s.round === 2 ? s.public_state.entries?.length : 0;
-        if (options && (!/^\d+$/.test(text.trim()) || Number(text) < 1 || Number(text) > options))
-            throw new ToolError('activity_option_number_required');
+        if(options){const picks=s.settings.response_mode==='parallel'&&s.settings.max_choices_per_player>1?text.trim().split(/\s*(?:,|і|та|\+)\s*/).map(Number):[Number(text.trim())];if(picks.length>(s.settings.max_choices_per_player||1)||new Set(picks).size!==picks.length||picks.some(n=>!Number.isInteger(n)||n<1||n>options))throw new ToolError('activity_option_number_required');}
         if (s.template === 'tournament' && !/^\d{1,6}$/.test(text.trim()))
             throw new ToolError('activity_number_required');
         if (s.template === 'ranking') {
@@ -211,7 +215,7 @@ export class SessionEngine {
             }
             scores.set(m.user_id, points);
             if (['quest', 'prediction', 'dilemmas'].includes(s.template) || s.template === 'captions' && s.round === 2)
-                counts[m.text] = (counts[m.text] || 0) + 1;
+                for(const choice of s.settings.response_mode==='parallel'?m.text.split(/\s*(?:,|і|та|\+)\s*/):[m.text])counts[choice] = (counts[choice] || 0) + 1;
         }
         if (s.template === 'ranking') {
             const totals = s.settings.options.map(() => 0);
@@ -219,7 +223,8 @@ export class SessionEngine {
                 m.text.split(',').map(Number).forEach((v: number, i: number) => totals[v - 1] += totals.length - i);
             publicState.ranking = s.settings.options.map((label: string, i: number) => ({ label, points: totals[i] })).sort((a: any, b: any) => b.points - a.points);
         }
-        if (s.template === 'quest') {
+        if(s.template==='quest'&&s.settings.response_mode==='parallel'){const names=['міст','печера','вежа'];publicState.branches=revealed.map(m=>({user_id:m.user_id,paths:m.text.split(/\s*(?:,|і|та|\+)\s*/).map((x:string)=>names[Number(x)-1])}));publicState.inventory=[...new Set([...(publicState.inventory||[]),...(counts['2']?['ключ']:[]),...(counts['3']?['мапа']:[])])];}
+        if (s.template === 'quest'&&s.settings.response_mode!=='parallel') {
             const pick = Object.keys(counts).sort((a, b) => counts[b]! - counts[a]! || Number(a) - Number(b))[0];
             publicState.path = [...(publicState.path || []), pick ? ['міст', 'печера', 'вежа'][Number(pick) - 1] : 'очікування'];
             publicState.inventory = [...new Set([...(publicState.inventory || []), ...(pick === '2' ? ['ключ'] : pick === '3' ? ['мапа'] : [])])];

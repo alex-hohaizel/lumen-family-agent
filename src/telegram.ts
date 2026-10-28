@@ -10,6 +10,8 @@ export interface Message {
   message_id: number; date: number; edit_date?: number; from?: TGUser; chat: TGChat;
   text?: string; caption?: string; reply_to_message?: Partial<Message> & {message_id:number};
   photo?: { file_id: string; file_size?: number }[];
+  lumen_interaction?:{id:string;version:number;partial?:boolean;ready?:boolean;response_hash?:string};
+  lumen_interaction_event?:{id:string;version:number;action:string};
   lumen_event?:{kind:'reaction'|'poll_vote';target_message_id:number;details:string};
   media_group_id?:string;
   animation?:{file_id:string;file_unique_id?:string;file_size?:number;mime_type?:string;thumbnail?:{file_id:string}};

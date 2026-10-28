@@ -1,3 +1,4 @@
+import {registerInteractionTools} from './interaction-tools.js';
 import {PrivateResults,projectResult} from './private-results.js';
 import {recordProvenance,resultSources} from './provenance.js';
 import {OAuthDevices} from './oauth-device.js';
@@ -17,7 +18,7 @@ import {browsers} from './browser.js';
 import {MCPClient} from './mcp-client.js';
 import {ConnectorVault} from './connector-vault.js';
 
-export interface ToolContext {audience?:'group'|'private';goalVersion?:number;operationKey?:string;sourceIds?:number[];actorId:string;chatId:string;topicId:string;revision:number;sourceId?:number;updateId:string;requested:boolean;taskId?:string;background?:boolean;approvalId?:string;}
+export interface ToolContext {personal?:boolean;requestText?:string;interactionId?:string;interactionVersion?:number;audience?:'group'|'private';goalVersion?:number;operationKey?:string;sourceIds?:number[];actorId:string;chatId:string;topicId:string;revision:number;sourceId?:number;updateId:string;requested:boolean;taskId?:string;background?:boolean;approvalId?:string;}
 export type Definition={available?:()=>boolean;description:string;schema:z.ZodType<any>;effect?:boolean;background?:boolean;run:(args:any,context:ToolContext)=>Promise<unknown>};
 export const argumentHash=(name:string,args:unknown)=>createHash('sha256').update(name+'\n'+JSON.stringify(args)).digest('hex');
 const url=z.string().url().max(2000);const uuid=z.string().uuid();
@@ -28,7 +29,7 @@ export class AgentTools {
   private schemas=new Map<string,unknown>();
   private vault:ConnectorVault;
   constructor(private db:Database,private config:Config,private brain:Brain){
-    this.vault=new ConnectorVault(db,config.runtimeDir);this.register();registerExtendedTools(db,config,brain,(n,d)=>this.add(n,d),(n,a,c)=>this.execute(n,a,c),()=>this.catalog());
+    this.vault=new ConnectorVault(db,config.runtimeDir);this.register();registerInteractionTools(db,(n,d)=>this.add(n,d));registerExtendedTools(db,config,brain,(n,d)=>this.add(n,d),(n,a,c)=>this.execute(n,a,c),()=>this.catalog());
   }
   private add(name:string,definition:Definition){this.definitions.set(name,definition);this.schemas.delete(name);}
   catalog(){return [...this.definitions].map(([name,d])=>({name,description:d.description,effect:Boolean(d.effect),available:d.available?d.available():name.startsWith('browser.')?this.config.browserEnabled:true,parameters:this.schemas.get(name)||(this.schemas.set(name,z.toJSONSchema(d.schema)),this.schemas.get(name))}));}
@@ -62,7 +63,7 @@ export class AgentTools {
     try{
       const result:any=await d.run(args,{...c,operationKey:dedup});if(c.taskId&&result?.private_setup_url){await this.db.query("UPDATE agent_tasks SET status='needs_input',error_code='connection_pending',result='Очікую особисте підключення сервісу.',updated_at=now() WHERE id=$1 AND status='running'",[c.taskId]);await new TaskJournal(this.db).publish(c.taskId,true);}checkOperation();const live=await state(this.db);
       if(live.paused||live.memory_revision!==c.revision)throw new ToolError('task_cancelled');
-      const sources=[...new Set([...(c.sourceIds||[]),...(c.sourceId?[c.sourceId]:[]),...resultSources(name,result)])];await recordProvenance(this.db,'tool_run',inserted.id,sources);if(c.taskId)await recordProvenance(this.db,'task',c.taskId,sources);const kinds:Record<string,string>={'private.ask':'private_request','connector.setup':'connection_setup','connector.oauth_setup':'oauth_setup','tasks.create':'task','artifact.create':'artifact','document.create':'artifact','media.speak':'artifact','project.create':'project','project.task_add':'project','decision.create':'decision','activity.create':'session','signal.create':'signal','event.create':'event','workflow.save':'workflow','workflow.revise':'workflow','memory.fact_save':'fact','watch.create':'monitor'};if(result?.id&&kinds[name]){if(name==='project.task_add'&&(args as any).project_id)await recordProvenance(this.db,'project',(args as any).project_id,sources);else await recordProvenance(this.db,kinds[name]!,result.id,sources);if(name==='tasks.create')for(const row of (await this.db.query("SELECT id FROM outbox WHERE body->>'taskId'=$1",[result.id])).rows)await recordProvenance(this.db,'outbox',row.id,sources);}
+      const sources=[...new Set([...(c.sourceIds||[]),...(c.sourceId?[c.sourceId]:[]),...resultSources(name,result)])];await recordProvenance(this.db,'tool_run',inserted.id,sources);if(c.taskId)await recordProvenance(this.db,'task',c.taskId,sources);const kinds:Record<string,string>={'private.ask':'private_request','connector.setup':'connection_setup','connector.oauth_setup':'oauth_setup','tasks.create':'task','artifact.create':'artifact','document.create':'artifact','media.speak':'artifact','project.create':'project','project.task_add':'project','decision.create':'decision','activity.create':'session','signal.create':'signal','event.create':'event','workflow.save':'workflow','workflow.revise':'workflow','memory.fact_save':'fact','watch.create':'monitor','interaction.open':'interaction','interaction.revise':'interaction'};if(result?.id&&kinds[name]){if(name==='project.task_add'&&(args as any).project_id)await recordProvenance(this.db,'project',(args as any).project_id,sources);else await recordProvenance(this.db,kinds[name]!,result.id,sources);if(name==='tasks.create')for(const row of (await this.db.query("SELECT id FROM outbox WHERE body->>'taskId'=$1",[result.id])).rows)await recordProvenance(this.db,'outbox',row.id,sources);}
       const json=JSON.stringify(result);if(json.length>100000)throw new ToolError('tool_result_too_large');
       await this.db.query("UPDATE tool_runs SET status='succeeded',result=$1,finished_at=now() WHERE id=$2",[json,inserted.id]);
       if(c.approvalId)await this.db.query("UPDATE tool_approvals SET status='executed' WHERE id=$1",[c.approvalId]);

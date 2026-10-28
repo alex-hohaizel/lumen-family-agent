@@ -235,4 +235,13 @@ ALTER TABLE tool_connections ADD COLUMN IF NOT EXISTS verification_task_id uuid 
 ALTER TABLE tool_connections ADD COLUMN IF NOT EXISTS verification_goal_version integer NOT NULL DEFAULT 1;
 ALTER TABLE tool_approvals ADD COLUMN IF NOT EXISTS audience text NOT NULL DEFAULT 'group';
 INSERT INTO schema_version VALUES (10) ON CONFLICT DO NOTHING;
+
+CREATE TABLE IF NOT EXISTS interactions(id uuid PRIMARY KEY,actor_id text NOT NULL,topic_id text NOT NULL,kind text NOT NULL,spec jsonb NOT NULL,participants jsonb NOT NULL,phase text NOT NULL DEFAULT 'collecting',version integer NOT NULL DEFAULT 1,revision integer NOT NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,parent_id uuid REFERENCES interactions(id) ON DELETE CASCADE,launch jsonb,winning_option integer,result text,card_hash text,card_seq integer NOT NULL DEFAULT 0,card_message_id bigint,created_at timestamptz NOT NULL DEFAULT now(),updated_at timestamptz NOT NULL DEFAULT now(),expires_at timestamptz NOT NULL DEFAULT now()+interval '1 day');
+ALTER TABLE interactions ADD COLUMN IF NOT EXISTS card_seq integer NOT NULL DEFAULT 0;
+CREATE INDEX IF NOT EXISTS interactions_topic_phase ON interactions(topic_id,phase,created_at);
+CREATE TABLE IF NOT EXISTS interaction_responses(interaction_id uuid NOT NULL REFERENCES interactions(id) ON DELETE CASCADE,version integer NOT NULL,user_id text NOT NULL,choices jsonb NOT NULL DEFAULT '[]',content text NOT NULL DEFAULT '',decision text NOT NULL DEFAULT 'answer',submitted boolean NOT NULL DEFAULT false,result text,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,updated_at timestamptz NOT NULL DEFAULT now(),PRIMARY KEY(interaction_id,version,user_id));
+CREATE TABLE IF NOT EXISTS message_panels(id uuid PRIMARY KEY,actor_id text NOT NULL,audience text NOT NULL DEFAULT 'group',topic_id text NOT NULL,pages jsonb NOT NULL,revision integer NOT NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,created_at timestamptz NOT NULL DEFAULT now(),expires_at timestamptz NOT NULL DEFAULT now()+interval '1 day');
+ALTER TABLE polls ADD COLUMN IF NOT EXISTS interaction_id uuid REFERENCES interactions(id) ON DELETE SET NULL;
+ALTER TABLE polls ADD COLUMN IF NOT EXISTS interaction_version integer;
+INSERT INTO schema_version VALUES(11) ON CONFLICT DO NOTHING;
 COMMIT;

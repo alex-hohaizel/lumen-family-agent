@@ -1,5 +1,5 @@
 import type { SQL } from './db.js';
-const tables: Record<string, string> = { private_result: 'private_results', private_request: 'private_requests', connection_setup: 'connection_setups', oauth_setup: 'oauth_setups', approval: 'tool_approvals', tool_run: 'tool_runs', task: 'agent_tasks', memory: 'memories', rule: 'rules', skill: 'skills', reminder: 'reminders', artifact: 'agent_artifacts', project: 'projects', decision: 'decisions', session: 'activity_sessions', signal: 'signals', event: 'group_events', workflow: 'agent_workflows', message: 'messages', outbox: 'outbox', fact: 'knowledge_facts', image: 'image_jobs', monitor: 'web_monitors' };
+const tables: Record<string, string> = { interaction:'interactions',panel:'message_panels', private_result: 'private_results', private_request: 'private_requests', connection_setup: 'connection_setups', oauth_setup: 'oauth_setups', approval: 'tool_approvals', tool_run: 'tool_runs', task: 'agent_tasks', memory: 'memories', rule: 'rules', skill: 'skills', reminder: 'reminders', artifact: 'agent_artifacts', project: 'projects', decision: 'decisions', session: 'activity_sessions', signal: 'signals', event: 'group_events', workflow: 'agent_workflows', message: 'messages', outbox: 'outbox', fact: 'knowledge_facts', image: 'image_jobs', monitor: 'web_monitors' };
 export async function recordProvenance(sql: SQL, kind: string, key: string | number, sources: number[]) {
     if (!tables[kind])
         throw new Error('invalid_provenance_kind');
@@ -40,6 +40,7 @@ export async function invalidateProvenance(sql: SQL, source: number) {
         await sql.query('DELETE FROM episodes WHERE source_ids @> $1::jsonb', [JSON.stringify([id])]);
         await sql.query('DELETE FROM games WHERE source_ids @> $1::jsonb', [JSON.stringify([id])]);
     }
+    const interactions=[...derived.values()].filter(x=>x.kind==='interaction').map(x=>x.key);if(interactions.length)await sql.query("DELETE FROM games WHERE state->>'interaction_id'=ANY($1::text[])",[interactions]);
     const tasks = [...derived.values()].filter(x => x.kind === 'task').map(x => x.key);
     if (tasks.length)
         await sql.query('DELETE FROM tool_credentials WHERE name IN (SELECT answer FROM private_requests WHERE task_id=ANY($1::uuid[]) AND answer IS NOT NULL)', [tasks]);

@@ -45,11 +45,11 @@ describe('Живі продовження, спільні рішення та м
   });
   it('зберігає спільні вибори під справжніми іменами й оновлює повторний вибір',async()=>{
     h.brain.replies.push({reply:'Яку гру обираємо?',actions:[],presentation:{choices:['Детектив','Вікторина'],audience:'group'}});await ask(message('Люмен, запропонуй нам гру'));
-    const choices=(await db.query('SELECT * FROM choices ORDER BY label')).rows;const r=await router();
-    await r.receive(callback('lumen:choice:'+choices[0]!.id));await (await r.active())[0]!.engine.processNext();
-    const input=JSON.parse(h.brain.calls.at(-1)!.context);assert.equal(input.current_author.name,'Олена');assert.equal(input.choice_event.selected[0].name,'Олена');assert.equal(input.choice_event.question,'Яку гру обираємо?');
-    await r.receive(callback('lumen:choice:'+choices[1]!.id));await (await r.active())[0]!.engine.processNext();
-    assert.equal((await db.query('SELECT * FROM choice_votes')).rows.length,1);assert.equal((await one(db,'SELECT label FROM choice_votes'))!.label,choices[1]!.label);
+    const stage=await one(db,'SELECT * FROM interactions');const r=await router();
+    await r.receive(callback(`li:${stage!.id}:1:0`));
+    assert.equal(h.brain.calls.length,1);const first=await one(db,'SELECT * FROM interaction_responses');assert.equal(first!.user_id,'22');assert.equal((await one(db,'SELECT phase FROM interactions'))!.phase,'collecting');
+    await r.receive(callback(`li:${stage!.id}:1:1`));
+    const votes=(await db.query('SELECT * FROM interaction_responses')).rows;assert.equal(votes.length,1);assert.deepEqual(votes[0]!.choices,[1]);
     assert.match(JSON.stringify((await db.query('SELECT body FROM outbox')).rows),/Олена/);
   });
   it('особистий вибір не дозволяє натиснути чужу кнопку',async()=>{

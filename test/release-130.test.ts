@@ -34,7 +34,7 @@ describe('Публікація 1.3, реальні відеокадри та т�
     assert.equal((await db.query("SELECT * FROM outbox WHERE kind='reaction'")).rows.length,0);assert.match(h.brain.calls[0]!.instructions!,/без жартів/);
   });
   it('одноразове оголошення стає sent лише після підтвердженої доставки',async()=>{
-    assert.equal(await queueReleaseNotice(db,'https://t.me/addstickers/'+STICKER_SET),true);assert.equal(await queueReleaseNotice(db),false);assert.equal((await one(db,'SELECT status FROM release_notices'))!.status,'pending');const d=new Delivery(db,h.tg as unknown as Telegram,h.config);await d.next();assert.equal(h.tg.sent.length,1);assert.match(h.tg.sent[0]!.text,/Люмен 1\.6/);assert.equal((await one(db,'SELECT status FROM release_notices'))!.status,'sent');assert.equal(await queueReleaseNotice(db),false);
+    assert.equal(await queueReleaseNotice(db,'https://t.me/addstickers/'+STICKER_SET),true);assert.equal(await queueReleaseNotice(db),false);assert.equal((await one(db,'SELECT status FROM release_notices'))!.status,'pending');const d=new Delivery(db,h.tg as unknown as Telegram,h.config);await d.next();assert.equal(h.tg.sent.length,1);assert.match(h.tg.sent[0]!.text,/Люмен 1\.7/);assert.equal((await one(db,'SELECT status FROM release_notices'))!.status,'sent');assert.equal(await queueReleaseNotice(db),false);
   });
   it('дістає три різні реальні кадри з готового WEBM-стікера',async()=>{
     h.tg.file=async()=>readFile(new URL('../../assets/stickers/01_wave.webm',import.meta.url));const frames=await visual().frames({kind:'sticker_video',file_id:'own-wave'});assert.equal(frames.mode,'sampled_animation_frames');assert.equal(frames.images.length,3);assert.ok(new Set(frames.images).size>=2);

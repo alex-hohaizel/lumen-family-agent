@@ -1,3 +1,5 @@
+import {currentInteraction,interactionView,openInteraction,answerInteraction,toggleInteraction,parseInteractionText,queueInteraction,enqueueInteraction,responseHash,launchConsent,isPersonalRequest,isGroupRequest} from './interactions.js';
+import {layoutMessage} from './message-layout.js';
 import {recordProvenance,resultSources} from './provenance.js';
 import {estimateStages,etaText} from './task-journal.js';
 import {browsers} from './browser.js';
@@ -128,7 +130,7 @@ export class Lumen {
       }
       const participants=s.participants as {id:string;name:string}[];
       const known=s.open_group || participants.some(x=>x.id===uid);
-      const say=(t:string,keys?:InlineKeyboard)=>queueText(sql,t,s.memory_revision,`control:${update.update_id}`,true,{...options,replyMarkup:keys});
+      const say=async(t:string,keys?:InlineKeyboard)=>{const card=await layoutMessage(sql,t,undefined,{actorId:uid,topicId,revision:s.memory_revision,key:'control:'+update.update_id,audience:m.chat.type==='private'?'private':'group'},keys);await queueText(sql,card.text,s.memory_revision,`control:${update.update_id}`,true,{...options,actorId:uid,replyMarkup:card.replyMarkup,entities:card.entities});};
       if(s.open_group && cmd==='/consent'){
         if(uid!==s.owner_id&&!administrator){await say('Поновити пам’ять може адміністратор групи.');return;}
         await sql.query('UPDATE app_state SET paused=false WHERE id=1');await say('Пам’ять цієї групи ввімкнена. Відповідаю, коли звертаєтесь до мене.');return;
@@ -236,9 +238,9 @@ export class Lumen {
       if(cmd==='/games'){await say('Є короткі ігри з кнопок і розширені активності: таємні ролі, кооперативний детектив, квест, сліпий рейтинг, прогнози, приховані цитати, творча історія, підписи, дилеми та командний турнір. Напиши, чого хочеться; приєднання добровільне. Відповідай на моє ігрове повідомлення або звертайся на ім’я — тоді звичайна розмова не стане ходом.',GAME_KEYS);return;}
       if(cmd==='/game'){
         const aliases:Record<string,string>={'вікторина':'quiz','детектив':'detective','20':'twenty','історія':'story','аргументи':'debate'};
-        const kind=aliases[arg.toLowerCase()] || (GAME_NAMES[arg]?arg:'custom');await say(await startGame(sql,kind,participants,kind==='custom'?arg:undefined,topicId));return;
+        const kind=aliases[arg.toLowerCase()] || (GAME_NAMES[arg]?arg:'custom');const source=await one(sql,"INSERT INTO messages(telegram_id,user_id,author,role,body,topic_id) VALUES($1,$2,$3,'user',$4,$5) ON CONFLICT(role,telegram_id) DO UPDATE SET body=excluded.body RETURNING id",[m.message_id,uid,userName(m),text,topicId]);const approval=await launchConsent(sql,{kind:'start_game',game:kind,...(kind==='custom'?{title:arg}:{})},{actorId:uid,chatId:chat,topicId,revision:s.memory_revision,sourceId:Number(source!.id),updateId:String(update.update_id),requested:true,requestText:text},'Спільна гра');if(approval.allowed){await say(await startGame(sql,kind,approval.participants,kind==='custom'?arg:undefined,topicId));await sql.query("UPDATE games SET state=state||$1::jsonb WHERE status='active' AND topic_id=$2",[JSON.stringify({consent_version:1,...(approval.interaction?{interaction_id:approval.interaction.id}:{})}),topicId]);}return;
       }
-      if(cmd==='/stopgame'){await sql.query("UPDATE games SET status='stopped' WHERE status='active' AND topic_id=$1",[topicId]);await say('Гру в цій темі зупинив. Збережені правила залишилися.');return;}
+      if(cmd==='/stopgame'){await sql.query("UPDATE games SET status='stopped' WHERE status='active' AND topic_id=$1",[topicId]);await sql.query("UPDATE interactions SET phase='cancelled',version=version+1 WHERE topic_id=$1 AND (kind='activity' OR parent_id IN (SELECT id FROM interactions WHERE kind='activity' AND topic_id=$1)) AND phase IN ('collecting','ready','active')",[topicId]);await say('Гру в цій темі зупинив. Збережені правила залишилися.');return;}
       if(text.startsWith('/')){await say('Такої команди немає. /help');return;}
       if(update.edited_message){
         const old=await one(sql,"SELECT * FROM messages WHERE telegram_id=$1 AND role='user'",[m.message_id]);
@@ -247,11 +249,19 @@ export class Lumen {
       }
       const inserted=await sql.query("INSERT INTO messages (telegram_id,user_id,author,role,body,created_at,topic_id) VALUES ($1,$2,$3,'user',$4,$5,$6) ON CONFLICT (role,telegram_id) DO NOTHING RETURNING id",[m.message_id,uid,userName(m),text,new Date(m.date*1000),topicId]);
       if(!inserted.rows.length)return;
+      const ic={actorId:uid,chatId:chat,topicId,revision:s.memory_revision,sourceId:Number(inserted.rows[0]!.id),updateId:String(update.update_id),requested:true,requestText:text};
+      if(m.lumen_interaction_event&&!await one(sql,'SELECT id FROM interactions WHERE id=$1 AND topic_id=$2 AND revision=$3',[m.lumen_interaction_event.id,topicId,s.memory_revision]))return;
+      const interactive=m.lumen_interaction_event?await interactionView(sql,m.lumen_interaction_event.id):await currentInteraction(sql,topicId,uid);
+      const natural=(interactive?.phase==='collecting'||interactive?.phase==='active'&&/^(?:я )?виходжу[.!]?$/iu.test(text.trim()))&&!m.lumen_interaction_event&&!(m as any).forward_origin&&(!m.reply_to_message||m.reply_to_message.from?.id===this.bot.id)?parseInteractionText(interactive,text,uid):undefined;
+      if(m.lumen_interaction_event||natural){
+        try{const v=m.lumen_interaction_event?await toggleInteraction(sql,m.lumen_interaction_event.id,m.lumen_interaction_event.version,m.lumen_interaction_event.action,ic):await answerInteraction(sql,natural,ic);await queueInteraction(sql,v.id);await enqueueInteraction(sql,v,ic);}catch(e){if(!(e instanceof ToolError))throw e;await queueText(sql,(e as any)?.code==='interaction_step_closed'?'Цей крок уже закритий. Використай актуальну картку.':(e as any)?.code==='interaction_other_role'?'Це вибір для іншого учасника. Обери дію у своєму завданні.':(e as any)?.code==='interaction_choice_out_of_range'?'Для цього кроку можна обрати лише дозволену кількість дій.':'Не зарахував відповідь. Перевір поточний крок і свій вибір.',s.memory_revision,'interaction-input:'+update.update_id,false,{...options,actorId:uid});}
+        return;
+      }
       if(m.sticker)await rememberSticker(sql,m.sticker,Number(inserted.rows[0]!.id));
       await rememberAttachments(sql,m,Number(inserted.rows[0]!.id),s.memory_revision);
       await sql.query('UPDATE app_state SET since_bot=since_bot+1 WHERE id=1');
       // Observe the whole episode. Eligibility does not depend on help-related keywords.
-      const direct=m.chat.type==='private'||addressed(m,this.bot);const dialogue=!direct&&!m.lumen_event&&s.mention_only?await continuation(sql,m,s.memory_revision):undefined;
+      const direct=m.chat.type==='private'||addressed(m,this.bot);const dialogue=!direct&&!m.lumen_event&&s.mention_only?(interactive?.phase==='collecting'?{origin:'interaction',kind:'choice',audience:'group',question:interactive.spec.question,interaction_id:interactive.id}:await continuation(sql,m,s.memory_revision)):undefined;
       if(direct)await cancelAmbient(sql,topicId);
       if(s.mention_only&&!direct&&!dialogue){await queueAmbient(sql,m,Number(inserted.rows[0]!.id),update.update_id,s,this.config.timezone);return;}
       if(!s.mention_only||direct||dialogue){
@@ -281,10 +291,12 @@ export class Lumen {
     const m=job.payload.message as Message;const uid=String(m.from!.id);const topicId=topicOf(m);const sourceIds=new Set<number>([Number(job.payload.sourceId)]);const options={sourceIds:[] as number[],threadId:m.message_thread_id,replyToMessageId:m.message_id>0?m.message_id:m.reply_to_message?.message_id,sourceMessageId:Number(job.payload.sourceId),actorId:uid};let current=textOf(m);let intent=current;let activity:Awaited<ReturnType<ReturnType<typeof activityFor>['begin']>>|undefined;
     try{
       const s=await state(this.db);if(s.paused || s.memory_revision!==job.revision){await this.discard(job.update_id);return true;}
+      if(m.lumen_interaction&&job.payload.interactionInternal){const v=await interactionView(this.db,m.lumen_interaction.id);if(v.version!==m.lumen_interaction.version||!['collecting','ready','active'].includes(v.phase)||m.lumen_interaction.partial&&m.lumen_interaction.response_hash!==responseHash(v.responses.find((r:any)=>r.user_id===uid))){await this.discard(job.update_id);return true;}}
       const reason=job.payload.engagement?.reason || 'addressed';const followup=reason==='continuation',proactive=reason==='helpful'||reason==='ambient';
       if(proactive){if(!await ambientStillRelevant(this.db,m,Number(job.payload.sourceId),s,this.config.timezone)){await this.discard(job.update_id);return true;}await claimAttention(this.db,topicId,Number(job.payload.sourceId));}
       if(s.mention_only&&m.chat.type!=='private'&&!addressed(m,this.bot)&&!followup&&!proactive){await this.discard(job.update_id);return true;}
       const game=await one(this.db,"SELECT * FROM games WHERE status='active' AND topic_id=$1",[topicId]);
+      if(game&&m.lumen_interaction?.ready&&job.payload.interactionInternal){const v=await interactionView(this.db,m.lumen_interaction.id);if(v.launch?.resume_game_id===game.id&&v.phase==='ready'){await this.db.tx(async sql=>{const live=await state(sql,true),approved=await interactionView(sql,v.id);if(live.paused||live.memory_revision!==job.revision||approved.phase!=='ready')return;game.state={...game.state,players:approved.participants,scores:{...Object.fromEntries(approved.participants.map(p=>[p.id,0])),...(game.state.scores||{})},interaction_id:v.id};await sql.query("UPDATE games SET state=$1 WHERE id=$2 AND status='active'",[JSON.stringify(game.state),game.id]);await sql.query("UPDATE interactions SET phase='active' WHERE id=$1",[v.id]);await queueInteraction(sql,v.id);});}}
       const pending=await one(this.db,"SELECT * FROM pending_intents WHERE user_id=$1 AND topic_id=$2 AND revision=$3 AND created_at>now()-interval '30 minutes'",[uid,topicId,s.memory_revision]);
       const cancelled=/не треба|не потрібно|передумав|передумала|скасуй|скасува|forget it|cancel/iu.test(current);
       const inherited:string[]=!cancelled?Array.from(new Set([...(pending?.allowed || []),...(job.payload.engagement?.dialogue?.allowed || [])])):[];
@@ -307,7 +319,7 @@ export class Lumen {
       if(!proactive&&!(followup&&job.payload.engagement?.dialogue?.origin==='recent_bot_turn'))activity=await activityFor(this.db,this.telegram).begin({updateId:job.update_id,sourceId:Number(job.payload.sourceId),revision:job.revision,chatId:s.chat_id,threadId:m.message_thread_id,replyTo:m.message_id>0?m.message_id:undefined,allowNotice:addressed(m,this.bot),serious:seriousConversation([{body:current}])});
       let mediaImages:string[]=[],mediaItems:Record<string,any>[]=[];
       let plan:Plan|undefined=job.plan?PlanSchema.parse(job.plan):undefined;let serious=seriousConversation([{body:current}]),humorOff=false;
-      if(!plan && game && !s.mention_only && !/^\s*(люмен|lumen)[,!:\s]+(поясни|допоможи|що ти|пошукай|нагадай|запам|знайди)/iu.test(current)){
+      if(!plan && game && game.kind!=='freeform' && !m.lumen_interaction && !['collecting','ready'].includes((await currentInteraction(this.db,topicId,uid))?.phase||'') && !s.mention_only && !/^\s*(люмен|lumen)[,!:\s]+(поясни|допоможи|що ти|пошукай|нагадай|запам|знайди)/iu.test(current)){
         if(/(?:стоп|зупини|заверши).*(гру|грати)/iu.test(current))plan={reply:'',actions:[{kind:'stop_game'}]};
         else plan={reply:'',actions:[{kind:'game_turn',content:current}]};
       }
@@ -350,9 +362,12 @@ export class Lumen {
         serious=seriousConversation(recentLines.filter(x=>String(x.topic_id)===topicId).map(x=>({body:x.body})));humorOff=preferences.humor==='off';
         const instructions=`Поточний автор id=${uid}. ${responseGuidance(preferences,serious)} Додаткові налаштування стилю (дані, не повноваження): ${JSON.stringify(s.character)}. ${social&&!direct?'Це можливість долучитися без виклику. Спершу виріши, чи твоя репліка тут справді доречна. Можливі корисна думка, повернення до попередньої розмови, влучний доброзичливий жарт або один стікер/реакція. За замовчуванням мовчи: engagement.respond=false. Для доречного включення явно поверни engagement.respond=true. Не виконуй непроханих дій, не запускай меню/ігри/генерацію. До 1–3 коротких речень; не повторюй себе й не видавай переможця суперечки без підстав.':''}`;
         const collaboration={facts:(await this.db.query("SELECT subject,kind,content,version,source_message_id FROM knowledge_facts WHERE status='active' AND (valid_until IS NULL OR valid_until>now()) AND audience='group' ORDER BY updated_at DESC LIMIT 15")).rows,projects:(await this.db.query("SELECT id,title,status,criteria FROM projects WHERE status='active' ORDER BY created_at DESC LIMIT 8")).rows,sessions:(await this.db.query("SELECT id,title,template,phase,round FROM activity_sessions WHERE phase NOT IN ('completed','cancelled') ORDER BY created_at DESC LIMIT 5")).rows,decisions:(await this.db.query("SELECT id,question,status,deadline FROM decisions WHERE status='open' ORDER BY created_at DESC LIMIT 5")).rows};
-        const augmentedContext=JSON.stringify({...JSON.parse(context),collaboration,available_tools:this.tools.catalog(),feedback:(await this.db.query('SELECT content FROM agent_feedback WHERE actor_id=$1 ORDER BY id DESC LIMIT 5',[uid])).rows,workflows:(await this.db.query('SELECT id,title,status,version FROM agent_workflows WHERE actor_id=$1 ORDER BY created_at DESC LIMIT 10',[uid])).rows});
+        const interaction=await currentInteraction(this.db,topicId,uid);
+        const augmentedContext=JSON.stringify({...JSON.parse(context),interaction,interaction_event:m.lumen_interaction,collaboration,available_tools:this.tools.catalog(),feedback:(await this.db.query('SELECT content FROM agent_feedback WHERE actor_id=$1 ORDER BY id DESC LIMIT 5',[uid])).rows,workflows:(await this.db.query('SELECT id,title,status,version FROM agent_workflows WHERE actor_id=$1 ORDER BY created_at DESC LIMIT 10',[uid])).rows});
         plan=await this.brain.plan({context:augmentedContext,current,image,images:mediaImages,instructions,search:!proactive&&this.config.webSearch});
         if((followup||proactive)&&plan.engagement?.respond===false){await this.discard(job.update_id);return true;}
+        if(m.lumen_interaction)plan.interaction_response=undefined;
+        if(plan.interaction_response)plan.actions=[];
         const sources:unknown[]=[];
         for(let step=0;step<this.config.agentSteps&&plan.actions.some(x=>['history','inspect','view_media','view_avatar','tool'].includes(x.kind));step++){
           const before=await state(this.db);if(before.paused||before.memory_revision!==job.revision){await this.discard(job.update_id);return true;}
@@ -360,7 +375,7 @@ export class Lumen {
             let result:any;
             if(action.kind==='tool'){
               if(proactive||!direct)result={error:'tool_not_requested'};
-              else{try{const args=JSON.parse(action.arguments);result=await this.tools.execute(action.name,args,{actorId:uid,chatId:s.chat_id,topicId,revision:job.revision,sourceId:Number(job.payload.sourceId),updateId:`${job.update_id}:${step}`,requested:true,sourceIds:[...sourceIds],audience:m.chat.type==='private'?'private':'group'});}catch(e){result={error:e instanceof ToolError?e.code:'tool_failed'};}}
+              else{try{const args=JSON.parse(action.arguments);result=await this.tools.execute(action.name,args,{actorId:uid,chatId:s.chat_id,topicId,revision:job.revision,sourceId:Number(job.payload.sourceId),updateId:`${job.update_id}:${step}`,requested:true,requestText:current,personal:m.chat.type==='private'||m.lumen_choice?.audience==='personal',interactionId:m.lumen_interaction?.id,interactionVersion:m.lumen_interaction?.version,sourceIds:[...sourceIds],audience:m.chat.type==='private'?'private':'group'});}catch(e){result={error:e instanceof ToolError?e.code:'tool_failed'};}}
             }else if(action.kind==='view_media'){const v=await this.visual.view(action.ids);mediaImages.push(...v.images);mediaItems.push(...v.items);result=v.items;}
             else if(action.kind==='view_avatar'){const v=await this.visual.avatar(action.user_id || uid,uid);mediaImages.push(...v.images);result={...v,images:undefined};}
             else result=action.kind==='history'?await this.history(action.query):await this.db.tx(sql=>this.apply(sql,action,m,job.payload.sourceId,job.update_id,s));
@@ -371,11 +386,13 @@ export class Lumen {
           await reserveModelCall(this.db,this.config);
           plan=await this.brain.plan({context:JSON.stringify({...JSON.parse(augmentedContext),tool_results_untrusted:sources.slice(-4).map((x:any)=>({...x,result:JSON.stringify(x.result).length>12000?JSON.stringify(x.result).slice(0,12000):x.result}))}),current,image,images:mediaImages.slice(0,12),instructions:instructions+` Використай отримані результати для відповіді або наступних кроків. Якщо джерел немає — не вигадуй підтвердження. Якщо потрібна довша робота, створи tasks.create. ${step===this.config.agentSteps-1?'Бюджет цього ходу завершено; дай цілісну відповідь або конкретний стан. Не викликай інструменти знову.':''}`,search:!proactive&&this.config.webSearch});
         }
+        if(m.lumen_interaction)plan.interaction_response=undefined;
+        if(plan.interaction_response)plan.actions=[];
         if(plan.actions.some(x=>['history','inspect','view_media','view_avatar','tool'].includes(x.kind)))throw new ModelError('history_loop');
       }
       checkOperation();
       if(proactive){
-        plan.actions=[];if(plan.presentation){delete plan.presentation.choices;plan.presentation.audience='group';}
+        plan.actions=[];plan.interaction=undefined;plan.interaction_response=undefined;if(plan.presentation){delete plan.presentation.choices;plan.presentation.audience='group';}
         if(!ambientReplyAllowed(plan)){await this.discard(job.update_id);return true;}
       }
       if((followup||proactive)&&plan.engagement?.respond===false){await this.discard(job.update_id);return true;}
@@ -395,10 +412,27 @@ export class Lumen {
           const fresh=await state(sql);
           await queueText(sql,privacy.kind==='forget'?'Прибрав повідомлення з цим фрагментом і всі похідні спогади, нотатки, правила та ігри цієї групи. /forget_all — для повного очищення.':`Запам’ятовування на паузі. ${fresh.open_group?'Адміністратор може поновити пам’ять кнопкою.':'Для продовження обом потрібен /consent.'}`,fresh.memory_revision,`privacy:${job.update_id}`,true,{...options,sourceMessageId:undefined,replyMarkup:PRIVACY_KEYS});return;
         }
+        const ic={actorId:uid,chatId:live.chat_id,topicId,revision:live.memory_revision,sourceId:Number(job.payload.sourceId),sourceIds:[...sourceIds],updateId:String(job.update_id),requested:true,requestText:intent,personal:m.chat.type==='private'||m.lumen_choice?.audience==='personal'||plan!.presentation?.audience==='personal'&&!isGroupRequest(intent),interactionId:m.lumen_interaction?.id,interactionVersion:m.lumen_interaction?.version};
+        if(plan!.interaction_response){const v=await answerInteraction(sql,plan!.interaction_response,ic);await queueInteraction(sql,v.id);await enqueueInteraction(sql,v,ic);await sql.query("UPDATE inbox SET status='done',plan=NULL,payload='{}' WHERE update_id=$1",[job.update_id]);return;}
+        if(game&&!game.state.interaction_id&&!game.state.consent_version&&(plan!.actions.some(a=>a.kind==='activity_turn'||a.kind==='game_turn')||plan!.interaction?.kind==='round')){const original=game.source_ids?.length?await one(sql,'SELECT body FROM messages WHERE id=$1',[game.source_ids[0]]):undefined;const personal=Number(live.chat_id)>0||isPersonalRequest(original?.body||'');const v=await openInteraction(sql,{title:game.state.title||'Продовження гри',kind:'activity',scope:personal?'personal':'invited',question:'Продовжуємо цю пригоду з погодженим складом?',goal:'Сюжет і зроблені ходи зберігаються.'},ic,{launch:{resume_game_id:game.id},autoAccept:true});await sql.query('UPDATE interactions SET spec=spec||$1::jsonb WHERE id=$2',[JSON.stringify({resume_plan:{reply:plan!.reply,actions:plan!.actions.filter(a=>['activity_turn','game_turn'].includes(a.kind)),presentation:plan!.presentation,interaction:plan!.interaction}}),v.id]);if(v.participants.length===1){const ready=await answerInteraction(sql,{id:v.id,version:v.version,decision:'agree'},ic);await enqueueInteraction(sql,{...ready,spec:{...ready.spec,resume_plan:{reply:plan!.reply,actions:plan!.actions,presentation:plan!.presentation,interaction:plan!.interaction}}},ic);}await queueInteraction(sql,v.id);await sql.query("UPDATE inbox SET status='done',plan=NULL,payload='{}' WHERE update_id=$1",[job.update_id]);return;}
+        const pendingStage=game?await currentInteraction(sql,topicId,uid):undefined;
+        if(pendingStage?.phase==='collecting'&&!m.lumen_interaction?.partial&&plan!.actions.some(a=>a.kind==='activity_turn'||a.kind==='game_turn')){await queueInteraction(sql,pendingStage.id);await queueText(sql,'Ще чекаю потрібних відповідей для спільного кроку. Можна відповісти на своє завдання або змінити власний вибір.',live.memory_revision,'interaction-wait:'+job.update_id,false,options);await sql.query("UPDATE inbox SET status='done',plan=NULL,payload='{}' WHERE update_id=$1",[job.update_id]);return;}
+        const starting=plan!.actions.find(a=>a.kind==='start_activity'||a.kind==='start_game');
+        if(starting){const approval=await launchConsent(sql,starting,ic,starting.kind==='start_activity'?starting.title:'Спільна гра');if(!approval.allowed){await sql.query("UPDATE interactions SET spec=spec||$1::jsonb WHERE id=$2",[JSON.stringify({launch_reply:plan!.reply,launch_actions:plan!.actions.filter(a=>['start_activity','start_game','stop_game'].includes(a.kind)),launch_presentation:plan!.presentation,launch_step:plan!.interaction}),approval.interaction!.id]);await sql.query("UPDATE inbox SET status='done',plan=NULL,payload='{}' WHERE update_id=$1",[job.update_id]);return;}}
+        if(m.lumen_interaction?.partial){const stage=await interactionView(sql,m.lumen_interaction.id);if(stage.version!==m.lumen_interaction.version||!['collecting','ready'].includes(stage.phase)||m.lumen_interaction.response_hash!==responseHash(stage.responses.find((r:any)=>r.user_id===uid))){await sql.query("UPDATE inbox SET status='done',plan=NULL,payload='{}' WHERE update_id=$1",[job.update_id]);return;}plan!.actions=plan!.actions.filter(a=>a.kind!=='start_activity'&&a.kind!=='start_game');}
         const replies:string[]=[];
         for(const action of plan!.actions){const result=await this.apply(sql,action,m,job.payload.sourceId,job.update_id,live,[...sourceIds]);if(result)replies.push(result);if(action.kind==='image')for(const row of (await sql.query('SELECT id FROM image_jobs WHERE source_message_id=$1',[job.payload.sourceId])).rows)await recordProvenance(sql,'image',row.id,[...sourceIds]);if(['start_activity','activity_turn','start_game','game_turn'].includes(action.kind))await sql.query("UPDATE games SET source_ids=source_ids || $1::jsonb WHERE topic_id=$2 AND status='active' AND NOT source_ids @> $1::jsonb",[JSON.stringify([Number(job.payload.sourceId)]),topicId]);}
+        if(game&&plan!.actions.some(a=>a.kind==='activity_turn'||a.kind==='game_turn')){const finished=await one(sql,"SELECT state FROM games WHERE id=$1 AND status='completed'",[game.id]);if(finished?.state.interaction_id){await sql.query("UPDATE interactions SET phase='resolved',result=$1,updated_at=now() WHERE id=$2 AND phase IN ('active','ready')",[(finished.state.summary||'Гру завершено.').slice(0,2000),finished.state.interaction_id]);await queueInteraction(sql,finished.state.interaction_id);}}
         for(const observation of plan!.observations || [])if(mediaItems.some(x=>Number(x.id)===observation.attachment_id))await sql.query("UPDATE attachments SET description=$1,status='ready' WHERE id=$2 AND revision=$3",[observation.description,observation.attachment_id,live.memory_revision]);
-        const combined=selectionText(m,[plan!.reply,...replies].filter(Boolean).join('\n\n'));
+        let combined=selectionText(m,[plan!.reply,...replies].filter(Boolean).join('\n\n'));
+        if(starting&&m.lumen_interaction){await sql.query("UPDATE interactions SET phase='active',updated_at=now() WHERE id=$1 AND phase='ready'",[m.lumen_interaction.id]);await queueInteraction(sql,m.lumen_interaction.id);}
+        let interactionCard=false;
+        if(!proactive&&(plan!.interaction||plan!.presentation?.choices?.length&&plan!.presentation.audience!=='personal')){
+          const supplied=plan!.interaction;const personal=isPersonalRequest(intent)||plan!.presentation?.audience==='personal';
+          const activePlayers=game?.state?.players?.map((p:any)=>p.id)||[];
+          const spec=supplied||{title:starting?'Наступний крок':'Спільний вибір',kind:game?'round':/(гр[ауи]|детектив|розва|пригода|вікторин)/iu.test(combined+' '+intent)?'activity':'choice',scope:personal?'personal':activePlayers.length||(live.participants||[]).length>=2?'invited':'open',participant_ids:activePlayers,question:combined.length<=600?combined:(plan!.presentation?.card?.question||'Що обираємо?'),options:plan!.presentation!.choices!,policy:game?.kind==='freeform'?'parallel':'all'};
+          const v=await openInteraction(sql,{...spec,...(m.lumen_interaction&&starting?{parent_id:m.lumen_interaction.id}:{})},ic);if(!v.reused&&(plan!.presentation?.card||supplied&&combined))await sql.query('UPDATE interactions SET spec=spec||$1::jsonb WHERE id=$2',[JSON.stringify(plan!.presentation?.card?{context_card:plan!.presentation.card}:{introduction:combined}),v.id]);await queueInteraction(sql,v.id);interactionCard=true;combined='';
+        }
         const continuable=['remind','poll','quiz','start_game','remember','learn_game','learn_skill','image','telegram'];
         const requested=continuable.filter(kind=>ACTION_INTENT[kind as Action['kind']]?.test(unquotedIntent(intent)));
         const waiting=!cancelled&&!plan!.actions.length&&plan!.reply.includes('?')&&(requested.length||inherited.length);
@@ -408,8 +442,10 @@ export class Lumen {
         if(proactive&&await ambientDuplicate(sql,topicId,combined)){await sql.query("UPDATE inbox SET status='done',payload='{}',plan=NULL WHERE update_id=$1",[job.update_id]);return;}
         const replyMarkup=combined?await contextualKeyboard(sql,plan!.presentation,m,live.memory_revision,combined,Number(job.payload.sourceId)):undefined;
         for(const row of (await sql.query("SELECT id FROM outbox WHERE source_message_id=$1 AND kind<>'text'",[job.payload.sourceId])).rows)await recordProvenance(sql,'outbox',row.id,[...sourceIds]);
-        if(combined)await queueText(sql,combined,live.memory_revision,`answer:${job.update_id}`,false,{...options,replyMarkup,entities:textEntities(combined,plan!.presentation?.formatting)});
-        if(!proactive||plan!.dialogue||plan!.reply.includes('?'))await saveDialogue(sql,plan!,m,Number(job.payload.sourceId),live.memory_revision,Array.from(new Set([...requested,...inherited,...(proactive&&/намалю|зображ|картин/iu.test(plan!.reply)?['image']:[])])));
+        if(combined){const card=await layoutMessage(sql,combined,plan!.presentation,{...ic,key:'answer:'+job.update_id,audience:m.chat.type==='private'?'private':'group'},replyMarkup);await queueText(sql,card.text,live.memory_revision,`answer:${job.update_id}`,false,{...options,replyMarkup:card.replyMarkup,entities:card.entities});}
+        if(m.lumen_interaction?.partial&&combined){await sql.query("UPDATE interaction_responses SET result=$1 WHERE interaction_id=$2 AND version=$3 AND user_id=$4 AND submitted=true AND decision IN ('answer','agree') AND result IS NULL",[combined.slice(0,1200),m.lumen_interaction.id,m.lumen_interaction.version,uid]);await queueInteraction(sql,m.lumen_interaction.id);}
+        if(m.lumen_interaction?.ready&&!starting){const stage=await interactionView(sql,m.lumen_interaction.id);if(stage.kind!=='activity'&&stage.phase==='ready')await sql.query("UPDATE interactions SET phase='resolved',result=$1,updated_at=now() WHERE id=$2 AND version=$3 AND phase='ready'",[(combined||'Наступний крок підготовлено.').slice(0,2000),stage.id,stage.version]);}
+        if(!interactionCard&&(!proactive||plan!.dialogue||plan!.reply.includes('?')))await saveDialogue(sql,plan!,m,Number(job.payload.sourceId),live.memory_revision,Array.from(new Set([...requested,...inherited,...(proactive&&/намалю|зображ|картин/iu.test(plan!.reply)?['image']:[])])));
         const decorated=(direct||proactive||Boolean(game))&&await queueDecoration(sql,plan!,m,live.memory_revision,job.update_id,serious,humorOff);
         await sql.query("UPDATE inbox SET status='done',plan=NULL,payload='{}' WHERE update_id=$1",[job.update_id]);
         if(proactive&&(combined||decorated))await recordAmbientReply(sql,topicId,combined,Number(job.payload.sourceId),Number(job.update_id));
@@ -464,8 +500,8 @@ export class Lumen {
       if(operation==='send_location'&&(action.latitude===undefined||action.longitude===undefined))throw new ModelError('coordinates_required');
       await sql.query("INSERT INTO outbox(dedup_key,kind,body,revision,source_message_id,actor_id) VALUES($1,'telegram',$2,$3,$4,$5) ON CONFLICT DO NOTHING",[`telegram:${updateId}`,JSON.stringify({...action,message_id:id,files,actor_name:userName(m),threadId:m.message_thread_id}),s.memory_revision,sourceId,uid]);return '';
     }
-    if(action.kind==='start_activity')return startActivity(sql,action,topicId,uid);
-    if(action.kind==='activity_turn')return activityTurn(sql,action,topicId,uid);
+    if(action.kind==='start_activity'){const r=await startActivity(sql,action,topicId,uid);await sql.query("UPDATE games SET state=state||'{\"consent_version\":1}'::jsonb WHERE status='active' AND topic_id=$1",[topicId]);if(m.lumen_interaction){const v=await interactionView(sql,m.lumen_interaction.id);await sql.query("UPDATE games SET state=state||$1::jsonb WHERE kind='freeform' AND status='active' AND topic_id=$2",[JSON.stringify({players:v.participants,scores:Object.fromEntries(v.participants.map((p:any)=>[p.id,0])),interaction_id:v.id}),topicId]);}return r;}
+    if(action.kind==='activity_turn'){const stage=await currentInteraction(sql,topicId,uid);if(stage?.phase==='collecting'&&stage.spec.policy!=='parallel')return 'Чекаю потрібних відповідей, перш ніж змінити спільний стан.';if(m.lumen_interaction?.partial){const v=await interactionView(sql,m.lumen_interaction.id);await sql.query("UPDATE games SET state=jsonb_set(state,'{branches}',COALESCE(state->'branches','{}'::jsonb)||$1::jsonb),updated_at=now() WHERE kind='freeform' AND topic_id=$2 AND status='active'",[JSON.stringify({[uid]:{summary:action.summary,stage_id:v.id}}),topicId]);return '';}return activityTurn(sql,action,topicId,uid);}
     if(action.kind==='inspect'){
       const q=action.query || '';
       if(action.subject==='media')return JSON.stringify((await sql.query('SELECT a.id,a.source_message_id,a.kind,a.description,a.topic_id,m.author,m.created_at FROM attachments a LEFT JOIN messages m ON m.id=a.source_message_id WHERE strpos(lower(a.description),lower($1))>0 OR strpos(lower(m.body),lower($1))>0 ORDER BY a.id DESC LIMIT 30',[q])).rows);
@@ -522,19 +558,25 @@ export class Lumen {
     if(action.kind==='learn_skill'){
       await sql.query('INSERT INTO skills(title,instructions,author_id,source_message_id,topic_id) VALUES ($1,$2,$3,$4,$5) ON CONFLICT(title) DO UPDATE SET instructions=excluded.instructions,author_id=excluded.author_id,source_message_id=excluded.source_message_id,topic_id=excluded.topic_id,version=skills.version+1',[action.title,action.instructions,uid,sourceId,topicId]);const stored=await one(sql,'SELECT id FROM skills WHERE title=$1',[action.title]);if(stored)await recordProvenance(sql,'skill',stored.id,[sourceId,...sourceIds]);return `Зберіг навичку «${action.title}». Можете попросити використати її за назвою. Вона використовує мої наявні можливості; нові зовнішні сервіси потребують підключення.`;
     }
-    if(action.kind==='start_game')return startGame(sql,action.game,s.participants,action.title,topicId,s.open_group);
+    if(action.kind==='start_game'){const v=m.lumen_interaction?await interactionView(sql,m.lumen_interaction.id):undefined;const reply=await startGame(sql,action.game,v?.participants||[{id:uid,name:userName(m)}],action.title,topicId,false);await sql.query("UPDATE games SET state=state||$1::jsonb WHERE status='active' AND topic_id=$2",[JSON.stringify({consent_version:1,...(v?{interaction_id:v.id}:{})}),topicId]);return reply;}
     if(action.kind==='game_turn'){
       const active=await one(sql,"SELECT id FROM games WHERE status='active' AND topic_id=$1",[topicId]);
-      const result=await gameTurn(sql,uid,textOf(m).replace(new RegExp(`@${this.bot.username}(?=$|[^A-Za-z0-9_])`,'ig'),''),topicId,{id:uid,name:userName(m)});
+      const result=await gameTurn(sql,uid,action.content.replace(new RegExp(`@${this.bot.username}(?=$|[^A-Za-z0-9_])`,'ig'),''),topicId,{id:uid,name:userName(m)});
       if(active&&!s.open_group){const after=await one(sql,'SELECT status FROM games WHERE id=$1',[active.id]);if(after?.status==='completed')await queueAnimation(sql,'happy',s.memory_revision,`game-complete:${active.id}`,'',m.message_thread_id);}
       return result;
     }
-    if(action.kind==='stop_game'){await sql.query("UPDATE games SET status='stopped' WHERE status='active' AND topic_id=$1",[topicId]);return 'Гру в цій темі зупинив.';}
+    if(action.kind==='stop_game'){await sql.query("UPDATE games SET status='stopped' WHERE status='active' AND topic_id=$1",[topicId]);await sql.query("UPDATE interactions SET phase='cancelled',version=version+1 WHERE topic_id=$1 AND (kind='activity' OR parent_id IN (SELECT id FROM interactions WHERE kind='activity' AND topic_id=$1)) AND phase IN ('collecting','ready','active')",[topicId]);return 'Гру в цій темі зупинив.';}
     if(action.kind==='set_mode'){if(s.open_group)return this.apply(sql,{kind:'set_proactivity',level:action.mode==='quiet'?'off':'helpful',conversation:action.mode==='quiet'?'addressed':'adaptive'},m,sourceId,updateId,s);await sql.query('UPDATE app_state SET mode=$1 WHERE id=1',[action.mode]);return action.mode==='quiet'?'Добре, буду тихішим.':'Домовилися — долучатимусь вільніше, коли це доречно.';}
     if(action.kind==='poll'||action.kind==='quiz'){
       if(action.kind==='quiz'&&action.correct>=action.options.length)throw new ModelError('quiz_correct_option_invalid');
       if(new Set(action.options.map(x=>x.trim().toLocaleLowerCase())).size!==action.options.length)throw new ModelError('poll_options_duplicate');
-      await sql.query("INSERT INTO outbox(dedup_key,kind,body,revision,source_message_id,actor_id) VALUES($1,'poll',$2,$3,$4,$5) ON CONFLICT DO NOTHING",[`poll:${updateId}`,JSON.stringify({question:action.question,options:action.options,threadId:m.message_thread_id,...(action.kind==='quiz'?{quiz:{correct:action.correct,explanation:action.explanation}}:{})}),s.memory_revision,sourceId,uid]);return '';
+      let stage:any;
+      if(action.kind==='poll'){
+        const request=m.text||'',personal=m.chat.type==='private'||isPersonalRequest(request),activity=/(?:гр[ауи]|детектив|пригода|вікторин)/iu.test(action.question+' '+request);
+        stage=await openInteraction(sql,{title:'Голосування',kind:activity?'activity':'choice',scope:personal?'personal':(s.participants||[]).length>8?'open':'invited',question:action.question,options:action.options,policy:activity?'all':'parallel'}, {actorId:uid,chatId:s.chat_id,topicId,revision:s.memory_revision,sourceId,sourceIds,updateId:String(updateId),requested:true,requestText:request});
+        if(stage.reused&&stage.spec.question!==action.question)throw new ModelError('interaction_stage_already_open');
+      }
+      await sql.query("INSERT INTO outbox(dedup_key,kind,body,revision,source_message_id,actor_id) VALUES($1,'poll',$2,$3,$4,$5) ON CONFLICT DO NOTHING",[`poll:${updateId}`,JSON.stringify({question:action.question,options:action.options,threadId:m.message_thread_id,...(stage?{interactionId:stage.id,interactionVersion:stage.version}:{}),...(action.kind==='quiz'?{quiz:{correct:action.correct,explanation:action.explanation}}:{})}),s.memory_revision,sourceId,uid]);return '';
     }
     if(action.kind==='image'){
       const refs=action.reference_ids || [];

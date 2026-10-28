@@ -94,6 +94,16 @@ export class ChatRouter {
     const runtime=(await this.active())[0];if(runtime){const {reserveModelCall}=await import('./model-budget.js');await reserveModelCall(runtime.db,this.config);}const model=new OpenAIModel(runtime?.engine.config||this.config,this.auth);const answer=await model.text([{role:'user',content:[{type:'input_text',text:'Read the five digit number on this fixed diagnostic page. Reply only with that number.'},...pages.map(p=>({type:'input_image',image_url:p.dataUrl}))]}],'Read the number in the image; no tools or external actions.',false);if(!answer.includes('31415'))throw new Error('vision_ocr_number_not_observed');
     if(runtime)await runtime.db.query("INSERT INTO capability_health(name,status,detail) VALUES('documents','ready','DOCX XLSX PDF and image OCR verified') ON CONFLICT(name,actor_id) DO UPDATE SET status='ready',detail=excluded.detail,checked_at=now()");return {docx_readback:true,xlsx_readback:true,pdf_readback:true,scan_pages:pages.length,vision_ocr:true,number:'31415'};
   }
+  async probeInteractions(){
+    const runtime=(await this.active())[0],config=runtime?.engine.config||this.config;
+    if(runtime){const {reserveModelCall}=await import('./model-budget.js');await reserveModelCall(runtime.db,config);}
+    const brain=new OpenAIModel(config,this.auth);
+    const plan=await brain.plan({current:'Люмен, ми вже обоє погодили спільну пригоду. Розділи ролі: один досліджує фото, друга перевіряє кімнату. Дай кожному можливість обрати дві різні дії й працювати паралельно.',context:JSON.stringify({current_author:{id:'501',name:'Гравець А'},participants:[{id:'501',name:'Гравець А'},{id:'502',name:'Гравець Б'}],interaction:{id:'00000000-0000-4000-8000-000000000017',phase:'active',kind:'activity',participants:[{id:'501',name:'Гравець А'},{id:'502',name:'Гравець Б'}]},available_tools:runtime?.agent.tools.catalog()||[]}),instructions:'Фіксована публічна діагностика без доступу до даних людей чи зовнішніх дій. Поверни тільки план нового компактного паралельного етапу через верхньорівневий interaction або interaction.open. Не виконуй інструментів.',search:false});
+    let spec=plan.interaction;for(const a of plan.actions)if(a.kind==='tool'&&a.name==='interaction.open')spec=JSON.parse(a.arguments);
+    const {InteractionSpec}=await import('./interactions.js');const value=InteractionSpec.parse(spec);
+    if(value.policy!=='parallel'||value.max_choices!==2||value.roles.length!==2||new Set(value.roles.map(x=>x.user_id)).size!==2||value.roles.some(x=>!['501','502'].includes(x.user_id)||x.options.length<2))throw new Error('parallel_interaction_plan_invalid');
+    return {parallel:true,max_choices_per_participant:value.max_choices,individual_roles:value.roles.length,compact_characters:plan.reply.length,private_data_used:false};
+  }
   private async owner(uid:string){return (await this.registry.transport()).owner_user_id===uid;}
   private async admin(chatId:string,uid:string){
     try{const member=await this.telegram.call<{status:string}>('getChatMember',{chat_id:chatId,user_id:Number(uid)});return ['creator','administrator'].includes(member.status);}catch{return false;}
@@ -130,7 +140,7 @@ export class ChatRouter {
           if(update.poll?.is_closed)await sql.query('UPDATE polls SET closed=true WHERE poll_id=$1',[id]);
           if(answer?.user&&!answer.user.is_bot&&answer.option_ids.every(i=>Number.isInteger(i)&&i>=0&&i<poll.options.length))await sql.query('INSERT INTO poll_votes(poll_id,user_id,name,option_ids) VALUES($1,$2,$3,$4) ON CONFLICT(poll_id,user_id) DO UPDATE SET name=excluded.name,option_ids=excluded.option_ids,updated_at=now()',[id,String(answer.user.id),[answer.user.first_name,answer.user.last_name].filter(Boolean).join(' '),JSON.stringify(answer.option_ids)]);
         });
-        if(voteEvent&&answer?.user){const details=answer.option_ids.map(i=>String(poll.options[i])).join(', ') || 'відкликав голос';await runtime.engine.receive({update_id:update.update_id,message:{message_id:-update.update_id,date:Math.floor(Date.now()/1000),chat:{id:Number(runtime.chat.chat_id),type:'supergroup'},from:answer.user,text:`[Голос в опитуванні «${poll.question}»] ${details}`,message_thread_id:poll.topic_id==='0'?undefined:Number(poll.topic_id),lumen_event:{kind:'poll_vote',target_message_id:Number(poll.message_id),details}}});}
+        if(voteEvent&&answer?.user){const details=answer.option_ids.map(i=>String(poll.options[i])).join(', ') || 'відкликав голос';await runtime.engine.receive({update_id:update.update_id,message:{message_id:-update.update_id,date:Math.floor(Date.now()/1000),chat:{id:Number(runtime.chat.chat_id),type:'supergroup'},from:answer.user,text:`[Голос в опитуванні «${poll.question}»] ${details}`,message_thread_id:poll.topic_id==='0'?undefined:Number(poll.topic_id),lumen_event:{kind:'poll_vote',target_message_id:Number(poll.message_id),details},...(poll.interaction_id?{lumen_interaction_event:{id:poll.interaction_id,version:Number(poll.interaction_version),action:answer.option_ids.length?String(answer.option_ids[0]):'wait'}}:{})}});}
         return;
       }return;
     }
@@ -147,6 +157,18 @@ export class ChatRouter {
           const row=await one(sql,"UPDATE tool_approvals SET status=$1 WHERE id=$2 AND actor_id=$3 AND revision=$4 AND topic_id=$5 AND status='pending' AND expires_at>now() RETURNING task_id",[approval[1]==='approve'?'approved':'cancelled',approval[2],String(cb.from.id),s.memory_revision,String(cb.message!.message_thread_id || 0)]);
           if(row?.task_id&&approval[1]==='reject')await sql.query("UPDATE agent_tasks SET status='needs_input',error_code='action_rejected',updated_at=now() WHERE id=$1 AND status='waiting'",[row.task_id]);
         });return;
+      }
+      const interactive=/^li:([0-9a-f-]{36}):(\d+):([a-z0-9_]+)$/.exec(cb.data||'');
+      const panel=/^lp:([0-9a-f-]{36}):(\d+)$/.exec(cb.data||'');
+      if((interactive||panel)&&cb.message?.from?.id===this.bot.id&&!cb.from.is_bot){
+        if(cb.message.chat.type==='private'&&String(cb.message.chat.id)!==String(cb.from.id))return;
+        const chat=await this.registry.find(String(cb.message.chat.id));if(!chat?.enabled)return;const runtime=await this.runtime(chat);
+        if(interactive){await runtime.engine.receive({update_id:update.update_id,message:{message_id:-update.update_id,date:Math.floor(Date.now()/1000),from:cb.from,chat:cb.message.chat,message_thread_id:cb.message.message_thread_id,text:'[Вибір у поточному кроці]',lumen_interaction_event:{id:interactive[1]!,version:Number(interactive[2]),action:interactive[3]!}}});return;}
+        const s=await state(runtime.db),row=await one(runtime.db,'SELECT * FROM message_panels WHERE id=$1 AND revision=$2 AND expires_at>now() AND topic_id=$3',[panel![1],s.memory_revision,String(cb.message.message_thread_id||0)]);
+        if(!row||s.paused||row.audience==='private'&&row.actor_id!==String(cb.from.id))return;
+        const index=Number(panel![2]),pages:string[]=row.pages;if(index<0||index>=pages.length)return;
+        const keys={inline_keyboard:[[{text:`Сторінка ${index+1}/${pages.length}`,callback_data:`lp:${row.id}:${index}`}],...(index+1<pages.length?[[{text:'Далі',callback_data:`lp:${row.id}:${index+1}`}]]:[]),...(index>0?[[{text:'Назад',callback_data:`lp:${row.id}:${index-1}`}]]:[])]};
+        try{await this.telegram.call('sendMessage',{chat_id:cb.message.chat.id,text:pages[index],ephemeral_message_parameters:{receiver_user_id:cb.from.id,callback_query_id:cb.id},reply_markup:keys});}catch{await this.telegram.text(String(cb.message.chat.id),pages[index]!,{threadId:cb.message.message_thread_id,replyMarkup:keys});}return;
       }
       const command=cb.data&&callbackCommand(cb.data);
       const choiceId=/^lumen:choice:([0-9a-f-]{36})$/.exec(cb.data || '')?.[1];

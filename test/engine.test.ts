@@ -72,7 +72,7 @@ describe('Реальна PostgreSQL-логіка приватної групи',
     await h.lumen.receive(message('/consent'));assert.equal((await state(db)).paused,true);await h.lumen.receive(message('/consent',22));assert.equal((await state(db)).paused,false);
   });
   it('повне забування прибирає активні й похідні дані, а також вкладення черги',async()=>{
-    await paired(h);await h.lumen.receive(message('Люмен, запам’ятай: кота звати Нокс'));h.brain.replies.push({reply:'',actions:[{kind:'remember',content:'Кота звати Нокс'}]});await h.lumen.processNext();await h.lumen.receive(message('/game story'));
+    await paired(h);await h.lumen.receive(message('Люмен, запам’ятай: кота звати Нокс'));h.brain.replies.push({reply:'',actions:[{kind:'remember',content:'Кота звати Нокс'}]});await h.lumen.processNext();await h.lumen.receive(message('/game story'));await h.lumen.receive(message('Так',22));await h.lumen.processNext();
     await h.lumen.receive(message('/forget_all',22));for(const table of ['messages','memories','games','rules','reminders','inbox'])assert.equal((await db.query(`SELECT * FROM ${table}`)).rows.length,0,table);
     const outbox=await db.query('SELECT * FROM outbox');assert.equal(outbox.rows.length,1);assert.ok(!JSON.stringify(outbox.rows).includes('Нокс'));assert.equal((await state(db)).chat_id,'-100');
   });
@@ -94,7 +94,7 @@ describe('Реальна PostgreSQL-логіка приватної групи',
     assert.equal((await db.query('SELECT * FROM memories')).rows.length,0);assert.equal((await db.query('SELECT * FROM reminders')).rows.length,0);assert.match((await one(db,'SELECT body FROM messages'))!.body,/суботу/);
   });
   it('перезапуск об’єкта бота зберігає нотатки й гру',async()=>{
-    await paired(h);await h.lumen.receive(message('/game story'));await h.lumen.receive(message('Я додав перший рядок.'));await h.lumen.processNext();
+    await paired(h);await h.lumen.receive(message('/game story'));await h.lumen.receive(message('Так',22));await h.lumen.processNext();await h.lumen.receive(message('Я додав перший рядок.'));await h.lumen.processNext();
     const restarted=harness(db);await restarted.lumen.receive(message('Це другий рядок.',22));await restarted.lumen.processNext();assert.equal((await one(db,'SELECT state FROM games'))!.state.turn,2);
   });
   it('пошук історії повертає першоджерело й автора, а не вигадану пам’ять',async()=>{
