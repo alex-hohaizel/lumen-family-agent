@@ -1,0 +1,108 @@
+{
+  "update": "chat_personalization_and_contextual_scheduling",
+  "version": "1.8.0",
+  "schema_version": 12,
+  "repository": "alex-hohaizel/lumen-family-agent",
+  "code_commit": "48faa105ff6b8c94be434fabe0018a2bb9454903",
+  "source_tree": "393feaee6c9eccee0326abce951d4a7e8780b7e7",
+  "base_commit": "c08cd58fe0cb4ed4c7b8e0b7e712b583499fb739",
+  "deploy": {
+    "id": "dep-dbhhb549v7es73av661g",
+    "status": "live",
+    "live_at": "2026-10-29T09:48:44.741854Z",
+    "started_at": "2026-10-29T09:49:09.845999935Z",
+    "service_id": "srv-dbfl0je7bikc73dvg0qg",
+    "instance": "srv-dbfl0je7bikc73dvg0qg-77xgb"
+  },
+  "tests": {
+    "passed": 367,
+    "failed": 0,
+    "suites": 24,
+    "new_behavioral_scenarios": 28,
+    "command": "npm ci --include=dev && npm test && npm prune --omit=dev",
+    "completed_at": "2026-10-29T09:47:50.099035816Z",
+    "duration_ms": 152305.167359,
+    "source": "Render build logs"
+  },
+  "runtime_probe": {
+    "name": "personalization_scheduling_190",
+    "ok": true,
+    "proof": {
+      "chat_language": true,
+      "contextual_task": true,
+      "kyiv_time": true,
+      "personal_name": true,
+      "proposal_needs_confirmation": true,
+      "russian_outbound": true,
+      "public_fixture_only": true
+    },
+    "checked_at": "2026-10-29T09:49:31.558012778Z",
+    "execution": "Real configured model with synthetic messages only; no scheduled action, external tool or Telegram chat message is executed by the probe.",
+    "previous_checks": 8,
+    "previous_checks_reused_from_release_cache": true
+  },
+  "recovery": {
+    "scope": "Each chat independently; explicit historical instructions only, checked against the author and quoted source.",
+    "results": [
+      {
+        "settings": 0,
+        "language": "default",
+        "at": "2026-10-29T09:48:56.799501981Z"
+      },
+      {
+        "settings": 3,
+        "language": "ru",
+        "at": "2026-10-29T09:49:04.030217539Z"
+      },
+      {
+        "settings": 1,
+        "language": "ru",
+        "at": "2026-10-29T09:49:09.555590644Z"
+      }
+    ],
+    "total_settings": 4,
+    "russian_chat_policies": 2
+  },
+  "changes": {
+    "personalization": [
+      "Durable per-chat and per-participant preferences with chat-language precedence.",
+      "Explicit preferred names override repeated reply-bound observed aliases and Telegram names; own correction or reset is respected.",
+      "Individual recent style examples are separated by author and blended for group dialogue without changing default personality.",
+      "A central outgoing-text transform covers messages, edits, polls, buttons and media captions. One-off translation exceptions do not change saved policy.",
+      "Existing explicit chat and self preferences are recovered from the stored history; quoted and forwarded requests have no configuration authority."
+    ],
+    "scheduling": [
+      "Natural language can resolve a deferred action from recent chat context into an immutable instruction and concrete local time.",
+      "Explicit requests are saved directly. Tentative proposals require a visible confirmation bound to their author, topic, source and expiry.",
+      "Timezone and optional local-clock cross-check reject mismatched UTC offsets. Invalid dates do not discard a valid preference update in the same request.",
+      "Durable reminder and agent-task paths use deduplication; real work is created at the due time with a fresh execution deadline.",
+      "Completion reflects actual task state and delivery of all message chunks. A failed or ambiguous reminder delivery needs attention."
+    ],
+    "related": [
+      "Semantic authorization removes dependence on a single Ukrainian trigger word while retaining source and actor checks.",
+      "A participant cannot cancel another participant's legacy reminder through text actions or /cancel.",
+      "Pause, revision changes, forgetting and erasure block or remove derived schedules and preferences.",
+      "Translation preparation errors stop before Telegram network submission; safe preparation retries do not invent delivery success.",
+      "Conversation continuation recognizes a pending schedule confirmation without requiring a repeated bot name."
+    ]
+  },
+  "preserved": {
+    "public_sticker_set": "Lumen_50_v18_by_lumen_family_agent",
+    "count": 50,
+    "matched_assets": 50,
+    "matched_memberships": 50,
+    "verified_at": "2026-10-29T09:48:47.642Z",
+    "all_unmodified_base_tree_blobs_verified": true,
+    "worker_instances": 1,
+    "release_notice_pending_on_start": 0
+  },
+  "limits": [
+    "The production model probe validates planning and outgoing translation on synthetic inputs. Real user-chat due-time delivery is covered by regression tests, not by a new unsolicited live test message.",
+    "Historical past-due tasks are not silently recreated. New ambiguous requests require clarification or confirmation.",
+    "Recovery scans the latest 150 stored user messages and applies up to 12 supported explicit preference declarations per chat.",
+    "The new scheduling path supports one-time dates within 366 days. A tentative proposal expires after 30 minutes."
+  ],
+  "observed_runtime_errors": [],
+  "errors_checked_through": "2026-10-29T09:51:53.428439527Z",
+  "verified_at": "2026-10-29T09:51:53.535Z"
+}
