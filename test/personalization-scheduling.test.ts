@@ -14,7 +14,7 @@ describe('Постійна персоналізація й відкладені 
  let db:TestDB,h:ReturnType<typeof harness>;
  beforeEach(async()=>{db=new TestDB();await db.init();h=harness(db);await paired(h);});afterEach(async()=>{await db.close();});
  const future=()=>new Date(Date.now()+3600000).toISOString();
- async function turn(text:string,actions:Plan['actions'],uid=11,extra:Partial<Message>={}){h.brain.replies.push({reply:'',actions});const u=message(text,uid);Object.assign(u.message!,extra);await h.lumen.receive(u);await db.query("UPDATE inbox SET available_at=now()-interval '1 second' WHERE status='pending'");assert.equal(await h.lumen.processNext(),true);return u;}
+ async function turn(text:string,actions:Plan['actions'],uid=11,extra:Partial<Message>={}){h.brain.replies.push({reply:'',actions,...(actions[0]?.kind==='schedule_decision'?{behavior:{move:'answer',recipient:'bot',relation:'accept_offer',reference_id:actions[0].id,reason:'Автор погоджує точну пропозицію'}}:{})});const u=message(text,uid);Object.assign(u.message!,extra);await h.lumen.receive(u);await db.query("UPDATE inbox SET available_at=now()-interval '1 second' WHERE status='pending'");assert.equal(await h.lumen.processNext(),true);return u;}
  async function deliver(){const d=new Delivery(db,h.tg as unknown as Telegram,h.config);for(let i=0;i<8&&await d.next();i++);return d;}
  it('одне повідомлення зберігає російську мову чату та конкретну дію на майбутній час без слова «нагадай»',async()=>{
    const text='Люмен, когда будет девять, сделай это. И всё в этом чате пиши на русском.';

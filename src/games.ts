@@ -41,6 +41,12 @@ const PROPERTY_MATCH:[RegExp,string][]=[
 const DEBATES=['Краще спонтанна подорож чи ретельно спланована?','Чи потрібен у вихідні будильник?','Яка суперсила корисніша: телепортація чи розуміння всіх мов?','Краще жити біля моря чи біля лісу?'];
 function normalize(text:string){return text.toLowerCase().normalize('NFKC').replace(/[^\p{L}\p{N} ]/gu,' ').replace(/\s+/g,' ').trim();}
 function matches(text:string,answer:string){const n=normalize(text);return n===answer || (answer.length>2 && ` ${n} `.includes(` ${answer} `));}
+export async function advancePendingPlayers(sql:SQL,s:any){
+  if(!s.interaction_id)return;
+  const root=await one(sql,'SELECT pending_participants FROM interactions WHERE id=$1 FOR UPDATE',[s.interaction_id]);
+  for(const person of root?.pending_participants||[])if(!s.players.some((p:Player)=>p.id===person.id)){s.players.push(person);s.scores[person.id]=0;}
+  if(root?.pending_participants?.length)await sql.query("UPDATE interactions SET participants=participants||pending_participants,pending_participants='[]' WHERE id=$1",[s.interaction_id]);
+}
 function scores(s:any){return s.players.map((p:Player)=>`${p.name}: ${s.scores[p.id] || 0}`).join(' · ');}
 export async function startGame(sql:SQL,kind:string,players:Player[],title?:string,topicId='0',openJoin=false){
   if(!GAME_NAMES[kind])throw new Error('game_unknown');
@@ -74,6 +80,7 @@ export async function startGame(sql:SQL,kind:string,players:Player[],title?:stri
 }
 export async function gameTurn(sql:SQL,userId:string,raw:string,topicId='0',joining?:Player){
   const row=await one(sql,"SELECT * FROM games WHERE status='active' AND topic_id=$1 FOR UPDATE",[topicId]);if(!row)return 'Зараз у цій темі немає активної гри. /games — оберемо.';
+  if(row.state.interaction_id){const owner=await one(sql,'SELECT phase,expires_at FROM interactions WHERE id=$1',[row.state.interaction_id]);if(!owner||!['active','ready'].includes(owner.phase)||new Date(owner.expires_at).getTime()<=Date.now())return 'Цю партію призупинено або завершено. Можемо погодити продовження.';}
   const s=row.state;const kind=row.kind;let player:Player|undefined=s.players.find((p:Player)=>p.id===userId);
   if(!player&&s.open_join&&joining?.id===userId){
     player=joining;s.players.push(joining);s.scores[userId]=0;
@@ -89,7 +96,7 @@ export async function gameTurn(sql:SQL,userId:string,raw:string,topicId='0',join
     const correct=q[1].some(a=>matches(text,a));s.answers[userId]=correct;if(correct)s.scores[userId]++;
     if(Object.keys(s.answers).length<s.players.length)reply='Відповідь прийняв. Чекаю інших гравців.';
     else{
-      reply=`Відповідь: ${q[1][0]}. ${scores(s)}.`;s.round++;s.answers={};
+      reply=`Відповідь: ${q[1][0]}. ${scores(s)}.`;s.round++;s.answers={};await advancePendingPlayers(sql,s);
       if(s.round>=s.order.length){ended=true;reply+='\nВікторина завершена ✨';}
       else reply+=`\nРаунд ${s.round+1}: ${QUIZ[s.order[s.round]]![0]}`;
     }
@@ -116,12 +123,13 @@ export async function gameTurn(sql:SQL,userId:string,raw:string,topicId='0',join
     if(s.limit&&s.turn>=s.limit){ended=true;reply=kind==='story'?`Історію завершено:\n${s.segments.join('\n\n')}`:kind==='debate'?'У кожного було по два аргументи. Можу порівняти їх за логікою, прикладами й відповідями на заперечення.':`Завершив партію «${s.title}». Правила залишаються збереженими.`;}
     else reply=`Хід записав. Далі ${s.players[s.turn % s.players.length].name}.${kind==='debate'?` Аргумент ${s.turn+1}/${s.limit}.`:''}`;
   }
+  if(kind!=='quiz')await advancePendingPlayers(sql,s);
   await sql.query('UPDATE games SET state=$1,status=$2,updated_at=now() WHERE id=$3',[JSON.stringify(s),ended?'completed':'active',row.id]);
   return reply;
 }
 export function publicGame(row:any,currentUserId?:string){
   if(!row)return null;
-  const {secret,caseIndex,order,players=[],scores={},segments=[],...s}=row.state;
+  const {secret,caseIndex,order,director_state,players=[],scores={},segments=[],...s}=row.state;
   const important=players.filter((p:Player,i:number)=>i<30||p.id===currentUserId||i===s.turn%players.length);
   // Answers, objects and solutions never enter the general model context.
   return {id:row.id,kind:row.kind,...s,players:important,players_total:players.length,scores:Object.fromEntries(important.map((p:Player)=>[p.id,scores[p.id] || 0])),segments:segments.slice(-8)};

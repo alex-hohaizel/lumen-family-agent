@@ -47,7 +47,7 @@ export async function queueText(sql: SQL, text: string, revision: number, key: s
     const length=chunks[offset]!.length;
     const entities=(options.entities || []).filter(e=>e.offset<start+length&&e.offset+e.length>start).map(e=>({...e,offset:Math.max(start,e.offset)-start,length:Math.min(start+length,e.offset+e.length)-Math.max(start,e.offset)}));
     const inserted=await sql.query(`INSERT INTO outbox (dedup_key, kind, body, revision, service,source_message_id,actor_id,audience) VALUES ($1,'text',$2,$3,$4,$5,$6,$7) ON CONFLICT (dedup_key) DO NOTHING RETURNING id`,
-      [`${key}:${offset}`, JSON.stringify({ text: chunks[offset], ...(options.outputLanguage?{outputLanguage:options.outputLanguage}:{}), ...(options.taskId?{taskId:options.taskId,goalVersion:options.goalVersion}:{}), ...(offset===0&&options.replyMarkup?{replyMarkup:options.replyMarkup}:{}),
+      [`${key}:${offset}`, JSON.stringify({ text: chunks[offset], ...(options.actionId?{actionId:options.actionId}:{}),...(options.compositionId?{compositionId:options.compositionId}:{}),...(options.optionalContribution?{ambient:true}:{}), ...(options.outputLanguage?{outputLanguage:options.outputLanguage}:{}), ...(options.taskId?{taskId:options.taskId,goalVersion:options.goalVersion}:{}), ...(offset===0&&options.replyMarkup?{replyMarkup:options.replyMarkup}:{}),
         ...(options.replyToMessageId?{replyToMessageId:options.replyToMessageId}:{}), ...(options.threadId?{threadId:options.threadId}:{}), ...(entities.length?{entities}:{}), ...((service||options.audience==='private')&&options.targetChatId?{targetChatId:options.targetChatId}:{}) }), revision, service,options.sourceMessageId || null,options.actorId || null,options.audience || 'group']);
     if(inserted.rows[0])await recordProvenance(sql,'outbox',inserted.rows[0].id,[...(options.sourceIds||[]),...(options.sourceMessageId?[options.sourceMessageId]:[])]);
     start+=length;
@@ -58,6 +58,10 @@ export async function queueAnimation(sql:SQL,asset:'waving'|'happy'|'thinking',r
 }
 export async function pauseMemory(sql:SQL){
   await sql.query("UPDATE scheduled_actions SET status='paused' WHERE status IN ('pending','awaiting_confirmation')");
+  await sql.query("UPDATE commitments SET phase='cancelled',state_version=state_version+1 WHERE phase NOT IN ('completed','cancelled','expired','failed')");
+  await sql.query("UPDATE action_work SET status='cancelled',payload='{}',plan=NULL WHERE status IN ('pending','running','repair')");
+  await sql.query("DELETE FROM conversation_goals");
+  await sql.query("DELETE FROM style_episodes");
   await sql.query("UPDATE app_state SET paused=true,consent='[]',memory_revision=memory_revision+1 WHERE id=1");
   await sql.query("UPDATE reminders SET status='pending' WHERE status='queued'");
   for(const table of ['inbox','outbox','choices','choice_votes','pending_intents','dialogues','topic_attention'])await sql.query(`DELETE FROM ${table}`);
@@ -71,12 +75,16 @@ export async function pauseMemory(sql:SQL){
 }
 export async function eraseAll(sql: SQL) {
   // Remove all derived data, generated drafts, pending deliveries and attachment IDs too.
-  for (const table of ['alias_observations','chat_preferences','scheduled_actions','interaction_responses','interactions','message_panels','result_receipts','signals','proactivity_preferences','skill_versions','research_cache','activity_moves','activity_players','activity_sessions','decision_ballots','decisions','project_tasks','projects','knowledge_facts','private_requests','task_events','task_stages','capability_health','private_results','provenance_edges','coordination_offers','oauth_setups',...AGENT_TABLES,'topic_attention','image_jobs','poll_votes','polls','avatars','attachments','dialogues','choice_votes','participant_preferences','memories','rules','games','reminders','skills','episodes','stickers','choices','pending_intents','messages','outbox','inbox','topics','members']) await sql.query(`DELETE FROM ${table}`);
+  for (const table of ['composition_runs','action_work','effect_operations','consent_grants','commitments','style_episodes','behavior_contributions','conversation_goals','alias_observations','chat_preferences','scheduled_actions','interaction_responses','interactions','message_panels','result_receipts','signals','proactivity_preferences','skill_versions','research_cache','activity_moves','activity_players','activity_sessions','decision_ballots','decisions','project_tasks','projects','knowledge_facts','private_requests','task_events','task_stages','capability_health','private_results','provenance_edges','coordination_offers','oauth_setups',...AGENT_TABLES,'topic_attention','image_jobs','poll_votes','polls','avatars','attachments','dialogues','choice_votes','participant_preferences','memories','rules','games','reminders','skills','episodes','stickers','choices','pending_intents','messages','outbox','inbox','topics','members']) await sql.query(`DELETE FROM ${table}`);
   await sql.query(`UPDATE app_state SET memory_revision=memory_revision+1, character='', mode=CASE WHEN mention_only THEN 'quiet' ELSE 'social' END, since_bot=0,last_social_at=NULL,participants=CASE WHEN open_group THEN '[]'::jsonb ELSE participants END WHERE id=1`);
   await sql.query('DELETE FROM characters');
 }
-const SOURCE_TABLES=['scheduled_actions','tool_grants','tool_runs','tool_approvals','agent_tasks','web_monitors','agent_workflows','agent_artifacts','group_events','agent_feedback','memory_terms','private_requests','knowledge_facts','projects','decisions','activity_sessions','signals','result_receipts','coordination_offers','interactions','message_panels'];
+const SOURCE_TABLES=['composition_runs','conversation_goals','style_episodes','behavior_contributions','effect_operations','commitments','scheduled_actions','tool_grants','tool_runs','tool_approvals','agent_tasks','web_monitors','agent_workflows','agent_artifacts','group_events','agent_feedback','memory_terms','private_requests','knowledge_facts','projects','decisions','activity_sessions','signals','result_receipts','coordination_offers','interactions','message_panels'];
 async function invalidateSource(sql:SQL,sourceId:number){
+  // Legacy panels did not retain complete source edges. They cannot survive a source edit/forget.
+  await sql.query('DELETE FROM message_panels WHERE provenance_version<2');
+  await sql.query('DELETE FROM research_cache');
+  await sql.query('DELETE FROM memory_terms WHERE source_message_id IS NULL');
   await sql.query("UPDATE participant_preferences SET inferred_name='' WHERE user_id IN (SELECT user_id FROM alias_observations WHERE source_message_id=$1)",[sourceId]);
   await invalidateProvenance(sql,sourceId);
   await sql.query("DELETE FROM tool_credentials WHERE name IN (SELECT answer FROM private_requests WHERE source_message_id=$1 AND answer IS NOT NULL)",[sourceId]);
@@ -97,15 +105,33 @@ async function refreshRevision(sql:SQL){
   await sql.query('DELETE FROM pending_intents');
   await sql.query("UPDATE inbox SET status=CASE WHEN status='processing' THEN 'pending' ELSE status END,revision=$1,plan=NULL WHERE status IN ('pending','processing')",[s.memory_revision]);
   await sql.query("UPDATE outbox SET revision=$1,status=CASE WHEN status='sending' THEN 'uncertain' ELSE status END",[s.memory_revision]);
-  for(const table of ['choices','dialogues','attachments','polls','agent_tasks','web_monitors','tool_grants','private_requests','agent_artifacts','interactions','message_panels'])await sql.query(`UPDATE ${table} SET revision=$1`,[s.memory_revision]);
+  for(const table of ['choices','dialogues','attachments','polls','agent_tasks','web_monitors','tool_grants','private_requests','agent_artifacts','interactions','message_panels','composition_runs','conversation_goals','behavior_contributions','style_episodes','commitments','action_work'])await sql.query(`UPDATE ${table} SET revision=$1`,[s.memory_revision]);
+  await sql.query("UPDATE effect_operations SET revision=$1 WHERE phase='reserved'",[s.memory_revision]);
+  await sql.query("UPDATE effect_operations SET phase='uncertain',error_code='context_changed_during_dispatch' WHERE phase='dispatch_started'");
+  await sql.query("UPDATE commitments SET phase='uncertain',error_code='context_changed_during_dispatch' WHERE id IN (SELECT action_id FROM effect_operations WHERE phase='uncertain') AND phase NOT IN ('completed','cancelled','expired','failed')");
   await sql.query("UPDATE tool_approvals SET status='cancelled' WHERE status IN ('pending','approved')");
   await sql.query("UPDATE agent_tasks SET status='needs_input',error_code='context_changed' WHERE status IN ('running','waiting')");
   await sql.query("UPDATE image_jobs SET status=CASE WHEN status='processing' THEN 'uncertain' ELSE status END,revision=$1 WHERE status IN ('pending','ready','processing')",[s.memory_revision]);
+}
+async function purgeMatchingDerived(sql:SQL,phrase:string){
+  // A generated detail can contain the requested fragment even when its original prompt did not.
+  // Source edges remain primary; literal erasure also covers generated/cache payloads.
+  const fields:Record<string,string>={
+    composition_runs:"plan::text||' '||outputs::text",message_panels:'pages::text',conversation_goals:"goal||' '||question||' '||why",behavior_contributions:'summary',style_episodes:'fields::text',
+    commitments:"spec::text||' '||COALESCE(result::text,'')",effect_operations:"COALESCE(result::text,'')",outbox:'body::text',inbox:"payload::text||' '||COALESCE(plan::text,'')",
+    agent_tasks:"goal||' '||result",agent_artifacts:'content',tool_runs:"arguments::text||' '||COALESCE(result::text,'')",result_receipts:'proof::text',
+    memories:'content',rules:'content',skills:'instructions',episodes:'body',games:'state::text',knowledge_facts:'content',group_events:'details::text',signals:"title||' '||body",activity_sessions:"settings::text||' '||public_state::text",attachments:"description||' '||metadata::text",agent_feedback:'content',memory_terms:"term||' '||alternatives::text",
+  };
+  await sql.query('DELETE FROM research_cache');
+  const affected=(await sql.query("SELECT id FROM interactions WHERE strpos(lower(spec::text||' '||COALESCE(result,'')),lower($1))>0",[phrase])).rows.map(r=>String(r.id));
+  if(affected.length){await sql.query("DELETE FROM games WHERE state->>'interaction_id'=ANY($1::text[])",[affected]);await sql.query('DELETE FROM interactions WHERE id=ANY($1::uuid[])',[affected]);await sql.query('DELETE FROM commitments WHERE id=ANY($1::uuid[])',[affected]);}
+  for(const [table,expression] of Object.entries(fields))await sql.query(`DELETE FROM ${table} WHERE strpos(lower(${expression}),lower($1))>0`,[phrase]);
 }
 export async function forgetPhrase(sql:SQL,phrase:string){
   if(phrase.trim().length<2)throw new Error('forget_fragment_required');
   const sources=(await sql.query("SELECT id FROM messages WHERE strpos(lower(body),lower($1))>0",[phrase])).rows;
   for(const row of sources)await invalidateSource(sql,Number(row.id));
+  await purgeMatchingDerived(sql,phrase);
   await sql.query('DELETE FROM messages WHERE strpos(lower(body),lower($1))>0',[phrase]);
   // Old summaries without recorded provenance cannot safely be attributed to a source.
   await sql.query("DELETE FROM episodes WHERE source_ids='[]'::jsonb");

@@ -5,6 +5,7 @@ import {ChatRegistry,ChatDatabase,schemaForChat} from '../src/registry.js';
 import {ChatRouter,type ChatRuntime} from '../src/router.js';
 import {state,one,migrate} from '../src/db.js';
 import {Telegram,type Update} from '../src/telegram.js';
+import {AgentTools} from '../src/agent-tools.js';
 import {addressed} from '../src/engine.js';
 import {Memory} from '../src/memory.js';
 import {setupPayload,callbackCommand} from '../src/ui.js';
@@ -46,7 +47,7 @@ describe('Окремі групи, природні звернення та те
     const a=await add();await a.db.query('DELETE FROM onboarding_chats');await a.db.query('DELETE FROM release_notices');await a.db.query('DELETE FROM outbox');
     const assets=await stickerAssets();
     const restart=()=>{const r=new ChatRouter(registry,h.config,h.tg as unknown as Telegram,bot,()=>brains.get('-200')!);r.setStickerPack({name:STICKER_SET,title:STICKER_TITLE,stickers:assets.map((x,i)=>({file_id:'verified-'+i,file_unique_id:'verified-unique-'+i,is_video:true,set_name:STICKER_SET,emoji:x.emoji}))});return r;};
-    await restart().init();await restart().init();const rows=(await a.db.query('SELECT * FROM outbox')).rows;assert.equal(rows.length,1);assert.match(rows[0]!.body.text,/Люмен 1\.10/);assert.equal(rows[0]!.service,true);
+    await restart().init();await restart().init();const rows=(await a.db.query('SELECT * FROM outbox')).rows;assert.equal(rows.length,1);assert.match(rows[0]!.body.text,/Люмен 1\.11/);assert.equal(rows[0]!.service,true);
   });
   it('не підключає чужу групу чи чужий приватний акаунт за підробленим посиланням',async()=>{
     await router.receive({update_id:seq++,message:{...msg('',-300,22).message!,new_chat_members:[{id:999,first_name:'Люмен'}]}});
@@ -209,15 +210,17 @@ describe('Окремі групи, природні звернення та те
     const a=await add();brains.get('-200')!.replies.push({reply:'',actions:[{kind:'quiz',question:'Столиця Японії?',options:['Токіо','Осака'],correct:0,explanation:'Столиця Японії — Токіо.'}]});await ask(a,msg('Люмен, проведи вікторину',-200,11,202));await a.delivery.next();assert.equal(h.tg.polls[0]!.quiz.correct,0);assert.equal(h.tg.polls[0]!.threadId,202);assert.equal((await a.db.query("SELECT * FROM outbox WHERE kind='text'")).rows.length,0);
   });
   it('після уточнення часу не вимагає повторити прохання і не приймає чуже уточнення',async()=>{
-    const a=await add();brains.get('-200')!.replies.push({reply:'О котрій годині завтра?',actions:[]});await ask(a,msg('Люмен, нагадай завтра купити квитки',-200,11,101));assert.equal((await a.db.query('SELECT * FROM pending_intents')).rows.length,1);
-    brains.get('-200')!.replies.push({reply:'',actions:[{kind:'remind',title:'Квитки',due_at:new Date(Date.now()+3600000).toISOString()}]});await ask(a,msg('Люмен, о 08:30',-200,22,101));assert.equal((await a.db.query('SELECT * FROM reminders')).rows.length,0);
-    brains.get('-200')!.replies.push({reply:'',actions:[{kind:'remind',title:'Квитки',due_at:new Date(Date.now()+3600000).toISOString()}]});await ask(a,msg('Люмен, о 08:30',-200,11,101));assert.equal((await a.db.query('SELECT * FROM reminders')).rows.length,1);assert.equal((await a.db.query('SELECT * FROM pending_intents')).rows.length,0);
+    const a=await add();brains.get('-200')!.replies.push({behavior:{move:'clarify',recipient:'bot',relation:'new_request',reason:'Потрібен час нагадування',clarification:{question:'О котрій годині?',missing_slot:'time',why:'Щоб поставити нагадування у потрібний час'}},reply:'О котрій годині завтра?',actions:[]});await ask(a,msg('Люмен, нагадай завтра купити квитки',-200,11,101));assert.equal((await a.db.query('SELECT * FROM pending_intents')).rows.length,1);
+    brains.get('-200')!.replies.push({behavior:{move:'answer',recipient:'bot',relation:'answer_to_question',reference_id:(await one(a.db,'SELECT id FROM conversation_goals'))!.id,reason:'Уточнення часу поточного прохання'},reply:'',actions:[{kind:'remind',title:'Квитки',due_at:new Date(Date.now()+3600000).toISOString()}]});await ask(a,msg('Люмен, о 08:30',-200,22,101));assert.equal((await a.db.query('SELECT * FROM reminders')).rows.length,0);
+    brains.get('-200')!.replies.push({behavior:{move:'answer',recipient:'bot',relation:'answer_to_question',reference_id:(await one(a.db,'SELECT id FROM conversation_goals'))!.id,reason:'Автор уточнює свою справу'},reply:'',actions:[{kind:'remind',title:'Квитки',due_at:new Date(Date.now()+3600000).toISOString()}]});await ask(a,msg('Люмен, о 08:30',-200,11,101));assert.equal((await a.db.query('SELECT * FROM reminders')).rows.length,1);assert.equal((await a.db.query('SELECT * FROM pending_intents')).rows.length,0);
   });
   it('придумує й починає вільну активність на живе прохання без назви гри чи команди',async()=>{
     const a=await add();brains.get('-200')!.replies.push({reply:'Давайте асоціації! Почну зі слова «море».',actions:[{kind:'start_activity',title:'Асоціації',rules:'Наступний учасник називає асоціацію до попереднього слова; повтори не використовуємо.',summary:'Перше слово — море. Чекаємо асоціацію будь-кого з компанії.'}]});await ask(a,msg('Люмен, нам нудно, придумай щось',-200,11,101));assert.equal((await a.db.query('SELECT id FROM games')).rows.length,0);await router.receive(msg('Долучаюсь',-200,11,101));await router.receive(msg('Долучаюсь',-200,22,101));const stage=await one(a.db,'SELECT id FROM interactions');const close=msg('Завершити набір',-200,11,101);close.message!.lumen_interaction_event={id:stage!.id,version:1,action:'close'};await router.receive(close);await a.engine.processNext();const row=await one(a.db,'SELECT * FROM games');assert.equal(row!.kind,'freeform');assert.equal(row!.topic_id,'101');assert.match(row!.state.rules,/асоціаці/);assert.equal((await one(a.db,'SELECT status FROM inbox'))!.status,'done');
   });
-  it('вільна активність зберігає стан, приймає нових учасників і не має межі у 20 ходів',async()=>{
+  it('вільна активність зберігає стан, приймає добровільних учасників і не має межі у 20 ходів',async()=>{
     const a=await add();brains.get('-200')!.replies.push({reply:'Починаємо.',actions:[{kind:'start_activity',title:'Пригода',rules:'Разом досліджуємо острів; Люмен реагує на рішення учасників і веде історію.',summary:'Команда висадилася на острів.'}]});await ask(a,msg('Люмен, почни пригоду',-200,11,101));
+    const gameRoot=(await one(a.db,'SELECT id FROM interactions'))!.id,tools=new AgentTools(a.db,a.engine.config,brains.get('-200')!);
+    for(const uid of [12,13]){await router.receive(msg('Хочу долучитися до пригоди',-200,uid,101));await tools.execute('interaction.join',{id:gameRoot},{actorId:String(uid),chatId:'-200',topicId:'101',revision:0,updateId:'join-'+uid,requested:true});}
     for(let i=0;i<24;i++){const uid=i%3+11;brains.get('-200')!.replies.push({reply:`Подія ${i}.`,actions:[{kind:'activity_turn',summary:`Герої дійшли до етапу ${i}.`,score_changes:[{user_id:String(uid),delta:1}]}]});await ask(a,msg(`Люмен, досліджую місце ${i}`,-200,uid,101));}
     const row=await one(a.db,'SELECT * FROM games');assert.equal(row!.status,'active');assert.equal(row!.state.turn,24);assert.equal(row!.state.players.length,3);assert.equal(row!.state.scores['11'],8);assert.match(row!.state.summary,/23/);
     const fresh=new ChatRouter(registry,h.config,h.tg as unknown as Telegram,bot,()=>new FakeBrain());await fresh.init();assert.equal((await one((await fresh.active())[0]!.db,'SELECT state FROM games'))!.state.turn,24);

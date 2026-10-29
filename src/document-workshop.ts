@@ -1,3 +1,4 @@
+import {assertActionOwner} from './commitments.js';
 import {withWorkerSlot} from './work-slots.js';
 import { Worker } from 'node:worker_threads';
 import { randomUUID, createHash } from 'node:crypto';
@@ -89,8 +90,9 @@ export async function binaryArtifact(db: Database, c: ToolContext, name: string,
         const live = await state(sql, true);
         if (live.paused || live.memory_revision !== c.revision)
             throw new ToolError('task_cancelled');
+        await assertActionOwner(sql,c.actionId,c.revision);
         await sql.query("INSERT INTO agent_artifacts(id,actor_id,topic_id,name,mime,content,encoding,revision,source_message_id) VALUES($1,$2,$3,$4,$5,$6,'base64',$7,$8) ON CONFLICT(id) DO NOTHING", [id, c.actorId, c.topicId, name, mime, Buffer.from(bytes).toString('base64'), c.revision, c.sourceId || null]);
-        await sql.query('INSERT INTO outbox(dedup_key,kind,body,revision,actor_id,source_message_id,audience) VALUES($1,$2,$3,$4,$5,$6,$7) ON CONFLICT DO NOTHING', ['artifact:' + id, voice ? 'voice' : 'artifact', JSON.stringify({ id, ...(c.taskId ? { taskId: c.taskId, goalVersion: c.goalVersion || 1 } : {}), threadId: c.topicId === '0' ? undefined : Number(c.topicId) }), c.revision, c.actorId, c.sourceId || null, c.audience || 'group']);
+        await sql.query('INSERT INTO outbox(dedup_key,kind,body,revision,actor_id,source_message_id,audience) VALUES($1,$2,$3,$4,$5,$6,$7) ON CONFLICT DO NOTHING', ['artifact:' + id, voice ? 'voice' : 'artifact', JSON.stringify({ id, actionId:c.actionId, ...(c.taskId ? { taskId: c.taskId, goalVersion: c.goalVersion || 1 } : {}), threadId: c.topicId === '0' ? undefined : Number(c.topicId) }), c.revision, c.actorId, c.sourceId || null, c.audience || 'group']);
     });
     const stored = await one(db, 'SELECT content FROM agent_artifacts WHERE id=$1', [id]);
     if (createHash('sha256').update(Buffer.from(stored!.content, 'base64')).digest('hex') !== digest)

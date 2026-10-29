@@ -47,10 +47,14 @@ export async function layoutMessage(sql: SQL, input: string, presentation: Plan[
     key: string;
     interactive?: boolean;
     extraDetails?: string;
+    actionId?: string;
+    outputLanguage?: string;
+    fullRequested?: boolean;
+    decisionFacts?: string;
 }, keyboard?: InlineKeyboard) {
     let body = input;
     const card = presentation?.card;
-    if (card) {
+    if (card&&!context.interactive&&!context.fullRequested) {
         body = [card.title, card.summary, card.facts?.length ? card.facts.map(x => '• ' + x).join('\n') : undefined, card.question].filter(Boolean).join('\n\n');
     }
     if (presentation?.choices?.length && keyboard)
@@ -59,7 +63,7 @@ export async function layoutMessage(sql: SQL, input: string, presentation: Plan[
     body = formatted.text;
     let details = card?.details || context.extraDetails || '', main = body;
     // A long fallback remains fully accessible; no option or paragraph is sliced away.
-    if (body.length > (context.interactive ? 3300 : 1400) && !card) {
+    if (body.length > 2400 && !card && !context.interactive && !context.fullRequested) {
         const paragraphs = body.split(/\n\s*\n/);
         const first = paragraphs[0] || '';
         const last = paragraphs.at(-1) || '';
@@ -74,9 +78,11 @@ export async function layoutMessage(sql: SQL, input: string, presentation: Plan[
         }
     }
     let keys: InlineKeyboard | undefined = keyboard ? { inline_keyboard: keyboard.inline_keyboard.map(row => [...row]) } : undefined;
+    if(context.fullRequested&&card?.details&&!body.includes(card.details))main=[body,card.details].join('\n\n');
+    if(context.decisionFacts&&!main.includes(context.decisionFacts))main=[context.decisionFacts,main].filter(Boolean).join('\n\n');
     if (details) {
         const id = stableId('panel:' + context.key + ':' + createHash('sha256').update(details).digest('hex'));
-        await sql.query('INSERT INTO message_panels(id,actor_id,audience,topic_id,pages,revision,source_message_id) VALUES($1,$2,$3,$4,$5,$6,$7) ON CONFLICT DO NOTHING', [id, context.actorId, context.audience || 'group', context.topicId, JSON.stringify(textPages(details)), context.revision, context.sourceId || null]);
+        await sql.query('INSERT INTO message_panels(id,actor_id,audience,topic_id,pages,revision,source_message_id,output_language,action_id,provenance_version) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,2) ON CONFLICT DO NOTHING', [id, context.actorId, context.audience || 'group', context.topicId, JSON.stringify(textPages(details)), context.revision, context.sourceId || null,context.outputLanguage||null,context.actionId||null]);
         await recordProvenance(sql, 'panel', id, [...(context.sourceIds || []), ...(context.sourceId ? [context.sourceId] : [])]);
         keys ||= { inline_keyboard: [] };
         keys.inline_keyboard.push([{ text: 'Докладніше', callback_data: `lp:${id}:0` }]);

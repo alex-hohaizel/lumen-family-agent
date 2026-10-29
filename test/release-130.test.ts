@@ -20,7 +20,7 @@ describe('Публікація 1.3, реальні відеокадри та т�
   const visual=()=>new VisualMemory(db,h.tg as unknown as Telegram,h.brain);
   async function context(){for(let i=0;i<6;i++)await h.lumen.receive(message(i%2?'треба обрати маршрут поїздки':'плануємо їхати у Львів',i%2?11:22));}
   it('ініціативна відповідь лише пропонує допомогу, не виконує непроханих дій та має паузу',async()=>{
-    await context();h.brain.replies.push({reply:'Можу зібрати ваші варіанти маршруту в коротке порівняння.',actions:[{kind:'remember',content:'непроханий запис'}],engagement:{respond:true,reason:'helpful'},presentation:{choices:['Так','Ні']}});
+    await context();h.brain.replies.push({reply:'Можу зібрати ваші варіанти маршруту в коротке порівняння.',actions:[{kind:'remember',content:'непроханий запис'}],behavior:{move:'answer',recipient:'bot',relation:'ambient',reason:'Продовжити конкретну тему розмови',contribution:{key:'Предметний новий внесок',summary:'Додав доречну думку до поточної теми'}},engagement:{respond:true,reason:'helpful'},presentation:{choices:['Так','Ні']}});
     await h.lumen.receive(message('Як нам краще спланувати маршрут?',22));await db.query('UPDATE inbox SET available_at=now()');assert.equal(await h.lumen.processNext(),true);assert.equal(JSON.parse(h.brain.calls[0]!.context).engagement_context.reason,'ambient');assert.equal((await db.query('SELECT * FROM memories')).rows.length,0);assert.equal((await db.query('SELECT * FROM choices')).rows.length,0);
     assert.ok((await one(db,"SELECT body FROM outbox WHERE kind='text'"))!.body.ambient);
   });
@@ -30,16 +30,16 @@ describe('Публікація 1.3, реальні відеокадри та т�
     assert.equal(ambientEnabled({...s,proactive_mode:'off'},m,'Europe/Kyiv'),false);
     const hour=Number(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Kyiv',hour:'2-digit',hourCycle:'h23'}).format(new Date()));assert.equal(ambientEnabled({...s,quiet_start:hour,quiet_end:(hour+1)%24},m,'Europe/Kyiv'),false);
     await h.lumen.receive(message('Мені дуже важко, помер близький'));
-    h.brain.replies.push({reply:'Можу допомогти з організаційними питаннями, якщо потрібно.',actions:[],presentation:{reaction:'😁'},engagement:{respond:true,reason:'helpful'}});await db.query('UPDATE inbox SET available_at=now()');await h.lumen.processNext();
-    assert.equal((await db.query("SELECT * FROM outbox WHERE kind='reaction'")).rows.length,0);assert.match(h.brain.calls[0]!.instructions!,/без жартів/);
+    h.brain.replies.push({reply:'Можу допомогти з організаційними питаннями, якщо потрібно.',actions:[],presentation:{reaction:'😁'},behavior:{move:'answer',recipient:'bot',relation:'ambient',reason:'Продовжити конкретну тему розмови',contribution:{key:'Предметний новий внесок',summary:'Додав доречну думку до поточної теми'}},engagement:{respond:true,reason:'helpful'}});await db.query('UPDATE inbox SET available_at=now()');await h.lumen.processNext();
+    assert.equal((await db.query("SELECT * FROM outbox WHERE kind='reaction'")).rows.length,0);assert.match(h.brain.calls[0]!.instructions!,/тактовну подачу/);
   });
   it('одноразове оголошення стає sent лише після підтвердженої доставки',async()=>{
     await db.query("INSERT INTO release_notices(version,status,telegram_id) VALUES('1.8.0','sent',900)");
     const url='https://t.me/addstickers/'+STICKER_SET;
-    assert.equal(await queueReleaseNotice(db,url),true);assert.equal(await queueReleaseNotice(db,url),false);assert.equal((await one(db,'SELECT status FROM release_notices WHERE version=$1',[RELEASE]))!.status,'pending');const d=new Delivery(db,h.tg as unknown as Telegram,h.config);await d.next();assert.equal(h.tg.sent.length,1);assert.match(h.tg.sent[0]!.text,/Люмен 1\.10/);assert.match(h.tg.sent[0]!.text,/120 анімованих сцен/);assert.match(h.tg.sent[0]!.text,/89 нових реакцій/);assert.match(h.tg.sent[0]!.text,/Попередній набір із 50 збережений окремо/);assert.ok(h.tg.sent[0]!.text.includes(url));assert.equal((await one(db,'SELECT status FROM release_notices WHERE version=$1',[RELEASE]))!.status,'sent');assert.equal(await queueReleaseNotice(db,url),false);assert.equal((await one(db,"SELECT telegram_id FROM release_notices WHERE version='1.8.0'"))!.telegram_id,900);
+    assert.equal(await queueReleaseNotice(db,url),true);assert.equal(await queueReleaseNotice(db,url),false);assert.equal((await one(db,'SELECT status FROM release_notices WHERE version=$1',[RELEASE]))!.status,'pending');const d=new Delivery(db,h.tg as unknown as Telegram,h.config);await d.next();assert.equal(h.tg.sent.length,1);assert.match(h.tg.sent[0]!.text,/Люмен 1\.11/);assert.match(h.tg.sent[0]!.text,/«Докладніше»/);assert.match(h.tg.sent[0]!.text,/фактичне виконання/);assert.equal((await one(db,'SELECT status FROM release_notices WHERE version=$1',[RELEASE]))!.status,'sent');assert.equal(await queueReleaseNotice(db,url),false);assert.equal((await one(db,"SELECT telegram_id FROM release_notices WHERE version='1.8.0'"))!.telegram_id,900);
   });
-  it('не анонсує новий набір, поки немає підтвердженого посилання',async()=>{
-    assert.equal(await queueReleaseNotice(db),false);assert.equal((await db.query('SELECT * FROM release_notices')).rows.length,0);assert.equal((await db.query('SELECT * FROM outbox')).rows.length,0);
+  it('оголошує поведінкову версію без повторного завантаження набору',async()=>{
+    assert.equal(await queueReleaseNotice(db),true);assert.equal((await db.query('SELECT * FROM release_notices')).rows.length,1);assert.equal((await db.query('SELECT * FROM outbox')).rows.length,1);
   });
   it('дістає три різні реальні кадри з готового WEBM-стікера',async()=>{
     h.tg.file=async()=>readFile(new URL('../../assets/stickers/lumen_50.webm',import.meta.url));const frames=await visual().frames({kind:'sticker_video',file_id:'own-wave'});assert.equal(frames.mode,'sampled_animation_frames');assert.equal(frames.images.length,3);assert.ok(new Set(frames.images).size>=2);

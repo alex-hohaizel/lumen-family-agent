@@ -26,8 +26,8 @@ describe('Живі продовження, спільні рішення та м
   const callback=(data:string,user=22,name='Олена'):Update=>({update_id:sequence++,callback_query:{id:'choice'+sequence,from:{id:user,first_name:name},data,message:{message_id:9999,date:Math.floor(Date.now()/1000),chat:{id:-100,type:'supergroup'},from:{id:999,first_name:'Люмен',is_bot:true},text:'Яку гру обираємо?'}}});
 
   it('приймає відповідь на своє уточнення без повторної згадки',async()=>{
-    h.brain.replies.push({reply:'О котрій годині?',actions:[]});await ask(message('Люмен, нагадай завтра купити квитки'));
-    h.brain.replies.push({reply:'',actions:[{kind:'remind',title:'Квитки',due_at:new Date(Date.now()+3600000).toISOString()}]});await ask(message('О восьмій'));
+    h.brain.replies.push({behavior:{move:'clarify',recipient:'bot',relation:'new_request',reason:'Потрібен час нагадування',clarification:{question:'О котрій годині?',missing_slot:'time',why:'Щоб поставити нагадування у потрібний час'}},reply:'О котрій годині?',actions:[]});await ask(message('Люмен, нагадай завтра купити квитки'));
+    h.brain.replies.push({behavior:{move:'answer',recipient:'bot',relation:'answer_to_question',reference_id:(await one(db,'SELECT id FROM conversation_goals'))!.id,reason:'Автор уточнив час'},reply:'',actions:[{kind:'remind',title:'Квитки',due_at:new Date(Date.now()+3600000).toISOString()}]});await ask(message('О восьмій'));
     assert.equal((await db.query('SELECT * FROM reminders')).rows.length,1);assert.equal(JSON.parse(h.brain.calls[1]!.context).engagement_context.reason,'continuation');
   });
   it('розуміє очевидне уточнення до своєї відповіді, яка не містила питання',async()=>{
@@ -35,7 +35,7 @@ describe('Живі продовження, спільні рішення та м
     h.brain.replies.push({reply:'Кисень і азот світяться різними кольорами.',actions:[]});await ask(message('А чому воно різнокольорове?'));assert.equal(h.brain.calls.length,2);assert.equal(JSON.parse(h.brain.calls[1]!.context).engagement_context.reason,'continuation');
   });
   it('особисте уточнення не приймає чужу відповідь і відповідь з іншої теми',async()=>{
-    h.brain.replies.push({reply:'О котрій годині?',actions:[]});await ask(message('Люмен, нагадай завтра про квитки'));await h.lumen.receive(message('О восьмій',22));const other=message('О восьмій');other.message!.message_thread_id=202;await h.lumen.receive(other);
+    h.brain.replies.push({behavior:{move:'clarify',recipient:'bot',relation:'new_request',reason:'Потрібен час нагадування',clarification:{question:'О котрій годині?',missing_slot:'time',why:'Щоб поставити нагадування у потрібний час'}},reply:'О котрій годині?',actions:[]});await ask(message('Люмен, нагадай завтра про квитки'));await h.lumen.receive(message('О восьмій',22));const other=message('О восьмій');other.message!.message_thread_id=202;await h.lumen.receive(other);
     const candidates=(await db.query("SELECT * FROM inbox WHERE status='pending'")).rows;assert.ok(candidates.every(x=>x.payload.engagement.reason==='ambient'&&!x.payload.engagement.dialogue));assert.equal((await db.query('SELECT * FROM reminders')).rows.length,0);
   });
   it('не втручається, якщо модель визначила кандидат продовження як чужу розмову',async()=>{
@@ -82,8 +82,8 @@ describe('Живі продовження, спільні рішення та м
     const tgs={w:512,h:512,ip:0,op:60,layers:[{ty:4,ip:0,op:60,ks:{p:{a:1,k:[{t:0,s:[40,80],e:[350,80]},{t:60,s:[350,80]}]}},shapes:[{ty:'el',p:{k:[0,0]},s:{k:[60,60]}},{ty:'fl',c:{k:[0,1,1,1]},o:{k:100}}]}]};const frames=await renderTGS(gzipSync(JSON.stringify(tgs)));assert.equal(frames.length,3);assert.equal(new Set(frames.map(b=>createHash('sha256').update(b).digest('hex'))).size,3);
   });
   it('голоси неанонімного опитування записує без зайвих повідомлень і враховує зміну',async()=>{
-    await db.query("INSERT INTO polls(poll_id,message_id,question,options,revision) VALUES('poll',500,'Куди?','[\"Львів\",\"Карпати\"]',0)");const r=await router();for(const option_ids of [[0],[1],[]])await r.receive({update_id:sequence++,poll_answer:{poll_id:'poll',user:{id:22,first_name:'Олена'},option_ids}});
-    const vote=await one(db,'SELECT * FROM poll_votes');assert.equal(vote!.name,'Олена');assert.deepEqual(vote!.option_ids,[]);assert.equal((await db.query('SELECT * FROM outbox WHERE service=false')).rows.length,0);assert.equal((await db.query("SELECT * FROM outbox WHERE dedup_key LIKE 'release:%'")).rows.length,0);assert.equal(h.brain.calls.length,0);
+    await db.query("INSERT INTO polls(poll_id,message_id,question,options,revision) VALUES('poll',500,'Куди?','[\"Львів\",\"Карпати\"]',0)");const r=await router(),noticeCount=(await db.query("SELECT id FROM outbox WHERE dedup_key LIKE 'release:%'")).rows.length;for(const option_ids of [[0],[1],[]])await r.receive({update_id:sequence++,poll_answer:{poll_id:'poll',user:{id:22,first_name:'Олена'},option_ids}});
+    const vote=await one(db,'SELECT * FROM poll_votes');assert.equal(vote!.name,'Олена');assert.deepEqual(vote!.option_ids,[]);assert.equal((await db.query('SELECT * FROM outbox WHERE service=false')).rows.length,0);assert.equal((await db.query("SELECT * FROM outbox WHERE dedup_key LIKE 'release:%'")).rows.length,noticeCount);assert.equal(h.brain.calls.length,0);
   });
   it('редагування одного джерела зберігає незалежні нотатки та нагадування',async()=>{
     const a=message('Люмен, запам’ятай: зустріч у п’ятницю'),b=message('Люмен, запам’ятай: квитки в неділю');h.brain.replies.push({reply:'',actions:[{kind:'remember',content:'Зустріч у п’ятницю'}]},{reply:'',actions:[{kind:'remember',content:'Квитки в неділю'}]});await ask(a);await ask(b);const sources=(await db.query("SELECT id FROM messages WHERE role='user' ORDER BY id")).rows;await db.query('INSERT INTO reminders(title,due_at,author_id,source_message_id) VALUES($1,now()+interval \'1 day\',\'11\',$2)',['Квитки в неділю',sources[1]!.id]);

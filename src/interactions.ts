@@ -4,8 +4,9 @@ import { one, state, type SQL, type Database } from './db.js';
 import { ToolError } from './safe-http.js';
 import type { InlineKeyboard, Message } from './telegram.js';
 import type { ToolContext } from './agent-tools.js';
-import { layoutMessage } from './message-layout.js';
+import {textPages, layoutMessage } from './message-layout.js';
 import { recordProvenance } from './provenance.js';
+import {createCommitment,recordConsentGrant,enqueueActionWork,specHash,ENGINE_VERSION} from './commitments.js';
 const user = z.string().regex(/^\d+$/);
 export const InteractionSpec = z.object({
     title: z.string().min(2).max(160), kind: z.enum(['choice', 'consent', 'activity', 'planning', 'round']).default('choice'),
@@ -60,10 +61,11 @@ export async function interactionView(sql: SQL, id: string): Promise<Interaction
         throw new ToolError('interaction_not_found');
     const responses = (await sql.query('SELECT user_id,choices,content,decision,submitted,result FROM interaction_responses WHERE interaction_id=$1 AND version=$2 ORDER BY updated_at', [id, r.version])).rows;
     const required: string[] = r.spec.policy === 'turn' ? [r.spec.turn_user_id] : r.participants.map((p: Person) => p.id);
-    const pending = required.filter(id => !responses.some(x => x.user_id === id && x.submitted && ['answer', 'agree', 'delegate'].includes(x.decision)));
+    const acceptedDecisions = r.launch || ['activity','consent'].includes(r.kind) ? ['answer','agree'] : ['answer','agree','delegate'];
+    const pending = required.filter(id => !responses.some(x => x.user_id === id && x.submitted && acceptedDecisions.includes(x.decision)));
     const different = new Set(responses.filter(x => x.submitted && x.decision !== 'delegate' && x.choices.length).map(x => x.choices[0]));
     const conflict = r.spec.policy === 'all' && different.size > 1;
-    return { ...r, responses, pending, conflict, ready: r.phase === 'ready', accepted: responses.filter(x => x.submitted && ['answer', 'agree', 'delegate'].includes(x.decision)).map(x => x.user_id) } as unknown as InteractionView;
+    return { ...r, responses, pending, conflict, ready: r.phase === 'ready', accepted: responses.filter(x => x.submitted && acceptedDecisions.includes(x.decision)).map(x => x.user_id) } as unknown as InteractionView;
 }
 export async function openInteraction(sql: SQL, input: unknown, c: ToolContext, extra: {
     launch?: any;
@@ -86,14 +88,17 @@ export async function openInteraction(sql: SQL, input: unknown, c: ToolContext, 
         if (!parent || parent.actor_id !== c.actorId && !parent.participants.some((p: Person) => p.id === c.actorId) || people.some(p => !parent.participants.some((x: Person) => x.id === p.id)))
             throw new ToolError('interaction_parent_participants_required');
     }
-    const previous = await one(sql, "SELECT * FROM interactions WHERE topic_id=$1 AND phase='collecting' AND expires_at>now() AND parent_id IS NOT DISTINCT FROM $2::uuid ORDER BY created_at DESC LIMIT 1 FOR UPDATE", [c.topicId, a.parent_id || null]);
-    if (previous)
-        return { ...await interactionView(sql, previous.id), reused: true };
     const id = randomUUID(), spec = { ...a, scope: a.scope === 'invited' && (s.participants || []).length > 8 && !a.participant_ids.length ? 'open' : a.scope };
-    await sql.query('INSERT INTO interactions(id,actor_id,topic_id,kind,spec,participants,revision,source_message_id,parent_id,launch) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)', [id, c.actorId, c.topicId, a.kind, JSON.stringify(spec), JSON.stringify(people), c.revision, c.sourceId || null, a.parent_id || null, extra.launch ? JSON.stringify(extra.launch) : null]);
+    const candidates=(await sql.query("SELECT * FROM interactions WHERE actor_id=$1 AND topic_id=$2 AND phase='collecting' AND expires_at>now() AND revision=$3 AND parent_id IS NOT DISTINCT FROM $4::uuid ORDER BY created_at DESC LIMIT 8 FOR UPDATE",[c.actorId,c.topicId,c.revision,a.parent_id||null])).rows;
+    const previous=candidates.find(p=>specHash([p.spec,p.participants,p.launch||null])===specHash([spec,people,extra.launch||null]));
+    if(previous)return {...await interactionView(sql,previous.id),reused:true};
+    await createCommitment(sql,{id,actorId:c.actorId,topicId:c.topicId,revision:c.revision,sourceId:c.sourceId,sourceIds:c.sourceIds,kind:extra.launch?'activity_launch':'interaction',spec:{interaction:spec,participants:people,launch:extra.launch||null},expectedResult:extra.launch?(['start_game','start_activity'].includes(extra.launch.kind)||extra.launch.kind==='tool'&&['composition.create','activity.create'].includes(extra.launch.name)?'activity_completed':'delivery_confirmed'):'interaction_resolved'});
+    await sql.query('INSERT INTO interactions(id,actor_id,topic_id,kind,spec,participants,revision,source_message_id,parent_id,launch,action_id,engine_version) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$1,$11)', [id, c.actorId, c.topicId, a.kind, JSON.stringify(spec), JSON.stringify(people), c.revision, c.sourceId || null, a.parent_id || null, extra.launch ? JSON.stringify(extra.launch) : null,ENGINE_VERSION]);
     await recordProvenance(sql, 'interaction', id, [...(c.sourceIds || []), ...(c.sourceId ? [c.sourceId] : [])]);
-    if (extra.autoAccept)
+    if (extra.autoAccept){
         await sql.query("INSERT INTO interaction_responses(interaction_id,version,user_id,decision,submitted) VALUES($1,1,$2,'agree',true)", [id, c.actorId]);
+        await recordConsentGrant(sql,id,c,'agree');
+    }
     return interactionView(sql, id);
 }
 export function choicesFor(view: any, userId: string): string[] { return view.spec.roles.find((r: any) => r.user_id === userId)?.options?.length ? view.spec.roles.find((r: any) => r.user_id === userId).options : view.spec.options; }
@@ -102,7 +107,7 @@ export async function answerInteraction(sql: SQL, input: unknown, c: ToolContext
     const r = await one(sql, "SELECT * FROM interactions WHERE id=$1 FOR UPDATE", [a.id]);
     if (!r || new Date(r.expires_at).getTime() <= Date.now() || r.topic_id !== c.topicId || r.revision !== c.revision || s.paused || s.memory_revision !== c.revision)
         throw new ToolError('interaction_unavailable');
-    if (r.version !== a.version || r.phase !== 'collecting' && !(a.decision === 'leave' && r.kind === 'activity' && r.phase === 'active'))
+    if (r.version !== a.version || r.phase !== 'collecting' && !(['leave','not_ready','decline'].includes(a.decision) && r.kind === 'activity' && ['ready','active'].includes(r.phase)))
         throw new ToolError('interaction_step_closed');
     let participants: Person[] = r.participants;
     if (!participants.some(p => p.id === c.actorId)) {
@@ -123,6 +128,18 @@ export async function answerInteraction(sql: SQL, input: unknown, c: ToolContext
     if (a.submit && a.decision === 'answer' && !a.content && selected.length < r.spec.min_choices)
         throw new ToolError('interaction_answer_required');
     await sql.query('INSERT INTO interaction_responses(interaction_id,version,user_id,choices,content,decision,submitted,source_message_id) VALUES($1,$2,$3,$4,$5,$6,$7,$8) ON CONFLICT(interaction_id,version,user_id) DO UPDATE SET choices=excluded.choices,content=excluded.content,decision=excluded.decision,submitted=excluded.submitted,source_message_id=excluded.source_message_id,result=NULL,updated_at=now()', [r.id, r.version, c.actorId, JSON.stringify(selected), a.content, a.decision, a.submit, c.sourceId || null]);
+    if(r.action_id){
+        await recordConsentGrant(sql,r.action_id,c,a.submit?a.decision:'draft');
+        await sql.query('UPDATE interaction_responses SET spec_hash=(SELECT spec_hash FROM commitments WHERE id=$1) WHERE interaction_id=$2 AND version=$3 AND user_id=$4',[r.action_id,r.id,r.version,c.actorId]);
+        if(r.phase==='ready'&&['leave','not_ready','decline'].includes(a.decision)){
+            const dispatch=await one(sql,"SELECT id FROM effect_operations WHERE action_id=$1 AND phase IN ('dispatch_started','uncertain','observed') LIMIT 1",[r.action_id]);
+            await sql.query("UPDATE interactions SET phase=$2,updated_at=now() WHERE id=$1",[r.id,dispatch?'cancelled':'collecting']);
+            await sql.query("UPDATE commitments SET phase=$2,state_version=state_version+1 WHERE id=$1 AND phase IN ('runnable','waiting_acceptance','executing')",[r.action_id,dispatch?'cancelled':'waiting_acceptance']);
+            await sql.query("UPDATE action_work SET status=$2 WHERE action_id=$1 AND status IN ('pending','running')",[r.action_id,dispatch?'cancelled':'waiting']);
+            await sql.query("UPDATE effect_operations SET phase='cancelled' WHERE action_id=$1 AND phase='reserved'",[r.action_id]);
+            if(dispatch)await sql.query("UPDATE interactions SET result='Скасування запитано після початку виконання. Фактичний зовнішній результат ще потребує перевірки.' WHERE id=$1",[r.id]);
+        }
+    }
     if (a.decision === 'leave') {
         await sql.query("UPDATE games SET state=jsonb_set(state,'{players}',COALESCE((SELECT jsonb_agg(p) FROM jsonb_array_elements(state->'players') p WHERE p->>'id'<>$1),'[]'::jsonb)) WHERE status='active' AND state->>'interaction_id'=$2", [c.actorId, r.parent_id || r.id]);
         if (r.launch?.session_id) {
@@ -131,7 +148,12 @@ export async function answerInteraction(sql: SQL, input: unknown, c: ToolContext
         }
     }
     await recordProvenance(sql, 'interaction', r.id, c.sourceId ? [c.sourceId] : []);
-    const view = await interactionView(sql, r.id);
+    return recomputeReadiness(sql,r.id,a);
+}
+export async function recomputeReadiness(sql:SQL,id:string,a?:{submit:boolean;decision:string}) {
+    const r=await one(sql,'SELECT * FROM interactions WHERE id=$1 FOR UPDATE',[id]);
+    if(!r)throw new ToolError('interaction_not_found');
+    const view = await interactionView(sql, id);
     const accepted = view.responses.filter((x: any) => x.submitted && ['answer', 'agree', 'delegate'].includes(x.decision));
     let ready = !view.pending.length && view.spec.scope !== 'open';
     let winner: number | undefined, conflict = false;
@@ -141,9 +163,8 @@ export async function answerInteraction(sql: SQL, input: unknown, c: ToolContext
         conflict = distinct.size > 1;
         if (!conflict && ballots.length)
             winner = ballots[0]!.choices[0];
-        if (!ballots.length && accepted.length === view.participants.length && accepted.every((x: any) => x.decision === 'delegate'))
-            winner = 0;
-        ready = ready && !conflict && winner !== undefined;
+        const delegatedChoice=!r.launch&&r.kind==='choice'&&accepted.length===view.participants.length&&accepted.every((x:any)=>x.decision==='delegate');
+        ready = ready && !conflict && (winner !== undefined||delegatedChoice);
     }
     if (r.spec.policy === 'majority') {
         const counts = new Map<number, number>();
@@ -156,32 +177,33 @@ export async function answerInteraction(sql: SQL, input: unknown, c: ToolContext
             ready = true;
             winner = lead[0];
         }
-        else if (ready) {
-            conflict = !lead || sorted[1]?.[1] === lead[1];
-            ready = !conflict;
-            winner = lead?.[0];
-        }
+        else {conflict=Boolean(lead)&&sorted[1]?.[1]===lead?.[1];ready=false;}
     }
     if (ready) {
         const updated = await one(sql, "UPDATE interactions SET phase='ready',winning_option=$1,updated_at=now() WHERE id=$2 AND version=$3 AND phase='collecting' RETURNING id", [winner ?? null, r.id, r.version]);
         return { ...await interactionView(sql, r.id), transition: Boolean(updated), partial: false, conflict: false };
     }
-    return { ...view, transition: false, partial: r.spec.policy === 'parallel' && (r.kind === 'round' || r.kind === 'planning' || r.spec.roles.length > 0) && a.submit && ['answer', 'agree'].includes(a.decision), conflict };
+    return { ...view, transition: false, partial: r.spec.policy === 'parallel' && (r.kind === 'round' || r.kind === 'planning' || r.spec.roles.length > 0) && Boolean(a?.submit) && ['answer', 'agree'].includes(a?.decision||''), conflict };
 }
 export async function closeOpenRoster(sql: SQL, id: string, c: ToolContext) {
-    const r = await one(sql, "SELECT * FROM interactions WHERE id=$1 AND actor_id=$2 AND phase='collecting' AND topic_id=$3 FOR UPDATE", [id, c.actorId, c.topicId]);
+    const s=await state(sql,true);
+    const r = await one(sql, "SELECT * FROM interactions WHERE id=$1 AND actor_id=$2 AND phase='collecting' AND topic_id=$3 AND revision=$4 AND expires_at>now() FOR UPDATE", [id, c.actorId, c.topicId,c.revision]);
+    if(s.paused||s.memory_revision!==c.revision)throw new ToolError('task_cancelled');
     if (!r || r.spec.scope !== 'open')
         throw new ToolError('open_roster_host_required');
-    if (r.participants.length < 2 && !isPersonalRequest(c.requestText || ''))
+    const accepted=(await interactionView(sql,id)).accepted;
+    const people=r.participants.filter((p:Person)=>accepted.includes(p.id));
+    if (people.length < 2 && !isPersonalRequest(c.requestText || ''))
         throw new ToolError('confirm_solo_or_wait_for_participants');
-    await sql.query("UPDATE interactions SET spec=jsonb_set(spec,'{scope}','\"invited\"'::jsonb),updated_at=now() WHERE id=$1", [id]);
-    const own = await one(sql, 'SELECT * FROM interaction_responses WHERE interaction_id=$1 AND version=$2 AND user_id=$3', [id, r.version, c.actorId]);
-    return answerInteraction(sql, { id, version: r.version, choices: own?.choices || [], content: own?.content || '', decision: own?.decision || 'agree', submit: own?.submitted ?? true }, c);
+    await sql.query("UPDATE interactions SET spec=jsonb_set(spec,'{scope}','\"invited\"'::jsonb),participants=$2,updated_at=now() WHERE id=$1", [id,JSON.stringify(people)]);
+    // Closing enrollment records no person's consent. Their recorded answers remain authoritative.
+    return recomputeReadiness(sql,id);
 }
 export async function finishInteraction(sql: SQL, id: string, version: number, c: ToolContext, result: string, actorOnly = false) {
     const r = await one(sql, 'SELECT * FROM interactions WHERE id=$1 FOR UPDATE', [id]);
-    if (!r || r.topic_id !== c.topicId || r.version !== version || r.revision !== c.revision || !r.participants.some((p: Person) => p.id === c.actorId) && r.actor_id !== c.actorId)
+    if (!r || new Date(r.expires_at).getTime()<=Date.now() || r.topic_id !== c.topicId || r.version !== version || r.revision !== c.revision || !r.participants.some((p: Person) => p.id === c.actorId) && r.actor_id !== c.actorId)
         throw new ToolError('interaction_unavailable');
+    if(r.launch&&!actorOnly)throw new ToolError('activity_result_requires_adapter_proof');
     if (actorOnly) {
         if (r.spec.policy !== 'parallel' || !['collecting', 'ready'].includes(r.phase))
             throw new ToolError('parallel_result_not_expected');
@@ -193,6 +215,7 @@ export async function finishInteraction(sql: SQL, id: string, version: number, c
         if (r.phase !== 'ready')
             throw new ToolError('interaction_waiting_for_participants');
         await sql.query("UPDATE interactions SET phase='resolved',result=$1,updated_at=now() WHERE id=$2", [result.slice(0, 2000), id]);
+        if(r.action_id)await sql.query("UPDATE commitments SET phase='completed',result=$1,state_version=state_version+1,updated_at=now() WHERE id=$2 AND phase NOT IN ('cancelled','expired','failed')",[JSON.stringify({summary:result.slice(0,2000)}),r.action_id]);
     }
     return interactionView(sql, id);
 }
@@ -246,25 +269,47 @@ export function interactionKeys(v: any): InlineKeyboard {
 }
 export async function queueInteraction(sql: SQL, id: string) {
     const v = await interactionView(sql, id);
-    const card = await layoutMessage(sql, interactionText(v), { formatting: [{ text: v.spec.context_card?.title || v.spec.title, style: 'bold' }] }, { actorId: v.actor_id, topicId: v.topic_id, revision: v.revision, sourceId: v.source_message_id, key: 'interaction:' + id + ':' + v.version, interactive: true, extraDetails: v.spec.context_card?.details }, interactionKeys(v));
+    const sources=(await sql.query("SELECT source_message_id FROM provenance_edges WHERE derived_kind='interaction' AND derived_key=$1",[id])).rows.map(x=>Number(x.source_message_id));
+    const card = await layoutMessage(sql, interactionText(v), { formatting: [{ text: v.spec.context_card?.title || v.spec.title, style: 'bold' }] }, { actorId: v.actor_id, topicId: v.topic_id, revision: v.revision, sourceId: v.source_message_id, sourceIds:sources,actionId:v.action_id, key: 'interaction:' + id + ':' + v.version, interactive: true, extraDetails: v.spec.context_card?.details }, interactionKeys(v));
     const hash = createHash('sha256').update(JSON.stringify([v.phase, v.responses, v.participants, v.spec])).digest('hex');
     const current = await one(sql, 'SELECT card_hash,card_seq FROM interactions WHERE id=$1 FOR UPDATE', [id]);
     if (current?.card_hash === hash)
         return v;
     const seq = Number(current?.card_seq || 0) + 1;
     await sql.query("UPDATE outbox SET status='cleared' WHERE kind='interaction' AND body->>'id'=$1 AND status='pending'", [id]);
-    await sql.query("INSERT INTO outbox(dedup_key,kind,body,revision,actor_id,source_message_id) VALUES($1,'interaction',$2,$3,$4,$5) ON CONFLICT DO NOTHING", [`interaction:${id}:${seq}`, JSON.stringify({ id, version: v.version, hash, seq, text: card.text, entities: card.entities, replyMarkup: card.replyMarkup, threadId: v.topic_id === '0' ? undefined : Number(v.topic_id) }), v.revision, v.actor_id, v.source_message_id]);
-    await sql.query('UPDATE interactions SET card_hash=$1,card_seq=$3 WHERE id=$2', [hash, id, seq]);
-    await recordProvenance(sql, 'outbox', (await one(sql, 'SELECT id FROM outbox WHERE dedup_key=$1', [`interaction:${id}:${seq}`]))!.id, (await sql.query("SELECT source_message_id FROM provenance_edges WHERE derived_kind='interaction' AND derived_key=$1", [id])).rows.map(x => Number(x.source_message_id)));
+    const pages=textPages(card.text,3000);let offset=0;
+    for(const [part,text] of pages.entries()){
+        const prefix=pages.length>1?('Частина '+(part+1)+'/'+pages.length+'\n\n'):'';
+        const entities=card.entities.filter(e=>e.offset<offset+text.length&&e.offset+e.length>offset).map(e=>({...e,offset:Math.max(0,e.offset-offset)+prefix.length,length:Math.min(e.offset+e.length,offset+text.length)-Math.max(e.offset,offset)}));
+        const key='interaction:'+id+':'+seq+':'+part;
+        const o=await one(sql,"INSERT INTO outbox(dedup_key,kind,body,revision,actor_id,source_message_id) VALUES($1,'interaction',$2,$3,$4,$5) ON CONFLICT DO NOTHING RETURNING id",[key,JSON.stringify({id,version:v.version,hash,seq,part,parts:pages.length,text:prefix+text,entities,replyMarkup:part===pages.length-1?card.replyMarkup:undefined,threadId:v.topic_id==='0'?undefined:Number(v.topic_id)}),v.revision,v.actor_id,v.source_message_id]);
+        if(o)await recordProvenance(sql,'outbox',o.id,sources);
+        offset+=text.length;
+    }
+    await sql.query('UPDATE interactions SET card_hash=$1,card_seq=$3 WHERE id=$2',[hash,id,seq]);
     return v;
 }
-export async function currentInteraction(sql: SQL, topic: string, actor?: string) {
+export async function cancelInteractionDescendants(sql:SQL,id:string) {
+  const children=(await sql.query("WITH RECURSIVE children AS (SELECT id,actor_id,revision FROM interactions WHERE parent_id=$1 UNION ALL SELECT i.id,i.actor_id,i.revision FROM interactions i JOIN children c ON i.parent_id=c.id) SELECT * FROM children",[id])).rows;
+  for(const child of children){
+    await sql.query("UPDATE interactions SET phase='cancelled',version=version+1,updated_at=now() WHERE id=$1 AND phase IN ('collecting','ready','active')",[child.id]);
+    await sql.query("UPDATE commitments SET phase='cancelled',state_version=state_version+1 WHERE id=$1 AND phase NOT IN ('completed','cancelled','expired','failed')",[child.id]);
+    await sql.query("UPDATE action_work SET status='cancelled' WHERE action_id=$1 AND status IN ('pending','running','waiting')",[child.id]);
+    await sql.query("UPDATE effect_operations SET phase='cancelled' WHERE action_id=$1 AND phase='reserved'",[child.id]);
+  }
+}
+
+export async function currentInteraction(sql: SQL, topic: string, actor?: string,replyMessageId?:number) {
     const rows = (await sql.query("SELECT id FROM interactions WHERE topic_id=$1 AND phase IN ('collecting','ready','active') AND expires_at>now() ORDER BY created_at DESC LIMIT 8", [topic])).rows;
+    const candidates=[];
     for (const r of rows) {
         const v = await interactionView(sql, r.id);
         if (!actor || v.participants.some((p: Person) => p.id === actor) || v.spec.scope === 'open')
-            return v;
+            candidates.push(v);
     }
+    if(replyMessageId)return candidates.find(v=>Number(v.card_message_id)===replyMessageId||Object.values(v.card_message_ids||{}).some(id=>Number(id)===replyMessageId));
+    const waiting=candidates.filter(v=>v.phase==='collecting');
+    return waiting.length===1?waiting[0]:candidates.length===1?candidates[0]:undefined;
 }
 export function parseInteractionText(v: any, text: string, actor: string) {
     if (/^\s*[«“"`][\s\S]*[»”"`]\s*$/.test(text))
@@ -295,7 +340,7 @@ export function parseInteractionText(v: any, text: string, actor: string) {
 }
 export async function toggleInteraction(sql: SQL, id: string, version: number, action: string, c: ToolContext) {
     const v = await interactionView(sql, id);
-    if (v.version !== version || v.phase !== 'collecting')
+    if (v.version !== version || v.phase !== 'collecting' && !(v.phase==='ready'&&['no','wait'].includes(action)))
         throw new ToolError('interaction_step_closed');
     if (action === 'close')
         return closeOpenRoster(sql, id, c);
@@ -328,17 +373,20 @@ export async function launchConsent(sql: SQL, action: any, c: ToolContext, name:
     const scope = personal ? 'personal' : (s.participants || []).length > 8 || isGroupRequest(request) && (s.participants || []).length < 2 ? 'open' : 'invited';
     const people = roster(s, c.actorId, scope);
     const signature = launchHash(action);
-    const approved = c.interactionId ? await one(sql, "SELECT * FROM interactions WHERE id=$1 AND topic_id=$2 AND revision=$3 AND phase IN ('ready','active')", [c.interactionId, c.topicId, c.revision]) : undefined;
-    if (approved && approved.participants.some((p: Person) => p.id === c.actorId) && (approved.launch && launchHash(approved.launch) === signature || approved.kind === 'activity' && !approved.launch))
+    const approved = c.interactionId ? await one(sql, "SELECT * FROM interactions WHERE id=$1 AND topic_id=$2 AND revision=$3 AND phase IN ('ready','active') AND expires_at>now()", [c.interactionId, c.topicId, c.revision]) : undefined;
+    if (approved && approved.participants.some((p: Person) => p.id === c.actorId) && approved.launch && launchHash(approved.launch) === signature)
         return { allowed: true, participants: approved.participants, interaction: approved };
-    if (people.length === 1 && scope !== 'open')
-        return { allowed: true, participants: people };
+    if (people.length === 1 && scope !== 'open') {
+        const personalStep=await openInteraction(sql,{title:name,kind:'activity',scope:'personal',question:'Починаю за вашим проханням.',options:[]},c,{launch:action,autoAccept:true});
+        const ready=await recomputeReadiness(sql,personalStep.id);
+        return {allowed:true,participants:ready.participants,interaction:ready};
+    }
     const v = await openInteraction(sql, { title: name, kind: 'activity', scope, participant_ids: scope === 'open' ? [] : people.map(p => p.id), policy: 'all', question: 'Долучаємося до цієї активності?', options: [], goal: 'Почнемо після згоди всіх запрошених.' }, c, { launch: action, autoAccept: /^\/game\b|почни|починай|погра|беремося|старт|давай/iu.test(request) });
     await queueInteraction(sql, v.id);
     return { allowed: false, participants: v.participants, interaction: v };
 }
 export async function enqueueInteraction(sql: SQL, v: any, c: ToolContext) {
-    if (!v.transition && !v.partial)
+    if ((!v.transition && !v.partial)||v.spec.continuation_owner==='composition')
         return;
     const actor = v.partial ? c.actorId : v.actor_id, source = v.partial ? c.sourceId : v.source_message_id;
     if (!source)
@@ -346,9 +394,11 @@ export async function enqueueInteraction(sql: SQL, v: any, c: ToolContext) {
     const people: Person[] = v.participants, p = people.find(p => p.id === actor);
     const row = v.responses.find((r: any) => r.user_id === c.actorId), choices = (row?.choices || []).map((i: number) => choicesFor(v, c.actorId)[i]).filter(Boolean);
     const selected = v.winning_option === null || v.winning_option === undefined ? '' : v.spec.options[v.winning_option];
-    const id = -Number.parseInt(createHash('sha256').update(`${v.id}:${v.version}:${v.partial ? c.actorId : 'ready'}:${JSON.stringify(row)}`).digest('hex').slice(0, 12), 16);
+    const id = -Number.parseInt(createHash('sha256').update(`${v.id}:${v.version}:${v.partial ? c.actorId+':'+responseHash(row) : 'ready'}`).digest('hex').slice(0, 12), 16);
     const ownText = row?.content || choices.join(' + ');
     const message: Message = { message_id: id, date: Math.floor(Date.now() / 1000), from: { id: Number(actor), first_name: p?.name || actor }, chat: { id: Number(c.chatId), type: Number(c.chatId) > 0 ? 'private' : 'supergroup' }, text: v.partial ? `Люмен, мій план для власного завдання: ${ownText}` : v.kind === 'activity' ? `Люмен, почнемо погоджену активність. ${selected || v.spec.question}` : `Люмен, потрібні відповіді на етап «${v.spec.title}» зібрані. Підсумуй їх і продовж за правилами етапу. ${selected || v.spec.question}`, message_thread_id: c.topicId === '0' ? undefined : Number(c.topicId), lumen_interaction: { id: v.id, version: v.version, partial: Boolean(v.partial), ready: Boolean(v.ready), ...(v.partial ? { response_hash: responseHash(row) } : {}) } };
     const plan = v.transition && v.spec.resume_plan ? v.spec.resume_plan : v.transition && v.launch?.kind ? { reply: v.spec.launch_reply || '', actions: v.spec.launch_actions || [v.launch], ...(v.spec.launch_presentation ? { presentation: v.spec.launch_presentation } : {}), ...(v.spec.launch_step ? { interaction: v.spec.launch_step } : {}) } : undefined;
-    await sql.query("INSERT INTO inbox(update_id,payload,revision,plan) VALUES($1,$2,$3,$4) ON CONFLICT DO NOTHING", [id, JSON.stringify({ message, sourceId: source, interactionInternal: true, engagement: { reason: 'addressed' } }), c.revision, plan ? JSON.stringify(plan) : null]);
+    const payload={message,sourceId:source,interactionInternal:true,engagement:{reason:'addressed'}};
+    if(v.action_id&&v.transition)await enqueueActionWork(sql,v.action_id,payload,plan,id,c.revision);
+    else await sql.query("INSERT INTO inbox(update_id,payload,revision,plan) VALUES($1,$2,$3,$4) ON CONFLICT DO NOTHING", [id, JSON.stringify(payload), c.revision, plan ? JSON.stringify(plan) : null]);
 }

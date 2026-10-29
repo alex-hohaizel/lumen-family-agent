@@ -45,10 +45,12 @@ export function explicitStickerRequest(text:string){
   if(/(?:(?:^|\s)не\s+(?:треба\s+|потрібно\s+)?(?:надіш|надсила|надсил|відправ|скида|скинь|кида|показ|шли|слати)|(?:do\s+not|don['’]t)\s+(?:send|show))/iu.test(unquoted))return false;
   return /(?:стікер|стикер|sticker)|\p{Extended_Pictographic}/iu.test(unquoted)&&/(?:надішли|над[іи]слати|надсилай|скинь|скинути|відправ|покажи|показати|дай|давай|хочу|можна|пришли|отправ|покажи|send|show|give)/iu.test(unquoted);
 }
-export async function queueDecoration(sql:SQL,plan:Plan,m:Message,revision:number,updateId:string|number,serious=false,humorOff=false,ownText=plan.reply){
+export async function queueDecoration(sql:SQL,plan:Plan,m:Message,revision:number,updateId:string|number,serious=false,humorOff=false,ownText=plan.reply,emojiOff=false){
   const p=plan.presentation;if(!p?.sticker_id&&!p?.reaction)return false;
   const explicit=p.sticker_id?p.sticker_purpose==='requested'&&explicitStickerRequest(m.text || m.caption || ''):/реакці|реакци|react/iu.test(m.text || m.caption || '');
-  if((serious||humorOff)&&!explicit)return false;
+  if(emojiOff&&!explicit)return false;
+  if(serious&&p.reaction&&!['❤','❤️','🤗','🕊','🙏','😢','💔'].includes(p.reaction)&&!explicit)return false;
+  if((serious||humorOff)&&p.sticker_id&&!explicit)return false;
   let kind:string,body:Record<string,unknown>;
   if(p.sticker_id){
     if(!explicit){

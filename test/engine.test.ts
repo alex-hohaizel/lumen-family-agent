@@ -94,8 +94,8 @@ describe('Реальна PostgreSQL-логіка приватної групи',
     assert.equal((await db.query('SELECT * FROM memories')).rows.length,0);assert.equal((await db.query('SELECT * FROM reminders')).rows.length,0);assert.match((await one(db,'SELECT body FROM messages'))!.body,/суботу/);
   });
   it('перезапуск об’єкта бота зберігає нотатки й гру',async()=>{
-    await paired(h);await h.lumen.receive(message('/game story'));await h.lumen.receive(message('Так',22));await h.lumen.processNext();await h.lumen.receive(message('Я додав перший рядок.'));await h.lumen.processNext();
-    const restarted=harness(db);await restarted.lumen.receive(message('Це другий рядок.',22));await restarted.lumen.processNext();assert.equal((await one(db,'SELECT state FROM games'))!.state.turn,2);
+    await paired(h);await h.lumen.receive(message('/game story'));await h.lumen.receive(message('Так',22));await h.lumen.processNext();h.brain.replies.push({reply:'',actions:[{kind:'game_turn',content:'Я додав перший рядок.'}],behavior:{move:'facilitate',recipient:'bot',relation:'activity_move',reference_id:(await one(db,'SELECT id FROM interactions'))!.id,reason:'Учасник робить хід у спільній історії'}});await h.lumen.receive(message('Я додав перший рядок.'));await h.lumen.processNext();
+    const restarted=harness(db);restarted.brain.replies.push({reply:'',actions:[{kind:'game_turn',content:'Це другий рядок.'}],behavior:{move:'facilitate',recipient:'bot',relation:'activity_move',reference_id:(await one(db,'SELECT id FROM interactions'))!.id,reason:'Другий учасник продовжує історію'}});await restarted.lumen.receive(message('Це другий рядок.',22));await restarted.lumen.processNext();assert.equal((await one(db,'SELECT state FROM games'))!.state.turn,2);
   });
   it('пошук історії повертає першоджерело й автора, а не вигадану пам’ять',async()=>{
     await paired(h);await h.lumen.receive(message('Подорож запланована у Львів.',22));await h.lumen.processNext();h.brain.replies.push({reply:'',actions:[{kind:'history',query:'Львів'}]},{reply:'Про Львів говорив другий учасник.',actions:[]});

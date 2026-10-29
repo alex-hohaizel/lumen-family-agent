@@ -34,6 +34,14 @@ describe('Темп і доречність самостійної участі',
   });
 });
 
+describe('Контекст тону 1.11',()=>{
+  it('не виводить людське горе з метафори про пристрій або з цитати',()=>{
+    assert.equal(seriousConversation([{body:'Помер мій телефон'}]),false);
+    assert.equal(seriousConversation([{body:'У книжці написано «помер герой»'}]),false);
+    assert.equal(seriousConversation([{body:'Мені дуже важко після смерті близької людини'}]),true);
+  });
+});
+
 describe('Збережена адаптивна поведінка двох учасників', () => {
   const db = new TestDB(); let h: ReturnType<typeof harness>;
   before(async () => { await db.init(); }); after(async () => { await db.close(); });
@@ -76,10 +84,10 @@ describe('Збережена адаптивна поведінка двох уч
     for (let i = 0; i < 8; i++) { await h.lumen.receive(message(`Продовження ${i}`, i % 2 ? 22 : 11)); await h.lumen.processNext(); }
     assert.equal(h.brain.calls.length, 1); assert.ok((await state(db)).last_social_at);
   });
-  it('серйозна тема прибирає жарти в прямій відповіді й не блокує її', async () => {
+  it('серйозний контекст вимагає тактовної оцінки й не блокує пряму відповідь', async () => {
     await h.lumen.receive(message('Мені дуже важко сьогодні.')); await h.lumen.processNext();
     await h.lumen.receive(message('Люмен, допоможи розібратися.')); await h.lumen.processNext();
-    assert.equal(h.brain.calls.length, 1); assert.match(h.brain.calls[0]!.instructions!, /без жартів/);
+    assert.equal(h.brain.calls.length, 1); assert.match(h.brain.calls[0]!.instructions!, /тактовну подачу/);
   });
   it('повне забування очищає також збережений стиль', async () => {
     await h.lumen.receive(message('/style short')); await h.lumen.receive(message('/forget_all'));

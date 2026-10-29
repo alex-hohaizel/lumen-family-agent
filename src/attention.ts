@@ -42,10 +42,8 @@ export async function ambientStillRelevant(sql:SQL,m:Message,sourceId:number,s:R
   // If people have moved on while the model was thinking, do not post an old joke.
   if(await one(sql,"SELECT id FROM messages WHERE topic_id=$1 AND id>$2 AND role='user' LIMIT 1",[topic,sourceId]))return false;
   const a=await one(sql,'SELECT spoke_at,spoke_source_id FROM topic_attention WHERE topic_id=$1',[topic]);
-  if(a?.spoke_at&&!(delivery&&Number(a.spoke_source_id)===sourceId)&&Date.now()-new Date(a.spoke_at).getTime()<Math.max(60,Number(s.ambient_gap_seconds || 120))*1000)return false;
   if(await one(sql,"SELECT id FROM messages WHERE topic_id=$1 AND role='assistant' AND source_message_id IS DISTINCT FROM $2 AND created_at>now()-interval '25 seconds' LIMIT 1",[topic,sourceId]))return false;
-  const budget=await one(sql,"SELECT count(DISTINCT source_message_id) AS n FROM outbox WHERE body->>'ambient'='true' AND status NOT IN ('failed','cleared') AND source_message_id IS DISTINCT FROM $1 AND created_at>now()-interval '10 minutes'",[sourceId]);
-  return Number(budget?.n || 0)<4;
+  return true;
 }
 
 const STOP=new Set('this that with have what when where your you our the and for are was were from або але мене тебе його вона вони було були буде буде який яка які щось просто також тоді тепер давай треба можна дуже вже тут там про для без щоб тому коли чому його свою свої цими всіх який це цей цієї этом это этой того что как там тут для или тоже уже мне тебя его она они было были будет очень просто давай нужно можно'.split(/\s+/));
@@ -59,8 +57,8 @@ export async function relatedDiscussions(sql:SQL,text:string,sourceId:number){
   return result.rows.map(row=>({...row,body:String(row.body).slice(0,1000)}));
 }
 
-export function ambientReplyAllowed(plan:{reply:string;engagement?:{respond:boolean}}){
-  return plan.engagement?.respond===true&&Array.from(plan.reply).length<=650;
+export function ambientReplyAllowed(plan:{reply:string;engagement?:{respond:boolean};behavior?:{move:string};offer?:unknown}){
+  return plan.engagement?.respond!==false&&Boolean(plan.behavior&&plan.behavior.move!=='listen');
 }
 
 function fingerprint(reply:string){return reply.toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();}

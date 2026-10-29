@@ -1,3 +1,6 @@
+import {PrivacyFenceDatabase} from './privacy-fence.js';
+import {recoverDispatches} from './commitments.js';
+import {queueResultView} from './result-views.js';
 import {looksLikeCredential} from './secrets.js';
 import {PersonalizedBrain,recoverPersonalization} from './personalization.js';
 import {OutboundLocalizer} from './localization.js';
@@ -66,8 +69,9 @@ export class ChatRouter {
   private async createRuntime(chat:RegisteredChat){
     let runtime=this.runtimes.get(chat.chat_id);
     if(runtime){runtime.chat=chat;return runtime;}
-    const db=this.registry.database(chat);
-    await db.tx(applySchema);
+    const rawDb=this.registry.database(chat);
+    await rawDb.tx(applySchema);
+    const db=await PrivacyFenceDatabase.open(rawDb,this.config.runtimeDir,chat.schema_name);
     // Model selection is per group. Only the transport's token-refresh manager is shared.
     const initial=await state(db);const config={...this.config,model:initial.model||this.config.model};
     const rawBrain=this.brainFactory?.(config,chat.chat_id) || new OpenAIModel(config,this.auth);
@@ -88,6 +92,7 @@ export class ChatRouter {
     await db.query("UPDATE image_jobs SET status='uncertain',error_code='restart_during_generation' WHERE status='processing'");
     await db.query("UPDATE outbox SET status='uncertain',error_code='restart_during_delivery' WHERE status='sending'");
     await db.query("UPDATE tool_connections SET health='check_pending' WHERE health='checking'");
+    await db.tx(recoverDispatches);
     await runtime.agent.recover();await new SessionEngine(db,this.config.runtimeDir).recover();
     return runtime;
   }
@@ -115,6 +120,27 @@ export class ChatRouter {
     const pdf=await browsers.pdf('<!doctype html><meta charset="utf-8"><h1>LUMEN 160</h1><p>Document check 31415</p>');await browsers.trim();const text=await documentText(pdf,'check.pdf');if(!text.includes('31415'))throw new Error('pdf_readback_failed');const pages=await scannedPages(pdf);
     const runtime=(await this.active())[0];if(runtime){const {reserveModelCall}=await import('./model-budget.js');await reserveModelCall(runtime.db,this.config);}const model=new OpenAIModel(runtime?.engine.config||this.config,this.auth);const answer=await model.text([{role:'user',content:[{type:'input_text',text:'Read the five digit number on this fixed diagnostic page. Reply only with that number.'},...pages.map(p=>({type:'input_image',image_url:p.dataUrl}))]}],'Read the number in the image; no tools or external actions.',false);if(!answer.includes('31415'))throw new Error('vision_ocr_number_not_observed');
     if(runtime)await runtime.db.query("INSERT INTO capability_health(name,status,detail) VALUES('documents','ready','DOCX XLSX PDF and image OCR verified') ON CONFLICT(name,actor_id) DO UPDATE SET status='ready',detail=excluded.detail,checked_at=now()");return {docx_readback:true,xlsx_readback:true,pdf_readback:true,scan_pages:pages.length,vision_ocr:true,number:'31415'};
+  }
+  async probeBehavior111(){
+    const runtime=(await this.active())[0],config=runtime?.engine.config||this.config,brain=new OpenAIModel(config,this.auth);
+    const goal='00000000-0000-4000-8000-000000000111';
+    const cases=[
+      {id:'other_recipient',current:'Олю, ти вже вдома?',context:{replying_to:{author:'Оля',user_id:'502',message_id:81,text:'Їду додому'},behavior_context:{references:[],recent_own_contributions:[]}},expected:'listen'},
+      {id:'simple_request',current:'Люмен, скільки буде 2+2?',context:{behavior_context:{references:[],recent_own_contributions:[]}},expected:'answer'},
+      {id:'material_clarification',current:'Люмен, підготуй для нас дослідження.',context:{behavior_context:{references:[],recent_own_contributions:[]}},expected:'clarify'},
+      {id:'bound_answer',current:'О дев’ятій ранку завтра',context:{behavior_context:{references:[{id:goal,actor_id:'501',status:'waiting',question:'О котрій нагадати завтра купити квитки?',goal:'Нагадати завтра купити квитки',allowed:['remind']}],recent_own_contributions:[]},active_dialogue:{origin:'clarification',reference_id:goal}},expected:'bound'},
+      {id:'ambiguous_acceptance',current:'Так, давай',context:{behavior_context:{references:[{id:goal,actor_id:'501',status:'offered',goal:'Детектив на 10 хвилин'},{id:'00000000-0000-4000-8000-000000000112',actor_id:'501',status:'offered',goal:'Коротке дослідження про океани'}],recent_own_contributions:[]}},expected:'clarify'},
+    ];
+    const results=[];
+    for(const item of cases){
+      if(runtime){const {reserveModelCall}=await import('./model-budget.js');await reserveModelCall(runtime.db,config);}
+      const plan=await brain.plan({current:item.current,context:JSON.stringify({now:new Date().toISOString(),current_author:{id:'501',name:'Гравець А'},current_topic:{id:'0'},participants:[{id:'501',name:'Гравець А'},{id:'502',name:'Оля'}],...item.context}),instructions:'Фіксована синтетична діагностика поведінки 1.11. Без зовнішніх дій і приватних даних. Сплануй природну відповідь у звичайному форматі behavior/reply/actions. Для чужої розмови за відсутності внеску мовчи. Уточнюй істотні прогалини; не вгадуй неоднозначне погодження.',search:false});
+      const ok=item.expected==='bound'?plan.behavior?.reference_id===goal&&plan.behavior.relation==='answer_to_question':plan.behavior?.move===item.expected&&(item.expected!=='clarify'||Boolean(plan.behavior.clarification)&&!plan.actions.length)&&(item.expected!=='listen'||!plan.reply&&!plan.actions.length);
+      results.push({case:item.id,ok,move:plan.behavior?.move,reference_bound:plan.behavior?.reference_id===goal,actions:plan.actions.map(a=>a.kind)});
+    }
+    console.log(JSON.stringify({event:'behavior_111_model_replay',model:config.model,synthetic:true,results}));
+    if(results.some(r=>!r.ok))throw new Error('behavior_111_replay_failed');
+    return {model:config.model,synthetic:true,private_data_used:false,cases:results};
   }
   async probeInteractions(){
     const runtime=(await this.active())[0],config=runtime?.engine.config||this.config;
@@ -186,11 +212,7 @@ export class ChatRouter {
         if(cb.message.chat.type==='private'&&String(cb.message.chat.id)!==String(cb.from.id))return;
         const chat=await this.registry.find(String(cb.message.chat.id));if(!chat?.enabled)return;const runtime=await this.runtime(chat);
         if(interactive){await runtime.engine.receive({update_id:update.update_id,message:{message_id:-update.update_id,date:Math.floor(Date.now()/1000),from:cb.from,chat:cb.message.chat,message_thread_id:cb.message.message_thread_id,text:'[Вибір у поточному кроці]',lumen_interaction_event:{id:interactive[1]!,version:Number(interactive[2]),action:interactive[3]!}}});return;}
-        const s=await state(runtime.db),row=await one(runtime.db,'SELECT * FROM message_panels WHERE id=$1 AND revision=$2 AND expires_at>now() AND topic_id=$3',[panel![1],s.memory_revision,String(cb.message.message_thread_id||0)]);
-        if(!row||s.paused||row.audience==='private'&&row.actor_id!==String(cb.from.id))return;
-        const index=Number(panel![2]),pages:string[]=row.pages;if(index<0||index>=pages.length)return;
-        const keys={inline_keyboard:[[{text:`Сторінка ${index+1}/${pages.length}`,callback_data:`lp:${row.id}:${index}`}],...(index+1<pages.length?[[{text:'Далі',callback_data:`lp:${row.id}:${index+1}`}]]:[]),...(index>0?[[{text:'Назад',callback_data:`lp:${row.id}:${index-1}`}]]:[])]};
-        try{await this.telegram.call('sendMessage',{chat_id:cb.message.chat.id,text:pages[index],ephemeral_message_parameters:{receiver_user_id:cb.from.id,callback_query_id:cb.id},reply_markup:keys});}catch{await this.telegram.text(String(cb.message.chat.id),pages[index]!,{threadId:cb.message.message_thread_id,replyMarkup:keys});}return;
+        await runtime.db.tx(sql=>queueResultView(sql,{panelId:panel![1]!,index:Number(panel![2]),actorId:String(cb.from.id),topicId:String(cb.message!.message_thread_id||0),callbackId:cb.id,updateId:update.update_id}));return;
       }
       const command=cb.data&&callbackCommand(cb.data);
       const choiceId=/^lumen:choice:([0-9a-f-]{36})$/.exec(cb.data || '')?.[1];

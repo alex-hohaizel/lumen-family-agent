@@ -4,7 +4,7 @@ export interface TGChat { id: number; type: string; title?: string; is_forum?: b
 export interface InlineKeyboard { inline_keyboard: { text: string; callback_data?: string; url?: string }[][]; }
 export interface TextEntity {type:string;offset:number;length:number;url?:string;}
 export interface TGSticker {file_id:string;file_unique_id:string;type?:string;emoji?:string;set_name?:string;is_animated?:boolean;is_video?:boolean;thumbnail?:{file_id:string;file_unique_id?:string};}
-export interface TextOptions {outputLanguage?:string;sourceIds?:number[];taskId?:string;goalVersion?:number; replyMarkup?: InlineKeyboard; replyToMessageId?: number; targetChatId?: string; threadId?: number; entities?:TextEntity[]; sourceMessageId?:number;actorId?:string;audience?:'personal'|'group'|'private'; }
+export interface TextOptions {actionId?:string;compositionId?:string;optionalContribution?:boolean;outputLanguage?:string;sourceIds?:number[];taskId?:string;goalVersion?:number; replyMarkup?: InlineKeyboard; replyToMessageId?: number; targetChatId?: string; threadId?: number; entities?:TextEntity[]; sourceMessageId?:number;actorId?:string;audience?:'personal'|'group'|'private'; }
 export interface Message {
   receiver_user?:TGUser;ephemeral_message_id?:number;
   message_id: number; date: number; edit_date?: number; from?: TGUser; chat: TGChat;
@@ -50,7 +50,7 @@ export class Telegram {
     } catch { throw new TelegramError('telegram_network', 0, /^(send|edit)/.test(method)); }
     let json: any;
     try { json = await response.json(); } catch { throw new TelegramError('telegram_bad_response', 0, /^(send|edit)/.test(method)); }
-    if (!json.ok) throw new TelegramError(`telegram_${json.error_code || response.status}`, Number(json.parameters?.retry_after || 0), response.status >= 500 && /^(send|edit)/.test(method));
+    if (!json.ok) throw new TelegramError(json.error_code===400&&/message is not modified/i.test(String(json.description))?'telegram_message_not_modified':`telegram_${json.error_code || response.status}`, Number(json.parameters?.retry_after || 0), response.status >= 500 && /^(send|edit)/.test(method));
     return json.result as T;
   }
   async updates(offset: number) {

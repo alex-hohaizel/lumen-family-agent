@@ -1,3 +1,4 @@
+import {gateOutcome,toolOutcome,outcomeMessage} from './outcomes.js';
 import {layoutMessage} from './message-layout.js';
 import {runOperation} from './operations.js';
 import {TaskJournal} from './task-journal.js';
@@ -58,6 +59,14 @@ export class AgentTasks {
   }
   private async finalizePending(){const job=await one(this.db,"SELECT * FROM agent_tasks WHERE status='verifying' ORDER BY updated_at LIMIT 1");if(!job)return false;const proof=await verifyTask(this.db,job,job.result);if(proof.waiting.length)return false;await this.finish(job,proof.ok?'completed':'needs_input',proof.ok?job.result:'Не підтверджено результат: '+proof.missing.join(', ')+'. Дії не повторював.');return true;}
   private async finish(job:any,status:string,text:string){
+    if(status==='completed'){
+      const rows=(await this.db.query("SELECT tool,status,result,error_code FROM tool_runs WHERE task_id=$1 AND goal_version=$2 ORDER BY id",[job.id,job.goal_version||1])).rows;
+      const latest=new Map<string,any>();for(const r of rows)latest.set(r.tool,r);
+      const facts=[...latest.values()].map(r=>toolOutcome(r.tool,r.status==='succeeded'?r.result:{error:r.error_code||r.status}));
+      for(const fact of facts)if(fact.status==='queued'){const r=latest.get(fact.capability),receipt=r?.result?.id?await one(this.db,"SELECT telegram_id FROM outbox WHERE kind IN ('artifact','voice') AND body->>'id'=$1 AND status='sent' LIMIT 1",[r.result.id]):undefined;if(receipt?.telegram_id){fact.status='observed';fact.confirmed='delivery';}}
+      const checked=gateOutcome({reply:text,actions:[]},facts);
+      if(checked.blocked&&!facts.some(f=>f.status==='queued')){status='needs_input';text=checked.plan.reply;}
+    }
     let proof:any;if(status==='completed'&&await one(this.db,"SELECT id FROM private_requests WHERE task_id=$1 AND status IN ('offered','answering') AND expires_at>now() LIMIT 1",[job.id])){await this.db.query("UPDATE agent_tasks SET status='needs_input',error_code='private_answers_pending',result='Очікую особисті відповіді учасників.',updated_at=now() WHERE id=$1 AND status='running'",[job.id]);return;}if(status==='completed'){proof=await verifyTask(this.db,job,text);if(proof.waiting.length){await this.db.query("UPDATE agent_tasks SET status='verifying',result=$1,updated_at=now() WHERE id=$2 AND status='running'",[text,job.id]);return;}if(!proof.ok){status='needs_input';text='Не можу підтвердити завершення: '+proof.missing.join(', ')+'. Перевірені кроки збережені; потрібні додаткові дані або підтвердження сервісу.';}}
     await this.db.tx(async sql=>{const s=await state(sql,true);const current=await one(sql,"SELECT status,goal_version FROM agent_tasks WHERE id=$1 FOR UPDATE",[job.id]);if(!current||['cancelled','paused'].includes(current.status)||current.goal_version!==job.goal_version||s.paused||s.memory_revision!==job.revision)return;
       await sql.query("UPDATE agent_tasks SET status=$1,result=$2,verified_at=CASE WHEN $1='delivering' THEN now() ELSE verified_at END,updated_at=now() WHERE id=$3",[status==='completed'?'delivering':status,text.slice(0,10000),job.id]);
@@ -73,7 +82,7 @@ export class AgentTasks {
     try{
       const result=await this.tools.execute(a.tool,a.arguments,c);
       if(a.task_id)await this.db.query("UPDATE agent_tasks SET status='pending',available_at=now(),updated_at=now() WHERE id=$1 AND status='waiting'",[a.task_id]);
-      else await this.db.tx(async sql=>{const live=await state(sql,true);if(!live.paused&&live.memory_revision===a.revision)await queueText(sql,`Виконав погоджену дію ${a.tool}.\n${JSON.stringify(result).slice(0,2000)}`,a.revision,'approval-done:'+a.id,false,{threadId:a.topic_id==='0'?undefined:Number(a.topic_id),actorId:a.actor_id,audience:a.audience==='private'?'private':'group'});});
+      else await this.db.tx(async sql=>{const live=await state(sql,true);if(!live.paused&&live.memory_revision===a.revision)await queueText(sql,outcomeMessage([toolOutcome(a.tool,result)])||('Отримав підтверджений результат погодженої дії '+a.tool+'.\n'+JSON.stringify(result).slice(0,2000)),a.revision,'approval-done:'+a.id,false,{threadId:a.topic_id==='0'?undefined:Number(a.topic_id),actorId:a.actor_id,audience:a.audience==='private'?'private':'group'});});
     }catch(e){
       if(a.task_id)await this.db.query("UPDATE agent_tasks SET status='needs_input',error_code=$1,updated_at=now() WHERE id=$2 AND status='waiting'",[e instanceof ToolError?e.code:'external_action_uncertain',a.task_id]);
       await this.db.tx(async sql=>{const live=await state(sql,true);if(!live.paused&&live.memory_revision===a.revision)await queueText(sql,'Не отримав підтвердженого результату зовнішньої дії. Автоматично її не повторюю: спершу потрібно перевірити стан у сервісі.',a.revision,'approval-error:'+a.id,false,{threadId:a.topic_id==='0'?undefined:Number(a.topic_id),actorId:a.actor_id,audience:a.audience==='private'?'private':'group'});});
