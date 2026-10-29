@@ -1,4 +1,4 @@
-import {publishOffer} from './offers.js';
+import {prepareOfferPlan,publishOffer} from './offers.js';
 import {behaviorContext,behaviorAdmission,normalizeBehaviorPlan,explicitOtherRecipient,repeatedContribution,rememberContribution,saveClarification,completeFocusedGoal,currentStyleCue,saveStyleCue,retireBehavior,BEHAVIOR_INSTRUCTIONS} from './behavior-engine.js';
 import {claimActionWork,finishActionWork,failActionWork,recoverActionWork} from './commitments.js';
 import {gateOutcome,toolOutcome,decisionFactsText,type OutcomeFact} from './outcomes.js';
@@ -384,7 +384,7 @@ export class Lumen {
         const interaction=await currentInteraction(this.db,topicId,uid);
         const augmentedContext=JSON.stringify({...JSON.parse(context),behavior_context:behaviorData,personalization,scheduled_actions:scheduled,interaction,interaction_event:m.lumen_interaction,collaboration,available_tools:this.tools.catalog(),feedback:(await this.db.query('SELECT content FROM agent_feedback WHERE actor_id=$1 ORDER BY id DESC LIMIT 5',[uid])).rows,workflows:(await this.db.query('SELECT id,title,status,version FROM agent_workflows WHERE actor_id=$1 ORDER BY created_at DESC LIMIT 10',[uid])).rows});
         if(!plan)plan=await this.brain.plan({context:augmentedContext,current,image,images:mediaImages,instructions,search:!proactive&&this.config.webSearch});
-        plan=normalizeBehaviorPlan(plan,direct,behaviorData?.references);
+        plan=prepareOfferPlan(normalizeBehaviorPlan(plan,direct,behaviorData?.references));
         const admission=behaviorAdmission(plan.behavior,{direct,otherRecipient:explicitOtherRecipient(m,this.bot.id),references:behaviorData?.references,optional:followup||proactive,reply:plan.reply});
         if(!admission.respond){await this.discard(job.update_id);return true;}
         const boundReference=behaviorData?.references.find(x=>String(x.id)===plan!.behavior?.reference_id);
@@ -411,7 +411,7 @@ export class Lumen {
           const after=await state(this.db);if(after.paused||after.memory_revision!==job.revision){await this.discard(job.update_id);return true;}
           await reserveModelCall(this.db,this.config);
           plan=await this.brain.plan({context:JSON.stringify({...JSON.parse(augmentedContext),tool_results_untrusted:sources.slice(-4).map((x:any)=>({...x,result:JSON.stringify(x.result).length>12000?JSON.stringify(x.result).slice(0,12000):x.result}))}),current,image,images:mediaImages.slice(0,12),instructions:instructions+` Використай отримані результати для відповіді або наступних кроків. Якщо джерел немає — не вигадуй підтвердження. Якщо потрібна довша робота, створи tasks.create. ${step===this.config.agentSteps-1?'Бюджет цього ходу завершено; дай цілісну відповідь або конкретний стан. Не викликай інструменти знову.':''}`,search:!proactive&&this.config.webSearch});
-          plan=normalizeBehaviorPlan(plan,direct,behaviorData?.references);
+          plan=prepareOfferPlan(normalizeBehaviorPlan(plan,direct,behaviorData?.references));
           const updatedAdmission=behaviorAdmission(plan.behavior,{direct,otherRecipient:explicitOtherRecipient(m,this.bot.id),references:behaviorData?.references,optional:followup||proactive,reply:plan.reply});
           if(!updatedAdmission.respond){await this.discard(job.update_id);return true;}
         }
@@ -448,10 +448,19 @@ export class Lumen {
         }
         const ic={actorId:uid,chatId:live.chat_id,topicId,revision:live.memory_revision,sourceId:Number(job.payload.sourceId),sourceIds:[...sourceIds],updateId:String(job.update_id),requested:true,requestText:intent,personal:m.chat.type==='private'||m.lumen_choice?.audience==='personal'||plan!.presentation?.audience==='personal'&&!isGroupRequest(intent),interactionId:m.lumen_interaction?.id,interactionVersion:m.lumen_interaction?.version};
         if(plan!.offer){
-          const v=await publishOffer(sql,plan!.offer,{...ic,actionId:job.payload.actionId},(name,args)=>this.tools.preflight(name,args),{images:Boolean(this.config.apiKey&&this.config.imageModel)});
-          await rememberContribution(sql,plan!.behavior,{topic:topicId,actor:uid,revision:live.memory_revision,sourceId:Number(job.payload.sourceId),sources:[...sourceIds],outboxPrefix:'interaction:'+v.id+':'});
-          await saveStyleCue(sql,intent,{actor:uid,topic:topicId,sourceId:Number(job.payload.sourceId),revision:live.memory_revision,timezone:this.config.timezone,goalId:v.id});
-          if(proactive)await recordAmbientReply(sql,topicId,plan!.offer.title,Number(job.payload.sourceId),Number(job.update_id));
+          const independent=['personalize','set_preference','remember','remind','cancel_reminder','schedule','schedule_decision'];
+          if(plan!.actions.some(a=>!independent.includes(a.kind)))throw new ModelError('offer_mixed_action_requires_separate_step');
+          const facts:string[]=[];
+          for(const a of plan!.actions){try{const result=await this.apply(sql,a,m,job.payload.sourceId,job.update_id,live,[...sourceIds],intent);if(result)facts.push(String(result));}catch(e){if(!(e instanceof ModelError))throw e;facts.push(this.friendlyError(errorCode(e)));}}
+          let v;
+          try{v=await publishOffer(sql,plan!.offer,{...ic,actionId:job.payload.actionId},(name,args)=>this.tools.preflight(name,args),{images:Boolean(this.config.apiKey&&this.config.imageModel)});}
+          catch(e){if(!(e instanceof ToolError))throw e;facts.push('Цю пропозицію поки не підготував: потрібна можливість або її параметри зараз недоступні. Уже виконані незалежні прохання збережені.');}
+          if(facts.length)await queueText(sql,facts.join('\n\n'),live.memory_revision,'answer-independent:'+job.update_id,false,options);
+          if(v){
+            await rememberContribution(sql,plan!.behavior,{topic:topicId,actor:uid,revision:live.memory_revision,sourceId:Number(job.payload.sourceId),sources:[...sourceIds],outboxPrefix:'interaction:'+v.id+':'});
+            await saveStyleCue(sql,intent,{actor:uid,topic:topicId,sourceId:Number(job.payload.sourceId),revision:live.memory_revision,timezone:this.config.timezone,goalId:v.id});
+            if(proactive)await recordAmbientReply(sql,topicId,plan!.offer.title,Number(job.payload.sourceId),Number(job.update_id));
+          }
           await sql.query("UPDATE inbox SET status='done',plan=NULL,payload='{}' WHERE update_id=$1",[job.update_id]);return;
         }
         if(plan!.interaction_response){const v=await answerInteraction(sql,plan!.interaction_response,ic);await queueInteraction(sql,v.id);await enqueueInteraction(sql,v,ic);await sql.query("UPDATE inbox SET status='done',plan=NULL,payload='{}' WHERE update_id=$1",[job.update_id]);return;}

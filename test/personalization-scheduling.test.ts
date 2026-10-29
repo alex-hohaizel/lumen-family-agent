@@ -53,6 +53,34 @@ describe('Постійна персоналізація й відкладені 
    const yes=message('Так, підтверджую',22).message!;await assert.rejects(db.tx(sql=>scheduleDecision(sql,{kind:'schedule_decision',id:row.id,decision:'confirm',quote:'Так, підтверджую'},yes,0)),/schedule_confirmation_unbound/);
    await turn('Так, підтверджую',[{kind:'schedule_decision',id:row.id,decision:'confirm',quote:'Так, підтверджую'}]);assert.equal((await one(db,'SELECT status FROM scheduled_actions'))!.status,'pending');assert.equal((await db.query('SELECT * FROM scheduled_actions')).rows.length,1);
  });
+ it('явне ім’я зберігається одразу, а непевне нагадування чекає власного підтвердження',async()=>{
+   const text='Люмен, називай мене Саня. А може завтра о дев’ятій нагадаєш мені випити воду?';
+   await turn(text,[{kind:'personalize',scope:'self',preferred_name:'Саня',quote:'називай мене Саня'},{kind:'schedule',title:'Вода',instruction:'Випити воду',mode:'reminder',due_at:new Date(Date.now()+86400000).toISOString(),timezone:'Europe/Kyiv',authorization:'ask',quote:'може завтра о дев’ятій нагадаєш мені випити воду?'}]);
+   assert.equal((await one(db,"SELECT preferred_name FROM participant_preferences WHERE user_id='11'"))!.preferred_name,'Саня');
+   assert.equal((await one(db,'SELECT status FROM scheduled_actions'))!.status,'awaiting_confirmation');
+   assert.equal((await db.query('SELECT id FROM interactions')).rows.length,0);assert.equal((await db.query('SELECT id FROM reminders')).rows.length,0);
+   const visible=JSON.stringify((await db.query("SELECT body FROM outbox WHERE kind='text'")).rows);assert.match(visible,/Саня/);assert.match(visible,/Підтвер/);
+ });
+ it('пропозиція або її недоступна можливість не губить незалежне явне налаштування',async()=>{
+   const offer:NonNullable<Plan['offer']>={title:'Коротка спільна історія',reason:'Є час на спільну творчу паузу',value:'Кожен додає свою подію',scale:'П’ять хвилин',first_step:'Перший гравець обирає місце',scope:'invited',participant_ids:['11','22'],action:{kind:'start_game',game:'story'}};
+   h.brain.replies.push({reply:'',actions:[{kind:'personalize',scope:'self',preferred_name:'Саня',quote:'називай мене Саня'},{kind:'start_game',game:'story'}],offer});
+   await h.lumen.receive(message('Люмен, називай мене Саня. Можеш запропонувати нам гру?'));await h.lumen.processNext();
+   assert.equal((await one(db,"SELECT preferred_name FROM participant_preferences WHERE user_id='11'"))!.preferred_name,'Саня');
+   assert.equal((await one(db,'SELECT phase FROM interactions'))!.phase,'collecting');assert.equal((await db.query('SELECT id FROM games')).rows.length,0);
+   h.brain.replies.push({reply:'',actions:[{kind:'personalize',scope:'self',preferred_name:'Олександр',quote:'називай мене Олександр'}],offer:{...offer,action:{kind:'tool',name:'missing.capability',arguments:'{}'}}});
+   await h.lumen.receive(message('Люмен, називай мене Олександр і запропонуй нову активність'));await h.lumen.processNext();
+   assert.equal((await one(db,"SELECT preferred_name FROM participant_preferences WHERE user_id='11'"))!.preferred_name,'Олександр');assert.equal((await db.query('SELECT id FROM interactions')).rows.length,1);
+   const visible=JSON.stringify((await db.query("SELECT body FROM outbox WHERE dedup_key LIKE 'answer-independent:%'")).rows);assert.match(visible,/Олександр/);assert.match(visible,/поки не підготував/);assert.equal((await db.query('SELECT id FROM games')).rows.length,0);
+ });
+ it('дубль запропонованого інструмента не виконується до згоди й не губить ім’я',async()=>{
+   const proposed:Plan['actions'][number]={kind:'tool',name:'artifact.create',arguments:JSON.stringify({name:'Proposal.txt',content:'Ще не погоджений файл'})};
+   h.brain.replies.push({reply:'',actions:[{kind:'personalize',scope:'self',preferred_name:'Алекс',quote:'називай мене Алекс'},proposed],offer:{title:'Короткий файл для тебе',reason:'Дані зручно зберегти окремо',value:'Легко повернутися до результату',scale:'Один короткий файл',first_step:'Зберу текст після твого погодження',scope:'personal',participant_ids:['11'],action:proposed}});
+   await h.lumen.receive(message('Люмен, називай мене Алекс і запропонуй файл'));await h.lumen.processNext();
+   assert.equal((await one(db,"SELECT preferred_name FROM participant_preferences WHERE user_id='11'"))!.preferred_name,'Алекс');
+   assert.equal((await one(db,'SELECT phase FROM interactions'))!.phase,'collecting');
+   assert.equal((await db.query('SELECT id FROM agent_artifacts')).rows.length,0);assert.equal((await db.query('SELECT id FROM tool_runs')).rows.length,0);
+   assert.equal((await db.query("SELECT id FROM outbox WHERE kind='artifact'")).rows.length,0);assert.equal(h.brain.calls.length,1);
+ });
  it('випадкове «так» після іншої відповіді або в іншій темі не погоджує стару пропозицію',async()=>{
    await turn('Люмен, може нагадаєш про воду?',[{kind:'schedule',title:'Вода',instruction:'Випити воду',mode:'reminder',due_at:future(),timezone:'Europe/Kyiv',authorization:'ask',quote:'може нагадаєш про воду?'}]);await deliver();const row=(await one(db,'SELECT * FROM scheduled_actions'))!;
    await db.query("INSERT INTO messages(telegram_id,user_id,author,role,body) VALUES(9999,'lumen','Люмен','assistant','Інше запитання?')");

@@ -5,6 +5,14 @@ import {one,type SQL} from './db.js';
 import {ToolError} from './safe-http.js';
 import {recordProvenance} from './provenance.js';
 
+const independentOfferKinds=new Set(['personalize','set_preference','remember','remind','cancel_reminder','schedule','schedule_decision']);
+/** A proposed action cannot become executable by also appearing in actions.
+ * Apply this before tool execution and action authorization, including every replan.
+ */
+export function prepareOfferPlan(plan:Plan):Plan {
+  return plan.offer?{...plan,actions:plan.actions.filter(a=>independentOfferKinds.has(a.kind))}:plan;
+}
+
 export async function publishOffer(sql:SQL,offer:NonNullable<Plan['offer']>,c:ToolContext,preflight:(name:string,args:unknown)=>unknown,capabilities:{images?:boolean}={}) {
   const action={...offer.action};
   if(action.kind==='image'&&!capabilities.images)throw new ToolError('offer_capability_not_supported');
