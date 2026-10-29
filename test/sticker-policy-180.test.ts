@@ -6,7 +6,7 @@ import {one} from '../src/db.js';
 import {Delivery} from '../src/delivery.js';
 import type {Telegram} from '../src/telegram.js';
 import type {Plan} from '../src/model.js';
-import {STICKER_SET} from '../src/sticker-pack.js';
+import {STICKER_SET,LEGACY_STICKER_SET} from '../src/sticker-pack.js';
 
 describe('Стікери 1.8: лише власний сильний акцент або прямий запит',()=>{
   const db=new TestDB();let h:ReturnType<typeof harness>;let seq=18000;
@@ -14,6 +14,12 @@ describe('Стікери 1.8: лише власний сильний акцен�
   beforeEach(async()=>{await db.reset();h=harness(db);await paired(h);await db.query("INSERT INTO stickers(file_id,file_unique_id,emoji) VALUES('laugh','u-laugh','😂'),('heart','u-heart','❤️'),('party','u-party','🎉'),('hug','u-hug','🤗')");await db.query('UPDATE stickers SET set_name=$1',[STICKER_SET]);});
   const plan=(patch:Partial<Plan>={}):Plan=>({reply:'Ця історія мене розсмішила до сліз!',actions:[],presentation:{sticker_id:1,sticker_purpose:'emphasis',sticker_quote:'розсмішила до сліз'},...patch});
   const queue=(p:Plan,text='Люмене, як тобі цей жарт?',serious=false,ownText=p.reply)=>queueDecoration(db,p,message(text).message!,0,seq++,serious,false,ownText);
+  it('старий набір із історії не стає власним автоматичним акцентом',async()=>{
+    await db.query('UPDATE stickers SET set_name=$1 WHERE id=1',[LEGACY_STICKER_SET]);
+    assert.equal(await queue(plan()),false);
+    await db.query('UPDATE stickers SET set_name=$1 WHERE id=1',[STICKER_SET]);
+    assert.equal(await queue(plan()),true);
+  });
   it('не надсилає непроханий самотній стікер чи прикрасу без наміру',async()=>{
     assert.equal(await queue(plan({reply:''})),false);
     assert.equal(await queue(plan({presentation:{sticker_id:1}}),'Люмен, привіт'),false);

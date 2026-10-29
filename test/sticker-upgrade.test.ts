@@ -1,10 +1,11 @@
 import {createHash} from 'node:crypto';
 import {describe,it} from 'node:test';import assert from 'node:assert/strict';
 import {mkdtemp,readFile,writeFile,rm} from 'node:fs/promises';import {join} from 'node:path';import {tmpdir} from 'node:os';
-import {stickerAssets,ensureStickerPack,seedStickerPack,STICKER_SET,STICKER_TITLE,type LumenPack} from '../src/sticker-pack.js';
+import {stickerAssets,ensureStickerPack,seedStickerPack,STICKER_SET,STICKER_TITLE,LEGACY_STICKER_SET,STICKER_CHECKPOINT_FILE,stickerSetURL,type LumenPack} from '../src/sticker-pack.js';
 import {Telegram,TelegramError} from '../src/telegram.js';import {TestDB} from './helpers.js';
+import {rememberSticker} from '../src/presentation.js';
 
-describe('Оновлення 30 → 50 стікерів зі збереженням посилання',()=>{
+describe('Публікація 50 стікерів і відновлення набору',()=>{
   it('має 50 окремих emoji, сцен, файлів і прозорих прев’ю',async()=>{
     const assets=await stickerAssets();assert.equal(assets.length,50);
     for(const key of ['id','emoji','sha256','file','scene'] as const)assert.equal(new Set(assets.map(a=>a[key])).size,50,key);
@@ -17,7 +18,7 @@ describe('Оновлення 30 → 50 стікерів зі збереженн�
   });
   it('відновлює заміни, непевне додавання й перезапуск між додаванням і checkpoint без дубля',async()=>{
     const assets=await stickerAssets(),dir=await mkdtemp(join(tmpdir(),'lumen-sticker-upgrade-'));
-    const pack:LumenPack={name:STICKER_SET,title:'Люмен — 30 настроїв',stickers:assets.slice(0,30).map((a,i)=>({file_id:'old-'+i,file_unique_id:'old-unique-'+i,is_video:true,emoji:a.emoji}))};
+    const pack:LumenPack={name:STICKER_SET,title:'Люмен — 30 настроїв',stickers:assets.slice(0,30).map((a,i)=>({file_id:'old-'+i,file_unique_id:'old-unique-'+i,is_video:true,set_name:STICKER_SET,emoji:a.emoji}))};
     const attempts=new Map<number,number>();let fail7=true,rate9=true,readFailure=false,lost35=true,adds=0,titles=0;
     const tg={
       call:async(method:string,body:any)=>{
@@ -32,7 +33,7 @@ describe('Оновлення 30 → 50 стікерів зі збереженн�
         if(i===7&&fail7){fail7=false;throw new TelegramError('telegram_503');}
         if(i===9&&rate9){rate9=false;throw new TelegramError('telegram_429',1);}
         if(!oldId)adds++;
-        pack.stickers[i]={file_id:'new-'+i,file_unique_id:'new-unique-'+i,is_video:true,emoji:assets[i]!.emoji};
+        pack.stickers[i]={file_id:'new-'+i,file_unique_id:'new-unique-'+i,is_video:true,set_name:STICKER_SET,emoji:assets[i]!.emoji};
         if(i===35&&lost35){lost35=false;readFailure=true;}
         if(i===3||i===31)throw new TelegramError('telegram_upload_uncertain',0,true);
         return true;
@@ -40,7 +41,7 @@ describe('Оновлення 30 → 50 стікерів зі збереженн�
     } as unknown as Telegram;
     try{
       await assert.rejects(()=>ensureStickerPack(tg,'11',dir,0),/telegram_503/);
-      assert.equal(Object.keys(JSON.parse(await readFile(join(dir,'sticker-pack.json'),'utf8')).items).length,7);
+      assert.equal(Object.keys(JSON.parse(await readFile(join(dir,STICKER_CHECKPOINT_FILE),'utf8')).items).length,7);
       await assert.rejects(()=>ensureStickerPack(tg,'11',dir,0),/telegram_network/);assert.equal(pack.stickers.length,36);
       const result=await ensureStickerPack(tg,'11',dir,0);assert.equal(result.name,STICKER_SET);assert.equal(result.stickers.length,50);assert.equal(result.title,'Люмен — 50 емоцій');assert.equal(titles,1);
       assert.ok(result.stickers.every(s=>s.file_id.startsWith('new-')));assert.equal(adds,20);assert.equal(attempts.get(3),1);assert.equal(attempts.get(31),1);assert.equal(attempts.get(35),2);
@@ -53,32 +54,59 @@ describe('Оновлення 30 → 50 стікерів зі збереженн�
     const tg={call:async()=>{calls++;},multipart:async()=>{calls++;}} as unknown as Telegram;
     try{await writeFile(path,corrupt);await assert.rejects(()=>ensureStickerPack(tg,'11'),/sticker_asset_invalid/);assert.equal(calls,0);}finally{await writeFile(path,original);}
   });
-  for(const failure of ['count','title','content'] as const)it(`не оголошує набір готовим, якщо фінальне перечитування не підтверджує ${failure}`,async()=>{
+  it('публікує окремий набір із 50 і власним checkpoint, не змінюючи попередній набір',async()=>{
+    const assets=await stickerAssets(),dir=await mkdtemp(join(tmpdir(),'lumen-sticker-version-'));
+    const legacyState=JSON.stringify({items:{legacy:{sha256:'legacy',file_unique_id:'legacy'}}});
+    await writeFile(join(dir,'sticker-pack.json'),legacyState);
+    const pack:LumenPack={name:STICKER_SET,title:STICKER_TITLE,stickers:assets.map((a,i)=>({file_id:'published-'+i,file_unique_id:'published-unique-'+i,set_name:STICKER_SET,is_video:true,emoji:a.emoji}))};
+    let published=false,uploads=0;
+    const tg={call:async(method:string,body:any)=>{
+      assert.equal(method,'getStickerSet');assert.equal(body.name,STICKER_SET);assert.notEqual(body.name,LEGACY_STICKER_SET);
+      if(!published)throw new TelegramError('telegram_400');return structuredClone(pack);
+    },multipart:async(method:string,form:FormData)=>{
+      assert.equal(method,'createNewStickerSet');assert.equal(form.get('name'),STICKER_SET);assert.equal(form.get('title'),STICKER_TITLE);
+      const specs=JSON.parse(String(form.get('stickers')));assert.equal(specs.length,50);assert.ok(specs.every((s:any,i:number)=>s.format==='video'&&s.emoji_list[0]===assets[i]!.emoji));
+      uploads++;published=true;return true;
+    }} as unknown as Telegram;
+    try{
+      assert.notEqual(STICKER_SET,LEGACY_STICKER_SET);assert.equal(stickerSetURL(),'https://t.me/addstickers/'+STICKER_SET);
+      assert.equal((await ensureStickerPack(tg,'11',dir,0)).stickers.length,50);
+      const checkpoint=JSON.parse(await readFile(join(dir,STICKER_CHECKPOINT_FILE),'utf8'));
+      assert.equal(checkpoint.set_name,STICKER_SET);assert.equal(Object.keys(checkpoint.items).length,50);
+      assert.equal(await readFile(join(dir,'sticker-pack.json'),'utf8'),legacyState);
+      await ensureStickerPack(tg,'11',dir,0);assert.equal(uploads,1);
+    }finally{await rm(dir,{recursive:true,force:true});}
+  });
+  for(const failure of ['count','title','content','membership'] as const)it(`не оголошує набір готовим, якщо фінальне перечитування не підтверджує ${failure}`,async()=>{
     const assets=await stickerAssets(),dir=await mkdtemp(join(tmpdir(),'lumen-sticker-readback-'));
-    const pack:LumenPack={name:STICKER_SET,title:failure==='title'?'Люмен — 30 настроїв':STICKER_TITLE,stickers:assets.map((a,i)=>({file_id:'current-'+i,file_unique_id:'current-unique-'+i,is_video:true,emoji:a.emoji}))};
+    const pack:LumenPack={name:STICKER_SET,title:failure==='title'?'Люмен — 30 настроїв':STICKER_TITLE,stickers:assets.map((a,i)=>({file_id:'current-'+i,file_unique_id:'current-unique-'+i,is_video:true,set_name:STICKER_SET,emoji:a.emoji}))};
     const items=Object.fromEntries(assets.map((a,i)=>[a.id,{sha256:a.sha256,file_unique_id:pack.stickers[i]!.file_unique_id}]));
-    await writeFile(join(dir,'sticker-pack.json'),JSON.stringify({items}));
+    await writeFile(join(dir,STICKER_CHECKPOINT_FILE),JSON.stringify({set_name:STICKER_SET,items}));
     let reads=0,titles=0;
     const tg={call:async(method:string)=>{
       if(method==='setStickerSetTitle'){titles++;return true;}
       assert.equal(method,'getStickerSet');reads++;
       const result=structuredClone(pack);
-      if(reads===2){if(failure==='count')result.stickers=result.stickers.slice(0,30);if(failure==='content')result.stickers[49]!.file_unique_id='unconfirmed-version';}
+      if(reads===2){if(failure==='count')result.stickers=result.stickers.slice(0,30);if(failure==='content')result.stickers[49]!.file_unique_id='unconfirmed-version';if(failure==='membership')result.stickers[49]!.set_name=LEGACY_STICKER_SET;}
       return result;
     },multipart:async()=>{assert.fail('A matching checkpoint must not reupload stickers');}} as unknown as Telegram;
     try{
-      const error={count:'sticker_set_unexpected',title:'sticker_set_title_unconfirmed',content:'sticker_set_content_unconfirmed'}[failure];
+      const error={count:'sticker_set_unexpected',title:'sticker_set_title_unconfirmed',content:'sticker_set_content_unconfirmed',membership:'sticker_set_membership_unconfirmed'}[failure];
       await assert.rejects(()=>ensureStickerPack(tg,'11',dir,0),new RegExp(error));
       assert.equal(reads,2);assert.equal(titles,failure==='title'?1:0);
     }finally{await rm(dir,{recursive:true,force:true});}
   });
   it('репертуар групи замінює старі версії Люмена й зберігає чужі стікери',async()=>{
     const db=new TestDB();await db.init();try{
-      await db.query('INSERT INTO stickers(file_id,file_unique_id,set_name) VALUES($1,$2,$3),($4,$5,$6)',['old','old-unique',STICKER_SET,'other','other-unique','OtherSet']);
+      await db.query('INSERT INTO stickers(file_id,file_unique_id,set_name) VALUES($1,$2,$3),($4,$5,$6),($7,$8,$9)',['old','old-unique',STICKER_SET,'other','other-unique','OtherSet','legacy','legacy-unique',LEGACY_STICKER_SET]);
       await db.query("INSERT INTO stickers(file_id,file_unique_id) VALUES('incoming','new-unique-0')");
-      const assets=await stickerAssets();await seedStickerPack(db,{name:STICKER_SET,stickers:assets.map((a,i)=>({file_id:'new-'+i,file_unique_id:'new-unique-'+i,is_video:true,emoji:a.emoji}))});
+      const assets=await stickerAssets();await seedStickerPack(db,{name:STICKER_SET,stickers:assets.map((a,i)=>({file_id:'new-'+i,file_unique_id:'new-unique-'+i,is_video:true,set_name:STICKER_SET,emoji:a.emoji}))});
       assert.equal((await db.query('SELECT * FROM stickers')).rows.length,51);assert.equal((await db.query("SELECT * FROM stickers WHERE file_id='old'")).rows.length,0);assert.equal((await db.query("SELECT * FROM stickers WHERE file_id='other'")).rows.length,1);
       assert.equal((await db.query('SELECT * FROM stickers WHERE set_name=$1',[STICKER_SET])).rows.length,50);
+      assert.equal((await db.query('SELECT * FROM stickers WHERE set_name=$1',[LEGACY_STICKER_SET])).rows.length,0);
+      await rememberSticker(db,{file_id:'old-reference',file_unique_id:'new-unique-0',set_name:LEGACY_STICKER_SET,emoji:'❌'},null);
+      const current=(await db.query("SELECT file_id,set_name,emoji FROM stickers WHERE file_unique_id='new-unique-0'")).rows[0]!;
+      assert.equal(current.file_id,'new-0');assert.equal(current.set_name,STICKER_SET);assert.equal(current.emoji,assets[0]!.emoji);
     }finally{await db.close();}
   });
 });

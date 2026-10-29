@@ -8,6 +8,7 @@ import {Delivery} from '../src/delivery.js';
 import {Telegram} from '../src/telegram.js';
 import {ModelError} from '../src/auth.js';
 import type {Plan} from '../src/model.js';
+import {STICKER_SET} from '../src/sticker-set.js';
 
 describe('Адаптивна участь 1.4: контекст, темп, медіа та право промовчати',()=>{
   let db:TestDB,h:ReturnType<typeof harness>,delivery:Delivery;
@@ -47,7 +48,7 @@ describe('Адаптивна участь 1.4: контекст, темп, ме�
     assert.equal((await db.query('SELECT * FROM memories')).rows.length,0);assert.equal((await db.query('SELECT * FROM choices')).rows.length,0);const out=await one(db,"SELECT * FROM outbox WHERE kind='text'");assert.equal(out!.body.replyMarkup,undefined);assert.equal(out!.body.entities[0].type,'bold');assert.equal((await db.query('SELECT * FROM dialogues')).rows.length,0);
   });
   it('самостійний стікер підкреслює власний жарт замість окремої порожньої відповіді',async()=>{
-    await db.query("INSERT INTO stickers(file_id,file_unique_id,emoji,set_name) VALUES('own-sticker','own-unique','😂','Lumen_Moods_by_lumen_family_agent')");const sticker=await one(db,'SELECT id FROM stickers');await observe('Я просто не можу з цього фото');h.brain.replies.push({reply:'Цей кіт щойно звільнив гравітацію з роботи!',actions:[],presentation:{sticker_id:Number(sticker!.id),sticker_purpose:'emphasis',sticker_quote:'звільнив гравітацію з роботи'},engagement:{respond:true,reason:'social'}});await ready();await h.lumen.processNext();assert.equal((await db.query("SELECT * FROM outbox WHERE kind='text'")).rows.length,1);await delivery.next();await delivery.next();assert.equal(h.tg.stickers.length,1);
+    await db.query("INSERT INTO stickers(file_id,file_unique_id,emoji,set_name) VALUES('own-sticker','own-unique','😂',$1)",[STICKER_SET]);const sticker=await one(db,'SELECT id FROM stickers');await observe('Я просто не можу з цього фото');h.brain.replies.push({reply:'Цей кіт щойно звільнив гравітацію з роботи!',actions:[],presentation:{sticker_id:Number(sticker!.id),sticker_purpose:'emphasis',sticker_quote:'звільнив гравітацію з роботи'},engagement:{respond:true,reason:'social'}});await ready();await h.lumen.processNext();assert.equal((await db.query("SELECT * FROM outbox WHERE kind='text'")).rows.length,1);await delivery.next();await delivery.next();assert.equal(h.tg.stickers.length,1);
   });
   it('стримує частоту вже після першої самостійної репліки',async()=>{
     await observe('Перший кіт');await speak();await db.query("UPDATE topic_attention SET checked_at=now()-interval '1 minute'");await observe('Другий кіт',22);await ready();await h.lumen.processNext();assert.equal(h.brain.calls.length,1);

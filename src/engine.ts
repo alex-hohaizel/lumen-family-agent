@@ -1,5 +1,6 @@
 import {currentInteraction,interactionView,openInteraction,answerInteraction,toggleInteraction,parseInteractionText,queueInteraction,enqueueInteraction,responseHash,launchConsent,isPersonalRequest,isGroupRequest} from './interactions.js';
 import {layoutMessage} from './message-layout.js';
+import {STICKER_SET} from './sticker-set.js';
 import {recordProvenance,resultSources} from './provenance.js';
 import {estimateStages,etaText} from './task-journal.js';
 import {browsers} from './browser.js';
@@ -344,7 +345,7 @@ export class Lumen {
           this.db.query('SELECT body,source_ids,created_at FROM episodes ORDER BY id DESC LIMIT 5'),
           this.db.query('SELECT id,name,closed FROM topics ORDER BY updated_at DESC LIMIT 60'),
           this.db.query('SELECT id,telegram_id AS message_id,author,user_id,role,body,created_at,topic_id FROM messages WHERE topic_id=$1 ORDER BY id DESC LIMIT 16',[topicId]),
-          this.db.query("SELECT id,emoji,set_name,description,keywords FROM stickers ORDER BY (lower(set_name)='lumen_moods_by_lumen_family_agent') DESC,created_at DESC LIMIT 80"),
+          this.db.query("SELECT id,emoji,set_name,description,keywords FROM stickers ORDER BY (lower(set_name)=lower($1)) DESC,created_at DESC LIMIT 80",[STICKER_SET]),
           this.db.query('SELECT a.id,a.source_message_id,a.kind,a.description,a.topic_id,m.author,m.created_at FROM attachments a LEFT JOIN messages m ON m.id=a.source_message_id ORDER BY a.id DESC LIMIT 16'),
           this.db.query('SELECT id,prompt,author_id,author_name,topic_id,status,cancelled FROM image_jobs WHERE topic_id=$1 ORDER BY id DESC LIMIT 8',[topicId]),
           this.db.query('SELECT menu_id,user_id,name,label FROM choice_votes ORDER BY updated_at DESC LIMIT 20'),

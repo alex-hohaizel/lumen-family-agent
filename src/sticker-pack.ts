@@ -6,9 +6,9 @@ import {createHash} from 'node:crypto';
 import {Telegram,type TGSticker} from './telegram.js';
 import {rememberSticker} from './presentation.js';
 import type {Database} from './db.js';
+import {STICKER_SET,STICKER_TITLE,LEGACY_STICKER_SET,STICKER_CHECKPOINT_FILE} from './sticker-set.js';
 
-export const STICKER_SET='Lumen_Moods_by_lumen_family_agent';
-export const STICKER_TITLE='Люмен — 50 емоцій';
+export {STICKER_SET,STICKER_TITLE,LEGACY_STICKER_SET,STICKER_CHECKPOINT_FILE,stickerSetURL} from './sticker-set.js';
 export interface StickerAsset {id:string;emoji:string;label:string;description:string;file:string;bytes:number;sha256:string;motion_version?:number;preview?:string;scene?:string;}
 export interface LumenPack {name:string;stickers:TGSticker[];title?:string;}
 export async function stickerAssets(){return JSON.parse(await readFile(new URL('../../assets/stickers/manifest.json',import.meta.url),'utf8')) as StickerAsset[];}
@@ -25,9 +25,9 @@ export async function ensureStickerPack(telegram:Telegram,ownerId:string,runtime
     binaries.push(bytes);
   }
   const title=STICKER_TITLE;
-  const path=runtimeDir?resolve(runtimeDir,'sticker-pack.json'):undefined;
-  let saved:{items:Record<string,{sha256:string;file_unique_id:string}>}={items:{}};
-  if(path)try{saved=JSON.parse(await readFile(path,'utf8'));if(!saved?.items||typeof saved.items!=='object'||Array.isArray(saved.items))throw Error();}catch(e:any){if(e.code!=='ENOENT')throw Error('sticker_checkpoint_invalid');}
+  const path=runtimeDir?resolve(runtimeDir,STICKER_CHECKPOINT_FILE):undefined;
+  let saved:{set_name:string;items:Record<string,{sha256:string;file_unique_id:string}>}={set_name:STICKER_SET,items:{}};
+  if(path)try{saved=JSON.parse(await readFile(path,'utf8'));if(saved?.set_name!==STICKER_SET||!saved.items||typeof saved.items!=='object'||Array.isArray(saved.items))throw Error();}catch(e:any){if(e.code!=='ENOENT')throw Error('sticker_checkpoint_invalid');}
   const persist=async()=>{if(path)await atomicJSON(path,saved);};
   const valid=(pack:LumenPack)=>{if(typeof pack?.name!=='string'||pack.name.toLowerCase()!==STICKER_SET.toLowerCase()||!Array.isArray(pack.stickers)||pack.stickers.length>50||pack.stickers.some(s=>!s.is_video))throw Error('sticker_set_unexpected');return pack;};
   let existing:LumenPack|undefined;let created=false;
@@ -88,17 +88,18 @@ export async function ensureStickerPack(telegram:Telegram,ownerId:string,runtime
   const confirmed=valid(await telegram.call<LumenPack>('getStickerSet',{name:STICKER_SET}));
   if(confirmed.stickers.length!==assets.length||new Set(confirmed.stickers.map(s=>s.file_unique_id)).size!==assets.length)throw Error('sticker_set_unexpected');
   if(confirmed.title!==title)throw Error('sticker_set_title_unconfirmed');
+  if(confirmed.stickers.some(s=>s.set_name?.toLowerCase()!==STICKER_SET.toLowerCase()))throw Error('sticker_set_membership_unconfirmed');
   if(confirmed.stickers.some((s,i)=>{
     const asset=assets[i]!,checkpoint=saved.items[asset.id];
     return checkpoint?.sha256!==asset.sha256||checkpoint.file_unique_id!==s.file_unique_id||s.emoji?.replace(/\uFE0F/g,'')!==asset.emoji.replace(/\uFE0F/g,'');
   }))throw Error('sticker_set_content_unconfirmed');
-  console.log(JSON.stringify({event:'sticker_pack_verified',source:'telegram_getStickerSet',name:confirmed.name,title:confirmed.title,count:confirmed.stickers.length,matched_assets:assets.length,verified_at:new Date().toISOString()}));
+  console.log(JSON.stringify({event:'sticker_pack_verified',source:'telegram_getStickerSet',name:confirmed.name,title:confirmed.title,count:confirmed.stickers.length,matched_assets:assets.length,matched_memberships:confirmed.stickers.length,verified_at:new Date().toISOString()}));
   return confirmed;
 }
 export async function seedStickerPack(db:Database,pack:LumenPack){
   const assets=await stickerAssets();if(pack.stickers.length!==assets.length||pack.name.toLowerCase()!==STICKER_SET.toLowerCase())throw Error('sticker_set_unexpected');
   await db.tx(async sql=>{
-    await sql.query('DELETE FROM stickers WHERE lower(set_name)=lower($1) AND NOT(file_unique_id=ANY($2::text[]))',[pack.name,pack.stickers.map(s=>s.file_unique_id)]);
+    await sql.query('DELETE FROM stickers WHERE lower(set_name)=ANY($1::text[]) AND NOT(file_unique_id=ANY($2::text[]))',[[pack.name.toLowerCase(),LEGACY_STICKER_SET.toLowerCase()],pack.stickers.map(s=>s.file_unique_id)]);
     for(const [index,sticker] of pack.stickers.entries()){
       const asset=assets[index]!;await rememberSticker(sql,{...sticker,emoji:asset.emoji,set_name:pack.name},null);
       await sql.query('UPDATE stickers SET description=$1,keywords=$2 WHERE file_unique_id=$3',[`${asset.label}. ${asset.description}`.slice(0,1400),asset.label+', Люмен',sticker.file_unique_id]);
@@ -108,4 +109,3 @@ export async function seedStickerPack(db:Database,pack:LumenPack){
   });
   console.log(JSON.stringify({event:'sticker_catalog_ready',count:assets.length}));
 }
-export function stickerSetURL(){return 'https://t.me/addstickers/'+STICKER_SET;}

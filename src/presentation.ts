@@ -2,6 +2,7 @@ import {randomUUID} from 'node:crypto';
 import {one,type SQL} from './db.js';
 import type {Plan} from './model.js';
 import type {InlineKeyboard,Message,TextEntity,TGSticker} from './telegram.js';
+import {STICKER_SET} from './sticker-set.js';
 
 // The model names visible text spans, never UTF-16 offsets or Telegram API methods.
 export function textEntities(text:string,formatting:NonNullable<Plan['presentation']>['formatting']):TextEntity[]{
@@ -36,7 +37,7 @@ export async function contextualKeyboard(sql:SQL,presentation:Plan['presentation
 export async function rememberSticker(sql:SQL,sticker:TGSticker,sourceId:number|null){
   if(sticker.type&&sticker.type!=='regular')return;
   if(!/^[A-Za-z0-9_-]{1,512}$/.test(sticker.file_id)||!sticker.file_unique_id)return;
-  await sql.query("INSERT INTO stickers(file_id,file_unique_id,emoji,set_name,source_message_id) VALUES($1,$2,$3,$4,$5) ON CONFLICT(file_unique_id) DO UPDATE SET file_id=excluded.file_id,emoji=COALESCE(NULLIF(excluded.emoji,''),stickers.emoji),set_name=COALESCE(NULLIF(excluded.set_name,''),stickers.set_name),source_message_id=COALESCE(excluded.source_message_id,stickers.source_message_id)",[sticker.file_id,sticker.file_unique_id.slice(0,128),(sticker.emoji || '').slice(0,16),(sticker.set_name || '').slice(0,64),sourceId]);
+  await sql.query("INSERT INTO stickers(file_id,file_unique_id,emoji,set_name,source_message_id) VALUES($1,$2,$3,$4,$5) ON CONFLICT(file_unique_id) DO UPDATE SET file_id=CASE WHEN lower(stickers.set_name)=$6 AND lower(excluded.set_name)<>$6 THEN stickers.file_id ELSE excluded.file_id END,emoji=CASE WHEN lower(stickers.set_name)=$6 AND lower(excluded.set_name)<>$6 THEN stickers.emoji ELSE COALESCE(NULLIF(excluded.emoji,''),stickers.emoji) END,set_name=CASE WHEN lower(stickers.set_name)=$6 THEN stickers.set_name ELSE COALESCE(NULLIF(excluded.set_name,''),stickers.set_name) END,source_message_id=COALESCE(excluded.source_message_id,stickers.source_message_id)",[sticker.file_id,sticker.file_unique_id.slice(0,128),(sticker.emoji || '').slice(0,16),(sticker.set_name || '').slice(0,64),sourceId,STICKER_SET.toLowerCase()]);
 }
 export function explicitStickerRequest(text:string){
   const unquoted=text.replace(/^>.*$/gm,'').replace(/[«“\"][^»”\"]*[»”\"]/g,'');
@@ -61,7 +62,7 @@ export async function queueDecoration(sql:SQL,plan:Plan,m:Message,revision:numbe
       }
     }
     const sticker=await one(sql,'SELECT id,file_id,emoji,set_name FROM stickers WHERE id=$1',[p.sticker_id]);if(!sticker)return false;
-    if(!explicit&&String(sticker.set_name).toLowerCase()!=='lumen_moods_by_lumen_family_agent')return false;
+    if(!explicit&&String(sticker.set_name).toLowerCase()!==STICKER_SET.toLowerCase())return false;
     if(!explicit&&await one(sql,"SELECT id FROM (SELECT id,body FROM outbox WHERE kind='sticker' AND status IN ('pending','sending','uncertain','sent') ORDER BY id DESC LIMIT 3) recent WHERE body->>'stickerId'=$1 OR body->>'emoji'=$2 LIMIT 1",[String(sticker.id),sticker.emoji]))return false;
     kind='sticker';body={fileId:sticker.file_id,stickerId:sticker.id,emoji:sticker.emoji,stickerPurpose:explicit?'requested':'emphasis',...(explicit?{}:{stickerQuote:p.sticker_quote})};
   }else{if(m.message_id<=0)return false;if(!explicit&&await one(sql,"SELECT id FROM outbox WHERE kind IN ('sticker','reaction') AND status IN ('pending','sending','sent') AND created_at>now()-interval '5 minutes' LIMIT 1"))return false;kind='reaction';body={emoji:p.reaction,messageId:m.message_id};}
