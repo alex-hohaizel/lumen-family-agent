@@ -9,7 +9,7 @@ import {queueReleaseNotice,RELEASE} from '../src/release.js';
 import {Delivery} from '../src/delivery.js';
 import {VisualMemory} from '../src/visual.js';
 import {Telegram,TelegramError} from '../src/telegram.js';
-import {ensureStickerPack,stickerAssets,STICKER_SET} from '../src/sticker-pack.js';
+import {ensureStickerPack,stickerAssets,STICKER_SET,STICKER_COUNT,STICKER_TITLE} from '../src/sticker-pack.js';
 import {ImageJobs} from '../src/image-jobs.js';
 import {Media} from '../src/media.js';
 
@@ -35,7 +35,11 @@ describe('Публікація 1.3, реальні відеокадри та т�
   });
   it('одноразове оголошення стає sent лише після підтвердженої доставки',async()=>{
     await db.query("INSERT INTO release_notices(version,status,telegram_id) VALUES('1.8.0','sent',900)");
-    assert.equal(await queueReleaseNotice(db,'https://t.me/addstickers/'+STICKER_SET),true);assert.equal(await queueReleaseNotice(db),false);assert.equal((await one(db,'SELECT status FROM release_notices WHERE version=$1',[RELEASE]))!.status,'pending');const d=new Delivery(db,h.tg as unknown as Telegram,h.config);await d.next();assert.equal(h.tg.sent.length,1);assert.match(h.tg.sent[0]!.text,/Люмен 1\.9/);assert.match(h.tg.sent[0]!.text,/Мова всього чату/);assert.match(h.tg.sent[0]!.text,/відкладене доручення/);assert.equal((await one(db,'SELECT status FROM release_notices WHERE version=$1',[RELEASE]))!.status,'sent');assert.equal(await queueReleaseNotice(db),false);assert.equal((await one(db,"SELECT telegram_id FROM release_notices WHERE version='1.8.0'"))!.telegram_id,900);
+    const url='https://t.me/addstickers/'+STICKER_SET;
+    assert.equal(await queueReleaseNotice(db,url),true);assert.equal(await queueReleaseNotice(db,url),false);assert.equal((await one(db,'SELECT status FROM release_notices WHERE version=$1',[RELEASE]))!.status,'pending');const d=new Delivery(db,h.tg as unknown as Telegram,h.config);await d.next();assert.equal(h.tg.sent.length,1);assert.match(h.tg.sent[0]!.text,/Люмен 1\.10/);assert.match(h.tg.sent[0]!.text,/120 анімованих сцен/);assert.match(h.tg.sent[0]!.text,/89 нових реакцій/);assert.match(h.tg.sent[0]!.text,/Попередній набір із 50 збережений окремо/);assert.ok(h.tg.sent[0]!.text.includes(url));assert.equal((await one(db,'SELECT status FROM release_notices WHERE version=$1',[RELEASE]))!.status,'sent');assert.equal(await queueReleaseNotice(db,url),false);assert.equal((await one(db,"SELECT telegram_id FROM release_notices WHERE version='1.8.0'"))!.telegram_id,900);
+  });
+  it('не анонсує новий набір, поки немає підтвердженого посилання',async()=>{
+    assert.equal(await queueReleaseNotice(db),false);assert.equal((await db.query('SELECT * FROM release_notices')).rows.length,0);assert.equal((await db.query('SELECT * FROM outbox')).rows.length,0);
   });
   it('дістає три різні реальні кадри з готового WEBM-стікера',async()=>{
     h.tg.file=async()=>readFile(new URL('../../assets/stickers/lumen_50.webm',import.meta.url));const frames=await visual().frames({kind:'sticker_video',file_id:'own-wave'});assert.equal(frames.mode,'sampled_animation_frames');assert.equal(frames.images.length,3);assert.ok(new Set(frames.images).size>=2);
@@ -43,10 +47,19 @@ describe('Публікація 1.3, реальні відеокадри та т�
   it('пауза скасовує незавершене зображення й активні продовження',async()=>{
     h.config.apiKey='test';h.config.imageModel='test';h.brain.replies.push({reply:'Який колір?',actions:[{kind:'image',prompt:'Море'}],dialogue:{kind:'media',audience:'personal',expecting:'Який колір?'}});await h.lumen.receive(message('Люмен, намалюй море'));await h.lumen.processNext();let release!:(b:Buffer)=>void;const jobs=new ImageJobs(db,h.config,h.tg as unknown as Telegram,visual(),{image:()=>new Promise<Buffer>(r=>{release=r;})} as unknown as Media);const pending=jobs.next();while(!release)await new Promise(r=>setTimeout(r,1));await h.lumen.receive(message('/pause'));release(Buffer.from('image'));await pending;assert.equal((await one(db,'SELECT status FROM image_jobs'))!.status,'cancelled');assert.equal((await db.query('SELECT * FROM dialogues')).rows.length,0);assert.equal(h.tg.sent.length,0);
   });
-  it('пакує рівно 50 перевірених прозорих WEBM і відновлюється після непевного створення',async()=>{
-    const assets=await stickerAssets();assert.equal(assets.length,50);let reads=0,creates=0;
-    const pack={name:STICKER_SET,title:'Люмен — 50 емоцій',stickers:assets.map((a,i)=>({file_id:'video-'+i,file_unique_id:'unique-'+i,is_video:true,set_name:STICKER_SET,emoji:a.emoji}))};
-    const tg={call:async(method:string)=>{assert.equal(method,'getStickerSet');if(++reads===1)throw new TelegramError('telegram_400');return pack;},multipart:async(method:string,form:FormData)=>{assert.equal(method,'createNewStickerSet');creates++;const input=JSON.parse(String(form.get('stickers')));assert.equal(input.length,50);for(const [i,a] of assets.entries()){assert.equal(input[i].format,'video');const blob=form.get('sticker'+i) as Blob;const bytes=Buffer.from(await blob.arrayBuffer());assert.equal(createHash('sha256').update(bytes).digest('hex'),a.sha256);assert.ok(bytes.length<=256*1024);}throw new TelegramError('telegram_network',0,true);}} as unknown as Telegram;
-    assert.equal((await ensureStickerPack(tg,'11')).stickers.length,50);assert.equal(creates,1);assert.equal(reads,3);
+  it('перевіряє байти початкових 50 і наступних 70 WEBM та відновлює непевне створення',async()=>{
+    const assets=await stickerAssets();assert.equal(assets.length,STICKER_COUNT);let reads=0,creates=0,adds=0;
+    const stickers=assets.map((a,i)=>({file_id:'video-'+i,file_unique_id:'unique-'+i,is_video:true,set_name:STICKER_SET,emoji:a.emoji}));
+    const pack={name:STICKER_SET,title:STICKER_TITLE,stickers:[] as typeof stickers};
+    const verify=async(blob:Blob,i:number)=>{const bytes=Buffer.from(await blob.arrayBuffer());assert.equal(createHash('sha256').update(bytes).digest('hex'),assets[i]!.sha256);assert.ok(bytes.length<=256*1024);};
+    const tg={call:async(method:string)=>{assert.equal(method,'getStickerSet');if(++reads===1)throw new TelegramError('telegram_400');return structuredClone(pack);},multipart:async(method:string,form:FormData)=>{
+      if(method==='createNewStickerSet'){
+        creates++;const input=JSON.parse(String(form.get('stickers')));assert.equal(input.length,50);
+        for(let i=0;i<50;i++){assert.equal(input[i].format,'video');await verify(form.get('sticker'+i) as Blob,i);}
+        pack.stickers=stickers.slice(0,50);throw new TelegramError('telegram_network',0,true);
+      }
+      assert.equal(method,'addStickerToSet');const i=pack.stickers.length;await verify(form.get('video') as Blob,i);assert.equal(JSON.parse(String(form.get('sticker'))).emoji_list[0],assets[i]!.emoji);pack.stickers.push(stickers[i]!);adds++;return true;
+    }} as unknown as Telegram;
+    assert.equal((await ensureStickerPack(tg,'11',undefined,0)).stickers.length,STICKER_COUNT);assert.equal(creates,1);assert.equal(adds,STICKER_COUNT-50);assert.equal(reads,3+STICKER_COUNT-50);
   });
 });
