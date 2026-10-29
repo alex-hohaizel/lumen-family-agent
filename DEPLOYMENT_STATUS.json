@@ -1,9 +1,9 @@
 {
-  "version": "1.8.0",
-  "status": "live_verified",
-  "production_version": "1.8.0",
-  "production_code_commit": "48faa105ff6b8c94be434fabe0018a2bb9454903",
-  "production_deploy_id": "dep-dbhhb549v7es73av661g",
+  "version": "1.9.0",
+  "status": "live_release_notices_verified",
+  "production_version": "1.9.0",
+  "production_code_commit": "3d0ec3d5e83ed44719cf8d63ad51b9c4ea586237",
+  "production_deploy_id": "dep-dbhhht7lk1mc73cpiru0",
   "target_repository": "alex-hohaizel/lumen-family-agent",
   "target_branch": "main",
   "target_service_id": "srv-dbfl0je7bikc73dvg0qg",
@@ -20,28 +20,31 @@
     "passed": 367,
     "failed": 0,
     "suites": 24,
-    "new_behavioral_scenarios": 28
+    "source": "Render build logs",
+    "completed_at": "2026-10-29T10:02:09.814311119Z",
+    "targeted_regressions_passed": 2,
+    "targeted_regressions_are_repeats": true
   },
   "blocker": null,
   "next_steps": [],
   "publication_authorized": true,
   "authorization_confirmed_on": "2026-10-29",
-  "deployed_source_tree": "393feaee6c9eccee0326abce951d4a7e8780b7e7",
-  "live_at": "2026-10-29T09:48:44.741854Z",
-  "runtime_checks_passed": 9,
+  "deployed_source_tree": "643c1ea1e1adb4d4c2c5ac3595162082773cbf38",
+  "live_at": "2026-10-29T10:03:16.37078Z",
+  "runtime_checks_passed": 8,
   "sticker_pack_count": 50,
   "sticker_catalog_count": 50,
   "release_notice_delivered": true,
-  "verification": "docs/PERSONALIZATION_SCHEDULING_2026_10_29.json",
-  "publication_base_commit": "c08cd58fe0cb4ed4c7b8e0b7e712b583499fb739",
-  "runtime_started_at": "2026-10-29T09:49:09.845999935Z",
-  "verification_completed_at": "2026-10-29T09:51:53.535Z",
-  "previous_release_verification": "docs/PUBLIC_STICKER_SET_1_8_2026_10_29.json",
-  "runtime_checks_verified_at": "2026-10-29T09:49:31.558012778Z",
-  "runtime_checks_rechecked_in_hotfix": false,
+  "verification": "docs/RELEASE_1_9_DELIVERY_2026_10_29.json",
+  "publication_base_commit": "3ec2a8a7bea52db05980705669a777d824679781",
+  "runtime_started_at": "2026-10-29T10:03:20.952081127Z",
+  "verification_completed_at": "2026-10-29T10:07:19.927Z",
+  "previous_release_verification": "docs/PERSONALIZATION_SCHEDULING_2026_10_29.json",
+  "runtime_checks_verified_at": "2026-10-29T10:04:38.096516652Z",
+  "runtime_checks_rechecked_in_hotfix": true,
   "sticker_pack_title": "Люмен — 50 емоцій",
   "sticker_pack_matched_assets": 50,
-  "sticker_pack_verified_at": "2026-10-29T09:48:47.642Z",
+  "sticker_pack_verified_at": "2026-10-29T10:03:18.963Z",
   "client_cache_refresh_pending": false,
   "sticker_set": "Lumen_50_v18_by_lumen_family_agent",
   "legacy_sticker_set": "Lumen_Moods_by_lumen_family_agent",
@@ -50,9 +53,31 @@
   "public_sticker_page_verified": true,
   "client_installation_verification_pending": true,
   "new_runtime_checks_verified": [
-    "personalization_scheduling_190"
+    "web_read",
+    "public_search",
+    "native_search",
+    "automatic_freshness_choice",
+    "browser",
+    "compute",
+    "documents",
+    "interactions"
   ],
   "schema_version": 12,
   "personalization_recovered_settings": 4,
-  "russian_chat_policies_recovered": 2
+  "russian_chat_policies_recovered": 2,
+  "runtime_checks_failed": [
+    {
+      "check": "personalization_scheduling_190",
+      "result": {
+        "ok": false,
+        "code": "check_failed",
+        "error_type": "Error",
+        "detail": "contextual_schedule_plan_invalid"
+      },
+      "at": "2026-10-29T10:04:38.096516652Z"
+    }
+  ],
+  "release_notices_delivered": 2,
+  "release_notices_expected": 2,
+  "release_notices_verified_at": "2026-10-29T10:03:28.952248587Z"
 }
