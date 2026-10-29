@@ -8,6 +8,7 @@ import {Telegram,type Update} from '../src/telegram.js';
 import {addressed} from '../src/engine.js';
 import {Memory} from '../src/memory.js';
 import {setupPayload,callbackCommand} from '../src/ui.js';
+import {stickerAssets,STICKER_SET,STICKER_COUNT,STICKER_TITLE} from '../src/sticker-pack.js';
 
 describe('Окремі групи, природні звернення та теми Telegram',()=>{
   const root=new TestDB();let h:ReturnType<typeof harness>,registry:ChatRegistry,router:ChatRouter;
@@ -43,8 +44,9 @@ describe('Окремі групи, природні звернення та те
   });
   it('перезапуск оголошує нову версію в наявній групі один раз, навіть без старого onboarding',async()=>{
     const a=await add();await a.db.query('DELETE FROM onboarding_chats');await a.db.query('DELETE FROM release_notices');await a.db.query('DELETE FROM outbox');
-    const restart=()=>new ChatRouter(registry,h.config,h.tg as unknown as Telegram,bot,()=>brains.get('-200')!);
-    await restart().init();await restart().init();const rows=(await a.db.query('SELECT * FROM outbox')).rows;assert.equal(rows.length,1);assert.match(rows[0]!.body.text,/Люмен 1\.9/);assert.equal(rows[0]!.service,true);
+    const assets=await stickerAssets();
+    const restart=()=>{const r=new ChatRouter(registry,h.config,h.tg as unknown as Telegram,bot,()=>brains.get('-200')!);r.setStickerPack({name:STICKER_SET,title:STICKER_TITLE,stickers:assets.map((x,i)=>({file_id:'verified-'+i,file_unique_id:'verified-unique-'+i,is_video:true,set_name:STICKER_SET,emoji:x.emoji}))});return r;};
+    await restart().init();await restart().init();const rows=(await a.db.query('SELECT * FROM outbox')).rows;assert.equal(rows.length,1);assert.match(rows[0]!.body.text,/Люмен 1\.10/);assert.equal(rows[0]!.service,true);
   });
   it('не підключає чужу групу чи чужий приватний акаунт за підробленим посиланням',async()=>{
     await router.receive({update_id:seq++,message:{...msg('',-300,22).message!,new_chat_members:[{id:999,first_name:'Люмен'}]}});
@@ -184,12 +186,12 @@ describe('Окремі групи, природні звернення та те
     assert.equal((await a.db.query("SELECT * FROM outbox WHERE kind='reaction'")).rows.length,1);
     await a.db.query('DELETE FROM outbox');brains.get('-200')!.replies.push({reply:'Поговорімо спокійно.',actions:[],presentation:{reaction:'😁'}});await ask(a,msg('Люмен, мені дуже важко після смерті близької людини'));assert.equal((await a.db.query("SELECT * FROM outbox WHERE kind='reaction'")).rows.length,0);
   });
-  it('модель бачить усі 50 власних сцен навіть серед багатьох чужих стікерів',async()=>{
+  it('модель бачить усі 120 власних сцен навіть серед багатьох чужих стікерів',async()=>{
     const a=await add();const {stickerAssets,seedStickerPack,STICKER_SET}=await import('../src/sticker-pack.js');const assets=await stickerAssets();
     await seedStickerPack(a.db,{name:STICKER_SET,stickers:assets.map((x,i)=>({file_id:'own-'+i,file_unique_id:'own-unique-'+i,is_video:true,emoji:x.emoji}))});
     for(let i=0;i<60;i++)await a.db.query("INSERT INTO stickers(file_id,file_unique_id,set_name) VALUES($1,$2,'OtherSet')",['foreign-'+i,'foreign-unique-'+i]);
     await ask(a,msg('Люмене, які твої емоції є в наборі?'));const catalog=JSON.parse(brains.get('-200')!.calls.at(-1)!.context).available_stickers;
-    assert.equal(catalog.filter((x:any)=>x.set_name===STICKER_SET).length,50);assert.equal(new Set(catalog.filter((x:any)=>x.set_name===STICKER_SET).map((x:any)=>x.emoji)).size,50);
+    assert.equal(catalog.filter((x:any)=>x.set_name===STICKER_SET).length,STICKER_COUNT);assert.equal(new Set(catalog.filter((x:any)=>x.set_name===STICKER_SET).map((x:any)=>x.emoji)).size,STICKER_COUNT);assert.ok(catalog.some((x:any)=>x.emoji==='🤖'));
   });
   it('реакція надходить лише на поточне повідомлення у своїй групі',async()=>{
     const a=await add();brains.get('-200')!.replies.push({reply:'',actions:[],presentation:{reaction:'👍'}});const u=msg('Люмен, дякую');await ask(a,u);await a.delivery.next();
