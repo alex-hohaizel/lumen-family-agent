@@ -344,7 +344,7 @@ export class Lumen {
           this.db.query('SELECT body,source_ids,created_at FROM episodes ORDER BY id DESC LIMIT 5'),
           this.db.query('SELECT id,name,closed FROM topics ORDER BY updated_at DESC LIMIT 60'),
           this.db.query('SELECT id,telegram_id AS message_id,author,user_id,role,body,created_at,topic_id FROM messages WHERE topic_id=$1 ORDER BY id DESC LIMIT 16',[topicId]),
-          this.db.query("SELECT id,emoji,set_name,description,keywords FROM stickers ORDER BY (set_name LIKE 'Lumen%') DESC,created_at DESC LIMIT 48"),
+          this.db.query("SELECT id,emoji,set_name,description,keywords FROM stickers ORDER BY (lower(set_name)='lumen_moods_by_lumen_family_agent') DESC,created_at DESC LIMIT 80"),
           this.db.query('SELECT a.id,a.source_message_id,a.kind,a.description,a.topic_id,m.author,m.created_at FROM attachments a LEFT JOIN messages m ON m.id=a.source_message_id ORDER BY a.id DESC LIMIT 16'),
           this.db.query('SELECT id,prompt,author_id,author_name,topic_id,status,cancelled FROM image_jobs WHERE topic_id=$1 ORDER BY id DESC LIMIT 8',[topicId]),
           this.db.query('SELECT menu_id,user_id,name,label FROM choice_votes ORDER BY updated_at DESC LIMIT 20'),
@@ -446,7 +446,7 @@ export class Lumen {
         if(m.lumen_interaction?.partial&&combined){await sql.query("UPDATE interaction_responses SET result=$1 WHERE interaction_id=$2 AND version=$3 AND user_id=$4 AND submitted=true AND decision IN ('answer','agree') AND result IS NULL",[combined.slice(0,1200),m.lumen_interaction.id,m.lumen_interaction.version,uid]);await queueInteraction(sql,m.lumen_interaction.id);}
         if(m.lumen_interaction?.ready&&!starting){const stage=await interactionView(sql,m.lumen_interaction.id);if(stage.kind!=='activity'&&stage.phase==='ready')await sql.query("UPDATE interactions SET phase='resolved',result=$1,updated_at=now() WHERE id=$2 AND version=$3 AND phase='ready'",[(combined||'Наступний крок підготовлено.').slice(0,2000),stage.id,stage.version]);}
         if(!interactionCard&&(!proactive||plan!.dialogue||plan!.reply.includes('?')))await saveDialogue(sql,plan!,m,Number(job.payload.sourceId),live.memory_revision,Array.from(new Set([...requested,...inherited,...(proactive&&/намалю|зображ|картин/iu.test(plan!.reply)?['image']:[])])));
-        const decorated=(direct||proactive||Boolean(game))&&await queueDecoration(sql,plan!,m,live.memory_revision,job.update_id,serious,humorOff);
+        const decorated=(direct||proactive||Boolean(game))&&await queueDecoration(sql,plan!,m,live.memory_revision,job.update_id,serious,humorOff,combined);
         await sql.query("UPDATE inbox SET status='done',plan=NULL,payload='{}' WHERE update_id=$1",[job.update_id]);
         if(proactive&&(combined||decorated))await recordAmbientReply(sql,topicId,combined,Number(job.payload.sourceId),Number(job.update_id));
         if(combined||decorated)await sql.query('UPDATE app_state SET last_bot_at=now(),since_bot=0,last_model_error=NULL WHERE id=1');

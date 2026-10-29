@@ -1,0 +1,186 @@
+[
+  {
+    "file": "reference-hand-wave.tgs",
+    "bytes": 11908,
+    "json_bytes": 170172,
+    "gzip_bytes": 11908,
+    "fps": 60,
+    "size": [
+      512,
+      512
+    ],
+    "frames": 180,
+    "seconds": 3.0,
+    "root_layers": 45,
+    "total_layers": 45,
+    "shape_types": {
+      "4": 42,
+      "gr": 58,
+      "sh": 58,
+      "fl": 31,
+      "tr": 58,
+      "st": 27,
+      "3": 3
+    },
+    "keyframes": 366,
+    "eased_keyframes": 301,
+    "animated_paths": 38,
+    "parented_layers": 42,
+    "source": "https://github.com/TelegramMessenger/Telegram-iOS/blob/master/submodules/TelegramUI/Resources/Animations/HandWaveEmoji.tgs",
+    "author": "Telegram"
+  },
+  {
+    "file": "reference-sleep.tgs",
+    "bytes": 38806,
+    "json_bytes": 305409,
+    "gzip_bytes": 38806,
+    "fps": 60,
+    "size": [
+      512,
+      512
+    ],
+    "frames": 180,
+    "seconds": 3.0,
+    "root_layers": 39,
+    "total_layers": 39,
+    "shape_types": {
+      "3": 4,
+      "4": 35,
+      "gr": 57,
+      "sh": 93,
+      "fl": 21,
+      "tr": 57,
+      "gf": 6,
+      "st": 39
+    },
+    "keyframes": 969,
+    "eased_keyframes": 792,
+    "animated_paths": 93,
+    "parented_layers": 38,
+    "source": "https://github.com/TelegramMessenger/Telegram-iOS/blob/master/submodules/TelegramUI/Resources/Animations/ZzzEmoji.tgs",
+    "author": "Telegram"
+  },
+  {
+    "file": "reference-business-clock.tgs",
+    "bytes": 33321,
+    "json_bytes": 198313,
+    "gzip_bytes": 33321,
+    "fps": 60,
+    "size": [
+      512,
+      512
+    ],
+    "frames": 180,
+    "seconds": 3.0,
+    "root_layers": 19,
+    "total_layers": 19,
+    "shape_types": {
+      "4": 19,
+      "gr": 64,
+      "sh": 57,
+      "st": 48,
+      "tr": 64,
+      "gf": 17,
+      "fl": 15,
+      "tm": 2
+    },
+    "keyframes": 852,
+    "eased_keyframes": 729,
+    "animated_paths": 50,
+    "parented_layers": 18,
+    "source": "https://github.com/TelegramMessenger/Telegram-iOS/blob/master/submodules/TelegramUI/Resources/Animations/BusinessHoursEmoji.tgs",
+    "author": "Telegram"
+  },
+  {
+    "file": "noto-1f602.json",
+    "bytes": 59124,
+    "json_bytes": 59124,
+    "gzip_bytes": 5093,
+    "fps": 60,
+    "size": [
+      1024,
+      1024
+    ],
+    "frames": 118,
+    "seconds": 1.9667,
+    "root_layers": 1,
+    "total_layers": 13,
+    "shape_types": {
+      "3": 2,
+      "4": 10,
+      "gr": 15,
+      "sh": 15,
+      "fl": 13,
+      "tr": 15,
+      "gf": 2,
+      "0": 1
+    },
+    "keyframes": 137,
+    "eased_keyframes": 120,
+    "animated_paths": 6,
+    "parented_layers": 11,
+    "source": "https://fonts.gstatic.com/s/e/notoemoji/latest/1f602/lottie.json",
+    "author": "Google Noto"
+  },
+  {
+    "file": "noto-1f970.json",
+    "bytes": 58353,
+    "json_bytes": 58353,
+    "gzip_bytes": 4933,
+    "fps": 60,
+    "size": [
+      1024,
+      1024
+    ],
+    "frames": 98,
+    "seconds": 1.6333,
+    "root_layers": 19,
+    "total_layers": 19,
+    "shape_types": {
+      "3": 3,
+      "4": 16,
+      "gr": 29,
+      "sh": 29,
+      "fl": 25,
+      "tr": 29,
+      "gf": 4
+    },
+    "keyframes": 178,
+    "eased_keyframes": 141,
+    "animated_paths": 13,
+    "parented_layers": 18,
+    "source": "https://fonts.gstatic.com/s/e/notoemoji/latest/1f970/lottie.json",
+    "author": "Google Noto"
+  },
+  {
+    "file": "noto-1f923.json",
+    "bytes": 78237,
+    "json_bytes": 78237,
+    "gzip_bytes": 14028,
+    "fps": 60,
+    "size": [
+      1024,
+      1024
+    ],
+    "frames": 60,
+    "seconds": 1.0,
+    "root_layers": 2,
+    "total_layers": 15,
+    "shape_types": {
+      "4": 12,
+      "gr": 20,
+      "sh": 20,
+      "fl": 13,
+      "tr": 20,
+      "gf": 7,
+      "3": 1,
+      "0": 2
+    },
+    "keyframes": 238,
+    "eased_keyframes": 187,
+    "animated_paths": 20,
+    "parented_layers": 6,
+    "source": "https://fonts.gstatic.com/s/e/notoemoji/latest/1f923/lottie.json",
+    "author": "Google Noto"
+  }
+]

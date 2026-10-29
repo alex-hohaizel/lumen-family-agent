@@ -99,7 +99,7 @@ export class Delivery {
       const deliveredRelease=await this.db.tx(async sql=>{
         const live=await state(sql,true);if(live.memory_revision!==row.revision)return;
         const still=await one(sql,'SELECT id FROM outbox WHERE id=$1',[row.id]);if(!still)return;
-        await sql.query("UPDATE outbox SET status='sent',telegram_id=$1,body=$2 WHERE id=$3",[sent.message_id,JSON.stringify({text:deliveredText}),row.id]);
+        await sql.query("UPDATE outbox SET status='sent',telegram_id=$1,body=$2 WHERE id=$3",[sent.message_id,JSON.stringify({text:deliveredText,...(row.kind==='sticker'?{stickerId:row.body.stickerId,emoji:row.body.emoji,stickerPurpose:row.body.stickerPurpose,sentAt:new Date().toISOString()}:{})}),row.id]);
         if(row.kind==='poll'&&(sent as any).poll?.id)await sql.query('INSERT INTO polls(poll_id,message_id,topic_id,question,options,correct,revision,source_message_id,interaction_id,interaction_version) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) ON CONFLICT DO NOTHING',[(sent as any).poll.id,sent.message_id,String(row.body.threadId || 0),row.body.question,JSON.stringify(row.body.options),row.body.quiz?.correct ?? null,row.revision,row.source_message_id,row.body.interactionId||null,row.body.interactionVersion||null]);
         if(row.kind==='telegram'&&row.body.operation==='stop_poll')await sql.query('UPDATE polls SET closed=true WHERE message_id=$1',[row.body.message_id]);
         if(row.kind==='telegram'&&row.body.operation==='edit_message')await sql.query("UPDATE messages SET body=$1,edited_at=now() WHERE role='assistant' AND telegram_id=$2",[row.body.text,row.body.message_id]);

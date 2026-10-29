@@ -1,30 +1,37 @@
 {
-  "version": "1.5.0",
-  "status": "live_verified",
-  "published": true,
-  "repository": "alex-hohaizel/lumen-family-agent",
-  "branch": "main",
-  "render_service_id": "srv-dbfl0je7bikc73dvg0qg",
-  "verified_live_commit": "2b12cc33b42fb3a31c5e54b353d5708b8a8eb264",
-  "verified_live_version": "1.5.0",
-  "deploy_id": "dep-dbgh3augekts738o8ee0",
-  "live_at": "2026-10-27T21:05:38.302403Z",
+  "version": "1.8.0",
+  "status": "publishing_after_explicit_destination_authorization",
+  "production_version": "1.7.0",
+  "production_code_commit": "b1567fb97c28f55c5bb535672f694670f22906a0",
+  "production_deploy_id": "dep-dbh26849v7es73bl84v0",
+  "remote_main": "9604291eefa979d98595d1ec2349a150d398eb8f",
+  "target_repository": "alex-hohaizel/lumen-family-agent",
+  "target_branch": "main",
+  "target_service_id": "srv-dbfl0je7bikc73dvg0qg",
+  "target_workspace_id": "tea-dbf5jsfb9u1s73bn4d1g",
+  "main_published": false,
+  "render_deployed": false,
+  "old_chat_stopped": true,
+  "all_sticker_assets_prepared": 50,
+  "binary_blobs_uploaded": 89,
+  "binary_blobs_pending": 11,
+  "text_batches_uploaded": 9,
+  "text_batches_total": 12,
   "tests": {
-    "passed": 239,
+    "passed": 333,
     "failed": 0,
-    "suites": 19,
-    "render_build": true,
-    "completed_at": "2026-10-27T21:04:57.054648677Z"
+    "suites": 22,
+    "final_affected_checks_passed": 13,
+    "final_affected_checks_are_repeats": true
   },
-  "browser_fixture_verified": true,
-  "stickers": {
-    "count": 30,
-    "restored_from": "1.3.1",
-    "motion_version": 2,
-    "ready_at": "2026-10-27T21:05:39.780933702Z"
-  },
-  "new_paid_resources": false,
-  "live_verification_pending": false,
-  "native_search_enabled": true,
-  "verification_record": "docs/LIVE_VERIFICATION_1_5_2026_10_27.json"
+  "blocker": null,
+  "next_steps": [
+    "Obtain explicit destination-specific confirmation",
+    "Complete checkpointed GitHub uploads",
+    "Publish verified release tree to main with expected prior SHA",
+    "Trigger existing Render worker once and monitor its deploy ID",
+    "Verify live version 1.8.0, sticker pack and catalog counts of 50, server tests and runtime probes"
+  ],
+  "publication_authorized": true,
+  "authorization_confirmed_on": "2026-10-29"
 }

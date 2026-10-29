@@ -1,0 +1,8 @@
+*.png
+*.gif
+*.mp4
+*.webm
+keyframes-*/
+input-*/
+interpolated-*/
+frames-*/

@@ -44,7 +44,7 @@ describe('Окремі групи, природні звернення та те
   it('перезапуск оголошує нову версію в наявній групі один раз, навіть без старого onboarding',async()=>{
     const a=await add();await a.db.query('DELETE FROM onboarding_chats');await a.db.query('DELETE FROM release_notices');await a.db.query('DELETE FROM outbox');
     const restart=()=>new ChatRouter(registry,h.config,h.tg as unknown as Telegram,bot,()=>brains.get('-200')!);
-    await restart().init();await restart().init();const rows=(await a.db.query('SELECT * FROM outbox')).rows;assert.equal(rows.length,1);assert.match(rows[0]!.body.text,/Люмен 1\.7/);assert.equal(rows[0]!.service,true);
+    await restart().init();await restart().init();const rows=(await a.db.query('SELECT * FROM outbox')).rows;assert.equal(rows.length,1);assert.match(rows[0]!.body.text,/Люмен 1\.8/);assert.equal(rows[0]!.service,true);
   });
   it('не підключає чужу групу чи чужий приватний акаунт за підробленим посиланням',async()=>{
     await router.receive({update_id:seq++,message:{...msg('',-300,22).message!,new_chat_members:[{id:999,first_name:'Люмен'}]}});
@@ -177,12 +177,19 @@ describe('Окремі групи, природні звернення та те
   it('підхоплює стікери лише у своєму чаті та не відправляє їх під час фонового читання',async()=>{
     const a=await add(),b=await add(-300);const incoming=msg('',-200,22,101);incoming.message!.sticker={file_id:'group_alpha_sticker',file_unique_id:'alpha_unique',emoji:'🙂',type:'regular'};await router.receive(incoming);
     assert.equal((await a.db.query('SELECT * FROM stickers')).rows.length,1);assert.equal((await b.db.query('SELECT * FROM stickers')).rows.length,0);assert.equal((await a.db.query('SELECT * FROM outbox')).rows.length,0);assert.equal(brains.get('-200')!.calls.length,0);
-    const sticker=(await one(a.db,'SELECT id FROM stickers'))!;brains.get('-200')!.replies.push({reply:'',actions:[],presentation:{sticker_id:Number(sticker.id)}});await ask(a,msg('Люмен, привіт',-200,11,101));await a.delivery.next();assert.deepEqual(h.tg.stickers,[{chatId:'-200',fileId:'group_alpha_sticker',threadId:101}]);
+    const sticker=(await one(a.db,'SELECT id FROM stickers'))!;brains.get('-200')!.replies.push({reply:'',actions:[],presentation:{sticker_id:Number(sticker.id),sticker_purpose:'requested'}});await ask(a,msg('Люмен, надішли цей стікер',-200,11,101));await a.delivery.next();assert.deepEqual(h.tg.stickers,[{chatId:'-200',fileId:'group_alpha_sticker',threadId:101}]);
   });
   it('не допускає частих реакцій та стримує їх у серйозних темах',async()=>{
     const a=await add();for(let i=0;i<2;i++){brains.get('-200')!.replies.push({reply:'Добре.',actions:[],presentation:{reaction:'👍'}});await ask(a,msg('Люмен, дякую'));}
     assert.equal((await a.db.query("SELECT * FROM outbox WHERE kind='reaction'")).rows.length,1);
     await a.db.query('DELETE FROM outbox');brains.get('-200')!.replies.push({reply:'Поговорімо спокійно.',actions:[],presentation:{reaction:'😁'}});await ask(a,msg('Люмен, мені дуже важко після смерті близької людини'));assert.equal((await a.db.query("SELECT * FROM outbox WHERE kind='reaction'")).rows.length,0);
+  });
+  it('модель бачить усі 50 власних сцен навіть серед багатьох чужих стікерів',async()=>{
+    const a=await add();const {stickerAssets,seedStickerPack,STICKER_SET}=await import('../src/sticker-pack.js');const assets=await stickerAssets();
+    await seedStickerPack(a.db,{name:STICKER_SET,stickers:assets.map((x,i)=>({file_id:'own-'+i,file_unique_id:'own-unique-'+i,is_video:true,emoji:x.emoji}))});
+    for(let i=0;i<60;i++)await a.db.query("INSERT INTO stickers(file_id,file_unique_id,set_name) VALUES($1,$2,'OtherSet')",['foreign-'+i,'foreign-unique-'+i]);
+    await ask(a,msg('Люмене, які твої емоції є в наборі?'));const catalog=JSON.parse(brains.get('-200')!.calls.at(-1)!.context).available_stickers;
+    assert.equal(catalog.filter((x:any)=>x.set_name===STICKER_SET).length,50);assert.equal(new Set(catalog.filter((x:any)=>x.set_name===STICKER_SET).map((x:any)=>x.emoji)).size,50);
   });
   it('реакція надходить лише на поточне повідомлення у своїй групі',async()=>{
     const a=await add();brains.get('-200')!.replies.push({reply:'',actions:[],presentation:{reaction:'👍'}});const u=msg('Люмен, дякую');await ask(a,u);await a.delivery.next();
