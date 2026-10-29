@@ -46,7 +46,7 @@ async function main(){
   const registry=new ChatRegistry(db);await registry.init();
   startupStage='sticker_pack';
   let pack:Awaited<ReturnType<typeof ensureStickerPack>>|undefined;const owner=(await registry.transport()).owner_user_id;
-  if(owner)try{pack=await ensureStickerPack(telegram,owner,config.runtimeDir);console.log(JSON.stringify({event:'sticker_pack_ready',name:pack.name,title:pack.title,count:pack.stickers.length}));}catch(e){console.error(JSON.stringify({event:'sticker_pack_failed',code:errorCode(e)}));}
+  if(owner)try{pack=await ensureStickerPack(telegram,owner,config.runtimeDir);console.log(JSON.stringify({event:'sticker_pack_ready',name:pack.name,title:pack.title,count:pack.stickers.length}));}catch(e:any){console.error(JSON.stringify({event:'sticker_pack_failed',code:/^[a-z_0-9]+$/.test(e.code||'')?e.code:errorCode(e),detail:/^[a-z_0-9]+$/.test(e.message||'')?e.message:undefined}));}
   startupStage='group_runtimes';
   const router=new ChatRouter(registry,config,telegram,bot);if(pack)router.setStickerPack(pack);await router.init();
   const ingress=new TransportQueue(db,config.runtimeDir,update=>router.receive(update));await ingress.init();

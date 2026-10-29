@@ -9,12 +9,15 @@ import type {Database} from './db.js';
 import {STICKER_SET,STICKER_TITLE,STICKER_COUNT,PREVIOUS_STICKER_SETS,STICKER_CHECKPOINT_FILE} from './sticker-set.js';
 
 export {STICKER_SET,STICKER_TITLE,STICKER_COUNT,PREVIOUS_STICKER_SETS,LEGACY_STICKER_SET,STICKER_CHECKPOINT_FILE,stickerSetURL} from './sticker-set.js';
-export interface StickerAsset {id:string;emoji:string;label:string;description:string;file:string;bytes:number;sha256:string;motion_version?:number;preview?:string;scene?:string;}
+export interface StickerAsset {id:string;emoji:string;telegram_emoji?:string;label:string;description:string;file:string;bytes:number;sha256:string;motion_version?:number;preview?:string;scene?:string;}
 export interface LumenPack {name:string;stickers:TGSticker[];title?:string;}
+// Preserve the scene's semantic emoji while using an explicit compatible tag
+// when Telegram does not yet recognize a newer Unicode emoji.
+function telegramEmoji(asset:StickerAsset){return asset.telegram_emoji??asset.emoji;}
 export async function stickerAssets(){return JSON.parse(await readFile(new URL('../../assets/stickers/manifest.json',import.meta.url),'utf8')) as StickerAsset[];}
 export async function ensureStickerPack(telegram:Telegram,ownerId:string,runtimeDir?:string,paceMs=200){
   const assets=await stickerAssets();
-  if(assets.length!==STICKER_COUNT||new Set(assets.map(a=>a.id)).size!==STICKER_COUNT||new Set(assets.map(a=>a.emoji)).size!==STICKER_COUNT||new Set(assets.map(a=>a.sha256)).size!==STICKER_COUNT)throw Error('sticker_assets_incomplete');
+  if(assets.length!==STICKER_COUNT||new Set(assets.map(a=>a.id)).size!==STICKER_COUNT||new Set(assets.map(a=>a.emoji)).size!==STICKER_COUNT||new Set(assets.map(telegramEmoji)).size!==STICKER_COUNT||new Set(assets.map(a=>a.sha256)).size!==STICKER_COUNT)throw Error('sticker_assets_incomplete');
   // Check the entire release before the first external mutation. An invalid last
   // file must not leave a live pack half replaced.
   const binaries=[];
@@ -40,7 +43,7 @@ export async function ensureStickerPack(telegram:Telegram,ownerId:string,runtime
     // Telegram allows at most 50 initial stickers, even for a 120-item set.
     for(const [index,a] of assets.slice(0,50).entries()){
       const bytes=binaries[index]!;
-      const field='sticker'+index;form.set(field,new Blob([bytes],{type:'video/webm'}),a.file);stickers.push({sticker:'attach://'+field,format:'video',emoji_list:[a.emoji],keywords:[a.label,'Люмен']});
+      const field='sticker'+index;form.set(field,new Blob([bytes],{type:'video/webm'}),a.file);stickers.push({sticker:'attach://'+field,format:'video',emoji_list:[telegramEmoji(a)],keywords:[a.label,'Люмен']});
     }
     form.set('stickers',JSON.stringify(stickers));
     try{await telegram.multipart('createNewStickerSet',form);}catch(e){try{existing=await telegram.call<LumenPack>('getStickerSet',{name:STICKER_SET});}catch{throw e;}}
@@ -68,7 +71,7 @@ export async function ensureStickerPack(telegram:Telegram,ownerId:string,runtime
       }
     }
     if(before&&checkpoint?.sha256===a.sha256&&checkpoint.file_unique_id===before.file_unique_id){
-      if(before.emoji?.replace(/\uFE0F/g,'')!==a.emoji.replace(/\uFE0F/g,'')){await telegram.call('setStickerEmojiList',{sticker:before.file_id,emoji_list:[a.emoji]});before.emoji=a.emoji;}
+      if(before.emoji?.replace(/\uFE0F/g,'')!==telegramEmoji(a).replace(/\uFE0F/g,'')){await telegram.call('setStickerEmojiList',{sticker:before.file_id,emoji_list:[telegramEmoji(a)]});before.emoji=telegramEmoji(a);}
       continue;
     }
     const snapshot=existing;const expectedCount=snapshot.stickers.length+(before?0:1);
@@ -76,27 +79,27 @@ export async function ensureStickerPack(telegram:Telegram,ownerId:string,runtime
       const form=new FormData();form.set('user_id',ownerId);form.set('name',STICKER_SET);
       if(before)form.set('old_sticker',before.file_id);
       form.set('video',new Blob([binaries[index]!],{type:'video/webm'}),a.file);
-      form.set('sticker',JSON.stringify({sticker:'attach://video',format:'video',emoji_list:[a.emoji],keywords:[a.label,'Люмен']}));
+      form.set('sticker',JSON.stringify({sticker:'attach://video',format:'video',emoji_list:[telegramEmoji(a)],keywords:[a.label,'Люмен']}));
       let failed:any;
       try{await telegram.multipart(before?'replaceStickerInSet':'addStickerToSet',form);}catch(e){failed=e;}
       const current=valid(await telegram.call<LumenPack>('getStickerSet',{name:STICKER_SET}));
       const othersUnchanged=snapshot.stickers.every((s,i)=>i===index||current.stickers[i]?.file_unique_id===s.file_unique_id);
       const changed=current.stickers[index]?.file_unique_id!==before?.file_unique_id;
-      const correctEmoji=current.stickers[index]?.emoji?.replace(/\uFE0F/g,'')===a.emoji.replace(/\uFE0F/g,'');
+      const correctEmoji=current.stickers[index]?.emoji?.replace(/\uFE0F/g,'')===telegramEmoji(a).replace(/\uFE0F/g,'');
       const applied=current.stickers.length===expectedCount&&othersUnchanged&&correctEmoji&&(!failed||changed);
       if(applied){existing=current;break;}
       // Resolve an uncertain add by inspecting its position and count before any
       // retry. After a process restart, that position is replaced, never appended
       // a second time. Never delete/recreate the user's subscribed sticker set.
-      if(!failed)throw Error('sticker_set_update_unconfirmed');
-      if(failed.code==='telegram_429'&&failed.retryAfter>0&&failed.retryAfter<=60&&attempt<2){await delay(failed.retryAfter*1000+200);continue;}
-      throw failed;
+      if(failed?.code==='telegram_429'&&failed.retryAfter>0&&failed.retryAfter<=60&&attempt<2){await delay(failed.retryAfter*1000+200);continue;}
+      console.error(JSON.stringify({event:'sticker_pack_item_failed',position:index+1,id:a.id,emoji:a.emoji,telegram_emoji:telegramEmoji(a),observed_emoji:current.stickers[index]?.emoji??null,count:current.stickers.length,code:typeof failed?.code==='string'&&/^telegram_[a-z0-9_]+$/.test(failed.code)?failed.code:'sticker_set_update_unconfirmed'}));
+      throw failed||Error('sticker_set_update_unconfirmed');
     }
     saved.items[a.id]={sha256:a.sha256,file_unique_id:existing.stickers[index]!.file_unique_id};await persist();
     if((index+1)%10===0||index+1===assets.length)console.log(JSON.stringify({event:'sticker_pack_progress',name:STICKER_SET,count:existing.stickers.length,target:STICKER_COUNT}));
     if(paceMs)await delay(paceMs);
   }
-  if(existing.stickers.length!==STICKER_COUNT||new Set(existing.stickers.map(s=>s.file_unique_id)).size!==STICKER_COUNT||existing.stickers.some((s,i)=>s.emoji?.replace(/\uFE0F/g,'')!==assets[i]!.emoji.replace(/\uFE0F/g,'')))throw Error('sticker_set_unexpected');
+  if(existing.stickers.length!==STICKER_COUNT||new Set(existing.stickers.map(s=>s.file_unique_id)).size!==STICKER_COUNT||existing.stickers.some((s,i)=>s.emoji?.replace(/\uFE0F/g,'')!==telegramEmoji(assets[i]!).replace(/\uFE0F/g,'')))throw Error('sticker_set_unexpected');
   if(existing.title!==title)await telegram.call('setStickerSetTitle',{name:STICKER_SET,title});
   // Read back the actual remote state after all mutations. A successful title
   // write or an in-memory list is not proof of what Telegram currently serves.
@@ -106,7 +109,7 @@ export async function ensureStickerPack(telegram:Telegram,ownerId:string,runtime
   if(confirmed.stickers.some(s=>s.set_name?.toLowerCase()!==STICKER_SET.toLowerCase()))throw Error('sticker_set_membership_unconfirmed');
   if(confirmed.stickers.some((s,i)=>{
     const asset=assets[i]!,checkpoint=saved.items[asset.id];
-    return checkpoint?.sha256!==asset.sha256||checkpoint.file_unique_id!==s.file_unique_id||s.emoji?.replace(/\uFE0F/g,'')!==asset.emoji.replace(/\uFE0F/g,'');
+    return checkpoint?.sha256!==asset.sha256||checkpoint.file_unique_id!==s.file_unique_id||s.emoji?.replace(/\uFE0F/g,'')!==telegramEmoji(asset).replace(/\uFE0F/g,'');
   }))throw Error('sticker_set_content_unconfirmed');
   console.log(JSON.stringify({event:'sticker_pack_verified',source:'telegram_getStickerSet',name:confirmed.name,title:confirmed.title,count:confirmed.stickers.length,matched_assets:assets.length,matched_memberships:confirmed.stickers.length,verified_at:new Date().toISOString()}));
   return confirmed;

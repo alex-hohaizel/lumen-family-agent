@@ -22,7 +22,7 @@ describe('Палітра емоцій і стабільний порядок 1.1
   });
   it('відновлює порядок відомих документів без повторного завантаження, навіть після втраченої відповіді Telegram',async()=>{
     const assets=await stickerAssets(),dir=await mkdtemp(join(tmpdir(),'lumen-sticker-order-'));
-    const ordered=assets.map((a,i)=>({file_id:'file-'+i,file_unique_id:'unique-'+i,is_video:true,set_name:STICKER_SET,emoji:a.emoji}));
+    const ordered=assets.map((a,i)=>({file_id:'file-'+i,file_unique_id:'unique-'+i,is_video:true,set_name:STICKER_SET,emoji:(a.telegram_emoji??a.emoji)}));
     const pack={name:STICKER_SET,title:STICKER_TITLE,stickers:ordered.toReversed()};let moves=0;
     await writeFile(join(dir,STICKER_CHECKPOINT_FILE),JSON.stringify({set_name:STICKER_SET,items:Object.fromEntries(assets.map((a,i)=>[a.id,{sha256:a.sha256,file_unique_id:ordered[i]!.file_unique_id}]))}));
     const tg={call:async(method:string,body:any)=>{

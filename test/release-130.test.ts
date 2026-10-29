@@ -49,7 +49,7 @@ describe('Публікація 1.3, реальні відеокадри та т�
   });
   it('перевіряє байти початкових 50 і наступних 70 WEBM та відновлює непевне створення',async()=>{
     const assets=await stickerAssets();assert.equal(assets.length,STICKER_COUNT);let reads=0,creates=0,adds=0;
-    const stickers=assets.map((a,i)=>({file_id:'video-'+i,file_unique_id:'unique-'+i,is_video:true,set_name:STICKER_SET,emoji:a.emoji}));
+    const stickers=assets.map((a,i)=>({file_id:'video-'+i,file_unique_id:'unique-'+i,is_video:true,set_name:STICKER_SET,emoji:(a.telegram_emoji??a.emoji)}));
     const pack={name:STICKER_SET,title:STICKER_TITLE,stickers:[] as typeof stickers};
     const verify=async(blob:Blob,i:number)=>{const bytes=Buffer.from(await blob.arrayBuffer());assert.equal(createHash('sha256').update(bytes).digest('hex'),assets[i]!.sha256);assert.ok(bytes.length<=256*1024);};
     const tg={call:async(method:string)=>{assert.equal(method,'getStickerSet');if(++reads===1)throw new TelegramError('telegram_400');return structuredClone(pack);},multipart:async(method:string,form:FormData)=>{
@@ -58,7 +58,7 @@ describe('Публікація 1.3, реальні відеокадри та т�
         for(let i=0;i<50;i++){assert.equal(input[i].format,'video');await verify(form.get('sticker'+i) as Blob,i);}
         pack.stickers=stickers.slice(0,50);throw new TelegramError('telegram_network',0,true);
       }
-      assert.equal(method,'addStickerToSet');const i=pack.stickers.length;await verify(form.get('video') as Blob,i);assert.equal(JSON.parse(String(form.get('sticker'))).emoji_list[0],assets[i]!.emoji);pack.stickers.push(stickers[i]!);adds++;return true;
+      assert.equal(method,'addStickerToSet');const i=pack.stickers.length;await verify(form.get('video') as Blob,i);assert.equal(JSON.parse(String(form.get('sticker'))).emoji_list[0],(assets[i]!.telegram_emoji??assets[i]!.emoji));pack.stickers.push(stickers[i]!);adds++;return true;
     }} as unknown as Telegram;
     assert.equal((await ensureStickerPack(tg,'11',undefined,0)).stickers.length,STICKER_COUNT);assert.equal(creates,1);assert.equal(adds,STICKER_COUNT-50);assert.equal(reads,3+STICKER_COUNT-50);
   });

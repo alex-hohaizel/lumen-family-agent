@@ -2328,7 +2328,8 @@
     "source_keyposes_sha256": "1c622be5f28d99d99c961548c5795c28f54cc5feab5d7141e8ccc5786a06c43c",
     "category": "absurd",
     "origin": "generated_1_10",
-    "display_order": 114
+    "display_order": 114,
+    "telegram_emoji": "🌀"
   },
   {
     "id": "lumen_130",

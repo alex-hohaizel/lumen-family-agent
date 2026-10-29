@@ -1,15 +1,15 @@
 {
   "version": "1.10.0",
-  "status": "assets_uploaded_ready_to_publish",
-  "production_version": "1.9.0",
-  "production_code_commit": "3d0ec3d5e83ed44719cf8d63ad51b9c4ea586237",
-  "production_deploy_id": "dep-dbhhht7lk1mc73cpiru0",
+  "status": "sticker_publication_recovering",
+  "production_version": "1.10.0",
+  "production_code_commit": "8744d0a8bdd0758753a496b1d07b79b47fb831a7",
+  "production_deploy_id": "dep-dbhqgg6i0phs73f26gjg",
   "target_repository": "alex-hohaizel/lumen-family-agent",
   "target_branch": "main",
   "target_service_id": "srv-dbfl0je7bikc73dvg0qg",
   "target_workspace_id": "tea-dbf5jsfb9u1s73bn4d1g",
-  "main_published": false,
-  "render_deployed": false,
+  "main_published": true,
+  "render_deployed": true,
   "publication_authorized": true,
   "all_sticker_assets_prepared": 120,
   "new_scenes": 89,
@@ -23,7 +23,12 @@
     "suites": 25,
     "source": "sticker-lab/production-v4/full-tests-final.log",
     "scope": "local",
-    "server_verification_pending": true
+    "server_verification_pending": true,
+    "server_previous_build": {
+      "passed": 370,
+      "failed": 0,
+      "suites": 25
+    }
   },
   "target_sticker_set": "Lumen_120_Emotions_by_lumen_family_agent",
   "target_sticker_count": 120,
@@ -53,5 +58,26 @@
     "Verify Telegram count, order and memberships",
     "Verify public page and release delivery"
   ],
-  "resumed_at": "2026-10-29T20:09:32.021851+00:00"
+  "resumed_at": "2026-10-29T20:09:32.021851+00:00",
+  "main_commit": "8744d0a8bdd0758753a496b1d07b79b47fb831a7",
+  "release_tree": "ae9a0c6878ce5b4c5ca57a5b437bdc8a9b5d91f2",
+  "render_deploy_id": "dep-dbhqgg6i0phs73f26gjg",
+  "render_deploy_started_at": "2026-10-29T20:10:40.015495Z",
+  "initial_publication_failure": {
+    "at": "2026-10-29T20:14:42.137171023Z",
+    "last_logged_count": 110,
+    "code": "operation_failed",
+    "final_readback": false
+  },
+  "compatibility_fix": {
+    "scene": "lumen_127",
+    "semantic_emoji": "🫪",
+    "telegram_emoji": "🌀",
+    "animation_changed": false,
+    "affected_tests": {
+      "pass": 19,
+      "fail": 0,
+      "suites": 3
+    }
+  }
 }
