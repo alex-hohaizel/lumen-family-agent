@@ -1,0 +1,296 @@
+{
+  "version": "1.10.0",
+  "status": "live_stickers_and_notices_verified",
+  "code_commit": "f72e031e3866adc864a284e40a417bdd09899e3b",
+  "tree": "aa8ff5d3bded98dd2534cd3e6f2b527143354feb",
+  "repository": "alex-hohaizel/lumen-family-agent",
+  "service_id": "srv-dbfl0je7bikc73dvg0qg",
+  "workspace_id": "tea-dbf5jsfb9u1s73bn4d1g",
+  "deploy": {
+    "commit": {
+      "createdAt": "2026-10-29T20:21:03Z",
+      "id": "f72e031e3866adc864a284e40a417bdd09899e3b",
+      "message": "Complete the 1.10 sticker rollout with a compatible Telegram emoji tag\n\nKeep the distorted-face scene and its semantic emoji while publishing it with an explicit compatible Telegram tag. Check the actual transport emoji during synchronization and final readback, and expose safe per-position error details if publication stops.\n\nPreserve existing sticker documents and checkpoints when resuming the partial set. Add a regression scenario for completing the last six entries after 114 confirmed documents, then running again without uploads.\n\nValidation: TypeScript build and 19 affected tests across 3 suites passed. Previous server build passed all 370 tests; the updated Render build runs the full suite again."
+    },
+    "createdAt": "2026-10-29T20:21:18.392856Z",
+    "finishedAt": "2026-10-29T20:24:59.30857Z",
+    "id": "dep-dbhqlfnb9u1s73fhbhp0",
+    "startedAt": "2026-10-29T20:21:18.389865Z",
+    "status": "live",
+    "trigger": "api",
+    "updatedAt": "2026-10-29T20:24:59.308877Z"
+  },
+  "runtime_instance": "srv-dbfl0je7bikc73dvg0qg-znq9n",
+  "worker": {
+    "at": "2026-10-29T20:25:12.177313042Z",
+    "instance": "srv-dbfl0je7bikc73dvg0qg-znq9n",
+    "event": "lumen_started",
+    "username": "lumen_family_agent",
+    "version": "1.10.0",
+    "groups": 2,
+    "release_notices_pending": 2,
+    "release_notices_sent": 0
+  },
+  "tests": {
+    "passed": 371,
+    "failed": 0,
+    "suites": 25,
+    "scope": "Render build for f72e031e3866adc864a284e40a417bdd09899e3b",
+    "log_lines": [
+      {
+        "at": "2026-10-29T20:24:20.211916745Z",
+        "message": "ℹ tests 371"
+      },
+      {
+        "at": "2026-10-29T20:24:20.21192885Z",
+        "message": "ℹ suites 25"
+      },
+      {
+        "at": "2026-10-29T20:24:20.211934125Z",
+        "message": "ℹ pass 371"
+      },
+      {
+        "at": "2026-10-29T20:24:20.211935614Z",
+        "message": "ℹ fail 0"
+      }
+    ],
+    "local_affected": {
+      "passed": 19,
+      "failed": 0,
+      "suites": 3
+    }
+  },
+  "sticker_pack": {
+    "at": "2026-10-29T20:25:07.129343954Z",
+    "instance": "srv-dbfl0je7bikc73dvg0qg-znq9n",
+    "event": "sticker_pack_verified",
+    "source": "telegram_getStickerSet",
+    "name": "Lumen_120_Emotions_by_lumen_family_agent",
+    "title": "Люмен — 120 настроїв",
+    "count": 120,
+    "matched_assets": 120,
+    "matched_memberships": 120,
+    "verified_at": "2026-10-29T20:25:07.129Z",
+    "semantic_emotions": 120,
+    "new_scenes": 89,
+    "retained_unchanged": 31,
+    "order_verified": true,
+    "compatible_tags": [
+      {
+        "scene": "lumen_127",
+        "semantic_emoji": "🫪",
+        "telegram_emoji": "🌀",
+        "animation_changed": false
+      }
+    ],
+    "public_url": "https://t.me/addstickers/Lumen_120_Emotions_by_lumen_family_agent"
+  },
+  "public_page": {
+    "url": "https://t.me/addstickers/Lumen_120_Emotions_by_lumen_family_agent",
+    "title": "Add sticker set Люмен — 120 настроїв on Telegram",
+    "text": "Download\n\nA **Telegram** user has created the **Люмен — 120 настроїв** sticker set.\n\nAdd Stickers",
+    "count_source": "Actual count is verified by Telegram getStickerSet; the public page shows its title and Add Stickers link."
+  },
+  "catalog_ready_events": [
+    {
+      "at": "2026-10-29T20:25:09.17578389Z",
+      "event": "sticker_catalog_ready",
+      "count": 120
+    },
+    {
+      "at": "2026-10-29T20:25:10.756537338Z",
+      "event": "sticker_catalog_ready",
+      "count": 120
+    },
+    {
+      "at": "2026-10-29T20:25:11.448220242Z",
+      "event": "sticker_catalog_ready",
+      "count": 120
+    },
+    {
+      "at": "2026-10-29T20:25:12.069461228Z",
+      "event": "sticker_catalog_ready",
+      "count": 120
+    }
+  ],
+  "release_notices": {
+    "expected_groups": 2,
+    "delivered_groups": 2,
+    "receipts": [
+      {
+        "at": "2026-10-29T20:25:13.662391973Z",
+        "instance": "srv-dbfl0je7bikc73dvg0qg-znq9n",
+        "event": "release_notice_delivered",
+        "version": "1.10.0",
+        "group": "7d9cc1fa5a3fe01d"
+      },
+      {
+        "at": "2026-10-29T20:25:19.447324667Z",
+        "instance": "srv-dbfl0je7bikc73dvg0qg-znq9n",
+        "event": "release_notice_delivered",
+        "version": "1.10.0",
+        "group": "d65682e69458cafa"
+      }
+    ],
+    "source": "Runtime delivery receipts from the final worker instance, emitted after Telegram success and the sent-state database commit."
+  },
+  "runtime_checks": {
+    "passed": 9,
+    "failed": 0,
+    "events": [
+      {
+        "at": "2026-10-29T20:14:43.440504722Z",
+        "instance": "srv-dbfl0je7bikc73dvg0qg-zkg4g",
+        "event": "runtime_check",
+        "check": "web_read",
+        "result": {
+          "ok": true,
+          "proof": {
+            "url": "https://example.com/",
+            "title": "Example Domain",
+            "characters": 156
+          }
+        }
+      },
+      {
+        "at": "2026-10-29T20:14:43.637561832Z",
+        "instance": "srv-dbfl0je7bikc73dvg0qg-zkg4g",
+        "event": "runtime_check",
+        "check": "public_search",
+        "result": {
+          "ok": true,
+          "proof": {
+            "provider": "Bing RSS",
+            "sources": [
+              "https://nodejs.org/",
+              "https://nodejs.org/en/download",
+              "https://expressjs.com/",
+              "https://beta.docs.nodejs.org/",
+              "https://www.w3schools.com/nodejs/",
+              "https://github.com/nodejs/nodejs.org",
+              "https://r2.nodejs.org/download/release/v0.8.10/docs/download/",
+              "https://en.wikipedia.org/wiki/Nodejs"
+            ]
+          }
+        }
+      },
+      {
+        "at": "2026-10-29T20:14:53.212670071Z",
+        "instance": "srv-dbfl0je7bikc73dvg0qg-zkg4g",
+        "event": "runtime_check",
+        "check": "native_search",
+        "result": {
+          "ok": true,
+          "proof": {
+            "searched": true,
+            "sources": [
+              "https://nodejs.org/en/about?utm_source=openai",
+              "https://nodejs.org/"
+            ]
+          }
+        }
+      },
+      {
+        "at": "2026-10-29T20:15:08.068761001Z",
+        "instance": "srv-dbfl0je7bikc73dvg0qg-zkg4g",
+        "event": "runtime_check",
+        "check": "automatic_freshness_choice",
+        "result": {
+          "ok": true,
+          "proof": {
+            "automatic_search_selected": true,
+            "native_search_executed": true,
+            "selected_tools": []
+          }
+        }
+      },
+      {
+        "at": "2026-10-29T20:15:15.740627061Z",
+        "instance": "srv-dbfl0je7bikc73dvg0qg-zkg4g",
+        "event": "runtime_check",
+        "check": "browser",
+        "result": {
+          "ok": true,
+          "proof": {
+            "title": "Example Domain",
+            "url": "https://example.com/",
+            "characters": 917
+          }
+        }
+      },
+      {
+        "at": "2026-10-29T20:15:16.152713981Z",
+        "instance": "srv-dbfl0je7bikc73dvg0qg-zkg4g",
+        "event": "runtime_check",
+        "check": "compute",
+        "result": {
+          "ok": true,
+          "proof": {
+            "result": 14
+          }
+        }
+      },
+      {
+        "at": "2026-10-29T20:15:21.599215569Z",
+        "instance": "srv-dbfl0je7bikc73dvg0qg-zkg4g",
+        "event": "runtime_check",
+        "check": "documents",
+        "result": {
+          "ok": true,
+          "proof": {
+            "docx_readback": true,
+            "xlsx_readback": true,
+            "pdf_readback": true,
+            "scan_pages": 1,
+            "vision_ocr": true,
+            "number": "31415"
+          }
+        }
+      },
+      {
+        "at": "2026-10-29T20:15:41.943309509Z",
+        "instance": "srv-dbfl0je7bikc73dvg0qg-zkg4g",
+        "event": "runtime_check",
+        "check": "interactions",
+        "result": {
+          "ok": true,
+          "proof": {
+            "parallel": true,
+            "max_choices_per_participant": 2,
+            "individual_roles": 2,
+            "compact_characters": 612,
+            "private_data_used": false
+          }
+        }
+      },
+      {
+        "at": "2026-10-29T20:16:01.788281727Z",
+        "instance": "srv-dbfl0je7bikc73dvg0qg-zkg4g",
+        "event": "runtime_check",
+        "check": "personalization_scheduling_190",
+        "result": {
+          "ok": true,
+          "proof": {
+            "chat_language": true,
+            "contextual_task": true,
+            "kyiv_time": true,
+            "personal_name": true,
+            "proposal_needs_confirmation": true,
+            "russian_outbound": true,
+            "public_fixture_only": true
+          }
+        }
+      }
+    ],
+    "scope": "Completed by the initial 1.10 worker at code commit 8744d0a8bdd0758753a496b1d07b79b47fb831a7. The final restart reuses successful per-release checkpoints. These are separate from the server unit tests."
+  },
+  "prior_partial_deploy": {
+    "id": "dep-dbhqgg6i0phs73f26gjg",
+    "code_commit": "8744d0a8bdd0758753a496b1d07b79b47fb831a7",
+    "last_progress_count": 110,
+    "resume_observed_count": 114,
+    "completed_by_next_deploy": true
+  },
+  "pending": [],
+  "recorded_at": "2026-10-29T20:26:53.884Z"
+}

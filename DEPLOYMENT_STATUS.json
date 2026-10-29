@@ -1,9 +1,9 @@
 {
   "version": "1.10.0",
-  "status": "sticker_publication_recovering",
+  "status": "live_stickers_and_notices_verified",
   "production_version": "1.10.0",
-  "production_code_commit": "8744d0a8bdd0758753a496b1d07b79b47fb831a7",
-  "production_deploy_id": "dep-dbhqgg6i0phs73f26gjg",
+  "production_code_commit": "f72e031e3866adc864a284e40a417bdd09899e3b",
+  "production_deploy_id": "dep-dbhqlfnb9u1s73fhbhp0",
   "target_repository": "alex-hohaizel/lumen-family-agent",
   "target_branch": "main",
   "target_service_id": "srv-dbfl0je7bikc73dvg0qg",
@@ -18,56 +18,54 @@
   "binary_blobs_total": 178,
   "binary_blobs_pending": 0,
   "tests": {
-    "passed": 370,
+    "passed": 371,
     "failed": 0,
     "suites": 25,
-    "source": "sticker-lab/production-v4/full-tests-final.log",
-    "scope": "local",
-    "server_verification_pending": true,
-    "server_previous_build": {
-      "passed": 370,
+    "scope": "Render build for f72e031e3866adc864a284e40a417bdd09899e3b",
+    "log_lines": [
+      {
+        "at": "2026-10-29T20:24:20.211916745Z",
+        "message": "ℹ tests 371"
+      },
+      {
+        "at": "2026-10-29T20:24:20.21192885Z",
+        "message": "ℹ suites 25"
+      },
+      {
+        "at": "2026-10-29T20:24:20.211934125Z",
+        "message": "ℹ pass 371"
+      },
+      {
+        "at": "2026-10-29T20:24:20.211935614Z",
+        "message": "ℹ fail 0"
+      }
+    ],
+    "local_affected": {
+      "passed": 19,
       "failed": 0,
-      "suites": 25
+      "suites": 3
     }
   },
   "target_sticker_set": "Lumen_120_Emotions_by_lumen_family_agent",
   "target_sticker_count": 120,
   "public_sticker_url": "https://t.me/addstickers/Lumen_120_Emotions_by_lumen_family_agent",
-  "public_sticker_page_verified": false,
-  "telegram_readback_verified": false,
-  "release_notice_delivered": false,
+  "public_sticker_page_verified": true,
+  "telegram_readback_verified": true,
+  "release_notice_delivered": true,
   "previous_release_verification": "docs/RELEASE_1_9_DELIVERY_2026_10_29.json",
-  "previous_runtime_checks_failed": [
-    {
-      "check": "personalization_scheduling_190",
-      "result": {
-        "ok": false,
-        "code": "check_failed",
-        "error_type": "Error",
-        "detail": "contextual_schedule_plan_invalid"
-      },
-      "at": "2026-10-29T10:04:38.096516652Z"
-    }
-  ],
   "blocker": null,
-  "next_steps": [
-    "Finish verified binary uploads",
-    "Publish exact snapshot with main lease",
-    "Trigger one Render deployment",
-    "Verify server tests and worker version",
-    "Verify Telegram count, order and memberships",
-    "Verify public page and release delivery"
-  ],
+  "next_steps": [],
   "resumed_at": "2026-10-29T20:09:32.021851+00:00",
-  "main_commit": "8744d0a8bdd0758753a496b1d07b79b47fb831a7",
-  "release_tree": "ae9a0c6878ce5b4c5ca57a5b437bdc8a9b5d91f2",
-  "render_deploy_id": "dep-dbhqgg6i0phs73f26gjg",
-  "render_deploy_started_at": "2026-10-29T20:10:40.015495Z",
+  "release_tree": "aa8ff5d3bded98dd2534cd3e6f2b527143354feb",
+  "render_deploy_id": "dep-dbhqlfnb9u1s73fhbhp0",
+  "render_deploy_started_at": "2026-10-29T20:21:18.389865Z",
   "initial_publication_failure": {
     "at": "2026-10-29T20:14:42.137171023Z",
     "last_logged_count": 110,
     "code": "operation_failed",
-    "final_readback": false
+    "final_readback": false,
+    "resolved": true,
+    "resume_observed_count": 114
   },
   "compatibility_fix": {
     "scene": "lumen_127",
@@ -79,5 +77,46 @@
       "fail": 0,
       "suites": 3
     }
+  },
+  "main_release_commit": "f72e031e3866adc864a284e40a417bdd09899e3b",
+  "release_verification_file": "docs/RELEASE_1_10_DELIVERY_2026_10_29.json",
+  "telegram_verified_at": "2026-10-29T20:25:07.129Z",
+  "release_notices": {
+    "expected_groups": 2,
+    "delivered_groups": 2,
+    "receipts": [
+      {
+        "at": "2026-10-29T20:25:13.662391973Z",
+        "instance": "srv-dbfl0je7bikc73dvg0qg-znq9n",
+        "event": "release_notice_delivered",
+        "version": "1.10.0",
+        "group": "7d9cc1fa5a3fe01d"
+      },
+      {
+        "at": "2026-10-29T20:25:19.447324667Z",
+        "instance": "srv-dbfl0je7bikc73dvg0qg-znq9n",
+        "event": "release_notice_delivered",
+        "version": "1.10.0",
+        "group": "d65682e69458cafa"
+      }
+    ],
+    "source": "Runtime delivery receipts from the final worker instance, emitted after Telegram success and the sent-state database commit."
+  },
+  "historical_1_9_runtime_failures": [
+    {
+      "check": "personalization_scheduling_190",
+      "result": {
+        "ok": false,
+        "code": "check_failed",
+        "error_type": "Error",
+        "detail": "contextual_schedule_plan_invalid"
+      },
+      "at": "2026-10-29T10:04:38.096516652Z"
+    }
+  ],
+  "runtime_checks_1_10": {
+    "passed": 9,
+    "failed": 0,
+    "scope": "Completed by the initial 1.10 worker at code commit 8744d0a8bdd0758753a496b1d07b79b47fb831a7. The final restart reuses successful per-release checkpoints. These are separate from the server unit tests."
   }
 }
