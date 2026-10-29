@@ -44,7 +44,7 @@ describe('Окремі групи, природні звернення та те
   it('перезапуск оголошує нову версію в наявній групі один раз, навіть без старого onboarding',async()=>{
     const a=await add();await a.db.query('DELETE FROM onboarding_chats');await a.db.query('DELETE FROM release_notices');await a.db.query('DELETE FROM outbox');
     const restart=()=>new ChatRouter(registry,h.config,h.tg as unknown as Telegram,bot,()=>brains.get('-200')!);
-    await restart().init();await restart().init();const rows=(await a.db.query('SELECT * FROM outbox')).rows;assert.equal(rows.length,1);assert.match(rows[0]!.body.text,/Люмен 1\.8/);assert.equal(rows[0]!.service,true);
+    await restart().init();await restart().init();const rows=(await a.db.query('SELECT * FROM outbox')).rows;assert.equal(rows.length,1);assert.match(rows[0]!.body.text,/Люмен 1\.9/);assert.equal(rows[0]!.service,true);
   });
   it('не підключає чужу групу чи чужий приватний акаунт за підробленим посиланням',async()=>{
     await router.receive({update_id:seq++,message:{...msg('',-300,22).message!,new_chat_members:[{id:999,first_name:'Люмен'}]}});
