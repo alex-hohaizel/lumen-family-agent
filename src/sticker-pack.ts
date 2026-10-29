@@ -8,6 +8,7 @@ import {rememberSticker} from './presentation.js';
 import type {Database} from './db.js';
 
 export const STICKER_SET='Lumen_Moods_by_lumen_family_agent';
+export const STICKER_TITLE='Люмен — 50 емоцій';
 export interface StickerAsset {id:string;emoji:string;label:string;description:string;file:string;bytes:number;sha256:string;motion_version?:number;preview?:string;scene?:string;}
 export interface LumenPack {name:string;stickers:TGSticker[];title?:string;}
 export async function stickerAssets(){return JSON.parse(await readFile(new URL('../../assets/stickers/manifest.json',import.meta.url),'utf8')) as StickerAsset[];}
@@ -23,7 +24,7 @@ export async function ensureStickerPack(telegram:Telegram,ownerId:string,runtime
     if(bytes.length!==a.bytes||bytes.length>256*1024||createHash('sha256').update(bytes).digest('hex')!==a.sha256)throw Error('sticker_asset_invalid');
     binaries.push(bytes);
   }
-  const title='Люмен — 50 емоцій';
+  const title=STICKER_TITLE;
   const path=runtimeDir?resolve(runtimeDir,'sticker-pack.json'):undefined;
   let saved:{items:Record<string,{sha256:string;file_unique_id:string}>}={items:{}};
   if(path)try{saved=JSON.parse(await readFile(path,'utf8'));if(!saved?.items||typeof saved.items!=='object'||Array.isArray(saved.items))throw Error();}catch(e:any){if(e.code!=='ENOENT')throw Error('sticker_checkpoint_invalid');}
@@ -31,6 +32,7 @@ export async function ensureStickerPack(telegram:Telegram,ownerId:string,runtime
   const valid=(pack:LumenPack)=>{if(typeof pack?.name!=='string'||pack.name.toLowerCase()!==STICKER_SET.toLowerCase()||!Array.isArray(pack.stickers)||pack.stickers.length>50||pack.stickers.some(s=>!s.is_video))throw Error('sticker_set_unexpected');return pack;};
   let existing:LumenPack|undefined;let created=false;
   try{existing=await telegram.call<LumenPack>('getStickerSet',{name:STICKER_SET});}catch(e:any){if(e.code!=='telegram_400')throw e;}
+  console.log(JSON.stringify({event:'sticker_pack_observed',name:STICKER_SET,title:existing?.title??null,count:existing?.stickers?.length??0}));
   if(!existing){
     created=true;
     const form=new FormData();form.set('user_id',ownerId);form.set('name',STICKER_SET);form.set('title',title);form.set('sticker_type','regular');
@@ -80,8 +82,18 @@ export async function ensureStickerPack(telegram:Telegram,ownerId:string,runtime
     if(paceMs)await delay(paceMs);
   }
   if(existing.stickers.length!==50||new Set(existing.stickers.map(s=>s.file_unique_id)).size!==50||existing.stickers.some((s,i)=>s.emoji?.replace(/\uFE0F/g,'')!==assets[i]!.emoji.replace(/\uFE0F/g,'')))throw Error('sticker_set_unexpected');
-  if(existing.title&&existing.title!==title){await telegram.call('setStickerSetTitle',{name:STICKER_SET,title});existing.title=title;}
-  return existing;
+  if(existing.title!==title)await telegram.call('setStickerSetTitle',{name:STICKER_SET,title});
+  // Read back the actual remote state after all mutations. A successful title
+  // write or an in-memory list is not proof of what Telegram currently serves.
+  const confirmed=valid(await telegram.call<LumenPack>('getStickerSet',{name:STICKER_SET}));
+  if(confirmed.stickers.length!==assets.length||new Set(confirmed.stickers.map(s=>s.file_unique_id)).size!==assets.length)throw Error('sticker_set_unexpected');
+  if(confirmed.title!==title)throw Error('sticker_set_title_unconfirmed');
+  if(confirmed.stickers.some((s,i)=>{
+    const asset=assets[i]!,checkpoint=saved.items[asset.id];
+    return checkpoint?.sha256!==asset.sha256||checkpoint.file_unique_id!==s.file_unique_id||s.emoji?.replace(/\uFE0F/g,'')!==asset.emoji.replace(/\uFE0F/g,'');
+  }))throw Error('sticker_set_content_unconfirmed');
+  console.log(JSON.stringify({event:'sticker_pack_verified',source:'telegram_getStickerSet',name:confirmed.name,title:confirmed.title,count:confirmed.stickers.length,matched_assets:assets.length,verified_at:new Date().toISOString()}));
+  return confirmed;
 }
 export async function seedStickerPack(db:Database,pack:LumenPack){
   const assets=await stickerAssets();if(pack.stickers.length!==assets.length||pack.name.toLowerCase()!==STICKER_SET.toLowerCase())throw Error('sticker_set_unexpected');

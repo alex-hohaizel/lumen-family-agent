@@ -1,7 +1,7 @@
 import {createHash} from 'node:crypto';
 import {describe,it} from 'node:test';import assert from 'node:assert/strict';
 import {mkdtemp,readFile,writeFile,rm} from 'node:fs/promises';import {join} from 'node:path';import {tmpdir} from 'node:os';
-import {stickerAssets,ensureStickerPack,seedStickerPack,STICKER_SET,type LumenPack} from '../src/sticker-pack.js';
+import {stickerAssets,ensureStickerPack,seedStickerPack,STICKER_SET,STICKER_TITLE,type LumenPack} from '../src/sticker-pack.js';
 import {Telegram,TelegramError} from '../src/telegram.js';import {TestDB} from './helpers.js';
 
 describe('Оновлення 30 → 50 стікерів зі збереженням посилання',()=>{
@@ -52,6 +52,25 @@ describe('Оновлення 30 → 50 стікерів зі збереженн�
     const corrupt=Buffer.from(original);corrupt[corrupt.length-1]=corrupt[corrupt.length-1]!^1;let calls=0;
     const tg={call:async()=>{calls++;},multipart:async()=>{calls++;}} as unknown as Telegram;
     try{await writeFile(path,corrupt);await assert.rejects(()=>ensureStickerPack(tg,'11'),/sticker_asset_invalid/);assert.equal(calls,0);}finally{await writeFile(path,original);}
+  });
+  for(const failure of ['count','title','content'] as const)it(`не оголошує набір готовим, якщо фінальне перечитування не підтверджує ${failure}`,async()=>{
+    const assets=await stickerAssets(),dir=await mkdtemp(join(tmpdir(),'lumen-sticker-readback-'));
+    const pack:LumenPack={name:STICKER_SET,title:failure==='title'?'Люмен — 30 настроїв':STICKER_TITLE,stickers:assets.map((a,i)=>({file_id:'current-'+i,file_unique_id:'current-unique-'+i,is_video:true,emoji:a.emoji}))};
+    const items=Object.fromEntries(assets.map((a,i)=>[a.id,{sha256:a.sha256,file_unique_id:pack.stickers[i]!.file_unique_id}]));
+    await writeFile(join(dir,'sticker-pack.json'),JSON.stringify({items}));
+    let reads=0,titles=0;
+    const tg={call:async(method:string)=>{
+      if(method==='setStickerSetTitle'){titles++;return true;}
+      assert.equal(method,'getStickerSet');reads++;
+      const result=structuredClone(pack);
+      if(reads===2){if(failure==='count')result.stickers=result.stickers.slice(0,30);if(failure==='content')result.stickers[49]!.file_unique_id='unconfirmed-version';}
+      return result;
+    },multipart:async()=>{assert.fail('A matching checkpoint must not reupload stickers');}} as unknown as Telegram;
+    try{
+      const error={count:'sticker_set_unexpected',title:'sticker_set_title_unconfirmed',content:'sticker_set_content_unconfirmed'}[failure];
+      await assert.rejects(()=>ensureStickerPack(tg,'11',dir,0),new RegExp(error));
+      assert.equal(reads,2);assert.equal(titles,failure==='title'?1:0);
+    }finally{await rm(dir,{recursive:true,force:true});}
   });
   it('репертуар групи замінює старі версії Люмена й зберігає чужі стікери',async()=>{
     const db=new TestDB();await db.init();try{

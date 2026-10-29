@@ -44,8 +44,8 @@ describe('Публікація 1.3, реальні відеокадри та т�
   });
   it('пакує рівно 50 перевірених прозорих WEBM і відновлюється після непевного створення',async()=>{
     const assets=await stickerAssets();assert.equal(assets.length,50);let reads=0,creates=0;
-    const pack={name:STICKER_SET,stickers:assets.map((a,i)=>({file_id:'video-'+i,file_unique_id:'unique-'+i,is_video:true,emoji:a.emoji}))};
+    const pack={name:STICKER_SET,title:'Люмен — 50 емоцій',stickers:assets.map((a,i)=>({file_id:'video-'+i,file_unique_id:'unique-'+i,is_video:true,emoji:a.emoji}))};
     const tg={call:async(method:string)=>{assert.equal(method,'getStickerSet');if(++reads===1)throw new TelegramError('telegram_400');return pack;},multipart:async(method:string,form:FormData)=>{assert.equal(method,'createNewStickerSet');creates++;const input=JSON.parse(String(form.get('stickers')));assert.equal(input.length,50);for(const [i,a] of assets.entries()){assert.equal(input[i].format,'video');const blob=form.get('sticker'+i) as Blob;const bytes=Buffer.from(await blob.arrayBuffer());assert.equal(createHash('sha256').update(bytes).digest('hex'),a.sha256);assert.ok(bytes.length<=256*1024);}throw new TelegramError('telegram_network',0,true);}} as unknown as Telegram;
-    assert.equal((await ensureStickerPack(tg,'11')).stickers.length,50);assert.equal(creates,1);assert.equal(reads,2);
+    assert.equal((await ensureStickerPack(tg,'11')).stickers.length,50);assert.equal(creates,1);assert.equal(reads,3);
   });
 });
