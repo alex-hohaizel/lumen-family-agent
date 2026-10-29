@@ -6,6 +6,8 @@ export async function continuation(sql:SQL,m:Message,revision:number){
   if(!m.from||m.reply_to_message&&!m.reply_to_message.from?.is_bot)return;
   if(/@[A-Za-z0-9_]+/.test(m.text || '')&&!m.reply_to_message?.from?.is_bot)return;
   const topic=String(m.message_thread_id || 0),uid=String(m.from.id),s=await state(sql);
+  const scheduled=await one(sql,"SELECT id,instruction,due_at,timezone FROM scheduled_actions WHERE author_id=$1 AND topic_id=$2 AND revision=$3 AND status='awaiting_confirmation' AND expires_at>now() ORDER BY created_at DESC LIMIT 1",[uid,topic,revision]);
+  if(scheduled)return {question:`Підтвердження дії ${scheduled.id}: ${scheduled.instruction}, ${new Date(scheduled.due_at).toISOString()}, ${scheduled.timezone}`,allowed:['schedule_decision'],audience:'personal',kind:'question',user_id:uid,origin:'scheduled_confirmation'};
   if(s.conversation_style==='addressed')return;
   const d=await one(sql,"SELECT * FROM dialogues WHERE topic_id=$1 AND revision=$2 AND expires_at>now() AND (user_id=$3 OR audience='group') ORDER BY (user_id=$3) DESC,created_at DESC LIMIT 1",[topic,revision,uid]);
   if(d){

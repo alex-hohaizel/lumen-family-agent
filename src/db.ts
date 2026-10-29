@@ -47,7 +47,7 @@ export async function queueText(sql: SQL, text: string, revision: number, key: s
     const length=chunks[offset]!.length;
     const entities=(options.entities || []).filter(e=>e.offset<start+length&&e.offset+e.length>start).map(e=>({...e,offset:Math.max(start,e.offset)-start,length:Math.min(start+length,e.offset+e.length)-Math.max(start,e.offset)}));
     const inserted=await sql.query(`INSERT INTO outbox (dedup_key, kind, body, revision, service,source_message_id,actor_id,audience) VALUES ($1,'text',$2,$3,$4,$5,$6,$7) ON CONFLICT (dedup_key) DO NOTHING RETURNING id`,
-      [`${key}:${offset}`, JSON.stringify({ text: chunks[offset], ...(options.taskId?{taskId:options.taskId,goalVersion:options.goalVersion}:{}), ...(offset===0&&options.replyMarkup?{replyMarkup:options.replyMarkup}:{}),
+      [`${key}:${offset}`, JSON.stringify({ text: chunks[offset], ...(options.outputLanguage?{outputLanguage:options.outputLanguage}:{}), ...(options.taskId?{taskId:options.taskId,goalVersion:options.goalVersion}:{}), ...(offset===0&&options.replyMarkup?{replyMarkup:options.replyMarkup}:{}),
         ...(options.replyToMessageId?{replyToMessageId:options.replyToMessageId}:{}), ...(options.threadId?{threadId:options.threadId}:{}), ...(entities.length?{entities}:{}), ...((service||options.audience==='private')&&options.targetChatId?{targetChatId:options.targetChatId}:{}) }), revision, service,options.sourceMessageId || null,options.actorId || null,options.audience || 'group']);
     if(inserted.rows[0])await recordProvenance(sql,'outbox',inserted.rows[0].id,[...(options.sourceIds||[]),...(options.sourceMessageId?[options.sourceMessageId]:[])]);
     start+=length;
@@ -57,6 +57,7 @@ export async function queueAnimation(sql:SQL,asset:'waving'|'happy'|'thinking',r
   await sql.query("INSERT INTO outbox(dedup_key,kind,body,revision) VALUES ($1,'animation',$2,$3) ON CONFLICT DO NOTHING",[key,JSON.stringify({asset,caption,...(threadId?{threadId}:{})}),revision]);
 }
 export async function pauseMemory(sql:SQL){
+  await sql.query("UPDATE scheduled_actions SET status='paused' WHERE status IN ('pending','awaiting_confirmation')");
   await sql.query("UPDATE app_state SET paused=true,consent='[]',memory_revision=memory_revision+1 WHERE id=1");
   await sql.query("UPDATE reminders SET status='pending' WHERE status='queued'");
   for(const table of ['inbox','outbox','choices','choice_votes','pending_intents','dialogues','topic_attention'])await sql.query(`DELETE FROM ${table}`);
@@ -70,12 +71,13 @@ export async function pauseMemory(sql:SQL){
 }
 export async function eraseAll(sql: SQL) {
   // Remove all derived data, generated drafts, pending deliveries and attachment IDs too.
-  for (const table of ['interaction_responses','interactions','message_panels','result_receipts','signals','proactivity_preferences','skill_versions','research_cache','activity_moves','activity_players','activity_sessions','decision_ballots','decisions','project_tasks','projects','knowledge_facts','private_requests','task_events','task_stages','capability_health','private_results','provenance_edges','coordination_offers','oauth_setups',...AGENT_TABLES,'topic_attention','image_jobs','poll_votes','polls','avatars','attachments','dialogues','choice_votes','participant_preferences','memories','rules','games','reminders','skills','episodes','stickers','choices','pending_intents','messages','outbox','inbox','topics','members']) await sql.query(`DELETE FROM ${table}`);
+  for (const table of ['alias_observations','chat_preferences','scheduled_actions','interaction_responses','interactions','message_panels','result_receipts','signals','proactivity_preferences','skill_versions','research_cache','activity_moves','activity_players','activity_sessions','decision_ballots','decisions','project_tasks','projects','knowledge_facts','private_requests','task_events','task_stages','capability_health','private_results','provenance_edges','coordination_offers','oauth_setups',...AGENT_TABLES,'topic_attention','image_jobs','poll_votes','polls','avatars','attachments','dialogues','choice_votes','participant_preferences','memories','rules','games','reminders','skills','episodes','stickers','choices','pending_intents','messages','outbox','inbox','topics','members']) await sql.query(`DELETE FROM ${table}`);
   await sql.query(`UPDATE app_state SET memory_revision=memory_revision+1, character='', mode=CASE WHEN mention_only THEN 'quiet' ELSE 'social' END, since_bot=0,last_social_at=NULL,participants=CASE WHEN open_group THEN '[]'::jsonb ELSE participants END WHERE id=1`);
   await sql.query('DELETE FROM characters');
 }
-const SOURCE_TABLES=['tool_grants','tool_runs','tool_approvals','agent_tasks','web_monitors','agent_workflows','agent_artifacts','group_events','agent_feedback','memory_terms','private_requests','knowledge_facts','projects','decisions','activity_sessions','signals','result_receipts','coordination_offers','interactions','message_panels'];
+const SOURCE_TABLES=['scheduled_actions','tool_grants','tool_runs','tool_approvals','agent_tasks','web_monitors','agent_workflows','agent_artifacts','group_events','agent_feedback','memory_terms','private_requests','knowledge_facts','projects','decisions','activity_sessions','signals','result_receipts','coordination_offers','interactions','message_panels'];
 async function invalidateSource(sql:SQL,sourceId:number){
+  await sql.query("UPDATE participant_preferences SET inferred_name='' WHERE user_id IN (SELECT user_id FROM alias_observations WHERE source_message_id=$1)",[sourceId]);
   await invalidateProvenance(sql,sourceId);
   await sql.query("DELETE FROM tool_credentials WHERE name IN (SELECT answer FROM private_requests WHERE source_message_id=$1 AND answer IS NOT NULL)",[sourceId]);
   for(const table of SOURCE_TABLES)await sql.query(`DELETE FROM ${table} WHERE source_message_id=$1`,[sourceId]);

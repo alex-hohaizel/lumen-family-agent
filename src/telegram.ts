@@ -4,7 +4,7 @@ export interface TGChat { id: number; type: string; title?: string; is_forum?: b
 export interface InlineKeyboard { inline_keyboard: { text: string; callback_data?: string; url?: string }[][]; }
 export interface TextEntity {type:string;offset:number;length:number;url?:string;}
 export interface TGSticker {file_id:string;file_unique_id:string;type?:string;emoji?:string;set_name?:string;is_animated?:boolean;is_video?:boolean;thumbnail?:{file_id:string;file_unique_id?:string};}
-export interface TextOptions {sourceIds?:number[];taskId?:string;goalVersion?:number; replyMarkup?: InlineKeyboard; replyToMessageId?: number; targetChatId?: string; threadId?: number; entities?:TextEntity[]; sourceMessageId?:number;actorId?:string;audience?:'personal'|'group'|'private'; }
+export interface TextOptions {outputLanguage?:string;sourceIds?:number[];taskId?:string;goalVersion?:number; replyMarkup?: InlineKeyboard; replyToMessageId?: number; targetChatId?: string; threadId?: number; entities?:TextEntity[]; sourceMessageId?:number;actorId?:string;audience?:'personal'|'group'|'private'; }
 export interface Message {
   receiver_user?:TGUser;ephemeral_message_id?:number;
   message_id: number; date: number; edit_date?: number; from?: TGUser; chat: TGChat;
@@ -36,8 +36,12 @@ export class TelegramError extends Error {
   constructor(public code: string, public retryAfter = 0, public uncertain = false) { super(code); }
 }
 export class Telegram {
+  private outbound?: (method:string,body:Record<string,any>)=>Promise<Record<string,any>>;
+  setOutboundTransform(transform:(method:string,body:Record<string,any>)=>Promise<Record<string,any>>){this.outbound=transform;}
   constructor(private token: string, private fetcher: typeof fetch = fetch) {}
   async call<T = any>(method: string, body: Record<string, unknown> = {}, timeout = 20000): Promise<T> {
+    if(this.outbound)body=await this.outbound(method,body);
+    body={...body};delete body._lumen_actor_id;delete body._lumen_output_language;
     let response: Response;
     try {
       response = await this.fetcher(`https://api.telegram.org/bot${this.token}/${method}`, {
@@ -57,14 +61,14 @@ export class Telegram {
     const json:any=await response.json().catch(()=>null);if(!json?.ok)throw new TelegramError(`telegram_${json?.error_code || response.status}`,Number(json?.parameters?.retry_after || 0),response.status>=500);return json.result as T;
   }
   async text(chatId: string, text: string, options: TextOptions = {}) {
-    return this.call<{message_id:number}>('sendMessage', { chat_id: chatId, text, link_preview_options: { is_disabled: true },
+    return this.call<{message_id:number}>('sendMessage', { chat_id: chatId, text, _lumen_actor_id:options.actorId,_lumen_output_language:options.outputLanguage,link_preview_options: { is_disabled: true },
       ...(options.entities?.length ? {entities:options.entities}:{}),
       ...(options.replyMarkup ? {reply_markup:options.replyMarkup} : {}),
       ...(options.threadId ? {message_thread_id:options.threadId} : {}),
       ...(options.replyToMessageId ? {reply_parameters:{message_id:options.replyToMessageId,allow_sending_without_reply:true}} : {}) });
   }
-  async poll(chatId:string,question:string,options:string[],threadId?:number,quiz?:{correct:number;explanation?:string}){
-    return this.call<{message_id:number}>('sendPoll',{chat_id:chatId,question,options:options.map(text=>({text})),is_anonymous:false,allows_multiple_answers:false,...(quiz?{type:'quiz',correct_option_ids:[quiz.correct],explanation:quiz.explanation || ''}:{}),...(threadId?{message_thread_id:threadId}:{})});
+  async poll(chatId:string,question:string,options:string[],threadId?:number,quiz?:{correct:number;explanation?:string},actorId?:string){
+    return this.call<{message_id:number}>('sendPoll',{chat_id:chatId,_lumen_actor_id:actorId,question,options:options.map(text=>({text})),is_anonymous:false,allows_multiple_answers:false,...(quiz?{type:'quiz',correct_option_ids:[quiz.correct],explanation:quiz.explanation || ''}:{}),...(threadId?{message_thread_id:threadId}:{})});
   }
   async sticker(chatId:string,fileId:string,threadId?:number,replyTo?:number){
     return this.call<{message_id:number}>('sendSticker',{chat_id:chatId,sticker:fileId,...(threadId?{message_thread_id:threadId}:{}),...(replyTo?{reply_parameters:{message_id:replyTo,allow_sending_without_reply:true}}:{})});
@@ -80,7 +84,8 @@ export class Telegram {
     try { json = await response.json(); } catch { throw new TelegramError('telegram_bad_response'); }
     if (!response.ok || !json.ok || json.result !== true) throw new TelegramError(`telegram_${json.error_code || response.status}`);
   }
-  async upload(method: 'sendPhoto' | 'sendVoice' | 'sendAnimation' | 'sendDocument', chatId: string, bytes: Uint8Array, caption: string, mime: string, threadId?:number,fileName?:string) {
+  async upload(method: 'sendPhoto' | 'sendVoice' | 'sendAnimation' | 'sendDocument', chatId: string, bytes: Uint8Array, caption: string, mime: string, threadId?:number,fileName?:string,actorId?:string) {
+    if(this.outbound)caption=String((await this.outbound('uploadCaption',{chat_id:chatId,_lumen_actor_id:actorId,caption})).caption||'');
     const field = method === 'sendPhoto' ? 'photo' : method==='sendAnimation' ? 'animation' : method==='sendDocument'?'document':'voice';
     const form = new FormData();
     form.set('chat_id', chatId); form.set('caption', caption.slice(0,900));

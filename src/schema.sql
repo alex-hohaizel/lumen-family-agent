@@ -244,4 +244,16 @@ CREATE TABLE IF NOT EXISTS message_panels(id uuid PRIMARY KEY,actor_id text NOT 
 ALTER TABLE polls ADD COLUMN IF NOT EXISTS interaction_id uuid REFERENCES interactions(id) ON DELETE SET NULL;
 ALTER TABLE polls ADD COLUMN IF NOT EXISTS interaction_version integer;
 INSERT INTO schema_version VALUES(11) ON CONFLICT DO NOTHING;
+ALTER TABLE app_state ADD COLUMN IF NOT EXISTS personalization_recovered boolean NOT NULL DEFAULT false;
+CREATE TABLE IF NOT EXISTS chat_preferences(id integer PRIMARY KEY CHECK(id=1),language text NOT NULL DEFAULT '',length_mode text NOT NULL DEFAULT '',humor_mode text NOT NULL DEFAULT '',formality text NOT NULL DEFAULT '',emoji_mode text NOT NULL DEFAULT '',version integer NOT NULL DEFAULT 1,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,updated_at timestamptz NOT NULL DEFAULT now());
+ALTER TABLE participant_preferences ADD COLUMN IF NOT EXISTS language text NOT NULL DEFAULT '';
+ALTER TABLE participant_preferences ADD COLUMN IF NOT EXISTS preferred_name text NOT NULL DEFAULT '';
+ALTER TABLE participant_preferences ADD COLUMN IF NOT EXISTS inferred_name text NOT NULL DEFAULT '';
+ALTER TABLE participant_preferences ADD COLUMN IF NOT EXISTS formality text NOT NULL DEFAULT '';
+ALTER TABLE participant_preferences ADD COLUMN IF NOT EXISTS emoji_mode text NOT NULL DEFAULT '';
+CREATE TABLE IF NOT EXISTS alias_observations(user_id text NOT NULL,alias text NOT NULL,source_message_id bigint NOT NULL REFERENCES messages(id) ON DELETE CASCADE,PRIMARY KEY(user_id,alias,source_message_id));
+CREATE TABLE IF NOT EXISTS scheduled_actions(id uuid PRIMARY KEY,dedup_key text NOT NULL UNIQUE,author_id text NOT NULL,topic_id text NOT NULL,title text NOT NULL,instruction text NOT NULL,mode text NOT NULL CHECK(mode IN ('reminder','task')),due_at timestamptz NOT NULL,timezone text NOT NULL,status text NOT NULL,action_hash text NOT NULL,revision integer NOT NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,expires_at timestamptz NOT NULL,confirmed_at timestamptz,task_id uuid REFERENCES agent_tasks(id) ON DELETE SET NULL,created_at timestamptz NOT NULL DEFAULT now());
+ALTER TABLE scheduled_actions ADD COLUMN IF NOT EXISTS confirmation_message_id bigint;
+CREATE INDEX IF NOT EXISTS scheduled_actions_due ON scheduled_actions(status,due_at);
+INSERT INTO schema_version VALUES(12) ON CONFLICT DO NOTHING;
 COMMIT;

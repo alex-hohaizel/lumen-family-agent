@@ -1,4 +1,6 @@
 import {looksLikeCredential} from './secrets.js';
+import {PersonalizedBrain,recoverPersonalization} from './personalization.js';
+import {OutboundLocalizer} from './localization.js';
 import {OAuthDevices} from './oauth-device.js';
 import {Coordinator} from './agent-services.js';
 import {PrivateInbox} from './private-inbox.js';
@@ -35,8 +37,26 @@ export class ChatRouter {
   private auth:ChatGPTAuth;
   private publicStickers?:Promise<TGSticker[]>;
   private lumenPack?:LumenPack;
+  private localizers=new Map<string,OutboundLocalizer>();
   setStickerPack(pack:LumenPack){this.lumenPack=pack;}
-  constructor(public registry:ChatRegistry,private config:Config,private telegram:Telegram,private bot:BotIdentity,private brainFactory?:(config:Config,chatId:string)=>Brain){this.auth=new ChatGPTAuth(config.runtimeDir);}
+  async probePersonalizationScheduling(){
+    const runtime=(await this.active())[0];if(!runtime)throw new Error('no_active_runtime');
+    const brain=new OpenAIModel(runtime.engine.config,this.auth),fixture=new Date(Date.now()+2*86400000);fixture.setUTCHours(1,23,0,0);
+    const context={now:fixture.toISOString(),local_time:new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Kyiv',dateStyle:'short',timeStyle:'short'}).format(fixture),timezone:'Europe/Kyiv',current_author:{id:'501',name:'Oleksandr'},current_topic:{id:'0'},owner_id:'501',personalization:{chat:{language:'uk'},people:[{id:'501',name:'Oleksandr',preferences:{}}]},recent_bot_turns:[{body:'О дев’ятій можу придумати короткий доброзичливий жарт про ім’я Люмена й написати його в цій темі.'}]};
+    const instructions='Фіксована синтетична перевірка звичайного планування відповіді. Дані вигадані, доступу до пам’яті людей і виконання інструментів немає. Поверни звичайний план для поточної репліки.';
+    const plan=await brain.plan({current:'Люмен, ты не понял. Когда тут будет 9 утра по киевскому времени, сделай это. И ещё зафиксируй: абсолютно все свои сообщения в этом чате, игры и активности пиши на русском.',context:JSON.stringify(context),instructions,search:false});
+    const setting=plan.actions.find(a=>a.kind==='personalize'&&a.scope==='chat'&&a.language==='ru'),job=plan.actions.find(a=>a.kind==='schedule');
+    if(!setting||!job||job.kind!=='schedule'||job.mode!=='task'||job.authorization!=='explicit'||job.timezone!=='Europe/Kyiv'||!/(люмен|имен)/iu.test(job.instruction))throw new Error('contextual_schedule_plan_invalid');
+    const format=(d:Date)=>new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Kyiv',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(d);
+    const parts=format(new Date(job.due_at)),original=format(fixture);
+    if(!['year','month','day'].every(k=>parts.find(p=>p.type===k)?.value===original.find(p=>p.type===k)?.value)||parts.find(p=>p.type==='hour')?.value!=='09'||parts.find(p=>p.type==='minute')?.value!=='00')throw new Error('contextual_schedule_timezone_invalid');
+    const personal=await brain.plan({current:'Люмен, называй меня Саня. А может завтра в девять напомнишь мне выпить воду?',context:JSON.stringify(context),instructions,search:false});
+    if(!personal.actions.some(a=>a.kind==='personalize'&&a.scope==='self'&&a.preferred_name==='Саня')||!personal.actions.some(a=>a.kind==='schedule'&&a.mode==='reminder'&&a.authorization==='ask'))throw new Error('personal_profile_or_confirmation_plan_invalid');
+    const outbound=await new OutboundLocalizer(runtime.db,brain).transform('sendMessage',{chat_id:'synthetic',text:'Нагадування: випити воду',_lumen_output_language:'ru',reply_markup:{inline_keyboard:[[{text:'Підтверджую',callback_data:'fixture'}]]}});
+    if(!/напоминание/iu.test(outbound.text)||/[іїєґ]/iu.test(outbound.text)||outbound.reply_markup.inline_keyboard[0][0].callback_data!=='fixture')throw new Error('outbound_language_probe_invalid');
+    return {chat_language:true,contextual_task:true,kyiv_time:true,personal_name:true,proposal_needs_confirmation:true,russian_outbound:true,public_fixture_only:true};
+  }
+  constructor(public registry:ChatRegistry,private config:Config,private telegram:Telegram,private bot:BotIdentity,private brainFactory?:(config:Config,chatId:string)=>Brain){this.auth=new ChatGPTAuth(config.runtimeDir);this.telegram.setOutboundTransform?.((method,body)=>this.localizers.get(String(body.chat_id))?.transform(method,body)||Promise.resolve(body));}
   async init(){
     await this.registry.init();
     if(this.config.ownerId)await this.registry.claimOwner(this.config.ownerId);
@@ -50,7 +70,9 @@ export class ChatRouter {
     await db.tx(applySchema);
     // Model selection is per group. Only the transport's token-refresh manager is shared.
     const initial=await state(db);const config={...this.config,model:initial.model||this.config.model};
-    const brain=this.brainFactory?.(config,chat.chat_id) || new OpenAIModel(config,this.auth);
+    const rawBrain=this.brainFactory?.(config,chat.chat_id) || new OpenAIModel(config,this.auth);
+    try{await recoverPersonalization(db,rawBrain);}catch{console.error(JSON.stringify({event:'personalization_recovery_deferred'}));}
+    const brain=new PersonalizedBrain(rawBrain,db);this.localizers.set(chat.chat_id,new OutboundLocalizer(db,rawBrain));
     const visual=new VisualMemory(db,this.telegram,brain);
     runtime={chat,db,engine:new Lumen(db,config,this.telegram,brain,this.bot,undefined,this.auth),delivery:new Delivery(db,this.telegram,config),memory:new Memory(db,brain,config.dailyTurnLimit || (config.authMode==='api'?200:0)),visual,images:new ImageJobs(db,config,this.telegram,visual),agent:new AgentTasks(db,config,brain),monitors:new WebMonitors(db,config)};
     this.runtimes.set(chat.chat_id,runtime);

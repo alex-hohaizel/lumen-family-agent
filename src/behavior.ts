@@ -7,7 +7,7 @@ export const DEFAULT_PREFERENCES: Preferences = { length: 'balanced', humor: 'li
 
 // A temporary conversation cue, never a diagnosis or a stored emotional profile.
 export function seriousConversation(lines: Pick<ConversationLine, 'body'>[]) {
-  return lines.slice(-6).some(x => /сварим|сварк|не смішно|без жарт|помер|похорон|лікарн|мені (?:дуже )?важко|дуже погано|не хочу (?:розмов|жарт)/iu.test(x.body));
+  return lines.slice(-6).some(x => /сварим|сварк|не смішно|без жарт|помер|похорон|лікарн|мені (?:дуже )?важко|дуже погано|не хочу (?:розмов|жарт)|без шут|мне (?:очень )?(?:тяжело|плохо)|умер|больниц|серь[её]зно|no jokes|hospital|bereave|i feel terrible/iu.test(x.body));
 }
 
 export function socialDecision(options: {
