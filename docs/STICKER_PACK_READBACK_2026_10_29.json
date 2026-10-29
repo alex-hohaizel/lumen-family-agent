@@ -1,0 +1,121 @@
+{
+  "version": "1.8.0",
+  "status": "live_sticker_verified",
+  "reason": "Користувач бачив старий набір із 30 стікерами за посиланням релізу з 50.",
+  "code_commit": "089251c66dd876b839beaff40ff6d01b05103ea2",
+  "source_tree": "7d1dda0fb190dc2ad0d02ef5acfc3b6b6d48bd46",
+  "deploy_id": "dep-dbh9n1ou01pc73am85ng",
+  "service_id": "srv-dbfl0je7bikc73dvg0qg",
+  "live_at": "2026-10-29T01:07:01.87767Z",
+  "runtime_instance": "srv-dbfl0je7bikc73dvg0qg-8jtb6",
+  "local_tests": {
+    "passed": 336,
+    "failed": 0,
+    "suites": 22,
+    "affected_tests": 13,
+    "affected_tests_are_repeats": true
+  },
+  "server_tests": {
+    "passed": 336,
+    "failed": 0,
+    "suites": 22,
+    "summary": [
+      {
+        "at": "2026-10-29T01:06:27.82833022Z",
+        "message": "ℹ tests 336"
+      },
+      {
+        "at": "2026-10-29T01:06:27.828337534Z",
+        "message": "ℹ suites 22"
+      },
+      {
+        "at": "2026-10-29T01:06:27.828343436Z",
+        "message": "ℹ pass 336"
+      },
+      {
+        "at": "2026-10-29T01:06:27.828344815Z",
+        "message": "ℹ fail 0"
+      },
+      {
+        "at": "2026-10-29T01:06:27.82834612Z",
+        "message": "ℹ cancelled 0"
+      },
+      {
+        "at": "2026-10-29T01:06:27.828347438Z",
+        "message": "ℹ skipped 0"
+      },
+      {
+        "at": "2026-10-29T01:06:27.828348949Z",
+        "message": "ℹ todo 0"
+      },
+      {
+        "at": "2026-10-29T01:06:27.828372101Z",
+        "message": "ℹ duration_ms 121930.700947"
+      }
+    ]
+  },
+  "sticker_events": [
+    {
+      "at": "2026-10-29T01:07:04.249978272Z",
+      "event": "sticker_pack_observed",
+      "name": "Lumen_Moods_by_lumen_family_agent",
+      "title": null,
+      "count": 0
+    },
+    {
+      "at": "2026-10-29T01:07:07.433732823Z",
+      "event": "sticker_pack_verified",
+      "source": "telegram_getStickerSet",
+      "name": "Lumen_Moods_by_lumen_family_agent",
+      "title": "Люмен — 50 емоцій",
+      "count": 50,
+      "matched_assets": 50,
+      "verified_at": "2026-10-29T01:07:07.433Z"
+    },
+    {
+      "at": "2026-10-29T01:07:07.433767224Z",
+      "event": "sticker_pack_ready",
+      "name": "Lumen_Moods_by_lumen_family_agent",
+      "title": "Люмен — 50 емоцій",
+      "count": 50
+    }
+  ],
+  "initial_observation_note": "Перший getStickerSet не повернув набір; код обробляє telegram_400 як відсутність відповіді. Журнал не містить опису помилки Telegram, тому ця подія не доводить видалення набору.",
+  "final_readback": {
+    "at": "2026-10-29T01:07:07.433732823Z",
+    "event": "sticker_pack_verified",
+    "source": "telegram_getStickerSet",
+    "name": "Lumen_Moods_by_lumen_family_agent",
+    "title": "Люмен — 50 емоцій",
+    "count": 50,
+    "matched_assets": 50,
+    "verified_at": "2026-10-29T01:07:07.433Z"
+  },
+  "catalogs": [
+    {
+      "at": "2026-10-29T01:07:07.880329426Z",
+      "event": "sticker_catalog_ready",
+      "count": 50
+    },
+    {
+      "at": "2026-10-29T01:07:08.262566526Z",
+      "event": "sticker_catalog_ready",
+      "count": 50
+    }
+  ],
+  "startup": {
+    "at": "2026-10-29T01:07:08.440796124Z",
+    "version": "1.8.0",
+    "release_notices_pending": 0
+  },
+  "error_window": {
+    "from": "2026-10-29T01:04:07.274033Z",
+    "to": "2026-10-29T01:07:55.988239652Z",
+    "errors": []
+  },
+  "public_url": "https://t.me/addstickers/Lumen_Moods_by_lumen_family_agent",
+  "client_state_after_hotfix": "Не перевірений на телефоні користувача. Старе прев’ю може бути збереженою копією клієнта; це припущення, а не встановлена причина.",
+  "android_cache_reference": "https://github.com/DrKLO/Telegram/blob/master/TMessagesProj/src/main/java/org/telegram/ui/Components/StickersAlert.java",
+  "client_refresh": "Налаштування Android → Програми → Telegram → Примусово зупинити. Запустити Telegram знову й відкрити посилання; очікуваний напис «Додати 50 наліпок».",
+  "verification_completed_at": "2026-10-29T01:07:55.988239652Z"
+}
