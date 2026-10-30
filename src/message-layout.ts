@@ -41,8 +41,9 @@ export async function layoutMessage(sql: SQL, input: string, presentation: Plan[
 }, keyboard?: InlineKeyboard) {
     let body = input;
     const card = presentation?.card;
-    if (card&&!context.interactive&&!context.fullRequested) {
-        body = [body.includes(card.title)?undefined:card.title,body,card.facts?.filter(x=>!body.includes(x)).map(x=>'• '+x).join('\n'),card.question&&!body.includes(card.question)?card.question:undefined].filter(Boolean).join('\n\n');
+    if(!body.trim()&&card?.summary)body=card.summary;
+    if (card&&(!context.interactive||context.fullRequested)) {
+        body = [body.includes(card.title)?undefined:card.title,body,context.fullRequested&&card.summary&&!body.includes(card.summary)?card.summary:undefined,card.facts?.filter(x=>!body.includes(x)).map(x=>'• '+x).join('\n'),card.question&&!body.includes(card.question)?card.question:undefined].filter(Boolean).join('\n\n');
     }
     if (presentation?.choices?.length && keyboard)
         body += '\n\n' + presentation.choices.map((x, i) => `${i + 1}. ${x}`).join('\n');
@@ -50,7 +51,7 @@ export async function layoutMessage(sql: SQL, input: string, presentation: Plan[
     body = formatted.text;
     let details = card?.details || context.extraDetails || '', main = body;
     let keys: InlineKeyboard | undefined = keyboard ? { inline_keyboard: keyboard.inline_keyboard.map(row => [...row]) } : undefined;
-    if(context.fullRequested&&card?.details&&!body.includes(card.details))main=[body,card.details].join('\n\n');
+    if(context.fullRequested&&details&&!body.includes(details))main=[body,details].join('\n\n');
     if(context.decisionFacts&&!main.includes(context.decisionFacts))main=[context.decisionFacts,main].filter(Boolean).join('\n\n');
     if (details) {
         const id = stableId('panel:' + context.key + ':' + createHash('sha256').update(details).digest('hex'));

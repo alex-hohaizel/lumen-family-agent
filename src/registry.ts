@@ -216,6 +216,7 @@ export class ChatRegistry {
     }
     return active;
   }
+  async privateTarget(actor:string,reference:PrivateIngressReference){return this.root.tx(sql=>this.ingressPrivateTarget(sql,actor,reference));}
   async ingressPollTargets(sql:SQL,pollId:string){
     const found:string[]=[];
     for(const chat of (await sql.query<RegisteredChat>('SELECT * FROM public.lumen_chats WHERE enabled=true ORDER BY created_at')).rows){

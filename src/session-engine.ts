@@ -116,7 +116,7 @@ export class SessionEngine {
 
             }
             else if (s.template === 'story') {
-                question = `Твоя прихована умова: використай слово «${p.private_state.secret_word}». Додай речення до спільної історії публічним ходом activity.turn, коли буде твоя черга. Умову не потрібно розкривати.`;
+                question = `Твоя прихована умова: використай слово «${p.private_state.secret_word}». Коли буде твоя черга, напиши в групі наступне речення спільної історії. Саму умову залиш при собі.`;
             }
             else if (s.template === 'ranking')
                 question += `\n${s.settings.options.map((x: string, i: number) => `${i + 1}. ${x}`).join('\n')}\nНомери від найкращого до найгіршого, через кому.`;
@@ -125,7 +125,7 @@ export class SessionEngine {
             else if (s.template === 'captions')
                 question = s.round === 1 ? question + '\nНадішли свій підпис. Для участі у голосуванні дозволь розкрити його після раунду.' : 'Обери номер найкращого підпису:\n' + (s.public_state.entries || []).map((x: any, i: number) => `${i + 1}. ${x.text}`).join('\n');
             else if (s.template === 'quotes')
-                question = s.round === 1 ? 'Надішли власну коротку фразу для гри «Хто це сказав?». Для включення в раунд обери розкриття після раунду.' : (s.public_state.entries || []).map((x: any, i: number) => `${i + 1}. ${x.text}`).join('\n') + '\nВгадай авторів: JSON {"1":1,"2":2}, де значення — номер гравця:\n' + players.map((x, i) => `${i + 1}. ${x.name}`).join('\n');
+                question = s.round === 1 ? 'Надішли власну коротку фразу для гри «Хто це сказав?». Для включення в раунд обери розкриття після раунду.' : (s.public_state.entries || []).map((x: any, i: number) => `${i + 1}. ${x.text}`).join('\n') + '\nВгадай, кому належить кожна фраза. Запиши відповідності за зразком {"1":2,"2":1}: перша фраза — другого гравця, друга — першого. Укажи всі фрази. Гравці:\n' + players.map((x, i) => `${i + 1}. ${x.name}`).join('\n');
             if(s.settings.max_choices_per_player>1)question+='\nКожен має власну гілку: обери одну або дві різні дії, номери через кому.';
             const prior = await one(this.db, "SELECT id FROM private_requests WHERE session_id=$1 AND recipient_id=$2 AND payload->>'round'=$3 AND status<>'revoked'", [id, p.user_id, String(s.round)]);
             if (!prior)

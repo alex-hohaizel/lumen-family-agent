@@ -10,6 +10,7 @@ import {one,state,type Database,type SQL} from './db.js';
 import type {Telegram,Message} from './telegram.js';
 import type {Brain} from './model.js';
 import {renderTGS} from './vector-sticker.js';
+import {selfContainedMediaInput} from './media-assets.js';
 const exec=promisify(execFile);
 const dataURL=async(bytes:Buffer)=>'data:image/jpeg;base64,'+(await sharp(bytes,{limitInputPixels:20000000}).rotate().resize({width:1024,height:1024,fit:'inside',withoutEnlargement:true}).flatten({background:'#eeeeee'}).jpeg({quality:82}).toBuffer()).toString('base64');
 
@@ -17,17 +18,20 @@ export async function rememberAttachments(sql:SQL,m:Message,source:number,revisi
   const entries:{kind:string;file:string;mime:string;unique?:string;meta?:Record<string,unknown>}[]=[];
   if(m.photo?.length)entries.push({kind:'photo',file:m.photo.at(-1)!.file_id,mime:'image/jpeg',meta:{album:m.media_group_id || null}});
   if(m.sticker)entries.push({kind:m.sticker.is_animated?'sticker_tgs':m.sticker.is_video?'sticker_video':'sticker',file:m.sticker.file_id,mime:m.sticker.is_animated?'application/x-tgsticker':m.sticker.is_video?'video/webm':'image/webp',unique:m.sticker.file_unique_id,meta:{thumbnail:m.sticker.thumbnail?.file_id,emoji:m.sticker.emoji,set_name:m.sticker.set_name}});
-  if(m.document&&!(/^(image\/)/.test(m.document.mime_type||'')||/\.(png|jpe?g|webp|gif)$/i.test(m.document.file_name||'')))entries.push({kind:'document',file:m.document.file_id,mime:m.document.mime_type||'application/octet-stream',meta:{file_name:m.document.file_name||'document.bin'}});
+  if(m.audio)entries.push({kind:'audio',file:m.audio.file_id,mime:m.audio.mime_type||'audio/mpeg',unique:m.audio.file_unique_id,meta:{file_name:m.audio.file_name||m.audio.title||'Музика',duration:m.audio.duration,title:m.audio.title,performer:m.audio.performer}});
+  const audioDocument=m.document&&(/^audio\//i.test(m.document.mime_type||'')||/\.(mp3|m4a|aac|wav|ogg|oga|flac)$/i.test(m.document.file_name||''));
+  if(audioDocument)entries.push({kind:'audio',file:m.document!.file_id,mime:m.document!.mime_type?.startsWith('audio/')?m.document!.mime_type:({'mp3':'audio/mpeg','m4a':'audio/mp4','aac':'audio/aac','wav':'audio/wav','ogg':'audio/ogg','oga':'audio/ogg','flac':'audio/flac'}[m.document!.file_name?.split('.').at(-1)?.toLowerCase()||'']||'audio/mpeg'),meta:{file_name:m.document!.file_name||'Музика'}});
+  if(m.document&&!audioDocument&&!(/^(image\/)/.test(m.document.mime_type||'')||/\.(png|jpe?g|webp|gif)$/i.test(m.document.file_name||'')))entries.push({kind:'document',file:m.document.file_id,mime:m.document.mime_type||'application/octet-stream',meta:{file_name:m.document.file_name||'document.bin'}});
   if(m.document&&(/^(image\/)/.test(m.document.mime_type || '')||/\.(png|jpe?g|webp|gif)$/i.test(m.document.file_name || '')))entries.push({kind:/gif/i.test(m.document.mime_type || m.document.file_name || '')?'animation':'image_file',file:m.document.file_id,mime:m.document.mime_type || 'image/png'});
   for(const [kind,media] of [['animation',m.animation],['video',m.video]] as const)if(media)entries.push({kind,file:media.file_id,mime:media.mime_type || 'video/mp4',unique:media.file_unique_id,meta:{thumbnail:media.thumbnail?.file_id}});
   for(const e of entries)await sql.query('INSERT INTO attachments(source_message_id,topic_id,kind,file_id,file_unique_id,mime,metadata,revision) VALUES($1,$2,$3,$4,$5,$6,$7,$8) ON CONFLICT(source_message_id,file_id) DO NOTHING',[source,String(m.message_thread_id || 0),e.kind,e.file,e.unique || '',e.mime,JSON.stringify(e.meta || {}),revision]);
-  await sql.query("UPDATE attachments SET status='stored' WHERE source_message_id=$1 AND kind='document' AND status='pending'",[source]);
+  await sql.query("UPDATE attachments SET status='stored' WHERE source_message_id=$1 AND kind IN ('document','audio') AND status='pending'",[source]);
 }
 export class VisualMemory {
   constructor(private db:Database,private telegram:Telegram,private brain:Brain){}
   async frames(row:Record<string,any>){return withWorkerSlot(()=>this.decodeFrames(row));}
   private async decodeFrames(row:Record<string,any>){
-    if(row.kind==='document')return {images:[],mode:'document_not_visually_decoded'};
+    if(row.kind==='document'||row.kind==='audio')return {images:[],mode:row.kind==='audio'?'audio_not_visually_decoded':'document_not_visually_decoded'};
     let bytes:Buffer;let images:string[]=[];let mode='image';
     try{
       bytes=await this.telegram.file(row.file_id,20*1024*1024);
@@ -35,7 +39,8 @@ export class VisualMemory {
         const frames=await renderTGS(bytes);images=await Promise.all(frames.map(dataURL));mode='vector_animation_frames';
       }else if(['sticker_video','video','animation'].includes(row.kind)){
         const binary=ffmpeg as unknown as string|null;if(typeof binary!=='string')throw Error('decoder_unavailable');const dir=await mkdtemp(join(tmpdir(),'lumen-media-'));
-        try{const input=join(dir,'input');await writeFile(input,bytes);await exec(binary,['-v','error','-nostdin','-threads','1','-i',input,'-vf','fps=1,scale=640:640:force_original_aspect_ratio=decrease','-frames:v','3',join(dir,'frame%02d.png')],{timeout:20000,maxBuffer:100000});const files=(await readdir(dir)).filter(f=>/^frame\d+\.png$/.test(f)).sort();images=await Promise.all(files.map(async f=>dataURL(await readFile(join(dir,f)))));mode='sampled_animation_frames';}
+        // A Telegram video sticker is WEBM even when a direct/legacy row omits MIME.
+        try{const input=join(dir,'input');await writeFile(input,bytes);await exec(binary,['-v','error','-nostdin','-threads','1','-protocol_whitelist','file,pipe',...selfContainedMediaInput(bytes,row.mime||(row.kind==='sticker_video'?'video/webm':'video/mp4')),'-i',input,'-vf','fps=1,scale=640:640:force_original_aspect_ratio=decrease','-frames:v','3',join(dir,'frame%02d.png')],{timeout:20000,maxBuffer:100000});const files=(await readdir(dir)).filter(f=>/^frame\d+\.png$/.test(f)).sort();images=await Promise.all(files.map(async f=>dataURL(await readFile(join(dir,f)))));mode='sampled_animation_frames';}
         finally{await rm(dir,{recursive:true,force:true});}
       }else images=[await dataURL(bytes)];
     }catch{

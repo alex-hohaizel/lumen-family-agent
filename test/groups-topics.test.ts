@@ -47,7 +47,7 @@ describe('Окремі групи, природні звернення та те
     const a=await add();await a.db.query('DELETE FROM onboarding_chats');await a.db.query('DELETE FROM release_notices');await a.db.query('DELETE FROM outbox');
     const assets=await stickerAssets();
     const restart=()=>{const r=new ChatRouter(registry,h.config,h.tg as unknown as Telegram,bot,()=>brains.get('-200')!);r.setStickerPack({name:STICKER_SET,title:STICKER_TITLE,stickers:assets.map((x,i)=>({file_id:'verified-'+i,file_unique_id:'verified-unique-'+i,is_video:true,set_name:STICKER_SET,emoji:x.emoji}))});return r;};
-    const firstRestart=restart();await firstRestart.init();await firstRestart.runtime((await registry.find('-200'))!);const secondRestart=restart();await secondRestart.init();await secondRestart.runtime((await registry.find('-200'))!);const rows=(await a.db.query('SELECT * FROM outbox')).rows;assert.equal(rows.length,1);assert.match(rows[0]!.body.text,/Люмен 1\.12/);assert.equal(rows[0]!.service,true);
+    const firstRestart=restart();await firstRestart.init();await firstRestart.runtime((await registry.find('-200'))!);const secondRestart=restart();await secondRestart.init();await secondRestart.runtime((await registry.find('-200'))!);const rows=(await a.db.query('SELECT * FROM outbox')).rows;assert.equal(rows.length,1);assert.match(rows[0]!.body.text,/Люмен 1\.13/);assert.equal(rows[0]!.service,true);
   });
   it('не підключає чужу групу чи чужий приватний акаунт за підробленим посиланням',async()=>{
     await router.receive({update_id:seq++,message:{...msg('',-300,22).message!,new_chat_members:[{id:999,first_name:'Люмен'}]}});

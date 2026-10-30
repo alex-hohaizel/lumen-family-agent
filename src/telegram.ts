@@ -16,6 +16,7 @@ export interface Message {
   media_group_id?:string;
   animation?:{file_id:string;file_unique_id?:string;file_size?:number;mime_type?:string;thumbnail?:{file_id:string}};
   video?:{file_id:string;file_unique_id?:string;file_size?:number;mime_type?:string;thumbnail?:{file_id:string}};
+  audio?:{file_id:string;file_unique_id?:string;file_size?:number;mime_type?:string;file_name?:string;duration?:number;title?:string;performer?:string};
   lumen_choice?:{menu_id:string;question:string;audience:string;selected:{user_id:string;name:string;label:string}[]};
   voice?: { file_id: string; file_size?: number; mime_type?: string };
   document?: { file_id: string; file_size?: number; mime_type?: string; file_name?: string };

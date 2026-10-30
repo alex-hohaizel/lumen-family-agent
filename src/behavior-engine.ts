@@ -60,8 +60,9 @@ export function explicitSilence(text:string){
  const plain=text.replace(/^>.*$/gm,'').replace(/«[^»]*»|[“"][^”"\n]*[”"]|`[^`]*`/g,'');
  return !/не (?:мовчи|молчи)|не треба мовчати/iu.test(plain)&&/не відповідай|не отвечай|помовчи|помолчи|я допишу|я допишу|поки мовчи|don['’]t reply|do not reply/iu.test(plain);
 }
-export function normalizeBehaviorPlan(plan:Plan,direct:boolean,references:Record<string,any>[]=[],requestText=''):Plan {
+export function normalizeBehaviorPlan(plan:Plan,direct:boolean,references:Record<string,any>[]=[],requestText='',forceDirect=direct):Plan {
   if(direct&&explicitSilence(requestText))return {...plan,reply:'',actions:[],presentation:undefined,interaction:undefined,offer:undefined,dialogue:undefined,behavior:{move:'listen',recipient:'bot',relation:'new_request',reason:'Явне прохання помовчати'}};
+  if(direct&&!forceDirect&&plan.behavior&&(plan.behavior.move==='listen'||plan.behavior.recipient==='other'))return plan;
   if(plan.behavior&&['answer_to_question','accept_offer','activity_move'].includes(plan.behavior.relation)&&(!plan.behavior.reference_id||!references.some(r=>String(r.id)===plan.behavior!.reference_id))){
     return direct?{reply:'Уточни, яку саме пропозицію або справу продовжуємо.',actions:[],behavior:{move:'clarify',recipient:'bot',relation:'new_request',reason:'Потрібна однозначна прив’язка'}}:{reply:'',actions:[],behavior:{move:'listen',recipient:'unspecified',relation:'ambient',reason:'Невідома прив’язка не дає дозволу'}};
   }

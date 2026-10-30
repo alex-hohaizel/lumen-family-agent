@@ -1,11 +1,12 @@
 import {Temporal} from '@js-temporal/polyfill';
 import {z} from 'zod';
-import {one,state,queueText,type Database,type SQL} from './db.js';
+import {one,state,type Database} from './db.js';
 import {command,digest,requireVersion,sourceIds} from './evolution-core.js';
 import {recordProvenance,transferProvenance} from './provenance.js';
 import {stableId} from './operations.js';
 import {ToolError} from './safe-http.js';
 import type {ToolContext} from './agent-tools.js';
+import {catchUp,missedNotice,settleScheduledCatchUp,type RecurringSeries} from './recurrence-policy.js';
 export const SeriesRule=z.object({title:z.string().min(2).max(160),instruction:z.string().min(3).max(4000),mode:z.enum(['reminder','task']).default('reminder'),timezone:z.string().min(3).max(80),start_date:z.string().regex(/^\d{4}-\d{2}-\d{2}$/),time:z.string().regex(/^(?:[01]\d|2[0-3]):[0-5]\d$/),frequency:z.enum(['daily','weekly','monthly']),interval:z.number().int().min(1).max(12).default(1),weekdays:z.array(z.number().int().min(1).max(7)).min(1).max(7).optional(),until:z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),count:z.number().int().min(1).max(3660).optional(),dst:z.enum(['reject','earlier','later','skip']).default('reject'),catch_up:z.enum(['latest','ask','skip']).optional()});
 export const SeriesCommand=z.object({operation:z.enum(['preview','confirm','list','read','skip','move','revise','end']),id:z.string().uuid().optional(),version:z.number().int().positive().optional(),rule:SeriesRule.optional(),occurrence_key:z.string().max(80).optional(),move_to:z.string().datetime({offset:true}).optional()});
 type Rule=z.infer<typeof SeriesRule>;
@@ -22,8 +23,6 @@ function* occurrenceStream(rule:Rule,after:string){
 }
 export function occurrences(rule:Rule,after:string,count=3){const result=[];for(const item of occurrenceStream(rule,after)){result.push(item);if(result.length>=count)break;}return result;}
 function window(rule:Rule,after:string,now:number,count:number){const future=[],missed=[];for(const item of occurrenceStream(rule,after)){if(Date.parse(item.due)<now-3600000)missed.push(item);else{future.push(item);if(future.length>=count)break;}}return [...(missed.length?[{...missed.at(-1)!,coalesced_count:missed.length}]:[]),...future.map(x=>({...x,coalesced_count:1}))];}
-const catchUp=(rule:Rule)=>rule.catch_up==='skip'?'skip':rule.mode==='task'?'ask':rule.catch_up||'latest';
-async function missedNotice(sql:SQL,row:any,revision:number,key:string,count:number){await queueText(sql,`Після перерви ${count} пропущених ${row.rule.mode==='task'?'запусків задачі':'нагадувань'} чекають перегляду. Відкрий серію та перенеси потрібний запуск на майбутній час або пропусти його.`,revision,'series-review:'+row.id+':'+key,false,{actorId:row.actor_id,audience:row.audience,threadId:row.topic_id==='0'?undefined:Number(row.topic_id),sourceMessageId:row.source_message_id});}
 export class Recurring {
  private nextAt=0;constructor(private db:Database){}
  async run(a:z.infer<typeof SeriesCommand>,c:ToolContext):Promise<any>{
@@ -45,22 +44,18 @@ export class Recurring {
  }
  async tick(now=Date.now()){
   if(now<this.nextAt)return false;this.nextAt=now+30000;
-  return this.db.tx(async sql=>{const s=await state(sql,true);if(s.paused)return false;const series=(await sql.query("SELECT * FROM recurring_series WHERE status='active' AND revision=$1 ORDER BY next_check LIMIT 20 FOR UPDATE SKIP LOCKED",[s.memory_revision])).rows;
+  return this.db.tx(async sql=>{const s=await state(sql,true);if(s.paused)return false;const series=(await sql.query<RecurringSeries<Rule>>("SELECT * FROM recurring_series WHERE status='active' AND revision=$1 ORDER BY next_check LIMIT 20 FOR UPDATE SKIP LOCKED",[s.memory_revision])).rows;
    for(const row of series){
-    await sql.query("UPDATE recurring_occurrences o SET status=a.status FROM scheduled_actions a WHERE o.series_id=$1 AND o.schedule_id=a.id AND a.status IN ('completed','cancelled','failed','needs_input')",[row.id]);
+    await sql.query("UPDATE recurring_occurrences o SET status=a.status FROM scheduled_actions a WHERE o.series_id=$1 AND o.schedule_id=a.id AND o.status IN ('pending','scheduled','needs_input') AND a.status IN ('completed','cancelled','failed','needs_input')",[row.id]);
     const future=Number((await one(sql,"SELECT count(*) AS n FROM recurring_occurrences WHERE series_id=$1 AND due_at>now() AND status IN ('pending','scheduled','skipped')",[row.id]))!.n);
     if(future<10){const after=row.last_materialized?new Date(row.last_materialized).toISOString():new Date(row.created_at).toISOString();let next;try{next=window(row.rule,after,now,10-future);}catch{await sql.query("UPDATE recurring_series SET status='needs_input' WHERE id=$1",[row.id]);continue;}
      for(const item of next)await sql.query('INSERT INTO recurring_occurrences(series_id,occurrence_key,due_at,status,coalesced_count) VALUES($1,$2,$3,$4,$5) ON CONFLICT DO NOTHING',[row.id,item.key,item.due,item.skipped?'skipped':'pending',item.coalesced_count]);if(next.length)await sql.query("UPDATE recurring_series SET last_materialized=$2,next_check=now()+interval '30 seconds' WHERE id=$1",[row.id,next.at(-1)!.due]);
     }
 
-    const waiting=(await sql.query("SELECT a.id,o.occurrence_key FROM scheduled_actions a JOIN recurring_occurrences o ON o.schedule_id=a.id WHERE o.series_id=$1 AND a.status='pending' AND a.due_at<now()-interval '1 hour' ORDER BY a.due_at",[row.id])).rows;
     const policy=catchUp(row.rule);
-    if(waiting.length){const older=waiting.slice(0,-1).map(x=>x.id),last=waiting.at(-1)!;if(older.length){await sql.query("UPDATE scheduled_actions SET status='cancelled' WHERE id=ANY($1::uuid[])",[older]);await sql.query("UPDATE recurring_occurrences SET status='missed' WHERE schedule_id=ANY($1::uuid[])",[older]);}
-     if(policy!=='latest'){await sql.query('UPDATE scheduled_actions SET status=$2 WHERE id=$1',[last.id,policy==='ask'?'needs_input':'cancelled']);await sql.query('UPDATE recurring_occurrences SET status=$2 WHERE schedule_id=$1',[last.id,policy==='ask'?'needs_input':'missed']);if(policy==='ask')await missedNotice(sql,row,s.memory_revision,last.occurrence_key,waiting.length);}
-     else if(waiting.length>1)await sql.query("UPDATE scheduled_actions SET instruction=instruction||$2 WHERE id=$1",[last.id,` (після перерви: ${waiting.length} повторів об’єднано)`]);
-    }
+    await settleScheduledCatchUp(sql,row,s.memory_revision);
     const due=(await sql.query("SELECT * FROM recurring_occurrences WHERE series_id=$1 AND status='pending' AND due_at<=now()+interval '1 day' ORDER BY due_at LIMIT 20",[row.id])).rows;const missed=due.filter(x=>new Date(x.due_at).getTime()<now-3600000),missedCount=missed.reduce((n,x)=>n+Number(x.coalesced_count||1),0);if(missed.length>1)await sql.query("UPDATE recurring_occurrences SET status='missed' WHERE series_id=$1 AND occurrence_key=ANY($2::text[])",[row.id,missed.slice(0,-1).map(x=>x.occurrence_key)]);
-    for(const item of due.filter(x=>!missed.slice(0,-1).includes(x))){if(missed.includes(item)&&policy!=='latest'){await sql.query('UPDATE recurring_occurrences SET status=$3 WHERE series_id=$1 AND occurrence_key=$2',[row.id,item.occurrence_key,policy==='ask'?'needs_input':'missed']);if(policy==='ask')await missedNotice(sql,row,s.memory_revision,item.occurrence_key,missedCount);continue;}const id=stableId('series:'+row.id+':'+item.occurrence_key+':'+item.version),rule=row.rule;
+    for(const item of due.filter(x=>!missed.slice(0,-1).includes(x))){if(missed.includes(item)&&policy!=='latest'){await sql.query('UPDATE recurring_occurrences SET status=$3 WHERE series_id=$1 AND occurrence_key=$2',[row.id,item.occurrence_key,policy==='ask'?'needs_input':'missed']);if(policy==='ask')await missedNotice(sql,row,s.memory_revision,item.occurrence_key,missedCount,item.version);continue;}const id=stableId('series:'+row.id+':'+item.occurrence_key+':'+item.version),rule=row.rule;
      await sql.query("INSERT INTO scheduled_actions(id,dedup_key,author_id,topic_id,title,instruction,mode,due_at,timezone,status,action_hash,revision,source_message_id,expires_at,confirmed_at) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,'pending',$10,$11,$12,now()+interval '1 day',now()) ON CONFLICT(dedup_key) DO NOTHING",[id,'series:'+id,row.actor_id,row.topic_id,rule.title,rule.instruction+(missedCount>1&&item===missed.at(-1)?` (після перерви об’єднано ${missedCount} пропущених повторів)`:'') ,rule.mode,item.due_at,rule.timezone,digest({rule,occurrence:item.occurrence_key}),s.memory_revision,row.source_message_id]);await transferProvenance(sql,'series',row.id,'schedule',id);await sql.query("UPDATE recurring_occurrences SET status='scheduled',schedule_id=$3 WHERE series_id=$1 AND occurrence_key=$2",[row.id,item.occurrence_key,id]);
     }
    }return Boolean(series.length);

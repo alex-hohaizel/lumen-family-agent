@@ -1,6 +1,6 @@
-import {transferProvenance} from './provenance.js';
+import {transferProvenance,recordProvenance} from './provenance.js';
 import {Acceptance,Evidence} from './project-evidence.js';
-import {evidenceCheckedResearch} from './result-verifier.js';
+import {evidenceCheckedResearch,taskCompletionCriteria} from './result-verifier.js';
 import {ScenarioPack} from './scenario-packs.js';
 import { reserveModelCall } from './model-budget.js';
 import { OAuthDevices } from './oauth-device.js';
@@ -14,7 +14,7 @@ import { GroupWork, Decisions } from './group-work.js';
 import { SessionEngine, ACTIVITY_TEMPLATES } from './session-engine.js';
 import { PrivateInbox } from './private-inbox.js';
 import { Research, Coordinator } from './agent-services.js';
-import { TaskJournal } from './task-journal.js';
+import { TaskJournal,resolveTaskAudience } from './task-journal.js';
 import { ToolError } from './safe-http.js';
 import { cancelOperations } from './operations.js';
 import { browsers } from './browser.js';
@@ -111,15 +111,28 @@ export function registerExtendedTools(db: Database, config: Config, brain: Brain
         } });
     add('tasks.resume', { description: 'Продовжити власну призупинену задачу. Уточнення створює нову версію мети, скасовує старі погодження й застарілий план.', background: false, schema: z.object({ id, additional_steps: z.number().int().min(2).max(16).default(8), clarification: z.string().max(4000).optional() }), run: async (a, c) => {
             const result = await db.tx(async (sql) => {
-                const r = await one(sql, "UPDATE agent_tasks SET goal=CASE WHEN $1::text IS NULL THEN goal ELSE goal||E'\\nУточнення автора: '||$1 END,goal_version=goal_version+CASE WHEN $1::text IS NULL THEN 0 ELSE 1 END,status='pending',max_steps=LEAST(64,GREATEST(max_steps,step)+$2),deadline=now()+interval '30 minutes',available_at=now(),error_code=NULL,updated_at=now() WHERE id=$3 AND actor_id=$4 AND status IN ('needs_input','failed','paused') RETURNING id,status,goal_version", [a.clarification || null, a.additional_steps, a.id, c.actorId]);
+                const live=await state(sql,true);if(live.paused||live.memory_revision!==c.revision)throw new ToolError('task_cancelled');
+                if(String(live.chat_id)!==c.chatId&&!(c.audience==='private'&&c.chatId===c.actorId))throw new ToolError('other_chat');
+                const member=await one(sql,'SELECT active FROM members WHERE user_id=$1',[c.actorId]);if(member?.active===false||!member&&live.owner_id!==c.actorId&&!(live.participants||[]).some((p:any)=>String(p.id)===c.actorId))throw new ToolError('member_required');
+                const task=await one(sql,"SELECT * FROM agent_tasks WHERE id=$1 AND actor_id=$2 AND topic_id=$3 AND revision=$4 AND status IN ('needs_input','failed','paused') FOR UPDATE",[a.id,c.actorId,c.topicId,c.revision]);
+                if(!task||c.goalVersion&&Number(task.goal_version)!==c.goalVersion)return {resumed:false};
+                const source=c.sourceId?await one(sql,"SELECT body FROM messages WHERE id=$1 AND user_id=$2 AND topic_id=$3 AND role='user'",[c.sourceId,c.actorId,c.topicId]):undefined;
+                if(c.sourceId&&!source)throw new ToolError('task_source_required');
+                const goal=a.clarification?task.goal+'\nУточнення автора: '+a.clarification:task.goal;
+                const criteria=taskCompletionCriteria({title:task.title,goal,criteria:task.criteria,requestText:source?.body});
+                const audience=await resolveTaskAudience(sql,task,String(live.chat_id));
+                const r = await one(sql, "UPDATE agent_tasks SET goal=$1,criteria=$2,goal_version=goal_version+$3,status='pending',max_steps=LEAST(64,GREATEST(max_steps,step)+$4),deadline=now()+interval '30 minutes',available_at=now(),error_code=NULL,updated_at=now(),audience=$7 WHERE id=$5 AND goal_version=$6 RETURNING id,status,goal_version", [goal,JSON.stringify(criteria),a.clarification?1:0,a.additional_steps,a.id,task.goal_version,audience]);
                 if (r) {
+                    if(c.sourceId)await recordProvenance(sql,'task',r.id,[c.sourceId]);
                     await sql.query("UPDATE tool_approvals SET status='cancelled' WHERE task_id=$1 AND status IN ('pending','approved')", [a.id]);
                     if (a.clarification)
                         await sql.query('DELETE FROM task_stages WHERE task_id=$1', [a.id]);
+                    const dependencies=(await sql.query("SELECT source_message_id FROM provenance_edges WHERE derived_kind='task' AND derived_key=$1::text UNION SELECT source_message_id FROM agent_tasks WHERE id=$1::uuid AND source_message_id IS NOT NULL",[r.id])).rows.map(row=>Number(row.source_message_id));
+                    return {...r,source_ids:[...new Set([...dependencies,...(source?[Number(c.sourceId)]:[])])]};
                 }
                 return r || { resumed: false };
             });
-            cancelOperations(db, 'task:' + a.id);
+            if('id' in result)cancelOperations(db, 'task:' + a.id);
             return result;
         } });
     add('tasks.priority', { description: 'Змінити пріоритет власної задачі в черзі, від -5 до 5.', schema: z.object({ id, priority: z.number().int().min(-5).max(5) }), run: async (a, c) => (await db.query('UPDATE agent_tasks SET priority=$1 WHERE id=$2 AND actor_id=$3 RETURNING id,priority', [a.priority, a.id, c.actorId])).rows[0] || { found: false } });

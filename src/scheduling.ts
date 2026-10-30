@@ -4,6 +4,8 @@ import {one,state,queueText,type SQL,type Database} from './db.js';
 import {provesCommand,bareIntent} from './personalization.js';
 import type {Message} from './telegram.js';
 import {recordProvenance} from './provenance.js';
+import {taskCompletionCriteria} from './result-verifier.js';
+import {prepareRecurringSchedule} from './recurrence-policy.js';
 
 export const ScheduleSchema=z.object({kind:z.literal('schedule'),title:z.string().min(2).max(160),instruction:z.string().min(3).max(6000),mode:z.enum(['reminder','task']),due_at:z.string().datetime({offset:true}),local_time:z.string().regex(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/).optional(),timezone:z.string().min(3).max(80),authorization:z.enum(['explicit','ask']).default('ask'),quote:z.string().min(2).max(2500)});
 export const ScheduleDecisionSchema=z.object({kind:z.literal('schedule_decision'),id:z.string().uuid(),decision:z.enum(['confirm','cancel']),quote:z.string().min(2).max(1000)});
@@ -19,7 +21,7 @@ export async function saveSchedule(sql:SQL,a:Schedule,m:Message,sourceId:number,
   const hash=createHash('sha256').update(JSON.stringify(payload)).digest('hex'),key=`schedule:${updateId}:${hash}`;
   const row=await one(sql,`INSERT INTO scheduled_actions(id,dedup_key,author_id,topic_id,title,instruction,mode,due_at,timezone,status,action_hash,revision,source_message_id,expires_at) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,now()+interval '30 minutes') ON CONFLICT(dedup_key) DO UPDATE SET dedup_key=scheduled_actions.dedup_key RETURNING *`,[randomUUID(),key,uid,topic,a.title,a.instruction,a.mode,due,a.timezone,a.authorization==='explicit'?'pending':'awaiting_confirmation',hash,revision,sourceId]);
   await recordProvenance(sql,'schedule',row!.id,[sourceId,...sourceIds]);
-  return row!.status==='awaiting_confirmation'?`Уточню: ${a.mode==='task'?'виконати дію':'нагадати'} «${a.instruction}» ${when(due,a.timezone)} у цій темі для тебе. Підтверджуєш?`:`Запланував ${a.mode==='task'?'виконання':'нагадування'} «${a.instruction}» на ${when(due,a.timezone)}. Запис #${row!.id}.`;
+  return row!.status==='awaiting_confirmation'?`Уточню: ${a.mode==='task'?'виконати дію':'нагадати'} «${a.instruction}» ${when(due,a.timezone)} у цій темі для тебе. Підтверджуєш?`:`Запланував ${a.mode==='task'?'виконання':'нагадування'} «${a.instruction}» на ${when(due,a.timezone)}.`;
 }
 export async function scheduleDecision(sql:SQL,a:z.infer<typeof ScheduleDecisionSchema>,m:Message,revision:number){
   const text=m.text||m.caption||'';
@@ -50,16 +52,21 @@ export async function dispatchSchedules(db:Database){
     await sql.query("UPDATE scheduled_actions SET status='cancelled' WHERE status='dispatched' AND task_id IS NULL");
     await sql.query("UPDATE scheduled_actions SET status='expired' WHERE status='awaiting_confirmation' AND expires_at<=now()");
     const rows=(await sql.query("SELECT * FROM scheduled_actions WHERE status='pending' AND revision=$1 AND due_at<=now() ORDER BY due_at LIMIT 20 FOR UPDATE SKIP LOCKED",[s.memory_revision])).rows;
-    for(const row of rows){
+    let dispatched=0;
+    for(const candidate of rows){
+      const recurrence=await prepareRecurringSchedule(sql,candidate,s.memory_revision);if(!recurrence.allowed)continue;
+      const row=(await one(sql,'SELECT * FROM scheduled_actions WHERE id=$1',[candidate.id]))!;
+      const sources=(await sql.query("SELECT source_message_id FROM provenance_edges WHERE derived_kind='schedule' AND derived_key=$1",[String(row.id)])).rows.map(source=>Number(source.source_message_id));
       if(row.mode==='reminder'){
-        await queueText(sql,`Нагадування: ${row.instruction}`,s.memory_revision,'scheduled:'+row.id,false,{threadId:row.topic_id==='0'?undefined:Number(row.topic_id),actorId:row.author_id,sourceMessageId:row.source_message_id?Number(row.source_message_id):undefined});
+        await queueText(sql,`Нагадування: ${row.instruction}`,s.memory_revision,'scheduled:'+row.id,false,{threadId:row.topic_id==='0'?undefined:Number(row.topic_id),actorId:row.author_id,audience:recurrence.audience,sourceMessageId:row.source_message_id?Number(row.source_message_id):undefined,sourceIds:sources});
         await sql.query("UPDATE scheduled_actions SET status='queued' WHERE id=$1",[row.id]);
       }else{
-        const task=await one(sql,`INSERT INTO agent_tasks(id,dedup_key,actor_id,topic_id,title,goal,revision,source_message_id,available_at,deadline,criteria) VALUES($1,$2,$3,$4,$5,$6,$7,$8,now(),now()+interval '30 minutes','["response"]') ON CONFLICT(dedup_key) DO UPDATE SET dedup_key=agent_tasks.dedup_key RETURNING id`,[randomUUID(),'scheduled-task:'+row.id,row.author_id,row.topic_id,row.title,'Час підтвердженого відкладеного доручення настав. Виконай зараз, не перенось і не плануй повторно: '+row.instruction,s.memory_revision,row.source_message_id]);
+        const task=await one(sql,`INSERT INTO agent_tasks(id,dedup_key,actor_id,topic_id,title,goal,revision,source_message_id,available_at,deadline,criteria,audience) VALUES($1,$2,$3,$4,$5,$6,$7,$8,now(),now()+interval '30 minutes',$9,$10) ON CONFLICT(dedup_key) DO UPDATE SET dedup_key=agent_tasks.dedup_key RETURNING id`,[randomUUID(),'scheduled-task:'+row.id,row.author_id,row.topic_id,row.title,'Час підтвердженого відкладеного доручення настав. Виконай зараз, не перенось і не плануй повторно: '+row.instruction,s.memory_revision,row.source_message_id,JSON.stringify(taskCompletionCriteria({title:row.title,goal:row.instruction})),recurrence.audience==='private'||Number(s.chat_id)>0?'private':'group']);
         await sql.query("UPDATE scheduled_actions SET status='dispatched',task_id=$1 WHERE id=$2",[task!.id,row.id]);
-        if(row.source_message_id)await recordProvenance(sql,'task',task!.id,[Number(row.source_message_id)]);
+        await recordProvenance(sql,'task',task!.id,[...sources,...(row.source_message_id?[Number(row.source_message_id)]:[])]);
       }
+      dispatched++;
     }
-    return rows.length;
+    return dispatched;
   });
 }

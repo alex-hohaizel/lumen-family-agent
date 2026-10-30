@@ -11,6 +11,21 @@ export type Sharing = 'task' | 'anonymous' | 'quote' | 'reveal';
 export class PrivateInbox {
     private vault: ConnectorVault;
     constructor(private db: Database, private runtimeDir: string) { this.vault = new ConnectorVault(db, runtimeDir); }
+    private async showStoryHint(r:any,user:string,telegram:Telegram){
+        if(r.recipient_id!==user||!r.session_id||r.payload?.activity_id!==r.session_id)return false;
+        const hint=await this.db.tx(async sql=>{
+            const session=await one(sql,'SELECT template FROM activity_sessions WHERE id=$1 AND topic_id=$2',[r.session_id,r.topic_id]);
+            if(!session)return undefined;if(session.template!=='story')return null;
+            const live=await state(sql,true);if(live.paused||live.memory_revision!==r.revision)return undefined;
+            const request=await one(sql,"SELECT r.id,r.question,r.purpose FROM private_requests r JOIN activity_sessions s ON s.id=r.session_id AND s.topic_id=r.topic_id JOIN activity_players p ON p.session_id=s.id AND p.user_id=r.recipient_id WHERE r.id=$1 AND r.recipient_id=$2 AND r.session_id=$3 AND r.topic_id=$4 AND r.revision=$5 AND r.status IN ('offered','answering','answered') AND r.expires_at>now() AND s.template='story' AND p.status='joined' AND NOT EXISTS(SELECT 1 FROM members m WHERE m.user_id=$2 AND m.active=false) FOR UPDATE OF r",[r.id,user,r.session_id,r.topic_id,r.revision]);
+            if(!request)return undefined;
+            await sql.query("UPDATE private_requests SET status='offered' WHERE id=$1 AND status='answering'",[request.id]);
+            return request;
+        });
+        if(hint===null)return false;if(!hint)return true;
+        await telegram.text(user,`${hint.question}\n\nМета: ${hint.purpose}\nЦе особиста підказка для твого ходу в групі. Відповідати тут і обирати спосіб використання відповіді не потрібно. Це звичайний чат із ботом, а не Secret Chat.`);
+        return true;
+    }
     async ask(c: ToolContext, recipient: string, question: string, purpose: string, payload: Record<string, any> = {}, sessionId?: string) {
         if (!/^\d+$/.test(recipient))
             throw new ToolError('participant_required');
@@ -54,6 +69,7 @@ export class PrivateInbox {
                 return false;
             }
         }
+        if(await this.showStoryHint(r,user,telegram))return true;
         await telegram.text(user, `${r.question}\n\nМета: ${r.purpose}\nВідповідь зберігатиметься зашифрованою. Обери спосіб використання, потім напиши відповідь. Це звичайний чат із ботом; він не є Secret Chat. /cancel — відмовитися.`, { replyMarkup: { inline_keyboard: [[{ text: 'Лише для цієї задачі', callback_data: 'lumen:pv:' + token + ':task' }], [{ text: 'Узагальнено без імені', callback_data: 'lumen:pv:' + token + ':anonymous' }], [{ text: 'Дозволяю цитувати', callback_data: 'lumen:pv:' + token + ':quote' }], ...(r.session_id ? [[{ text: 'Розкрити після раунду', callback_data: 'lumen:pv:' + token + ':reveal' }]] : [])] } });
         return true;
     }
@@ -62,7 +78,7 @@ export class PrivateInbox {
         if (!match)
             return false;
         const user = String(cb.from.id);
-        const r = await one(this.db, "SELECT * FROM private_requests WHERE token=$1 AND recipient_id=$2 AND status IN ('offered','answering','answered') AND expires_at>now()", [match[1], user]);
+        const r = await one(this.db, "SELECT *,expires_at<=now() AS expired FROM private_requests WHERE token=$1 AND recipient_id=$2 AND status IN ('offered','answering','answered')", [match[1], user]);
         if (!r)
             return false;
         const current = await state(this.db);
@@ -71,8 +87,13 @@ export class PrivateInbox {
         const known = await one(this.db, 'SELECT active FROM members WHERE user_id=$1', [user]);
         if (known?.active === false)
             return false;
+        if (r.expired) {
+            await telegram.text(user, 'Час для відповіді на це особисте запитання вже минув. Якщо воно ще актуальне, повернися до розмови, звідки відкрив цей запит, і попроси надіслати нове особисте запитання.');
+            return false;
+        }
         if (match[2] === 'reveal' && !r.session_id)
             return false;
+        if(await this.showStoryHint(r,user,telegram))return true;
         // Only one free-text prompt can own the next DM. Never silently apply it to another group.
         await this.db.query("UPDATE private_requests SET status='offered' WHERE recipient_id=$1 AND status='answering'", [user]);
         await this.db.query("UPDATE private_requests SET status='answering',sharing=$1 WHERE id=$2", [match[2], r.id]);

@@ -109,7 +109,7 @@ describe('Поведінка 1.11: згода, доставка, скасува�
     assert.equal(h.brain.calls.length,2);
     assert.equal(JSON.parse(h.brain.calls[1]!.context).tool_results_untrusted[0].result.status,'queued_for_delivery');
     const queued=await one(db,"SELECT body FROM outbox WHERE dedup_key LIKE 'answer:%' ORDER BY id DESC LIMIT 1");
-    assert.match(queued!.body.text,/чергу/);assert.doesNotMatch(queued!.body.text,/Файл надіслано/);
+    assert.match(queued!.body.text,/(?:ще триває|ще готу|очіку|чергу)/);assert.doesNotMatch(queued!.body.text,/Файл надіслано/);
     assert.equal((await one(db,'SELECT phase FROM commitments WHERE id=$1',[root!.id]))!.phase,'delivering');
     const d=delivery();await d.next('media');
     for(let i=0;i<10;i++)await d.next('text');

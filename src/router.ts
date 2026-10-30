@@ -230,6 +230,15 @@ export class ChatRouter {
     const runtime=await this.probeRuntime();if(runtime){const {reserveModelCall}=await import('./model-budget.js');await reserveModelCall(runtime.db,this.config);}const model=new OpenAIModel(runtime?.engine.config||this.config,this.auth,undefined,undefined,runtime?.db);const answer=await model.text([{role:'user',content:[{type:'input_text',text:'Read the five digit number on this fixed diagnostic page. Reply only with that number.'},...pages.map(p=>({type:'input_image',image_url:p.dataUrl}))]}],'Read the number in the image; no tools or external actions.',false);if(!answer.includes('31415'))throw new Error('vision_ocr_number_not_observed');
     if(runtime)await runtime.db.query("INSERT INTO capability_health(name,status,detail) VALUES('documents','ready','DOCX XLSX PDF and image OCR verified') ON CONFLICT(name,actor_id) DO UPDATE SET status='ready',detail=excluded.detail,checked_at=now()");return {docx_readback:true,xlsx_readback:true,pdf_readback:true,scan_pages:pages.length,vision_ocr:true,number:'31415'};
   }
+  async probeCompanion113(){
+    const runtime=await this.probeRuntime(),config=runtime?.engine.config||this.config;
+    const brain=new OpenAIModel(config,this.auth,undefined,undefined,runtime?.db);
+    const {probeCompanionConversation}=await import('./companion-probe.js');
+    const result=await probeCompanionConversation(brain,async()=>{if(runtime){const {reserveModelCall}=await import('./model-budget.js');await reserveModelCall(runtime.db,config);}});
+    console.log(JSON.stringify({event:'companion_113_model_replay',model:config.model,...result}));
+    if(!result.ok)throw new Error('companion_113_replay_failed');
+    return {model:config.model,...result};
+  }
   async probeBehavior111(){
     const runtime=await this.probeRuntime(),config=runtime?.engine.config||this.config,brain=new OpenAIModel(config,this.auth,undefined,undefined,runtime?.db);
     const goal='00000000-0000-4000-8000-000000000111';
@@ -322,7 +331,11 @@ export class ChatRouter {
         let chats:RegisteredChat[]|undefined;
         if(context&&(actor||update.poll_answer||update.poll)){
           chats=[];for(const id of actor?context.scopes.slice(0,1):context.scopes){const chat=await this.registry.find(id);if(chat?.enabled)chats.push(chat);}
-        }else chats=update.poll_answer||update.poll?await this.registry.pollChats(update.poll_answer?.poll_id||update.poll!.id):actor?await this.registry.privateChats(actor):undefined;
+        }else{
+          const privateChoice=actor&&callback?.message?.chat.type==='private'&&String(callback.message.chat.id)===actor&&callback.message.from?.id===this.bot.id&&!callback.from.is_bot?/^lumen:pv:([a-f0-9]{24}):(task|anonymous|quote|reveal)$/.exec(callback.data||''):null;
+          if(privateChoice){const target=await this.registry.privateTarget(actor!,{kind:'inbox',id:privateChoice[1]!});chats=target?[target.chat]:[];}
+          else chats=update.poll_answer||update.poll?await this.registry.pollChats(update.poll_answer?.poll_id||update.poll!.id):actor?await this.registry.privateChats(actor):undefined;
+        }
         if(chats)return this.scopedChats.run(chats,()=>this.route(update));
         return this.route(update);
       });
@@ -361,7 +374,7 @@ export class ChatRouter {
     if(cb){
       // Acknowledge immediately, including stale or unrecognized buttons.
       await this.telegram.call('answerCallbackQuery',{callback_query_id:cb.id}).catch(()=>{});
-      if(cb.message?.chat.type==='private'&&cb.message.from?.id===this.bot.id&&!cb.from.is_bot&&cb.data?.startsWith('lumen:pv:')){for(const r of await this.active())if(await new PrivateInbox(r.db,this.config.runtimeDir).choose(cb,this.telegram)){await this.suspendPrivatePurposes(String(cb.from.id),r,'inbox');return;}return;}
+      if(cb.message?.chat.type==='private'&&String(cb.message.chat.id)===String(cb.from.id)&&cb.message.from?.id===this.bot.id&&!cb.from.is_bot&&cb.data?.startsWith('lumen:pv:')){if(!await this.registry.consumePrivate(update.update_id,String(cb.from.id),'private_choice'))return;for(const r of await this.active())if(await new PrivateInbox(r.db,this.config.runtimeDir).choose(cb,this.telegram)){await this.suspendPrivatePurposes(String(cb.from.id),r,'inbox');return;}return;}
       if(cb.message?.from?.id===this.bot.id&&!cb.from.is_bot){
         if(cb.message.chat.type==='private'&&String(cb.message.chat.id)===String(cb.from.id)&&/^(?:calmode|calshare):/.test(cb.data||'')){
           for(const r of await this.active()){

@@ -3,6 +3,7 @@ import {forgetCalendarProposal} from './calendar-groups.js';
 import {forgetLearningSource} from './learning.js';
 import {forgetMediaSource,purgeMediaPhrase} from './media-assets.js';
 import {forgetStockSource} from './household.js';
+import {forgetListSource,purgeListPhrase} from './simple-lists.js';
 import {recordProvenance,invalidateProvenance} from './provenance.js';
 import pg from 'pg';
 import { readFile } from 'node:fs/promises';
@@ -33,7 +34,13 @@ export class Postgres implements Database {
   async close() { await this.pool.end(); }
 }
 export async function applySchema(sql: SQL) {
-  const exists=await one(sql,"SELECT to_regclass('schema_version') AS existing");if(exists?.existing){const row=await one(sql,'SELECT count(*) AS n FROM schema_version WHERE version BETWEEN 1 AND 19');if(Number(row?.n)===19)return;}
+  const exists=await one(sql,"SELECT to_regclass('schema_version') AS existing");if(exists?.existing){
+    const row=await one(sql,'SELECT count(*) AS n FROM schema_version WHERE version BETWEEN 1 AND 20');
+    if(Number(row?.n)===20){
+      const shape=await one(sql,"SELECT count(*)=8 AS complete FROM information_schema.columns WHERE table_schema=current_schema() AND (table_name,column_name) IN (('agent_tasks','audience'),('media_jobs','verification'),('media_jobs','task_id'),('media_jobs','goal_version'),('media_jobs','action_id'),('simple_list_events','revision'),('studio_soundtracks','asset_id'),('messages','request_context'))");
+      if(shape?.complete===true)return;
+    }
+  }
   const schema = await readFile(new URL('../../src/schema.sql', import.meta.url), 'utf8');
   const body=schema.replace(/^\s*BEGIN;\s*/,'').replace(/\s*COMMIT;\s*$/,'');
   if(sql.script)await sql.script(body);else await sql.query(body);
@@ -86,7 +93,7 @@ export async function eraseAll(sql: SQL) {
   await sql.query('UPDATE app_state SET ingress_after=clock_timestamp() WHERE id=1');
   await forgetCalendarProposal(sql);
   // Remove all derived data, generated drafts, pending deliveries and attachment IDs too.
-  for (const table of ['media_inspections','image_designs','media_derivations','statistics_preferences','canonical_outcomes','recurring_occurrences','recurring_series','calendar_shares','calendar_proposals','calendar_operations','calendar_occurrences','calendar_mirrors','calendar_connections','calendar_setups','learning_progress','learning_attempts','learning_exercises','learning_goals','resource_views','asset_destination_grants','media_publications','media_job_inputs','media_jobs','resource_links','archive_items','archive_collections','studio_scenes','studio_projects','media_assets','media_destinations','stock_needs','stock_receipts','stock_reservations','stock_movements','stock_aliases','stock_items','domain_commands','composition_runs','action_work','effect_operations','consent_grants','commitments','style_episodes','behavior_contributions','conversation_goals','alias_observations','chat_preferences','scheduled_actions','interaction_responses','interactions','message_panels','result_receipts','signals','proactivity_preferences','skill_versions','research_cache','activity_moves','activity_players','activity_sessions','decision_ballots','decisions','project_tasks','projects','knowledge_facts','private_requests','task_events','task_stages','capability_health','private_results','provenance_edges','coordination_offers','oauth_setups',...AGENT_TABLES,'topic_attention','image_jobs','poll_votes','polls','avatars','attachments','dialogues','choice_votes','participant_preferences','memories','rules','games','reminders','skills','episodes','stickers','choices','pending_intents','messages','outbox','inbox','topics','members']) await sql.query(`DELETE FROM ${table}`);
+  for (const table of ['media_inspections','image_designs','media_derivations','statistics_preferences','canonical_outcomes','recurring_occurrences','recurring_series','calendar_shares','calendar_proposals','calendar_operations','calendar_occurrences','calendar_mirrors','calendar_connections','calendar_setups','learning_progress','learning_attempts','learning_exercises','learning_goals','resource_views','asset_destination_grants','media_publications','media_job_inputs','media_jobs','resource_links','archive_items','archive_collections','studio_scenes','studio_projects','media_assets','media_destinations','stock_needs','stock_receipts','stock_reservations','stock_movements','stock_aliases','stock_items','simple_list_events','domain_commands','composition_runs','action_work','effect_operations','consent_grants','commitments','style_episodes','behavior_contributions','conversation_goals','alias_observations','chat_preferences','scheduled_actions','interaction_responses','interactions','message_panels','result_receipts','signals','proactivity_preferences','skill_versions','research_cache','activity_moves','activity_players','activity_sessions','decision_ballots','decisions','project_tasks','projects','knowledge_facts','private_requests','task_events','task_stages','capability_health','private_results','provenance_edges','coordination_offers','oauth_setups',...AGENT_TABLES,'topic_attention','image_jobs','poll_votes','polls','avatars','attachments','dialogues','choice_votes','participant_preferences','memories','rules','games','reminders','skills','episodes','stickers','choices','pending_intents','messages','outbox','inbox','topics','members']) await sql.query(`DELETE FROM ${table}`);
   await sql.query(`UPDATE app_state SET memory_revision=memory_revision+1, character='', mode=CASE WHEN mention_only THEN 'quiet' ELSE 'social' END, since_bot=0,last_social_at=NULL,participants=CASE WHEN open_group THEN '[]'::jsonb ELSE participants END WHERE id=1`);
   await sql.query('DELETE FROM characters');
 }
@@ -95,6 +102,7 @@ async function invalidateSource(sql:SQL,sourceId:number){
   await forgetGameResultSource(sql,sourceId);
   await forgetCalendarProposal(sql,sourceId);
   await forgetStockSource(sql,sourceId);
+  await forgetListSource(sql,sourceId);
   await forgetLearningSource(sql,sourceId);
   await sql.query("UPDATE project_tasks SET status='needs_review',completion_evidence='{}' WHERE completion_source_ids @> $1::jsonb",[JSON.stringify([sourceId])]);
   await forgetMediaSource(sql,sourceId);
@@ -122,6 +130,12 @@ async function refreshRevision(sql:SQL){
   await sql.query('UPDATE app_state SET memory_revision=memory_revision+1 WHERE id=1');
   await sql.query("UPDATE tool_runs SET status='invalidated',result=NULL,arguments='{}',error_code='source_context_changed' WHERE status='succeeded' AND provenance_version=0 AND effectful IS NOT TRUE");
   const s=await state(sql);
+  // Source invalidation has already removed dependent schedules. Carry only
+  // surviving live work across this revision; a pause or cancellation is final.
+  await sql.query("UPDATE scheduled_actions SET revision=$1 WHERE status IN ('pending','awaiting_confirmation','queued','dispatched','needs_input')",[s.memory_revision]);
+  // Preserve a recent list continuation across erasure, without reviving an
+  // admission context that was already cut off by a memory pause.
+  await sql.query('UPDATE simple_list_events SET revision=$1 WHERE revision=$2',[s.memory_revision,s.memory_revision-1]);
   await sql.query("UPDATE media_jobs SET status='stale',manifest='{}',error_code='context_changed' WHERE status='running'");
   for(const table of ['image_designs','media_jobs','recurring_series','calendar_proposals','resource_views','calendar_setups'])await sql.query(`UPDATE ${table} SET revision=$1`,[s.memory_revision]);
   await sql.query('DELETE FROM topic_attention');
@@ -138,6 +152,7 @@ async function refreshRevision(sql:SQL){
 }
 async function purgeMatchingDerived(sql:SQL,phrase:string){
   await purgeGameResultPhrase(sql,phrase);
+  await purgeListPhrase(sql,phrase);
   await sql.query('DELETE FROM media_inspections WHERE id IN (SELECT inspection_id FROM media_inspection_payloads WHERE strpos(lower(payload::text),lower($1))>0)',[phrase]);
   await purgeMediaPhrase(sql,phrase);
   for(const g of (await sql.query("SELECT id FROM learning_goals WHERE strpos(lower(title),lower($1))>0 UNION SELECT goal_id AS id FROM learning_exercises WHERE strpos(lower(spec::text),lower($1))>0 UNION SELECT goal_id AS id FROM learning_attempts WHERE strpos(lower(answer||' '||feedback||' '||COALESCE(appeal,'')),lower($1))>0",[phrase])).rows)await sql.query('DELETE FROM learning_goals WHERE id=$1',[g.id]);
@@ -176,6 +191,8 @@ export async function reviseSource(sql:SQL,sourceId:number,text:string){
   if(original?.role==='assistant')await import('./storage-lifecycle.js').then(m=>m.detachDeliveredText(sql,original.telegram_id));
   if(original)await sql.query('DELETE FROM reminders WHERE source_message_id IS NULL AND length(title)>=8 AND strpos(lower($1),lower(title))>0',[original.body]);
   await invalidateSource(sql,sourceId);
-  await sql.query('UPDATE messages SET body=$1,edited_at=now() WHERE id=$2',[text,sourceId]);
+  // Entity-only edits keep the same body hash but replace the original envelope.
+  // Actual authorized ingress may recapture it after this invalidation.
+  await sql.query('UPDATE messages SET body=$1,edited_at=now(),request_context=NULL WHERE id=$2',[text,sourceId]);
   await refreshRevision(sql);
 }
