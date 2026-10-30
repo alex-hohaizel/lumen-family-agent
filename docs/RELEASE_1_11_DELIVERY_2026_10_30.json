@@ -1,0 +1,245 @@
+{
+  "version": "1.11.0",
+  "date": "2026-10-30",
+  "timezone": "Europe/Kyiv",
+  "repository": "alex-hohaizel/lumen-family-agent",
+  "code_commit": "69cc6fcb9edb911f6df8de36b93e3f96ca0ead30",
+  "code_tree": "73cf29537a24b95a21c1066c9f66b1f2448636f5",
+  "render": {
+    "service_id": "srv-dbfl0je7bikc73dvg0qg",
+    "deploy_id": "dep-dbhtqad9el5s738fjkdg",
+    "status": "live",
+    "live_at": "2026-10-30T00:00:44.144857Z",
+    "dashboard_url": "https://dashboard.render.com/worker/srv-dbfl0je7bikc73dvg0qg",
+    "auto_deploy": false,
+    "instances": 1
+  },
+  "validation": {
+    "typescript_build": "passed",
+    "render_full_suite": {
+      "tests": 412,
+      "suites": 29,
+      "pass": 412,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "duration_ms": 180565.507621,
+      "observed_at": "2026-10-29T23:59:50.080404442Z"
+    },
+    "local_affected_suite": {
+      "pass": 68,
+      "fail": 0
+    },
+    "independent_reviews": {
+      "state_cases_passed": 18,
+      "behavior_cases_passed": 19,
+      "mixed_request_followup_cases_passed": 31,
+      "overlapping_cases": true,
+      "method": "Isolated source snapshots, PGlite integration tests and Telegram stubs; subsequent complete Render suite verifies the deployed code."
+    }
+  },
+  "runtime_model": "gpt-6.1-sol",
+  "runtime_checks": {
+    "web_read": {
+      "ok": true,
+      "proof": {
+        "url": "https://example.com/",
+        "title": "Example Domain",
+        "characters": 156
+      },
+      "observed_at": "2026-10-29T23:41:49.811739737Z",
+      "execution_commit": "8ad03da01dfbdb723fa199af009dd9483c801ed3"
+    },
+    "public_search": {
+      "ok": true,
+      "proof": {
+        "provider": "Bing RSS",
+        "sources": [
+          "https://nodejs.org/",
+          "https://nodejs.org/en/download",
+          "https://de.wikipedia.org/wiki/NodeJS",
+          "https://de.wikipedia.org/wiki/Node",
+          "https://en.wikipedia.org/wiki/Nodejs",
+          "https://github.com/nodejs/node",
+          "https://www.w3schools.com/nodejs/",
+          "https://www.heise.de/download/product/node.js-83901"
+        ]
+      },
+      "observed_at": "2026-10-29T23:41:50.02016411Z",
+      "execution_commit": "8ad03da01dfbdb723fa199af009dd9483c801ed3"
+    },
+    "native_search": {
+      "ok": true,
+      "proof": {
+        "searched": true,
+        "sources": [
+          "https://nodejs.org/en/about?utm_source=openai",
+          "https://nodejs.org/"
+        ]
+      },
+      "observed_at": "2026-10-29T23:42:00.480653519Z",
+      "execution_commit": "8ad03da01dfbdb723fa199af009dd9483c801ed3"
+    },
+    "automatic_freshness_choice": {
+      "ok": true,
+      "proof": {
+        "automatic_search_selected": true,
+        "native_search_executed": true,
+        "selected_tools": []
+      },
+      "observed_at": "2026-10-29T23:42:32.361791106Z",
+      "execution_commit": "8ad03da01dfbdb723fa199af009dd9483c801ed3"
+    },
+    "browser": {
+      "ok": true,
+      "proof": {
+        "title": "Example Domain",
+        "url": "https://example.com/",
+        "characters": 917
+      },
+      "observed_at": "2026-10-29T23:42:40.102722567Z",
+      "execution_commit": "8ad03da01dfbdb723fa199af009dd9483c801ed3"
+    },
+    "compute": {
+      "ok": true,
+      "proof": {
+        "result": 14
+      },
+      "observed_at": "2026-10-29T23:42:40.507722446Z",
+      "execution_commit": "8ad03da01dfbdb723fa199af009dd9483c801ed3"
+    },
+    "documents": {
+      "ok": true,
+      "proof": {
+        "docx_readback": true,
+        "xlsx_readback": true,
+        "pdf_readback": true,
+        "scan_pages": 1,
+        "vision_ocr": true,
+        "number": "31415"
+      },
+      "observed_at": "2026-10-29T23:42:46.440817533Z",
+      "execution_commit": "8ad03da01dfbdb723fa199af009dd9483c801ed3"
+    },
+    "interactions": {
+      "ok": true,
+      "proof": {
+        "parallel": true,
+        "max_choices_per_participant": 2,
+        "individual_roles": 2,
+        "compact_characters": 408,
+        "private_data_used": false
+      },
+      "observed_at": "2026-10-29T23:43:13.335473262Z",
+      "execution_commit": "8ad03da01dfbdb723fa199af009dd9483c801ed3"
+    },
+    "personalization_scheduling_190": {
+      "ok": true,
+      "proof": {
+        "chat_language": true,
+        "contextual_task": true,
+        "kyiv_time": true,
+        "personal_name": true,
+        "proposal_needs_confirmation": true,
+        "russian_outbound": true,
+        "public_fixture_only": true
+      },
+      "observed_at": "2026-10-30T00:01:25.146706921Z",
+      "execution_commit": "69cc6fcb9edb911f6df8de36b93e3f96ca0ead30"
+    },
+    "behavior_111_r2": {
+      "ok": true,
+      "proof": {
+        "model": "gpt-6.1-sol",
+        "synthetic": true,
+        "private_data_used": false,
+        "cases": [
+          {
+            "case": "other_recipient",
+            "ok": true,
+            "move": "listen",
+            "reference_bound": false,
+            "actions": []
+          },
+          {
+            "case": "simple_request",
+            "ok": true,
+            "move": "answer",
+            "reference_bound": false,
+            "actions": []
+          },
+          {
+            "case": "material_clarification",
+            "ok": true,
+            "move": "clarify",
+            "reference_bound": false,
+            "actions": []
+          },
+          {
+            "case": "bound_answer",
+            "ok": true,
+            "move": "answer",
+            "reference_bound": true,
+            "actions": [
+              "schedule"
+            ]
+          },
+          {
+            "case": "ambiguous_acceptance",
+            "ok": true,
+            "move": "clarify",
+            "reference_bound": false,
+            "actions": []
+          }
+        ]
+      },
+      "observed_at": "2026-10-30T00:02:06.98712205Z",
+      "execution_commit": "69cc6fcb9edb911f6df8de36b93e3f96ca0ead30"
+    }
+  },
+  "worker_start": {
+    "event": "lumen_started",
+    "username": "lumen_family_agent",
+    "version": "1.11.0",
+    "groups": 2,
+    "release_notices_pending": 0,
+    "release_notices_sent": 2,
+    "observed_at": "2026-10-30T00:00:50.450540987Z"
+  },
+  "sticker_pack": {
+    "event": "sticker_pack_verified",
+    "source": "telegram_getStickerSet",
+    "name": "Lumen_120_Emotions_by_lumen_family_agent",
+    "title": "Люмен — 120 настроїв",
+    "count": 120,
+    "matched_assets": 120,
+    "matched_memberships": 120,
+    "verified_at": "2026-10-30T00:00:46.534Z",
+    "observed_at": "2026-10-30T00:00:46.534703109Z"
+  },
+  "release_notices": {
+    "sent": 2,
+    "receipts": [
+      {
+        "event": "release_notice_delivered",
+        "version": "1.11.0",
+        "group": "7d9cc1fa5a3fe01d",
+        "observed_at": "2026-10-29T23:41:51.649329584Z"
+      },
+      {
+        "event": "release_notice_delivered",
+        "version": "1.11.0",
+        "group": "d65682e69458cafa",
+        "observed_at": "2026-10-29T23:42:00.542725184Z"
+      }
+    ]
+  },
+  "initial_deploy_id": "dep-dbhthc9srm7s73dttgag",
+  "scope_notes": [
+    "Synthetic model probes do not execute actions in user chats or read their conversation history.",
+    "Naturalness and long-term engagement still require observation by people.",
+    "Uncertain Telegram effects are retained without automatic replay.",
+    "The content-free privacy fence protects database-only restore; restoring its disk copy too requires retaining the newest fence."
+  ],
+  "runtime_check_cache_policy": "Successful checks from the initial1.11 deployment were reused. Personalization/scheduling and the stronger behavior_r2 replay ran again after the mixed-request correction."
+}
