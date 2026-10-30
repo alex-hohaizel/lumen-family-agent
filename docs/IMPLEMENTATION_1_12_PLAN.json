@@ -5,8 +5,8 @@
     "New TTS/STT/audio integration"
   ],
   "upstream": "37c101a957795d54c9710811337d6c44e9677f04",
-  "production_version": "1.11.0",
-  "publication_blocker": "Automatic approval review requires explicit permission for uploading implementation source to alex-hohaizel/lumen-family-agent. No retry before authorization or materially safer verified alternative.",
+  "production_version": "1.12.0",
+  "publication_blocker": null,
   "items": [
     {
       "source_section": "4 Стиль і зміст розмови",
@@ -19,7 +19,7 @@
         "text": "Якщо людина пише «Люмен, не відповідай, я допишу», коректний план listen нормалізатор замінює готовим уточненням «Не зовсім зрозумів...». Причина в тому, що direct прирівняний до обовʼязку відповісти. Потрібно розрізняти загублене доручення та виконане прохання помовчати.",
         "acceptance": "Явне прохання тиші не створює тексту, стікера, уточнення чи дії. Наступне явне звернення поновлює бесіду. Помилковий listen на справжнє доручення окремо виявляється й не губить його."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/behavior-engine.ts",
         "test/core-112.test.ts"
@@ -49,7 +49,7 @@
         "text": "gap_minutes записується як proactive_gap_minutes та ambient_gap_seconds, але нова attention-гілка використовує фіксовані 45 і 25 секунд. У перевірці за налаштованих 90 хвилин новий ambient-кандидат допускається через 46 секунд. Це ще не доводить, що бот фактично заговорить: далі модель може обрати мовчання.",
         "acceptance": "Пауза рахується від фактично доставленого самостійного внеску. До її завершення нова непрохана репліка не надсилається; прямі запити та потрібні ходи чинної справи працюють. Після паузи зʼявляється право оцінити доречність, а не обовʼязок заговорити."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/attention.ts",
         "test/behavior-111.test.ts"
@@ -79,7 +79,7 @@
         "text": "Для «тільки сьогодні без жартів» сервер приймає personalize humor=off і пише participant_preferences. Окремі style_episodes уже існують, але alternative path покладається на правильний вибір моделі. Частоту таких помилок у живій роботі не встановлено.",
         "acceptance": "Тимчасові межі перевіряються до довготривалого запису. «Називай мене Оля, а сьогодні без жартів» зберігає імʼя і лише тимчасово змінює гумор. Ясне постійне прохання не потребує спеціального слова «завжди»."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/personalization.ts",
         "src/behavior-engine.ts",
@@ -111,7 +111,7 @@
         "text": "Одна інструкція дозволяє самостійний стікер, інша забороняє, а sender вимагає власного тексту. Водночас currentStyleCue по-різному трактує ту саму цитату в різних лапках. Це не причина збільшувати частоту стікерів або додавати випадкові жарти.",
         "acceptance": "Одна канонічна політика тексту, реакції, стікера й тиші. Цитати, переклад і приклади не змінюють стиль. Власне пряме побажання змінює його з правильним строком дії."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/model.ts",
         "src/presentation.ts",
@@ -142,7 +142,7 @@
         "text": "За наявності presentation.card вхідний текст замінюється полями картки. Якщо підтверджений результат нагадування містив ID й точний час, а картка їх не повторила, вони зникають без автоматичного створення деталей. Довгий fallback може винести ціну, час чи іншу істотну умову всередину Докладніше, лишивши питання «обираємо?» зовні.",
         "acceptance": "Домен передає visible_required facts. Renderer мусить зберегти час, ціну, склад, строк або іншу умову, без якої неможливо прийняти рішення. Підтверджені результати додаються структурно, а не відновлюються здогадкою з тексту."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/text-document.ts",
         "src/message-layout.ts",
@@ -176,7 +176,7 @@
         "text": "Auto-bold заголовка може накластися на code entity. Markdown у summary очищається без збереження виділення; сторінки деталей зберігаються як сирі рядки; переклад зміненого тексту прибирає entities; composition result може показати raw Markdown і JSON. Поточні перевірки форматування не охоплюють усі кінцеві способи подачі.",
         "acceptance": "Один типізований документ із блоками й stable span IDs проходить локалізацію, валідацію, поділ і доставку. Результат будь-якого шляху відповідає правилам API, а невдала багата форма деградує до повного читабельного тексту зі збереженим змістом."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/text-document.ts",
         "src/message-layout.ts",
@@ -213,7 +213,7 @@
         "text": "Клавіатура розміщується на першому chunk, тоді як повні варіанти можуть лишитися в останньому. Anchor за текстом вибирає перше однакове входження. Довгі варіанти стають кнопками «Варіант 1». Поділ зберігає surrogate pairs, але може розділити складний emoji між повідомленнями. Довгий перелік очікуваних учасників також перевантажує просту картку.",
         "acceptance": "Кнопка привʼязана до версії конкретного рішення і лежить поруч із повним питанням та умовами. Довгі варіанти мають змістовні короткі назви. Поділ іде за grapheme clusters та блоками. Список статусів компактний, докладний roster доступний окремо."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/text-document.ts",
         "src/message-layout.ts",
@@ -249,7 +249,7 @@
         "text": "Непроханий самостійний стікер відкидається попри дозвіл у частині промпта. Статус затримки обирається з трьох фраз за update ID, а не за фактичним етапом. Разовий emoji=off не є параметром renderer; це не доводить непослух живої моделі, але лишає побажання залежним від генерації.",
         "acceptance": "Звичайна репліка може бути без оформлення; підтримка без декорацій; гра з прихованими спойлерами; дослідження зі структурою. Службовий статус називає реальний етап. Явне вимкнення декору діє на всі форми, включно з кнопками й реакціями."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/text-document.ts",
         "src/message-layout.ts",
@@ -284,7 +284,7 @@
         "text": "PrivacyFenceDatabase кожний query перетворює на транзакцію з app_state FOR UPDATE. Паралельні SELECT одного чату знову змагаються за один рядок. Персоналізація додає запити на кожного автора та повторно обчислюється у wrapper моделі. Це збільшує SQL round trips і час утримання пулу, навіть якщо самі вибірки швидкі.",
         "acceptance": "Спочатку один короткий fenced snapshot із пакетним завантаженням людей та повторним використанням результату. Модель, HTTP і важкі обчислення виконуються поза транзакцією. Перед записом і доставкою знову перевіряються актуальні epoch, джерела, права й версії. Відокремлений read-only шлях допустимий лише після тестів гонок із forget, edit, pause та restore."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/engine.ts",
         "src/privacy-fence.ts",
@@ -314,7 +314,7 @@
         "text": "Кожний processNext викликає recovery ще до пошуку роботи. UPDATE повторно охоплює terminal rows, а done може стати cancelled. Перший і другий однакові проходи моделі зачепили той самий рядок. Це зайві записи та зміна історичного статусу; без вимірювань не встановлюється обсяг WAL або фактична ціна CPU.",
         "acceptance": "Статус завершеної роботи зберігається. Перехід mutable rows і очищення приватних payload/plan розділяються. Другий незмінений recovery змінює нуль рядків. Due maintenance не проходить всю завершену історію кожний idle tick; uncertain effects не повторюються."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/router.ts",
         "src/commitments.ts",
@@ -344,7 +344,7 @@
         "text": "До моделі потрапляють related discussions, факти й окремі персональні зразки, джерела яких не повністю входять у sourceIds. Частина переходів schedule→task/outbox та image→assistant message не переносить повний набір походження. Merge кількох preference-полів лишає лише один source_message_id. Це створює законні сценарії, де після забування первинної репліки похідний переказ або поле може зберегтися.",
         "acceptance": "Кожний фрагмент context packer повертає data разом із точними source IDs і versions. Єдиний transfer contract діє на кожний похідний запис. Preference має походження на рівні поля. Forget проходить усі залежності, черги, індекси, кеші й результати; нові джерела не вгадуються з відсутніх legacy edges."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/provenance.ts",
         "src/db.ts",
@@ -380,7 +380,7 @@
         "text": "Choices видаляються за строком, але choice_votes не мають відповідного FK або спільного очищення. Forget шукає їх через уже видалені choices, а recent_choices читає raw останні голоси. У синтетичній моделі джерело видалено, але label лишився доступним для контексту.",
         "acceptance": "Негайно виключити orphan/expired/private-ineligible votes з group context. Expiry видаляє повʼязані записи атомарно; для потрібної історії створюється стабільний menu owner із походженням. Старі orphan rows очищуються після dry run. Перевіряються два меню з однаковим label і різними джерелами."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/db.ts",
         "test/interactions-170.test.ts"
@@ -409,7 +409,7 @@
         "text": "План «Документ надіслано» без доказу та без дій блокується. Та сама заява з неповʼязаною законною personalize action проходить. Заголовок і facts картки взагалі не входять у claimText. Це прогалина guard, а не встановлена частота неправдивих заяв живої моделі.",
         "acceptance": "Перевірка не залежить від наявності будь-якої сторонньої дії. Кожна заява про кожну операцію має відповідний completion/delivery proof. Контроль охоплює всі видимі блоки, підписи, деталі, приватні результати й повідомлення worker. Інструментальна квитанція одного файла не підтверджує інший файл."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/outcomes.ts",
         "test/revision-112.test.ts"
@@ -438,7 +438,7 @@
         "gate": "12 звичайних неоднозначних і помилкових відповідей; бюджет валюта дата й групова справа не підмінюються; відмова приватної доставки не відкриває відповідь у групі.",
         "source": "src/group-work.ts:122; src/agent-services.ts:76; src/router.ts:255"
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/private-drafts.ts",
         "src/private-inbox.ts",
@@ -467,7 +467,7 @@
         "gate": "Три різні справи або квести змінюють законні рішення, мають коректний reveal і не зводяться до тих самих констант. Некоректний generated case не стартує; доступний перевірений stored scenario.",
         "source": "src/session-engine.ts:106; src/session-engine.ts:204; src/session-engine.ts:226; src/games.ts:6"
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/scenario-packs.ts",
         "src/session-engine.ts",
@@ -496,7 +496,7 @@
         "gate": "Учасник зник інший запізнився ведучий пішов. Партія або законно триває або ясно стоїть. Повернення дає коротку орієнтацію та конкретний доступний хід; тиха година не спричиняє несподіваний reveal.",
         "source": "src/games.ts:93; src/games.ts:120; src/session-engine.ts:92"
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/session-engine.ts",
         "test/upgrade-112.test.ts"
@@ -524,7 +524,7 @@
         "gate": "Змінена ціна суперечливі дати нерелевантне джерело й dead URL не стають verified висновком. Збій джерела дає частковий результат із чіткою межею. Кеш показує давність.",
         "source": "src/agent-services.ts:45; src/result-verifier.ts:16; src/extended-tools.ts:150"
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/agent-services.ts",
         "src/result-verifier.ts",
@@ -554,7 +554,7 @@
         "gate": "Зафіксований набір із 30 запитів включає парафрази та негативні приклади. Вимірюються recall false attribution і вартість. При сумніві бот показує два релевантні кандидати або уточнює; забуті джерела не повертаються.",
         "source": "src/agent-tools.ts:125; src/attention.ts:50; src/memory.ts:12"
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/recall.ts",
         "test/upgrade-112.test.ts",
@@ -586,7 +586,7 @@
         "gate": "Типовий 8-сторінковий DOCX і 3-sheet XLSX після правки зберігають потрібні зображення структуру та значення. Непідтриманий елемент пояснений до втрати даних. Вихід відкривається на телефоні й desktop.",
         "source": "src/document-workshop.ts:102; src/office.ts:91; src/office.ts:98"
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/office-edit.ts",
         "src/office-tools.ts",
@@ -616,7 +616,7 @@
         "gate": "Позитивне підтвердження потрібної дати створює один alert. Нерелевантна зміна дає тишу; outage і відновлення не множать сповіщення. Неоднозначний extraction ставить конкретне питання.",
         "source": "src/web-monitors.ts:26; src/web-monitors.ts:29"
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/web-monitors.ts",
         "test/deep-112.test.ts"
@@ -644,7 +644,7 @@
         "gate": "Відповідь із пізнього фрагмента має точний locator і реальний аналіз. Перші сторінки не видаються за весь документ. Restart і corrupt page не підміняють source. Більший файл обробляється порціями з квотами.",
         "source": "src/documents.ts:7; src/document-workshop.ts:70; src/visual.ts:21"
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/media-addressed.ts",
         "src/media-inspections.ts",
@@ -674,7 +674,7 @@
         "gate": "Дві ночі переходу часу restart після трьох пропусків cancel one/all та одночасний snooze не створюють дублі або лавину повідомлень. Попередній перегляд показує найближчі три дати.",
         "source": "src/scheduling.ts:8; src/scheduling.ts:47; src/agent-services.ts:139"
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/recurring.ts",
         "test/revision-112.test.ts",
@@ -703,7 +703,7 @@
         "gate": "Слово done не закриває задачу з обовʼязковим відсутнім файлом. Decline reassignment або видалення залежності не лишає невидимий deadlock. Власник бачить наслідки зміни без щоденного допиту учасників.",
         "source": "src/group-work.ts:61; src/group-work.ts:88"
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/project-evidence.ts",
         "test/upgrade-112.test.ts"
@@ -745,7 +745,7 @@
         ],
         "decision": "Перший кандидат за найменшою зовнішньою залежністю. Вайб створює тихе полегшення від коректної координації. Умова зупинки: обслуговування списку вимагає більше зусиль, ніж дає користі, або порушено інваріант кількостей чи забування."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/household.ts",
         "test/stock-shopping-112.test.ts",
@@ -789,7 +789,7 @@
         ],
         "decision": "Кандидат на перший творчий напрям. Спільна asset-база придатна для F5, але архів і монтаж не слід будувати одночасно як два великі продукти. Умова зупинки: добір і підтримка матеріалів не дають людям переваги над звичайним альбомом."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/media-workshop.ts",
         "test/evolution-112.test.ts",
@@ -834,7 +834,7 @@
         ],
         "decision": "Утримати до перевірки інтеграції. Це корисний новий контур, але найбільша зовнішня залежність серед пʼяти. Готовий ICS лишається доступною чинною можливістю та не видається за sync."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/calendar-sync.ts",
         "src/calendar-groups.ts",
@@ -878,7 +878,7 @@
         ],
         "decision": "Окремий добровільний освітній напрям після перевірки потреби. Умова зупинки: нестабільні оцінки або потреба часто виправляти бота роблять навчання обтяжливішим за звичайну практику."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/learning.ts",
         "test/upgrade-112.test.ts",
@@ -923,7 +923,7 @@
         ],
         "decision": "Найвиразніший кандидат на нове спільне переживання. Першим творчим циклом обирати або F2-архів, або повну F5-студію з потрібною спільною asset-базою. Умова зупинки: монтаж у чаті потребує надмірного листування, не вкладається в узгоджені ресурси або забирає авторство людей."
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/media-workshop.ts",
         "test/evolution-112.test.ts",
@@ -997,7 +997,7 @@
           20
         ]
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/image-design.ts",
         "test/deep-112.test.ts"
@@ -1063,7 +1063,7 @@
           "Окремі приватні внески не зʼявляються у груповому пошуку, thumbnail, лічильнику чи голосовому підсумку. Простий браузинг є read-only і не запускає моделі повторно. Точні джерела читаються адресно; каталог не вставляється цілком у контекст розмови."
         ]
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/media-browser.ts",
         "test/browser-stats-revision-112.test.ts",
@@ -1094,7 +1094,7 @@
           "Надіслане аудіо не означає прослухане. Згода на подію не означає відвідування. Кількість реплік не вимірює користь, настрій або стосунки. Корисні добровільні показники - завершені активності, історія власного прогресу, знайдені й використані матеріали та узгоджені підсумки з явним джерелом."
         ]
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/media-browser.ts",
         "test/browser-stats-revision-112.test.ts"
@@ -1127,7 +1127,7 @@
           "Міграція йде малими ідемпотентними batch: додати індекс і links -> backfill лише видимих валідних джерел -> звірити counts/checksums -> тіньове читання -> переключити навігатор. Існуючі game/event/artifact IDs та права збережені. Старі файли без повного provenance не отримують вигадане авторство або час."
         ]
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/evolution-core.ts",
         "src/media-assets.ts",
@@ -1166,7 +1166,7 @@
           23
         ]
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/telegram.ts",
         "src/media-browser.ts",
@@ -1243,7 +1243,7 @@
           "Технічний пакет містить exact-function probe, його hashes, чотири основні кейси, явні fake SQL/provider та обмеження. Це докази конкретних гілок 1.11, а не повний наскрізний тест чи виконаний ремонт. Окремо збережено предметний voice review та UX/domain review."
         ]
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/outcomes.ts",
         "src/media-workshop.ts",
@@ -1293,7 +1293,7 @@
           ]
         ]
       },
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "docs/IMPLEMENTATION_1_12_PLAN.json"
       ],
@@ -1323,7 +1323,7 @@
       "requirement_ids": [
         "B05"
       ],
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/context-pack.ts",
         "src/model.ts",
@@ -1353,7 +1353,7 @@
       "requirement_ids": [
         "B06"
       ],
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/storage-lifecycle.ts",
         "test/backend-growth-112.test.ts"
@@ -1380,7 +1380,7 @@
       "requirement_ids": [
         "B07"
       ],
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/model-budget.ts",
         "src/model.ts",
@@ -1409,7 +1409,7 @@
       "requirement_ids": [
         "B08"
       ],
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/work-slots.ts",
         "src/media-inspections.ts",
@@ -1437,7 +1437,7 @@
       "requirement_ids": [
         "B09"
       ],
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/games.ts",
         "src/session-engine.ts",
@@ -1466,7 +1466,7 @@
       "requirement_ids": [
         "B10"
       ],
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/transport-queue.ts",
         "src/transport-repair.ts",
@@ -1495,7 +1495,7 @@
       "requirement_ids": [
         "B11"
       ],
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/schema.sql",
         "test/backend-growth-112.test.ts",
@@ -1523,7 +1523,7 @@
       "requirement_ids": [
         "B12"
       ],
-      "status": "implemented_locally",
+      "status": "implemented_in_deployed_code",
       "evidence": [
         "src/registry.ts",
         "src/router.ts",
@@ -1545,7 +1545,7 @@
   "brief_ref": "Lumen-1.12-no-audio / 2026-10-30-R3.1",
   "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
   "qualification": "unqualified",
-  "qualification_reason": "563 available functional tests and build passed; independent review closed reproduced local blockers in its scope. Human, device, production and original-asset acceptance is still open.",
+  "qualification_reason": "All 575 server tests and 10 runtime probes passed; reproduced local blockers were independently retested. Whole-brief acceptance remains unqualified for the remaining human/device/user-calendar/full-load checks.",
   "base_source_commit": "69cc6fcb9edb911f6df8de36b93e3f96ca0ead30",
   "active_requirement_ids": [
     "S01",
@@ -1606,12 +1606,11 @@
     "R3.1-12"
   ],
   "unverified_external_checks": [
-    "Human conversation/style and contextual visual presentation evaluation",
-    "Human F1/F2/F4/F5 workflows and user-calendar account/permission UX",
-    "Telegram Android/iOS rich views, channel interactions and MP4 playback",
-    "Production 0.5 CPU / 512 MiB worker and PostgreSQL load, conversation latency and restart pilot",
-    "12 unchanged sticker tests require original upstream assets unavailable locally",
-    "U5 final-answer false attribution and production cost are not measured by the synthetic retrieval controls"
+    "Human conversation/style and full user workflows",
+    "Telegram Android/iOS presentation and MP4 playback",
+    "Real user calendar account/permission UX",
+    "Full simultaneous media/conversation workload under production CPU and memory limits",
+    "U5 final model answer false attribution and production cost"
   ],
   "audio_decision": {
     "status": "deferred",
@@ -1633,5 +1632,22 @@
     },
     "independent_review": "docs/qa-1-12/independent-review.json",
     "code_blockers_reported_by_review": "Repaired and retested locally; no claim about untested external gates"
+  },
+  "deployed_code_commit": "91c7970aada6bafc6d7205b8d0fa4ace6f1969af",
+  "source_revision_scope": "Local frozen product revision used by independent and functional checks; deployed_code_commit is the corresponding remote code revision.",
+  "publication": {
+    "status": "live",
+    "code_commit": "91c7970aada6bafc6d7205b8d0fa4ace6f1969af",
+    "deploy": "dep-dbiac4ou01pc73948ef0",
+    "owner_authorization_confirmed": true,
+    "record": "docs/RELEASE_1_12_DELIVERY_2026_10_30.json"
+  },
+  "server_verification": {
+    "tests": 575,
+    "passed": 575,
+    "failed": 0,
+    "skipped": 0,
+    "runtime_probes_passed": 10,
+    "record": "docs/RELEASE_1_12_DELIVERY_2026_10_30.json"
   }
 }

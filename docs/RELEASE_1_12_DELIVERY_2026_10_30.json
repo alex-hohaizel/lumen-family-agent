@@ -1,0 +1,378 @@
+{
+  "release": "1.12.0",
+  "status": "live",
+  "checked_at": "2026-10-30T14:27:20.248Z",
+  "repository": "alex-hohaizel/lumen-family-agent",
+  "code_commit": "91c7970aada6bafc6d7205b8d0fa4ace6f1969af",
+  "code_tree": "8f0a626cb933df727235b89a390f4847e9baf1b1",
+  "local_tested_product_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+  "render": {
+    "workspace": "tea-dbf5jsfb9u1s73bn4d1g",
+    "service": "srv-dbfl0je7bikc73dvg0qg",
+    "deploy": "dep-dbiac4ou01pc73948ef0",
+    "status": "live",
+    "created_at": "2026-10-30T14:13:39.920062Z",
+    "finished_at": "2026-10-30T14:21:43.537811Z",
+    "auto_deploy": "off",
+    "plan": "0.5 CPU / 512 MiB",
+    "resources_changed": false
+  },
+  "server_tests": {
+    "command": "npm ci --include=dev && npm test && npm prune --omit=dev",
+    "tests": 575,
+    "suites": 29,
+    "passed": 575,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "duration_ms": 378636.620349,
+    "full_suite": true,
+    "original_sticker_assets": true,
+    "summary": [
+      {
+        "at": "2026-10-30T14:20:26.693103881Z",
+        "text": "ℹ tests 575"
+      },
+      {
+        "at": "2026-10-30T14:20:26.693118459Z",
+        "text": "ℹ suites 29"
+      },
+      {
+        "at": "2026-10-30T14:20:26.693121201Z",
+        "text": "ℹ pass 575"
+      },
+      {
+        "at": "2026-10-30T14:20:26.693122907Z",
+        "text": "ℹ fail 0"
+      },
+      {
+        "at": "2026-10-30T14:20:26.693124519Z",
+        "text": "ℹ cancelled 0"
+      },
+      {
+        "at": "2026-10-30T14:20:26.693132942Z",
+        "text": "ℹ skipped 0"
+      },
+      {
+        "at": "2026-10-30T14:20:26.693134392Z",
+        "text": "ℹ todo 0"
+      },
+      {
+        "at": "2026-10-30T14:20:26.693141319Z",
+        "text": "ℹ duration_ms 378636.620349"
+      }
+    ]
+  },
+  "startup": {
+    "at": "2026-10-30T14:21:46.850890849Z",
+    "event": "lumen_started",
+    "username": "lumen_family_agent",
+    "version": "1.12.0",
+    "groups": 2,
+    "runtime_cache_warm": 0
+  },
+  "stickers": {
+    "at": "2026-10-30T14:21:46.670734213Z",
+    "event": "sticker_pack_verified",
+    "source": "telegram_getStickerSet",
+    "name": "Lumen_120_Emotions_by_lumen_family_agent",
+    "title": "Люмен — 120 настроїв",
+    "count": 120,
+    "matched_assets": 120,
+    "matched_memberships": 120,
+    "verified_at": "2026-10-30T14:21:46.670Z"
+  },
+  "runtime_checks": [
+    {
+      "at": "2026-10-30T14:21:46.911429097Z",
+      "event": "runtime_check",
+      "check": "web_read",
+      "result": {
+        "ok": true,
+        "proof": {
+          "url": "https://example.com/",
+          "title": "Example Domain",
+          "characters": 156
+        }
+      }
+    },
+    {
+      "at": "2026-10-30T14:21:47.09605592Z",
+      "event": "runtime_check",
+      "check": "public_search",
+      "result": {
+        "ok": true,
+        "proof": {
+          "provider": "Bing RSS",
+          "sources": [
+            "https://nodejs.org/",
+            "https://nodejs.org/en/download",
+            "https://beta.docs.nodejs.org/",
+            "https://www.nvmnode.com/",
+            "https://nodejsorg.de/",
+            "https://en.wikipedia.org/wiki/Nodejs",
+            "https://github.com/nodejs/node",
+            "https://r2.nodejs.org/download/release/v0.8.10/docs/download/"
+          ]
+        }
+      }
+    },
+    {
+      "at": "2026-10-30T14:22:06.20533898Z",
+      "event": "runtime_check",
+      "check": "native_search",
+      "result": {
+        "ok": true,
+        "proof": {
+          "searched": true,
+          "sources": [
+            "https://nodejs.org/en/about?utm_source=openai",
+            "https://nodejs.org/"
+          ]
+        }
+      }
+    },
+    {
+      "at": "2026-10-30T14:22:32.849733069Z",
+      "event": "runtime_check",
+      "check": "automatic_freshness_choice",
+      "result": {
+        "ok": true,
+        "proof": {
+          "automatic_search_selected": true,
+          "native_search_executed": true,
+          "selected_tools": []
+        }
+      }
+    },
+    {
+      "at": "2026-10-30T14:22:42.78192397Z",
+      "event": "runtime_check",
+      "check": "browser",
+      "result": {
+        "ok": true,
+        "proof": {
+          "title": "Example Domain",
+          "url": "https://example.com/",
+          "characters": 917
+        }
+      }
+    },
+    {
+      "at": "2026-10-30T14:22:43.4812866Z",
+      "event": "runtime_check",
+      "check": "compute",
+      "result": {
+        "ok": true,
+        "proof": {
+          "result": 14
+        }
+      }
+    },
+    {
+      "at": "2026-10-30T14:22:50.239879832Z",
+      "event": "runtime_check",
+      "check": "documents",
+      "result": {
+        "ok": true,
+        "proof": {
+          "docx_readback": true,
+          "xlsx_readback": true,
+          "pdf_readback": true,
+          "scan_pages": 1,
+          "vision_ocr": true,
+          "number": "31415"
+        }
+      }
+    },
+    {
+      "at": "2026-10-30T14:23:17.689511955Z",
+      "event": "runtime_check",
+      "check": "interactions",
+      "result": {
+        "ok": true,
+        "proof": {
+          "parallel": true,
+          "max_choices_per_participant": 2,
+          "individual_roles": 2,
+          "compact_characters": 433,
+          "private_data_used": false
+        }
+      }
+    },
+    {
+      "at": "2026-10-30T14:23:52.599692359Z",
+      "event": "runtime_check",
+      "check": "personalization_scheduling_190",
+      "result": {
+        "ok": true,
+        "proof": {
+          "chat_language": true,
+          "contextual_task": true,
+          "kyiv_time": true,
+          "personal_name": true,
+          "proposal_needs_confirmation": true,
+          "russian_outbound": true,
+          "public_fixture_only": true
+        }
+      }
+    },
+    {
+      "at": "2026-10-30T14:24:34.013513291Z",
+      "event": "runtime_check",
+      "check": "behavior_111_r2",
+      "result": {
+        "ok": true,
+        "proof": {
+          "model": "gpt-6.1-sol",
+          "synthetic": true,
+          "private_data_used": false,
+          "cases": [
+            {
+              "case": "other_recipient",
+              "ok": true,
+              "move": "listen",
+              "reference_bound": false,
+              "actions": []
+            },
+            {
+              "case": "simple_request",
+              "ok": true,
+              "move": "answer",
+              "reference_bound": false,
+              "actions": []
+            },
+            {
+              "case": "material_clarification",
+              "ok": true,
+              "move": "clarify",
+              "reference_bound": false,
+              "actions": []
+            },
+            {
+              "case": "bound_answer",
+              "ok": true,
+              "move": "answer",
+              "reference_bound": true,
+              "actions": [
+                "schedule"
+              ]
+            },
+            {
+              "case": "ambiguous_acceptance",
+              "ok": true,
+              "move": "clarify",
+              "reference_bound": false,
+              "actions": []
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "model_replay": {
+    "model": "gpt-6.1-sol",
+    "synthetic": true,
+    "cases_passed": 5,
+    "private_data_used": false
+  },
+  "release_notice_deliveries": {
+    "count": 2,
+    "receipts": [
+      {
+        "at": "2026-10-30T14:21:58.743080391Z",
+        "event": "release_notice_delivered",
+        "version": "1.12.0",
+        "group": "7d9cc1fa5a3fe01d"
+      },
+      {
+        "at": "2026-10-30T14:22:07.145981681Z",
+        "event": "release_notice_delivered",
+        "version": "1.12.0",
+        "group": "d65682e69458cafa"
+      }
+    ]
+  },
+  "observed_startup_events": [
+    {
+      "at": "2026-10-30T14:21:48.643461609Z",
+      "event": "runtime_due_scan_deferred"
+    },
+    {
+      "at": "2026-10-30T14:23:33.899352649Z",
+      "event": "poll_error",
+      "code": "operation_failed"
+    }
+  ],
+  "warnings": [
+    {
+      "at": "2026-10-30T14:22:42.781146089Z",
+      "text": "(node:65) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead."
+    }
+  ],
+  "observation_window": {
+    "from": "2026-10-30T14:21:43.429246062Z",
+    "through": "2026-10-30T14:27:20.248Z",
+    "complete_log_page": true,
+    "notes": "One due-scan deferral, one poll_error operation_failed and one pg deprecation warning observed. No repeats of those events after the recorded occurrences in this window; no startup_failed, worker_error, runtime-check failure or process restart observed. Causes of the deferral and poll_error not established."
+  },
+  "resources": {
+    "resolution_seconds": 30,
+    "metrics": [
+      {
+        "type": "memory_usage",
+        "unit": "bytes",
+        "samples": 11,
+        "sampled_max": 276795400
+      },
+      {
+        "type": "memory_limit",
+        "unit": "bytes",
+        "samples": 12,
+        "sampled_max": 536870900
+      },
+      {
+        "type": "cpu_usage",
+        "unit": "cpu",
+        "samples": 10,
+        "sampled_max": 0.22805473
+      },
+      {
+        "type": "cpu_limit",
+        "unit": "cpu",
+        "samples": 12,
+        "sampled_max": 0.5
+      },
+      {
+        "type": "instance_count",
+        "unit": "unitless",
+        "samples": 12,
+        "sampled_max": 1
+      }
+    ],
+    "measurement": "Returned Render memory_usage/cpu_usage samples on the deployed service. Sampled maxima are not instantaneous peaks.",
+    "load_scope": "Startup probes and two connected chats; no full simultaneous-media/user-load certification",
+    "production_capacity_certified": false,
+    "record": "qa-1-12/render-metrics.json"
+  },
+  "documentation": {
+    "canonical_log": "CHANGELOG.md",
+    "versions_documented": 14,
+    "release_process": "docs/RELEASING.md",
+    "details": "docs/RELEASE_1_12.md",
+    "historical_release_notes_preserved": true
+  },
+  "audio": {
+    "new_audio": "deferred",
+    "new_voice_provider_enabled": false
+  },
+  "new_paid_providers_enabled": false,
+  "remaining_acceptance": [
+    "Human conversation/style and full user workflows",
+    "Telegram Android/iOS presentation and MP4 playback",
+    "Real user calendar account/permission UX",
+    "Full simultaneous media/conversation workload under production CPU and memory limits",
+    "U5 final model answer false attribution and production cost"
+  ],
+  "scope_note": "Build, startup, protocol probes and delivery receipts are observed. They do not certify every user workflow or human quality."
+}

@@ -36,7 +36,19 @@
     "unavailable_original_asset_tests": 12
   },
   "overall_qualification": "unqualified",
-  "open_acceptance": [
+  "post_review_verification": {
+    "full_server_tests_passed": 575,
+    "original_asset_gate": "closed by complete Render build",
+    "current_open_acceptance": [
+      "Human conversation/style and full user workflows",
+      "Telegram Android/iOS presentation and MP4 playback",
+      "Real user calendar account/permission UX",
+      "Full simultaneous media/conversation workload under production CPU and memory limits",
+      "U5 final model answer false attribution and production cost"
+    ],
+    "record": "../RELEASE_1_12_DELIVERY_2026_10_30.json"
+  },
+  "open_acceptance_at_review": [
     "Human conversation/style and contextual visual presentation evaluation",
     "Human F1/F2/F4/F5 workflows and user-calendar account/permission UX",
     "Telegram Android/iOS rich views, channel interactions and MP4 playback",
