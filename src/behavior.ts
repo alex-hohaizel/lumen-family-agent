@@ -11,7 +11,7 @@ export function seriousConversation(lines: Pick<ConversationLine, 'body'>[]) {
 }
 
 export function socialDecision(options: {
-  now: number; sourceId: string | number; sinceBot: number;
+  gapMinutes?:number;now: number; sourceId: string | number; sinceBot: number;
   lastBotAt: Date | string | null; lastSocialAt: Date | string | null;
   lines: ConversationLine[];
 }) {
@@ -21,7 +21,7 @@ export function socialDecision(options: {
   if (new Set(recent.map(x => x.user_id)).size < 2 || seriousConversation(recent)) return false;
   const slow = now - new Date(recent[0]!.created_at).getTime() >= 2 * 60000;
   const minimumMessages = slow ? 10 : 16;
-  const minimumGap = (slow ? 30 : 20) * 60000;
+  const minimumGap = Math.max(options.gapMinutes??0,slow?30:20)*60000;
   const lastAttempt = Math.max(...[options.lastBotAt, options.lastSocialAt].map(x => x ? new Date(x).getTime() : 0));
   return options.sinceBot >= minimumMessages && recent.length >= minimumMessages && now - lastAttempt >= minimumGap;
 }

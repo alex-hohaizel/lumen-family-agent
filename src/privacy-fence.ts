@@ -2,6 +2,7 @@ import {createHash,randomUUID} from 'node:crypto';
 import {mkdir,readFile,open,rename} from 'node:fs/promises';
 import {join} from 'node:path';
 import {eraseAll,state,type Database,type SQL,type Row} from './db.js';
+import {assertIngressCurrent} from './ingress-context.js';
 
 /** A content-free epoch on the persistent disk, separate from PostgreSQL backups.
  * Write before commit. An interrupted erase conservatively erases again, never restores content.
@@ -26,18 +27,23 @@ export class PrivacyFenceDatabase implements Database {
     const directory=await open(join(this.path,'..'),'r');try{await directory.sync();}finally{await directory.close();}
     this.highest=Math.max(this.highest,epoch);
   }
-  async tx<T>(fn:(sql:SQL)=>Promise<T>){
-    return this.db.tx(async sql=>{
-      let before=await state(sql,true);
+  async tx<T>(fn:(sql:SQL)=>Promise<T>):Promise<T>{
+    const transaction=await this.db.tx(async sql=>{
+      const before=await state(sql,true);
       if(before.memory_revision<this.highest){
         await eraseAll(sql);
         await sql.query("UPDATE app_state SET memory_revision=$1,paused=true,consent='[]' WHERE id=1",[this.highest]);
-        before=await state(sql);
+        // Commit restoration before admitting the triggering request. An old
+        // ingress may be stale against this new cutoff; rejecting it must not
+        // roll back the wipe or repeatedly restore the same old content.
+        return {reconciled:true as const};
       }
+      await assertIngressCurrent(sql,before);
       const result=await fn(sql),after=await state(sql);
       if(after.memory_revision>this.highest)await this.persist(after.memory_revision);
-      return result;
+      return {reconciled:false as const,result};
     });
+    return transaction.reconciled?this.tx(fn):transaction.result;
   }
   async query<T extends Row=Row>(query:string,args:any[]=[]){return this.tx(sql=>sql.query<T>(query,args));}
   async close(){await this.db.close();}

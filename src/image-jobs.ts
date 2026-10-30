@@ -5,7 +5,7 @@ import {Media} from './media.js';
 import {VisualMemory} from './visual.js';
 
 export class ImageJobs {
-  constructor(private db:Database,private config:Config,private telegram:Telegram,private visual:VisualMemory,private media=new Media(config)){}
+  constructor(private db:Database,private config:Config,private telegram:Telegram,private visual:VisualMemory,private media=new Media(config,undefined,db)){}
   async next(){
     const job=await this.db.tx<Record<string,any>|null>(async sql=>{const s=await state(sql,true);if(s.paused)return null;const j=await one(sql,"SELECT * FROM image_jobs WHERE status='pending' AND cancelled=false AND revision=$1 ORDER BY id LIMIT 1 FOR UPDATE SKIP LOCKED",[s.memory_revision]);if(!j)return null;
       const day=new Date().toLocaleDateString('en-CA',{timeZone:this.config.timezone});

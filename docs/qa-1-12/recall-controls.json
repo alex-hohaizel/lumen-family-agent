@@ -1,0 +1,17 @@
+{
+  "scope": "Synthetic retrieval controls only; no model answers or human evaluation",
+  "positive_queries": 30,
+  "recall_at_3": 1,
+  "negative_time_filter_queries": 30,
+  "negative_time_filters_passed": 30,
+  "denial_author_queries": 30,
+  "denial_markers_preserved": 30,
+  "candidate_metadata_checked": 180,
+  "false_author_or_source_metadata": 0,
+  "retrieval_database_query_calls": 180,
+  "query_calls_exclude_transaction_frames": true,
+  "retrieval_model_requests": 0,
+  "elapsed_ms": 173.13,
+  "answer_false_attribution": "not_evaluated",
+  "production_cost": "not_measured"
+}

@@ -47,7 +47,7 @@ describe('Окремі групи, природні звернення та те
     const a=await add();await a.db.query('DELETE FROM onboarding_chats');await a.db.query('DELETE FROM release_notices');await a.db.query('DELETE FROM outbox');
     const assets=await stickerAssets();
     const restart=()=>{const r=new ChatRouter(registry,h.config,h.tg as unknown as Telegram,bot,()=>brains.get('-200')!);r.setStickerPack({name:STICKER_SET,title:STICKER_TITLE,stickers:assets.map((x,i)=>({file_id:'verified-'+i,file_unique_id:'verified-unique-'+i,is_video:true,set_name:STICKER_SET,emoji:x.emoji}))});return r;};
-    await restart().init();await restart().init();const rows=(await a.db.query('SELECT * FROM outbox')).rows;assert.equal(rows.length,1);assert.match(rows[0]!.body.text,/Люмен 1\.11/);assert.equal(rows[0]!.service,true);
+    const firstRestart=restart();await firstRestart.init();await firstRestart.runtime((await registry.find('-200'))!);const secondRestart=restart();await secondRestart.init();await secondRestart.runtime((await registry.find('-200'))!);const rows=(await a.db.query('SELECT * FROM outbox')).rows;assert.equal(rows.length,1);assert.match(rows[0]!.body.text,/Люмен 1\.12/);assert.equal(rows[0]!.service,true);
   });
   it('не підключає чужу групу чи чужий приватний акаунт за підробленим посиланням',async()=>{
     await router.receive({update_id:seq++,message:{...msg('',-300,22).message!,new_chat_members:[{id:999,first_name:'Люмен'}]}});
@@ -223,7 +223,7 @@ describe('Окремі групи, природні звернення та те
     for(const uid of [12,13]){await router.receive(msg('Хочу долучитися до пригоди',-200,uid,101));await tools.execute('interaction.join',{id:gameRoot},{actorId:String(uid),chatId:'-200',topicId:'101',revision:0,updateId:'join-'+uid,requested:true});}
     for(let i=0;i<24;i++){const uid=i%3+11;brains.get('-200')!.replies.push({reply:`Подія ${i}.`,actions:[{kind:'activity_turn',summary:`Герої дійшли до етапу ${i}.`,score_changes:[{user_id:String(uid),delta:1}]}]});await ask(a,msg(`Люмен, досліджую місце ${i}`,-200,uid,101));}
     const row=await one(a.db,'SELECT * FROM games');assert.equal(row!.status,'active');assert.equal(row!.state.turn,24);assert.equal(row!.state.players.length,3);assert.equal(row!.state.scores['11'],8);assert.match(row!.state.summary,/23/);
-    const fresh=new ChatRouter(registry,h.config,h.tg as unknown as Telegram,bot,()=>new FakeBrain());await fresh.init();assert.equal((await one((await fresh.active())[0]!.db,'SELECT state FROM games'))!.state.turn,24);
+    const fresh=new ChatRouter(registry,h.config,h.tg as unknown as Telegram,bot,()=>new FakeBrain());await fresh.init();assert.equal((await one((await fresh.runtime((await registry.find('-200'))!)).db,'SELECT state FROM games'))!.state.turn,24);
   });
   it('активність не додає балів учаснику з іншої групи й не змінює стан при помилці',async()=>{
     const a=await add(),b=await add(-300);await router.receive(msg('Повідомлення іншої групи',-300,77));

@@ -26,7 +26,9 @@ export async function queueAmbient(sql:SQL,m:Message,sourceId:number,updateId:nu
   }
   if(await one(sql,"SELECT update_id FROM inbox WHERE status IN ('pending','processing') AND COALESCE(payload->'message'->>'message_thread_id','0')=$1 AND payload->'engagement'->>'reason' IS DISTINCT FROM 'ambient' LIMIT 1",[topic]))return false;
   const inFlight=await one(sql,"SELECT update_id FROM inbox WHERE status='processing' AND COALESCE(payload->'message'->>'message_thread_id','0')=$1 AND payload->'engagement'->>'reason'='ambient' LIMIT 1",[topic]);
-  const attention=await one(sql,'SELECT checked_at FROM topic_attention WHERE topic_id=$1',[topic]);
+  const attention=await one(sql,'SELECT checked_at,spoke_at FROM topic_attention WHERE topic_id=$1',[topic]);
+  const gap=Math.max(Number(s.ambient_gap_seconds||0),Number(s.proactive_gap_minutes||0)*60)*1000;
+  if(attention?.spoke_at&&Date.now()-new Date(attention.spoke_at).getTime()<gap)return false;
   if(!inFlight&&attention?.checked_at&&Date.now()-new Date(attention.checked_at).getTime()<45000)return false;
   await sql.query("INSERT INTO inbox(update_id,payload,revision,available_at) VALUES($1,$2,$3,now()+interval '2 seconds') ON CONFLICT DO NOTHING",[updateId,payload,s.memory_revision]);return true;
 }
@@ -42,7 +44,8 @@ export async function ambientStillRelevant(sql:SQL,m:Message,sourceId:number,s:R
   // If people have moved on while the model was thinking, do not post an old joke.
   if(await one(sql,"SELECT id FROM messages WHERE topic_id=$1 AND id>$2 AND role='user' LIMIT 1",[topic,sourceId]))return false;
   const a=await one(sql,'SELECT spoke_at,spoke_source_id FROM topic_attention WHERE topic_id=$1',[topic]);
-  if(await one(sql,"SELECT id FROM messages WHERE topic_id=$1 AND role='assistant' AND source_message_id IS DISTINCT FROM $2 AND created_at>now()-interval '25 seconds' LIMIT 1",[topic,sourceId]))return false;
+  const gap=Math.max(Number(s.ambient_gap_seconds||0),Number(s.proactive_gap_minutes||0)*60)*1000;
+  if(a?.spoke_at&&Number(a.spoke_source_id)!==sourceId&&Date.now()-new Date(a.spoke_at).getTime()<gap)return false;
   return true;
 }
 

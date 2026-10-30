@@ -1,3 +1,5 @@
+import {scenario,questNode,questOptions,correctAnswer} from './scenario-packs.js';
+import {requireVersion} from './evolution-core.js';
 import {launchConsent,interactionView,answerInteraction,queueInteraction} from './interactions.js';
 import { randomInt, randomUUID } from 'node:crypto';
 import { one, state, queueText, type Database } from './db.js';
@@ -21,10 +23,11 @@ export class SessionEngine {
             throw new ToolError('quiz_correct_option_invalid');
         if(a.max_choices_per_player>1&&(!['quest','dilemmas'].includes(a.template)||a.response_mode!=='parallel'))throw new ToolError('multiple_choices_not_valid_for_template');
         const id = randomUUID();
-        const settings = { response_mode:a.response_mode||'shared',max_choices_per_player:a.max_choices_per_player||1, options: a.options || [], prompts: a.prompts || [], seconds: a.seconds || 180, _quiz: a.quiz || [] };
+        const pack=['detective','quest'].includes(a.template)?scenario(a.template,a.scenario_id,a.scenario_pack):undefined;
+        const settings = { _pack:pack,response_mode:a.response_mode||'shared',max_choices_per_player:a.max_choices_per_player||1, options: a.options || [], prompts: a.prompts || [], seconds: a.seconds || 180, _quiz: a.quiz || [] };
         if (['ranking', 'prediction', 'dilemmas'].includes(a.template) && settings.options.length < 2)
             throw new ToolError('activity_options_required');
-        await this.db.query('INSERT INTO activity_sessions(id,actor_id,topic_id,template,title,max_rounds,settings,source_message_id) VALUES($1,$2,$3,$4,$5,$6,$7,$8)', [id, c.actorId, c.topicId, a.template, a.title, ['roles', 'quotes', 'captions'].includes(a.template) ? 2 : a.rounds || 3, JSON.stringify(settings), c.sourceId || null]);
+        await this.db.query('INSERT INTO activity_sessions(id,actor_id,topic_id,template,title,max_rounds,settings,source_message_id) VALUES($1,$2,$3,$4,$5,$6,$7,$8)', [id, c.actorId, c.topicId, a.template, a.title, pack?.kind==='detective'?pack.questions.length:pack?.kind==='quest'?10:['roles', 'quotes', 'captions'].includes(a.template) ? 2 : a.rounds || 3, JSON.stringify(settings), c.sourceId || null]);
         await this.join(id, c.actorId, a.host_name || c.actorId);
         return { id, phase: 'lobby', template: ACTIVITY_TEMPLATES[a.template as Template], next: 'Учасники добровільно приєднуються, потім ведучий починає.' };
     }
@@ -74,7 +77,7 @@ export class SessionEngine {
                 throw new ToolError('activity_min_two_players');
             const spy = randomInt(players.length), word = words[randomInt(words.length)]!;
             for (const [i, x] of players.entries())
-                await sql.query('UPDATE activity_players SET role=$1,private_state=$2 WHERE session_id=$3 AND user_id=$4', [session.template === 'roles' && i === spy ? 'spy' : 'player', JSON.stringify({ word: session.template === 'roles' && i === spy ? null : word, secret_word: words[randomInt(words.length)], clue: i }), id, x.user_id]);
+                await sql.query('UPDATE activity_players SET role=$1,private_state=$2 WHERE session_id=$3 AND user_id=$4', [session.template === 'roles' && i === spy ? 'spy' : 'player', JSON.stringify({ word: session.template === 'roles' && i === spy ? null : word, secret_word: words[randomInt(words.length)], clue: i,quest:{frontier:session.settings._pack?.kind==='quest'?[session.settings._pack.start]:[],inventory:[],endings:[]} }), id, x.user_id]);
             await sql.query("UPDATE activity_sessions SET phase='starting',version=version+1 WHERE id=$1", [id]);
         });
         return this.beginRound(id, c);
@@ -89,7 +92,7 @@ export class SessionEngine {
             const a = randomInt(2, 18), b = randomInt(2, 18);
             const quiz = r.settings._quiz?.[(round - 1) % Math.max(1, r.settings._quiz?.length || 0)];
             const settings = { ...r.settings, _answer: quiz ? quiz.correct_index + 1 : a + b, _question: quiz ? quiz.question + '\n' + quiz.options.map((x: string, i: number) => `${i + 1}. ${x}`).join('\n') : `Скільки буде ${a} + ${b}?` };
-            await sql.query("UPDATE activity_sessions SET round=$1,phase='collect',settings=$2,deadline=now()+($3*interval '1 second'),version=version+1 WHERE id=$4", [round, JSON.stringify(settings), r.settings.seconds, id]);
+            await sql.query("UPDATE activity_sessions SET round=$1,phase='collect',settings=$2,deadline=CASE WHEN $5 THEN NULL ELSE now()+($3*interval '1 second') END,version=version+1 WHERE id=$4", [round, JSON.stringify(settings), r.settings.seconds, id,r.settings.pace==='async']);
             return { ...r, round, settings, version: r.version + 1 };
         });
         return this.issuePrompts(s, c);
@@ -104,11 +107,14 @@ export class SessionEngine {
             else if (s.template === 'roles')
                 question = s.round === 1 ? (p.role === 'spy' ? 'Ти таємний агент. Слово невідоме. Напиши коротку підказку так, щоб тебе не викрили.' : `Твоє слово: ${p.private_state.word}. Напиши коротку підказку, не називаючи слово.`) : 'Хто таємний агент? Напиши номер:\n' + players.map((x, i) => `${i + 1}. ${x.name}`).join('\n');
             else if (s.template === 'detective') {
-                const clues = ['Ключ був у людини в синьому.', 'Свідок у червоному не виходив із кімнати.', 'Лише Олена була в синьому.', 'Ключ потрібен, щоб відчинити скриню.'];
-                question = `Підказка лише для тебе: ${clues[index % clues.length]}\nОбговоріть доступні підказки. Хто міг відчинити скриню? Надішли версію особисто.`;
+                const pack=s.settings._pack,clues=pack.clues.filter((_clue:any,i:number)=>i%players.length===index);
+                question=`${pack.setup}\nТвої підказки:\n${clues.map((clue:any)=>'• '+clue.text).join('\n')}\nОбговоріть їх разом. Питання раунду: ${pack.questions[s.round-1].prompt}`;
             }
-            else if (s.template === 'quest')
-                question = `${question}\nШлях: ${(s.public_state.path || []).join(' → ') || 'початок'}. Інвентар: ${(s.public_state.inventory || []).join(', ') || 'порожній'}. Обери: 1 — міст; 2 — печера; 3 — вежа.`;
+            else if (s.template === 'quest'){
+                const state=s.settings.response_mode==='parallel'?p.private_state.quest||{}:s.public_state,options=questOptions(s.settings._pack,state),inventory=state.inventory||[];
+                question=`${[...new Set(options.map((x:any)=>x.scene))].join('\n')}\nІнвентар: ${inventory.join(', ')||'порожній'}.\n${options.map((x:any,i:number)=>`${i+1}. ${x.label}${x.requires.some((item:string)=>!inventory.includes(item))?' (потрібно: '+x.requires.join(', ')+')':''}`).join('\n')}`;
+
+            }
             else if (s.template === 'story') {
                 question = `Твоя прихована умова: використай слово «${p.private_state.secret_word}». Додай речення до спільної історії публічним ходом activity.turn, коли буде твоя черга. Умову не потрібно розкривати.`;
             }
@@ -130,13 +136,15 @@ export class SessionEngine {
         return this.view(id);
     }
     async privateMove(r: any, text: string, ref: string) {
-        const s = await one(this.db, "SELECT * FROM activity_sessions WHERE id=$1 AND phase='collect' AND deadline>now()", [r.session_id]);
+        const s = await one(this.db, "SELECT * FROM activity_sessions WHERE id=$1 AND phase='collect'", [r.session_id]);
         if (!s || s.round !== r.payload.round || !await one(this.db, "SELECT user_id FROM activity_players WHERE session_id=$1 AND user_id=$2 AND status='joined'", [s.id, r.recipient_id]))
             throw new ToolError('activity_round_closed');
         if (s.template === 'story')
             return;
-        const options = (['quest', 'prediction', 'dilemmas'].includes(s.template) || s.template === 'roles' && s.round === 2) ? (s.template === 'roles' ? Number((await one(this.db, 'SELECT count(*) n FROM activity_players WHERE session_id=$1', [s.id]))?.n) : s.template === 'quest' ? 3 : s.settings.options.length) : s.template === 'captions' && s.round === 2 ? s.public_state.entries?.length : 0;
+        const questPlayer=s.template==='quest'?await one(this.db,'SELECT private_state FROM activity_players WHERE session_id=$1 AND user_id=$2',[s.id,r.recipient_id]):undefined,questState=s.settings.response_mode==='parallel'?questPlayer?.private_state.quest||{}:s.public_state,qOptions=s.template==='quest'?questOptions(s.settings._pack,questState):[];
+        const options = (['quest', 'prediction', 'dilemmas'].includes(s.template) || s.template === 'roles' && s.round === 2) ? (s.template === 'roles' ? Number((await one(this.db, 'SELECT count(*) n FROM activity_players WHERE session_id=$1', [s.id]))?.n) : s.template === 'quest' ? qOptions.length : s.settings.options.length) : s.template === 'captions' && s.round === 2 ? s.public_state.entries?.length : 0;
         if(options){const picks=s.settings.response_mode==='parallel'&&s.settings.max_choices_per_player>1?text.trim().split(/\s*(?:,|і|та|\+)\s*/).map(Number):[Number(text.trim())];if(picks.length>(s.settings.max_choices_per_player||1)||new Set(picks).size!==picks.length||picks.some(n=>!Number.isInteger(n)||n<1||n>options))throw new ToolError('activity_option_number_required');}
+        if(s.template==='quest'){const inventory=questState.inventory||[];const used=new Set<string>();for(const pick of text.split(/\s*(?:,|і|та|\+)\s*/).map(Number)){const option=qOptions[pick-1];if(!option||option.requires.some((item:string)=>!inventory.includes(item)))throw new ToolError('quest_required_item_missing');for(const item of option.consumes){if(used.has(item))throw new ToolError('quest_item_already_used');used.add(item);}}}
         if (s.template === 'tournament' && !/^\d{1,6}$/.test(text.trim()))
             throw new ToolError('activity_number_required');
         if (s.template === 'ranking') {
@@ -158,7 +166,7 @@ export class SessionEngine {
     }
     async turn(id: string, text: string, c: ToolContext) {
         return this.db.tx(async (sql) => {
-            const s = await one(sql, "SELECT * FROM activity_sessions WHERE id=$1 AND phase='collect' AND deadline>now() FOR UPDATE", [id]);
+            const s = await one(sql, "SELECT * FROM activity_sessions WHERE id=$1 AND phase='collect' FOR UPDATE", [id]);
             if (!s)
                 throw new ToolError('activity_round_closed');
             const players = (await sql.query("SELECT user_id FROM activity_players WHERE session_id=$1 AND status='joined' ORDER BY user_id", [id])).rows;
@@ -168,7 +176,8 @@ export class SessionEngine {
                 return { private_answer_required: true, instruction: 'Відкрий особистий запит Люмена для цього раунду.' };
             if (players[s.public_state.turn_index || 0]?.user_id !== c.actorId)
                 throw new ToolError('activity_wait_your_turn');
-            const publicState = { ...s.public_state, turn_index: (s.public_state.turn_index || 0) + 1, story: [...(s.public_state.story || []), { user_id: c.actorId, text: text.slice(0, 1000) }] };
+            const publicState = { ...s.public_state, turn_index: (s.public_state.turn_index || 0) + 1, story: [...(s.public_state.story || []), { user_id: c.actorId, text: text.slice(0, 1000) }].slice(-16),story_count:(s.public_state.story_count||s.public_state.story?.length||0)+1 };
+            await sql.query('INSERT INTO activity_story_segments(session_id,ordinal,user_id,body,source_message_id) VALUES($1,$2,$3,$4,$5)',[id,publicState.story_count,c.actorId,text.slice(0,1000),c.sourceId||null]);await import('./provenance.js').then(p=>p.recordProvenance(sql,'session',id,[...(c.sourceIds||[]),...(c.sourceId?[c.sourceId]:[])]));
             await sql.query('UPDATE activity_sessions SET public_state=$1 WHERE id=$2', [JSON.stringify(publicState), id]);
             await sql.query("INSERT INTO activity_moves(session_id,round,user_id,content,sharing) VALUES($1,$2,$3,$4,'public') ON CONFLICT DO NOTHING", [id, s.round, c.actorId, 'public:' + text.slice(0, 1000)]);
             return { accepted: true, next_player: players[publicState.turn_index]?.user_id || null };
@@ -182,7 +191,8 @@ export class SessionEngine {
             throw new ToolError('session_phase_invalid');
         const players = (await this.db.query("SELECT * FROM activity_players WHERE session_id=$1 AND status='joined' ORDER BY user_id", [id])).rows;
         const moves = (await this.db.query('SELECT * FROM activity_moves WHERE session_id=$1 AND round=$2 ORDER BY user_id', [id, s.round])).rows;
-        if (s.phase === 'collect' && moves.length < players.length && s.deadline && new Date(s.deadline).getTime() > Date.now())
+        const passes=(await this.db.query('SELECT user_id FROM activity_passes WHERE session_id=$1 AND round=$2',[id,s.round])).rows;
+        if (s.phase === 'collect' && moves.length+passes.length < players.length)
             return { status: 'collecting', received: moves.length, expected: players.length };
         if (s.template === 'prediction' && outcome === undefined) {
             await this.db.query("UPDATE activity_sessions SET phase='awaiting_outcome',deadline=NULL WHERE id=$1", [id]);
@@ -202,7 +212,7 @@ export class SessionEngine {
             if (s.template === 'tournament')
                 points = Number(m.text) === s.settings._answer ? 1 : 0;
             else if (s.template === 'detective')
-                points = /олен/iu.test(m.text) ? 1 : 0;
+                points = correctAnswer(s.settings._pack.questions[s.round-1].answers,m.text)?1:0;
             else if (s.template === 'prediction')
                 points = Number(m.text) === outcome ? 1 : 0;
             else if (s.template === 'story')
@@ -223,11 +233,15 @@ export class SessionEngine {
                 m.text.split(',').map(Number).forEach((v: number, i: number) => totals[v - 1] += totals.length - i);
             publicState.ranking = s.settings.options.map((label: string, i: number) => ({ label, points: totals[i] })).sort((a: any, b: any) => b.points - a.points);
         }
-        if(s.template==='quest'&&s.settings.response_mode==='parallel'){const names=['міст','печера','вежа'];publicState.branches=revealed.map(m=>({user_id:m.user_id,paths:m.text.split(/\s*(?:,|і|та|\+)\s*/).map((x:string)=>names[Number(x)-1])}));publicState.inventory=[...new Set([...(publicState.inventory||[]),...(counts['2']?['ключ']:[]),...(counts['3']?['мапа']:[])])];}
-        if (s.template === 'quest'&&s.settings.response_mode!=='parallel') {
-            const pick = Object.keys(counts).sort((a, b) => counts[b]! - counts[a]! || Number(a) - Number(b))[0];
-            publicState.path = [...(publicState.path || []), pick ? ['міст', 'печера', 'вежа'][Number(pick) - 1] : 'очікування'];
-            publicState.inventory = [...new Set([...(publicState.inventory || []), ...(pick === '2' ? ['ключ'] : pick === '3' ? ['мапа'] : [])])];
+        if(s.template==='detective')publicState.solution={question:s.settings._pack.questions[s.round-1].prompt,answer:s.settings._pack.questions[s.round-1].answers[0],explanation:s.settings._pack.questions[s.round-1].explanation};
+        const questUpdates:{user:string;state:any}[]=[];
+        if(s.template==='quest'&&s.settings.response_mode==='parallel'){
+            for(const move of values){const player=players.find(p=>p.user_id===move.user_id)!,state=player.private_state.quest||{frontier:[s.settings._pack.start],inventory:[],endings:[]},options=questOptions(s.settings._pack,state),picks=move.text.split(/\s*(?:,|і|та|\+)\s*/).map(Number),selected=picks.map((n:number)=>options[n-1]).filter(Boolean);let inventory=[...state.inventory];for(const option of selected)inventory=[...new Set([...inventory.filter((i:string)=>!option.consumes.includes(i)),...option.gives])];const frontier=[...new Set([...state.frontier.filter((id:string)=>!selected.some((o:any)=>o.from===id)),...selected.map((o:any)=>o.to)])],endings=[...new Set([...state.endings,...frontier.map(id=>s.settings._pack.nodes.find((node:any)=>node.id===id)?.ending).filter(Boolean)])],next={frontier:frontier.filter(id=>!s.settings._pack.nodes.find((node:any)=>node.id===id)?.ending),inventory,endings};questUpdates.push({user:move.user_id,state:{...player.private_state,quest:next}});}
+            publicState.branches=questUpdates.filter(x=>revealed.some(m=>m.user_id===x.user)).map(x=>{const move=values.find(m=>m.user_id===x.user)!,player=players.find(p=>p.user_id===x.user)!,options=questOptions(s.settings._pack,player.private_state.quest||{});return {user_id:x.user,paths:move.text.split(/\s*(?:,|і|та|\+)\s*/).map(Number).map((n:number)=>options[n-1]?.label)};});publicState.inventory=[...new Set(questUpdates.filter(x=>revealed.some(m=>m.user_id===x.user)).flatMap(x=>x.state.quest.inventory))];if(players.every(p=>{const q=questUpdates.find(x=>x.user===p.user_id)?.state.quest||p.private_state.quest;return q?.frontier?.length===0;}))publicState.ending='Усі особисті маршрути отримали розв’язку.';
+        }
+        if(s.template==='quest'&&s.settings.response_mode!=='parallel'){
+            const node=questNode(s.settings._pack,publicState),inventory=publicState.inventory||[],picks=Object.keys(counts).map(Number).filter(n=>node.choices[n-1]&&node.choices[n-1]!.requires.every((i:string)=>inventory.includes(i))).sort((a,b)=>counts[String(b)]!-counts[String(a)]!||a-b),pick=picks[0];
+            if(pick){const choice=node.choices[pick-1]!;publicState.inventory=[...new Set([...inventory.filter((i:string)=>!choice.consumes.includes(i)),...choice.gives])];publicState.node=choice.to;publicState.path=[...(publicState.path||[]),choice.label];publicState.last_choice={label:choice.label,votes:counts[String(pick)],tie_break:'lowest_number',individual_choices_withheld:true};const next=questNode(s.settings._pack,publicState);if(next.ending)publicState.ending=next.ending;}
         }
         if (['quotes', 'captions'].includes(s.template) && s.round === 1) {
             publicState.entries = revealed.map(x => ({ text: x.text }));
@@ -240,13 +254,14 @@ export class SessionEngine {
                     scores.set(author, (scores.get(author) || 0) + n);
             }
         publicState.last_round = { round: s.round, received: moves.length, expected: players.length, entries: ['roles', 'story'].includes(s.template) ? revealed : ['captions', 'quotes'].includes(s.template) && s.round === 1 ? revealed.map(x => ({ text: x.text })) : [], counts: ['quest', 'dilemmas'].includes(s.template) ? counts : undefined, outcome: s.template === 'prediction' ? { option: s.settings.options[outcome! - 1], provided_by_host: true } : undefined };
-        const final = s.round >= s.max_rounds || s.template === 'prediction';
+        const final = s.round >= s.max_rounds || s.template === 'prediction' || Boolean(publicState.ending);
         if (final && s.template === 'roles')
             publicState.spy = players.find(p => p.role === 'spy')?.user_id;
         await this.db.tx(async (sql) => {
             const locked = await one(sql, 'SELECT phase,version FROM activity_sessions WHERE id=$1 FOR UPDATE', [id]);
             if (!locked || locked.version !== s.version || locked.phase !== s.phase)
                 throw new ToolError('activity_state_changed');
+            for(const update of questUpdates)await sql.query('UPDATE activity_players SET private_state=$3 WHERE session_id=$1 AND user_id=$2',[id,update.user,JSON.stringify(update.state)]);
             for (const [user, n] of scores)
                 await sql.query('UPDATE activity_players SET score=score+$1 WHERE session_id=$2 AND user_id=$3', [n, id, user]);
             await sql.query('UPDATE activity_sessions SET phase=$1,public_state=$2,deadline=NULL,version=version+1,settings=$4 WHERE id=$3', [final ? 'completed' : 'between_rounds', JSON.stringify(publicState), id, JSON.stringify(s.settings)]);
@@ -289,16 +304,21 @@ export class SessionEngine {
         });
     }
     async tick() {
-        const s = await state(this.db);
-        if (s.paused)
-            return;
-        for (const r of (await this.db.query("SELECT * FROM activity_sessions WHERE phase='collect' AND deadline<=now() LIMIT 3")).rows) {
-            const c: ToolContext = { actorId: r.actor_id, chatId: s.chat_id, topicId: r.topic_id, revision: s.memory_revision, updateId: 'session-timeout:' + r.id + ':' + r.round, sourceId: r.source_message_id ? Number(r.source_message_id) : undefined, requested: true };
-            try {
-                const result = await this.reveal(r.id, c);
-                await queueText(this.db, `«${r.title}»: час раунду минув.\n${JSON.stringify(result.public_state?.last_round || { status: result.status, received: result.received }).slice(0, 2200)}`, s.memory_revision, c.updateId, false, { threadId: r.topic_id === '0' ? undefined : Number(r.topic_id), sourceMessageId: r.source_message_id ? Number(r.source_message_id) : undefined });
+        const live=await state(this.db);if(live.paused)return;
+        const hour=Number(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Kyiv',hour:'2-digit',hourCycle:'h23'}).format(new Date()));if(live.quiet_start!==live.quiet_end&&(live.quiet_start<live.quiet_end?hour>=live.quiet_start&&hour<live.quiet_end:hour>=live.quiet_start||hour<live.quiet_end))return;
+        for(const r of (await this.db.query("UPDATE activity_sessions SET deadline=NULL,settings=settings||'{\"pace\":\"async\"}'::jsonb WHERE id IN (SELECT id FROM activity_sessions WHERE phase='collect' AND deadline<=now() LIMIT 3) RETURNING *")).rows){await queueText(this.db,`«${r.title}»: відведений час минув. Відповіді залишаються закритими. Можна відповісти пізніше, пропустити раунд або погодити інший темп; відсутність відповіді не є поразкою.`,live.memory_revision,'activity-wait:'+r.id+':'+r.round,false,{actorId:r.actor_id,threadId:r.topic_id==='0'?undefined:Number(r.topic_id),sourceMessageId:r.source_message_id||undefined});}
+    }
+    async control(a:{id:string;version:number;operation:string;target_id?:string},c:ToolContext){
+        return this.db.tx(async sql=>{const s=await one(sql,'SELECT * FROM activity_sessions WHERE id=$1 AND topic_id=$2 FOR UPDATE',[a.id,c.topicId]);if(!s||['completed','cancelled'].includes(s.phase))throw new ToolError('session_not_active');requireVersion(s.version,a.version);const participant=await one(sql,"SELECT user_id FROM activity_players WHERE session_id=$1 AND user_id=$2 AND status='joined'",[s.id,c.actorId]);if(!participant)throw new ToolError('session_join_first');
+            if(a.operation==='pass'){if(s.phase!=='collect')throw new ToolError('round_not_open');if(await one(sql,'SELECT user_id FROM activity_moves WHERE session_id=$1 AND round=$2 AND user_id=$3',[s.id,s.round,c.actorId]))throw new ToolError('answer_already_submitted');await sql.query('INSERT INTO activity_passes(session_id,round,user_id) VALUES($1,$2,$3) ON CONFLICT DO NOTHING',[s.id,s.round,c.actorId]);await sql.query("UPDATE private_requests SET status='revoked' WHERE session_id=$1 AND recipient_id=$2 AND payload->>'round'=$3",[s.id,c.actorId,String(s.round)]);return {passed:true,counts_as_loss:false};}
+            if(a.operation==='accept_host'){if(s.settings.host_offer!==c.actorId)throw new ToolError('host_offer_required');s.actor_id=c.actorId;delete s.settings.host_offer;}
+            else{if(s.actor_id!==c.actorId)throw new ToolError('session_host_required');
+                if(a.operation==='offer_host'){if(!await one(sql,"SELECT user_id FROM activity_players WHERE session_id=$1 AND user_id=$2 AND status='joined'",[s.id,a.target_id]))throw new ToolError('joined_target_required');s.settings.host_offer=a.target_id;}
+                if(a.operation==='pause'){if(s.phase==='paused')throw new ToolError('already_paused');s.settings.paused_phase=s.phase;s.settings.remaining_seconds=s.deadline?Math.max(0,Math.ceil((new Date(s.deadline).getTime()-Date.now())/1000)):null;s.phase='paused';s.deadline=null;}
+                if(a.operation==='resume'){if(s.phase!=='paused')throw new ToolError('session_not_paused');s.phase=s.settings.paused_phase;s.deadline=s.settings.pace==='async'||s.settings.remaining_seconds===null?null:new Date(Date.now()+Math.max(30,s.settings.remaining_seconds)*1000);}
+                if(a.operation==='async'||a.operation==='sync'){s.settings.pace=a.operation;s.deadline=a.operation==='async'?null:new Date(Date.now()+s.settings.seconds*1000);}
             }
-            catch { }
-        }
+            await sql.query('UPDATE activity_sessions SET actor_id=$2,settings=$3,phase=$4,deadline=$5,version=version+1 WHERE id=$1',[s.id,s.actor_id,JSON.stringify(s.settings),s.phase,s.deadline]);return {id:s.id,phase:s.phase,version:s.version+1,host_id:s.actor_id,host_offer:s.settings.host_offer,pace:s.settings.pace||'sync'};
+        });
     }
 }

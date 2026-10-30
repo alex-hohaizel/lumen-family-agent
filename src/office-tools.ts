@@ -1,0 +1,23 @@
+import {z} from 'zod';
+import {one,type Database} from './db.js';
+import {inspectOffice,editOffice,OfficePatch} from './office-edit.js';
+import {binaryArtifact} from './document-workshop.js';
+import {withWorkerSlot} from './work-slots.js';
+import {digest,sourceIds} from './evolution-core.js';
+import {recordProvenance,transferProvenance} from './provenance.js';
+import {browsers} from './browser.js';
+import {Telegram} from './telegram.js';
+import type {Definition,ToolContext} from './agent-tools.js';
+import type {Config} from './config.js';
+import {ToolError} from './safe-http.js';
+const Input=z.object({artifact_id:z.string().uuid().optional(),attachment_id:z.number().int().positive().optional()});
+export async function inputBinary(db:Database,config:Config,a:z.infer<typeof Input>,c:ToolContext,telegram=new Telegram(config.token),maxBytes=3*1024*1024){
+ if(Boolean(a.artifact_id)===Boolean(a.attachment_id))throw new ToolError('one_known_input_required');
+ if(a.artifact_id){const item=await one(db,'SELECT * FROM agent_artifacts WHERE id=$1 AND actor_id=$2',[a.artifact_id,c.actorId]);if(!item||item.revision!==c.revision)throw new ToolError('own_current_artifact_required');const privateDelivery=await one(db,"SELECT id FROM outbox WHERE body->>'id'=$1 AND audience='private' LIMIT 1",[item.id]);if(privateDelivery&&c.audience!=='private'&&Number(c.chatId)<0)throw new ToolError('private_input_cannot_widen_audience');const sources=(await db.query("SELECT source_message_id FROM provenance_edges WHERE derived_kind='artifact' AND derived_key=$1",[item.id])).rows.map(x=>Number(x.source_message_id));return {bytes:Buffer.from(item.content,item.encoding==='base64'?'base64':'utf8'),name:item.name,sourceIds:[...sourceIds(c),...sources,...(item.source_message_id?[Number(item.source_message_id)]:[])]};}
+ const item=await one(db,'SELECT * FROM attachments WHERE id=$1 AND revision=$2',[a.attachment_id,c.revision]);if(!item)throw new ToolError('known_attachment_required');return {bytes:await telegram.file(item.file_id,maxBytes),name:item.metadata?.file_name||'document.bin',sourceIds:[...sourceIds(c),Number(item.source_message_id)]};
+}
+export function registerOfficeTools(db:Database,config:Config,add:(n:string,d:Definition)=>void){
+ add('document.inspect',{description:'Прочитати структуру відомого DOCX/XLSX перед точним редагуванням: адреси абзаців/комірок, поточні значення, SHA256. Оригінальні стилі, картинки та службові частини залишаються в оригіналі.',schema:Input,run:async(a,c)=>{const input=await inputBinary(db,config,a,c);return {...await withWorkerSlot(async()=>inspectOffice(input.bytes,input.name)),readback_verified:true,sha256:digest(input.bytes),name:input.name,source_message_ids:input.sourceIds};}});
+ add('document.edit',{description:'Редагувати відомий DOCX/XLSX за точними target+before з document.inspect та SHA256 оригіналу. Зберігає решту OOXML-частин, стилі/таблиці/зображення. Для XLSX реально перераховує підтримувані формули, відхиляє непідтримувані/зовнішні/макроси. Повертає diff і новий файл після readback.',schema:Input.extend({sha256:z.string().regex(/^[a-f0-9]{64}$/),patches:z.array(OfficePatch).min(1).max(100)}),run:async(a,c)=>{const input=await inputBinary(db,config,a,c);if(digest(input.bytes)!==a.sha256)throw new ToolError('office_input_changed');const edited=await withWorkerSlot(async()=>editOffice(input.bytes,input.name,a.patches));const extension=input.name.toLowerCase().endsWith('.docx')?'.docx':'.xlsx',name=input.name.slice(0,-extension.length)+'_редакція'+extension;const output=await binaryArtifact(db,{...c,sourceIds:input.sourceIds},name,extension==='.docx'?'application/vnd.openxmlformats-officedocument.wordprocessingml.document':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',edited.bytes);return {...output,diff:edited.diff,recalculated:edited.recalculated,changed_parts:edited.changed_parts,untouched_parts_verified:edited.untouched_parts_verified,input_sha256:a.sha256};}});
+ add('document.preview_pdf',{description:'Реально відрендерити відомий DOCX у PDF: таблиці, стилі й зображення обробляє docx-preview у локальному Chromium з вимкненою мережею. Новий PDF є окремим результатом, оригінал зберігається.',schema:Input,run:async(a,c)=>{const input=await inputBinary(db,config,a,c);if(!/\.docx$/i.test(input.name))throw new ToolError('docx_required');inspectOffice(input.bytes,input.name);return binaryArtifact(db,{...c,sourceIds:input.sourceIds},input.name.replace(/\.docx$/i,'_перегляд.pdf'),'application/pdf',await browsers.docxPDF(input.bytes));}});
+}

@@ -1,3 +1,4 @@
+import {withWorkerSlot} from './work-slots.js';
 import sharp from 'sharp';
 import ffmpeg from 'ffmpeg-static';
 import {execFile} from 'node:child_process';
@@ -16,13 +17,17 @@ export async function rememberAttachments(sql:SQL,m:Message,source:number,revisi
   const entries:{kind:string;file:string;mime:string;unique?:string;meta?:Record<string,unknown>}[]=[];
   if(m.photo?.length)entries.push({kind:'photo',file:m.photo.at(-1)!.file_id,mime:'image/jpeg',meta:{album:m.media_group_id || null}});
   if(m.sticker)entries.push({kind:m.sticker.is_animated?'sticker_tgs':m.sticker.is_video?'sticker_video':'sticker',file:m.sticker.file_id,mime:m.sticker.is_animated?'application/x-tgsticker':m.sticker.is_video?'video/webm':'image/webp',unique:m.sticker.file_unique_id,meta:{thumbnail:m.sticker.thumbnail?.file_id,emoji:m.sticker.emoji,set_name:m.sticker.set_name}});
+  if(m.document&&!(/^(image\/)/.test(m.document.mime_type||'')||/\.(png|jpe?g|webp|gif)$/i.test(m.document.file_name||'')))entries.push({kind:'document',file:m.document.file_id,mime:m.document.mime_type||'application/octet-stream',meta:{file_name:m.document.file_name||'document.bin'}});
   if(m.document&&(/^(image\/)/.test(m.document.mime_type || '')||/\.(png|jpe?g|webp|gif)$/i.test(m.document.file_name || '')))entries.push({kind:/gif/i.test(m.document.mime_type || m.document.file_name || '')?'animation':'image_file',file:m.document.file_id,mime:m.document.mime_type || 'image/png'});
   for(const [kind,media] of [['animation',m.animation],['video',m.video]] as const)if(media)entries.push({kind,file:media.file_id,mime:media.mime_type || 'video/mp4',unique:media.file_unique_id,meta:{thumbnail:media.thumbnail?.file_id}});
   for(const e of entries)await sql.query('INSERT INTO attachments(source_message_id,topic_id,kind,file_id,file_unique_id,mime,metadata,revision) VALUES($1,$2,$3,$4,$5,$6,$7,$8) ON CONFLICT(source_message_id,file_id) DO NOTHING',[source,String(m.message_thread_id || 0),e.kind,e.file,e.unique || '',e.mime,JSON.stringify(e.meta || {}),revision]);
+  await sql.query("UPDATE attachments SET status='stored' WHERE source_message_id=$1 AND kind='document' AND status='pending'",[source]);
 }
 export class VisualMemory {
   constructor(private db:Database,private telegram:Telegram,private brain:Brain){}
-  async frames(row:Record<string,any>){
+  async frames(row:Record<string,any>){return withWorkerSlot(()=>this.decodeFrames(row));}
+  private async decodeFrames(row:Record<string,any>){
+    if(row.kind==='document')return {images:[],mode:'document_not_visually_decoded'};
     let bytes:Buffer;let images:string[]=[];let mode='image';
     try{
       bytes=await this.telegram.file(row.file_id,20*1024*1024);
@@ -56,7 +61,7 @@ export class VisualMemory {
     if(uid!==currentUid&&!await one(this.db,'SELECT user_id FROM members WHERE user_id=$1 AND active=true',[uid]))return {images:[],info:'Цей учасник не відомий у цій групі.'};
     const photos=await this.telegram.call<{photos?:{file_id:string;file_unique_id?:string}[][]}>('getUserProfilePhotos',{user_id:Number(uid),limit:1});
     const photo=photos.photos?.[0]?.at(-1);if(!photo)return {images:[],info:'Telegram не надав доступної аватарки цього учасника.'};
-    const images=[await dataURL(await this.telegram.file(photo.file_id,8*1024*1024))];
+    const bytes=await this.telegram.file(photo.file_id,8*1024*1024),images=[await withWorkerSlot(()=>dataURL(bytes))];
     const s=await state(this.db);if(s.paused)return {images:[],info:'Пам’ять на паузі.'};
     await this.db.query('INSERT INTO avatars(user_id,file_id,file_unique_id) VALUES($1,$2,$3) ON CONFLICT(user_id) DO UPDATE SET file_id=excluded.file_id,file_unique_id=excluded.file_unique_id,description=CASE WHEN avatars.file_id=excluded.file_id THEN avatars.description ELSE \'\' END,updated_at=now()',[uid,photo.file_id,photo.file_unique_id || '']);
     return {images,info:'Доступна аватарка учасника цієї групи; не є доказом особи людини.',user_id:uid};

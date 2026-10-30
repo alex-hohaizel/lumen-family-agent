@@ -1,3 +1,6 @@
+import {MediaAssets,assetFor} from './media-assets.js';
+import {detachDeliveredText} from './storage-lifecycle.js';
+import {digest} from './evolution-core.js';
 import {queueInteraction} from './interactions.js';
 import {ToolError} from './safe-http.js';
 import {readResultView} from './result-views.js';
@@ -15,10 +18,10 @@ import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 
 export class Delivery {
-  constructor(private db:Database,private telegram:Telegram,private config:Config,private media=new Media(config)){}
+  constructor(private db:Database,private telegram:Telegram,private config:Config,private media=new Media(config,undefined,db)){}
   private async native(row:Record<string,any>){
     const b=row.body,base={chat_id:row.chatId,_lumen_actor_id:row.actor_id,_lumen_output_language:row.body.outputLanguage,...(b.threadId?{message_thread_id:b.threadId}:{})};
-    if(b.operation==='send_album')return (await this.telegram.call<any[]>('sendMediaGroup',{...base,media:b.files.map((f:any,i:number)=>({type:'photo',media:f.file_id,...(i===0&&b.caption?{caption:b.caption}:{})}))}))[0];
+    if(b.operation==='send_album'){const sent=await this.telegram.call<any[]>('sendMediaGroup',{...base,media:b.files.map((f:any,i:number)=>({type:'photo',media:f.file_id,...(i===0&&b.caption?{caption:b.caption}:{})}))});if(sent.length!==b.files.length)throw Object.assign(new TelegramError('telegram_partial_album',0,true),{partialMessageIds:sent.map(x=>x.message_id).filter(Number.isSafeInteger)});return {...sent[0],message_ids:sent.map(x=>x.message_id)};}
     if(b.operation==='send_file')return this.telegram.call('sendDocument',{...base,document:b.files[0].file_id,caption:b.caption || ''});
     if(b.operation==='send_animation')return this.telegram.call('sendAnimation',{...base,animation:b.files[0].file_id,caption:b.caption || ''});
     if(b.operation==='send_sticker')return this.telegram.call('sendSticker',{...base,sticker:b.files[0].file_id});
@@ -33,7 +36,7 @@ export class Delivery {
   async next(lane?:'text'|'media'){
     const row=await this.db.tx<Record<string,any>|null>(async sql=>{
       const s=await state(sql,true);
-      const row=await one(sql,`SELECT * FROM outbox WHERE status='pending' AND available_at<=now() ${lane?"AND kind "+(lane==='text'?'NOT IN':'IN')+" ('artifact','voice','image','animation','private_result')":""} ORDER BY id LIMIT 1 FOR UPDATE SKIP LOCKED`);
+      const row=await one(sql,`SELECT * FROM outbox WHERE status='pending' AND available_at<=now() ${lane?"AND kind "+(lane==='text'?'NOT IN':'IN')+" ('artifact','voice','image','animation','private_result','media_asset')":""} ORDER BY id LIMIT 1 FOR UPDATE SKIP LOCKED`);
       if(!row || !s.chat_id)return null;
       if(row.revision!==s.memory_revision || (s.paused && !row.service)){
         await sql.query("DELETE FROM outbox WHERE id=$1",[row.id]);return null;
@@ -80,7 +83,7 @@ export class Delivery {
       const progress=/^(progress:|task-progress:)/.test(row.dedup_key);
       if(current.paused)await activityFor(this.db,this.telegram).stopAll();
       if(!progress&&row.source_message_id)await activityFor(this.db,this.telegram).stopSource(Number(row.source_message_id));
-      let sent:{message_id:number};
+      let sent:{message_id:number;message_ids?:number[]};
       if(row.kind==='interaction'){
         const v=await one(this.db,'SELECT card_message_id,card_message_ids FROM interactions WHERE id=$1',[row.body.id]);
         const previous=v?.card_message_ids?.[row.body.part||0]||((row.body.parts||1)===1?v?.card_message_id:undefined);
@@ -89,10 +92,27 @@ export class Delivery {
         await this.db.query("UPDATE interactions SET card_message_ids=jsonb_set(card_message_ids,$1::text[],$2::jsonb,true),card_message_id=CASE WHEN $3 THEN $4 ELSE card_message_id END WHERE id=$5",[[String(row.body.part||0)],JSON.stringify(sent.message_id),(row.body.part||0)===(row.body.parts||1)-1,sent.message_id,row.body.id]);
       }else if(row.kind==='panel'){
         const view=await readResultView(this.db,row.body,String(row.actor_id),row.revision);
-        const base={chat_id:row.chatId,_lumen_actor_id:row.actor_id,_lumen_output_language:view.outputLanguage||row.body.outputLanguage,text:view.text,reply_markup:view.replyMarkup,...(row.body.threadId?{message_thread_id:row.body.threadId}:{})};
+        const base={chat_id:row.chatId,_lumen_actor_id:row.actor_id,_lumen_output_language:view.outputLanguage||row.body.outputLanguage,text:view.text,entities:view.entities,reply_markup:view.replyMarkup,...(row.body.threadId?{message_thread_id:row.body.threadId}:{})};
         if(Number(row.chatId)>0)sent=await this.telegram.call('sendMessage',base);
         else try{sent=await this.telegram.call('sendMessage',{...base,ephemeral_message_parameters:{receiver_user_id:Number(row.body.receiverId),callback_query_id:row.body.callbackQueryId}});}
-        catch(e){if(!(e instanceof TelegramError)||e.code!=='telegram_400')throw e;sent=await this.telegram.text(view.private?String(row.actor_id):row.chatId,view.text,{actorId:row.actor_id,outputLanguage:view.outputLanguage||row.body.outputLanguage,threadId:view.private?undefined:row.body.threadId,replyMarkup:view.replyMarkup});}
+        catch(e){if(!(e instanceof TelegramError)||e.code!=='telegram_400')throw e;sent=await this.telegram.text(view.private?String(row.actor_id):row.chatId,view.text,{actorId:row.actor_id,outputLanguage:view.outputLanguage||row.body.outputLanguage,threadId:view.private?undefined:row.body.threadId,entities:view.entities,replyMarkup:view.replyMarkup});}
+      }else if(row.kind==='media_asset'){
+        const publication=await one(this.db,"SELECT * FROM media_publications WHERE id=$1 AND actor_id=$2 AND status='queued'",[row.body.publicationId,row.actor_id]);
+        if(!publication||digest(publication.manifest)!==digest(Object.fromEntries(['id','version','sha256','caption','destination_id','audience'].filter(k=>row.body[k]!==undefined).map(k=>[k,row.body[k]]))))throw new ToolError('publication_manifest_changed');
+        const context={actorId:String(row.actor_id),chatId:String(current.chat_id),topicId:String(row.body.threadId||0),revision:row.revision,updateId:row.dedup_key,requested:true,audience:row.audience as 'group'|'private'};
+        const media=new MediaAssets(this.db,this.config,this.telegram),data=await media.bytes(row.body.id,row.body.version,context);
+        if(data.asset.sha256!==row.body.sha256)throw new ToolError('publication_source_changed');
+        if(row.body.destination_id){
+          const target=await one(this.db,"SELECT d.* FROM media_destinations d JOIN asset_destination_grants g ON g.destination_id=d.id WHERE d.id=$1 AND d.owner_id=$2 AND d.status='active' AND g.asset_id=$3 AND g.asset_version=$4 AND g.grantor_id=$5",[row.body.destination_id,row.actor_id,data.asset.id,data.asset.version,data.asset.owner_id]);
+          if(!target)throw new ToolError('publication_permission_revoked');
+          const me=await this.telegram.call('getMe'),author=await this.telegram.call('getChatMember',{chat_id:target.chat_id,user_id:Number(row.actor_id)}),bot=await this.telegram.call('getChatMember',{chat_id:target.chat_id,user_id:me.id});
+          if(!['creator','administrator'].includes(author.status)||bot.status!=='creator'&&(bot.status!=='administrator'||bot.can_post_messages!==true))throw new ToolError('channel_publish_rights_changed');
+          row.chatId=String(target.chat_id);delete row.body.threadId;row.externalDestination=true;
+        }
+        await assetFor(this.db,data.asset.id,data.asset.version,context);
+        const valid=await one(this.db,"SELECT id FROM media_publications WHERE id=$1 AND status='queued'",[publication.id]);if(!valid)throw new ToolError('publication_revoked');
+        const method=data.asset.mime.startsWith('image/')?'sendPhoto':data.asset.mime==='video/mp4'?'sendVideo':'sendDocument';
+        sent=await this.telegram.upload(method,row.chatId,data.bytes,row.body.caption||data.asset.title,data.asset.mime,row.body.threadId,data.asset.title+(method==='sendVideo'?'.mp4':data.asset.mime==='application/pdf'?'.pdf':''),row.actor_id);
       }else if(row.kind==='private_result'){const data=await new PrivateResults(this.db,this.config).read(row.body.id,row.actor_id);sent=await this.telegram.upload('sendDocument',row.chatId,Buffer.from(JSON.stringify(data,null,2)),data.summary,'application/json',undefined,'Особиста_відповідь.json',row.actor_id);
       }else if(row.kind==='task_status'){const task=await one(this.db,'SELECT progress_message_id FROM agent_tasks WHERE id=$1',[row.body.taskId]);if(task?.progress_message_id){try{await this.telegram.call('editMessageText',{chat_id:row.chatId,_lumen_actor_id:row.actor_id,_lumen_output_language:row.body.outputLanguage,message_id:Number(task.progress_message_id),text:row.body.text});sent={message_id:Number(task.progress_message_id)};}catch(e){if(!(e instanceof TelegramError)||e.code!=='telegram_400')throw e;sent=await this.telegram.text(row.chatId,row.body.text,{actorId:row.actor_id,outputLanguage:row.body.outputLanguage,threadId:row.body.threadId});}}else sent=await this.telegram.text(row.chatId,row.body.text,{actorId:row.actor_id,outputLanguage:row.body.outputLanguage,threadId:row.body.threadId});await this.db.query('UPDATE agent_tasks SET progress_message_id=$1 WHERE id=$2',[sent.message_id,row.body.taskId]);
       }else if(row.kind==='artifact'||row.kind==='voice'){
@@ -120,18 +140,19 @@ export class Delivery {
       }
       if(row.kind!=='panel'&&typeof (sent as any).text==='string')row.body.text=(sent as any).text;
       if((sent as any).poll){row.body.question=(sent as any).poll.question;row.body.options=(sent as any).poll.options.map((x:any)=>x.text);}
-      const deliveredText=row.kind==='panel'?'[перегляд збереженого матеріалу]':row.kind==='private_result'?'[особистий результат сервісу]':row.kind==='artifact'?`[файл Люмена: ${row.body.id}]`:row.kind==='telegram'?`[дія Telegram: ${row.body.operation}] ${row.body.text || row.body.caption || ''}`:animated?`[анімація Люмена: ${row.body.asset}]`:row.kind==='image'?`[зображення Люмена] ${row.body.prompt || ''}`:row.kind==='reaction'?`[реакція Люмена: ${row.body.emoji}]`:row.kind==='sticker'?`[стікер Люмена: ${row.body.emoji || ''}]`:row.kind==='poll'?`[${row.body.quiz?'вікторина':'опитування'}] ${row.body.question}\n${row.body.options.join(' · ')}`:row.body.text;
+      const deliveredText=row.kind==='panel'?'[перегляд збереженого матеріалу]':row.kind==='private_result'?'[особистий результат сервісу]':['artifact','voice','media_asset'].includes(row.kind)?`[файл Люмена: ${row.body.id}]`:row.kind==='telegram'?`[дія Telegram: ${row.body.operation}] ${row.body.text || row.body.caption || ''}`:animated?`[анімація Люмена: ${row.body.asset}]`:row.kind==='image'?`[зображення Люмена] ${row.body.prompt || ''}`:row.kind==='reaction'?`[реакція Люмена: ${row.body.emoji}]`:row.kind==='sticker'?`[стікер Люмена: ${row.body.emoji || ''}]`:row.kind==='poll'?`[${row.body.quiz?'вікторина':'опитування'}] ${row.body.question}\n${row.body.options.join(' · ')}`:row.body.text;
       const deliveredRelease=await this.db.tx(async sql=>{
         const live=await state(sql,true);if(live.memory_revision!==row.revision)return;
         const still=await one(sql,'SELECT id FROM outbox WHERE id=$1',[row.id]);if(!still)return;
-        if(!await observeEffect(sql,row.operation_id,{message_id:sent.message_id,provider:'telegram',kind:row.kind},row.revision,Boolean(row.service)))return;
-        await sql.query("UPDATE outbox SET status='sent',telegram_id=$1,body=$2 WHERE id=$3",[sent.message_id,JSON.stringify({...row.body,...(row.kind==='panel'?{}:{text:deliveredText}),sentAt:new Date().toISOString(),deliveryReceipt:{provider:'telegram',message_id:sent.message_id,operation_id:row.operation_id}}),row.id]);
+        if(!await observeEffect(sql,row.operation_id,{message_id:sent.message_id,message_ids:sent.message_ids||[sent.message_id],provider:'telegram',kind:row.kind},row.revision,Boolean(row.service)))return;
+        await sql.query("UPDATE outbox SET status='sent',telegram_id=$1,body=$2 WHERE id=$3",[sent.message_id,JSON.stringify({...row.body,...(row.kind==='panel'?{}:{text:deliveredText}),sentAt:new Date().toISOString(),deliveryReceipt:{provider:'telegram',message_id:sent.message_id,message_ids:sent.message_ids||[sent.message_id],destination_chat_id:row.chatId,operation_id:row.operation_id}}),row.id]);
+        if(row.kind==='media_asset')await sql.query("UPDATE media_publications SET status='delivered',receipts=$2 WHERE id=$1 AND status='queued'",[row.body.publicationId,JSON.stringify([{provider:'telegram',chat_id:row.chatId,message_ids:sent.message_ids||[sent.message_id],verified_at:new Date().toISOString()}])]);
         if(row.body.goalId)await sql.query('UPDATE conversation_goals SET question_message_id=$1 WHERE id=$2',[sent.message_id,row.body.goalId]);
         if(row.kind==='text'&&row.source_message_id)await sql.query("UPDATE scheduled_actions SET confirmation_message_id=$1 WHERE source_message_id=$2 AND status='awaiting_confirmation'",[sent.message_id,row.source_message_id]);
         if(row.kind==='poll'&&(sent as any).poll?.id)await sql.query('INSERT INTO polls(poll_id,message_id,topic_id,question,options,correct,revision,source_message_id,interaction_id,interaction_version,composition_id,composition_step) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12) ON CONFLICT DO NOTHING',[(sent as any).poll.id,sent.message_id,String(row.body.threadId || 0),row.body.question,JSON.stringify(row.body.options),row.body.quiz?.correct ?? null,row.revision,row.source_message_id,row.body.interactionId||null,row.body.interactionVersion||null,row.body.compositionId||null,row.body.compositionStep||null]);
         if(row.kind==='telegram'&&row.body.operation==='stop_poll')await sql.query('UPDATE polls SET closed=true WHERE message_id=$1',[row.body.message_id]);
-        if(row.kind==='telegram'&&row.body.operation==='edit_message')await sql.query("UPDATE messages SET body=$1,edited_at=now() WHERE role='assistant' AND telegram_id=$2",[row.body.text,row.body.message_id]);
-        if(!row.service && !live.paused && !progress && row.audience!=='private' && !['interaction','panel'].includes(row.kind)){const inserted=await sql.query("INSERT INTO messages (telegram_id,user_id,author,role,body,topic_id,source_message_id) VALUES ($1,'lumen','Люмен','assistant',$2,$3,$4) ON CONFLICT DO NOTHING RETURNING id",[sent.message_id,deliveredText,String(row.body.threadId || 0),row.source_message_id]);if(inserted.rows[0])await transferProvenance(sql,'outbox',row.id,'message',inserted.rows[0].id);}
+        if(row.kind==='telegram'&&row.body.operation==='edit_message'){await detachDeliveredText(sql,row.body.message_id);await sql.query("UPDATE messages SET body=$1,edited_at=now() WHERE role='assistant' AND telegram_id=$2",[row.body.text,row.body.message_id]);}
+        if(!row.service && !live.paused && !progress && row.audience!=='private' && !row.externalDestination && !['interaction','panel'].includes(row.kind)){const inserted=await sql.query("INSERT INTO messages (telegram_id,user_id,author,role,body,topic_id,source_message_id) VALUES ($1,'lumen','Люмен','assistant',$2,$3,$4) ON CONFLICT DO NOTHING RETURNING id",[sent.message_id,deliveredText,String(row.body.threadId || 0),row.source_message_id]);if(inserted.rows[0])await transferProvenance(sql,'outbox',row.id,'message',inserted.rows[0].id);}
         if(row.kind==='telegram'&&['pin_message','unpin_message','stop_poll','edit_message'].includes(row.body.operation)){const verbs:Record<string,string>={pin_message:'закріпив повідомлення',unpin_message:'відкріпив повідомлення',stop_poll:'завершив голосування',edit_message:'оновив повідомлення'};await import('./db.js').then(({queueText})=>queueText(sql,`${row.body.actor_name || 'Готово'}, ${verbs[row.body.operation]}.`,live.memory_revision,`native-done:${row.id}`,false,{actorId:row.actor_id,outputLanguage:row.body.outputLanguage,threadId:row.body.threadId,sourceMessageId:row.source_message_id}));}
         if(row.dedup_key.startsWith('signals:'))await sql.query("UPDATE signals SET status='sent' WHERE id=ANY($1::uuid[]) AND status='queued'",[row.dedup_key.slice(8).split(':').filter((id:string)=>/^[a-f0-9-]{36}$/.test(id))]);
         if(row.body.actionId&&!await one(sql,"SELECT id FROM outbox WHERE body->>'actionId'=$1 AND status<>'sent' LIMIT 1",[row.body.actionId])){
@@ -159,6 +180,8 @@ export class Delivery {
       // Ambiguous deliveries are not retried automatically: Telegram has no sendMessage idempotency key.
       const localized=(e as any)?.code==='localization_unavailable',cancelled=['outbound_cancelled','task_cancelled','action_unavailable'].includes((e as any)?.code);
       const status=cancelled?'cleared':localized&&row.attempts<3?'pending':tg?.uncertain?'uncertain':retry?'pending':'failed';
+      const partialIds=(e as any)?.partialMessageIds;if(Array.isArray(partialIds)&&partialIds.length){const receipt={provider:'telegram',message_ids:partialIds,destination_chat_id:row.chatId,operation_id:row.operation_id,completeness:'partial'};await this.db.query("UPDATE outbox SET body=body||jsonb_build_object('partialDeliveryReceipt',$2::jsonb) WHERE id=$1",[row.id,JSON.stringify(receipt)]);if(row.operation_id)await this.db.query('UPDATE effect_operations SET result=$2 WHERE id=$1',[row.operation_id,JSON.stringify({partialDeliveryReceipt:receipt})]);}
+      if(row.kind==='media_asset'&&status!=='pending')await this.db.query("UPDATE media_publications SET status=$2 WHERE id=$1 AND status='queued'",[row.body.publicationId,status==='uncertain'?'uncertain':status==='cleared'?'revoked':'failed']);
       if(row.operation_id)await this.db.query("UPDATE effect_operations SET phase=$1,error_code=$2,updated_at=now() WHERE id=$3 AND phase='dispatch_started'",[status==='pending'?'reserved':status==='uncertain'?'uncertain':status==='cleared'?'cancelled':'failed',tg?.code||'delivery_failed',row.operation_id]);
       await this.db.query("UPDATE outbox SET status=$1,error_code=$2,available_at=now()+($3 * interval '1 second') WHERE id=$4",[status,tg?.code || (localized?'localization_unavailable':cancelled?'outbound_cancelled':errorCode(e)),Math.max(localized?15:1,retry),row.id]);
       if(row.body.actionId&&['failed','uncertain'].includes(status))await this.db.tx(async sql=>{const s=await state(sql,true);if(s.paused||s.memory_revision!==row.revision)return;await sql.query("UPDATE commitments SET phase=$1,error_code='delivery_unconfirmed',state_version=state_version+1 WHERE id=$2 AND phase IN ('executing','runnable','delivering')",[status==='uncertain'?'uncertain':'blocked',row.body.actionId]);await import('./db.js').then(({queueText})=>queueText(sql,status==='uncertain'?'Доставку результату не підтверджено. Автоматично не повторюю її, щоб не створити дубль.':'Не вдалося доставити результат. Зроблене збережено; завершення дії не підтверджено.',s.memory_revision,'action-delivery-error:'+row.id,false,{actorId:row.actor_id,sourceMessageId:row.source_message_id,audience:row.audience==='private'?'private':'group',threadId:row.body.threadId}));});

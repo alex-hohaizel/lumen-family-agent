@@ -1,3 +1,4 @@
+import {preferenceDraft,rankingDraft} from './private-drafts.js';
 import { recordProvenance, transferProvenance } from './provenance.js';
 import { stableId } from './operations.js';
 import { randomUUID, randomBytes } from 'node:crypto';
@@ -37,7 +38,7 @@ export class PrivateInbox {
         return { id, recipient_id: recipient, private_url: 'https://t.me/lumen_family_agent?start=p_' + token, status: 'offered', expires_in_hours: 24 };
     }
     async open(token: string, user: string, telegram: Telegram) {
-        const r = await one(this.db, "SELECT * FROM private_requests WHERE token=$1 AND recipient_id=$2 AND status IN ('offered','answering') AND expires_at>now()", [token, user]);
+        const r = await one(this.db, "SELECT * FROM private_requests WHERE token=$1 AND recipient_id=$2 AND status IN ('offered','answering','answered') AND expires_at>now()", [token, user]);
         if (!r)
             return false;
         const s = await state(this.db);
@@ -61,7 +62,7 @@ export class PrivateInbox {
         if (!match)
             return false;
         const user = String(cb.from.id);
-        const r = await one(this.db, "SELECT * FROM private_requests WHERE token=$1 AND recipient_id=$2 AND status IN ('offered','answering') AND expires_at>now()", [match[1], user]);
+        const r = await one(this.db, "SELECT * FROM private_requests WHERE token=$1 AND recipient_id=$2 AND status IN ('offered','answering','answered') AND expires_at>now()", [match[1], user]);
         if (!r)
             return false;
         const current = await state(this.db);
@@ -96,9 +97,23 @@ export class PrivateInbox {
         }
         if (text.startsWith('/'))
             throw new ToolError('private_answer_or_cancel_required');
+        const draftKey='private_draft_'+live.id.replaceAll('-','');let normalized=text;
+        if(live.payload.coordinator_key||live.payload.decision_id){
+            let prior:any={};try{prior=JSON.parse(await this.vault.get(user,draftKey));}catch{}
+            if(/^(?:так|да|підтверджую|подтверждаю|зберегти|сохранить|confirm|yes)[.!\s]*$/iu.test(text)&&prior.value)normalized=JSON.stringify(prior.value);
+            else{
+                let parsed:any;
+                try{if(live.payload.coordinator_key)parsed=preferenceDraft(text,live.payload.currency,prior.draft||{});
+                else{const decision=await one(this.db,"SELECT options,version FROM decisions WHERE id=$1 AND status='open'",[live.payload.decision_id]);if(!decision||decision.version!==live.payload.decision_version)throw new ToolError('decision_closed_or_changed');parsed=rankingDraft(text,decision.options);}}
+                catch(e:any){if(e.publicMessage)return {clarification:e.publicMessage};throw e;}
+                await this.vault.put(user,draftKey,JSON.stringify(parsed));
+                return {clarification:parsed.missing||parsed.interpretation+'\nЗберегти саме так? Напиши «так» або виправ умови.'};
+            }
+        }
         const name = 'private_' + live.id.replaceAll('-', '');
-        await this.vault.put(user, name, text);
-        await sink(live, text, name);
+        await this.vault.put(user, name, normalized);
+        await sink(live, normalized, name);
+        await this.vault.remove(user,draftKey);
         await this.db.query("UPDATE private_requests SET status='answered',answer=$1 WHERE id=$2 AND status='answering'", [name, live.id]);
         if (live.task_id)
             await this.db.query("UPDATE agent_tasks SET status='pending',error_code=NULL,available_at=now(),updated_at=now() WHERE id=$1 AND status='needs_input' AND error_code='private_answers_pending' AND NOT EXISTS(SELECT 1 FROM private_requests p WHERE p.task_id=$1 AND p.status IN ('offered','answering') AND p.expires_at>now())", [live.task_id]);
@@ -106,6 +121,7 @@ export class PrivateInbox {
     }
     async revoke(id: string, user: string) {
         const r = await one(this.db, "UPDATE private_requests SET status='revoked' WHERE id=$1 AND recipient_id=$2 RETURNING answer,session_id,payload", [id, user]);
+        if(r)await this.vault.remove(user,'private_draft_'+id.replaceAll('-',''));
         if (r?.answer) {
             await this.vault.remove(user, r.answer);
             await this.db.query('DELETE FROM activity_moves WHERE session_id=$1 AND user_id=$2 AND content=$3', [r.session_id, user, r.answer]);

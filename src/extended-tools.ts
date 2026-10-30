@@ -1,3 +1,7 @@
+import {transferProvenance} from './provenance.js';
+import {Acceptance,Evidence} from './project-evidence.js';
+import {evidenceCheckedResearch} from './result-verifier.js';
+import {ScenarioPack} from './scenario-packs.js';
 import { reserveModelCall } from './model-budget.js';
 import { OAuthDevices } from './oauth-device.js';
 import { z } from 'zod';
@@ -35,8 +39,8 @@ export function registerExtendedTools(db: Database, config: Config, brain: Brain
             return { cancelled: Boolean(r) };
         } });
     add('project.list', { description: 'Спільні проєкти цієї групи, стан і версія.', schema: z.object({}), run: async () => (await db.query('SELECT id,title,goal,criteria,status,version FROM projects ORDER BY created_at DESC LIMIT 20')).rows });
-    add('project.task_add', { description: 'Додати задачу свого проєкту із залежностями. Інший виконавець має сам прийняти доручення.', schema: z.object({ project_id: id, title, assignee_id: user.optional(), due_at: future.optional(), depends_on: z.array(id).max(20).default([]) }), run: (a, c) => work.addTask(a, c) });
-    add('project.task_update', { description: 'Прийняти/відхилити власне доручення, завершити з результатом або перенести строк із залежними задачами.', schema: z.object({ id, action: z.enum(['accept', 'decline', 'complete', 'reschedule']), result: z.string().max(2000).optional(), due_at: future.optional() }), run: (a, c) => work.updateTask(a, c) });
+    add('project.task_add', { description: 'Додати задачу свого проєкту із залежностями. Інший виконавець має сам прийняти доручення.', schema: z.object({ project_id: id, title, assignee_id: user.optional(), due_at: future.optional(), depends_on: z.array(id).max(20).default([]),acceptance:Acceptance.optional() }), run: (a, c) => work.addTask(a, c) });
+    add('project.task_update', { description: 'Прийняти/відхилити власне доручення, завершити з доказами кожного критерію або перенести строк. Самого «готово» недостатньо. Критерії/перепризначення змінює власник за version; новий виконавець приймає окремо.', schema: z.object({ id, action: z.enum(['accept', 'decline', 'complete', 'reschedule','criteria','reassign']),version:z.number().int().positive().optional(),acceptance:Acceptance.optional(),evidence:Evidence.optional(),assignee_id:user.optional(), result: z.string().max(2000).optional(), due_at: future.optional() }), run: (a, c) => work.updateTask(a, c) });
     add('project.status', { description: 'Фактичний стан проєкту: задачі, згода виконавців, блокери та результати.', schema: z.object({ id }), run: a => work.project(a.id) });
     add('project.close', { description: 'Завершити власний проєкт лише після завершення всіх його задач із результатами.', schema: z.object({ id }), run: (a, c) => work.closeProject(a.id, c) });
     add('decision.create', { description: 'Підготувати спільне рішення: ранжування або кілька прийнятних варіантів; незалежні особисті відповіді.', schema: z.object({ question: z.string().min(5).max(1000), options: z.array(z.string().min(1).max(200)).min(2).max(12), participants: z.array(user).min(2).max(16), method: z.enum(['ranked', 'approval']).default('ranked'), deadline: future }), run: (a, c) => decisions.create(a, c) });
@@ -49,9 +53,10 @@ export function registerExtendedTools(db: Database, config: Config, brain: Brain
         } });
     add('decision.result', { description: 'Фактичний підсумок без індивідуальних голосів, з нічиєю та відсутніми відповідями. До дедлайну показує лише кількість.', schema: z.object({ id, close: z.boolean().default(false) }), run: (a, c) => decisions.result(a.id, c, a.close) });
     add('activity.templates', { description: 'Десять доступних механік: таємні ролі, детектив, квест, цитати, рейтинг, прогнози, історія, підписи, дилеми, турнір.', schema: z.object({}), run: async () => ACTIVITY_TEMPLATES });
-    add('activity.create', { description: 'Створити добровільну активність у цій темі. Сервер керує фазами, ролями, таймерами й рахунком. Спочатку lobby.', schema: z.object({ template: z.enum(['detective', 'roles', 'quest', 'quotes', 'ranking', 'prediction', 'story', 'captions', 'dilemmas', 'tournament']), title, host_name: z.string().max(80).optional(), options: z.array(z.string().min(1).max(200)).max(12).default([]), prompts: z.array(z.string().max(1000)).max(10).default([]), rounds: z.number().int().min(1).max(10).default(3), response_mode:z.enum(['shared','parallel']).default('shared'),max_choices_per_player:z.number().int().min(1).max(2).default(1), seconds: z.number().int().min(30).max(3600).default(180), quiz: z.array(z.object({ question: z.string().min(3).max(1000), options: z.array(z.string().min(1).max(200)).min(2).max(12), correct_index: z.number().int().min(0).max(11) })).max(20).optional() }), run: (a, c) => sessions.create(a, c) });
+    add('activity.create', { description: 'Створити добровільну активність у цій темі. Сервер керує фазами, ролями, таймерами й рахунком. Спочатку lobby.', schema: z.object({ template: z.enum(['detective', 'roles', 'quest', 'quotes', 'ranking', 'prediction', 'story', 'captions', 'dilemmas', 'tournament']), title, host_name: z.string().max(80).optional(),scenario_id:z.string().max(40).optional(),scenario_pack:ScenarioPack.optional(), options: z.array(z.string().min(1).max(200)).max(12).default([]), prompts: z.array(z.string().max(1000)).max(10).default([]), rounds: z.number().int().min(1).max(10).default(3), response_mode:z.enum(['shared','parallel']).default('shared'),max_choices_per_player:z.number().int().min(1).max(2).default(1), seconds: z.number().int().min(30).max(3600).default(180), quiz: z.array(z.object({ question: z.string().min(3).max(1000), options: z.array(z.string().min(1).max(200)).min(2).max(12), correct_index: z.number().int().min(0).max(11) })).max(20).optional() }), run: (a, c) => sessions.create(a, c) });
     add('activity.join', { description: 'Добровільно приєднати поточного автора. Після початку — з наступного раунду.', schema: z.object({ id, name: z.string().min(1).max(80), team: z.string().max(30).optional() }), run: (a, c) => sessions.join(a.id, c.actorId, a.name, a.team) });
     add('activity.leave', { description: 'Вийти з гри від свого імені й закрити незавершені особисті запити цього раунду.', schema: z.object({ id }), run: (a, c) => sessions.leave(a.id, c) });
+    add('activity.control',{description:'Добровільний пропуск без програшу, пауза/відновлення, async/sync темп, пропозиція передати ведення й окреме прийняття. Потрібна поточна version.',schema:z.object({id,version:z.number().int().positive(),operation:z.enum(['pass','pause','resume','async','sync','offer_host','accept_host']),target_id:z.string().regex(/^\d+$/).optional()}),run:(a,c)=>sessions.control(a,c)});
     add('activity.start', { description: 'Почати власну сесію після приєднання щонайменше двох людей; приватні ролі надсилає сервер.', schema: z.object({ id }), run: (a, c) => sessions.start(a.id, c) });
     add('activity.status', { description: 'Лише публічний стан, рахунок, фаза й кількість відповідей. Секретні ролі та відповіді приховані.', schema: z.object({ id }), run: a => sessions.view(a.id) });
     add('activity.turn', { description: 'Публічний хід історії у свою чергу. Для закритих механік попросить відповісти в особистому запиті.', schema: z.object({ id, content: z.string().min(1).max(1000) }), run: (a, c) => sessions.turn(a.id, a.content, c) });
@@ -147,11 +152,15 @@ export function registerExtendedTools(db: Database, config: Config, brain: Brain
             if (!r)
                 throw new ToolError('successful_tool_run_required');
             let proof: any;
-            if (['web.read', 'web.search', 'research.query'].includes(r.tool)) {
+            if (r.tool==='research.query') {
+                if(!evidenceCheckedResearch(r.result))throw new ToolError('research_evidence_not_checked');
+                proof={kind:'research',sources:r.result.sources,claims:r.result.claims,checked_at:r.result.checked_at,verification_level:'evidence_checked'};
+            }
+            else if (['web.read', 'web.search'].includes(r.tool)) {
                 const sources = r.result.sources || r.result.results?.map((x: any) => x.url) || [r.result.url];
                 if (!sources.filter(Boolean).length)
                     throw new ToolError('result_sources_missing');
-                proof = { kind: 'research', sources, checked_at: r.result.retrieved_at || r.result.checked_at };
+                proof = { kind: r.tool==='web.read'?'source_read':'source_discovery', sources, checked_at: r.result.retrieved_at || r.result.checked_at,verification_level:r.tool==='web.read'?'source_read':'source_discovery' };
             }
             else if (r.tool === 'code.run')
                 proof = { kind: 'calculation', result: r.result };
@@ -166,7 +175,8 @@ export function registerExtendedTools(db: Database, config: Config, brain: Brain
                 throw new ToolError('result_requires_provider_specific_verification');
             const rid = randomUUID();
             await db.query('INSERT INTO result_receipts(id,actor_id,task_id,kind,reference,proof,source_message_id) VALUES($1,$2,$3,$4,$5,$6,$7)', [rid, c.actorId, c.taskId || r.task_id || null, proof.kind, String(r.id), JSON.stringify(proof), c.sourceId || null]);
-            return { receipt_id: rid, verified: true, ...proof };
+            await transferProvenance(db,'tool_run',r.id,'receipt',rid);const sourceRows=(await db.query("SELECT source_message_id FROM provenance_edges WHERE derived_kind='receipt' AND derived_key=$1",[rid])).rows;
+            return { receipt_id: rid,source_ids:sourceRows.map(x=>Number(x.source_message_id)), verified: !['source_read','source_discovery'].includes(proof.kind), ...proof };
         } });
     registerWorkflowTools(db, add, execute, catalog);
 }

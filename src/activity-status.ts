@@ -26,8 +26,7 @@ export class ChatActivity {
         if(!job.finished&&!job.stopped&&job.allowNotice&&!job.notice&&Date.now()-job.started>=this.timing.noticeAfterMs){
           job.notice=true;
           await this.db.tx(async sql=>{const live=await state(sql,true);const current=await one(sql,"SELECT status FROM inbox WHERE update_id=$1",[job.updateId]);if(job.stopped||live.paused||live.memory_revision!==job.revision||current?.status!=='processing')return;
-            const lines=job.serious?['Звіряю деталі — ще трохи часу.']:['Тут є кілька деталей — збираю їх докупи.','Ще мить — хочу дати тобі цілісну відповідь.','Розкладаю все по поличках. Скоро повернуся з відповіддю.'];
-            const text=lines[Math.abs(Number(job.updateId)||0)%lines.length]!;
+            const running=await one(sql,"SELECT tool FROM tool_runs WHERE source_message_id=$1 AND status='running' ORDER BY created_at DESC LIMIT 1",[job.sourceId]);const text=running?/^(web|research|browser)\./.test(running.tool)?'Читаю джерела для відповіді.':/^(document|artifact)\./.test(running.tool)?'Працюю з документом і перевіряю результат.':/^(studio|archive|library)\./.test(running.tool)?'Готую матеріали. Готовий файл повідомлю окремо.':'Виконую поточний крок.':'Ще працюю над відповіддю.';
             await queueText(sql,text,job.revision,`progress:${job.updateId}`,false,{threadId:job.threadId,replyToMessageId:job.replyTo,sourceMessageId:job.sourceId});
           });
         }

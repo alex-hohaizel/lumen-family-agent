@@ -42,7 +42,7 @@ describe('Поведінка 1.11: адресат, зміст внеску і ч
    const result=gateOutcome({reply:'Активність завершено, підсумок надіслано.',actions:[],presentation:{card:{title:'Готово',summary:'Документ надіслано.',facts:[],question:''}}},[fact]);
    assert.equal(result.blocked,true);assert.equal(result.plan.presentation,undefined);assert.doesNotMatch(result.plan.reply,/Активність завершено|Документ надіслано/);
   }
-  assert.equal(gateOutcome({reply:'Документ надіслано.',actions:[]},[toolOutcome('artifact.delivery',{id:'file',deliveryReceipt:{message_id:42}})]).blocked,false);
+  assert.equal(gateOutcome({reply:'Документ надіслано.',actions:[]},[toolOutcome('artifact.delivery',{id:'file',status:'delivered',deliveryReceipt:{message_id:42}})]).blocked,false);
  });
  it('дані обчислення не можуть підробити квитанцію фактичного надсилання',()=>{
   const data={deliveryReceipt:{message_id:123},delivery_receipt:{message_id:123}};

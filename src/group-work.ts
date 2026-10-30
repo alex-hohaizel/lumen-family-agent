@@ -1,3 +1,5 @@
+import {Acceptance,verifyProjectEvidence} from './project-evidence.js';
+import {requireVersion} from './evolution-core.js';
 import { randomUUID } from 'node:crypto';
 import { one, type Database } from './db.js';
 import type { ToolContext } from './agent-tools.js';
@@ -37,8 +39,9 @@ export class GroupWork {
             for (const dep of a.depends_on || [])
                 if (!await one(sql, 'SELECT id FROM project_tasks WHERE id=$1 AND project_id=$2', [dep, a.project_id]))
                     throw new ToolError('dependency_same_project_required');
+            const acceptance=Acceptance.parse(a.acceptance||[{id:'c1',text:p.criteria,kind:'owner_confirmation'}]);if(new Set(acceptance.map(x=>x.id)).size!==acceptance.length)throw new ToolError('unique_criterion_ids_required');
             const id = randomUUID();
-            await sql.query('INSERT INTO project_tasks(id,project_id,title,assignee_id,due_at,depends_on,accepted) VALUES($1,$2,$3,$4,$5,$6,$7)', [id, a.project_id, a.title, a.assignee_id || null, a.due_at || null, JSON.stringify(a.depends_on || []), a.assignee_id === c.actorId]);
+            await sql.query('INSERT INTO project_tasks(id,project_id,title,assignee_id,due_at,depends_on,accepted,acceptance) VALUES($1,$2,$3,$4,$5,$6,$7,$8)', [id, a.project_id, a.title, a.assignee_id || null, a.due_at || null, JSON.stringify(a.depends_on || []), a.assignee_id === c.actorId,JSON.stringify(acceptance)]);
             await sql.query('UPDATE projects SET version=version+1 WHERE id=$1', [p.id]);
             return { id, status: a.assignee_id && a.assignee_id !== c.actorId ? 'awaiting_assignee_acceptance' : 'open' };
         });
@@ -48,6 +51,7 @@ export class GroupWork {
             const t = await one(sql, 'SELECT t.*,p.actor_id AS owner FROM project_tasks t JOIN projects p ON p.id=t.project_id WHERE t.id=$1 FOR UPDATE', [a.id]);
             if (!t)
                 throw new ToolError('project_task_not_found');
+            if(a.version!==undefined)requireVersion(t.version,a.version);
             if (a.action === 'accept' || a.action === 'decline') {
                 if (t.assignee_id !== c.actorId)
                     throw new ToolError('assignee_required');
@@ -63,7 +67,15 @@ export class GroupWork {
                 for (const dep of t.depends_on)
                     if (!(await one(sql, "SELECT id FROM project_tasks WHERE id=$1 AND status='done'", [dep])))
                         throw new ToolError('dependency_not_completed');
+                const proof=await verifyProjectEvidence(sql,t,a.evidence,c);
+                await sql.query('UPDATE project_tasks SET completion_evidence=$2,completion_source_ids=$3 WHERE id=$1',[t.id,JSON.stringify(proof),JSON.stringify([...(c.sourceIds||[]),...(c.sourceId?[c.sourceId]:[])])]);
                 await sql.query("UPDATE project_tasks SET status='done',result=$1,updated_at=now() WHERE id=$2", [a.result, t.id]);
+            }
+            else if(a.action==='criteria'||a.action==='reassign'){
+                if(t.owner!==c.actorId)throw new ToolError('project_owner_required');requireVersion(t.version,a.version);
+                if(a.action==='criteria'){const acceptance=Acceptance.parse(a.acceptance);if(new Set(acceptance.map(x=>x.id)).size!==acceptance.length)throw new ToolError('unique_criterion_ids_required');await sql.query("UPDATE project_tasks SET acceptance=$2,criteria_version=criteria_version+1,status=CASE WHEN status='done' THEN 'needs_review' ELSE status END,completion_evidence='{}' WHERE id=$1",[t.id,JSON.stringify(acceptance)]);}
+                else{if(!a.assignee_id||!await one(sql,'SELECT user_id FROM members WHERE user_id=$1 AND active=true',[a.assignee_id]))throw new ToolError('known_assignee_required');await sql.query("UPDATE project_tasks SET assignee_id=$2,accepted=false,status='awaiting_acceptance',completion_evidence='{}' WHERE id=$1",[t.id,a.assignee_id]);}
+                const all=(await sql.query('SELECT id,depends_on FROM project_tasks WHERE project_id=$1',[t.project_id])).rows,invalid=new Set([t.id]);for(let i=0;i<all.length;i++)for(const x of all)if(x.depends_on.some((id:string)=>invalid.has(id)))invalid.add(x.id);await sql.query("UPDATE project_tasks SET status='needs_review',completion_evidence='{}' WHERE id=ANY($1::uuid[]) AND status='done'",[[...invalid]]);
             }
             else if (a.action === 'reschedule') {
                 if (t.owner !== c.actorId)
@@ -81,6 +93,7 @@ export class GroupWork {
                             await sql.query("UPDATE project_tasks SET due_at=due_at+($1*interval '1 millisecond'),updated_at=now() WHERE id=$2 AND due_at IS NOT NULL", [delta, x.id]);
                         }
             }
+            await sql.query('UPDATE project_tasks SET version=version+1,updated_at=now() WHERE id=$1',[t.id]);
             await sql.query('UPDATE projects SET version=version+1 WHERE id=$1', [t.project_id]);
             return { id: t.id, action: a.action };
         });
@@ -89,7 +102,7 @@ export class GroupWork {
         const p = await this.project(id);
         if (p.actor_id !== c.actorId)
             throw new ToolError('project_owner_required');
-        if (!p.tasks.length || p.tasks.some((t: any) => t.status !== 'done'))
+        if (!p.tasks.length || p.tasks.some((t: any) => t.status !== 'done'||!t.completion_evidence?.proofs?.length))
             throw new ToolError('project_tasks_incomplete');
         await this.db.query("UPDATE projects SET status='completed',version=version+1 WHERE id=$1", [id]);
         return { id, status: 'completed', criteria: p.criteria, results: p.tasks.map((t: any) => ({ title: t.title, result: t.result })) };
@@ -119,7 +132,7 @@ export class Decisions {
                 requests.push({ id: prior.id, existing: true });
                 continue;
             }
-            requests.push(await this.inbox.ask(c, user, `${d.question}\n${d.options.map((x: string, i: number) => `${i + 1}. ${x}`).join('\n')}\n\nВідповідь — JSON, наприклад {"ranking":[2,1,3],"excluded":[]}. Номери впорядкуй від найкращого; у excluded можна вказати неприйнятні варіанти. Індивідуальні голоси в групу не показую.`, d.question, { decision_id: id, decision_version: d.version, expires_at: d.deadline }));
+            requests.push(await this.inbox.ask(c, user, `${d.question}\n${d.options.map((x: string, i: number) => `${i + 1}. ${x}`).join('\n')}\n\nНапиши назви або номери від найкращого, наприклад «2, 1; вето: 3». Я покажу, як зрозумів, і попрошу підтвердити. Неприйнятні варіанти можна позначити словом «вето». Індивідуальні голоси в групу не показую.`, d.question, { decision_id: id, decision_version: d.version, expires_at: d.deadline }));
         }
         return { id, requests };
     }

@@ -1,3 +1,4 @@
+import {recordProvenance,transferProvenance} from './provenance.js';
 import {assertActionOwner} from './commitments.js';
 import {withWorkerSlot} from './work-slots.js';
 import { Worker } from 'node:worker_threads';
@@ -6,7 +7,7 @@ import { documentText } from './documents.js';
 import { wordDocument, workbook } from './office.js';
 import { one, state, type Database } from './db.js';
 import { browsers } from './browser.js';
-import { operationSignal, stableId } from './operations.js';
+import { operationSignal, stableId, checkOperation } from './operations.js';
 import { ToolError } from './safe-http.js';
 import type { Brain } from './model.js';
 import type { Config } from './config.js';
@@ -77,6 +78,7 @@ export async function analyzeDocument(bytes: Uint8Array, name: string, brain: Br
     return '[OCR сканованого PDF; перші ' + pages.length + ' сторінки; можливі помилки розпізнавання]\n' + result.slice(0, 28000);
 }
 export async function binaryArtifact(db: Database, c: ToolContext, name: string, mime: string, bytes: Uint8Array, voice = false) {
+    checkOperation();
     if (bytes.length > 8000000)
         throw new ToolError('artifact_size_limit');
     const id = stableId((c.operationKey || c.actorId + ':' + c.updateId) + ':' + name);
@@ -90,9 +92,10 @@ export async function binaryArtifact(db: Database, c: ToolContext, name: string,
         const live = await state(sql, true);
         if (live.paused || live.memory_revision !== c.revision)
             throw new ToolError('task_cancelled');
-        await assertActionOwner(sql,c.actionId,c.revision);
+        checkOperation();await assertActionOwner(sql,c.actionId,c.revision);const usage=await one(sql,'SELECT COALESCE(sum(octet_length(content)),0) AS n FROM agent_artifacts');if(Number(usage!.n)+Math.ceil(bytes.length*4/3)>96*1024*1024)throw new ToolError('artifact_quota_manage_files');
         await sql.query("INSERT INTO agent_artifacts(id,actor_id,topic_id,name,mime,content,encoding,revision,source_message_id) VALUES($1,$2,$3,$4,$5,$6,'base64',$7,$8) ON CONFLICT(id) DO NOTHING", [id, c.actorId, c.topicId, name, mime, Buffer.from(bytes).toString('base64'), c.revision, c.sourceId || null]);
         await sql.query('INSERT INTO outbox(dedup_key,kind,body,revision,actor_id,source_message_id,audience) VALUES($1,$2,$3,$4,$5,$6,$7) ON CONFLICT DO NOTHING', ['artifact:' + id, voice ? 'voice' : 'artifact', JSON.stringify({ id, actionId:c.actionId, ...(c.taskId ? { taskId: c.taskId, goalVersion: c.goalVersion || 1 } : {}), threadId: c.topicId === '0' ? undefined : Number(c.topicId) }), c.revision, c.actorId, c.sourceId || null, c.audience || 'group']);
+        await recordProvenance(sql,'artifact',id,[...(c.sourceIds||[]),...(c.sourceId?[c.sourceId]:[])]);const outbound=await one(sql,'SELECT id FROM outbox WHERE dedup_key=$1',['artifact:'+id]);if(outbound)await transferProvenance(sql,'artifact',id,'outbox',outbound.id);
     });
     const stored = await one(db, 'SELECT content FROM agent_artifacts WHERE id=$1', [id]);
     if (createHash('sha256').update(Buffer.from(stored!.content, 'base64')).digest('hex') !== digest)

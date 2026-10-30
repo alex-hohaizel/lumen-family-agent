@@ -288,4 +288,230 @@ CREATE TABLE IF NOT EXISTS composition_runs(id uuid PRIMARY KEY,actor_id text NO
 ALTER TABLE composition_runs ADD COLUMN IF NOT EXISTS resume_version integer NOT NULL DEFAULT 1;
 ALTER TABLE polls ADD COLUMN IF NOT EXISTS composition_id uuid REFERENCES composition_runs(id) ON DELETE CASCADE;
 ALTER TABLE polls ADD COLUMN IF NOT EXISTS composition_step text;
+ALTER TABLE participant_preferences ADD COLUMN IF NOT EXISTS field_sources jsonb NOT NULL DEFAULT '{}';
+ALTER TABLE chat_preferences ADD COLUMN IF NOT EXISTS field_sources jsonb NOT NULL DEFAULT '{}';
+UPDATE participant_preferences SET field_sources=jsonb_build_object('language',source_message_id,'preferred_name',source_message_id,'length_mode',source_message_id,'humor_mode',source_message_id,'formality',source_message_id,'emoji_mode',source_message_id),source_message_id=NULL WHERE source_message_id IS NOT NULL AND field_sources='{}';
+UPDATE chat_preferences SET field_sources=jsonb_build_object('language',source_message_id,'length_mode',source_message_id,'humor_mode',source_message_id,'formality',source_message_id,'emoji_mode',source_message_id),source_message_id=NULL WHERE source_message_id IS NOT NULL AND field_sources='{}';
+CREATE TABLE IF NOT EXISTS domain_commands(id uuid PRIMARY KEY,domain text NOT NULL,actor_id text NOT NULL,arguments_hash text NOT NULL,result jsonb NOT NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,source_ids jsonb NOT NULL DEFAULT '[]',created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS stock_items(id uuid PRIMARY KEY,name text NOT NULL,unit text NOT NULL CHECK(unit IN ('g','ml','piece')),quantity bigint NOT NULL DEFAULT 0 CHECK(quantity>=0),known boolean NOT NULL DEFAULT false,need bigint NOT NULL DEFAULT 0 CHECK(need>=0),version integer NOT NULL DEFAULT 1);
+CREATE UNIQUE INDEX IF NOT EXISTS stock_names ON stock_items(lower(name));
+CREATE TABLE IF NOT EXISTS stock_aliases(item_id uuid NOT NULL REFERENCES stock_items(id) ON DELETE CASCADE,alias text NOT NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,PRIMARY KEY(item_id,alias));
+CREATE TABLE IF NOT EXISTS stock_movements(id uuid PRIMARY KEY,sequence bigserial UNIQUE,item_id uuid NOT NULL REFERENCES stock_items(id) ON DELETE CASCADE,kind text NOT NULL CHECK(kind IN ('purchase','consume','adjust','recount','reverse')),quantity bigint NOT NULL,actor_id text NOT NULL,reverses uuid UNIQUE REFERENCES stock_movements(id) ON DELETE CASCADE,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,created_at timestamptz NOT NULL DEFAULT now());
+CREATE INDEX IF NOT EXISTS stock_movements_item ON stock_movements(item_id,sequence);
+CREATE TABLE IF NOT EXISTS stock_reservations(id uuid PRIMARY KEY,item_id uuid NOT NULL REFERENCES stock_items(id) ON DELETE CASCADE,actor_id text NOT NULL,quantity bigint NOT NULL CHECK(quantity>=0),status text NOT NULL DEFAULT 'active',expires_at timestamptz NOT NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE);
+CREATE INDEX IF NOT EXISTS stock_reservations_active ON stock_reservations(item_id,status,expires_at);
+CREATE TABLE IF NOT EXISTS stock_receipts(id uuid PRIMARY KEY,actor_id text NOT NULL,lines jsonb NOT NULL,status text NOT NULL DEFAULT 'draft',source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE);
+CREATE TABLE IF NOT EXISTS media_assets(id uuid PRIMARY KEY,owner_id text NOT NULL,title text NOT NULL,mime text NOT NULL,path text NOT NULL,sha256 text NOT NULL,bytes bigint NOT NULL,version integer NOT NULL DEFAULT 1,audience text NOT NULL CHECK(audience IN ('group','private')),status text NOT NULL DEFAULT 'available',topic_id text NOT NULL,parent_id uuid REFERENCES media_assets(id) ON DELETE SET NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,audience_source_id bigint REFERENCES messages(id) ON DELETE SET NULL,created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS resource_links(asset_id uuid NOT NULL REFERENCES media_assets(id) ON DELETE CASCADE,asset_version integer NOT NULL,resource_kind text NOT NULL,resource_id text NOT NULL,resource_version integer NOT NULL,PRIMARY KEY(asset_id,resource_kind,resource_id));
+CREATE TABLE IF NOT EXISTS archive_collections(id uuid PRIMARY KEY,owner_id text NOT NULL,title text NOT NULL,audience text NOT NULL,version integer NOT NULL DEFAULT 1,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS archive_items(id uuid PRIMARY KEY,collection_id uuid NOT NULL REFERENCES archive_collections(id) ON DELETE CASCADE,asset_id uuid NOT NULL REFERENCES media_assets(id) ON DELETE CASCADE,asset_version integer NOT NULL,caption text NOT NULL DEFAULT '',claim text NOT NULL,claimed_date text,position integer NOT NULL,author_id text NOT NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,caption_source_id bigint REFERENCES messages(id) ON DELETE SET NULL);
+CREATE TABLE IF NOT EXISTS studio_projects(id uuid PRIMARY KEY,owner_id text NOT NULL,title text NOT NULL,audience text NOT NULL,version integer NOT NULL DEFAULT 1,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS studio_scenes(id uuid PRIMARY KEY,project_id uuid NOT NULL REFERENCES studio_projects(id) ON DELETE CASCADE,asset_id uuid NOT NULL REFERENCES media_assets(id) ON DELETE CASCADE,asset_version integer NOT NULL,position integer NOT NULL,start_seconds numeric NOT NULL,duration numeric NOT NULL,caption text NOT NULL,framing text NOT NULL,author_id text NOT NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE);
+CREATE TABLE IF NOT EXISTS media_jobs(id uuid PRIMARY KEY,kind text NOT NULL,resource_id uuid NOT NULL,resource_version integer NOT NULL,manifest jsonb NOT NULL,manifest_hash text NOT NULL,status text NOT NULL DEFAULT 'queued',stage text NOT NULL DEFAULT 'queued',actor_id text NOT NULL,topic_id text NOT NULL,audience text NOT NULL,revision integer NOT NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,output_id uuid REFERENCES media_assets(id) ON DELETE SET NULL,error_code text,started_at timestamptz,finished_at timestamptz,created_at timestamptz NOT NULL DEFAULT now());
+CREATE INDEX IF NOT EXISTS media_jobs_due ON media_jobs(status,created_at);
+CREATE TABLE IF NOT EXISTS media_job_inputs(job_id uuid NOT NULL REFERENCES media_jobs(id) ON DELETE CASCADE,asset_id uuid NOT NULL REFERENCES media_assets(id) ON DELETE CASCADE,asset_version integer NOT NULL,PRIMARY KEY(job_id,asset_id));
+CREATE TABLE IF NOT EXISTS media_garbage(id uuid PRIMARY KEY,path text NOT NULL,created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS media_destinations(id uuid PRIMARY KEY,owner_id text NOT NULL,chat_id text NOT NULL,title text NOT NULL,status text NOT NULL DEFAULT 'active',verified_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS asset_destination_grants(asset_id uuid NOT NULL REFERENCES media_assets(id) ON DELETE CASCADE,destination_id uuid NOT NULL REFERENCES media_destinations(id) ON DELETE CASCADE,asset_version integer NOT NULL,grantor_id text NOT NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,PRIMARY KEY(asset_id,destination_id));
+CREATE TABLE IF NOT EXISTS media_publications(id uuid PRIMARY KEY,asset_id uuid NOT NULL REFERENCES media_assets(id) ON DELETE CASCADE,actor_id text NOT NULL,manifest jsonb NOT NULL,status text NOT NULL DEFAULT 'queued',receipts jsonb NOT NULL DEFAULT '[]',created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS resource_views(id uuid PRIMARY KEY,actor_id text NOT NULL,topic_id text NOT NULL,audience text NOT NULL,revision integer NOT NULL,query jsonb NOT NULL,refs jsonb NOT NULL,expires_at timestamptz NOT NULL DEFAULT now()+interval '1 day');
+CREATE OR REPLACE FUNCTION lumen_collect_media_file() RETURNS trigger LANGUAGE plpgsql AS $$ BEGIN INSERT INTO media_garbage(id,path) VALUES(OLD.id,OLD.path) ON CONFLICT(id) DO NOTHING;RETURN OLD;END $$;
+DROP TRIGGER IF EXISTS media_file_erase ON media_assets;
+CREATE TRIGGER media_file_erase BEFORE DELETE ON media_assets FOR EACH ROW EXECUTE FUNCTION lumen_collect_media_file();
+CREATE TABLE IF NOT EXISTS learning_goals(id uuid PRIMARY KEY,actor_id text NOT NULL,title text NOT NULL,status text NOT NULL DEFAULT 'active',version integer NOT NULL DEFAULT 1,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS learning_exercises(id uuid NOT NULL,version integer NOT NULL,goal_id uuid NOT NULL REFERENCES learning_goals(id) ON DELETE CASCADE,spec jsonb NOT NULL,active boolean NOT NULL DEFAULT true,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,created_at timestamptz NOT NULL DEFAULT now(),PRIMARY KEY(id,version));
+CREATE TABLE IF NOT EXISTS learning_attempts(id uuid PRIMARY KEY,goal_id uuid NOT NULL REFERENCES learning_goals(id) ON DELETE CASCADE,actor_id text NOT NULL,exercise_id uuid NOT NULL,exercise_version integer NOT NULL,skill text NOT NULL,answer text NOT NULL DEFAULT '',score numeric,status text NOT NULL DEFAULT 'open',feedback text NOT NULL DEFAULT '',grading jsonb NOT NULL DEFAULT '{}',appeal text,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,answer_source_id bigint REFERENCES messages(id) ON DELETE CASCADE,grading_source_id bigint REFERENCES messages(id) ON DELETE SET NULL,review_source_id bigint REFERENCES messages(id) ON DELETE SET NULL,created_at timestamptz NOT NULL DEFAULT now(),FOREIGN KEY(exercise_id,exercise_version) REFERENCES learning_exercises(id,version) ON DELETE CASCADE);
+CREATE TABLE IF NOT EXISTS learning_progress(goal_id uuid NOT NULL REFERENCES learning_goals(id) ON DELETE CASCADE,skill text NOT NULL,attempts integer NOT NULL,mastery numeric NOT NULL,next_at timestamptz NOT NULL,PRIMARY KEY(goal_id,skill));
+CREATE TABLE IF NOT EXISTS calendar_setups(id uuid PRIMARY KEY,owner_id text NOT NULL,endpoint text NOT NULL,revision integer NOT NULL,status text NOT NULL DEFAULT 'pending',scope text NOT NULL DEFAULT 'freebusy',expires_at timestamptz NOT NULL DEFAULT now()+interval '15 minutes',created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS calendar_connections(id uuid PRIMARY KEY,owner_id text NOT NULL,title text NOT NULL,endpoint text NOT NULL,credential_name text NOT NULL,scope text NOT NULL,status text NOT NULL,checked_at timestamptz,next_sync timestamptz NOT NULL DEFAULT now(),last_window jsonb,error_code text);
+CREATE TABLE IF NOT EXISTS calendar_occurrences(connection_id uuid NOT NULL REFERENCES calendar_connections(id) ON DELETE CASCADE,uid text NOT NULL,recurrence_id text NOT NULL,starts_at timestamptz NOT NULL,ends_at timestamptz NOT NULL,busy boolean NOT NULL,etag text NOT NULL,PRIMARY KEY(connection_id,uid,recurrence_id,starts_at));
+CREATE TABLE IF NOT EXISTS calendar_mirrors(id uuid PRIMARY KEY,connection_id uuid NOT NULL REFERENCES calendar_connections(id) ON DELETE CASCADE,uid text NOT NULL,href text NOT NULL,title text NOT NULL,starts_at timestamptz NOT NULL,ends_at timestamptz NOT NULL,etag text NOT NULL,status text NOT NULL,version integer NOT NULL DEFAULT 1,group_event_id uuid,group_chat_id text,next_check timestamptz NOT NULL DEFAULT now(),source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,UNIQUE(connection_id,uid));
+CREATE TABLE IF NOT EXISTS calendar_operations(id uuid PRIMARY KEY,connection_id uuid NOT NULL REFERENCES calendar_connections(id) ON DELETE CASCADE,kind text NOT NULL,uid text NOT NULL,href text NOT NULL,desired jsonb NOT NULL,etag text,status text NOT NULL DEFAULT 'reserved',receipt jsonb,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS calendar_proposals(id uuid PRIMARY KEY,actor_id text NOT NULL,topic_id text NOT NULL,title text NOT NULL,starts_at timestamptz NOT NULL,ends_at timestamptz NOT NULL,minutes integer NOT NULL,timezone text NOT NULL,revision integer NOT NULL,version integer NOT NULL DEFAULT 1,selected jsonb,group_event_id uuid REFERENCES group_events(id) ON DELETE SET NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,expires_at timestamptz NOT NULL DEFAULT now()+interval '1 day');
+CREATE TABLE IF NOT EXISTS calendar_shares(token text PRIMARY KEY,proposal_id uuid NOT NULL REFERENCES calendar_proposals(id) ON DELETE CASCADE,actor_id text NOT NULL,status text NOT NULL DEFAULT 'waiting',mode text NOT NULL DEFAULT 'calendar',intervals jsonb NOT NULL DEFAULT '[]',connection_options jsonb NOT NULL DEFAULT '[]',ui_version integer,ui_mode text,connection_id uuid,checked_at timestamptz,expires_at timestamptz NOT NULL DEFAULT now(),UNIQUE(proposal_id,actor_id));
+ALTER TABLE daily_usage ADD COLUMN IF NOT EXISTS physical_requests bigint NOT NULL DEFAULT 0;
+ALTER TABLE daily_usage ADD COLUMN IF NOT EXISTS input_tokens bigint NOT NULL DEFAULT 0;
+ALTER TABLE daily_usage ADD COLUMN IF NOT EXISTS output_tokens bigint NOT NULL DEFAULT 0;
+ALTER TABLE daily_usage ADD COLUMN IF NOT EXISTS failed_requests bigint NOT NULL DEFAULT 0;
+ALTER TABLE daily_usage ADD COLUMN IF NOT EXISTS usage_missing bigint NOT NULL DEFAULT 0;
+CREATE TABLE IF NOT EXISTS canonical_outcomes(source_kind text NOT NULL,source_key text NOT NULL,topic_id text NOT NULL,status text NOT NULL,finished_at timestamptz NOT NULL,version integer NOT NULL DEFAULT 1,PRIMARY KEY(source_kind,source_key));
+ALTER TABLE canonical_outcomes ALTER COLUMN finished_at DROP NOT NULL;
+ALTER TABLE canonical_outcomes ADD COLUMN IF NOT EXISTS time_precision text NOT NULL DEFAULT 'inferred' CHECK(time_precision IN ('exact','inferred'));
+CREATE OR REPLACE FUNCTION lumen_outcome_sync() RETURNS trigger LANGUAGE plpgsql AS $$
+DECLARE current_status text; terminal boolean;
+BEGIN
+ IF TG_OP='DELETE' THEN DELETE FROM canonical_outcomes WHERE source_kind=TG_TABLE_NAME AND source_key=OLD.id::text; RETURN OLD; END IF;
+ current_status:=CASE WHEN TG_TABLE_NAME='games' THEN to_jsonb(NEW)->>'status' ELSE to_jsonb(NEW)->>'phase' END;
+ terminal:=current_status IN ('completed','cancelled');
+ INSERT INTO canonical_outcomes(source_kind,source_key,topic_id,status,finished_at,time_precision) VALUES(TG_TABLE_NAME,NEW.id::text,NEW.topic_id,current_status,CASE WHEN terminal THEN now() ELSE NULL END,CASE WHEN terminal THEN 'exact' ELSE 'inferred' END)
+ ON CONFLICT(source_kind,source_key) DO UPDATE SET topic_id=excluded.topic_id,status=excluded.status,
+ finished_at=CASE WHEN canonical_outcomes.status NOT IN ('completed','cancelled') AND terminal THEN now() ELSE canonical_outcomes.finished_at END,
+ time_precision=CASE WHEN canonical_outcomes.status NOT IN ('completed','cancelled') AND terminal THEN 'exact' ELSE canonical_outcomes.time_precision END,version=canonical_outcomes.version+1;
+ RETURN NEW;
+END $$;
+DROP TRIGGER IF EXISTS lumen_outcome_sync ON games;
+CREATE TRIGGER lumen_outcome_sync AFTER INSERT OR UPDATE OR DELETE ON games FOR EACH ROW EXECUTE FUNCTION lumen_outcome_sync();
+DROP TRIGGER IF EXISTS lumen_outcome_sync ON activity_sessions;
+CREATE TRIGGER lumen_outcome_sync AFTER INSERT OR UPDATE OR DELETE ON activity_sessions FOR EACH ROW EXECUTE FUNCTION lumen_outcome_sync();
+INSERT INTO canonical_outcomes(source_kind,source_key,topic_id,status,finished_at) SELECT 'games',id::text,topic_id,status,updated_at FROM games ON CONFLICT DO NOTHING;
+INSERT INTO canonical_outcomes(source_kind,source_key,topic_id,status,finished_at) SELECT 'activity_sessions',id::text,topic_id,phase,created_at FROM activity_sessions ON CONFLICT DO NOTHING;
+
+CREATE TABLE IF NOT EXISTS activity_passes(session_id uuid NOT NULL REFERENCES activity_sessions(id) ON DELETE CASCADE,round integer NOT NULL,user_id text NOT NULL,PRIMARY KEY(session_id,round,user_id));
+CREATE TABLE IF NOT EXISTS recurring_series(id uuid PRIMARY KEY,actor_id text NOT NULL,topic_id text NOT NULL,rule jsonb NOT NULL,version integer NOT NULL DEFAULT 1,status text NOT NULL DEFAULT 'draft',revision integer NOT NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,confirmed_at timestamptz,last_materialized timestamptz,next_check timestamptz NOT NULL DEFAULT now(),created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS recurring_occurrences(series_id uuid NOT NULL REFERENCES recurring_series(id) ON DELETE CASCADE,occurrence_key text NOT NULL,due_at timestamptz NOT NULL,status text NOT NULL DEFAULT 'pending',version integer NOT NULL DEFAULT 1,schedule_id uuid REFERENCES scheduled_actions(id) ON DELETE SET NULL,PRIMARY KEY(series_id,occurrence_key));
+
+ALTER TABLE project_tasks ADD COLUMN IF NOT EXISTS acceptance jsonb NOT NULL DEFAULT '[]';
+ALTER TABLE project_tasks ADD COLUMN IF NOT EXISTS criteria_version integer NOT NULL DEFAULT 1;
+ALTER TABLE project_tasks ADD COLUMN IF NOT EXISTS version integer NOT NULL DEFAULT 1;
+ALTER TABLE project_tasks ADD COLUMN IF NOT EXISTS completion_evidence jsonb NOT NULL DEFAULT '{}';
+
+ALTER TABLE web_monitors ADD COLUMN IF NOT EXISTS last_observation jsonb;
+ALTER TABLE calendar_setups ADD COLUMN IF NOT EXISTS timezone text NOT NULL DEFAULT 'Europe/Kyiv';
+ALTER TABLE calendar_connections ADD COLUMN IF NOT EXISTS timezone text NOT NULL DEFAULT 'Europe/Kyiv';
+ALTER TABLE calendar_mirrors ADD COLUMN IF NOT EXISTS recurrence_id text NOT NULL DEFAULT '';
+ALTER TABLE calendar_mirrors DROP CONSTRAINT IF EXISTS calendar_mirrors_connection_id_uid_key;
+CREATE UNIQUE INDEX IF NOT EXISTS calendar_mirror_occurrence ON calendar_mirrors(connection_id,uid,recurrence_id);
+
+ALTER TABLE calendar_shares ADD COLUMN IF NOT EXISTS event_ui_version integer;
+CREATE TABLE IF NOT EXISTS game_segments(game_id bigint NOT NULL REFERENCES games(id) ON DELETE CASCADE,ordinal integer NOT NULL,body text NOT NULL,user_id text,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,PRIMARY KEY(game_id,ordinal));
+CREATE TABLE IF NOT EXISTS activity_story_segments(session_id uuid NOT NULL REFERENCES activity_sessions(id) ON DELETE CASCADE,ordinal integer NOT NULL,body text NOT NULL,user_id text,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,PRIMARY KEY(session_id,ordinal));
+INSERT INTO schema_version VALUES(14) ON CONFLICT DO NOTHING;
+
+CREATE TABLE IF NOT EXISTS image_designs(id uuid PRIMARY KEY,actor_id text NOT NULL,topic_id text NOT NULL,audience text NOT NULL,spec jsonb NOT NULL,version integer NOT NULL DEFAULT 1,status text NOT NULL DEFAULT 'draft',revision integer NOT NULL,output_id uuid REFERENCES media_assets(id) ON DELETE SET NULL,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS media_derivations(input_id uuid NOT NULL REFERENCES media_assets(id) ON DELETE CASCADE,output_id uuid NOT NULL REFERENCES media_assets(id) ON DELETE CASCADE,input_version integer NOT NULL,PRIMARY KEY(input_id,output_id));
+
+ALTER TABLE project_tasks ADD COLUMN IF NOT EXISTS completion_source_ids jsonb NOT NULL DEFAULT '[]';
+CREATE TABLE IF NOT EXISTS statistics_preferences(user_id text PRIMARY KEY,ranking_opt_in boolean NOT NULL DEFAULT false,source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE);
+CREATE TABLE IF NOT EXISTS outcome_changes(source_kind text NOT NULL,source_key text NOT NULL,version integer NOT NULL,previous_status text NOT NULL,status text NOT NULL,changed_at timestamptz NOT NULL DEFAULT now(),PRIMARY KEY(source_kind,source_key,version),FOREIGN KEY(source_kind,source_key) REFERENCES canonical_outcomes(source_kind,source_key) ON DELETE CASCADE);
+CREATE OR REPLACE FUNCTION lumen_outcome_history() RETURNS trigger LANGUAGE plpgsql AS $$ BEGIN IF OLD.status IS DISTINCT FROM NEW.status THEN INSERT INTO outcome_changes VALUES(NEW.source_kind,NEW.source_key,NEW.version,OLD.status,NEW.status,now()) ON CONFLICT DO NOTHING; END IF; RETURN NEW; END $$;
+DROP TRIGGER IF EXISTS lumen_outcome_history ON canonical_outcomes;
+CREATE TRIGGER lumen_outcome_history AFTER UPDATE ON canonical_outcomes FOR EACH ROW EXECUTE FUNCTION lumen_outcome_history();
+
+ALTER TABLE stock_items ADD COLUMN IF NOT EXISTS name_source_id bigint REFERENCES messages(id) ON DELETE CASCADE;
+ALTER TABLE stock_movements ADD COLUMN IF NOT EXISTS origin_source_id bigint REFERENCES messages(id) ON DELETE CASCADE;
+CREATE TABLE IF NOT EXISTS stock_needs(id uuid PRIMARY KEY,item_id uuid NOT NULL REFERENCES stock_items(id) ON DELETE CASCADE,quantity bigint NOT NULL CHECK(quantity>=0),sequence bigint NOT NULL DEFAULT nextval('stock_movements_sequence_seq'),source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE);
+ALTER TABLE archive_items ADD COLUMN IF NOT EXISTS field_sources jsonb NOT NULL DEFAULT '{}';
+
+ALTER TABLE recurring_occurrences ADD COLUMN IF NOT EXISTS coalesced_count integer NOT NULL DEFAULT 1;
+ALTER TABLE recurring_series ADD COLUMN IF NOT EXISTS audience text NOT NULL DEFAULT 'group' CHECK(audience IN ('group','private'));
+DO $$ BEGIN
+ IF NOT EXISTS(SELECT 1 FROM information_schema.columns WHERE table_schema=current_schema() AND table_name='stock_reservations' AND column_name='purpose') THEN
+  ALTER TABLE stock_reservations ADD COLUMN purpose text NOT NULL DEFAULT 'stock' CHECK(purpose IN ('shopping','stock'));
+  ALTER TABLE stock_reservations ALTER COLUMN purpose SET DEFAULT 'shopping';
+ END IF;
+END $$;
+ALTER TABLE stock_reservations ADD COLUMN IF NOT EXISTS sequence bigint NOT NULL DEFAULT nextval('stock_movements_sequence_seq');
+ALTER TABLE stock_reservations ADD COLUMN IF NOT EXISTS closed_sequence bigint;
+ALTER TABLE stock_reservations ADD COLUMN IF NOT EXISTS closed_source_id bigint REFERENCES messages(id) ON DELETE SET NULL;
+ALTER TABLE stock_reservations ADD COLUMN IF NOT EXISTS initial_quantity bigint CHECK(initial_quantity>=0);
+ALTER TABLE app_state ADD COLUMN IF NOT EXISTS ingress_after timestamptz;
+ALTER TABLE daily_usage ADD COLUMN IF NOT EXISTS prompt_bytes bigint NOT NULL DEFAULT 0;
+ALTER TABLE daily_usage ADD COLUMN IF NOT EXISTS max_prompt_bytes bigint NOT NULL DEFAULT 0;
+ALTER TABLE daily_usage ADD COLUMN IF NOT EXISTS image_inputs bigint NOT NULL DEFAULT 0;
+ALTER TABLE outbox ADD COLUMN IF NOT EXISTS canonical_message_id bigint REFERENCES messages(id) ON DELETE CASCADE;
+ALTER TABLE stock_movements ADD COLUMN IF NOT EXISTS reservation_id uuid REFERENCES stock_reservations(id) ON DELETE SET NULL;
+DO $$ BEGIN
+ IF NOT EXISTS(SELECT 1 FROM information_schema.columns WHERE table_schema=current_schema() AND table_name='learning_exercises' AND column_name='question_version') THEN
+  ALTER TABLE learning_exercises ADD COLUMN question_version integer NOT NULL DEFAULT 1;
+  ALTER TABLE learning_exercises ADD COLUMN question_source_id bigint REFERENCES messages(id) ON DELETE CASCADE;
+  UPDATE learning_exercises SET question_version=version,question_source_id=source_message_id;
+ END IF;
+END $$;
+INSERT INTO schema_version VALUES(15) ON CONFLICT DO NOTHING;
+CREATE TABLE IF NOT EXISTS calendar_change_outbox(id uuid PRIMARY KEY,mirror_id uuid NOT NULL REFERENCES calendar_mirrors(id) ON DELETE CASCADE,version integer NOT NULL,group_chat_id text NOT NULL,group_event_id uuid NOT NULL,starts_at timestamptz,ends_at timestamptz,status text NOT NULL,revision integer NOT NULL,attempts integer NOT NULL DEFAULT 0,next_attempt timestamptz NOT NULL DEFAULT now(),delivered_at timestamptz,created_at timestamptz NOT NULL DEFAULT now(),UNIQUE(mirror_id,version));
+CREATE INDEX IF NOT EXISTS calendar_change_outbox_pending ON calendar_change_outbox(next_attempt) WHERE delivered_at IS NULL;
+-- Addressed reads retain coverage metadata independently from reproducible payloads.
+-- Originals live in attachments/agent_artifacts and are never part of this LRU.
+CREATE TABLE IF NOT EXISTS media_inspections (
+  id uuid PRIMARY KEY,
+  cache_key text NOT NULL UNIQUE,
+  namespace text NOT NULL,
+  source_kind text NOT NULL CHECK (source_kind IN ('attachment','artifact')),
+  source_ref text NOT NULL,
+  attachment_id bigint REFERENCES attachments(id) ON DELETE CASCADE,
+  artifact_id uuid REFERENCES agent_artifacts(id) ON DELETE CASCADE,
+  source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,
+  request_source_id bigint REFERENCES messages(id) ON DELETE CASCADE,
+  source_ids jsonb NOT NULL DEFAULT '[]',
+  content_sha256 text NOT NULL,
+  source_version text NOT NULL,
+  revision integer NOT NULL,
+  actor_id text NOT NULL,
+  audience text NOT NULL CHECK (audience IN ('group','private')),
+  topic_id text NOT NULL,
+  kind text NOT NULL CHECK (kind IN ('pdf_page','pdf_request','video_frame','video_answer','video_request')),
+  address text NOT NULL,
+  requested jsonb NOT NULL,
+  decoder_version text NOT NULL,
+  model_version text NOT NULL DEFAULT '',
+  prompt_version text NOT NULL DEFAULT '',
+  question_hash text NOT NULL DEFAULT '',
+  status text NOT NULL CHECK (status IN ('requested','read','partial','unknown','failed')),
+  coverage jsonb NOT NULL DEFAULT '{}',
+  error_code text,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  updated_at timestamptz NOT NULL DEFAULT now(),
+  CHECK ((source_kind='attachment' AND attachment_id IS NOT NULL AND artifact_id IS NULL)
+      OR (source_kind='artifact' AND artifact_id IS NOT NULL AND attachment_id IS NULL))
+);
+CREATE INDEX IF NOT EXISTS media_inspections_source
+  ON media_inspections(namespace,actor_id,audience,revision,source_kind,source_ref,content_sha256,source_version);
+CREATE INDEX IF NOT EXISTS media_inspections_request_source ON media_inspections(request_source_id);
+CREATE TABLE IF NOT EXISTS media_inspection_payloads (
+  inspection_id uuid PRIMARY KEY REFERENCES media_inspections(id) ON DELETE CASCADE,
+  payload jsonb NOT NULL,
+  payload_bytes integer NOT NULL CHECK (payload_bytes>0),
+  expires_at timestamptz NOT NULL,
+  last_used_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS media_inspection_payloads_expiry ON media_inspection_payloads(expires_at);
+
+CREATE TABLE IF NOT EXISTS stock_item_sources(item_id uuid NOT NULL REFERENCES stock_items(id) ON DELETE CASCADE,source_message_id bigint NOT NULL REFERENCES messages(id) ON DELETE CASCADE,PRIMARY KEY(item_id,source_message_id));
+CREATE INDEX IF NOT EXISTS stock_item_sources_message ON stock_item_sources(source_message_id);
+INSERT INTO stock_item_sources(item_id,source_message_id) SELECT id,name_source_id FROM stock_items WHERE name_source_id IS NOT NULL ON CONFLICT DO NOTHING;
+CREATE TABLE IF NOT EXISTS stock_movement_sources(movement_id uuid NOT NULL REFERENCES stock_movements(id) ON DELETE CASCADE,source_message_id bigint NOT NULL REFERENCES messages(id) ON DELETE CASCADE,PRIMARY KEY(movement_id,source_message_id));
+CREATE INDEX IF NOT EXISTS stock_movement_sources_message ON stock_movement_sources(source_message_id);
+INSERT INTO stock_movement_sources(movement_id,source_message_id) SELECT id,source_message_id FROM stock_movements WHERE source_message_id IS NOT NULL ON CONFLICT DO NOTHING;
+CREATE TABLE IF NOT EXISTS stock_need_sources(need_id uuid NOT NULL REFERENCES stock_needs(id) ON DELETE CASCADE,source_message_id bigint NOT NULL REFERENCES messages(id) ON DELETE CASCADE,PRIMARY KEY(need_id,source_message_id));
+CREATE INDEX IF NOT EXISTS stock_need_sources_message ON stock_need_sources(source_message_id);
+INSERT INTO stock_need_sources(need_id,source_message_id) SELECT id,source_message_id FROM stock_needs WHERE source_message_id IS NOT NULL ON CONFLICT DO NOTHING;
+CREATE TABLE IF NOT EXISTS stock_reservation_sources(reservation_id uuid NOT NULL REFERENCES stock_reservations(id) ON DELETE CASCADE,source_message_id bigint NOT NULL REFERENCES messages(id) ON DELETE CASCADE,PRIMARY KEY(reservation_id,source_message_id));
+CREATE INDEX IF NOT EXISTS stock_reservation_sources_message ON stock_reservation_sources(source_message_id);
+INSERT INTO stock_reservation_sources(reservation_id,source_message_id) SELECT id,source_message_id FROM stock_reservations WHERE source_message_id IS NOT NULL ON CONFLICT DO NOTHING;
+CREATE TABLE IF NOT EXISTS stock_release_sources(reservation_id uuid NOT NULL REFERENCES stock_reservations(id) ON DELETE CASCADE,source_message_id bigint NOT NULL REFERENCES messages(id) ON DELETE CASCADE,PRIMARY KEY(reservation_id,source_message_id));
+CREATE INDEX IF NOT EXISTS stock_release_sources_message ON stock_release_sources(source_message_id);
+INSERT INTO stock_release_sources(reservation_id,source_message_id) SELECT id,closed_source_id FROM stock_reservations WHERE closed_source_id IS NOT NULL ON CONFLICT DO NOTHING;
+CREATE TABLE IF NOT EXISTS stock_receipt_sources(receipt_id uuid NOT NULL REFERENCES stock_receipts(id) ON DELETE CASCADE,source_message_id bigint NOT NULL REFERENCES messages(id) ON DELETE CASCADE,PRIMARY KEY(receipt_id,source_message_id));
+CREATE INDEX IF NOT EXISTS stock_receipt_sources_message ON stock_receipt_sources(source_message_id);
+INSERT INTO stock_receipt_sources(receipt_id,source_message_id) SELECT id,source_message_id FROM stock_receipts WHERE source_message_id IS NOT NULL ON CONFLICT DO NOTHING;
+CREATE TABLE IF NOT EXISTS stock_alias_sources(item_id uuid NOT NULL,alias text NOT NULL,source_message_id bigint NOT NULL REFERENCES messages(id) ON DELETE CASCADE,PRIMARY KEY(item_id,alias,source_message_id),FOREIGN KEY(item_id,alias) REFERENCES stock_aliases(item_id,alias) ON DELETE CASCADE);
+CREATE INDEX IF NOT EXISTS stock_alias_sources_message ON stock_alias_sources(source_message_id);
+INSERT INTO stock_alias_sources SELECT item_id,alias,source_message_id FROM stock_aliases WHERE source_message_id IS NOT NULL ON CONFLICT DO NOTHING;
+INSERT INTO schema_version VALUES(16) ON CONFLICT DO NOTHING;
+CREATE TABLE IF NOT EXISTS game_result_bases(source_kind text NOT NULL,source_key text NOT NULL,base_scores jsonb NOT NULL,source_ids jsonb NOT NULL DEFAULT '[]',created_at timestamptz NOT NULL DEFAULT now(),PRIMARY KEY(source_kind,source_key),FOREIGN KEY(source_kind,source_key) REFERENCES canonical_outcomes(source_kind,source_key) ON DELETE CASCADE);
+CREATE TABLE IF NOT EXISTS game_result_corrections(id uuid PRIMARY KEY,sequence bigserial UNIQUE,source_kind text NOT NULL,source_key text NOT NULL,canonical_version integer NOT NULL,actor_id text NOT NULL,reason text NOT NULL CHECK(length(trim(reason))>0),patch jsonb NOT NULL,before_scores jsonb NOT NULL,after_scores jsonb NOT NULL,source_message_id bigint NOT NULL REFERENCES messages(id) ON DELETE CASCADE,source_ids jsonb NOT NULL,created_at timestamptz NOT NULL DEFAULT now(),FOREIGN KEY(source_kind,source_key) REFERENCES canonical_outcomes(source_kind,source_key) ON DELETE CASCADE,UNIQUE(source_kind,source_key,canonical_version));
+CREATE INDEX IF NOT EXISTS game_result_corrections_sources ON game_result_corrections USING gin(source_ids);
+INSERT INTO stock_movement_sources(movement_id,source_message_id) SELECT p.id,m.id FROM domain_commands d JOIN stock_movements p ON p.id::text=d.result->>'operation_id' CROSS JOIN LATERAL jsonb_array_elements_text(d.source_ids) v(id) JOIN messages m ON m.id::text=v.id WHERE d.domain='household' ON CONFLICT DO NOTHING;
+INSERT INTO stock_need_sources(need_id,source_message_id) SELECT p.id,m.id FROM domain_commands d JOIN stock_needs p ON p.id::text=d.result->>'operation_id' CROSS JOIN LATERAL jsonb_array_elements_text(d.source_ids) v(id) JOIN messages m ON m.id::text=v.id WHERE d.domain='household' ON CONFLICT DO NOTHING;
+INSERT INTO stock_reservation_sources(reservation_id,source_message_id) SELECT p.id,m.id FROM domain_commands d JOIN stock_reservations p ON p.id::text=d.result->>'operation_id' CROSS JOIN LATERAL jsonb_array_elements_text(d.source_ids) v(id) JOIN messages m ON m.id::text=v.id WHERE d.domain='household' ON CONFLICT DO NOTHING;
+INSERT INTO stock_receipt_sources(receipt_id,source_message_id) SELECT p.id,m.id FROM domain_commands d JOIN stock_receipts p ON p.id::text=d.result->>'id' CROSS JOIN LATERAL jsonb_array_elements_text(d.source_ids) v(id) JOIN messages m ON m.id::text=v.id WHERE d.domain='household' ON CONFLICT DO NOTHING;
+INSERT INTO stock_item_sources(item_id,source_message_id) SELECT p.id,m.id FROM domain_commands d JOIN stock_items p ON p.id::text=d.result->'item'->>'id' CROSS JOIN LATERAL jsonb_array_elements_text(d.source_ids) v(id) JOIN messages m ON m.id::text=v.id WHERE d.domain='household' AND NOT (d.result ? 'operation_id') ON CONFLICT DO NOTHING;
+ALTER TABLE archive_collections ADD COLUMN IF NOT EXISTS topic_id text NOT NULL DEFAULT '0';
+ALTER TABLE studio_projects ADD COLUMN IF NOT EXISTS topic_id text NOT NULL DEFAULT '0';
+UPDATE archive_collections c SET topic_id=m.topic_id FROM messages m WHERE m.id=c.source_message_id AND c.topic_id='0' AND NOT EXISTS(SELECT 1 FROM schema_version WHERE version=17);
+UPDATE studio_projects p SET topic_id=m.topic_id FROM messages m WHERE m.id=p.source_message_id AND p.topic_id='0' AND NOT EXISTS(SELECT 1 FROM schema_version WHERE version=17);
+INSERT INTO schema_version VALUES(17) ON CONFLICT DO NOTHING;
+ALTER TABLE tool_runs ADD COLUMN IF NOT EXISTS provenance_version integer NOT NULL DEFAULT 0;
+ALTER TABLE tool_runs ADD COLUMN IF NOT EXISTS effectful boolean;
+UPDATE tool_runs r SET effectful=true WHERE effectful IS NULL AND EXISTS(SELECT 1 FROM effect_operations e WHERE e.operation_key=r.dedup_key);
+INSERT INTO schema_version VALUES(18) ON CONFLICT DO NOTHING;
+ALTER TABLE learning_goals ADD COLUMN IF NOT EXISTS source_ids jsonb NOT NULL DEFAULT '[]';
+ALTER TABLE learning_exercises ADD COLUMN IF NOT EXISTS source_ids jsonb NOT NULL DEFAULT '[]';
+ALTER TABLE learning_attempts ADD COLUMN IF NOT EXISTS input_source_ids jsonb NOT NULL DEFAULT '[]';
+ALTER TABLE learning_attempts ADD COLUMN IF NOT EXISTS grading_source_ids jsonb NOT NULL DEFAULT '[]';
+ALTER TABLE learning_attempts ADD COLUMN IF NOT EXISTS review_source_ids jsonb NOT NULL DEFAULT '[]';
+ALTER TABLE learning_attempts ADD COLUMN IF NOT EXISTS appeal_source_ids jsonb NOT NULL DEFAULT '[]';
+UPDATE learning_goals SET source_ids=jsonb_build_array(source_message_id) WHERE source_message_id IS NOT NULL AND source_ids='[]';
+UPDATE learning_exercises SET source_ids=jsonb_build_array(source_message_id) WHERE source_message_id IS NOT NULL AND source_ids='[]';
+INSERT INTO schema_version VALUES(19) ON CONFLICT DO NOTHING;
 COMMIT;

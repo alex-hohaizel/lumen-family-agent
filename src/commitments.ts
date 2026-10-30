@@ -115,7 +115,7 @@ export async function recoverActionWork(db:Database) {
   await db.tx(async sql=>{
     const s=await state(sql,true);if(s.paused)return;
     await sql.query("UPDATE commitments SET phase='expired',state_version=state_version+1,updated_at=now() WHERE expires_at<=now() AND phase NOT IN ('completed','cancelled','expired','failed')");
-    await sql.query("UPDATE action_work SET status='cancelled',payload='{}',plan=NULL WHERE revision<>$1 OR action_id IN (SELECT id FROM commitments WHERE phase IN ('cancelled','expired','completed','failed'))",[s.memory_revision]);
+    await sql.query("UPDATE action_work SET status=CASE WHEN status IN ('pending','running','repair') THEN 'cancelled' ELSE status END,payload='{}',plan=NULL WHERE (revision<>$1 OR action_id IN (SELECT id FROM commitments WHERE phase IN ('cancelled','expired','completed','failed'))) AND (status IN ('pending','running','repair') OR payload<>'{}'::jsonb OR plan IS NOT NULL)",[s.memory_revision]);
     const rows=(await sql.query("SELECT w.* FROM action_work w JOIN commitments a ON a.id=w.action_id WHERE w.status='pending' AND w.available_at<=now() AND w.revision=$1 AND a.phase='runnable' AND a.expires_at>now() ORDER BY w.created_at LIMIT 8",[s.memory_revision])).rows;
     for(const w of rows)await sql.query("INSERT INTO inbox(update_id,payload,revision,plan) VALUES($1,$2,$3,$4) ON CONFLICT(update_id) DO UPDATE SET status='pending',payload=excluded.payload,plan=excluded.plan,available_at=now() WHERE inbox.status IN ('failed','done')",[w.inbox_id,JSON.stringify({...w.payload,actionWorkId:w.id,actionId:w.action_id}),w.revision,w.plan?JSON.stringify(w.plan):null]);
   });

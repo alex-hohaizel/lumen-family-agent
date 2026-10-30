@@ -1,4 +1,8 @@
 import { one, type Database } from './db.js';
+export function evidenceCheckedResearch(result:any){
+    if(result?.status!=='evidence_checked'||!Array.isArray(result.claims)||!result.claims.length||!Array.isArray(result.sources))return false;
+    return result.claims.every((claim:any)=>typeof claim.claim==='string'&&claim.claim.trim()&&['fact','inference'].includes(claim.kind)&&Array.isArray(claim.evidence)&&claim.evidence.length&&claim.evidence.every((e:any)=>typeof e.excerpt==='string'&&e.excerpt.trim()&&Number.isInteger(e.locator?.character_offset)&&e.locator.character_offset>=0&&result.sources.some((s:any)=>s.url===e.url&&/^[a-f0-9]{64}$/.test(s.content_sha256)&&s.content_sha256===e.content_sha256)));
+}
 export async function verifyTask(db: Database, job: any, text: string) {
     const runs = (await db.query("SELECT id,tool,result FROM tool_runs WHERE task_id=$1 AND status='succeeded' AND goal_version=$2", [job.id, job.goal_version || 1])).rows;
     const receipts = (await db.query('SELECT kind,proof FROM result_receipts WHERE task_id=$1 AND actor_id=$2 AND goal_version=$3', [job.id, job.actor_id, job.goal_version || 1])).rows;
@@ -14,8 +18,8 @@ export async function verifyTask(db: Database, job: any, text: string) {
                 missing.push('response');
         }
         else if (kind === 'research') {
-            if (!runs.some(r => ['web.read', 'web.search', 'research.query'].includes(r.tool) && (r.result?.url || r.result?.sources?.length || r.result?.results?.length)))
-                missing.push('research_sources');
+            if (!runs.some(r => r.tool==='research.query'&&evidenceCheckedResearch(r.result)))
+                missing.push('research_evidence');
         }
         else if (kind === 'calculation') {
             if (!runs.some(r => r.tool === 'code.run' && r.result !== null))

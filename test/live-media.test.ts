@@ -22,7 +22,7 @@ describe('Живі продовження, спільні рішення та м
   afterEach(async()=>{await db.close();});
   const ask=async(u:Update)=>{await h.lumen.receive(u);await h.lumen.processNext();};
   const visual=()=>new VisualMemory(db,h.tg as unknown as Telegram,h.brain);
-  const router=async()=>{const registry=new ChatRegistry(db);const r=new ChatRouter(registry,h.config,h.tg as unknown as Telegram,{id:999,username:'lumen_test_bot'},()=>h.brain);await r.init();return r;};
+  const router=async()=>{const registry=new ChatRegistry(db);const r=new ChatRouter(registry,h.config,h.tg as unknown as Telegram,{id:999,username:'lumen_test_bot'},()=>h.brain);await r.init();await r.runtime((await registry.find('-100'))!);return r;};
   const callback=(data:string,user=22,name='Олена'):Update=>({update_id:sequence++,callback_query:{id:'choice'+sequence,from:{id:user,first_name:name},data,message:{message_id:9999,date:Math.floor(Date.now()/1000),chat:{id:-100,type:'supergroup'},from:{id:999,first_name:'Люмен',is_bot:true},text:'Яку гру обираємо?'}}});
 
   it('приймає відповідь на своє уточнення без повторної згадки',async()=>{

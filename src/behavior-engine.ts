@@ -46,8 +46,8 @@ export async function behaviorContext(sql:SQL, actor:string, topic:string, revis
 export function behaviorAdmission(decision:BehaviorDecision|undefined, input:{direct:boolean;otherRecipient:boolean;references?:any[];optional:boolean;reply:string}) {
   if(input.otherRecipient&&!input.direct&&decision?.relation!=='ambient')return {respond:false,reason:'other_recipient'};
   if(!decision)return {respond:input.direct&&!input.optional,reason:'explicit_request_only'};
-  if(input.direct)return {respond:true,reason:'direct'};
   if(decision.move==='listen'||decision.recipient==='other')return {respond:false,reason:'listen'};
+  if(input.direct)return {respond:true,reason:'direct'};
   if(decision.recipient!=='bot'&&decision.relation!=='ambient')return {respond:false,reason:'recipient_unresolved'};
   if(['answer_to_question','accept_offer','activity_move'].includes(decision.relation)) {
     if(!decision.reference_id||!(input.references||[]).some(x=>String(x.id)===decision.reference_id))return {respond:false,reason:'reference_unresolved'};
@@ -56,7 +56,12 @@ export function behaviorAdmission(decision:BehaviorDecision|undefined, input:{di
   return {respond:true,reason:decision.reason};
 }
 
-export function normalizeBehaviorPlan(plan:Plan,direct:boolean,references:Record<string,any>[]=[]):Plan {
+export function explicitSilence(text:string){
+ const plain=text.replace(/^>.*$/gm,'').replace(/«[^»]*»|[“"][^”"\n]*[”"]|`[^`]*`/g,'');
+ return !/не (?:мовчи|молчи)|не треба мовчати/iu.test(plain)&&/не відповідай|не отвечай|помовчи|помолчи|я допишу|я допишу|поки мовчи|don['’]t reply|do not reply/iu.test(plain);
+}
+export function normalizeBehaviorPlan(plan:Plan,direct:boolean,references:Record<string,any>[]=[],requestText=''):Plan {
+  if(direct&&explicitSilence(requestText))return {...plan,reply:'',actions:[],presentation:undefined,interaction:undefined,offer:undefined,dialogue:undefined,behavior:{move:'listen',recipient:'bot',relation:'new_request',reason:'Явне прохання помовчати'}};
   if(plan.behavior&&['answer_to_question','accept_offer','activity_move'].includes(plan.behavior.relation)&&(!plan.behavior.reference_id||!references.some(r=>String(r.id)===plan.behavior!.reference_id))){
     return direct?{reply:'Уточни, яку саме пропозицію або справу продовжуємо.',actions:[],behavior:{move:'clarify',recipient:'bot',relation:'new_request',reason:'Потрібна однозначна прив’язка'}}:{reply:'',actions:[],behavior:{move:'listen',recipient:'unspecified',relation:'ambient',reason:'Невідома прив’язка не дає дозволу'}};
   }
@@ -96,13 +101,22 @@ export async function completeFocusedGoal(sql:SQL, reference:string|undefined, a
 }
 
 export function currentStyleCue(text:string) {
-  const unquoted=text.replace(/^>.*$/gm,'').replace(/«[^»]*»|"[^"\n]*"|`[^`]*`/g,'');
+  const unquoted=text.replace(/^>.*$/gm,'').replace(/«[^»]*»|[“"][^”"\n]*[”"]|`[^`]*`/g,'');
   if(/без (?:жартів|жарт|шуток)[?？]\s*(?:ні|нет|навпаки)|не (?:треба|потрібно).{0,12}без жарт/iu.test(unquoted))return;
   const fields:Record<string,string>={};
   if(/без (?:жартів|жарт|шуток)|не жартуй|не шути|no jokes/iu.test(unquoted))fields.humor='off';
   if(/без (?:емодзі|смайл|эмодзи)|no emoji/iu.test(unquoted))fields.emoji='off';
   if(/(?:цього разу|зараз|тут|сьогодні).{0,35}(?:коротко|стисло)|(?:коротко|стисло).{0,35}(?:цього разу|зараз|сьогодні)/iu.test(unquoted))fields.length='short';
   if(/(?:цього разу|зараз).{0,35}(?:детально|повністю|докладно)/iu.test(unquoted))fields.length='detailed';
+  const temporary=/сьогодні|сегодня|today|цього разу|на цей раз|зараз|наразі|поки що|this time|for now/iu.test(unquoted);
+  if(temporary){
+    if(/(?:відповідай|відповідь|пиши|говори|отвечай|ответ|respond|reply).{0,25}(?:російськ|русск|in Russian)/iu.test(unquoted))fields.language='ru';
+    else if(/(?:відповідай|відповідь|пиши|говори|отвечай|ответ|respond|reply).{0,25}(?:українськ|украинск|in Ukrainian)/iu.test(unquoted))fields.language='uk';
+    else if(/(?:відповідай|відповідь|пиши|говори|отвечай|ответ|respond|reply).{0,25}(?:англійськ|английск|in English)/iu.test(unquoted))fields.language='en';
+    if(/на Ви|на вы|формально|formally/iu.test(unquoted))fields.formality='formal';
+    else if(/на ти|на ты|неформально|informally/iu.test(unquoted))fields.formality='informal';
+    const name=unquoted.match(/(?:називай мене|зови меня|call me)\s+([\p{L}][\p{L}’'ʼ-]{0,39})(?=\s|[,!.?;]|$)/iu)?.[1];if(name)fields.preferred_name=name;
+  }
   return Object.keys(fields).length?{fields,scope:/сьогодні|сегодня|today/iu.test(unquoted)?'today':'request'}:undefined;
 }
 

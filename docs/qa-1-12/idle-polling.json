@@ -1,0 +1,6 @@
+{
+  "passes": 30,
+  "outer_queries": 30,
+  "milliseconds": 21.25861199999963,
+  "scope": "local PGlite functional measurement; not production latency"
+}

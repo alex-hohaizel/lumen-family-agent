@@ -1,6 +1,6 @@
 {
   "name": "lumen-telegram",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "private": true,
   "description": "Люмен — співрозмовник для Telegram-груп з окремою пам’яттю та контекстом тем",
   "type": "module",
@@ -18,13 +18,21 @@
     "doctor": "node --env-file-if-exists=.env dist/src/doctor.js",
     "smoke": "node --env-file-if-exists=.env dist/src/smoke.js",
     "profile": "node --env-file-if-exists=.env dist/src/profile.js",
-    "test": "npm run build && node --test --test-concurrency=1 dist/test/*.test.js"
+    "test": "npm run build && node --test --test-concurrency=1 dist/test/*.test.js",
+    "ingress": "node --env-file-if-exists=.env dist/src/transport-repair.js"
   },
   "dependencies": {
+    "@js-temporal/polyfill": "^0.5.1",
+    "@pdf-lib/fontkit": "^1.1.1",
     "@sparticuz/chromium": "153.0.0",
+    "docx-preview": "^0.4.1",
+    "fast-xml-parser": "^5.11.2",
     "ffmpeg-static": "^5.3.0",
+    "ical.js": "^2.2.1",
     "jose": "^6.1.3",
+    "jszip": "^3.10.2",
     "linkedom": "0.18.14",
+    "pdf-lib": "^1.17.1",
     "pdf-parse": "2.4.5",
     "pg": "^8.23.1",
     "playwright-core": "1.61.1",

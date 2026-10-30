@@ -1,8 +1,10 @@
+import type {Database} from './db.js';
+import {physicalModelCall} from './model-budget.js';
 import {operationSignal} from './operations.js';
 import type { Config } from './config.js';
 import { ModelError } from './auth.js';
 export class Media {
-  constructor(private config:Config,private fetcher:typeof fetch=fetch){}
+  constructor(private config:Config,private fetcher:typeof fetch=fetch,private usageDB?:Database){}
   async transcribe(bytes:Uint8Array,mime='audio/ogg') {
     if(!this.config.apiKey || !this.config.transcribeModel)throw new ModelError('voice_not_configured');
     const form=new FormData();form.set('model',this.config.transcribeModel);
@@ -21,6 +23,7 @@ export class Media {
   }
   async image(prompt:string,references:string[]=[],signal?:AbortSignal) {
     if(!this.config.apiKey || !this.config.imageModel)throw new ModelError('image_not_configured');
+    let usage:any,failed=true;if(this.usageDB)await physicalModelCall(this.usageDB,undefined,false,true);try{
     let res;
     try{
       const abort=signal?AbortSignal.any([signal,AbortSignal.timeout(180000)]):AbortSignal.timeout(180000);
@@ -32,9 +35,10 @@ export class Media {
     }
     catch{throw new ModelError('image_network');}
     if(!res.ok)throw new ModelError(`image_http_${res.status}`);
-    const json:any=await res.json();
+    const json:any=await res.json();usage=json.usage;
     // Do not fetch arbitrary URLs returned by an external model.
     const data=json.data?.[0]?.b64_json;if(typeof data!=='string' || data.length>20*1024*1024)throw new ModelError('image_invalid_result');
-    return Buffer.from(data,'base64');
+    failed=false;return Buffer.from(data,'base64');
+    }finally{if(this.usageDB)await physicalModelCall(this.usageDB,usage,failed);}
   }
 }

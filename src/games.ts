@@ -1,3 +1,4 @@
+import {recordProvenance} from './provenance.js';
 import { randomInt } from 'node:crypto';
 import { one, type SQL } from './db.js';
 
@@ -75,13 +76,14 @@ export async function startGame(sql:SQL,kind:string,players:Player[],title?:stri
     s.title=rule.title;s.rules=rule.content;s.limit=null;
     reply=`Гра «${s.title}». Правила:\n${s.rules}\nЗберігаю черговість і текст ходів. Починає ${players[0]!.name}. Коли захочеться завершити чи змінити формат — просто скажіть.`;
   }
-  await sql.query('INSERT INTO games (kind,state,topic_id) VALUES ($1,$2,$3)',[kind,JSON.stringify(s),topicId]);
+  s.segment_count=s.segments.length;const created=await one(sql,'INSERT INTO games (kind,state,topic_id) VALUES ($1,$2,$3) RETURNING id',[kind,JSON.stringify(s),topicId]);for(const [i,body] of s.segments.entries())await sql.query('INSERT INTO game_segments(game_id,ordinal,body) VALUES($1,$2,$3)',[created!.id,i,body]);
   return reply;
 }
-export async function gameTurn(sql:SQL,userId:string,raw:string,topicId='0',joining?:Player){
+export async function gameTurn(sql:SQL,userId:string,raw:string,topicId='0',joining?:Player,sourceId?:number){
   const row=await one(sql,"SELECT * FROM games WHERE status='active' AND topic_id=$1 FOR UPDATE",[topicId]);if(!row)return 'Зараз у цій темі немає активної гри. /games — оберемо.';
   if(row.state.interaction_id){const owner=await one(sql,'SELECT phase,expires_at FROM interactions WHERE id=$1',[row.state.interaction_id]);if(!owner||!['active','ready'].includes(owner.phase)||new Date(owner.expires_at).getTime()<=Date.now())return 'Цю партію призупинено або завершено. Можемо погодити продовження.';}
-  const s=row.state;const kind=row.kind;let player:Player|undefined=s.players.find((p:Player)=>p.id===userId);
+  const s=row.state;const kind=row.kind;if(s.segment_count===undefined){for(const [i,body] of (s.segments||[]).entries())await sql.query('INSERT INTO game_segments(game_id,ordinal,body) VALUES($1,$2,$3) ON CONFLICT DO NOTHING',[row.id,i,body]);s.segment_count=(s.segments||[]).length;s.segments=(s.segments||[]).slice(-32);}
+  if(sourceId)await recordProvenance(sql,'game',row.id,[sourceId]);let player:Player|undefined=s.players.find((p:Player)=>p.id===userId);
   if(!player&&s.open_join&&joining?.id===userId){
     player=joining;s.players.push(joining);s.scores[userId]=0;
     if(kind==='story')s.limit=Math.max(s.limit,s.players.length*2);
@@ -116,10 +118,10 @@ export async function gameTurn(sql:SQL,userId:string,raw:string,topicId='0',join
       if(s.questions>=20){ended=true;reply+=` Я загадав: ${thing.name}.`;}
     }
   }else{
-    if(/^(покажи|показати).*(істор|ход)/iu.test(text))return s.segments.join('\n\n') || 'Ходів ще немає.';
+    if(/^(покажи|показати).*(істор|ход)/iu.test(text)){const page=(await sql.query('SELECT body FROM game_segments WHERE game_id=$1 ORDER BY ordinal LIMIT 30',[row.id])).rows;return page.map(x=>x.body).join('\n\n')+(s.segment_count>30?'\n\nПродовження доступне сторінками через game.history.':'')||'Ходів ще немає.';}
     const expected:Player=s.players[s.turn % s.players.length];if(expected.id!==userId)return `Зараз хід ${expected.name}.`;
     if(!text || text.length>2000)return 'Для одного ходу потрібно від 1 до 2000 символів.';
-    s.segments.push(text);s.turn++;
+    await sql.query('INSERT INTO game_segments(game_id,ordinal,body,user_id,source_message_id) VALUES($1,$2,$3,$4,$5)',[row.id,s.segment_count,text,userId,sourceId||null]);s.segment_count++;s.segments=[...(s.segments||[]),text].slice(-32);s.turn++;
     if(s.limit&&s.turn>=s.limit){ended=true;reply=kind==='story'?`Історію завершено:\n${s.segments.join('\n\n')}`:kind==='debate'?'У кожного було по два аргументи. Можу порівняти їх за логікою, прикладами й відповідями на заперечення.':`Завершив партію «${s.title}». Правила залишаються збереженими.`;}
     else reply=`Хід записав. Далі ${s.players[s.turn % s.players.length].name}.${kind==='debate'?` Аргумент ${s.turn+1}/${s.limit}.`:''}`;
   }
