@@ -1,6 +1,6 @@
 import { createHash, randomUUID } from 'node:crypto';
 import { z } from 'zod';
-import { one, state, type SQL, type Database } from './db.js';
+import { one, state, type SQL } from './db.js';
 import { ToolError } from './safe-http.js';
 import type { InlineKeyboard, Message } from './telegram.js';
 import type { ToolContext } from './agent-tools.js';
@@ -251,8 +251,7 @@ export function interactionKeys(v: any): InlineKeyboard {
     const rows: any[] = [];
     if (v.spec.roles.some((r: any) => r.options.length))
         for (const role of v.spec.roles) {
-            const p = v.participants.find((p: Person) => p.id === role.user_id);
-            for (const [i, label] of role.options.entries())
+            for (const i of role.options.keys())
                 rows.push([b(`Завдання ${v.spec.roles.indexOf(role) + 1} · дія ${i + 1}`, `r${v.spec.roles.indexOf(role)}_${i}`)]);
         }
     else if (v.spec.options.length)

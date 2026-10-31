@@ -1,6 +1,6 @@
 import {scenario,questNode,questOptions,correctAnswer} from './scenario-packs.js';
 import {requireVersion} from './evolution-core.js';
-import {launchConsent,interactionView,answerInteraction,queueInteraction} from './interactions.js';
+import {launchConsent,answerInteraction,queueInteraction} from './interactions.js';
 import { randomInt, randomUUID } from 'node:crypto';
 import { one, state, queueText, type Database } from './db.js';
 import type { ToolContext } from './agent-tools.js';
@@ -221,7 +221,7 @@ export class SessionEngine {
                 points = players[Number(m.text) - 1]?.role === 'spy' ? 1 : 0;
             else if (s.template === 'quotes' && s.round === 2) {
                 const guesses = JSON.parse(m.text);
-                points = (s.public_state.entries || []).reduce((n: number, x: any, i: number) => n + (players[Number(guesses[String(i + 1)]) - 1]?.user_id === s.settings._entry_authors?.[i] ? 1 : 0), 0);
+                points = (s.public_state.entries || []).reduce((n: number, _entry: any, i: number) => n + (players[Number(guesses[String(i + 1)]) - 1]?.user_id === s.settings._entry_authors?.[i] ? 1 : 0), 0);
             }
             scores.set(m.user_id, points);
             if (['quest', 'prediction', 'dilemmas'].includes(s.template) || s.template === 'captions' && s.round === 2)

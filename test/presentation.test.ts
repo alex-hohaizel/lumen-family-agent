@@ -2,7 +2,7 @@ import {it} from 'node:test';
 import assert from 'node:assert/strict';
 import {textEntities} from '../src/presentation.js';
 import {Telegram} from '../src/telegram.js';
-import {queueText,one} from '../src/db.js';
+import {queueText} from '../src/db.js';
 import {TestDB} from './helpers.js';
 
 it('форматування відхиляє небезпечні посилання, перетини та відсутні фрагменти',()=>{

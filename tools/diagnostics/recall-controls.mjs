@@ -1,6 +1,7 @@
-import {writeFile} from 'node:fs/promises';
-import {TestDB} from '../dist/test/helpers.js';
-import {recall,RecallQuery} from '../dist/src/recall.js';
+import {diagnosticOptions,report} from './report.mjs';
+import {TestDB} from '../../.test-build/test/helpers.js';
+import {recall,RecallQuery} from '../../.test-build/src/recall.js';
+const {outputDir}=diagnosticOptions();
 const db=new TestDB();await db.init();
 const context={actorId:'11',chatId:'-100',topicId:'0',revision:0,updateId:'recall-controls',requested:true};
 const expected=new Map();let queryCalls=0;const measured={query:async(sql,args)=>{queryCalls++;return db.query(sql,args);}};
@@ -14,5 +15,5 @@ try{
   for(const x of [...q.items,...denied.items]){totalItems++;const raw=expected.get(String(x.source_message_id));if(!raw||x.author_id!==raw.actor||x.body!==raw.body)wrongMetadata++;}
  }
  const result={scope:'Synthetic retrieval controls only; no model answers or human evaluation',positive_queries:30,recall_at_3:positives/30,negative_time_filter_queries:30,negative_time_filters_passed:negativeFilters,denial_author_queries:30,denial_markers_preserved:negationPreserved,candidate_metadata_checked:totalItems,false_author_or_source_metadata:wrongMetadata,retrieval_database_query_calls:queryCalls,query_calls_exclude_transaction_frames:true,retrieval_model_requests:0,elapsed_ms:Math.round((performance.now()-started)*100)/100,answer_false_attribution:'not_evaluated',production_cost:'not_measured'};
- await writeFile('docs/qa-1-12/recall-controls.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));if(positives!==30||negativeFilters!==30||negationPreserved!==30||wrongMetadata!==0)process.exitCode=1;
+ await report('recall-controls.json',result,outputDir);if(positives!==30||negativeFilters!==30||negationPreserved!==30||wrongMetadata!==0)process.exitCode=1;
 }finally{await db.close();}

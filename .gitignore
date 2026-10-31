@@ -1,5 +1,8 @@
 /node_modules
 dist/
+/.test-build/
+/.release/
+/.release-next/
 .env
 runtime/*
 !runtime/.gitkeep

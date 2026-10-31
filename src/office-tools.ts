@@ -4,7 +4,6 @@ import {inspectOffice,editOffice,OfficePatch} from './office-edit.js';
 import {binaryArtifact} from './document-workshop.js';
 import {withWorkerSlot} from './work-slots.js';
 import {digest,sourceIds} from './evolution-core.js';
-import {recordProvenance,transferProvenance} from './provenance.js';
 import {browsers} from './browser.js';
 import {Telegram} from './telegram.js';
 import type {Definition,ToolContext} from './agent-tools.js';

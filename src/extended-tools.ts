@@ -6,7 +6,7 @@ import { reserveModelCall } from './model-budget.js';
 import { OAuthDevices } from './oauth-device.js';
 import { z } from 'zod';
 import { randomUUID, createHash } from 'node:crypto';
-import { one, state, queueText, type Database } from './db.js';
+import { one, state, type Database } from './db.js';
 import type { Config } from './config.js';
 import type { Brain } from './model.js';
 import type { Definition, ToolContext } from './agent-tools.js';

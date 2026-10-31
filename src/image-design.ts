@@ -2,7 +2,7 @@ import {z} from 'zod';
 import sharp,{type OverlayOptions} from 'sharp';
 import {readFile} from 'node:fs/promises';
 import {one,state,type Database} from './db.js';
-import {command,requireVersion,sourceIds,digest} from './evolution-core.js';
+import {command,requireVersion,sourceIds} from './evolution-core.js';
 import {MediaWorkshop} from './media-workshop.js';
 import {assetFor,invalidateAsset} from './media-assets.js';
 import {Media} from './media.js';

@@ -1,6 +1,6 @@
 import {assertActionOwner} from './commitments.js';
 import {z} from 'zod';
-import {one,state,queueText,type Database,type SQL} from './db.js';
+import {one,state,queueText,type Database} from './db.js';
 import {cancelInteractionDescendants,launchConsent,openInteraction,queueInteraction,interactionView} from './interactions.js';
 import {reserveModelCall} from './model-budget.js';
 import {stableId} from './operations.js';

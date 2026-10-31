@@ -28,4 +28,23 @@ jobs:
       - name: Install PDF test utility
         run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils
       - run: npm ci --include=dev --no-audit --no-fund
-      - run: npm test
+      # One complete functional gate, followed by checks of the actual runtime
+      # package. Render builds the same commit without repeating the suite.
+      - run: npm run verify
+      - name: Select container checks for changed runtime packaging
+        id: runtime_image
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node tools/release/image-changes.mjs
+      - name: Build curated runtime image
+        if: steps.runtime_image.outputs.required == 'true'
+        run: docker build --build-arg LUMEN_BUILD_REVISION="${{ github.sha }}" --tag lumen-runtime:verify .
+      - name: Verify packaged media in the restricted container
+        if: steps.runtime_image.outputs.required == 'true'
+        run: >-
+          docker run --rm --read-only
+          --tmpfs /tmp:rw,exec,nosuid,nodev,size=1g,mode=1777
+          --cap-drop ALL --security-opt no-new-privileges:true
+          --mount type=bind,src="${{ github.workspace }}/tools/release",dst=/verify,readonly
+          --env GITHUB_SHA="${{ github.sha }}"
+          --entrypoint node lumen-runtime:verify /verify/verify.mjs /app

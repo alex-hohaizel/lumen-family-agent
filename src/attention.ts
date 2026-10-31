@@ -37,7 +37,7 @@ export async function claimAttention(sql:SQL,topic:string,sourceId:number){
   await sql.query('INSERT INTO topic_attention(topic_id,checked_at,checked_source_id) VALUES($1,now(),$2) ON CONFLICT(topic_id) DO UPDATE SET checked_at=now(),checked_source_id=$2',[topic,sourceId]);
 }
 
-export async function ambientStillRelevant(sql:SQL,m:Message,sourceId:number,s:Record<string,any>,timezone:string,delivery=false){
+export async function ambientStillRelevant(sql:SQL,m:Message,sourceId:number,s:Record<string,any>,timezone:string,_delivery=false){
   if(!ambientEnabled(s,m,timezone))return false;
   const topic=String(m.message_thread_id || 0);
   if(await one(sql,'SELECT id FROM topics WHERE id=$1 AND closed=true',[topic]))return false;

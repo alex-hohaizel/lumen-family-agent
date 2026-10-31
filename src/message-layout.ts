@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { stableId } from './operations.js';
 import { recordProvenance } from './provenance.js';
 import type { SQL } from './db.js';
-import type { InlineKeyboard, TextEntity } from './telegram.js';
+import type { InlineKeyboard } from './telegram.js';
 import type { Plan } from './model.js';
 import { textEntities } from './presentation.js';
 export function textPages(text: string, limit = 1800) {

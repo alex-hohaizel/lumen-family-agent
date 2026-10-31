@@ -14,7 +14,6 @@ import {publishOffer} from '../src/offers.js';
 import {answerInteraction} from '../src/interactions.js';
 import {Delivery} from '../src/delivery.js';
 import type {Plan} from '../src/model.js';
-import type {Message} from '../src/telegram.js';
 
 const decision=(extra:Record<string,any>={})=>({move:'answer' as const,recipient:'bot' as const,relation:'new_request' as const,reason:'Відповідаю на конкретне прохання',...extra});
 const composition={title:'Спільне рішення',purpose:'Зібрати реальні пропозиції та вибрати одну',promised_experience:'Кожен впливає на спільний вибір',first_move:'Кожен називає свою пропозицію',completion:'Результат вибору надіслано'};

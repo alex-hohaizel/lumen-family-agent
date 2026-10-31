@@ -36,7 +36,18 @@ describe('Публікація 1.3, реальні відеокадри та т�
   it('одноразове оголошення стає sent лише після підтвердженої доставки',async()=>{
     await db.query("INSERT INTO release_notices(version,status,telegram_id) VALUES('1.8.0','sent',900)");
     const url='https://t.me/addstickers/'+STICKER_SET;
-    assert.equal(await queueReleaseNotice(db,url),true);assert.equal(await queueReleaseNotice(db,url),false);assert.equal((await one(db,'SELECT status FROM release_notices WHERE version=$1',[RELEASE]))!.status,'pending');const d=new Delivery(db,h.tg as unknown as Telegram,h.config);await d.next();assert.equal(h.tg.sent.length,1);assert.ok(h.tg.sent[0]!.text.startsWith('Люмен '+RELEASE.replace(/\.0$/,'')));assert.ok(h.tg.sent[0]!.text.length<1500);assert.match(h.tg.sent[0]!.text,/наліпки/);assert.match(h.tg.sent[0]!.text,/диханням/);assert.match(h.tg.sent[0]!.text,/120 настроїв/);assert.doesNotMatch(h.tg.sent[0]!.text,/додай хліб|надішліть трек|дозволите показати/iu);assert.equal((await one(db,'SELECT status FROM release_notices WHERE version=$1',[RELEASE]))!.status,'sent');assert.equal(await queueReleaseNotice(db,url),false);assert.equal((await one(db,"SELECT telegram_id FROM release_notices WHERE version='1.8.0'"))!.telegram_id,900);
+    assert.equal(await queueReleaseNotice(db,url),true);assert.equal(await queueReleaseNotice(db,url),false);
+    const pending=(await one(db,'SELECT status,telegram_id FROM release_notices WHERE version=$1',[RELEASE]))!;
+    assert.equal(pending.status,'pending');assert.equal(pending.telegram_id,null);
+    const queued=(await db.query("SELECT * FROM outbox WHERE dedup_key=$1",[`release:${RELEASE}:0`])).rows;
+    assert.equal(queued.length,1);assert.equal(queued[0]!.status,'pending');
+    assert.ok(queued[0]!.body.text.startsWith('Люмен '+RELEASE));assert.ok(queued[0]!.body.text.includes(url));assert.ok(queued[0]!.body.text.length<1500);
+    const d=new Delivery(db,h.tg as unknown as Telegram,h.config);assert.equal(await d.next(),true);
+    assert.equal(h.tg.sent.length,1);assert.equal(h.tg.sent[0]!.text,queued[0]!.body.text);
+    const delivered=(await one(db,'SELECT status,telegram_id FROM release_notices WHERE version=$1',[RELEASE]))!;
+    assert.equal(delivered.status,'sent');assert.equal(delivered.telegram_id,h.tg.counter);
+    assert.equal(await queueReleaseNotice(db,url),false);assert.equal(await d.next(),false);assert.equal(h.tg.sent.length,1);
+    assert.equal((await one(db,"SELECT telegram_id FROM release_notices WHERE version='1.8.0'"))!.telegram_id,900);
   });
   it('оголошує виправлення наліпок один раз без зайвого завантаження набору',async()=>{
     assert.equal(await queueReleaseNotice(db),true);assert.equal((await db.query('SELECT * FROM release_notices')).rows.length,1);assert.equal((await db.query('SELECT * FROM outbox')).rows.length,1);

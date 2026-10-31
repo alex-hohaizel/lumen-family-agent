@@ -9,7 +9,7 @@ import { setTimeout as delay } from 'node:timers/promises';
 import { TestDB, harness, paired, message, FakeTelegram } from './helpers.js';
 import { AgentTools, type ToolContext } from '../src/agent-tools.js';
 import { one, forgetPhrase } from '../src/db.js';
-import { GroupWork, Decisions } from '../src/group-work.js';
+import { Decisions } from '../src/group-work.js';
 import { PrivateInbox } from '../src/private-inbox.js';
 import { PrivateResults, projectResult } from '../src/private-results.js';
 import { ConnectionChecks } from '../src/connection-checks.js';

@@ -11,7 +11,7 @@ import {Coordinator} from './agent-services.js';
 import {PrivateInbox} from './private-inbox.js';
 import {Decisions} from './group-work.js';
 import {SessionEngine} from './session-engine.js';
-import {cancelOperations,drainOperations,operationCount,retainOperation,runOperation} from './operations.js';
+import {cancelOperations,checkOperation,drainOperations,operationCount,retainOperation,runOperation} from './operations.js';
 import {disposeActivity} from './activity-status.js';
 import {AsyncLocalStorage} from 'node:async_hooks';
 import {browsers} from './browser.js';
@@ -36,7 +36,6 @@ import {seedStickerPack,type LumenPack} from './sticker-pack.js';
 import {AgentTasks} from './agent-tasks.js';
 import {WebMonitors} from './web-monitors.js';
 import {ConnectorVault} from './connector-vault.js';
-import {MCPClient} from './mcp-client.js';
 
 export interface ChatRuntime {chat:RegisteredChat;db:Database;engine:Lumen;delivery:Delivery;memory:Memory;visual:VisualMemory;images:ImageJobs;agent:AgentTasks;monitors:WebMonitors;}
 export interface RuntimePolicy {maxWarm?:number;idleMs?:number;safetyPollMs?:number;now?:()=>number;}
@@ -207,7 +206,7 @@ export class ChatRouter {
     })().finally(()=>{this.pruning=undefined;});
     return this.pruning;
   }
-  private async probeRuntime(){const warm=(await this.active())[0];if(warm)return warm;const chat=(await this.registry.list())[0];return chat?this.runtime(chat):undefined;}
+  private async probeRuntime(){checkOperation();const warm=(await this.active())[0],chat=warm?undefined:(await this.registry.list())[0],runtime=warm||(chat?await this.runtime(chat):undefined);if(runtime)retainOperation(runtime.db);return runtime;}
   async probeNativeSearch(){
     const runtime=await this.probeRuntime();const config={...(runtime?.engine.config || this.config),webSearch:true};
     if(runtime){const {reserveModelCall}=await import('./model-budget.js');await reserveModelCall(runtime.db,config);}

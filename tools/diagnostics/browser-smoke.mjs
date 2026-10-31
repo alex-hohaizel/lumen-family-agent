@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict';
-import {BrowserTools} from '../dist/src/browser.js';
+import {BrowserTools} from '../../dist/src/browser.js';
+import {diagnosticOptions,report} from './report.mjs';
+const {outputDir}=diagnosticOptions();
 
 let writes=0;
 const fixture=async(url,options={})=>{
@@ -14,5 +16,5 @@ try{
   const other=await browser.run('B','open',{url:'https://example.com'});assert.equal(other.controls.find(c=>c.tag==='input').value,'');
   await assert.rejects(()=>browser.run('B','click',{id:other.controls.find(c=>c.tag==='button').id}),/browser_operation_failed/);assert.equal(writes,0);
   const before=await browser.run('A','inspect',{});const committed=await browser.run('A','commit',{id:before.controls.find(c=>c.tag==='button').id},'https://example.com');assert.equal(writes,1);assert.ok(committed.text.includes('Підтверджено тестову дію'));
-  console.log(JSON.stringify({passed:true,checks:['UTF-8 page','read controls','fill','select','session isolation','unapproved POST blocked','confirmed POST'],writes,node_rss_mb:Math.round(process.memoryUsage().rss/1048576)}));
+  await report('browser-smoke.json',{passed:true,checks:['UTF-8 page','read controls','fill','select','session isolation','unapproved POST blocked','confirmed POST'],writes,node_rss_mb:Math.round(process.memoryUsage().rss/1048576)},outputDir);
 }finally{await browser.close();}

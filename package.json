@@ -1,6 +1,6 @@
 {
   "name": "lumen-telegram",
-  "version": "1.13.1",
+  "version": "1.13.2",
   "private": true,
   "description": "Люмен — співрозмовник для Telegram-груп з окремою пам’яттю та контекстом тем",
   "type": "module",
@@ -8,7 +8,12 @@
     "node": ">=24"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "node tools/release/clean.mjs dist && tsc -p tsconfig.json",
+    "build:test": "node tools/release/clean.mjs .test-build && tsc -p tsconfig.test.json",
+    "build:release": "npm run build && npm run package:release",
+    "package:release": "node tools/release/package.mjs",
+    "verify:release": "node tools/release/verify.mjs",
+    "verify": "npm test && npm run package:release && npm run verify:release",
     "start": "node --env-file-if-exists=.env dist/src/main.js",
     "setup": "node --env-file-if-exists=.env dist/src/setup.js",
     "login": "node --env-file-if-exists=.env dist/src/auth.js login",
@@ -18,8 +23,9 @@
     "doctor": "node --env-file-if-exists=.env dist/src/doctor.js",
     "smoke": "node --env-file-if-exists=.env dist/src/smoke.js",
     "profile": "node --env-file-if-exists=.env dist/src/profile.js",
-    "test": "npm run build && node --test --test-concurrency=1 dist/test/*.test.js",
-    "ingress": "node --env-file-if-exists=.env dist/src/transport-repair.js"
+    "test": "npm run build && npm run build:test && node --test --test-concurrency=1 .test-build/test/*.test.js && node --test tools/release/*.test.mjs tools/diagnostics/*.test.mjs",
+    "ingress": "node --env-file-if-exists=.env dist/src/transport-repair.js",
+    "diagnostics": "node --env-file-if-exists=.env dist/src/main.js --diagnostics"
   },
   "dependencies": {
     "@js-temporal/polyfill": "^0.5.1",

@@ -5,3 +5,17 @@ runtime
 backups
 .git
 test
+.test-build
+.release
+.release-next
+docs
+.github
+sticker-lab
+.authoring
+.qa
+*.zip
+*.log
+**/__pycache__
+**/*.py[cod]
+# Previews and authoring metadata are checked by CI; the runtime only sends WEBM.
+assets/stickers/*.png

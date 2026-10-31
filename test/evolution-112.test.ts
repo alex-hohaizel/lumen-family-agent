@@ -1,6 +1,5 @@
 import {test,before,after,beforeEach} from 'node:test';
 import assert from 'node:assert/strict';
-import {randomUUID} from 'node:crypto';
 import sharp from 'sharp';
 import {PDFDocument} from 'pdf-lib';
 import {TestDB,harness,paired} from './helpers.js';

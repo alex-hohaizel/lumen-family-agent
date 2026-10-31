@@ -1,5 +1,5 @@
 import {openInteraction,queueInteraction} from './interactions.js';
-import type {Plan,Action} from './model.js';
+import type {Plan} from './model.js';
 import type {ToolContext} from './agent-tools.js';
 import {one,type SQL} from './db.js';
 import {ToolError} from './safe-http.js';

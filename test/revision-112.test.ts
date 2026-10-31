@@ -10,7 +10,7 @@ import {BrowseQuery} from '../src/media-assets.js';
 import {MediaBrowser} from '../src/media-browser.js';
 import {Delivery} from '../src/delivery.js';
 import {gateOutcome,toolOutcome} from '../src/outcomes.js';
-import {evidenceCheckedResearch,verifyTask} from '../src/result-verifier.js';
+import {evidenceCheckedResearch} from '../src/result-verifier.js';
 import {Recurring,SeriesCommand} from '../src/recurring.js';
 import {currentStyleCue} from '../src/behavior-engine.js';
 import {AgentTools} from '../src/agent-tools.js';

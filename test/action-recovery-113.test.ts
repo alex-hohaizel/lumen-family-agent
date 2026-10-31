@@ -6,7 +6,7 @@ import {verifyTask} from '../src/result-verifier.js';
 import {AgentTasks} from '../src/agent-tasks.js';
 import {Delivery} from '../src/delivery.js';
 import {layoutMessage} from '../src/message-layout.js';
-import {one,state} from '../src/db.js';
+import {one} from '../src/db.js';
 import {stableId} from '../src/operations.js';
 import {isAudioDocument} from '../src/engine.js';
 import type {Action,Plan} from '../src/model.js';

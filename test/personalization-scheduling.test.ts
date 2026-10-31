@@ -2,13 +2,13 @@ import {describe,it,beforeEach,afterEach} from 'node:test';
 import assert from 'node:assert/strict';
 import {TestDB,harness,paired,message} from './helpers.js';
 import {authorizeAction} from '../src/engine.js';
-import {one,state,eraseAll,forgetPhrase,queueText} from '../src/db.js';
+import {one,state,eraseAll,queueText} from '../src/db.js';
 import {Delivery} from '../src/delivery.js';
 import {Telegram,type Message} from '../src/telegram.js';
 import type {Brain,Plan} from '../src/model.js';
-import {applyPersonalization,personalizationContext,PersonalizedBrain,recoverPersonalization} from '../src/personalization.js';
+import {personalizationContext,PersonalizedBrain,recoverPersonalization} from '../src/personalization.js';
 import {OutboundLocalizer} from '../src/localization.js';
-import {saveSchedule,scheduleDecision,dispatchSchedules} from '../src/scheduling.js';
+import {scheduleDecision,dispatchSchedules} from '../src/scheduling.js';
 
 describe('Постійна персоналізація й відкладені доручення',()=>{
  let db:TestDB,h:ReturnType<typeof harness>;

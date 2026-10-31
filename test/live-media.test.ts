@@ -10,7 +10,7 @@ import {renderTGS} from '../src/vector-sticker.js';
 import {ChatRegistry} from '../src/registry.js';
 import {ChatRouter} from '../src/router.js';
 import {Delivery} from '../src/delivery.js';
-import {Telegram,type Update,type Message} from '../src/telegram.js';
+import {Telegram,type Update} from '../src/telegram.js';
 import {ImageJobs} from '../src/image-jobs.js';
 import {Media} from '../src/media.js';
 import {PlanSchema,strictOutputSchema} from '../src/model.js';

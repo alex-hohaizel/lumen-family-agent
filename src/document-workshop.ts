@@ -2,7 +2,7 @@ import {recordProvenance,transferProvenance} from './provenance.js';
 import {assertActionOwner} from './commitments.js';
 import {withWorkerSlot} from './work-slots.js';
 import { Worker } from 'node:worker_threads';
-import { randomUUID, createHash } from 'node:crypto';
+import { createHash } from 'node:crypto';
 import { documentText } from './documents.js';
 import { wordDocument, workbook } from './office.js';
 import { one, state, type Database } from './db.js';

@@ -13,6 +13,9 @@ services:
     logging:
       options: { max-size: "5m", max-file: "2" }
   bot:
+    # The pinned Chromium npm package contains Linux x64 binaries. ARM hosts
+    # require their Docker engine's amd64 emulation support.
+    platform: linux/amd64
     build: .
     user: "${LUMEN_UID:-1000}:${LUMEN_GID:-1000}"
     volumes:
@@ -32,10 +35,13 @@ services:
     security_opt: ["no-new-privileges:true"]
     cap_drop: ["ALL"]
     read_only: true
-    tmpfs: ["/tmp:size=32m"]
+    # Chromium alone expands to >200 MB; it must execute from this mount.
+    # This is a cap, not a reservation. Account for tmpfs usage in host RAM.
+    tmpfs: ["/tmp:rw,exec,nosuid,nodev,size=1g,mode=1777"]
     logging:
       options: { max-size: "5m", max-file: "2" }
   setup:
+    platform: linux/amd64
     build: .
     profiles: ["tools"]
     user: "${LUMEN_UID:-1000}:${LUMEN_GID:-1000}"

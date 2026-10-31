@@ -25,7 +25,8 @@ describe('Палітра емоцій і стабільний порядок 1.1
       const bytes=await readFile(new URL('../../assets/stickers/'+a.file,import.meta.url));assert.equal(createHash('sha256').update(bytes).digest('hex'),a.sha256);
     }
     const first=assets.slice(0,20).map(x=>x.emoji);for(const emoji of ['😂','🥰','🤔','😤','🫠','😱','🙄','🥹','😭','😎','🤨','😴','😬'])assert.ok(first.includes(emoji),emoji);
-    assert.ok(new Set(release.first20_categories).size>=10);
+    const firstCategories=assets.slice(0,20).map(asset=>(asset as typeof asset & {category?:string}).category);
+    assert.deepEqual(firstCategories,release.first20_categories);assert.ok(new Set(firstCategories).size>=10);
     for(const omitted of ['👹','👺','👽','👾','😺'])assert.ok(!assets.some(x=>x.emoji===omitted));
   });
   it('відновлює порядок відомих документів без повторного завантаження, навіть після втраченої відповіді Telegram',async()=>{

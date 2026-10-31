@@ -1,7 +1,6 @@
 import {test, before, beforeEach, after} from 'node:test';
 import assert from 'node:assert/strict';
 import {randomUUID} from 'node:crypto';
-import {readFile} from 'node:fs/promises';
 import {TestDB} from './helpers.js';
 import {one, type SQL} from '../src/db.js';
 import {ConfigSchema} from '../src/config.js';
@@ -30,8 +29,6 @@ const fakeImage = (value: string) => 'data:image/jpeg;base64,' + Buffer.from(val
 before(async () => {
   db = new CoverageDB();
   await db.init();
-  // Standalone tests also work before the parent migration is composed.
-  await db.pg.exec(await readFile(new URL('../../src/media-inspections-schema.sql', import.meta.url), 'utf8'));
 });
 after(async () => db.close());
 beforeEach(async () => {

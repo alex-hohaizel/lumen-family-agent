@@ -4,21 +4,24 @@ import {join} from 'node:path';
 import {spawn} from 'node:child_process';
 import {createServer} from 'node:net';
 import assert from 'node:assert/strict';
-import {CalDAV,CalendarSync,CalendarCommand} from '../dist/src/calendar-sync.js';
-import {TestDB,harness,paired} from '../dist/test/helpers.js';
-import {ConnectorVault} from '../dist/src/connector-vault.js';
-import {one} from '../dist/src/db.js';
+import {CalDAV,CalendarSync,CalendarCommand} from '../../.test-build/src/calendar-sync.js';
+import {TestDB,harness,paired} from '../../.test-build/test/helpers.js';
+import {ConnectorVault} from '../../.test-build/src/connector-vault.js';
+import {one} from '../../.test-build/src/db.js';
 import {randomUUID} from 'node:crypto';
+import {diagnosticOptions,report} from './report.mjs';
+const {outputDir}=diagnosticOptions();
 
 const port=await new Promise(resolve=>{const server=createServer().listen(0,'127.0.0.1',()=>{const p=server.address().port;server.close(()=>resolve(p));});});
 const temp=await mkdtemp(join(tmpdir(),'lumen-calendar-sandbox-')),config=join(temp,'config');
-await writeFile(config,`[server]\nhosts = 127.0.0.1:${port}\n[auth]\ntype = none\n[rights]\ntype = owner_only\n[storage]\nfilesystem_folder = ${temp}/storage\n[logging]\nlevel = error\n`);
-const server=spawn('python',['-m','radicale','--config',config],{stdio:['ignore','ignore','pipe']});let log='';server.stderr.on('data',b=>{log=(log+b.toString()).slice(-5000);});
+let server,serverClosed,spawnError,log='';
 const local=`http://127.0.0.1:${port}`,base='https://calendar.example/alice/family/',auth='Basic '+Buffer.from('alice:sandbox-password').toString('base64');
 const request=async(url,options={})=>{const u=new URL(url);if(u.origin!=='https://calendar.example')throw Error('fixture_origin_not_allowed');const res=await fetch(local+u.pathname+u.search,{method:options.method||'GET',headers:options.headers,body:options.body,redirect:'manual',signal:AbortSignal.timeout(10000)});return {url,status:res.status,headers:Object.fromEntries(res.headers),body:Buffer.from(await res.arrayBuffer())};};
-const evidence={provider:'Radicale 3.9.0',environment:'owned loopback sandbox, no user calendar credentials',checks:[],at:new Date().toISOString()};let db;
+const evidence={provider:'Radicale',environment:'owned loopback sandbox, no user calendar credentials',checks:[],at:new Date().toISOString()};let db;
 try{
- for(let i=0;i<50;i++){try{await fetch(local,{signal:AbortSignal.timeout(100)});break;}catch{if(i===49)throw Error('sandbox_start_failed: '+log);await new Promise(r=>setTimeout(r,100));}}
+ await writeFile(config,`[server]\nhosts = 127.0.0.1:${port}\n[auth]\ntype = none\n[rights]\ntype = owner_only\n[storage]\nfilesystem_folder = ${temp}/storage\n[logging]\nlevel = error\n`);
+ server=spawn('python',['-m','radicale','--config',config],{stdio:['ignore','ignore','pipe']});serverClosed=new Promise(resolve=>server.once('close',resolve));server.on('error',error=>{spawnError=error;});server.stderr.on('data',b=>{log=(log+b.toString()).slice(-5000);});
+ for(let i=0;i<50;i++){try{await fetch(local,{signal:AbortSignal.timeout(100)});break;}catch{if(spawnError||server.exitCode!==null||i===49)throw Error('sandbox_start_failed: '+(spawnError?.message||log));await new Promise(r=>setTimeout(r,100));}}
  const create=await request(base,{method:'MKCALENDAR',headers:{Authorization:auth,'Content-Type':'application/xml'},body:'<?xml version="1.0"?><c:mkcalendar xmlns:c="urn:ietf:params:xml:ns:caldav" xmlns:d="DAV:"><d:set><d:prop><d:displayname>Family sandbox</d:displayname></d:prop></d:set></c:mkcalendar>'});assert.equal(create.status,201,create.body.toString());
  db=new TestDB();await db.init();const h=harness(db);await paired(h);const conn=randomUUID();await new ConnectorVault(db,h.config.runtimeDir).put('11','calendar_test',auth);await db.query("INSERT INTO calendar_connections(id,owner_id,title,endpoint,credential_name,scope,status) VALUES($1,'11','Sandbox',$2,'calendar_test','read_write','ready')",[conn,base]);const service=new CalendarSync(db,h.config.runtimeDir,request);let n=100000;const ctx=(key)=>({actorId:'11',chatId:'-100',topicId:'0',revision:0,updateId:String(++n),requested:true,audience:'private',operationKey:key||'sandbox:'+n});
  const make={operation:'create',connection_id:conn,title:'Вечеря & спільний час',start:'2026-11-01T17:00:00Z',end:'2026-11-01T18:00:00Z',description:'Власний тест'};const operation=ctx('stable-calendar-create'),first=await service.run(CalendarCommand.parse(make),operation);assert.equal(first.status,'confirmed',JSON.stringify(first));const duplicate=await service.run(CalendarCommand.parse(make),operation);assert.equal(duplicate.id,first.id);evidence.checks.push('create/readback and stable-operation duplicate');
@@ -34,5 +37,5 @@ try{
  const imported=await service.run(CalendarCommand.parse({operation:'events',connection_id:conn,start:'2026-11-02T00:00:00Z',end:'2026-11-07T00:00:00Z'}),ctx()),target=imported.events.find(e=>new Date(e.starts_at).toISOString().startsWith('2026-11-05'));
  const changedOccurrence=await service.run(CalendarCommand.parse({operation:'update',connection_id:conn,event_id:target.id,version:target.version,scope:'occurrence',start:'2026-11-05T21:00:00Z',end:'2026-11-05T22:00:00Z'}),ctx());assert.equal(changedOccurrence.status,'confirmed',JSON.stringify(changedOccurrence));const storedSeries=await adapter.get(recurringHref);assert.ok(storedSeries.data.includes('RRULE:FREQ=DAILY;COUNT=4'));assert.ok(storedSeries.data.includes('LOCATION:Preserve location'));assert.ok(storedSeries.events.some(e=>e.start==='2026-11-04T19:00:00.000Z'));
  const cancelledOccurrence=await service.run(CalendarCommand.parse({operation:'cancel',connection_id:conn,event_id:changedOccurrence.id,version:changedOccurrence.version,scope:'occurrence'}),ctx());assert.equal(cancelledOccurrence.status,'confirmed',JSON.stringify(cancelledOccurrence));assert.ok(await adapter.get(recurringHref));const afterCancel=await service.run(CalendarCommand.parse({operation:'availability',connection_id:conn,start:'2026-11-05T00:00:00Z',end:'2026-11-06T00:00:00Z'}),ctx());assert.equal(afterCancel.status,'verified');assert.equal(afterCancel.busy.length,0);evidence.checks.push('single occurrence update/cancel readback preserves series, EXDATE and other exception');
- evidence.result='passed';await writeFile(new URL('../docs/CALENDAR_SANDBOX_1_12.json',import.meta.url),JSON.stringify(evidence,null,2)+'\n');console.log(JSON.stringify(evidence,null,2));
-}finally{server.kill('SIGTERM');if(db)await db.close();await rm(temp,{recursive:true,force:true});}
+ evidence.result='passed';await report('calendar-sandbox.json',evidence,outputDir);
+}finally{server?.kill('SIGTERM');await serverClosed;try{if(db)await db.close();}finally{await rm(temp,{recursive:true,force:true});}}

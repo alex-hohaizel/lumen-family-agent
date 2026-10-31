@@ -24,16 +24,15 @@ import { GAME_NAMES, startGame, gameTurn, publicGame } from './games.js';
 import { Media } from './media.js';
 import { DEFAULT_PREFERENCES, seriousConversation, socialDecision, responseGuidance, type Preferences, type ConversationLine } from './behavior.js';
 import { HOME_KEYS,GAME_KEYS,PREFERENCE_KEYS,PRIVACY_KEYS } from './ui.js';
-import {textEntities,contextualKeyboard,queueDecoration,rememberSticker} from './presentation.js';
+import {contextualKeyboard,queueDecoration,rememberSticker} from './presentation.js';
 import {startActivity,activityTurn} from './activity.js';
 import {VisualMemory,rememberAttachments} from './visual.js';
 import {activityFor} from './activity-status.js';
 import {continuation,saveDialogue,selectionText,cancelImages} from './conversation.js';
 
 import {queueAmbient,cancelAmbient,claimAttention,ambientStillRelevant,ambientReplyAllowed,ambientDuplicate,recordAmbientReply,relatedDiscussions} from './attention.js';
-import {AgentTools,boundArtifactDelivery,type ToolContext} from './agent-tools.js';
+import {AgentTools,boundArtifactDelivery} from './agent-tools.js';
 import {ToolError} from './safe-http.js';
-import {documentText} from './documents.js';
 import {applyPersonalization,personalizationContext,PERSONALIZATION_INSTRUCTIONS,provesCurrentRequest,provesCommand,languageCode} from './personalization.js';
 import {saveSchedule,scheduleDecision,scheduleContext,dispatchSchedules} from './scheduling.js';
 import {isListAddContinuation} from './simple-lists.js';

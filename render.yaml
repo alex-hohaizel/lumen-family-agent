@@ -6,9 +6,9 @@ services:
     region: frankfurt
     plan: 0.5c-512mb
     numInstances: 1
-    autoDeployTrigger: "off"
-    buildCommand: npm ci --include=dev && npm test && npm prune --omit=dev
-    startCommand: npm start
+    autoDeployTrigger: "checksPass"
+    buildCommand: npm ci --include=dev && npm run build:release && node tools/release/finalize-render.mjs
+    startCommand: cd .release && npm start
     disk:
       name: lumen-credentials
       mountPath: /var/data/lumen
@@ -30,11 +30,10 @@ services:
         generateValue: true
       - key: AUTH_MODE
         value: chatgpt
-      # Legacy/onboarding default only. For the 1.13 joint release, enable true
-      # only after its complete approved 120-asset commit is available remotely.
-      # Do not deploy the current preparation or activate a code-only release.
+      # This Blueprint ships the approved complete 120-asset repertoire.
+      # Existing services must retain the same required-mode startup gate.
       - key: LUMEN_REQUIRE_VERIFIED_STICKER_PACK
-        value: "false"
+        value: "true"
       - key: TIMEZONE
         value: Europe/Kyiv
       - key: OPENAI_MODEL

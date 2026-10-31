@@ -1,7 +1,7 @@
 import {preferenceDraft,rankingDraft} from './private-drafts.js';
 import { recordProvenance, transferProvenance } from './provenance.js';
 import { stableId } from './operations.js';
-import { randomUUID, randomBytes } from 'node:crypto';
+import { randomBytes } from 'node:crypto';
 import { one, state, queueText, type Database } from './db.js';
 import { ConnectorVault } from './connector-vault.js';
 import { ToolError } from './safe-http.js';

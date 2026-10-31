@@ -7,7 +7,7 @@ import {command,digest,requireVersion,sourceIds} from './evolution-core.js';
 import {recordProvenance} from './provenance.js';
 import {checkOperation,stableId} from './operations.js';
 import {ToolError} from './safe-http.js';
-import {Telegram,type CallbackQuery} from './telegram.js';
+import {Telegram} from './telegram.js';
 import type {ToolContext} from './agent-tools.js';
 import type {Config} from './config.js';
 
@@ -100,7 +100,7 @@ export class MediaAssets {
 
 export async function purgeMediaPhrase(sql:SQL,phrase:string){
  const assets=(await sql.query("SELECT id FROM media_assets WHERE strpos(lower(title),lower($1))>0",[phrase])).rows;for(const a of assets)await invalidateAsset(sql,a.id);
- for(const [table,key] of [['archive_collections','collection_id'],['studio_projects','project_id']]){const resources=(await sql.query(`SELECT id FROM ${table} WHERE strpos(lower(title),lower($1))>0`,[phrase])).rows;for(const r of resources){await invalidateResourceJobs(sql,r.id);await sql.query(`DELETE FROM ${table} WHERE id=$1`,[r.id]);}}
+ for(const table of ['archive_collections','studio_projects']){const resources=(await sql.query(`SELECT id FROM ${table} WHERE strpos(lower(title),lower($1))>0`,[phrase])).rows;for(const r of resources){await invalidateResourceJobs(sql,r.id);await sql.query(`DELETE FROM ${table} WHERE id=$1`,[r.id]);}}
  for(const r of (await sql.query("SELECT collection_id AS id FROM archive_items WHERE strpos(lower(caption||' '||COALESCE(claimed_date,'')),lower($1))>0 UNION SELECT project_id AS id FROM studio_scenes WHERE strpos(lower(caption),lower($1))>0",[phrase])).rows)await invalidateResourceJobs(sql,r.id);
  await sql.query("UPDATE archive_items SET caption='',claimed_date=NULL,claim='uncertain' WHERE strpos(lower(caption||' '||COALESCE(claimed_date,'')),lower($1))>0",[phrase]);await sql.query("UPDATE studio_scenes SET caption='' WHERE strpos(lower(caption),lower($1))>0",[phrase]);
 }

@@ -1,12 +1,11 @@
 import {Temporal} from '@js-temporal/polyfill';
-import {randomUUID} from 'node:crypto';
 import ICAL from 'ical.js';
 import {XMLParser} from 'fast-xml-parser';
 import {z} from 'zod';
 import {one,state,type Database,type SQL} from './db.js';
 import {ConnectorVault} from './connector-vault.js';
 import {safeRequest,publicURL,ToolError,type HTTPRequest} from './safe-http.js';
-import {command,digest,requirePrivate,requireVersion} from './evolution-core.js';
+import {command,requirePrivate,requireVersion} from './evolution-core.js';
 import {stableId,checkOperation,runOperation} from './operations.js';
 import type {ToolContext} from './agent-tools.js';
 import type {Message,Telegram,CallbackQuery} from './telegram.js';
