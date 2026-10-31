@@ -1,0 +1,67 @@
+{
+  "release": "1.13.0",
+  "status": "not_deployed",
+  "checked_at": "2026-10-31T00:10:23.885154+00:00",
+  "repository": "alex-hohaizel/lumen-family-agent",
+  "repository_visibility": "private",
+  "repository_visibility_changed": false,
+  "attempted_commit": "17d8e884c1b715b544e33c153cf7ec01f1c0785d",
+  "render": {
+    "service": "srv-dbfl0je7bikc73dvg0qg",
+    "deploy": "dep-dbiipt7b9u1s73dej050",
+    "status": "build_failed",
+    "finished_at": "2026-10-30T23:58:01.607062Z",
+    "auto_deploy": "off"
+  },
+  "server_tests": {
+    "tests": 1086,
+    "pass": 1085,
+    "fail": 1,
+    "skipped": 0,
+    "cancelled": 0,
+    "duration_ms": 505367.502695,
+    "failed_case": "worker refuses typed file claim with changed-bytes while preserving the actual sent receipt"
+  },
+  "cause": "Test appended AAAA after padded base64; decoded PDF could remain identical, so truthful delivery was accepted. Product unchanged.",
+  "repair": {
+    "scope": "test_only",
+    "physical_bytes_changed": true,
+    "original_receipt_preserved": true,
+    "module_author_tests": "53/53",
+    "independent_module_tests": "53/53",
+    "independent_actual_controls": "10/10",
+    "test_sha256": "19744ebb057ecb8d67f6f11a10c010f9ddb7a1d4d31165e8cc3acee9f8dda989"
+  },
+  "current_code_hash": "263d25ea9ca674a87abf6c81b96a51753c99a9f56e3f72e4dbc77739ad80a8f2",
+  "current_coverage": {
+    "unchanged_server_tests_passed": 1033,
+    "affected_current_module_passed": 53,
+    "total": 1086,
+    "single_new_clean_full_run": false
+  },
+  "production": {
+    "version": "1.12.0",
+    "commit": "91c7970aada6bafc6d7205b8d0fa4ace6f1969af",
+    "deploy": "dep-dbiac4ou01pc73948ef0",
+    "status": "live"
+  },
+  "joint_release_requirement": "Only activate code with the entire approved updated120 sticker pack; no further code-only deploy.",
+  "stickers": {
+    "expected_count": 120,
+    "prepared_individual_repairs": 71,
+    "new_binaries_published": false,
+    "telegram_pack_changed": false,
+    "publication_blocker": "Automatic review rejects opaque GitHub binary upload even after exact direct authorization and fresh private-owner verification."
+  },
+  "access": {
+    "render_connector": "available",
+    "browser_auth": "not_completed; not needed for supported connector operations",
+    "github_permission_observed": "Allow low-risk actions; inherits default",
+    "proposed_specific_permission_mode": "ask_before_writes; pending explicit user choice; not applied"
+  },
+  "limits": [
+    "No 1.13 production activation.",
+    "No new Telegram sticker delivery receipt.",
+    "New whole criterion council and human/native/mobile motion remain unclaimed."
+  ]
+}

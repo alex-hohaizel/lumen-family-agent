@@ -1,6 +1,6 @@
 import {test,before,beforeEach,after} from 'node:test';
 import assert from 'node:assert/strict';
-import {randomUUID} from 'node:crypto';
+import {createHash,randomUUID} from 'node:crypto';
 import sharp from 'sharp';
 import {TestDB,harness,paired,message} from './helpers.js';
 import {one,forgetPhrase} from '../src/db.js';
@@ -291,13 +291,26 @@ for(const kind of ['pdf','image'] as const)test(`worker typed acknowledgement fo
 for(const invalid of ['legacy-receipt','changed-bytes','invalid-task-source'] as const)test(`worker refuses typed file claim with ${invalid} while preserving the actual sent receipt`,async()=>{
  const f=await deliveredArtifact();
  if(invalid==='legacy-receipt')await db.query("UPDATE outbox SET body=body #- '{deliveryReceipt,output}' WHERE id=$1",[f.out.id]);
- if(invalid==='changed-bytes')await db.query("UPDATE agent_artifacts SET content=content||'AAAA' WHERE id=$1",[f.artifactId]);
+ if(invalid==='changed-bytes'){
+  const stored=(await one(db,'SELECT content,encoding FROM agent_artifacts WHERE id=$1',[f.artifactId]))!;
+  const before=Buffer.from(stored.content,stored.encoding==='base64'?'base64':'utf8');
+  assert.equal(createHash('sha256').update(before).digest('hex'),f.out.body.deliveryReceipt.output.sha256);
+  // Appending to a padded base64 string can leave decoded bytes unchanged.
+  // Alter the actual delivered bytes, then re-encode and verify the fixture.
+  const changed=Buffer.concat([before,Buffer.from('AAAA','ascii')]);
+  await db.query("UPDATE agent_artifacts SET encoding='base64',content=$2 WHERE id=$1",[f.artifactId,changed.toString('base64')]);
+  const reread=(await one(db,'SELECT content FROM agent_artifacts WHERE id=$1',[f.artifactId]))!;
+  const actual=Buffer.from(reread.content,'base64');
+  assert.equal(actual.length,before.length+4);
+  assert.notEqual(createHash('sha256').update(actual).digest('hex'),f.out.body.deliveryReceipt.output.sha256);
+ }
  if(invalid==='invalid-task-source'){
   const wrong=Number((await db.query("INSERT INTO messages(telegram_id,user_id,author,role,topic_id,body) VALUES($1,'22','Б','user','7','Інше прохання') RETURNING id",[++n])).rows[0]!.id);await db.query('UPDATE agent_tasks SET source_message_id=$2 WHERE id=$1',[f.taskId,wrong]);
  }
  h.brain.replies.push({reply:'PDF надіслано.',actions:[]});assert.equal(await f.runner.next(),true);
  const task=(await one(db,'SELECT * FROM agent_tasks WHERE id=$1',[f.taskId]))!;assert.equal(task.status,'needs_input');assert.doesNotMatch(task.result,/PDF надіслано/);
  const out=(await one(db,'SELECT * FROM outbox WHERE id=$1',[f.out.id]))!;assert.equal(out.status,'sent');assert.equal(out.telegram_id,f.out.telegram_id);assert.equal(out.body.deliveryReceipt.message_id,f.out.body.deliveryReceipt.message_id);
+ if(invalid==='changed-bytes')assert.deepEqual(out.body.deliveryReceipt,f.out.body.deliveryReceipt,'changing current artifact bytes cannot rewrite the historical sent receipt');
  const reads=(await db.query("SELECT result FROM tool_runs WHERE task_id=$1 AND tool='artifact.delivery' AND status='succeeded'",[f.taskId])).rows;
  assert.equal(reads.some(r=>r.result.outputProof?.kinds?.includes('pdf')),false);
 });
