@@ -1,0 +1,468 @@
+{
+  "schema_version": 1,
+  "id": "lumen_64",
+  "candidate_id": "lumen_64_author-a_scene_v2",
+  "engine_mode": "curated_shared_flow_v1",
+  "description_uk": "Бешкетно регоче з висунутим язиком, розкривши плащик лапками наче крила. Пружинить на одній ніжці й грайливо виставляє другу вперед.",
+  "semantics": {
+    "core_scene": "Tongue-out broad laugh with both eyes firmly closed, arms hold navy cape like wings. Actual distinct raised-foot kick, planted support toe and body spring retain a unique carnival silhouette.",
+    "omitted_optional_action": "Damaged early hops3–49 and soft aerial toe-change50–60 excluded. Full free-flight hop is optional and omitted; clear one-legged spring/kick61–83 remains.",
+    "reversibility_or_contact": "Raised-leg kick and support-knee spring are reversible while held cape stays gripped. No falling prop, liquid or particle reversed."
+  },
+  "source_provenance": {
+    "kind": "derived_decoded_video",
+    "source_video_path": "sticker-lab/production-v5/approved-sources/lumen_64/source.webm",
+    "source_video_sha256": "0674fff5b180d1bb4615bae5841ceef0dd5adf027f6990180538b9916f3cfe3d",
+    "ancestor_original_keyposes_sha256": "1ea5dde5a32e7406ab35df3ba8205d58a8b2375a8c5ecaf59659f464960e4220",
+    "ancestor_original_status": "unresolved_original_not_recovered",
+    "derived_source_bundle_sha256": "0ac4649ca66ecddebb39295692d49bb2689465eb4c6290a41da4d6edddf2b689",
+    "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+    "original_scene_prompt_english": "Бешкетний регіт. Both eyes scrunched shut, tongue stuck out with an exuberant grin, paws spreading his navy cape like carnival wings. A gleeful little hop, entirely different silhouette from the other tongue faces."
+  },
+  "source_frames": [
+    {
+      "index": 61,
+      "timestamp_seconds": 2.033333333333333,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/061.png",
+      "sha256": "8f7869222c503e2345421f8dada70a933046dc1fbeb7b74bc8ab459ff112536c"
+    },
+    {
+      "index": 62,
+      "timestamp_seconds": 2.066666666666667,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/062.png",
+      "sha256": "19f97b433cf1dc48190f0cbfc897ba0610a68431ea51f2af0c1a33ae57a135b3"
+    },
+    {
+      "index": 63,
+      "timestamp_seconds": 2.1,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/063.png",
+      "sha256": "5d6b001db5c3a8cecf77f6123f77aabfea9a57afd1e1263af19fecb6a61fee7b"
+    },
+    {
+      "index": 64,
+      "timestamp_seconds": 2.1333333333333333,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/064.png",
+      "sha256": "3a591a46ff75916ccad53f7abd2a8da9bd40cd8b93ec8d5905e0101a0b902b8f"
+    },
+    {
+      "index": 65,
+      "timestamp_seconds": 2.1666666666666665,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/065.png",
+      "sha256": "018d2a3598f56d5879937a503bca615d55724be10d0b96d43d92436459344ba6"
+    },
+    {
+      "index": 66,
+      "timestamp_seconds": 2.2,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/066.png",
+      "sha256": "7f66a60f6913a74734191b7df2d5049439fdff964a02700fd1a9b9f29b904b47"
+    },
+    {
+      "index": 67,
+      "timestamp_seconds": 2.2333333333333334,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/067.png",
+      "sha256": "b010f2889488ab7b296a43597110289430c7b8d853d6e3b6ca54152796e2972a"
+    },
+    {
+      "index": 68,
+      "timestamp_seconds": 2.2666666666666666,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/068.png",
+      "sha256": "4d9f3e5bcaa1dcf54ab26c7e55dabf4025a133a8a34937d0396aa014d215cde2"
+    },
+    {
+      "index": 69,
+      "timestamp_seconds": 2.3,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/069.png",
+      "sha256": "b9934fd0cf35f87cfac39667279096d244e85cb4aa2f7bb1feaaa9d751ea4d31"
+    },
+    {
+      "index": 70,
+      "timestamp_seconds": 2.3333333333333335,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/070.png",
+      "sha256": "48a95409d06be0c9fa0e7f62e92cfa5780edd51fddf1eb98c20f6ac57905ec9f"
+    },
+    {
+      "index": 71,
+      "timestamp_seconds": 2.3666666666666667,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/071.png",
+      "sha256": "200ff43ec920bb4b74e41463acb51f1051bcc51437e01fcd2f85ec3212786679"
+    },
+    {
+      "index": 72,
+      "timestamp_seconds": 2.4,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/072.png",
+      "sha256": "3e1527c0a031f87a5a59ef9f91dd9d06c952af09df2a6f07ef02a7f38bbbbfad"
+    },
+    {
+      "index": 73,
+      "timestamp_seconds": 2.433333333333333,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/073.png",
+      "sha256": "a6c06d631c9f83df0243711533bccff5a1ae6b57e548bde0786c3bbd22d7f9f3"
+    },
+    {
+      "index": 74,
+      "timestamp_seconds": 2.466666666666667,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/074.png",
+      "sha256": "aac5cdd5aef34a1d0f5969c26de1d6cc88f7e84bd140c2b8d48122f06f1f9248"
+    },
+    {
+      "index": 75,
+      "timestamp_seconds": 2.5,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/075.png",
+      "sha256": "f71b191fc64ad247c6a86d23258981addf6df920bb61f1252fb3793ec8d5226e"
+    },
+    {
+      "index": 76,
+      "timestamp_seconds": 2.533333333333333,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/076.png",
+      "sha256": "f9e558658e39fd895958c38a873a39a67e2309dce8bc055c6d1bf1c7ea4f27fa"
+    },
+    {
+      "index": 77,
+      "timestamp_seconds": 2.566666666666667,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/077.png",
+      "sha256": "ff4f1e027b14c1067e3deb433f991fcf697818152df8a972f7ac2edeb621c0b4"
+    },
+    {
+      "index": 78,
+      "timestamp_seconds": 2.6,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/078.png",
+      "sha256": "69a732b37110db7c4951ac204134815bb52cb0accdbc2f3648789516526ebd2e"
+    },
+    {
+      "index": 79,
+      "timestamp_seconds": 2.6333333333333333,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/079.png",
+      "sha256": "4f312587bee5bc29539f93719aad8f9b7f97151b399a051f097c5b54f548f523"
+    },
+    {
+      "index": 80,
+      "timestamp_seconds": 2.6666666666666665,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/080.png",
+      "sha256": "ad0371e7d7e525cb1092e8b721612f6448479b3cdc0433c1e0c2b308b09ed178"
+    },
+    {
+      "index": 81,
+      "timestamp_seconds": 2.7,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/081.png",
+      "sha256": "b94f46af5429420d7ba74340b7af2b3c23ac1aedae9000c048de8f3361ee1fcd"
+    },
+    {
+      "index": 82,
+      "timestamp_seconds": 2.7333333333333334,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/082.png",
+      "sha256": "f25be7c1e337b665cec55f2cf911f802fd3acd276cb4e628ef4c32672dfd3b84"
+    },
+    {
+      "index": 83,
+      "timestamp_seconds": 2.7666666666666666,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_64/083.png",
+      "sha256": "46f17034031444685c6b3dfdaca22acacf57c26850df57916112dd089fc04956"
+    }
+  ],
+  "baseline_independent_triage": {
+    "artifact": "docs/qa-1-13/sticker-triage-51-80.json",
+    "verdict": "repair_required",
+    "source_sha256": "0674fff5b180d1bb4615bae5841ceef0dd5adf027f6990180538b9916f3cfe3d",
+    "defects": [
+      {
+        "frames": [
+          3,
+          7
+        ],
+        "reason": "На правому вусі/брові є прозоре накладання, а піднята ліва задня лапа лишає другий розмитий контур на животі (f6)."
+      },
+      {
+        "frames": [
+          13,
+          19
+        ],
+        "reason": "Сильний head dissolve: f15–17 мають два носи, дубльовані повіки/брови, напівпрозоре праве вухо та темний matte над чубчиком."
+      },
+      {
+        "frames": [
+          24,
+          28
+        ],
+        "reason": "Повторне локальне накладання правого вуха й ока; f26 містить сіру зайву брову й напівпрозорий край голови."
+      },
+      {
+        "frames": [
+          35,
+          40
+        ],
+        "reason": "Рух до наступного hop розчиняє обличчя та стопи: f37 має подвійний ніс/усмішку й напівпрозорі старі ноги під новим корпусом."
+      },
+      {
+        "frames": [
+          45,
+          49
+        ],
+        "reason": "При зміні опорної задньої лапи зберігається слабка стара бірюзова/сіра стопа під животом (f47); рух не залишається одинарною цільною формою."
+      }
+    ]
+  },
+  "generator": {
+    "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/integration-b24-a4-v1/originals/9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c-recipe_engine.py",
+    "original_generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "original_support_snapshot": "sticker-lab/production-v5/approved-generators/integration-b24-a4-v1/originals/ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee-repair.py",
+    "original_support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+    "engine_path": "sticker-lab/production-v5/approved-generators/integration-b24-a4-v1/recipe_engine.py",
+    "engine_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+    "support_path": "sticker-lab/production-v5/approved-generators/integration-b24-a4-v1/repair.py",
+    "support_sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8"
+  },
+  "output": {
+    "width": 512,
+    "height": 512,
+    "fps": 30,
+    "frames": 84,
+    "duration": 2.8,
+    "crf": 46,
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "maximum_bytes": 262144
+  },
+  "author_source_review": {
+    "agent": "/root/artisan_stickers_a",
+    "every_selected_sourceframe_observed": true,
+    "selected_frame_view_scale_px": 256,
+    "native512_frame_indices": [
+      61,
+      72,
+      83
+    ],
+    "observation": "Every23 selected61–83 pose observed256; native61/72/83 checked, one grounded support foot and one raised leg remain. Source58 toe-change softness explicitly excluded.",
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-inspection/batch2/64_selected.jpg"
+    ]
+  },
+  "approval": "unreviewed individual prototype, no staging or publication approval",
+  "temporal_edit": {
+    "source_order": [
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      82,
+      81,
+      80,
+      79,
+      78,
+      77,
+      76,
+      75,
+      74,
+      73,
+      72,
+      71,
+      70,
+      69,
+      68,
+      67,
+      66,
+      65,
+      64,
+      63,
+      62
+    ],
+    "action_output_frames": 80,
+    "closure_output_frames": 4,
+    "local_flow_limit_px": 6
+  },
+  "expected": {
+    "frames_rgba_png_sha256": [
+      "c87eea7c13aea812590bf05d583b113b57f408068644a57168c65ac8c5e48888",
+      "903babefa93e5898d8872674f0f664602adb4ebd2570b6cadf5bf41ea34b627c",
+      "717939a705ac97ac4b0870fcceaf73c7262f5303153d821b8ea8817ca7deca90",
+      "e705d2745856427c27eb4a310fd92b565c7d394e98ea240c01d4e2058457aa12",
+      "586752042161915211faaa49e887cad7169a7ca78da280e320037c023a578596",
+      "d7c8b42bcccc6800068f0b5f5371effc20016cb8dd36289aaa3e6e93e35b3a00",
+      "fb72a5b9beba646f48c2008fe409a33e64bea3eda98ccddbf0f4d42ccf650a2e",
+      "e3d5551721cb4a5af85d54a6a1395fff7097ea3408510b1e43d8f9f40245e6b8",
+      "589b7181bb351968311fd0721e9f0f74f813d89a8055b5b3284ae3b357365248",
+      "c9541678e7df6a641d259c5f60db0d3ddc47fb3c8f767b55a3bd376164ed83d1",
+      "69a4dc598c3ef15c5851342d8cc08fe8d6ba26c81cea00939f1a6ac51e81c74e",
+      "ebdca75cf15be0b92cd8e88ffd29ad062669f130cfd4fa04ed239f15209bb59a",
+      "c332510071cb1eb0b10e38076cf4686c351e4cb9344892d2e9ce07398fccc10b",
+      "086be04ffc0f045007b3804b03405cfd292b0e98bfc4619b0f5c54a668fa2b38",
+      "2abb3c05caa7184924b35c9ae4aaec3d96d59751c2c734c2aa1ed85db4f45fe6",
+      "ae8bf785491357669b444809f1411499ea64ff097b06a60726d17ff689c74fea",
+      "a2c03ef9d6a3709e6d994b15d58fc693b5df33973a66f3291585a8b71f3c3d02",
+      "f60ee3a3d5ec8ae784baba6f768c2561727b22c6053c00f07c3105bbb3ece746",
+      "b0ba558d05d816d27f0c01473465f282cef8ea1ac186ce57f06f037a3d2f03e3",
+      "a8055c328a3b12a5d7f108d571da86697209d7d6cdb34e81a075667d2a57ae51",
+      "9968930993cd89ce1428e1087d5202f856267bc51bab4eacffe667eb8b4f1032",
+      "86640152a26924087cf3aae3cc0c4cdca7de716b9bacb4619ac8f93c737ec75e",
+      "5450add11dbefda7aa1c91c1b4f9397b367cd36d5d26bdf8793dd23065c270c3",
+      "696ac01f80cc5da1da5632fd633a4d2fd3c71fd705395d2a3c291a0c603b6d35",
+      "2d569a0a1d44000c8298aa6836d8158972da2abede2caab126def615ff95b305",
+      "d26342a350cf84c40b574ce8bd026ca22afd0667a161667baadaaaaee4d776ee",
+      "1940f0d7ce57ad42319efc0944b3dd20f7ce0b35c593baa0971873472872f365",
+      "c39cd6dc8c77a839b14e8f91ced94fa5e2af7f333d839a43071af77380b24de7",
+      "08d7233b86561aff1c89d4138efa8d761f770f3570c3d2b0b1913ef8b92965eb",
+      "fbc65a5980e04ee371c20c7eecac83936d50f650c99d7326a032cb7e9e7fa208",
+      "989d0ef58d6f5cbbbb0fd48192ab3aecb9bf1787ea9ecf67ea6a639d01d6fcde",
+      "0f8430411013afc500c5fcd89702bba9bd902ce7e85fc0ffe82a73af3f66a7d2",
+      "f0b0aae79d8aa541bb70bd2ee48a7ac318dd233c5ee72fc2fb470df0d87fd5fc",
+      "bd82fc595689f95ed4a7b9593d98fca088f49baff26cef8c11ebeb267629f694",
+      "7787941c45a7278b27459f45bd205d6c3b57e52435d35da6d6b913f4850102c9",
+      "ea4accc9810f78138d27ac7934578d41ea5279536b0adfa34ede4bd2b86eae41",
+      "4349b6629566291c13b8f5ace3fde6ceca9c95495db00901e35cdf03f1bb642d",
+      "1d2a6ebc5ae6fdba5260ca1f4fe26b4dcbdce216f75ca271884c0a0f144fd3af",
+      "26b79b410dbf9a21722ac3c73a150cd9da06513594c4af22b5d68e0b58a126dc",
+      "6221436582bcc437f9ca0ca53699a8ae5bb8741eba0ee7713f9f72418665efa9",
+      "7990d8d2ceeb705865576ef550d9d8f99e35440e4518479829e9ecba0d83d10e",
+      "db7ebe4ff87dfef7f5acbe94aa086297c9def661f6fa4a68a555d10491843517",
+      "257c0ad5d37d1d832d6286274088041933da915213f0ae50637182b4b0cfc279",
+      "f8af50b89dd5ab96534a49b46d87c114fe43d92ed4551655c36c0b418beb35cc",
+      "c575d6cf58e1691def541a53f58c3ca1441a3c05cc748c63af6a6f2c30f0cdfd",
+      "a3531151e572635e041a8e0eff1da1bce7c9538055e77ae98b471c34320df894",
+      "1327d6a9fc6262cee3c12907af4d1ce2069783be76f32c72ef02323503c59f26",
+      "a43a604795143c4283f45df2ba5e41273167ec0f56425bb687a7fe7a825b58a5",
+      "f9b8a821ffd6db8b9606c3cf4b394d91d7acc504132ec09d5a5b7bf5d4903cf5",
+      "95502e3e461a48a11222baf3ffd4132f33092b6408b6eb9c774f7c1735f4eba3",
+      "ffad6a551030778f7da8d79bb54075cc42fc308d13e7b1348ad5a30598beee74",
+      "349d54e99fbbe854fc908b538fdd1756dc05b8342d552bf697452727650714b0",
+      "b9e3ff5f7b0aa81b7f58eb9d0c5e410ecc4e0801e6564de07b9d49ca01096520",
+      "037e052e23d08d21d6754b28db759d1e5ad566a6ac68b1a8cdc2707971ce2899",
+      "f28f6dfe51b7526dbfb384f274cbd903c774e33efd79e8cbe13f3366df7879e6",
+      "91c461f33cfa9bb6b7102422e44395a7a31dd428bac9b2d50437b0cd60cf65ad",
+      "4a5063fe2ca38747f8dfce5fc775e0026e5a895bd42f07a3863baa2d63e313ad",
+      "9e5a7b14b7563fa205c2cfa5b12140fa8af46e37b8df7465eac18280323623a5",
+      "8f34b4e8e0d0ac60fb930d859623ea085841c213aa626042af9bc89233ccd0fd",
+      "a1bbd0997824038890241d788405d4fb7ea4c787d9bff2998f04e0685a41338d",
+      "27847a4bc223d8f17b54d79181888df39b15540e917aa0ef6b069378559dd1ca",
+      "66c737fc7f9337a8d6213c9618925440b3f1d36b779dfb009e13ff805c8675ad",
+      "56517e1ebe4a6f5df2d38f74a021299f22df106f9d9837b7cc6bdcec683c8f8d",
+      "47797e06ad1e9c4095633471aec602ab854232bd91f982436efaaea6ed2f1d11",
+      "bb4fd4b742e1d008861ddb65ab20be28a5e619786a11aefd3b08335a2ac0983b",
+      "15be36de35598a706ee811d0d6c169e9b650a9fc42de92322ade9b3f4e693025",
+      "79dfe14a99fc6796f50fb0e0cc18499c4d9b8bc33f651894e8d14dcb5ff8c356",
+      "92c32e945da694360797b27e28e5fbbd448b59dc5a55b175c3a5ed9c3d4a3819",
+      "d0fba6f22587b6f7421baccfc485cd388211dc9a07d5ade6892420f5110dc99a",
+      "cf9acd9a98852b9e07c5c3a804e90ae0809a30adfeabe7498a79c90b8f6546d0",
+      "d344630806ec064dfca39777b6c352e18673ce18daf0234c4c7476b4fa22dd2b",
+      "2489ca622e9c2aba56e51a2b871beaad24ed2f2aab6215a9693531cef7d962d6",
+      "9625f8a82b9ec565e6a43759a203ccacd66e86387ff804713794a432ce01cb4a",
+      "69cee8c1f1725074664d46bd4ecbb25bb26deab46b0f4e174f187817eb8c18ca",
+      "0af970caf764d347c26097e9fde13ae0eb5b62c860cfb0b1366d007dda55f8ed",
+      "d0449bd128c35d1b689b1230da9feba56e12ab8e8e0b9ddf9d936d6f54c0c3bc",
+      "79f0ecc9a127bd5dca1cad19515d46c8bf7194c5f1606f09d26ad129cc4223e2",
+      "ce5627bfd49e46273cdd4b1d25ad845724f6b717092d9c8d71b5a29f695fae31",
+      "4c75f82c949b53f6e2968854d6fa9086c011d454ed07202e1d7903d404da3c6f",
+      "d1b81508f49b5824d3fe694abda7c490c143b22c2df61f5fa7843842cf7bab58",
+      "74bfe90c4aa00540fb77447c07663db3a7a6282c88611581d9a27882b07fe26a",
+      "da1606f1241601438432bf862264f01e73f33067fd467982a6b9fa1580d80140",
+      "6b9773197e0df6ab72b74b70afcb0445e1f3ed4853ab14e9925420f16d86e5a7",
+      "84b0262bef786a07c30436363e5a67c66a11a8ca6dab482cb18004381ba81b97"
+    ],
+    "decoded_png_sha256": [
+      "4620ce6c1e42191b38343f27acc1d63f58ad4da28af8946e81b1775eddf221d4",
+      "6370e498dfada43f00e67043b90075f245c53fd18da7096e8283c3ef26fdec2c",
+      "ea927c61cc72a83e269c3265bfaada6ce4c0d5a09afbbb9bd8ddeefcfed09ea0",
+      "3ace4b140133dc31cf2df44fe3af7e40025af48ba1e5b770dade572d2bf10bcb",
+      "8bc6c7094b0a57282eb1d8d824c35ef985f4aed9315d4542b82e81e4f015ed28",
+      "17a81cc5932d2f4eabe94155de467ef3971fea60f58a5b2605a581a72cbe93cd",
+      "d6e10028db4095044739a5054a8c109f63dedf9c97b5c38fe2e1fb8645d87d3d",
+      "b06bac3e23542d07bdca14c51ad071a15c8a23661e6b2f0ee61671662738eff3",
+      "52aa873052b0968be05fddcbd8b423544f0dc1204bfc46b06a47e80e10d832e2",
+      "97e2c4e766931bc5dd154860afb5f2eeed29bdb5a0586e79ec026dd60fcdee68",
+      "6a5b3c436cb061b5fc89afbf23930b67351845ed8874e7805495e943c238286d",
+      "92eb6e1fcbfdbf42d12a4a8c9719b38a1057e16a873eac7bcd28d9c6f1457c69",
+      "14cf5c4a8ddab96a9873a6ffcc398e879f8931fb44dd274b332c10915896a466",
+      "c766af0a18d2721167c01b8a595007cd7e2cd7dfaa894d229b351ed049102843",
+      "5fa701e8d6ce10bd0d5395995e047949790a50c15507204beeff2335300b6d28",
+      "76e56a31f1786856b4493dfe3531dc218f85ea74069308863edd0bc2da63c864",
+      "30435c9f789932a28aa1f895453833c5ef80f6826fcc3ed868af0aa5aa6cb874",
+      "aa86c498d65f6c6e5ae843356cc20687cac7c2f9214217ccb5a6eabe7e7ea579",
+      "011c9ca7308261b954bec1e9dbe914c6edddd449978f77581ecce3010a6ffd76",
+      "3f49ff7d3e0e8a66158265d61610e12b40ac7d781143331193268cb14cd0cd45",
+      "8f18f3bc2fc0a3bc12ed501b702ac14bac6f6977a7dd549c30d8b0d13f79e165",
+      "e49859934a151343c9ec651b580ed85dde42d3c7e4dd439f58d0476c03447f38",
+      "5d2c5a1851625bc7e4d177b210081f5be566c6dbe8b293a9d242a930469c57e3",
+      "becb93ae27a4d426fd16716b8bc111d8b161e1e5b76e3b23721f8f1c65e39b09",
+      "2525cf4395352ee6530acbbaad2f2b51e8f7524682919c78e038c02447afcce5",
+      "2dc25083f7177f85fb339843a74cad08e76ead2de8fe6124a8721a3bb1e26a17",
+      "06da343aff4627f6cee87b32f2182093a50382b1f154ca57ca03d285b03afd84",
+      "21dabc1d5d850a063bdeae15f97ae34cb6e52e042dd187cb7fed51762f560dd6",
+      "b3fef0cf4efe9cad06c256ea18fef93b83b7cc929491029da2b251d23c29bbf9",
+      "f16c1e82be0a114fd97b5222d6c459df3776fcfea5920a78ba056ce0c2a4f1ef",
+      "35b8bbe00970a5b1ed997941c04f7befccce04fd801459dd39f26192436a3608",
+      "0eaba7dd5d787611a2ee32b641dc68d32ece9bf5e48c1a9a4d9f59b43aa19b8b",
+      "ca1fbe9173e01501fc74b4f498d4c9b39ac71eb8e6dddb40561c7fe6fc80f442",
+      "afb356580ef0c436fba9a18cfeffbd68360f5fc4cc40ec500b0fc7841126d775",
+      "43e0e40762d8d2bce2e63251e7bd18b6add0555caeb1e07a659d987fc9d7b5c6",
+      "c2086718addc5bb145cf963a2bcc9c64ac7aff94753279f1c0427d0ed6b4cefb",
+      "7850b45c009a86bbcf1b9f8c3c846ccaccd3fd272a8b01ec0fa07534259eec36",
+      "c295c6450a88542f09cfc31bf9fca51f327f48ce60ee951858411c43e8d5a00d",
+      "4ff9b91c6f87dc37a5c0f50b2a9d06ac818ccfea9f31ebf20ebbc67acd448b49",
+      "803b1d7044a8c8ce131dba032b99b0e84447c5df9e3a5c412357ad34d01c4e9b",
+      "61d1ff05e4f9a205a794db9c531a627ee4693ffd9f6e379a7d52f3e9d0faa5d3",
+      "646bc0b1b45b1380d872e3e48f2ecdd5ad5b33d7aa3779ffdabafd6f756fd1ff",
+      "51e9278832c6b978413725d1282d420d550086d5a65e7bdb61d3206b898f8299",
+      "c7fdc8a7be0cc6130038d77bf32414e902424c92b06d073d6edfe5d0f7d17346",
+      "1856135442561bee808baad250476e5401ce1675c50d6b90ca80e1156b7b994b",
+      "9db2c2020b977e736ab81c6ec954815c8b5a518564638f5943f2fdd115d080c8",
+      "0032f1c474df4639d9a49452c3bbba59dbbd7c8310f2757ac28ec0c95efc7fa7",
+      "efcd12da850eca144f72605a6aaf7cdd3caa5deefbeda679ad289a55ae81dc73",
+      "e44877234667410328e254635e01720e4b1f9ddf98c386fb9f67d1cac80d4781",
+      "2a13ba89132ca99cb21cec1e09e866c097df51deee7496a20fb1af3c95750017",
+      "3e588961554b64f7b1de50a1890db1337f8954a714c96cd889097e4f1cceca13",
+      "2652de2634e6e79535c86a9a664dae3f59b8b4706d17f68f84add70ebfdd9caf",
+      "ab8b27b772672013a28a62f22c678adab8cf14c433d7e69298b17187f65a6c08",
+      "91a8888e79b9e8de00fc064a6722c43f80395d16696ab577b9a0cfae41290b58",
+      "6fadd79a6224f6f1fbd7e4eae3ca53645e25247f173adfc6860fbef2edd46ec5",
+      "1138f86ccc6740e86c4d98d248b0a129b3bc41c1180782ee4da5922e5a86d190",
+      "7adcf63ba110d237b42c15d992e62c949a1a5151645b5b5b43c6703fc8a6103f",
+      "5c442e3d808a4132722fab7217419af06a51c1091981fada3dd165c447f20859",
+      "5422c75e7d4ab8db43f0bcfc4c5be26935a0da178db026dfb793b694d792eaca",
+      "a912bcecc30a8ef4bc6f4fc3114d7c6547fa2a55c0b6967c13a610c0de1020cb",
+      "009006996934130391cd5172d208805133af59cdbdb3d2639e315a5d53ac071d",
+      "e85168730485903954ed8100ddc7b75e43f095e96a5833b6d1da0b99bf5bdee1",
+      "21aea2a5639cf4792d37d9a885daf8635ca075803cd1244b175719094998f356",
+      "a0944d760544e8dd2ac2913f2a70c0afaac69ffc7d08a442c5720b72179cc743",
+      "902e2dd8b71c26a462d2a5c8f8d1a9b9347f91cccebaa5e9a0a2073f03f89e11",
+      "0ee697de12cd4666566706345d41e89c0a7fbb6324586b4a5561e04bac372549",
+      "98a144edcdd18f0b09c6fecc2160515941928c567506c0421281120c20a81772",
+      "8497b346ea5437341f61ab42b92dae3dd0f3b95f0b951faeebf910d840e3b93e",
+      "a38a94e186bc62bf76713a8549ce81d5b3256156c590e3030c4f68c35c657534",
+      "1bc63a0092f9d3f87ceadb5189f7b8cb4077cec06c26acfbd03ae81c2530049f",
+      "51f8877d829d29c6aded143211af022afdddc80517a3b70c8b0656554bab4c83",
+      "17b46b37dea9e64fd128ef37714552c4158b56d00ab47b5e2df8f654ef3a2346",
+      "3e6c780a7b38b56bdc4cbaa03dc7383051df6fd176f12945845c9aa9564f009f",
+      "7358489027c8f6704f0ae9a3cb47006f1e6a779205cabe84414451f63dff95c2",
+      "c6da85b50820b98ba0bb71cfc5d33ac0387c0b5b232894a8cc47a1fadf16c41f",
+      "1b9a997bce88fae4b4b88d7cdb52f18952a5989d71ba204e5f769cba4a6f6fd5",
+      "3f8ad92fefc68484bddfb7acdd969fbe86cd86dfa33c9f8d23601c186b37497f",
+      "17c5315245219ac60f7a9a3cff8a260679d3a87d07e2cc5f37ff82c751f07333",
+      "81874b0251d184d24a4320bf355da1b3693be519f33c47d2d0cede295d10bf81",
+      "e4a660592989592c66317f55eddbb8ab2b332bff93dee08cad9645d72c2aa7c9",
+      "68bde9d5b49ff61d3fcc23f2d661146279dfceb5c9b4edb7e46b5278d6644f4b",
+      "8139150e5d00afbadf9da3d032244fa560fd96fb58ea92d4de04c56e63267799",
+      "08cd1f3218df8710995fe53fa76ae7cc5308e44ff2dfcd5f938f1e7cf94b1e0f",
+      "d3b2dd1a3dc6fbd6a2f2228a46856452d2ec22a9ef1dfcfe20e5927a69f8859c"
+    ],
+    "output_sha256": "465f85873691075dbf317ab8cfa408374638436b7d521d6a811b508f522a4b86",
+    "output_bytes": 149770
+  }
+}

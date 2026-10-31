@@ -1,0 +1,702 @@
+{
+  "schema_version": 1,
+  "id": "lumen_94",
+  "candidate_id": "lumen_94_local-acting_rig2",
+  "engine_mode": "shared_local_mesh_v1",
+  "description_uk": "Нахиляється над бірюзовим відерцем, міцно тримається лапками за край і двічі здригається від нудоти; кумедний зелений струмінь стікає у відерце. Очі міцно заплющені, плащик м’яко рухається.",
+  "semantics": {
+    "core_scene": "Two distinct visible nauseated heaves of head and shoulders over the pinned bucket, braced paws, and green fluid texture advecting continuously downward into the bucket.",
+    "omitted_optional_action": "Cheerful recovery and moving-bucket return omitted; unique vomiting scene retained. Fluid stays attached mouth→bucket under a bounded deformation, no reversed frame trajectory.",
+    "irreversible_motion_policy": "Do not reverse liquid, gravity, particles or dropped props; render only explicit causal local action."
+  },
+  "source_provenance": {
+    "kind": "derived_decoded_video",
+    "source_video_sha256": "cd24cda2f1d0f85a3b219b7e07fd0c6f9b7ae907b5b497480fd98caea97850c4",
+    "ancestor_original_keyposes_sha256": "828c9c903b519d5dc7f242d94d0fb4ce7e6ac68b4d876ccaa7783b5c7cdb5e02",
+    "ancestor_original_status": "unresolved_original_not_recovered",
+    "derived_source_bundle_sha256": "829051b5545f9c78f596f9a93bf795181eea10e96af387ace1a3e294ca04c9e6",
+    "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index"
+  },
+  "source_frames": [
+    {
+      "index": 0,
+      "timestamp_seconds": 0.0,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_94/000.png",
+      "sha256": "aa8aca23ae0117156cb87ee8ad0c082c060b3d178a47eedec7bc195fe81a45c3"
+    }
+  ],
+  "local_mesh": {
+    "source_frame": 0,
+    "points_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        511,
+        0
+      ],
+      [
+        0,
+        511
+      ],
+      [
+        511,
+        511
+      ],
+      [
+        256,
+        0
+      ],
+      [
+        0,
+        256
+      ],
+      [
+        511,
+        256
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        164,
+        76
+      ],
+      [
+        92,
+        141
+      ],
+      [
+        158,
+        191
+      ],
+      [
+        230,
+        140
+      ],
+      [
+        322,
+        136
+      ],
+      [
+        417,
+        167
+      ],
+      [
+        465,
+        231
+      ],
+      [
+        215,
+        260
+      ],
+      [
+        341,
+        295
+      ],
+      [
+        285,
+        309
+      ],
+      [
+        247,
+        330
+      ],
+      [
+        292,
+        339
+      ],
+      [
+        281,
+        360
+      ],
+      [
+        273,
+        382
+      ],
+      [
+        188,
+        386
+      ],
+      [
+        348,
+        386
+      ],
+      [
+        204,
+        473
+      ],
+      [
+        330,
+        473
+      ],
+      [
+        271,
+        440
+      ],
+      [
+        150,
+        368
+      ],
+      [
+        352,
+        371
+      ],
+      [
+        123,
+        464
+      ],
+      [
+        77,
+        422
+      ],
+      [
+        59,
+        352
+      ],
+      [
+        109,
+        303
+      ],
+      [
+        186,
+        404
+      ]
+    ],
+    "parts": [
+      {
+        "name": "head_shoulders_paws_jaw_cape_acting",
+        "displacement_xy_px": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.9,
+            7.6
+          ],
+          [
+            1.9,
+            7.6
+          ],
+          [
+            1.9,
+            9.5
+          ],
+          [
+            3.8,
+            9.5
+          ],
+          [
+            3.8,
+            9.5
+          ],
+          [
+            3.8,
+            9.5
+          ],
+          [
+            3.8,
+            9.5
+          ],
+          [
+            3.8,
+            11.399999999999999
+          ],
+          [
+            3.8,
+            11.399999999999999
+          ],
+          [
+            3.8,
+            13.299999999999999
+          ],
+          [
+            3.8,
+            13.299999999999999
+          ],
+          [
+            3.8,
+            13.299999999999999
+          ],
+          [
+            1.9,
+            7.6
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.9
+          ],
+          [
+            0.0,
+            1.9
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -3.8,
+            1.9
+          ],
+          [
+            1.9,
+            5.699999999999999
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.08,
+            0.24,
+            0.45,
+            0.72,
+            0.9,
+            1
+          ],
+          "values": [
+            0,
+            -0.08,
+            1,
+            0.58,
+            0.08,
+            0,
+            0
+          ],
+          "repeats": 2,
+          "amplitude_modulation": {
+            "base": 0.9,
+            "cosine": 0.1
+          }
+        }
+      },
+      {
+        "name": "secondary_cape_paw_response",
+        "displacement_xy_px": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -1.4
+          ],
+          [
+            -1.4,
+            0.0
+          ],
+          [
+            -1.4,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.4,
+            0.0
+          ],
+          [
+            1.4,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -1.4,
+            0.0
+          ],
+          [
+            1.4,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -4.199999999999999,
+            1.4
+          ],
+          [
+            -1.4,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 1
+        }
+      }
+    ],
+    "minimum_jacobian": 0.5,
+    "fluid_texture": {
+      "source": "original green RGB texture in exact derivedf000",
+      "mask_bounds_exclusive_xyxy": [
+        232,
+        329,
+        337,
+        389
+      ],
+      "green_over_red": 1.15,
+      "green_over_blue": 1.25,
+      "minimum_green": 0.3,
+      "minimum_mask_pixels": 500,
+      "tile_y_interval": [
+        330,
+        386
+      ],
+      "downward_periods_per_loop": 2,
+      "reverse_frames": false
+    }
+  },
+  "output": {
+    "width": 512,
+    "height": 512,
+    "fps": 30,
+    "frames": 84,
+    "duration": 2.8,
+    "crf": 26,
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "maximum_bytes": 262144
+  },
+  "generator": {
+    "engine_path": "sticker-lab/production-v5/approved-generators/rig2/recipe_engine.py",
+    "engine_sha256": "368cee5c380af50c52a6c7b37a0b5f2138d21492d786294c5f0d5d88adf9e3b9",
+    "support_path": "sticker-lab/production-v5/approved-generators/rig2/repair.py",
+    "support_sha256": "627bde068b7b474df4430375a51941ededba29f0ee205913e8da14eb87c0b5a4",
+    "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/rig2/original-local_rig.py",
+    "original_generator_sha256": "1df3c0721691f969c1ecdba98be79763076ac033b2748cc7cbc944974fc9914d",
+    "original_support_snapshot": "sticker-lab/production-v5/approved-generators/rig2/original-repair.py",
+    "original_support_sha256": "71ede76a5061a1692b0dbb660cd3851dd946e44f246d6536bf09840358273cab"
+  },
+  "expected": {
+    "frames_rgba_png_sha256": [
+      "5b65cafee88ccd973d9d9e2f5e5fec14e1e9de35db353ce7d94202ae4d62ae26",
+      "034cb1e3ddf82f91ab12ad134d96acfdd0c50fe52a6ff7d29a43184569e59b8b",
+      "600a695a3c6c57a7794181cb6e075680a7d42ea923aded95e3e156861bb87c22",
+      "b74b3475d359f29453a0da4de3d90d6b416137f80ec55a553f70590d38e7319d",
+      "a2f998c304d9d5236aab7495bac494eb78e78eb95477ed017048ac3d40058b1f",
+      "aa06e6f7638f688bef33e9856a22604be1674afe32800e3d461a9fba7ea29f47",
+      "0ed23b50aa3fb5ade43c5e9770c4ee6bbb7808b2c89bf55326b2b04ca2c71249",
+      "b42a45e65886282bfcfe7904f1ba6dd3073e338f2a6cbfee1eb62ea5d487eb01",
+      "94db7259d270479f641192b91bd9384474521fd2db9feba33c412f0ec0005fea",
+      "7de0c4b9d976370aa6f217eaf270c78861c92316acd755d333d6a3b3071382fa",
+      "0c349bc5d51228eb50746ce32ba677403ca22eeba67802cf0800cb25ee7d1cf3",
+      "43b676d03c54e392916a2e345c6ac00934c61199d9cf49a0e6f2182665335d34",
+      "1d27faa791f2110c586f5e27646d825034885065e7352593d13b96186b987ab9",
+      "c1a961eee21c2d1a56a2371ed1aa6c4d0efd0eda390919a57af3559d3c2def0e",
+      "bdb85474455c4ea9c7264c71bede3a06a350c889e72586d89a3a80fc7503bf6d",
+      "9f3e98f6a0f60e50044e942c5d8a0ffb30fbf1370a9326285a87a09f43ae90fb",
+      "835d5370bc41c8cbbc74043e20848954597198d9e3b9a9e0af8c96b66ee3590f",
+      "2d5be5b07e4820f55dca66b57889f01452f3adf7217f5502fdd44ba03a20be8a",
+      "ef7f78770301556bcd71b6d791c312c608613e9e451c19286da452a6013f761a",
+      "3ec7a2801d9b22437325c525a4f87661573b700c8162c54a021d10b5e3dfc8a6",
+      "9ff3722d135c7d2137d7cea5b24fe4bd5b9a29dd364fa6ff0d6ed833e932c215",
+      "0fb5ff28f4e10d93a955f6f6ded04bf0a39a776acf238083796c0805eee6f3b0",
+      "ec5a420976bc477f87a714c653bf6349a78808b3a883af86586f9e7ee0be8511",
+      "f7e111d389fb0b229844ebc94185dda99b360e915b8fb074958d74ec3a3888f0",
+      "84cd835f5780b002233fbc5301a859dba97859955813f29f4fa997066cdf0c6e",
+      "24d56dd04835e144af8bdd135e5ee78185b159dcaec7134129ac5653dfaeb5da",
+      "a015d74dd1672934d22c1bd5c41e020899858372c5d069fc5e1b3b099b07ac68",
+      "c45c98577a1e6217047f0ec49cac530d92af34940f67e3f216a9be583817d790",
+      "428a01f02b2013320fe598d95c374dfba354a5b3418369a0f02c09843409511d",
+      "15bae04c6762860ce8cb08b7ef5c687121cbd10cfd8adee56adf80eeea77b2a3",
+      "fed4c8c238bc17553bf6ac68032e759e167a2e2f6810bcb08cf246b5dedb8906",
+      "a35408e286f653a0c334ad29bd0a34717f057011ff4d12c90ace2e6e0f0646bf",
+      "2d432d47a948ea7c2ae5da20c5302a4b887b05174f861af9927703be23ae8322",
+      "6135ec6b055b4ab31c9b3be4ce9d4955f7a5f18d141253aebb07012495100950",
+      "1a4a1c7518c25057581cae6f952c86d5e6e6458d531b38427cb11af7748f593a",
+      "06f2c0fc24490b64af2d41e7e4ff98cdaa1359b5737f3697ca9b1c626bc600c7",
+      "e80b2504bf0040218af12b0536b0176f506fd75bb231209999985a5fe003af10",
+      "9d8799179efc548ed4678558a66a93b3204556d5ee1e6c1decdad1251811403c",
+      "31e465dd73e9150307b7ccbc6cfad124a7b8619159d22f053d37996d65f5d29a",
+      "031ab8eafd1ea5e1651ce243948e5833a4612542418f517d876d4a67a01cdd96",
+      "5474a475448e4a2af98cedd34f976254b0658e91543af7ccba3ee807d798aeba",
+      "c5678a461e2281174e467d074601bcb269ee2428634fad91e1e03e2987f69082",
+      "5b65cafee88ccd973d9d9e2f5e5fec14e1e9de35db353ce7d94202ae4d62ae26",
+      "3fc6e02f9dfa86c1a18f8f2fd10472ea9e92cb444610e65f199d26faf47c1557",
+      "7c8035884e886298060adb5ed3fa6a82bee1c5fcd20a43f4b7f9598a278da3f2",
+      "9d0c147ea9d2bf1b1227297e645f5517903940ac6f5a2aaf899941e5a00e63c9",
+      "5ee055bad829fa42bf267ff53d90f9372eddd64158d6d918ec39bc755d190b70",
+      "3f2beade7ad808d336c5ba216a3bd842f3a2b8bf76be05aa1fe37814178fee5e",
+      "c5050f17c5953238b600db1dbbc208982e98b3aa6914879a1152872e79558907",
+      "20cd789d8b2346a4210751d4325e7affbe0ca4152dfe5b8569e8ec8fb5242979",
+      "83e56b4ac13317826f4208f41ba488a77d7a7750782e70f081e658377d820350",
+      "bc1d0f7574802573445bc54ae02e8da8fdc141706df000b3b72c1ed2ca47196d",
+      "05a75f8795a6dc307bb5301b85d0e7b784f3b35ff594235e9c90ac86ea8222a3",
+      "446d56214a19240dba633cb113d9b7a926c2140cb36e9dfa23921cc41f9f302a",
+      "473f6738dba3ae326fc33f67f28ebf06e22baf07781b736011a8c854430fa59e",
+      "da2e4b537d814b21cc36e1d1f94b1f898953d35f857fff12fb16e6e16d8004c5",
+      "21f2884dced513187e6ef31c8089241730d17f1952e618874f85643e768e57c1",
+      "3c2971a6150f4f50f478a79d71b272d864c99cd6c48b393f87b3ee284fa1c962",
+      "a070423ef14af8a6b81dc46634b1cc9913929c661a79766a65ed2354e8ad5e00",
+      "151b52225e44f9276f97bb888882964615a71a5f123018155bcd9c66f8217004",
+      "439392c963e87e7093df07a3f3ce24ef15a3cf6acce8a4ba102a5f77ecb62cba",
+      "582251265cd1ba7bce20520acaf9527b4a12d4ccd215d8a0023094a898a2a0a7",
+      "69be682d73e4ee61fa4868081615b8ddfb66b3b2ec68fae4705c56cbb29d4399",
+      "5507355fc436371a5bbbfd144c9fcfc9beeb9bffdff32066d5a070468af56e29",
+      "7dea223829a05ca7a1d3858260ef77ecf05845645b6eb4ec0c39f2e5587f40b9",
+      "57e40c404097af23a98f501d10fdd76e3082510ca39c4f2ae0e5da1a2d933470",
+      "b934970a9070fa7a215e121b7a16911be969485067fdb10c22fb025bf93b6e38",
+      "e570f0d7b1aa753cd67702a5020ddf156d53575545bf248b70191d16f27d3498",
+      "b7b5a1fbfc2b9de35f88972065efefdd2682a176cdf5ea49c332dbe6ad4f2f15",
+      "e2b5d3e4aa3e0922002eba48f42ca5a2764c5a274c1444cf90c0b21095ddce82",
+      "72d7f002fd91abadabfc53fde12fdb6ef83098f730fb17e4384ac100839c59d1",
+      "8f09fb3ce45ac7c2416a19b4c1918c3d4d37b6931c63d673d35b5e68e7a3b7f2",
+      "a2b1e7e6445413be513e88ee246760b995348e94caffbedb2aab0aa157bf807c",
+      "50fdbc0d036c3b03108626bf34b4309a4a3620b8afd5356fe13817b219ce96f3",
+      "301a6bf64ba7d263c4eff122cdccdb4f084860c4624e091d3a5659727cfb1bd0",
+      "5326a52e98ae42c1bb0dbdfde54f197a1fd20c0bf803c12fe49e03c814110f8b",
+      "f882c114676a0fa44ee44b164958513b55e8552bea093d600971c77afb7f4c05",
+      "edfbec1e2896c9cf306f65a440535fab89ececa8f7be44489158eb48f078acf4",
+      "42f0128a387321c41cf6c1e2c647709d1ab4db4f718a6a1127d8b47f919de1ab",
+      "a1c4ee8e2f2fd0acb5e156771a01aacb8bf1922c9f16fa7c2b0d9a2efa4af2f0",
+      "a12971baa1370b1c2be94ba457f81618a1658227371c8ac5157013bfa2fc3233",
+      "812867578aa1962e82a6799f4fe1d778906c1abce4be60109411237a012fa08b",
+      "72c0db4efc15106b453681ea4810ac8069bfa252a545884f02780c97e48de039",
+      "055914dda43cb8e9045192871d0ddb13e422b97b601252a132ab00515ea558e9"
+    ],
+    "decoded_png_sha256": [
+      "f59ca013132eecb88e1c2b18fb893e307bd166fbe9b86a0fa567427bf346c50d",
+      "33bbf4b70afad561d659bf7cc2600916110082d7cef693c56354bff67ac308a1",
+      "647712a66d0d67c857981805a3520e60c8a1ea7587206ec345dd3e21bf1f4415",
+      "ee1c9542538e15192fdf6bfe6ee0825ab8637e80557d864f575ce85d1f1ee801",
+      "a5a0b591bc3baf7f25ad0461c231d548ca370a59bc4c970c470b8ba570bc14c2",
+      "55dfa89a5f5e802f4cbbf312ff0bfe784bd5998dc2d975e0dab4072431ef5b59",
+      "f573f2592c348907e72c63a0fd78e507a9a3e40988b1b3a8b4862f8954ed9d4c",
+      "e9c4f1f121e378942acf427a7984c7e4adee0cb303cbe12ee35f7ae56fafd696",
+      "c63afe3300fd3f43959642a64757d4f89f45a0984b31733087ccb07e473c251f",
+      "a84ff64911f6895a38b1513817bcc8fa3fb7bbe20d609533d3d2748be9091ffa",
+      "d93018c9ac7e34fc97ab5af25bdbcbaa04ab1e5e68e6cd3664bba0b907758248",
+      "1ea13f2573c42698ae1a7b2e2ed3b05a168d9558a75b762dbe12940ae5508c16",
+      "859c42bf720fda15e0e198ac6b43d3c9080cf24b1fa9f849634101d736036694",
+      "46256a68fdc633c566c19a8c0020309aea571f7aff2befa05ea03a754cca9a62",
+      "55924585ea4f09898551065b9bdc9b3970188efa4008e3cdcf8c7956850210ab",
+      "67100fae2e8b2e5417d4af34ea6761ab11e23fe73afc6766b6a84dbeee31ad9a",
+      "fe4fab335e9f4709718e4de67494dd64b98f234b1a552f7988c6fbfbf6238925",
+      "667f55c5a79916a30dc04943998176093aced8d3a030259925e70cb44f3b7729",
+      "4966db1bd159e4e2dbccf6e4c9e034ae4db8c4a4a32e3eeec0de9cdd44f0e7a9",
+      "12af25f00cc890188350c6a11d048ed0de403b6af9775ad276dd373a198a8190",
+      "554dc30f393db0e455e2e3c6ce7947f1752d22946be70356aca8967fb3972667",
+      "f4babfd072c7562d096b2a498089893ccd0f95bd68f7e600790c3ae02d0155d6",
+      "4e5217d40bc5c34d3d96c3b8ac9c71837ebfe881171f64208b01a8722e8a2927",
+      "2c94b204a06e0b2a9890dea9be586d97477d4ba64c5a401a4db28c3681b2e74f",
+      "fce065cfb88728244e3fee28c4d6131d3e9727a197bdc7178e6c55ff2eac417f",
+      "6ce63e28a7981217e3eec2f971a22eb74e8f43d242fb8858f81484a160fea9b9",
+      "013c53513b95862d6a252cca6151732eb70767abd538dd0bc93a8a5e12a7be5c",
+      "380c1f4412e6b43e081bdea4520224f38b3dd76b400897bfea8b11c10e07e8a1",
+      "2111943192c2ad9c77cc9287d5e9ce85ac0f537fc927f7a8f1d204cb019a6728",
+      "70c70c4d71ac759d893aa6d48325cc357fbf533401ddfb27549487c7f32a26a7",
+      "704fa1a46e4c83f67e47e3f1a9e07f7d9a91c965c7374d9a89fce4be0cab819c",
+      "68d8c1bdc9ffda00374ce833ad02fdfcb32bc0fb25181bb99ec69a9c9afbe719",
+      "b19e98080fe7bdf0329f7c807fd1a80fcd277f5990a113afbeef5571ffd3e2a9",
+      "128156b40b09e4591f981fc8cdccde6544b3ca962239189b821eac338691efe7",
+      "631b7426078e0e4598dbfe6b15159f2ae2c4458ca9ecccf4a051d63987d13436",
+      "e817352a9db2559dae6d3e7dd6bae56fea431d86508adff17d02d3b096746710",
+      "fee9910124d81d8dcd92dfd0d6e997ab72b76471b8ea901e363623b15923070a",
+      "0bb141f94647bcbbbce89c162d1d500412cdcfe3612a4c5ce136e9f1da2fc2ac",
+      "d46304a6c44e11cf3b8ee5dd0f8352bc514bc5531a5d6eab73a877e503186fb3",
+      "78b2955e8a71a90a0a86a83f5f2f88d552d2de851019362c015287434e9c8463",
+      "cd86dc1d6cf83189ed8fea47e653ee4790f565f1b44b340453ecb987b8e7c6aa",
+      "6c07ecd7ae071cb88a8dd42dfe64055503c51a5fb24c788027c283b3c1126c51",
+      "09f2c1dc676c9eee086bc81d8d3fbd51216fcb3db9fa5f55fcf086a13912e113",
+      "e70a8b6ea69ad3af6cad3ebf6e910f911b1591464e2356a46dd5098e4ce70dac",
+      "fef005b5f57e2ea638ece80f4775f649f0c591ba9c9ade9bedd391fdfc36b7c5",
+      "d0a6ad0b63489808c3f5d358dd5b835cb97a2180c70cf30b922824e241d087f3",
+      "6a5d952ddef532f695df31753feaa316b6e255db0ef7ca67a897a51bd1a29da2",
+      "0d046aeeaee801a158eba00826682f505cd31113de214708f683b3afd1814372",
+      "0981b90b2578497de4f827a1c81938d53da2ddbd5e5cbb2210dd47d6ffdafbd5",
+      "586103a9aa7c9bb529ea6d6d2f8b00d3ec09c408c44b974cfaab64069e842f0f",
+      "bb04a5e6de1a97c4fea39a5b562bcf29c5b886b458d376ce5f545890f4f6a6af",
+      "48d76f261fc3cedb2007e516ebbfe9aff175c7db7648ddf337e910502f0e53de",
+      "14ae0ed36e9012a41ee59d29b431ea5d459b3c32964dd8138f994d4f1d6532bf",
+      "69d07b6bf953d1b03ffc41907d3fb3394cac4dd08c4826cf14fda112cb82024f",
+      "08c4ca67ed0eee9948be3b779f52b719766289fa25d721093d6db5b6970700a4",
+      "ce0c7d1805499796863d5a1153668b97c9b870a2d3ce07f35223ddba8fd2a8c8",
+      "ea0c7c6bb338f79dee8c2527223ef7e18e562c114008ac2fb467be40b2e2a9de",
+      "0c1f7837206a20c06d55ec0dafa103d9f5748953008b6e5abbf3ac9af585121f",
+      "6e26f63e38864ab2577a8004b9d1ce3c0366e35ccf68341b1e3f4e3f068d7fd5",
+      "130cb5f29c28e1f81233d1be5f224cfb18ed959600f264fe62468205a4cfa75a",
+      "4a46ae16b926dcb9ceb188cb1b5d9c2ecf8a08852ea300763374ab9242711eec",
+      "5e1ae8a82be8bd8b3322d16c1062d5540a8a1bbe3a4afe8a2b17200fbd06f71e",
+      "41827279b6515d962fb3ff1cf125cbefb5a4001fde7c2208b405c59852b72486",
+      "d56cb1aa3412a0679105b8762160d91758fa8bfcc4447444b1b078f712e7b4e2",
+      "ff86b0b5bf0c559d0d8bb7d604b158e1db413de195daea926655d42bd99c5407",
+      "8b0e5f903b9cba13b314c94255b343dd371a7fc92e0d96085766db6eb2c386a2",
+      "9b41bc1ef6b21ff066ec9746d3d6e7e264e787bf07ca77ba2857b8709c1f47f6",
+      "8c76f4a4374a45b73b09be254a7112051caf82491c9f3f0f679d56b2a7e1ed11",
+      "1e97c5f113c38b93327d463576e684855171da8ce4db4153f66d7892fc86d39a",
+      "ebf46fb983ae1a0c9187b19ab1f820f32b6f1cbe429301bd364e570643a39ae9",
+      "b71f2c14b14d7e59e04fcc90a0eed5772daa7a57ea2543967dd761d3b47868cc",
+      "c7e2d6fc25d9e3567918bc53fc8a47a5ef6b08eec4972878d296803b43c1a5db",
+      "3868809ae55912ad9986a2ef43e871f9978dd85b1d0a758c36c0afbe4021fc8a",
+      "1b0b3dc7bb6124d86a4d6c8b4f3b7a3c0c9fbc817a6c9858e07793055b9c5475",
+      "26d9c9ee7cb903136b3b5d7d81e98fb086932a6809ad1b311e5fb22446308991",
+      "4de96de639a2117b2b2c2540573c22db80cfcdd86fee7862adc47b2d89236e85",
+      "d0c3ea46a03020413b370c78fe4b684003772422673f7cdfea5523073aaa3183",
+      "4042f304bbdcc6c94a93f24eeaeff0a392cad526f6e2d24ac0bddcf4352bbce4",
+      "41f122026802bd28f9ee84635250d82f901dea33d11a936fa4d170cfe424781d",
+      "f51498895c645a8f4bb2eb82de8df2c7533b1dbe4f1faad95375e79bdd13f8f1",
+      "90d0d684cb65a36cd02c63b02eac0f2e3e1aa42794dbd6c66d6fe0574a40e3e5",
+      "22e94a6cf2fbceddf83d77b43f062d47a9c2a848bc8bf0fbb8adeb75948f34c0",
+      "e533ef4e3ef11ad7b44629dcead8204d091256a7a4cf354aa9c72741b07ee8cc",
+      "264fa3c8de6b4368752d402724ba5dec861c26157cbea1b448b7fa92c7ffd71d"
+    ],
+    "output_sha256": "c15fc28be190c6cde2f423a336af245c65e71f09bb5bfdc93596b2c627d33519",
+    "output_bytes": 248937
+  },
+  "approval": "Recipe alone does not authorize staging. Explicit per-item approval and independent exact-output QA required."
+}

@@ -63,5 +63,18 @@
     "No 1.13 production activation.",
     "No new Telegram sticker delivery receipt.",
     "New whole criterion council and human/native/mobile motion remain unclaimed."
-  ]
+  ],
+  "current_prepared_code_hash": "868cff70bdc68619d82efffc86e9512eae1388e4e29bf28275c7d775cd5e5bca",
+  "startup_gate_prepared": {
+    "required_flag": "LUMEN_REQUIRE_VERIFIED_STICKER_PACK",
+    "existing_service_enabled": false,
+    "approved_ordered120_fingerprint": "589ce76b16ff3d4fa47ed71fab166dfaa8eb80e962a05ceb2e2aaeb91ce3181a",
+    "independent_tests": "36/36",
+    "independent_actual_controls": "14/14",
+    "full_new_suite": "pending",
+    "production": "not activated"
+  },
+  "actual_main_prepared_code": "8a8d2f86cb0551064f203806b0d2d21197abf4aa",
+  "unreferenced_startup_preparation_commit": "52238895455c2471da2961622854a141e463fe14",
+  "startup_preparation_main_update": "rejected by automatic review because code-only main advance conflicts with joint120 requirement"
 }

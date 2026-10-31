@@ -1,7 +1,7 @@
 {
   "version": "1.13.0",
   "stage": "joint_candidate_not_deployed",
-  "code_hash": "263d25ea9ca674a87abf6c81b96a51753c99a9f56e3f72e4dbc77739ad80a8f2",
+  "code_hash": "868cff70bdc68619d82efffc86e9512eae1388e4e29bf28275c7d775cd5e5bca",
   "server_attempt": {
     "tests": 1086,
     "pass": 1085,
@@ -24,7 +24,9 @@
     "unchanged_server_tests_passed": 1033,
     "affected_current_module_passed": 53,
     "total": 1086,
-    "single_new_clean_full_run": false
+    "single_new_clean_full_run": false,
+    "all_current_tests_covered": false,
+    "scope": "Historic server and fixture repair; additional startup config/main has only addressed verification."
   },
   "production_version": "1.12.0",
   "required_stickers": 120,
@@ -34,5 +36,12 @@
     "No 1.13 production activation.",
     "No new Telegram sticker delivery receipt.",
     "New whole criterion council and human/native/mobile motion remain unclaimed."
-  ]
+  ],
+  "startup_gate": {
+    "strict_flag": "LUMEN_REQUIRE_VERIFIED_STICKER_PACK",
+    "independent_tests": "36/36",
+    "independent_actual_controls": "14/14",
+    "fingerprint": "589ce76b16ff3d4fa47ed71fab166dfaa8eb80e962a05ceb2e2aaeb91ce3181a",
+    "full_new_suite": "pending"
+  }
 }

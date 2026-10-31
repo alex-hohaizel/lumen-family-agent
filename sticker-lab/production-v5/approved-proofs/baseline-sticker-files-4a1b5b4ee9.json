@@ -1,0 +1,1400 @@
+{
+  "schema_version": 1,
+  "upstream_commit": "4a1b5b4ee9eb7fa031aa9c451732cdc4a03b2d9e",
+  "upstream_tree": "d3e12db22205981d59a516d644cc80abca1d529e",
+  "source_capture": "Exact local synthetic baseline d66 tree verified equivalent to upstream; no public clone runtime dependency on synthetic commit.",
+  "files": [
+    {
+      "path": "assets/stickers/lumen_01.png",
+      "sha256": "3f22deb14243f58b1d7f12ec2e8353a39c65277f72d3371fe4a29f7b29b1ca69",
+      "bytes": 202363
+    },
+    {
+      "path": "assets/stickers/lumen_01.webm",
+      "sha256": "52589f065a58d472224ea6d2e2c50b7c89638dcc55d76d0f9dba1a57975b8711",
+      "bytes": 253426
+    },
+    {
+      "path": "assets/stickers/lumen_02.png",
+      "sha256": "84f8a1fe8b6f6d67ba898874dbb11db6287804e5eb87cb39138aa34b279de811",
+      "bytes": 213334
+    },
+    {
+      "path": "assets/stickers/lumen_02.webm",
+      "sha256": "9a3474c37a05249acb677a0ad3b8b6852dadda7265458f73be2368cbed65f20f",
+      "bytes": 254037
+    },
+    {
+      "path": "assets/stickers/lumen_03.png",
+      "sha256": "e55ce8af7b39755c6d4cf8dc2a6ae134fdb361d4450cad1d99cc0cc71a20a45a",
+      "bytes": 203684
+    },
+    {
+      "path": "assets/stickers/lumen_03.webm",
+      "sha256": "b936f05a9005a8de681ac8d7f49a318ecc577cf8fd277f16701849482930e951",
+      "bytes": 250321
+    },
+    {
+      "path": "assets/stickers/lumen_04.png",
+      "sha256": "7da014ecfce64b3f96b829fa3cfb022584b93b1e9e48747edf7af53571d6e21c",
+      "bytes": 209211
+    },
+    {
+      "path": "assets/stickers/lumen_04.webm",
+      "sha256": "53f3cd771ed2e7fdad0f6c7535094505263422b065ba3aff8bd6f84d2aee9ea9",
+      "bytes": 253458
+    },
+    {
+      "path": "assets/stickers/lumen_05.png",
+      "sha256": "a523dedd8932584450c274b849194e5dc878df3d322919f60523af639bf3a125",
+      "bytes": 251851
+    },
+    {
+      "path": "assets/stickers/lumen_05.webm",
+      "sha256": "d616e616c02045de8603f94fd44f7217842a53a5597cdd492ec12e36f95b2b7f",
+      "bytes": 255342
+    },
+    {
+      "path": "assets/stickers/lumen_06.png",
+      "sha256": "dc062354402a93e953c9f8dced98fd0090c94e554fdd3e8bd43c80153d754558",
+      "bytes": 205632
+    },
+    {
+      "path": "assets/stickers/lumen_06.webm",
+      "sha256": "475565c896ecdcf1939999a8dde5464deb3a1fa73bed36b09a210e4271ff511b",
+      "bytes": 250978
+    },
+    {
+      "path": "assets/stickers/lumen_07.png",
+      "sha256": "dd0f4425b94d8c9bd784d0d7bd686bb5965ab046b769724aceeafb3e599f5603",
+      "bytes": 205599
+    },
+    {
+      "path": "assets/stickers/lumen_07.webm",
+      "sha256": "31a69d777c9749001f228508a83def566fbef101a3c6ef2cb745f5cf8b59204e",
+      "bytes": 260691
+    },
+    {
+      "path": "assets/stickers/lumen_08.png",
+      "sha256": "cf223bba2c17a9f6ec1204a3585211403eaf2d16d7ebc70cbaeaea56fc943c7b",
+      "bytes": 209607
+    },
+    {
+      "path": "assets/stickers/lumen_08.webm",
+      "sha256": "481e519b51a61214678c0c6d8019f4915c42630479da75f05c225dc12a405a4e",
+      "bytes": 254967
+    },
+    {
+      "path": "assets/stickers/lumen_09.png",
+      "sha256": "7ae35a135f418b1390e9902e6b21fe33f58d9eb14fb27c47f395d3093779b439",
+      "bytes": 211699
+    },
+    {
+      "path": "assets/stickers/lumen_09.webm",
+      "sha256": "f25b31e84a756e216c1b30f5a782e8c5bcc30b640be1812ba731a2aae0bee42b",
+      "bytes": 259587
+    },
+    {
+      "path": "assets/stickers/lumen_10.png",
+      "sha256": "96b72e5a6e69f89c76d4f63b01133a30e0034da462d16a14fd78a3f71829dbaf",
+      "bytes": 201955
+    },
+    {
+      "path": "assets/stickers/lumen_10.webm",
+      "sha256": "a89459a65a09c00d0d654ef973f7f8fa167501c98a6cf1469efb3e788ffca2be",
+      "bytes": 251601
+    },
+    {
+      "path": "assets/stickers/lumen_100.png",
+      "sha256": "6f0b23eccf91e3e0a7d330d677e9f7f59dd6a4aeb4bd475adb20818adfbeaa84",
+      "bytes": 281183
+    },
+    {
+      "path": "assets/stickers/lumen_100.webm",
+      "sha256": "2f51d0aa27f6bd3c2dc839af5d7b0d3165d3a22eb96c1e587107a76f1fd58721",
+      "bytes": 253484
+    },
+    {
+      "path": "assets/stickers/lumen_101.png",
+      "sha256": "42026d9a6cd026211d1edd981934f225488ee043d2d29f08aff6fcf525e829c3",
+      "bytes": 262155
+    },
+    {
+      "path": "assets/stickers/lumen_101.webm",
+      "sha256": "3e8f88cc32e2f6d0015172a5bf986d577b32133136f69d58e5d57628cbc13da9",
+      "bytes": 260997
+    },
+    {
+      "path": "assets/stickers/lumen_102.png",
+      "sha256": "5899998cbd4e2ad65e7896e0b2fa0588847d459388586a279e641879aebbeaab",
+      "bytes": 216928
+    },
+    {
+      "path": "assets/stickers/lumen_102.webm",
+      "sha256": "b747f927e610b25964dbbaa91118c3a10eccbfaf77b3c0572c607a328f3e961e",
+      "bytes": 241114
+    },
+    {
+      "path": "assets/stickers/lumen_103.png",
+      "sha256": "d347535d39b808cf6e258e31446bc0bd1a86aa575988dbe0a92f1565c7435a15",
+      "bytes": 265722
+    },
+    {
+      "path": "assets/stickers/lumen_103.webm",
+      "sha256": "ec6275b30e185e413197eac8940089a3b65438723d0129527e1d14a54755d5d7",
+      "bytes": 251617
+    },
+    {
+      "path": "assets/stickers/lumen_104.png",
+      "sha256": "5bf360cdb5d37720fbd86ec7ae4abadbb96306de7f895b5f5104ffe6df5a6d35",
+      "bytes": 250076
+    },
+    {
+      "path": "assets/stickers/lumen_104.webm",
+      "sha256": "1c04deab5af7a559f094a15b05d646f33cabb2d200e69d20e7e2ffecabdbcd51",
+      "bytes": 248659
+    },
+    {
+      "path": "assets/stickers/lumen_105.png",
+      "sha256": "5b4b716bec890326b654762f0bf06b8df24b17af0fb2eed41b7e66e461d7b925",
+      "bytes": 220487
+    },
+    {
+      "path": "assets/stickers/lumen_105.webm",
+      "sha256": "27ed3a5d9019f1730b742f4d0960c77f50c1b0f65d4bcd51a70096f2d1207c88",
+      "bytes": 250000
+    },
+    {
+      "path": "assets/stickers/lumen_106.png",
+      "sha256": "7fc1da11370a9a90b33c1d8ddae762201a4323636e9602e90051f412f2f0267e",
+      "bytes": 239704
+    },
+    {
+      "path": "assets/stickers/lumen_106.webm",
+      "sha256": "b0356e2967eedb107a9f56f6eacf51aa9722a3c131d888d59d528606123e478b",
+      "bytes": 257237
+    },
+    {
+      "path": "assets/stickers/lumen_107.png",
+      "sha256": "9b5082ce051ab5e19db467101283e8550905b1065d4e10cde98364222783bd26",
+      "bytes": 221471
+    },
+    {
+      "path": "assets/stickers/lumen_107.webm",
+      "sha256": "28d929f7dd291b44952f3d36ed67a03dbb269e76e969977864d6b2935e8e961b",
+      "bytes": 246269
+    },
+    {
+      "path": "assets/stickers/lumen_108.png",
+      "sha256": "76f2178cae1ed378b1cdd576f848fa5f4cbc8bdd0d955850d4ff2e5774e2f4d3",
+      "bytes": 215664
+    },
+    {
+      "path": "assets/stickers/lumen_108.webm",
+      "sha256": "18870a42d7685684296512f812d2584f31abbeefafad569475c7fa1af3c1ce3f",
+      "bytes": 253596
+    },
+    {
+      "path": "assets/stickers/lumen_109.png",
+      "sha256": "38fb29d58bae799027cd5f23b7a2e48ae6c9ca832311d08eed335ce8f6dfeb47",
+      "bytes": 242447
+    },
+    {
+      "path": "assets/stickers/lumen_109.webm",
+      "sha256": "762eb18020859695ef1066473572e32168ebde6ffc3b6d0a2966c7e6cd099825",
+      "bytes": 256303
+    },
+    {
+      "path": "assets/stickers/lumen_11.png",
+      "sha256": "9605e67cfa93f09f5e54e634ce490e62e6ac9d7d4b9abeea546e6f371c4e9c28",
+      "bytes": 204194
+    },
+    {
+      "path": "assets/stickers/lumen_11.webm",
+      "sha256": "c908029d0b648deef9e128e513d95eca1a5eb9b96ac226da0d7756522c1d1f2b",
+      "bytes": 256806
+    },
+    {
+      "path": "assets/stickers/lumen_110.png",
+      "sha256": "9a5845a5e4c207e3861a62d983cd8b1e27d63c62434bd6d82a05dc72c975c2be",
+      "bytes": 222896
+    },
+    {
+      "path": "assets/stickers/lumen_110.webm",
+      "sha256": "a6c5a0be3cab00ddaf5032768a92dfa29e9e17907a69b336d0fa9a345421e589",
+      "bytes": 258382
+    },
+    {
+      "path": "assets/stickers/lumen_111.png",
+      "sha256": "65ebe0413fa9b882af473f15d385b09880d1e84d439d34f910c6889d76688f17",
+      "bytes": 213477
+    },
+    {
+      "path": "assets/stickers/lumen_111.webm",
+      "sha256": "8ffc45d5ab7a2f510d7153b49a3a10a757fddb6c82c061050f7152ef497346ee",
+      "bytes": 258768
+    },
+    {
+      "path": "assets/stickers/lumen_112.png",
+      "sha256": "6f6812fc96b5ae714f09ac1edb1d834d054bc8445de83b26421c41a012087c04",
+      "bytes": 212408
+    },
+    {
+      "path": "assets/stickers/lumen_112.webm",
+      "sha256": "1e3ea553a68600194703170824e446f9b8ea64081c6a5d57a6d23f69ce882749",
+      "bytes": 255655
+    },
+    {
+      "path": "assets/stickers/lumen_113.png",
+      "sha256": "f93cc264ee2a4a816ec7f9f7b44e486cbd8edd5fedb9e9e9456114d1a59bd620",
+      "bytes": 225523
+    },
+    {
+      "path": "assets/stickers/lumen_113.webm",
+      "sha256": "68256ad10062e85a584561067d29ad4c10d8b96f698c9fc8ea52bcf6ac431931",
+      "bytes": 248165
+    },
+    {
+      "path": "assets/stickers/lumen_114.png",
+      "sha256": "839fb191ba0c9449dcef5a703da7e7193e3e66ab7a560016ae36c652d3432a4c",
+      "bytes": 228397
+    },
+    {
+      "path": "assets/stickers/lumen_114.webm",
+      "sha256": "a23c5b7e29d11a64386440f9b10a11a8341d14197dc1f8ef0897b47c2789e296",
+      "bytes": 249489
+    },
+    {
+      "path": "assets/stickers/lumen_115.png",
+      "sha256": "586681f50f9403574e3443c3442f995c1f966300484986b2c709ec3cde425c17",
+      "bytes": 237810
+    },
+    {
+      "path": "assets/stickers/lumen_115.webm",
+      "sha256": "e5225575d4891dfe9e5e48bcd162f933924e092cf9896351bde9df73458af7fb",
+      "bytes": 250317
+    },
+    {
+      "path": "assets/stickers/lumen_116.png",
+      "sha256": "6fa7be250a90f77d9eb951eefa9b7e2ddce3c26498dff9d0966f85bc8f035839",
+      "bytes": 248191
+    },
+    {
+      "path": "assets/stickers/lumen_116.webm",
+      "sha256": "14f59e6138a3d79d9e7dd9c1071b6da00b5197b54a961c2f62f16dd9c3b4dadc",
+      "bytes": 254754
+    },
+    {
+      "path": "assets/stickers/lumen_117.png",
+      "sha256": "78d609ccb70bff3d47f6742ca0e0f11d7bce95a3154b2be7c814ad6b34fd7a42",
+      "bytes": 253390
+    },
+    {
+      "path": "assets/stickers/lumen_117.webm",
+      "sha256": "14d65d0e209c3d9842151c8e3343cba19c18213b2a282eb7ef577118dbf3e56b",
+      "bytes": 252636
+    },
+    {
+      "path": "assets/stickers/lumen_118.png",
+      "sha256": "932a72db11082cf5506f834867f1265dded9b44774b43aa7736ba9664e9e9e5c",
+      "bytes": 244648
+    },
+    {
+      "path": "assets/stickers/lumen_118.webm",
+      "sha256": "ec8e1d9fca3bfe4948fa7bde8cce1ad2addf105185df46b7fbde639387a5692b",
+      "bytes": 261730
+    },
+    {
+      "path": "assets/stickers/lumen_119.png",
+      "sha256": "3f6b00cc056a0859a9be9f91ee4f4110faca828017efb76118921f8c2da10889",
+      "bytes": 231993
+    },
+    {
+      "path": "assets/stickers/lumen_119.webm",
+      "sha256": "4c92ee3c76e9418e84c9b76caff0eafed59ec48f2c43b17e7ef54883d8b2f917",
+      "bytes": 259716
+    },
+    {
+      "path": "assets/stickers/lumen_12.png",
+      "sha256": "337e80df4a86b6923630a6c661f71332b1e596b093694dd0456f7a2dacc251c4",
+      "bytes": 216171
+    },
+    {
+      "path": "assets/stickers/lumen_12.webm",
+      "sha256": "49c06ca62178b4425cf127aae55a394985b570c9963eca5c0301174aec9f6b3d",
+      "bytes": 250212
+    },
+    {
+      "path": "assets/stickers/lumen_120.png",
+      "sha256": "1ef305f903e821bb127f6948f63e79761e997181a8daf69860a4e5838585d737",
+      "bytes": 231017
+    },
+    {
+      "path": "assets/stickers/lumen_120.webm",
+      "sha256": "fccb430889742c658fc2d0d2078e34cc9ff323ceec02301377b9096bb62141c7",
+      "bytes": 237938
+    },
+    {
+      "path": "assets/stickers/lumen_121.png",
+      "sha256": "d2fddd88461cecf868a97a5aa15b52559a650fb5ee09868961c1663142a3c623",
+      "bytes": 248949
+    },
+    {
+      "path": "assets/stickers/lumen_121.webm",
+      "sha256": "4e3dd3938e66d06a0b10c0d712a47ad8ddc4bd7df466b7e0d371a2a31df3cf0f",
+      "bytes": 253122
+    },
+    {
+      "path": "assets/stickers/lumen_122.png",
+      "sha256": "262b858d66be2c9cd07888a50f339e1bfa290a8e3c08519871cc11c022a3e422",
+      "bytes": 220399
+    },
+    {
+      "path": "assets/stickers/lumen_122.webm",
+      "sha256": "097355173a61dd98b2fbceedf802a1c2f51e3eadd610f09e088262c543a53474",
+      "bytes": 260980
+    },
+    {
+      "path": "assets/stickers/lumen_123.png",
+      "sha256": "a51893488379304d857131c7b14d51a2147bb82645cf273ad77b6e8e55ea90db",
+      "bytes": 258248
+    },
+    {
+      "path": "assets/stickers/lumen_123.webm",
+      "sha256": "92e1533e2efc925d000e8b0ec4c03969c7fdf668cdfa92dbba41ecbaa6cc958b",
+      "bytes": 253217
+    },
+    {
+      "path": "assets/stickers/lumen_124.png",
+      "sha256": "0f0c2830b515091a84776cba925f96438f8700655945280d13203626d4b8ba52",
+      "bytes": 229435
+    },
+    {
+      "path": "assets/stickers/lumen_124.webm",
+      "sha256": "452e4c29f41caf2e8ae4b9e46680edf001444dc3dc3159cbfba7225d6e9c6a9c",
+      "bytes": 247436
+    },
+    {
+      "path": "assets/stickers/lumen_125.png",
+      "sha256": "7bf557996fc924bc759e770cdb8d50a3f4018882645e4ca2167d4386bce07378",
+      "bytes": 204372
+    },
+    {
+      "path": "assets/stickers/lumen_125.webm",
+      "sha256": "b69530e52ba65eba0374fbce6eda77c48a38764d5113a01249216da3b67fda0c",
+      "bytes": 252031
+    },
+    {
+      "path": "assets/stickers/lumen_126.png",
+      "sha256": "4c4c5eb5d3beddccd5068b4ba0165422ba80cf4943a0729e8630585eb3ac396a",
+      "bytes": 236596
+    },
+    {
+      "path": "assets/stickers/lumen_126.webm",
+      "sha256": "e768f5adda86f7ae03566ed9e54f44dde6bdfd01d1212b1fe817f9024330f2bc",
+      "bytes": 251991
+    },
+    {
+      "path": "assets/stickers/lumen_127.png",
+      "sha256": "ecb6466ff97d6d407627843b8a2c4bc7b46064fb567f1b04f29382431e7596e6",
+      "bytes": 235080
+    },
+    {
+      "path": "assets/stickers/lumen_127.webm",
+      "sha256": "e001a920767a3912e2f00900ea98240d4eff8167105ff2a4592bd5592e4c15a9",
+      "bytes": 258750
+    },
+    {
+      "path": "assets/stickers/lumen_128.png",
+      "sha256": "1205438c1f4508f87c95689e4b01c2ff17a40e7a4fa9802915cd38c9fdfe9c71",
+      "bytes": 245251
+    },
+    {
+      "path": "assets/stickers/lumen_128.webm",
+      "sha256": "c202e4fdab0d1ac898b1eb99587ca1cf85c0fbf855660949cb37eb21f976d1c0",
+      "bytes": 257323
+    },
+    {
+      "path": "assets/stickers/lumen_129.png",
+      "sha256": "722c10c7d71514111f34cb09922a928288c37a7598f1ec61258309f14c403dba",
+      "bytes": 246127
+    },
+    {
+      "path": "assets/stickers/lumen_129.webm",
+      "sha256": "d093ba0d473a3112a396dc409e37d513298438a2a10ab06248fee6ac01fb57f5",
+      "bytes": 249179
+    },
+    {
+      "path": "assets/stickers/lumen_13.png",
+      "sha256": "b736ca3cc2de7a7ae2d211f0ab748ec43dbe3cee49aca194abd0721763b0e97e",
+      "bytes": 225704
+    },
+    {
+      "path": "assets/stickers/lumen_13.webm",
+      "sha256": "d812c44977c71ab7cb9c14a4332416539648d00cc9e2849902e73bb6faf6969a",
+      "bytes": 248217
+    },
+    {
+      "path": "assets/stickers/lumen_130.png",
+      "sha256": "62601178f2031c18b0f46ce804adc8e2fad39dfdf79b4865ba06c16443b8b95a",
+      "bytes": 243736
+    },
+    {
+      "path": "assets/stickers/lumen_130.webm",
+      "sha256": "ead5493c35a5ff894605bbc0a65e5a2ffe5c9673c47ad959b9c1b8b315ab1a5c",
+      "bytes": 258341
+    },
+    {
+      "path": "assets/stickers/lumen_131.png",
+      "sha256": "1c9caa5ce241bbb8f0b003fa16265ac0ec714393431e27a3fc921c0702c2fff0",
+      "bytes": 255162
+    },
+    {
+      "path": "assets/stickers/lumen_131.webm",
+      "sha256": "b088605aa70251cfbb49528936913c224add3b709df4a8bb94f63aebc45aa15a",
+      "bytes": 260026
+    },
+    {
+      "path": "assets/stickers/lumen_132.png",
+      "sha256": "b0b51ef52680b37ad77b0b0445d0745c03713b17aea26f323859f1a36d8a9778",
+      "bytes": 268998
+    },
+    {
+      "path": "assets/stickers/lumen_132.webm",
+      "sha256": "b18d287dc8b978b457de2cb42321b08429deb625b7b4395f00a390c26cd08791",
+      "bytes": 246447
+    },
+    {
+      "path": "assets/stickers/lumen_133.png",
+      "sha256": "0c4024bac138c8fec182975f2f7afde89bd98209ce93e43c807f0df9a106fb89",
+      "bytes": 260998
+    },
+    {
+      "path": "assets/stickers/lumen_133.webm",
+      "sha256": "ef1c9cdd6742c44b5d0e417a61e6657f1a60a6e5d044a01a03fcd046079d8e72",
+      "bytes": 259048
+    },
+    {
+      "path": "assets/stickers/lumen_134.png",
+      "sha256": "3e85d89f58ac6d2c39e8905f96db9e089b841016340cd2d7f986b7347c025edf",
+      "bytes": 215251
+    },
+    {
+      "path": "assets/stickers/lumen_134.webm",
+      "sha256": "d6ae874916557be417e77edd67d8467b2dcd4f457e691cb3b0d53af48b759dc9",
+      "bytes": 253530
+    },
+    {
+      "path": "assets/stickers/lumen_135.png",
+      "sha256": "411004d9d14d3b08294b479155b001959efb449a1c07b64f13eab32d16608e33",
+      "bytes": 232510
+    },
+    {
+      "path": "assets/stickers/lumen_135.webm",
+      "sha256": "45824f380d4b88a7701a8e0334711139a011c823b5beb6e1068ef01679294093",
+      "bytes": 251780
+    },
+    {
+      "path": "assets/stickers/lumen_136.png",
+      "sha256": "f95b1dfd84d0a0fd514af348e97f5241c9826aebe835ae2288c8ea6d83cd3957",
+      "bytes": 206571
+    },
+    {
+      "path": "assets/stickers/lumen_136.webm",
+      "sha256": "d559ba088885c5e08e97428ba343233e454d094986ca4b2da385151990e779df",
+      "bytes": 259046
+    },
+    {
+      "path": "assets/stickers/lumen_137.png",
+      "sha256": "3a52ae4f38ccfa2d5bedcde3b69ab7d7474a79410e0d33ce1accaa5f1f30206b",
+      "bytes": 239946
+    },
+    {
+      "path": "assets/stickers/lumen_137.webm",
+      "sha256": "39eff396f41f8847d105cae816bc45fcd326cbd442ae1ffd3700e74deadb79f1",
+      "bytes": 253532
+    },
+    {
+      "path": "assets/stickers/lumen_138.png",
+      "sha256": "b8a27c29b977f0283fb043269864c345145a23b2423bdef26f369605f59135bf",
+      "bytes": 265341
+    },
+    {
+      "path": "assets/stickers/lumen_138.webm",
+      "sha256": "c3459b3c2642cf4b43995a46af8d504f93cc7d6935ebb6d447f97f268fe460f8",
+      "bytes": 261777
+    },
+    {
+      "path": "assets/stickers/lumen_139.png",
+      "sha256": "23cfa68629373cab36f09113b4e4bc4912f50daf47a17023dd8c8b09bcca8706",
+      "bytes": 199782
+    },
+    {
+      "path": "assets/stickers/lumen_139.webm",
+      "sha256": "9e393b75f660a52a43937be4c7436e2e9a1b44701480abce574aeb9450348ffa",
+      "bytes": 251262
+    },
+    {
+      "path": "assets/stickers/lumen_14.png",
+      "sha256": "f297e99cf5cbb4f343526ac300c7a1251b42d606568c45fe301e3bd993aa6d1e",
+      "bytes": 264395
+    },
+    {
+      "path": "assets/stickers/lumen_14.webm",
+      "sha256": "dda79190775feddb9daf53eb55f439edeb957ca9da7fb865cb9ef185555d09f4",
+      "bytes": 255786
+    },
+    {
+      "path": "assets/stickers/lumen_15.png",
+      "sha256": "ad3b818ee2134311d7cfc8c28efb76e0227f06ffb0e77637ed8bf1fd2268db75",
+      "bytes": 216713
+    },
+    {
+      "path": "assets/stickers/lumen_15.webm",
+      "sha256": "0e80644d1a6f96517320660dd4d6741da4fd2bbe9d3900512153492fc64e2b77",
+      "bytes": 251496
+    },
+    {
+      "path": "assets/stickers/lumen_16.png",
+      "sha256": "57826c1af97347e4a81a9090eb9d54ae8c0d29bc5e5996747d1e5adbf92c62d9",
+      "bytes": 233556
+    },
+    {
+      "path": "assets/stickers/lumen_16.webm",
+      "sha256": "1817ca6be0cd254c5e7d61af997794448c3cc07511eb34660d83092fe36e4276",
+      "bytes": 251938
+    },
+    {
+      "path": "assets/stickers/lumen_17.png",
+      "sha256": "c5e190b9151391a1f8bc3630d4d1be33e610cd1c3693e792995f107cf43fcc95",
+      "bytes": 254708
+    },
+    {
+      "path": "assets/stickers/lumen_17.webm",
+      "sha256": "c97e64875afdf3ace6300ed8accf33f2fa65a38cebae671c8e8ff8af85401db9",
+      "bytes": 259438
+    },
+    {
+      "path": "assets/stickers/lumen_18.png",
+      "sha256": "29ab7a0f1f77f24142775b919c5fec4685587ef07f1fed7780245dd611e2f2a8",
+      "bytes": 210552
+    },
+    {
+      "path": "assets/stickers/lumen_18.webm",
+      "sha256": "517fa4bf388901f29b405384a6275159b83f37229b24532bab171a898f0a3365",
+      "bytes": 251211
+    },
+    {
+      "path": "assets/stickers/lumen_19.png",
+      "sha256": "2ec2a81cb59626ce349055bdd8d4a92f0d60f33ba6a58486d4c5ef97856348b7",
+      "bytes": 223040
+    },
+    {
+      "path": "assets/stickers/lumen_19.webm",
+      "sha256": "db57b422d0fb6cee3c1aea59fe558e6bceb2e5aa6e0a0181c1e3612e11af9026",
+      "bytes": 260447
+    },
+    {
+      "path": "assets/stickers/lumen_20.png",
+      "sha256": "9cda5396f643ba017b90f7332e68113216d645c36d8a85925c8bb9382c8cad87",
+      "bytes": 224093
+    },
+    {
+      "path": "assets/stickers/lumen_20.webm",
+      "sha256": "6e02f61b6b000f4d2412e789dd6afc604a2f0262a5ba63e15a5c5a987aa2f07f",
+      "bytes": 248912
+    },
+    {
+      "path": "assets/stickers/lumen_21.png",
+      "sha256": "32e66036274cee32019a5ea66225ad7a30d2521a7538c4746c5e4e60a5c54cc6",
+      "bytes": 221898
+    },
+    {
+      "path": "assets/stickers/lumen_21.webm",
+      "sha256": "fb04fb1bf81010e12771604d2d42dbdec3d6b6d0df508ddcb9a78af7698adf2d",
+      "bytes": 250686
+    },
+    {
+      "path": "assets/stickers/lumen_22.png",
+      "sha256": "c2cfe4a2bfc3f05505e453798802504ffc09256f9c18a74c2ffb9c18009941e5",
+      "bytes": 235847
+    },
+    {
+      "path": "assets/stickers/lumen_22.webm",
+      "sha256": "b002bd04dd470f72a29b8fceee89ffb866de3f6c38639a802c38ae47cb54c26b",
+      "bytes": 258601
+    },
+    {
+      "path": "assets/stickers/lumen_23.png",
+      "sha256": "dedac8c3de8c89b47fb5e94c7443c680ec0d8289db20e648f66d7790cc449986",
+      "bytes": 253023
+    },
+    {
+      "path": "assets/stickers/lumen_23.webm",
+      "sha256": "4328742386d2d086f0839d51ff134e7eecfbf517e48087f27f61e91ef88a3d70",
+      "bytes": 251508
+    },
+    {
+      "path": "assets/stickers/lumen_24.png",
+      "sha256": "035426bf494bc582a6f34fe03a81b28694ac51a7f63fe588338f332530e265e3",
+      "bytes": 219358
+    },
+    {
+      "path": "assets/stickers/lumen_24.webm",
+      "sha256": "5b79b27bf06f42904eccafe54e8ef80f798d8c71e9bdb6a47ed46bc41043ca9b",
+      "bytes": 248858
+    },
+    {
+      "path": "assets/stickers/lumen_25.png",
+      "sha256": "b1659456c2e1a9aba9774342d403884ab828e88fb7cb15a797afd7fbd573523a",
+      "bytes": 234527
+    },
+    {
+      "path": "assets/stickers/lumen_25.webm",
+      "sha256": "920b5148896b9375309a50e71b4e4e4fc075ed29437ec10706c12f4355165c42",
+      "bytes": 250500
+    },
+    {
+      "path": "assets/stickers/lumen_26.png",
+      "sha256": "9813483e0076bc3d0a4fff986e284609caf7492c1552412bd92bfde0f44f162a",
+      "bytes": 236492
+    },
+    {
+      "path": "assets/stickers/lumen_26.webm",
+      "sha256": "42201e7380a79dbc5e9dfadfa13356a72ebff9bad1c7ee9df45488c47d05a3a7",
+      "bytes": 252334
+    },
+    {
+      "path": "assets/stickers/lumen_27.png",
+      "sha256": "0d14db0ee597ff0b38de1dbe8ca118f53643957569f8fa1b1a42b0a2594f1b7a",
+      "bytes": 230531
+    },
+    {
+      "path": "assets/stickers/lumen_27.webm",
+      "sha256": "16b507e4e963c4d1e039cf2871db6e078cc5a218bad52ebaea45c3a0aa73f6e0",
+      "bytes": 252056
+    },
+    {
+      "path": "assets/stickers/lumen_28.png",
+      "sha256": "17eedc5ef14b262f11e8c6c4734efd769942714d09e73b8e8df69f9917dcaaa7",
+      "bytes": 228783
+    },
+    {
+      "path": "assets/stickers/lumen_28.webm",
+      "sha256": "5fdcbc450a33c96ce57139adb51875358e07e5a34389fe7a51b40b77ebb370b7",
+      "bytes": 256640
+    },
+    {
+      "path": "assets/stickers/lumen_29.png",
+      "sha256": "d9b343123f6a04a42c5ab4158e9fd4391cc5981320db2ffa254ab272bd44a78c",
+      "bytes": 257415
+    },
+    {
+      "path": "assets/stickers/lumen_29.webm",
+      "sha256": "6c9c4b09cc16c44745911d68433061c7c3ae2d7779bab915e6d3400df0fb232e",
+      "bytes": 250348
+    },
+    {
+      "path": "assets/stickers/lumen_30.png",
+      "sha256": "8e9c0fabce5aa8e555deb5fcdad65bed8c9e2cd7251c57cfb22de5abf86619c1",
+      "bytes": 203025
+    },
+    {
+      "path": "assets/stickers/lumen_30.webm",
+      "sha256": "15ab0c2aff322255e61e796f2ea9303fd245b39edd7297b91f6b912beb0174ef",
+      "bytes": 251364
+    },
+    {
+      "path": "assets/stickers/lumen_31.png",
+      "sha256": "556e3b47dcd751f013582cf1ab5575206398297da9cacefbe4f13df2395a440b",
+      "bytes": 234002
+    },
+    {
+      "path": "assets/stickers/lumen_31.webm",
+      "sha256": "7313c2b93a15591ed1ddeb10ab2b53676a51917ea668767836dc3aa492f91253",
+      "bytes": 261676
+    },
+    {
+      "path": "assets/stickers/lumen_32.png",
+      "sha256": "7562252899c826c1d528a0ba4ca638b8a9c8f2415703aec645b58c9ecabb2036",
+      "bytes": 229871
+    },
+    {
+      "path": "assets/stickers/lumen_32.webm",
+      "sha256": "e676a405f285e6a55532f02ca9368a7836dbd0ec10d8322e08af2ef777559fc7",
+      "bytes": 256747
+    },
+    {
+      "path": "assets/stickers/lumen_33.png",
+      "sha256": "fadcd59aa59009bab455004d4db6ce8e626ef03812e639c0288d0b05ec0b8b09",
+      "bytes": 273266
+    },
+    {
+      "path": "assets/stickers/lumen_33.webm",
+      "sha256": "1a6c0e240b489d276e6108073aaed73701fd96477c130564d3b49b4d6b8902b5",
+      "bytes": 246364
+    },
+    {
+      "path": "assets/stickers/lumen_34.png",
+      "sha256": "6f304943f5cf15721b3aec4112a8cdedf15bbab8358baa9ad00c6cd5b93c9108",
+      "bytes": 262149
+    },
+    {
+      "path": "assets/stickers/lumen_34.webm",
+      "sha256": "4ca91d5347fa266713bb3493f11c911ffe34e5a99963ffb827c1a14b406fe185",
+      "bytes": 255562
+    },
+    {
+      "path": "assets/stickers/lumen_35.png",
+      "sha256": "6300fae29491ee51c2b88a4dc7a882b7718f65625c61e28230d5651a76187b61",
+      "bytes": 252998
+    },
+    {
+      "path": "assets/stickers/lumen_35.webm",
+      "sha256": "560ad224de1047d4f1262763b816c39478bebb4632695f2d0ebadc19e6907d07",
+      "bytes": 261530
+    },
+    {
+      "path": "assets/stickers/lumen_36.png",
+      "sha256": "2b8bcfb1608b48e1597496609d1e56aee8b8f2539d5966315ff91e9da9ea44fb",
+      "bytes": 243150
+    },
+    {
+      "path": "assets/stickers/lumen_36.webm",
+      "sha256": "0428d22c877690571a95f85fbce39b6b71e8ce8c8cb5e1a94fcd3439cb25e50c",
+      "bytes": 251915
+    },
+    {
+      "path": "assets/stickers/lumen_37.png",
+      "sha256": "6b9330c75a0e8ed107d9ea6818cc08d11a5c0d3afe31340528541bcbabca0d41",
+      "bytes": 260083
+    },
+    {
+      "path": "assets/stickers/lumen_37.webm",
+      "sha256": "2ad8c777b1c42221a50fd6d33503f69de3843d6d8d5d7acc1c0f6aee706c285e",
+      "bytes": 261502
+    },
+    {
+      "path": "assets/stickers/lumen_38.png",
+      "sha256": "8890ddeaac4486c4510ccf41a5161518f3f7667d7bd019642098e458796594a3",
+      "bytes": 237575
+    },
+    {
+      "path": "assets/stickers/lumen_38.webm",
+      "sha256": "57590655f903b5c2d39d1f4f855477a36991a681fdc993a5c1a56b01107ebcf6",
+      "bytes": 258748
+    },
+    {
+      "path": "assets/stickers/lumen_39.png",
+      "sha256": "8d6eea9835fe196ee1e39d26f28ab176905ea018707f1dbaa00e6ada1f3e2a50",
+      "bytes": 241056
+    },
+    {
+      "path": "assets/stickers/lumen_39.webm",
+      "sha256": "28a071c461d7a249b384a3f071e98b66676b0f50fd9bf7b8d116af862a1c5199",
+      "bytes": 250578
+    },
+    {
+      "path": "assets/stickers/lumen_40.png",
+      "sha256": "e2055be168a854a37f51474325ecde073eccee5b274758ac6a7b1267aea042fc",
+      "bytes": 236066
+    },
+    {
+      "path": "assets/stickers/lumen_40.webm",
+      "sha256": "8e07f9d51d9e5ff2ed0f555ac28423b4bd51cca3ba5871368001a8d922419c63",
+      "bytes": 252388
+    },
+    {
+      "path": "assets/stickers/lumen_41.png",
+      "sha256": "8aff29c5db0ab3475f78c187857fe58648f0288e3f49ec513b6531b1d3bbd588",
+      "bytes": 234746
+    },
+    {
+      "path": "assets/stickers/lumen_41.webm",
+      "sha256": "8aaf5475b5ddbeeab430d9775b767d06536f474ca10e39c1ab541ed71f70bf97",
+      "bytes": 260296
+    },
+    {
+      "path": "assets/stickers/lumen_42.png",
+      "sha256": "4d49a854dded254fb058902374a3a74005e1d3510f92e7de3d2284b9f80bcdb1",
+      "bytes": 237718
+    },
+    {
+      "path": "assets/stickers/lumen_42.webm",
+      "sha256": "35f6c80602f36f35a92efae967f08b0ac949b3486bbc3734b674382a735a3b19",
+      "bytes": 257109
+    },
+    {
+      "path": "assets/stickers/lumen_43.png",
+      "sha256": "6fd674b5ebae1ac0641fbfcb607e60df42848562ef97bdb92cd7c0408cb653f3",
+      "bytes": 235751
+    },
+    {
+      "path": "assets/stickers/lumen_43.webm",
+      "sha256": "09034e79e9a8f83c3cb952bc3ffb15a4136d915ebde16db055eb4df6d33904d2",
+      "bytes": 253480
+    },
+    {
+      "path": "assets/stickers/lumen_44.png",
+      "sha256": "f47cfc609c92dee4744fc2f5c3466284643dcfbc1a264adae175b870fa11fd63",
+      "bytes": 207492
+    },
+    {
+      "path": "assets/stickers/lumen_44.webm",
+      "sha256": "2760567fba894cd70cdb30723b99bd3455e5165736ef629f9471f98821b929e7",
+      "bytes": 251354
+    },
+    {
+      "path": "assets/stickers/lumen_45.png",
+      "sha256": "1fa29f0335c03c3c938baa01f9a70fa8d415df09997552883a7568744250f590",
+      "bytes": 268874
+    },
+    {
+      "path": "assets/stickers/lumen_45.webm",
+      "sha256": "4223382ff5b936fca5439701fa02b38c2f3ca93c48f1fc5579449acf27a55b3e",
+      "bytes": 252932
+    },
+    {
+      "path": "assets/stickers/lumen_46.png",
+      "sha256": "b04417b526c13958ce5bc0ff5deecdadaf8fb42dacf968ce25effc94d59e1a4b",
+      "bytes": 230658
+    },
+    {
+      "path": "assets/stickers/lumen_46.webm",
+      "sha256": "8bb64db0aaef42111b5cfadea790d827b9d4f69b953158b906f11d1231ca40f1",
+      "bytes": 253431
+    },
+    {
+      "path": "assets/stickers/lumen_47.png",
+      "sha256": "18b64be55e044e9ec9e75fb35a4c9710b5d6ef0ef504bd87bb74d7d6404797c4",
+      "bytes": 271955
+    },
+    {
+      "path": "assets/stickers/lumen_47.webm",
+      "sha256": "3609e465f79f8bc8d2eb37d02d651f9abffd7efb04dc9fa9d75babdb16b702a1",
+      "bytes": 252550
+    },
+    {
+      "path": "assets/stickers/lumen_48.png",
+      "sha256": "19abd75399ba5c2a2b2fab067cb61cc6d73d1657e5d4c8b1afc7fc3a0d1b803c",
+      "bytes": 190773
+    },
+    {
+      "path": "assets/stickers/lumen_48.webm",
+      "sha256": "52d1a1bdcd510f91e060c1d73d677ab870269c309d9056bc0da91f4bec9c4a8d",
+      "bytes": 250054
+    },
+    {
+      "path": "assets/stickers/lumen_49.png",
+      "sha256": "e610500259f69ec573a8f87ed8d30440e61987d8db918bce04c49367ba1c8c53",
+      "bytes": 259950
+    },
+    {
+      "path": "assets/stickers/lumen_49.webm",
+      "sha256": "91e869b344749dcedb99f8071604eb60ed66cc61dbafda3f81758c7ec585beb0",
+      "bytes": 251284
+    },
+    {
+      "path": "assets/stickers/lumen_50.png",
+      "sha256": "f9e074aa8290050499cb7eccc3b1b57a3c927f56de2dd924b62556487407e637",
+      "bytes": 234935
+    },
+    {
+      "path": "assets/stickers/lumen_50.webm",
+      "sha256": "2a81c645a6facd9f33587704994593d7a044f0393ef9c2390bab40d617115dcc",
+      "bytes": 254342
+    },
+    {
+      "path": "assets/stickers/lumen_51.png",
+      "sha256": "f6d1c671b6653dda929fbaedab98b6e381991a72c0d6ff2d483d38763b22f21d",
+      "bytes": 259128
+    },
+    {
+      "path": "assets/stickers/lumen_51.webm",
+      "sha256": "60b0a437f6eedbc6e14f75d1ad9c60c22830a682ebeee01abeeaaba932d40e1f",
+      "bytes": 205875
+    },
+    {
+      "path": "assets/stickers/lumen_52.png",
+      "sha256": "cd2e9ffea42d37cb219ea60db6542820e99a2aafaab14316fc8ac752034f22cf",
+      "bytes": 242977
+    },
+    {
+      "path": "assets/stickers/lumen_52.webm",
+      "sha256": "82296745813f18c332ffc67ab0faf0a12d2af326e4c583ee631d91c0abff1cde",
+      "bytes": 246614
+    },
+    {
+      "path": "assets/stickers/lumen_53.png",
+      "sha256": "35abe581b81c3c386f6e34acc6df4da3f8801416dc8ab99a56be5d9b7b62c021",
+      "bytes": 201530
+    },
+    {
+      "path": "assets/stickers/lumen_53.webm",
+      "sha256": "c7db253aa2e498ac019ed036e3228fea0795a4417398dab3fa7beff7a2f73ccf",
+      "bytes": 248742
+    },
+    {
+      "path": "assets/stickers/lumen_54.png",
+      "sha256": "eeb4d570adf31a55a6ec9e152209269061edf4d455917fa48052faffc39b9209",
+      "bytes": 159989
+    },
+    {
+      "path": "assets/stickers/lumen_54.webm",
+      "sha256": "f48d87b2999d898eb6e5c88477bbae0524f00cd14359056f93bf5ff5089f49eb",
+      "bytes": 258235
+    },
+    {
+      "path": "assets/stickers/lumen_55.png",
+      "sha256": "6236046b531d8ff0684e3204874d1251556e95d26a443a2f846af2a3daec6064",
+      "bytes": 226360
+    },
+    {
+      "path": "assets/stickers/lumen_55.webm",
+      "sha256": "34710e9895f682e048b69c8825c381c04b31f5b0b42f438814d50fc0c4a36501",
+      "bytes": 247635
+    },
+    {
+      "path": "assets/stickers/lumen_56.png",
+      "sha256": "38d46adcf87d5ea7d754b203922e4fee98e13f7893277e8a2fb4960ee372d728",
+      "bytes": 229228
+    },
+    {
+      "path": "assets/stickers/lumen_56.webm",
+      "sha256": "beac13f62091009071977670b361025577e460bc413698f304345a52737e75f2",
+      "bytes": 257339
+    },
+    {
+      "path": "assets/stickers/lumen_57.png",
+      "sha256": "acb3cc901abca58269ea7281cff779d63b7e150b5971b682c0bbb780a63126aa",
+      "bytes": 208459
+    },
+    {
+      "path": "assets/stickers/lumen_57.webm",
+      "sha256": "3eefa51468f4d0998e8815e193e9c67c084b54a6497b845a176c7629e2dac5c7",
+      "bytes": 256345
+    },
+    {
+      "path": "assets/stickers/lumen_58.png",
+      "sha256": "7defacf43800b6dcb79c6764d3a78ac2be4ebb026b8a49710f2136b3c6201483",
+      "bytes": 236971
+    },
+    {
+      "path": "assets/stickers/lumen_58.webm",
+      "sha256": "0fbd11c9832910298bb9479e3b7120eed2dff19b9389df73f30c4ddffef31034",
+      "bytes": 260373
+    },
+    {
+      "path": "assets/stickers/lumen_59.png",
+      "sha256": "fbe733fa93d2c8463fa984c00bf200dc18f76681cd78ade5c2439f14aac4c376",
+      "bytes": 194635
+    },
+    {
+      "path": "assets/stickers/lumen_59.webm",
+      "sha256": "36e023467e34c756ca8814f62497b5982d16d39ac4381ce81100798e441143c1",
+      "bytes": 255963
+    },
+    {
+      "path": "assets/stickers/lumen_60.png",
+      "sha256": "6a62bb92aeae80b52123a6c0c9b6d367d72b5b169d0841b63bd45a5206dc2d22",
+      "bytes": 210167
+    },
+    {
+      "path": "assets/stickers/lumen_60.webm",
+      "sha256": "d67c2d09141f6345987b1aabe4af19486b86903461918609ad0dbbbc2316c58e",
+      "bytes": 253922
+    },
+    {
+      "path": "assets/stickers/lumen_61.png",
+      "sha256": "0148acde16121af10c97282f16dc4cf35faa2bc398cafd6e08517f67ca680158",
+      "bytes": 246682
+    },
+    {
+      "path": "assets/stickers/lumen_61.webm",
+      "sha256": "06b1aca3546b39ed3b7a175791dc64ffb188942fdee0db14d1684908a8427730",
+      "bytes": 252001
+    },
+    {
+      "path": "assets/stickers/lumen_62.png",
+      "sha256": "14786a518efed186ece40433507545b51f005c7be1b43897be8d56b229d45bcc",
+      "bytes": 215889
+    },
+    {
+      "path": "assets/stickers/lumen_62.webm",
+      "sha256": "663eaf00bb396fd10ba2181c880de8cec5a9dca036175e8c2ee0ea10c8aaaeb3",
+      "bytes": 258073
+    },
+    {
+      "path": "assets/stickers/lumen_63.png",
+      "sha256": "adf2d2f5250a44a3a887718d1d9dcbbfe3f63ded45269ebd4588e50d6960054c",
+      "bytes": 279911
+    },
+    {
+      "path": "assets/stickers/lumen_63.webm",
+      "sha256": "790bd1d73a68313cae5e2d78598a95de58c438ad9f770f42ac3e794b1c17b548",
+      "bytes": 242532
+    },
+    {
+      "path": "assets/stickers/lumen_64.png",
+      "sha256": "277adec36e38a9299f9cbe6c356de642d56c8a99808b9a7715741e7d3fa60fcc",
+      "bytes": 219893
+    },
+    {
+      "path": "assets/stickers/lumen_64.webm",
+      "sha256": "0674fff5b180d1bb4615bae5841ceef0dd5adf027f6990180538b9916f3cfe3d",
+      "bytes": 259003
+    },
+    {
+      "path": "assets/stickers/lumen_65.png",
+      "sha256": "007417c61861772e4978b8b7a0672f39b0b1dfac1ea4ec7fc154364d990ab2a5",
+      "bytes": 251788
+    },
+    {
+      "path": "assets/stickers/lumen_65.webm",
+      "sha256": "c977c78d3f6149fcf0cdd4ccf2be8693460a6f5cd4bf75165779fd202743bc89",
+      "bytes": 253654
+    },
+    {
+      "path": "assets/stickers/lumen_66.png",
+      "sha256": "6c2373e6016e9176b7ad9672fd215a86a590e5d643c72b6792c54a0363e1b802",
+      "bytes": 207405
+    },
+    {
+      "path": "assets/stickers/lumen_66.webm",
+      "sha256": "5a103beee8863fcc07e85ff138daa1898387daf059d6f7e97c4828d427674415",
+      "bytes": 252629
+    },
+    {
+      "path": "assets/stickers/lumen_67.png",
+      "sha256": "b8fc3c5422fb42ac005efbfd7b9ddc03b7065d9fe15057cb50ff83110969716a",
+      "bytes": 219045
+    },
+    {
+      "path": "assets/stickers/lumen_67.webm",
+      "sha256": "0447c6ee7c1d3bcdef508ceb30acec239d641f48cc6621b7676de6e76df4d7e0",
+      "bytes": 248211
+    },
+    {
+      "path": "assets/stickers/lumen_68.png",
+      "sha256": "10699f6db7da18f810ac7d8784f38fb579a6791aaf574938d02d6f7f695ed2d0",
+      "bytes": 245741
+    },
+    {
+      "path": "assets/stickers/lumen_68.webm",
+      "sha256": "54e41d62dab0828a4d2acacb39bd2b4b5895c4d885025ff12801d41f032b71a7",
+      "bytes": 260193
+    },
+    {
+      "path": "assets/stickers/lumen_69.png",
+      "sha256": "a6059e460ec3d63750ed2449870ec5c7d0ad49ce99386a8816912ed17d716f70",
+      "bytes": 214810
+    },
+    {
+      "path": "assets/stickers/lumen_69.webm",
+      "sha256": "d754d6d80b59177e5118d17575d4227954c667fa0cf3ee432a1aa5a330e3fc5d",
+      "bytes": 255765
+    },
+    {
+      "path": "assets/stickers/lumen_70.png",
+      "sha256": "ddafa8637120758fd61d516bb4ebbd7f8765986c1b101015f2915bdba8be7765",
+      "bytes": 231447
+    },
+    {
+      "path": "assets/stickers/lumen_70.webm",
+      "sha256": "613a696f574886fd401c37ade4e9b8ad66822a348ae52be693b7ab0e637b6419",
+      "bytes": 248878
+    },
+    {
+      "path": "assets/stickers/lumen_71.png",
+      "sha256": "d067e7d22cafca58e7716d90638ce72915e1ccc96a7b40feea78bd27c6c9bc96",
+      "bytes": 241204
+    },
+    {
+      "path": "assets/stickers/lumen_71.webm",
+      "sha256": "dce124efa091f4c73d693ccef6c3bcb076dd0229a5e803eea8a9667d46343638",
+      "bytes": 256220
+    },
+    {
+      "path": "assets/stickers/lumen_72.png",
+      "sha256": "8b6c5516b67ef2560b39b5aa29df3c8c85be6db6f1f243b9b1f9eb7b972722ed",
+      "bytes": 216913
+    },
+    {
+      "path": "assets/stickers/lumen_72.webm",
+      "sha256": "a2dfe5fc366033ab204b2732d50c48e7dd07888e2ee706c609b4e00b72c69f2d",
+      "bytes": 250299
+    },
+    {
+      "path": "assets/stickers/lumen_73.png",
+      "sha256": "90219a21d14c822e1bbbe763c66142365e43edaeec67557f8eb07b73a3301d4d",
+      "bytes": 224167
+    },
+    {
+      "path": "assets/stickers/lumen_73.webm",
+      "sha256": "26487ad22f0906089199cd101fb6fc3a456753c5559c1db2d56f697a1cbdf23e",
+      "bytes": 258962
+    },
+    {
+      "path": "assets/stickers/lumen_74.png",
+      "sha256": "f55ce40804582e27c69a6a0caa30de6850903d72a719dffa86dea264fbf5225b",
+      "bytes": 268105
+    },
+    {
+      "path": "assets/stickers/lumen_74.webm",
+      "sha256": "1dd0938d8cb417b6ff9a28e5588ce934b79ac1ca99deddf47f96ca1ee83bbb87",
+      "bytes": 250502
+    },
+    {
+      "path": "assets/stickers/lumen_75.png",
+      "sha256": "bef9daa92673d61a9495bc53bd5ba2d4c0ea11b311d959e9a037fd4f9043cfdb",
+      "bytes": 251703
+    },
+    {
+      "path": "assets/stickers/lumen_75.webm",
+      "sha256": "6e1121aec2546f4b61e8f5e462f6acf605153dc59cd924fe10127638050ece0a",
+      "bytes": 253726
+    },
+    {
+      "path": "assets/stickers/lumen_76.png",
+      "sha256": "ef082fc50d9cfbc02e130c8207bc080681fe93cce8f4ef62adbcd2c8b6ff629d",
+      "bytes": 256746
+    },
+    {
+      "path": "assets/stickers/lumen_76.webm",
+      "sha256": "58581e283e402fb854a9578ed91f6f1d5e700f11e7a8684e6e5a2a01d41514a6",
+      "bytes": 261181
+    },
+    {
+      "path": "assets/stickers/lumen_77.png",
+      "sha256": "faf0fa8b3c7a16be55214ba92ed8cc497fe0a1393dd8c57d7718815400d98247",
+      "bytes": 233986
+    },
+    {
+      "path": "assets/stickers/lumen_77.webm",
+      "sha256": "028ba05eb6e918e9907d1abd0ebfe499a6d4affc07cc1f1a5bc8bc63dcd7e084",
+      "bytes": 259614
+    },
+    {
+      "path": "assets/stickers/lumen_78.png",
+      "sha256": "ac8412b18377327ffe0e242fb32bfbcadc09d54293c362ac043a02f8ef774ad4",
+      "bytes": 254839
+    },
+    {
+      "path": "assets/stickers/lumen_78.webm",
+      "sha256": "c4e3d8fba1abd311264398da4270c75927681d27450a584f2c1b2367355f4ce5",
+      "bytes": 258849
+    },
+    {
+      "path": "assets/stickers/lumen_79.png",
+      "sha256": "ad09f0ae8c1cc8ca40f0ffc61f6dbe46d9befb777c5a740fd16cab4b5ab8f9e6",
+      "bytes": 241373
+    },
+    {
+      "path": "assets/stickers/lumen_79.webm",
+      "sha256": "8bae7be8c56230b61f8248b69d2bd44a252afad43859559feb6ef36b9ff14c40",
+      "bytes": 254222
+    },
+    {
+      "path": "assets/stickers/lumen_80.png",
+      "sha256": "5fb0857549f60f3bcc113557f9ebfdc981ebe076f0231d97a73e26222be00508",
+      "bytes": 223006
+    },
+    {
+      "path": "assets/stickers/lumen_80.webm",
+      "sha256": "ac40795857f8a2a21819bb9cb92c4b2677b8792456a2630a86a95c8904b98161",
+      "bytes": 253157
+    },
+    {
+      "path": "assets/stickers/lumen_81.png",
+      "sha256": "6d3fe115bcfbe7b78403f955837388c7ddc079d73e3607392868205ade6d4bf0",
+      "bytes": 236464
+    },
+    {
+      "path": "assets/stickers/lumen_81.webm",
+      "sha256": "5ea636d02f939bb485b8901ce5d116123f371a2c26a99a2c1f8a49f52d897330",
+      "bytes": 247290
+    },
+    {
+      "path": "assets/stickers/lumen_82.png",
+      "sha256": "44316b59f9aa42e2f3d2a88d5c9d6255cfea7dcb78a1e15c9ac4ee1f549281cf",
+      "bytes": 249968
+    },
+    {
+      "path": "assets/stickers/lumen_82.webm",
+      "sha256": "068e7f98ee597b5ce71f9b297511aa2dda5862548b4bd5a25928fb1a79880be3",
+      "bytes": 243657
+    },
+    {
+      "path": "assets/stickers/lumen_83.png",
+      "sha256": "6729d7ebb1fd6e2d6a6e80a26de307b46e03379589549dbcc53405ec64e10e76",
+      "bytes": 215220
+    },
+    {
+      "path": "assets/stickers/lumen_83.webm",
+      "sha256": "2c09410f0ab411f85003ffbe407125addeab32872e2e4ea72147a160241b1155",
+      "bytes": 251680
+    },
+    {
+      "path": "assets/stickers/lumen_84.png",
+      "sha256": "78f60c4991560c4103ca81aeb0def915f275ba5e7671a786f3a7c714a8488dff",
+      "bytes": 223806
+    },
+    {
+      "path": "assets/stickers/lumen_84.webm",
+      "sha256": "840b0a271411402028f70cc117a7fe68ed6cca9b0a75b43056663206d4574011",
+      "bytes": 251725
+    },
+    {
+      "path": "assets/stickers/lumen_85.png",
+      "sha256": "3f358a796926bfe502a058a9472a6289cb8ec50f373e585521258ffffbfdcf4a",
+      "bytes": 246274
+    },
+    {
+      "path": "assets/stickers/lumen_85.webm",
+      "sha256": "ee08726184aaca7f3f0a2cdda6137afd1c7cc3a83c204b588127615dc4c6cf08",
+      "bytes": 252938
+    },
+    {
+      "path": "assets/stickers/lumen_86.png",
+      "sha256": "ab6f36749f04296b77bbea6f6a3d03aacd014478c772b12645ae1f1cb99c438f",
+      "bytes": 241725
+    },
+    {
+      "path": "assets/stickers/lumen_86.webm",
+      "sha256": "3876f179e2d3344680d8e1f97d88f53b669dd6a3137ba29baf2d592def231e6b",
+      "bytes": 261841
+    },
+    {
+      "path": "assets/stickers/lumen_87.png",
+      "sha256": "46b3cef7b52ab36d9b497fcfd8384a94d43e1f2afcc2ff91f0bb576da470287e",
+      "bytes": 224971
+    },
+    {
+      "path": "assets/stickers/lumen_87.webm",
+      "sha256": "3ff1a0595132bf8a3481eff2eb9ffc441f776663b464e1b0980045cb2b9fad07",
+      "bytes": 249952
+    },
+    {
+      "path": "assets/stickers/lumen_88.png",
+      "sha256": "84fe6addd7e220dbefc609d26bae1e163ce88501eb952a806366e8ea9c9bf106",
+      "bytes": 212218
+    },
+    {
+      "path": "assets/stickers/lumen_88.webm",
+      "sha256": "de3067af555a5a0f8515b6ba55acdb0f39fc459f40634a3b30dd5897c69ae44d",
+      "bytes": 258958
+    },
+    {
+      "path": "assets/stickers/lumen_89.png",
+      "sha256": "d61deab6b551f65e4ea977766f6cfe341717f76041011eb4beb4e9fcc6c755a6",
+      "bytes": 234743
+    },
+    {
+      "path": "assets/stickers/lumen_89.webm",
+      "sha256": "5ca7bfc3b4304c6875f49aba662e2f2c41a689bb649d437eed1a46163de9e146",
+      "bytes": 248599
+    },
+    {
+      "path": "assets/stickers/lumen_90.png",
+      "sha256": "4a17cf7e33019b9f2a19a739121a5c0f5b9ea5fa17b6877626d89085d8ad38df",
+      "bytes": 219121
+    },
+    {
+      "path": "assets/stickers/lumen_90.webm",
+      "sha256": "10ccedd7c1e13d2e9e0121ea0066914d27071c709dc8f7431347120890195897",
+      "bytes": 255380
+    },
+    {
+      "path": "assets/stickers/lumen_91.png",
+      "sha256": "107d0fe49d80c5c8932994cd5238b18131f22b02aff4453fe087147645b105a4",
+      "bytes": 270785
+    },
+    {
+      "path": "assets/stickers/lumen_91.webm",
+      "sha256": "629681acd7fd38527532ed1d4ae94543aedb1a2f3b560dbbd907e377c5e331ac",
+      "bytes": 254151
+    },
+    {
+      "path": "assets/stickers/lumen_92.png",
+      "sha256": "d019384f550517a3795ce71a30ac4cdd6fb9354f656980484970a454eb0b4936",
+      "bytes": 248925
+    },
+    {
+      "path": "assets/stickers/lumen_92.webm",
+      "sha256": "388af949b735964045a29ffd73c891670550171f6f46856cffc4feb96e2eb01f",
+      "bytes": 246855
+    },
+    {
+      "path": "assets/stickers/lumen_93.png",
+      "sha256": "e72e60e2d52a560d18469325255b377ff35c38e91b6953bdeaab6158c6b09ad5",
+      "bytes": 256585
+    },
+    {
+      "path": "assets/stickers/lumen_93.webm",
+      "sha256": "1149e44a9525b348c9c3c7d9bd11c457d25405b8a15adee6414f5abc80283e9f",
+      "bytes": 250922
+    },
+    {
+      "path": "assets/stickers/lumen_94.png",
+      "sha256": "14f14d7411b4c145e088a67bbc1b27b9e9b1ee9d95b867551d1576c3f678cde6",
+      "bytes": 222106
+    },
+    {
+      "path": "assets/stickers/lumen_94.webm",
+      "sha256": "cd24cda2f1d0f85a3b219b7e07fd0c6f9b7ae907b5b497480fd98caea97850c4",
+      "bytes": 261298
+    },
+    {
+      "path": "assets/stickers/lumen_95.png",
+      "sha256": "b903c2f80d213d361b4ecde136b779f785d891e9dda3010f74ddfa9c443239a4",
+      "bytes": 213563
+    },
+    {
+      "path": "assets/stickers/lumen_95.webm",
+      "sha256": "c4c404e2ab288be89d68fb4a639bc91a4522bc16ae22a01bec6731c49e461e5e",
+      "bytes": 249712
+    },
+    {
+      "path": "assets/stickers/lumen_96.png",
+      "sha256": "27bcb7ea4a358ce482093d7c63217ede6853fd4578c9c46bf1ecbaa0ef3babe8",
+      "bytes": 225928
+    },
+    {
+      "path": "assets/stickers/lumen_96.webm",
+      "sha256": "240a3927ce00c9095c050fdc4a9433fb2dc3148e68f3cdd6c835814dd8b00947",
+      "bytes": 253759
+    },
+    {
+      "path": "assets/stickers/lumen_97.png",
+      "sha256": "59d8f6d09f49640436ca6a6c689ff29911a556174da52c79c5f07f073f298c45",
+      "bytes": 321269
+    },
+    {
+      "path": "assets/stickers/lumen_97.webm",
+      "sha256": "7e2235c1f8f1df3947af75047856bd8bd27fc9938a4035b3bcf56b5e81492a68",
+      "bytes": 256434
+    },
+    {
+      "path": "assets/stickers/lumen_98.png",
+      "sha256": "508547ace72797c154981c698ff593a8ce890d831a98a0690219454e9c7b4f30",
+      "bytes": 239221
+    },
+    {
+      "path": "assets/stickers/lumen_98.webm",
+      "sha256": "f33e76a272a53b9edcdc61845296758e197b2088dca75d1f69f982725b56f62e",
+      "bytes": 258129
+    },
+    {
+      "path": "assets/stickers/lumen_99.png",
+      "sha256": "7cc7b2bf654fac8344ec50877511fa00423456a54e2799db52c68ef547f4cfa3",
+      "bytes": 164845
+    },
+    {
+      "path": "assets/stickers/lumen_99.webm",
+      "sha256": "54e6e40ab7190e0b5a8bc513c9b09fcdab16eef81d543491e126e82283c0b6d6",
+      "bytes": 260648
+    }
+  ],
+  "video_files": 139,
+  "png_files": 139
+}

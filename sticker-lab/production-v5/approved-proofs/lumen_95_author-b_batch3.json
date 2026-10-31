@@ -1,0 +1,1641 @@
+{
+  "schema_version": 1,
+  "id": "lumen_95",
+  "candidate": "lumen_95_author-b_batch3",
+  "created_at": "2026-10-30T18:25:57.640352+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_video_sha256": "c4c404e2ab288be89d68fb4a639bc91a4522bc16ae22a01bec6731c49e461e5e",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "f2790301b914462f52b15d647ab26a7920711df069eb5892a6f5cdd2d53f58c3",
+  "derived_source_frames": [
+    {
+      "index": 21,
+      "timestamp_seconds": 0.7,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch3/lumen_95/source-frames/021.png",
+      "sha256": "c16012fd8774c12043b4a0760423763738a940ffbd10051d79f2e42356609c2b"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "a7f96566f338104f8ecd0bf2643884f263b0a96026228e6858349d1cdc85a070",
+  "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_95/recipe.json",
+  "recipe_sha256": "3f81dc6f071098c102f5e51ffaa3518d7a2c3f7c9b416fb1feb8e224d4ff3078",
+  "generator": {
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "description_uk": "Із заплющеними очима двічі чхає в велику білу хустинку. Вушка підскакують, тканина хвилею розгортається й м’яко осідає, а плащик трохи злітає слідом.",
+  "semantics": {
+    "core_scene": "Closed-eye sneeze into oversized white handkerchief held by paws, lifted ears and modest cape flare; coherent cloth billow.",
+    "scene_specific_instructions": "Sneeze into oversized handkerchief: real cloth/shoulder contraction and recovery, ears lift/cape flare. Cloth може billow й settle назад, сторонніх крапель не реверсувати.",
+    "authored_decisions": [
+      "Exact clean21 has coherent closed eyes/white cloth. Cloth billow is held by the same paws, with no swapped hand or falling droplet replay."
+    ],
+    "irreversible_motion_policy": "Only coherent authored local action. No backward falling particles, liquid or free props. Decorative held marks remain explicitly decorative."
+  },
+  "method": "shared_local_mesh_v1",
+  "statistics": {
+    "minimum_jacobian": 0.6891703605651855,
+    "maximum_displacement_px": 12.455184936523438
+  },
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.0,
+        "handkerchief_same_paw_billows": 0.0,
+        "sneeze_gripping_paw_and_shoulders": 0.0,
+        "cloak_sneeze_followthrough": 0.0
+      }
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.030600493640601457,
+        "handkerchief_same_paw_billows": 0.062063173032560766,
+        "sneeze_gripping_paw_and_shoulders": 0.062063173032560766,
+        "cloak_sneeze_followthrough": 0.14904226617617444
+      }
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.051084074562134735,
+        "handkerchief_same_paw_billows": 0.13596116657341145,
+        "sneeze_gripping_paw_and_shoulders": 0.13596116657341145,
+        "cloak_sneeze_followthrough": 0.2947551744109042
+      }
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.04679193619736745,
+        "handkerchief_same_paw_billows": 0.21884110787172006,
+        "sneeze_gripping_paw_and_shoulders": 0.21884110787172006,
+        "cloak_sneeze_followthrough": 0.4338837391175581
+      }
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.003065271979067169,
+        "handkerchief_same_paw_billows": 0.3078501241766547,
+        "sneeze_gripping_paw_and_shoulders": 0.3078501241766547,
+        "cloak_sneeze_followthrough": 0.5633200580636221
+      }
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.09475472465999848,
+        "handkerchief_same_paw_billows": 0.4001353427373835,
+        "sneeze_gripping_paw_and_shoulders": 0.4001353427373835,
+        "cloak_sneeze_followthrough": 0.6801727377709194
+      }
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.2545067336937122,
+        "handkerchief_same_paw_billows": 0.49284389080307434,
+        "sneeze_gripping_paw_and_shoulders": 0.49284389080307434,
+        "cloak_sneeze_followthrough": 0.7818314824680298
+      }
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.45326732908647005,
+        "handkerchief_same_paw_billows": 0.5831228956228955,
+        "sneeze_gripping_paw_and_shoulders": 0.5831228956228955,
+        "cloak_sneeze_followthrough": 0.8660254037844386
+      }
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.6594438671740265,
+        "handkerchief_same_paw_billows": 0.668119484446015,
+        "sneeze_gripping_paw_and_shoulders": 0.668119484446015,
+        "cloak_sneeze_followthrough": 0.9308737486442042
+      }
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.8414432109380714,
+        "handkerchief_same_paw_billows": 0.7450735489000794,
+        "sneeze_gripping_paw_and_shoulders": 0.7450735489000794,
+        "cloak_sneeze_followthrough": 0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.9676722233602941,
+        "handkerchief_same_paw_billows": 0.8126130105721941,
+        "sneeze_gripping_paw_and_shoulders": 0.8126130105721941,
+        "cloak_sneeze_followthrough": 0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 1.007686051470591,
+        "handkerchief_same_paw_billows": 0.8704342992608299,
+        "sneeze_gripping_paw_and_shoulders": 0.8704342992608299,
+        "cloak_sneeze_followthrough": 0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.9574503754076245,
+        "handkerchief_same_paw_billows": 0.9182613305062284,
+        "sneeze_gripping_paw_and_shoulders": 0.9182613305062284,
+        "cloak_sneeze_followthrough": 0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.8393414084188194,
+        "handkerchief_same_paw_billows": 0.9558180198486321,
+        "sneeze_gripping_paw_and_shoulders": 0.9558180198486321,
+        "cloak_sneeze_followthrough": 0.9308737486442042
+      }
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.6768836477998099,
+        "handkerchief_same_paw_billows": 0.9828282828282828,
+        "sneeze_gripping_paw_and_shoulders": 0.9828282828282828,
+        "cloak_sneeze_followthrough": 0.8660254037844387
+      }
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.4936015908462282,
+        "handkerchief_same_paw_billows": 0.999016034985423,
+        "sneeze_gripping_paw_and_shoulders": 0.999016034985423,
+        "cloak_sneeze_followthrough": 0.7818314824680299
+      }
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.3130197348537084,
+        "handkerchief_same_paw_billows": 1.004105191860294,
+        "sneeze_gripping_paw_and_shoulders": 1.004105191860294,
+        "cloak_sneeze_followthrough": 0.6801727377709194
+      }
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.15760388206530726,
+        "handkerchief_same_paw_billows": 0.9978212641477948,
+        "sneeze_gripping_paw_and_shoulders": 0.9978212641477948,
+        "cloak_sneeze_followthrough": 0.5633200580636218
+      }
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.03516857695527179,
+        "handkerchief_same_paw_billows": 0.9802279353299761,
+        "sneeze_gripping_paw_and_shoulders": 0.9802279353299761,
+        "cloak_sneeze_followthrough": 0.43388373911755823
+      }
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.05717099136330391,
+        "handkerchief_same_paw_billows": 0.9521433970413562,
+        "sneeze_gripping_paw_and_shoulders": 0.9521433970413562,
+        "cloak_sneeze_followthrough": 0.2947551744109046
+      }
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.12254338488892272,
+        "handkerchief_same_paw_billows": 0.9144879308144614,
+        "sneeze_gripping_paw_and_shoulders": 0.9144879308144614,
+        "cloak_sneeze_followthrough": 0.14904226617617472
+      }
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.164077165620088,
+        "handkerchief_same_paw_billows": 0.868181818181818,
+        "sneeze_gripping_paw_and_shoulders": 0.868181818181818,
+        "cloak_sneeze_followthrough": 1.2246467991473532e-16
+      }
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.18490089555530315,
+        "handkerchief_same_paw_billows": 0.8141453406759529,
+        "sneeze_gripping_paw_and_shoulders": 0.8141453406759529,
+        "cloak_sneeze_followthrough": -0.14904226617617403
+      }
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.18814313669307126,
+        "handkerchief_same_paw_billows": 0.7532987798293919,
+        "sneeze_gripping_paw_and_shoulders": 0.7532987798293919,
+        "cloak_sneeze_followthrough": -0.29475517441090393
+      }
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.1769324510318953,
+        "handkerchief_same_paw_billows": 0.686562417174662,
+        "sneeze_gripping_paw_and_shoulders": 0.686562417174662,
+        "cloak_sneeze_followthrough": -0.433883739117558
+      }
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.15439740057027912,
+        "handkerchief_same_paw_billows": 0.6148565342442894,
+        "sneeze_gripping_paw_and_shoulders": 0.6148565342442894,
+        "cloak_sneeze_followthrough": -0.5633200580636221
+      }
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.12366654730672572,
+        "handkerchief_same_paw_billows": 0.5391642371234207,
+        "sneeze_gripping_paw_and_shoulders": 0.5391642371234207,
+        "cloak_sneeze_followthrough": -0.6801727377709195
+      }
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.08786845323973791,
+        "handkerchief_same_paw_billows": 0.46093294460641376,
+        "sneeze_gripping_paw_and_shoulders": 0.46093294460641376,
+        "cloak_sneeze_followthrough": -0.7818314824680297
+      }
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.050131680367819786,
+        "handkerchief_same_paw_billows": 0.3818181818181819,
+        "sneeze_gripping_paw_and_shoulders": 0.3818181818181819,
+        "cloak_sneeze_followthrough": -0.8660254037844384
+      }
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.01358479068947327,
+        "handkerchief_same_paw_billows": 0.3034764555172718,
+        "sneeze_gripping_paw_and_shoulders": 0.3034764555172718,
+        "cloak_sneeze_followthrough": -0.9308737486442044
+      }
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.018759219103438304,
+        "handkerchief_same_paw_billows": 0.22756427246223157,
+        "sneeze_gripping_paw_and_shoulders": 0.22756427246223157,
+        "cloak_sneeze_followthrough": -0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.04561655172213079,
+        "handkerchief_same_paw_billows": 0.1557381394116087,
+        "sneeze_gripping_paw_and_shoulders": 0.1557381394116087,
+        "cloak_sneeze_followthrough": -0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.06703455100246528,
+        "handkerchief_same_paw_billows": 0.08965456312395097,
+        "sneeze_gripping_paw_and_shoulders": 0.08965456312395097,
+        "cloak_sneeze_followthrough": -0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.0830948023526414,
+        "handkerchief_same_paw_billows": 0.030970050357805562,
+        "sneeze_gripping_paw_and_shoulders": 0.030970050357805562,
+        "cloak_sneeze_followthrough": -0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.09387889118085843,
+        "handkerchief_same_paw_billows": -0.018670671731896144,
+        "sneeze_gripping_paw_and_shoulders": -0.018670671731896144,
+        "cloak_sneeze_followthrough": -0.9308737486442041
+      }
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.09946840289531586,
+        "handkerchief_same_paw_billows": -0.05808080808080803,
+        "sneeze_gripping_paw_and_shoulders": -0.05808080808080803,
+        "cloak_sneeze_followthrough": -0.866025403784439
+      }
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.0999449229042131,
+        "handkerchief_same_paw_billows": -0.08666843360720897,
+        "sneeze_gripping_paw_and_shoulders": -0.08666843360720897,
+        "cloak_sneeze_followthrough": -0.7818314824680299
+      }
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.09539003661574953,
+        "handkerchief_same_paw_billows": -0.10388137939158337,
+        "sneeze_gripping_paw_and_shoulders": -0.10388137939158337,
+        "cloak_sneeze_followthrough": -0.6801727377709191
+      }
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.08588532943812462,
+        "handkerchief_same_paw_billows": -0.10916747651441519,
+        "sneeze_gripping_paw_and_shoulders": -0.10916747651441519,
+        "cloak_sneeze_followthrough": -0.5633200580636227
+      }
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.07151238677953775,
+        "handkerchief_same_paw_billows": -0.10197455605618862,
+        "sneeze_gripping_paw_and_shoulders": -0.10197455605618862,
+        "cloak_sneeze_followthrough": -0.43388373911755834
+      }
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.0523527940481885,
+        "handkerchief_same_paw_billows": -0.0817504490973879,
+        "sneeze_gripping_paw_and_shoulders": -0.0817504490973879,
+        "cloak_sneeze_followthrough": -0.2947551744109047
+      }
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.02848813665227604,
+        "handkerchief_same_paw_billows": -0.0479429867184969,
+        "sneeze_gripping_paw_and_shoulders": -0.0479429867184969,
+        "cloak_sneeze_followthrough": -0.14904226617617528
+      }
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.0,
+        "handkerchief_same_paw_billows": 0.0,
+        "sneeze_gripping_paw_and_shoulders": 0.0,
+        "cloak_sneeze_followthrough": -2.4492935982947064e-16
+      }
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.030600493640601356,
+        "handkerchief_same_paw_billows": 0.06206317303256054,
+        "sneeze_gripping_paw_and_shoulders": 0.06206317303256054,
+        "cloak_sneeze_followthrough": 0.14904226617617392
+      }
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.05108407456213477,
+        "handkerchief_same_paw_billows": 0.13596116657341162,
+        "sneeze_gripping_paw_and_shoulders": 0.13596116657341162,
+        "cloak_sneeze_followthrough": 0.29475517441090343
+      }
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.046791936197367476,
+        "handkerchief_same_paw_billows": 0.21884110787171995,
+        "sneeze_gripping_paw_and_shoulders": 0.21884110787171995,
+        "cloak_sneeze_followthrough": 0.4338837391175579
+      }
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.0030652719790668637,
+        "handkerchief_same_paw_billows": 0.30785012417665514,
+        "sneeze_gripping_paw_and_shoulders": 0.30785012417665514,
+        "cloak_sneeze_followthrough": 0.5633200580636215
+      }
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.0947547246599986,
+        "handkerchief_same_paw_billows": 0.4001353427373836,
+        "sneeze_gripping_paw_and_shoulders": 0.4001353427373836,
+        "cloak_sneeze_followthrough": 0.6801727377709194
+      }
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.25450673369371174,
+        "handkerchief_same_paw_billows": 0.4928438908030741,
+        "sneeze_gripping_paw_and_shoulders": 0.4928438908030741,
+        "cloak_sneeze_followthrough": 0.7818314824680296
+      }
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.45326732908647077,
+        "handkerchief_same_paw_billows": 0.5831228956228959,
+        "sneeze_gripping_paw_and_shoulders": 0.5831228956228959,
+        "cloak_sneeze_followthrough": 0.8660254037844384
+      }
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.6594438671740265,
+        "handkerchief_same_paw_billows": 0.668119484446015,
+        "sneeze_gripping_paw_and_shoulders": 0.668119484446015,
+        "cloak_sneeze_followthrough": 0.9308737486442042
+      }
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.841443210938071,
+        "handkerchief_same_paw_billows": 0.7450735489000793,
+        "sneeze_gripping_paw_and_shoulders": 0.7450735489000793,
+        "cloak_sneeze_followthrough": 0.9749279121818235
+      }
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.967672223360294,
+        "handkerchief_same_paw_billows": 0.8126130105721943,
+        "sneeze_gripping_paw_and_shoulders": 0.8126130105721943,
+        "cloak_sneeze_followthrough": 0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 1.0076860514705912,
+        "handkerchief_same_paw_billows": 0.8704342992608298,
+        "sneeze_gripping_paw_and_shoulders": 0.8704342992608298,
+        "cloak_sneeze_followthrough": 0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.957450375407624,
+        "handkerchief_same_paw_billows": 0.9182613305062286,
+        "sneeze_gripping_paw_and_shoulders": 0.9182613305062286,
+        "cloak_sneeze_followthrough": 0.9749279121818237
+      }
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.8393414084188194,
+        "handkerchief_same_paw_billows": 0.9558180198486321,
+        "sneeze_gripping_paw_and_shoulders": 0.9558180198486321,
+        "cloak_sneeze_followthrough": 0.9308737486442041
+      }
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.6768836477998103,
+        "handkerchief_same_paw_billows": 0.9828282828282827,
+        "sneeze_gripping_paw_and_shoulders": 0.9828282828282827,
+        "cloak_sneeze_followthrough": 0.8660254037844392
+      }
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.4936015908462278,
+        "handkerchief_same_paw_billows": 0.9990160349854228,
+        "sneeze_gripping_paw_and_shoulders": 0.9990160349854228,
+        "cloak_sneeze_followthrough": 0.78183148246803
+      }
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.3130197348537084,
+        "handkerchief_same_paw_billows": 1.004105191860294,
+        "sneeze_gripping_paw_and_shoulders": 1.004105191860294,
+        "cloak_sneeze_followthrough": 0.6801727377709192
+      }
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.1576038820653079,
+        "handkerchief_same_paw_billows": 0.9978212641477948,
+        "sneeze_gripping_paw_and_shoulders": 0.9978212641477948,
+        "cloak_sneeze_followthrough": 0.5633200580636228
+      }
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.03516857695527153,
+        "handkerchief_same_paw_billows": 0.9802279353299761,
+        "sneeze_gripping_paw_and_shoulders": 0.9802279353299761,
+        "cloak_sneeze_followthrough": 0.43388373911755845
+      }
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.05717099136330376,
+        "handkerchief_same_paw_billows": 0.9521433970413562,
+        "sneeze_gripping_paw_and_shoulders": 0.9521433970413562,
+        "cloak_sneeze_followthrough": 0.294755174410904
+      }
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.12254338488892298,
+        "handkerchief_same_paw_billows": 0.9144879308144612,
+        "sneeze_gripping_paw_and_shoulders": 0.9144879308144612,
+        "cloak_sneeze_followthrough": 0.1490422661761754
+      }
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.164077165620088,
+        "handkerchief_same_paw_billows": 0.868181818181818,
+        "sneeze_gripping_paw_and_shoulders": 0.868181818181818,
+        "cloak_sneeze_followthrough": 3.6739403974420594e-16
+      }
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.18490089555530315,
+        "handkerchief_same_paw_billows": 0.814145340675953,
+        "sneeze_gripping_paw_and_shoulders": 0.814145340675953,
+        "cloak_sneeze_followthrough": -0.14904226617617466
+      }
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.18814313669307126,
+        "handkerchief_same_paw_billows": 0.7532987798293919,
+        "sneeze_gripping_paw_and_shoulders": 0.7532987798293919,
+        "cloak_sneeze_followthrough": -0.29475517441090326
+      }
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.1769324510318953,
+        "handkerchief_same_paw_billows": 0.686562417174662,
+        "sneeze_gripping_paw_and_shoulders": 0.686562417174662,
+        "cloak_sneeze_followthrough": -0.4338837391175578
+      }
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.15439740057027884,
+        "handkerchief_same_paw_billows": 0.6148565342442889,
+        "sneeze_gripping_paw_and_shoulders": 0.6148565342442889,
+        "cloak_sneeze_followthrough": -0.5633200580636222
+      }
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.12366654730672572,
+        "handkerchief_same_paw_billows": 0.5391642371234207,
+        "sneeze_gripping_paw_and_shoulders": 0.5391642371234207,
+        "cloak_sneeze_followthrough": -0.68017273777092
+      }
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.08786845323973824,
+        "handkerchief_same_paw_billows": 0.46093294460641415,
+        "sneeze_gripping_paw_and_shoulders": 0.46093294460641415,
+        "cloak_sneeze_followthrough": -0.7818314824680296
+      }
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.05013168036781934,
+        "handkerchief_same_paw_billows": 0.38181818181818156,
+        "sneeze_gripping_paw_and_shoulders": 0.38181818181818156,
+        "cloak_sneeze_followthrough": -0.8660254037844378
+      }
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": -0.01358479068947327,
+        "handkerchief_same_paw_billows": 0.3034764555172718,
+        "sneeze_gripping_paw_and_shoulders": 0.3034764555172718,
+        "cloak_sneeze_followthrough": -0.9308737486442046
+      }
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.01875921910343817,
+        "handkerchief_same_paw_billows": 0.2275642724622319,
+        "sneeze_gripping_paw_and_shoulders": 0.2275642724622319,
+        "cloak_sneeze_followthrough": -0.9749279121818235
+      }
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.04561655172213079,
+        "handkerchief_same_paw_billows": 0.1557381394116087,
+        "sneeze_gripping_paw_and_shoulders": 0.1557381394116087,
+        "cloak_sneeze_followthrough": -0.99720379718118
+      }
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.06703455100246528,
+        "handkerchief_same_paw_billows": 0.08965456312395097,
+        "sneeze_gripping_paw_and_shoulders": 0.08965456312395097,
+        "cloak_sneeze_followthrough": -0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.08309480235264145,
+        "handkerchief_same_paw_billows": 0.03097005035780534,
+        "sneeze_gripping_paw_and_shoulders": 0.03097005035780534,
+        "cloak_sneeze_followthrough": -0.9749279121818237
+      }
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.09387889118085843,
+        "handkerchief_same_paw_billows": -0.018670671731896144,
+        "sneeze_gripping_paw_and_shoulders": -0.018670671731896144,
+        "cloak_sneeze_followthrough": -0.9308737486442048
+      }
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.09946840289531585,
+        "handkerchief_same_paw_billows": -0.05808080808080788,
+        "sneeze_gripping_paw_and_shoulders": -0.05808080808080788,
+        "cloak_sneeze_followthrough": -0.8660254037844392
+      }
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.09994492290421308,
+        "handkerchief_same_paw_billows": -0.08666843360720908,
+        "sneeze_gripping_paw_and_shoulders": -0.08666843360720908,
+        "cloak_sneeze_followthrough": -0.7818314824680301
+      }
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.09539003661574953,
+        "handkerchief_same_paw_billows": -0.10388137939158337,
+        "sneeze_gripping_paw_and_shoulders": -0.10388137939158337,
+        "cloak_sneeze_followthrough": -0.6801727377709192
+      }
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.08588532943812463,
+        "handkerchief_same_paw_billows": -0.10916747651441522,
+        "sneeze_gripping_paw_and_shoulders": -0.10916747651441522,
+        "cloak_sneeze_followthrough": -0.563320058063623
+      }
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.07151238677953775,
+        "handkerchief_same_paw_billows": -0.10197455605618862,
+        "sneeze_gripping_paw_and_shoulders": -0.10197455605618862,
+        "cloak_sneeze_followthrough": -0.43388373911755856
+      }
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.0523527940481885,
+        "handkerchief_same_paw_billows": -0.0817504490973879,
+        "sneeze_gripping_paw_and_shoulders": -0.0817504490973879,
+        "cloak_sneeze_followthrough": -0.2947551744109058
+      }
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        21
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "sneeze_closed_face_ear_lift": 0.028488136652275953,
+        "handkerchief_same_paw_billows": -0.04794298671849673,
+        "sneeze_gripping_paw_and_shoulders": -0.04794298671849673,
+        "cloak_sneeze_followthrough": -0.14904226617617375
+      }
+    }
+  ],
+  "candidate_sha256": "5495d07efb189818cb3024ea26ec21af435bfaf49c246232d82e8535034d46a9",
+  "poster_sha256": "43208b8eff00f672de0a01db02299dd204185e1e175c58fa0e7cbb0e53204b33",
+  "bytes": 217584,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "output_pts": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "decoded_png_sha256": [
+    "795c0d2bdce4d013ddf43cbd1a944e129dfab109c0069922757735840fc6ff60",
+    "1f7f7fde509ab5b7da7939cf91a2c4f45ba9d24c97271dac1bccdf983a88ec72",
+    "639709dda4ba247deb63dc6a0a7bc8c521ca9c23f9731d03763f02aacaf8ecd8",
+    "4e8396b0ae809a590d2090b2bf1ea7f8bcd603d6f3481b40348bc23282136354",
+    "f1adbd2ea60e1c6440849e033743d99e95520ad85ac095d36976a2feca4c0a33",
+    "c3ff8294e7cd301637aea373fe7282aceb684f4bfa1c33399edcd52ca22d051c",
+    "5ca2a3816ed2c9d667b4f1dbe8ead8320d289958afe8780faf8ddb786a74eaee",
+    "2534de36dcfc7dd1a9326890edc29b39ee21bd000a7dd243e835ca94db3e36b5",
+    "db1c5295127957eca17671c42b9a10bea18da64ad17a270308fb85ea63ef69b3",
+    "16c96a3aa97ae5ebb4bd3b270e4fda29f20f8ca9cabd43637bac23f2af9e5dc8",
+    "d03dcafa4c76b06debfae1219339f28583bc23eb549c313396f0e30b151fc0aa",
+    "91a7495aed7e1914d47abd391553ae837780cb06e65ee6b3ad98264c8885b4aa",
+    "beaae1e59013a75149e483a086685bcb81faf92273b8065125717d88ed9590d9",
+    "1c2d93b6cb4a1d59e1d110fb21df4fc71d43def5963354a79ab242d84d0997fa",
+    "dd0412402401cada19ea46a4f180e3e07c887b2436f545747fb34adef83f1f4c",
+    "e19102632a502f65587457083e7546c7308209319f853e72047f26955a05387a",
+    "1eb2d534155cce527ee6cd7cbadb56f390857af9efaac61ac60bad77234e7a68",
+    "9f5b256fd5c32f5dda5533cb847c3c490c9f48d930368a410ff168a40f7a1b52",
+    "1673fefe540152f326a39b8d6724c59ad0694608ecca0780dce2c3c7acaaf28b",
+    "d7961cacaba1d6ec7b3ba556822883496fa74e2a4697a36210b998a0b4705cf2",
+    "6bb2d40368bfbdc8334471e6b37783f4ed85d5e4e73f047fe968e07f559e3e7f",
+    "14cc8b4736796fb8f2b2739d1faa89c4cc48bea4f4deff6d28d295de13a67f4f",
+    "45f527d5f21149ee4f161344eb7468c944e60c41e8e3c173647f7dda478665c4",
+    "67b08c22b35a83180ccd8b6a5c3ce172242477c08626e58dad82b22afb535091",
+    "74789305d5a643ee2efb625a0e858309c79dce1c70803960e101ee6918880a47",
+    "c6df5d2f7f10514b33e72cab06ef39d899ed732357c8f8cfb264da3b74c93785",
+    "adea6ede711dca360543db643a3baf2b9070f650893d6ed3d0b461f0a44b9b29",
+    "e134d12305e9a51659f624337e509e60ebbb3cf31e150c5f5b0e13f5554dde13",
+    "4865b6655d1a66a87e551b0f97be68311665d960dab8c3d46d3ef11789d6fcd2",
+    "810d5248a338d2fc92e2cc8e4c9c09fa1550939cdbabfc45b87e472486afb520",
+    "670e7a9bd27bdbd57b908bab0ec372780f5fb8bc8ddcdad8fe27a6e11a5d81d1",
+    "fe805bc15f9577a527dc88b26781879ba28a0bc8eef1d4fb2a5fefaf9f7fefe7",
+    "8dc1121c73e8074ba747005aec988f30a32ca8f762f7b866bbe6857718991809",
+    "255a04754a9024d896cb8ceb66ca9174a1d592bf72342668d5036731b48eb945",
+    "61836fc83f26854c32993b0233e8cbb0b9d8f0ad18efcb2d11718fedfef31b79",
+    "70b139259c8eb6ff78c9758e20e12e34d6944bf73e3638cd2cf8b5f76f7660ed",
+    "b6c823686b97993216d69e47536f093f00ecf0474f1af0a14d787b3e20626c68",
+    "36f56f972014a4cf7323f51b9df09913971bb180eb419f562baab54b75ab3b46",
+    "fd0f06fb02e36a3cb4c64a21b49d37fd0a83802b530e6d6944c046f9d0e6bdc7",
+    "3eb9cc52bb2ea2122512449472e2d6dc525b791822cbe6ed34d8abd1cbc3be7f",
+    "19210773fd14ad1b71bc73c0b2a1ff724f6991b2ef7e263b3dd67e4c118cd32d",
+    "fe9786bedbdc6471ea6c91cf42aedff837389ccb9ba3a810f68762fe20e6933c",
+    "479ee634a3ed9eae13d6ea7964ff5225dc60bb6f6745f293ddc91e4ace7713c7",
+    "652fad468fdd08a5dd9a7d94049620d03d0d6d36e2d14f9f5336ae91117b72a5",
+    "b8ee80b8c663ca7a668c52cbc173c23bacbe11862515ba02cc8a3dd85f1385f4",
+    "0351a09cd2725a649eac80cc32a9a56656feb45f86b87d005bcda3446304e58d",
+    "43009e939b96d5412c1bf5a64b8d7a9ea80b4f2a826c204ae86eaee21864e7ee",
+    "ed136851f0457506606cd67f8a56d8ecc04aa4683bdbe60f1fcfa2ad17dc1d8b",
+    "b8140befee132d326d6e518141b0bbaacd2c09744d940572a7132d7885e2bf7d",
+    "dfd5a9033f43222fee5e020893803f679ef50d3983aa423a5ddfb6a1dbb017fe",
+    "f06f05ad22f34a168960538c354c29baba72ca549b03084728359ccd79d0bc2e",
+    "b646cbbf21ee81978e29964ea329bb42ff869af6b57a4c1b48ba77d47d2204f4",
+    "803115fa95e014d1d334f0c476c21f5d92bfa0c495eba381b934fa2f6662d031",
+    "b769bde75ae7775f05f2481f95188c8bcd59a9ac756a2b113100f6c5716cffa6",
+    "44285651c7eeef580d449b83e993c444bbaaaf5dcd51d125fad305f7d0743b5d",
+    "cfdaad8f0384a51453b836235ca16dd93e6691e9283f9710cd45aad426ffc8dd",
+    "888c1bda97aea7b14660d85c96a240fbfef73bff7d0700ae9b5ef16b869ae563",
+    "ac1631bab7c6cf2bd2f097a9635d855ad5bac53ba90d9747f40422cbf1876a48",
+    "e6556e48649440734ba5a68f09ba684e99a841345e46740d91579e26f7edf07b",
+    "56dbd549231e58532f0c002eaf461cddc3b99e3616345f082e54af1d087299c3",
+    "9b878d8fffb541d0db862abdc32cb19a18eed22449760786aca38758495cce26",
+    "73f5468d886c27639e10f4e7ad5adf1fc5f8110db7bb99e1cbbaad3c5effea82",
+    "c1cbefc455045ee580f3742261c04d70ae1d68a1f2baa2b8231453ba53da955e",
+    "7e7f48984e60d5925f73785c027c0ea48207b1f9487e41f51f00e53cb769a7cc",
+    "129f1948b698e1969a5c79cf991cb29a1587d4e04cecbbc7f14907ed8f9e6476",
+    "162c99dc6d513825ffda05fde1aa3361f4982c1b0411ad1cfe79dc19a5b89e71",
+    "e4f45366221a6d78ec945edf6f8297ef4d8b732191bad6be269bd046fa5e04c9",
+    "e35a98308c3b11437ec728519ae6db258ee7a659ab8f970087c259c72ab40664",
+    "a4820557cac99f8c72cbb0c94473ed3dc152c8f6cb413ccef2fcb064a4624919",
+    "45d9fd0ced0a7d70eb37c1a01ec2553f002c40cff7b7d6f0d8cf34c79f154d29",
+    "801b1e55507dcb825ebb814f4c918180566152cb3ce75be9eb858d5fc4b61448",
+    "ec08558e5254902c3af78ed3aa356ce650940a13af872ac7a1864a35b7bf815f",
+    "e75f391f207efa09056b4a4e0d61648be9ef1007552d6ebdb34921f875e40187",
+    "1da5d0a97ff3b426f48486c88da27a10ef4ea6a916ecd14bfa6bcfe6ebdd0373",
+    "4abb8cc9fcfacb8d00b92c52a108e8c5f9a056a05075936d40144f012330bd48",
+    "afb57e645dd9a48a96e4eb9dfd9581deeaf88d26762801652045e6cbee164143",
+    "c048b23e09787aa2cf0424767bafb85dd55f590c563ee2dc6708ebe3d02eb315",
+    "7432de389563986bf98e031da5b0769a3043beade6494eaf3dcfb499e26b5ba1",
+    "498611e6b434bd13119fe77c499615774a7640e1f62c7933f300446d3190ff19",
+    "7e2ae332bbc4b5c95338432d109fa1facf63e17d00e1d539f06381551f94839b",
+    "38409492fefeea3de7e40b1656dc2dfd36d7f83f0d9424dd258b505b16628e91",
+    "333c4aa5623b6c8f9938d77d6c908a34a5803e1313c4e13ad5ec6104194332d7",
+    "bc2a3fb66c665955ea73eabeb288bcdb94c41d1f6e70932f2738b726b43643ee",
+    "36880188284ad6b5238fd2632253c3c0c6f378397bc05f2fa1bc4fabda67413e"
+  ],
+  "frames_rgba_png_sha256": [
+    "798f52661dce2de6f347b0847f2cb0ec70565cf689262a5b818029f07a042881",
+    "933c99e89f335784a586aa3912d4a9fa12ad4197196fbe083d0f8f4f67dc9dcb",
+    "0cc5f2a6091e425c5bcb2a84a2d0a09ab3b27b169dba3f448b6c5f46eb7ff2c7",
+    "c7b159072b4819567a6dfeff9803476efc17cb4b1b5ad0681160fee79489e479",
+    "ddf3fcd9c87ea1dba8176bdfc31654bc3cb2c08ddabbcd5fb253fb245b123650",
+    "67d015131af31619c4707f5940cd26d92b3c36977e195f3bf6ff3cdda4ccd8d9",
+    "04b9361d0461ba001aa2ea6c856f38c28aec90f6b7e56d7233ff5a5b82d31416",
+    "3851600047adbb9965012a2c9fe462bca9059d7e35f81d7ad3308461194e1ecf",
+    "4384d6570fd95838a9e0dbeec34e23cccc79ae0c5cdda33ad361eb87346aeb98",
+    "cc89884c3d062d59845dd6b7f50f7fd79a443048cdc30c5b9891c1dd3c7fc973",
+    "b16f03e16e4ea8ab92ec3ee0b50b76a3eb7e0839f09259272dcd4ed919e23890",
+    "d38efd663d620c7a09ef9aa17d0ece9926ac34ef8434e05762d0b03eea9b7264",
+    "91f07505bffd69779de5dce04aa95368d64d524cd3f0df3d7e7a0b088549b599",
+    "df89e4028d6759f614f5d44c72ac4d744fdbd20816bae16dd50665ab6c7e0f6a",
+    "dd7a59abbb16102185c5cd2a0922b802eb814913d0c184c698857a9dda442a48",
+    "e34a5b5f8571eb813b81f2d21fc26bf9b344949c40cef27e8bb6c92755ff161f",
+    "b68f625ab55efad422818bcb74abda8a0be8d1d74578310d09028141043642b9",
+    "aa186bd5e24c0e1209ad60177f6ae567f2b181040bb0c950e95c1612aea30a91",
+    "af9bbb2f4d5a98fb6173cf22c103f67f414aad9e9d27fa5b66cc1eba735e45d9",
+    "87cc4a0e758905ad13b9c5b74d1e8bec00db871ff969417395c0701bf677ebe8",
+    "87243a5e4d4c20fdbf3dc53d53eb53310953aa0989b5bc60519e174f1acdfd48",
+    "7f624242dacbcda374b99e42f08db35e22c33fcaffc7f404311a68c7314b4090",
+    "51ead13753beab98ecd5a88b4295bc9d53bdaf98e1d609be5d5b68408b4f3586",
+    "7fab20dc5e051349aefe8b66eaf3e7d0fa114273e9a93e782f733364a8ff7af1",
+    "8fea1c2c34d9e6dbe068988ece225c7b765f1d7b7b5e98272ef26a7b071fb4db",
+    "aa9e25673724a5edfa9dffcd5d108f327be2f0c70d451739b0af7757bd351892",
+    "21484cf9cd135831cf185028b8c6692e9ee5bb88d6e886b99c86a0c20b4f59e1",
+    "e0bf282ed3847e1932899b9de0e1977419bc2b97dd4f4f3aff274d91ccdc0128",
+    "b7f8ad262937b864aa2308017a307629f5d4e3ccfc245d6125ee6a017cf78a36",
+    "13ef403e0b79fd252403f2c298c26ab2637e9ea57286b18fe8dcb9482c8f3b5a",
+    "881ef617dccf9cb0303ccc5d3c058f43dbed6d6c7792f86a0967ec7442745202",
+    "c0e666d2c47dd051bbbfdeda320e0981a1b0eb7ea7a94bb72efe1f0c362376f5",
+    "ab3d58c9a3be2baf10198340e3842b31f93939adce09bbdfd435486e593b2c85",
+    "b20eb1c4b6e2d60c9a6ece140434b6af9d8ac6d6746fac0d68f578e32f3fa5e8",
+    "6a751bc5cc48ba5302f22c89b9930c3b1919715891130f443d573b7feb409a0b",
+    "632e1b9b24eeb791f4702e63195bbec5217930b4a6e90a7e76bddc9c018ce59a",
+    "2e9b22a9e7bae04169eed4de13cd0acd798eba463f93d9d32d56e330afdf7916",
+    "2059448b826d16c42f2fa052f875348aaa82a846ff61d20bca457539615905b1",
+    "bce5fc55095aae2c6846a10e04ad4bac60113239b9f5bee427c80e1b30adb0cd",
+    "2ac6c19b20781ceb9bb685d16d8eba6e080c92e2645de3c437d6e02e438f06e3",
+    "0edff2addd691a19e8e315ac0df9d31c680bdc262fdc83e64ae5a54027b3a941",
+    "1e01babf82d36f21035cd0876badc0596ebca37b4cca99689db4088dca071f22",
+    "798f52661dce2de6f347b0847f2cb0ec70565cf689262a5b818029f07a042881",
+    "933c99e89f335784a586aa3912d4a9fa12ad4197196fbe083d0f8f4f67dc9dcb",
+    "0cc5f2a6091e425c5bcb2a84a2d0a09ab3b27b169dba3f448b6c5f46eb7ff2c7",
+    "c7b159072b4819567a6dfeff9803476efc17cb4b1b5ad0681160fee79489e479",
+    "ddf3fcd9c87ea1dba8176bdfc31654bc3cb2c08ddabbcd5fb253fb245b123650",
+    "67d015131af31619c4707f5940cd26d92b3c36977e195f3bf6ff3cdda4ccd8d9",
+    "04b9361d0461ba001aa2ea6c856f38c28aec90f6b7e56d7233ff5a5b82d31416",
+    "3851600047adbb9965012a2c9fe462bca9059d7e35f81d7ad3308461194e1ecf",
+    "4384d6570fd95838a9e0dbeec34e23cccc79ae0c5cdda33ad361eb87346aeb98",
+    "cc89884c3d062d59845dd6b7f50f7fd79a443048cdc30c5b9891c1dd3c7fc973",
+    "b16f03e16e4ea8ab92ec3ee0b50b76a3eb7e0839f09259272dcd4ed919e23890",
+    "d38efd663d620c7a09ef9aa17d0ece9926ac34ef8434e05762d0b03eea9b7264",
+    "91f07505bffd69779de5dce04aa95368d64d524cd3f0df3d7e7a0b088549b599",
+    "df89e4028d6759f614f5d44c72ac4d744fdbd20816bae16dd50665ab6c7e0f6a",
+    "dd7a59abbb16102185c5cd2a0922b802eb814913d0c184c698857a9dda442a48",
+    "e34a5b5f8571eb813b81f2d21fc26bf9b344949c40cef27e8bb6c92755ff161f",
+    "b68f625ab55efad422818bcb74abda8a0be8d1d74578310d09028141043642b9",
+    "aa186bd5e24c0e1209ad60177f6ae567f2b181040bb0c950e95c1612aea30a91",
+    "af9bbb2f4d5a98fb6173cf22c103f67f414aad9e9d27fa5b66cc1eba735e45d9",
+    "87cc4a0e758905ad13b9c5b74d1e8bec00db871ff969417395c0701bf677ebe8",
+    "87243a5e4d4c20fdbf3dc53d53eb53310953aa0989b5bc60519e174f1acdfd48",
+    "7f624242dacbcda374b99e42f08db35e22c33fcaffc7f404311a68c7314b4090",
+    "51ead13753beab98ecd5a88b4295bc9d53bdaf98e1d609be5d5b68408b4f3586",
+    "7fab20dc5e051349aefe8b66eaf3e7d0fa114273e9a93e782f733364a8ff7af1",
+    "8fea1c2c34d9e6dbe068988ece225c7b765f1d7b7b5e98272ef26a7b071fb4db",
+    "aa9e25673724a5edfa9dffcd5d108f327be2f0c70d451739b0af7757bd351892",
+    "21484cf9cd135831cf185028b8c6692e9ee5bb88d6e886b99c86a0c20b4f59e1",
+    "e0bf282ed3847e1932899b9de0e1977419bc2b97dd4f4f3aff274d91ccdc0128",
+    "b7f8ad262937b864aa2308017a307629f5d4e3ccfc245d6125ee6a017cf78a36",
+    "13ef403e0b79fd252403f2c298c26ab2637e9ea57286b18fe8dcb9482c8f3b5a",
+    "881ef617dccf9cb0303ccc5d3c058f43dbed6d6c7792f86a0967ec7442745202",
+    "c0e666d2c47dd051bbbfdeda320e0981a1b0eb7ea7a94bb72efe1f0c362376f5",
+    "ab3d58c9a3be2baf10198340e3842b31f93939adce09bbdfd435486e593b2c85",
+    "b20eb1c4b6e2d60c9a6ece140434b6af9d8ac6d6746fac0d68f578e32f3fa5e8",
+    "6a751bc5cc48ba5302f22c89b9930c3b1919715891130f443d573b7feb409a0b",
+    "632e1b9b24eeb791f4702e63195bbec5217930b4a6e90a7e76bddc9c018ce59a",
+    "2e9b22a9e7bae04169eed4de13cd0acd798eba463f93d9d32d56e330afdf7916",
+    "2059448b826d16c42f2fa052f875348aaa82a846ff61d20bca457539615905b1",
+    "bce5fc55095aae2c6846a10e04ad4bac60113239b9f5bee427c80e1b30adb0cd",
+    "2ac6c19b20781ceb9bb685d16d8eba6e080c92e2645de3c437d6e02e438f06e3",
+    "0edff2addd691a19e8e315ac0df9d31c680bdc262fdc83e64ae5a54027b3a941",
+    "1e01babf82d36f21035cd0876badc0596ebca37b4cca99689db4088dca071f22"
+  ],
+  "raw_rgba_rerender_exact_match": null,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "adjacent_composite_mae": [
+    0.4134576618671417,
+    0.37376078963279724,
+    0.3317871391773224,
+    0.4726487696170807,
+    0.6300131678581238,
+    0.7982287406921387,
+    0.8625299334526062,
+    0.9565126299858093,
+    0.7331318259239197,
+    0.5964104533195496,
+    0.16593226790428162,
+    0.21966837346553802,
+    0.48942628502845764,
+    0.6558178067207336,
+    0.7097763419151306,
+    0.8721001744270325,
+    0.6839832663536072,
+    0.6699010729789734,
+    0.5345591902732849,
+    0.6205342411994934,
+    0.39361628890037537,
+    0.38395944237709045,
+    0.29311540722846985,
+    0.44419845938682556,
+    0.3053871989250183,
+    0.40880823135375977,
+    0.35658276081085205,
+    0.4970777928829193,
+    0.3197357654571533,
+    0.37290534377098083,
+    0.17763225734233856,
+    0.2555598318576813,
+    0.12289166450500488,
+    0.17259345948696136,
+    0.1805567592382431,
+    0.2017524689435959,
+    0.18277841806411743,
+    0.2633031904697418,
+    0.2835146486759186,
+    0.4097558259963989,
+    0.37343230843544006,
+    0.42877885699272156,
+    0.3870168924331665,
+    0.40389546751976013,
+    0.3238176107406616,
+    0.4780222475528717,
+    0.6250531077384949,
+    0.8551995158195496,
+    0.8539988994598389,
+    0.905897319316864,
+    0.7427148818969727,
+    0.5623099207878113,
+    0.19448959827423096,
+    0.2315731793642044,
+    0.49333080649375916,
+    0.7167593836784363,
+    0.6841128468513489,
+    0.7802701592445374,
+    0.7239887714385986,
+    0.7220261693000793,
+    0.5161831378936768,
+    0.536243736743927,
+    0.43659690022468567,
+    0.5008015036582947,
+    0.2740277945995331,
+    0.33052268624305725,
+    0.37032976746559143,
+    0.4199058711528778,
+    0.3416966497898102,
+    0.5363730788230896,
+    0.29103195667266846,
+    0.3523200750350952,
+    0.20627379417419434,
+    0.20419688522815704,
+    0.16056539118289948,
+    0.21033816039562225,
+    0.18111853301525116,
+    0.16932465136051178,
+    0.2115318775177002,
+    0.3212699592113495,
+    0.23069952428340912,
+    0.3640776574611664,
+    0.42456939816474915
+  ],
+  "seam_composite_mae": 0.4398236572742462,
+  "review_video_validation": {
+    "normal": {
+      "sha256": "aaab2be82c3eb703c3e85952d6139f6a44129754873a79ad2837ce3e4b08e6ad",
+      "bytes": 139921,
+      "duration": "2.800000",
+      "decoded_frames": "84",
+      "full_decode": "passed"
+    },
+    "slow": {
+      "sha256": "159c6d75b213a45f3babc9b18dfdd5fbd7db8296ca56dfa3cf79211044f07b32",
+      "bytes": 205285,
+      "duration": "5.600000",
+      "decoded_frames": "84",
+      "full_decode": "passed"
+    }
+  },
+  "source_review": "Every selected source PNG individually inspected at native512. Exact selected source indices/hashes are recorded above. Original84-frame before sequence remains available for independent QA.",
+  "candidate_visual_review": {
+    "actual_agent_id": "/root/artisan_stickers_b",
+    "full_ordered_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "full_frame_tile_px": 224,
+    "native512_after_frames": [
+      0,
+      10,
+      21,
+      31,
+      42,
+      53,
+      63,
+      73,
+      83
+    ],
+    "scope": "Every final decoded frame inspected in ordered224px boards, plus9native512phase/loop images. Author review only; no native realtime/slowed/device perception claim.",
+    "observation": "Scene-specific gesture/props/contacts retained, no double-exposure contour or limb swap observed in this author scope; independent per-item QA required."
+  },
+  "independent_review": "pending",
+  "native_playback": "unknown",
+  "device_playback": "unknown",
+  "canonical_assets_changed": false,
+  "limits_checked": {
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "side": 512,
+    "fps": 30,
+    "seconds": 2.8,
+    "max_bytes": 262144
+  },
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_95/review-normal.mp4",
+      "sha256": "aaab2be82c3eb703c3e85952d6139f6a44129754873a79ad2837ce3e4b08e6ad",
+      "bytes": 139921,
+      "frames": 84,
+      "duration": 2.8
+    },
+    {
+      "path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_95/review-slow.mp4",
+      "sha256": "159c6d75b213a45f3babc9b18dfdd5fbd7db8296ca56dfa3cf79211044f07b32",
+      "bytes": 205285,
+      "frames": 84,
+      "duration": 5.6
+    }
+  ],
+  "review_validation_scope": "Actual copied target paths must pass shared freeze_guard synchronously before package publication. Source validation alone is insufficient.",
+  "frozen_at": "2026-10-30T18:41:33.370567+00:00"
+}

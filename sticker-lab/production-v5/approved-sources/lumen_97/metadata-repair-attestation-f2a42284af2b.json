@@ -1,0 +1,19 @@
+{
+  "actual_agent_id": "/root",
+  "source": "Exact original root image_gen.imagegen invocation text in this conversation; copied verbatim. This is an author attestation, not independent vendor metadata.",
+  "issue": "The original metadata omitted prompt text. Its prior prompt_preserved_in_metadata claim was unsupported; original metadata and frozen packet remain unchanged.",
+  "calls": [
+    {
+      "step": 1,
+      "tool": "built-in image_gen.imagegen",
+      "output_file": "imagegen-intermediate.png",
+      "prompt": "Use case: precise-object-edit. Image 1 is the ONLY edit target: the same cream-and-turquoise mouse-like character freezing and shivering, eyes squinted tightly shut, worried brows, both paws clenched together at the amber round cape clasp, frost on its navy cape, lower body and feet inside a translucent blue ice block, small blue ice flecks around ears. Image 2 is identity reference ONLY: the exact character has precisely TWO small natural upper central front teeth. Repair only the mouth anatomy in Image 1: remove every extra segmented row of human-like teeth, retaining exactly two small upper front incisors. Keep a tense cold grimace and compressed lip corners, with dark mouth interior at the sides of those two teeth. Do not turn it into a happy smile or add lower teeth. Preserve squinted eyes, worried eyebrows, head and ear shape, turquoise markings, two paws touching the clasp, navy cloak frost, amber clasp, translucent blue ice block with visible feet and ice flecks, composition and lighting. No new props, limbs or text. One clean complete full-body single pose for the same sticker's animation anchor. Transparent background, with translucent ice preserved; retain the entire silhouette with a clear margin."
+    },
+    {
+      "step": 2,
+      "tool": "built-in image_gen.imagegen",
+      "output_file": "imagegen-anchor-original.png",
+      "prompt": "Precise surgical edit of Image 1 only. Keep the entire shivering mouse character, closed squinting eyes, ears, fur, frost, navy cape, amber clasp, paws, translucent blue ice block, feet and ice flecks identical. Correct ONLY the tiny mouth: retain the TWO small central upper incisors, and REMOVE all other white or gray tooth-like blocks on BOTH sides of them. Everything inside the mouth behind and beside those two incisors must be dark reddish-brown, with no pale enamel blocks, no molars, no canine teeth, no segmented white bands, no lower teeth. The whole mouth has exactly TWO enamel shapes total. Keep the compressed cold grimace and lip corners in the same place. Image 2 is identity reference for those two incisors only. Transparent background and existing translucent ice unchanged. One full-body single pose, same composition and margin; no other edits."
+    }
+  ]
+}

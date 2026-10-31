@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "actual_agent_id": "/root/artisan_layers_resume",
+  "status": "author_self_return_before_independent_QA",
+  "finding": "AUTHOR-R3-HELD-GRIP-001",
+  "source_result_path": "sticker-lab/production-v5/occlusion_c-candidates/lumen_138_side_r3/render-result.json",
+  "source_result_sha256": "ed80260495e31705f03b2ddf54f3949ecd72db5571944dd45d1096c10cf34075",
+  "max_component_error_pixels": 1.2182955043791708,
+  "first_bad_frame": 0,
+  "cause": "arm_layer caps actual target distance at146; the first R3 held corner at[396,200] exceeded this bound, so the actual paw target shifted.",
+  "correction": "Move physical side-held corner to[396,202] and interpolate to unchanged covered target[395,271]; retain exact146bound, no tolerance relaxation.",
+  "old_candidate_not_canonical": true,
+  "old_partial_payload_untouched": "sticker-lab/production-v5/occlusion_c-138-side-r3-frozen",
+  "r3_final_artifact_proof_not_issued": true,
+  "archived_source_result_path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/history/author-self-return-r3-render-result.json",
+  "archived_source_result_sha256": "ed80260495e31705f03b2ddf54f3949ecd72db5571944dd45d1096c10cf34075"
+}

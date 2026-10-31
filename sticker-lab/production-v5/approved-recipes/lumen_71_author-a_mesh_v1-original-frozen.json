@@ -1,0 +1,904 @@
+{
+  "schema_version": 1,
+  "id": "lumen_71",
+  "candidate_id": "lumen_71_author-a_mesh_v1",
+  "engine_mode": "shared_local_mesh_v1",
+  "description_uk": "Тримає ротик на золотому замочку, злегка нахиляє голівку й показує ключ тією самою лапкою. Інша лапка тихенько вказує на застібку: таємницю збереже.",
+  "semantics": {
+    "core_scene": "Single gold zipped mouth with pull, one key held by same paw, other single pointing hand, calm wide eyes and assuring head tilt.",
+    "omitted_optional_action": "Handoff, extra ear-side hand and synthetic blink omitted; zipper never opens and key never changes hands.",
+    "reversibility_or_contact": "Both zipper ends and pull follow the same head map; key ring/shaft/bit share wrist rotation with held paw. Pointing finger has a separate2px gesture, feet remain grounded."
+  },
+  "source_provenance": {
+    "kind": "derived_decoded_video",
+    "source_video_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_71/source.webm",
+    "source_video_sha256": "dce124efa091f4c73d693ccef6c3bcb076dd0229a5e803eea8a9667d46343638",
+    "ancestor_original_keyposes_sha256": "ac64a72e89611dd18cb4906edc74ceaa2efa58ad2e62d4f78c7bea33f15a6689",
+    "ancestor_original_status": "unresolved_original_not_recovered",
+    "derived_source_bundle_sha256": "26892311a31e8a2a76277911beaf6e36e6a9e84a7af469395f77442bc5d76f81",
+    "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+    "original_scene_prompt_english": "Рот на замочок. A small neat gold zipper motif closes across the muzzle without changing the nose, one paw holds a tiny golden key, the other points to the zipper. Firm tight-lipped expression with wide honest eyes, gently turns the key at his chest."
+  },
+  "source_frames": [
+    {
+      "index": 0,
+      "timestamp_seconds": 0.0,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_71/source-frames/000.png",
+      "sha256": "89ae5f05e822d269bd0031ecfb0536aebf8f1bd12554869256f8a1351f9c06fa"
+    }
+  ],
+  "baseline_independent_triage": {
+    "artifact": "docs/qa-1-13/sticker-triage-51-80.json",
+    "verdict": "repair_required",
+    "source_sha256": "dce124efa091f4c73d693ccef6c3bcb076dd0229a5e803eea8a9667d46343638",
+    "defects": [
+      {
+        "frames": [
+          4,
+          8
+        ],
+        "reason": "Перенесення ключа до блискавки йде через прозоре накладання руки/ключа: f6 має ghost старого ключа біля лівої щоки та напіврозчинену кисть."
+      },
+      {
+        "frames": [
+          35,
+          39
+        ],
+        "reason": "Перехід до відкритих очей накладає різні очні рисунки: f37 має роздвоєні брови/повіки та часткові райдужки з різним положенням, ключ і zipper-позиція також м'яко двояться."
+      },
+      {
+        "frames": [
+          45,
+          50
+        ],
+        "reason": "Повернення ключа в upright показ створює дві пози лівої руки: f47–49 містять примарний ключ біля вуха, стару кисть біля рота та нову кисть нижче ключа; f49 читається як зайва рука/передпліччя."
+      }
+    ]
+  },
+  "generator": {
+    "engine_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "output": {
+    "width": 512,
+    "height": 512,
+    "fps": 30,
+    "frames": 84,
+    "duration": 2.8,
+    "crf": 30,
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "maximum_bytes": 262144
+  },
+  "author_source_review": {
+    "agent": "/root/artisan_stickers_a",
+    "every_selected_sourceframe_observed": true,
+    "selected_frame_view_scale_px": 256,
+    "native512_frame_indices": [
+      0
+    ],
+    "observation": "Native0 shows one key, one zipped face and exactly two paws; all key/zipper anchors were visually selected. Exact sole source PNG inspected at native512; no source eye/limb/prop ghost accepted.",
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-inspection/meshes/71_anchor0.png"
+    ]
+  },
+  "approval": "unreviewed individual prototype, no staging or publication approval",
+  "local_mesh": {
+    "source_frame": 0,
+    "points_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        511,
+        0
+      ],
+      [
+        0,
+        511
+      ],
+      [
+        511,
+        511
+      ],
+      [
+        256,
+        0
+      ],
+      [
+        0,
+        256
+      ],
+      [
+        511,
+        256
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        257,
+        71
+      ],
+      [
+        134,
+        108
+      ],
+      [
+        391,
+        121
+      ],
+      [
+        195,
+        203
+      ],
+      [
+        317,
+        204
+      ],
+      [
+        250,
+        225
+      ],
+      [
+        185,
+        255
+      ],
+      [
+        318,
+        258
+      ],
+      [
+        249,
+        266
+      ],
+      [
+        251,
+        297
+      ],
+      [
+        250,
+        315
+      ],
+      [
+        249,
+        335
+      ],
+      [
+        132,
+        308
+      ],
+      [
+        162,
+        348
+      ],
+      [
+        113,
+        241
+      ],
+      [
+        133,
+        275
+      ],
+      [
+        144,
+        300
+      ],
+      [
+        318,
+        290
+      ],
+      [
+        333,
+        322
+      ],
+      [
+        348,
+        349
+      ],
+      [
+        250,
+        416
+      ],
+      [
+        107,
+        396
+      ],
+      [
+        406,
+        397
+      ],
+      [
+        177,
+        471
+      ],
+      [
+        321,
+        471
+      ]
+    ],
+    "point_names": [
+      "corner_tl",
+      "corner_tr",
+      "corner_bl",
+      "corner_br",
+      "edge_top",
+      "edge_left",
+      "edge_right",
+      "edge_bottom",
+      "crown",
+      "ear_l",
+      "ear_r",
+      "eye_l",
+      "eye_r",
+      "nose",
+      "zip_l",
+      "zip_r",
+      "zip_pull",
+      "jaw",
+      "neck",
+      "medal",
+      "key_paw",
+      "key_elbow",
+      "key_ring",
+      "key_shaft",
+      "key_bit",
+      "point_finger",
+      "point_paw",
+      "point_elbow",
+      "belly",
+      "cape_l",
+      "cape_r",
+      "foot_l",
+      "foot_r"
+    ],
+    "parts": [
+      {
+        "name": "sealed_zipper_face_small_assuring_head_tilt",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -8.379534246485662,
+            -0.06319546479801375
+          ],
+          [
+            -7.013324591841894,
+            4.206903229316168
+          ],
+          [
+            -6.716188590801778,
+            -4.770186671978308
+          ],
+          [
+            -3.7350319569394514,
+            2.0201624972777097
+          ],
+          [
+            -3.7744515639072915,
+            -2.2381852734083054
+          ],
+          [
+            -3.000747543434187,
+            0.08728837306028936
+          ],
+          [
+            -1.914166398600372,
+            2.3374804692957127
+          ],
+          [
+            -1.8904879149531553,
+            -2.3059801110796343
+          ],
+          [
+            -1.5692590056507356,
+            0.09721177754568089
+          ],
+          [
+            -0.488592953835024,
+            0.008528421732648894
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.12,
+            0.4,
+            0.65,
+            0.88,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "same_key_wrist_turn_and_single_pointing_finger",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -3.118177604301735,
+            2.637080380232817
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -8.316366358996774,
+            4.334341838942265
+          ],
+          [
+            -5.710410429587498,
+            2.660349271311702
+          ],
+          [
+            -3.7828423653269567,
+            1.7202325616336225
+          ],
+          [
+            0,
+            -2
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            0,
+            -0.3
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.18,
+            0.48,
+            0.72,
+            0.92,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "quiet_cape_settle_under_secrecy_gesture",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0.5
+          ],
+          [
+            -1.5,
+            0.6
+          ],
+          [
+            1.5,
+            0.6
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 1
+        }
+      }
+    ],
+    "minimum_jacobian": 0.65,
+    "fluid_texture": null
+  },
+  "expected": {
+    "frames_rgba_png_sha256": [
+      "cd0c09e572657b51da68ebe8e94ac236112bf474caa4e9c77a0789e7dec98c7b",
+      "ca51950a8f2bd97c15973226413df32c5f435bcd027761fe931bde5b2f9659a5",
+      "107b0357578679be22bd3c59b7f306a6f7bfddf58ec1873c17137c358a4bd5d2",
+      "07b6ee91726fe1dbaa2f822c343e8c48b407f1b2dc9f853903db1b7e4d6bfce6",
+      "e1365102685aae2ecbbe560312091ff173e44c49640ba46355ba931b470e309b",
+      "e0bc4150cf67d1cedf2bf9965068425b9ae865b4195065e1ad299880f459d787",
+      "45040a57ce608fa17bf2f40f5ba6ee1eb48abfeda9a01e1fd3dcdd4c492e92fc",
+      "7ccc046f73b31c209d7a48671139fda0ce5bbb5c488f209066ebc979368e6976",
+      "79781c3b7fb8c6b0c1d0a4bf766006e8daefc3213e36b1d8e25ba01561abbd40",
+      "819281f740d8b28f4a7558d1ede081366f8e85960e6709fdd649175c69f00da0",
+      "3b424b2233a4a96fef6c7b78123c96b467cb46dbd41d493d23570e99d2cdb1ae",
+      "d60c7eb9713b83b79b212c42133582ae673b115971a268b989ce7592f4495ed9",
+      "32937812839fbb12af1bfae03cc1125cb6d7037d0455134a69aac2beb42adcc8",
+      "2689b40e76d76d1300a5203a91a26224da12e133abc7243f6c225039d2a068f0",
+      "4912910fe8edd58be54bc2c1c2bd10650a23a864cd0d3b389301bfe9f51cdecb",
+      "7f9edf489d99f511502a61a0e6b2741a94cc341d982143d1299350fdef869b7d",
+      "1e7061127034399a108070f13bb3ecbcffd3fddf011bac21bac353ba5633f65b",
+      "456deba72a5fdb1b7da479ec3424c14bb2ac0a3bf90b9d18b6ed9cd1cb3989cb",
+      "6f46faf0daa064657ba72b379d7f4ba526aa1a05b0a6e737360e79d084458970",
+      "f71a759c0b45d7867bb660d64ca9bfb5fa703f27ed810520e3d5ab52d434e9bf",
+      "08050d4d27b5fa1114eb017e4a5308ea7ba0602a652cbb4e0037e2c16551810d",
+      "eef5300742d10cf74c81364b65b352c34de5331a3c46908e04c81757906da2b3",
+      "10775bcf8be2c83094196bf4404f225d97de00e5f669387296228ce5d7ab6691",
+      "1c894ca5c49b9f1362c5e908c579fa1d00fc52379e4c3614ee5eeec7b21da074",
+      "67f846d41b7c870256086fac48ca580686c8d7313eabab170d0fe4a55fe57162",
+      "fc0942ba4808ecd9898f835e1761efebf68fe9c7fcc6bc66ef90d25c6643c729",
+      "8be1d3cd6650346c22721fb425997ed48cb41f2413f043bcc5ff4f25819a02ef",
+      "f1d6815ec16048d0e3ffaa0971b1db062311a7630a8694d1ad8f8720de2d943a",
+      "a7fa8693d6992bcdc66ec83eb158ca0f93b33dbf5ccf39b2ca4ebd8c85c387c8",
+      "01c45efe512fcc0f2d56c8e636b6ac9def00f299568c21e833a46fea020c04c8",
+      "544cf9cceea2d72c5c3e12172610cf5f8f1922bb3654fc56c0386754dcf774c5",
+      "96f2d7ab39859b829557c9e2486c9fa19a58f758ecdfc43e2491a5bb11c85ccd",
+      "f13e8fdf2f53b75c28dc7a474be9f0d8af2740b2ed2f235f3b032eb1c6c18478",
+      "8e3f74c2ad673005d822bac4b10810ea3182d5d0d85cb09506c1af737702849f",
+      "276b0c1ac9a81dacd5ac58c10317185936f9229532cb43c7daf8546625addea4",
+      "883a7bbd20c87880723b9a42a171f81b9f35e041221202690a26e581413eba1a",
+      "2aaf74db61ee758662ff0a58aabfec6dab65a447bddc12bccc78857779a0ae3c",
+      "26c32e68c0af8a64d9e25f14b211acfa868642a405ae7bb5b51a4d1784b33d35",
+      "69282829ff906e9e88f6243f793608d2728ce83e5f01c097f6785a368012806d",
+      "98b747171831cda430c9d383b1d9c7ddc98b865a1c32a6ac5f61f4be2b0a5c16",
+      "4a5032e49313c7c415092de00fc54cb022dd657c405e0b7fad2c0c563d27bdde",
+      "f2b07a34ef5d5b90536b5ffed0b825c2dd36914cc62895ecaf1355de76a0ba96",
+      "f80160744c9dd2d8b67188bd2a583ecfb6a40167ed62019d06c8519b91650585",
+      "9bccfc3ca19c3edc7667b3ee96aa9c1082dc40e59592b99c7a6932990694b982",
+      "00eb7f3d9811795ef3b2fb5473be321734baad63fa0322444c2caffe34e7e93b",
+      "c5bee76ee5ade791893b1ddd45f53c493bd5462fb02978b7a08be3d15c478d31",
+      "acee22a87dd86f48e313759549efaea76adbbd90f09011c627497f14fc69fc54",
+      "57fd70ccd36634e0abf1f1e8f6054222e7ce710d5f6c05df9fcb67f67b9d319d",
+      "c7ce66ee3b3336806b550fc7a77a03a06c889c3bd75bceae3b03d8928cf2b27e",
+      "8d76335fe98c6466688ba7cdb69d44b8a5480a312e7ff86a2476da7d1a122f21",
+      "c83027f435baf59a7e75ad47b23d170df7d075112398ec7c0d0763469f6be2c8",
+      "6fdda9e7be1683efa8995a4aac635ec872a046650414feb558c5f6f7c1066117",
+      "e6087896b40bc3c433ad2fe5825d53b47c4be14a13fe913b4d01c5ec009b2fb4",
+      "5f7fe3c36a1e38aa01853752509039111e0e421edb5f29c8249cf63bb025edce",
+      "f65c7d94dd7f5194987f8fc89b82011f07794f67c6ed0b1bf8cb02291a31e7a8",
+      "8603d83ef3605d472969272c5f0838117870e9c9a08b8261e96c6e3feaba9406",
+      "c34c8ff1a3b665538df02e2b9bedc13a396788ea2de31a63650ae46a0029b389",
+      "5cc3be8b8d311ad633a5c820dc6d562991fe4c51162d9bb5fdc22d52c3cf3927",
+      "c944b5da4e1cf257604104e33887c466f44235b5cf66b9fe9b5415a03c5be300",
+      "50220d899a4907aec5042784c678546a9400d376adc9fe025523da81297b8a7e",
+      "8ea12ebbcd6ade0b7e51f566a55b17f3a10810d91a0367286190faac0911ea9e",
+      "9a8101996df8426231b5e2feb0199da727c7009d80969410034679525aaf581e",
+      "99981806a3576e072f917f1c91dc1fbd33cb0c0ac35a3e509879d0db431e5729",
+      "74942b181722ae0d80b9a889722c4bf7f6f3e3561bbb65bfa718b2855ccd02ba",
+      "aaf80a2c4c10cd158b9b527a5278116c8c8e38b92b2760be4b90c2899dd6a695",
+      "1bd4bd1d234a41808f59767a1211c5f3f7b7b111e27a5a7b73a9227bfcbef59b",
+      "f597a513912e0b09d919b1b82de147105e92e8c3ab2081f9f09c39d585452548",
+      "d936b8eff57f47a4aae915d02218c00700735ca620ae99a73fd64a69c4c8d234",
+      "0738fba9a23231bcf3b308154d0bd9a894df8e02d85499446b66fe4480f9bc5b",
+      "c90f72f31cd5d0860335ba7aabd96c629808f2621a74af5ce29683fc6382b6ce",
+      "064cb2b5be90487f88d3fc14e550c752a2a0437479755e8aa1c92abc9910d60f",
+      "060bb933ec0f459cddaf3022e1c604f5bba782cbc0ce1287ec9f64566eaabd43",
+      "df8e5929cd0150a61c84dc6807d05cf67df24269bac44e228ffed69418419d38",
+      "7c2b28e04a29d073b48f9c3e165287b12cdbcd875da351e58e38f44a46b88cb7",
+      "f3f162b62573b6ec81045332f885e87ee71f933c22e5a4f648e6e1da5f1cf914",
+      "1e2271d16d2a4abed044a3b47c85a57fc4aa9078ca8ec3fca41b54b9d88ae579",
+      "b8dbe55b964a2b0c830c542216f314b2c1c6c8b9aa376eaf90da84d2640dd5ba",
+      "2cbe431228be3f09644b0e906e1ec27a7fac8677cb1fd1c4beb657760b4a322b",
+      "ccc5035bccc077a5ae9cf711d25576304b26d4bb243ce0b9b54518dac16dbbf1",
+      "cb5fdbba856cfe725944c91430f8284b0103ba2b115a9407c70d5d82c824142f",
+      "c49897bf1319c04bf084f0cb4d7f1d52905503747f85df0ab8a4522996acb30e",
+      "00a461c8eb878207d90b77ea73f8560143e1aa3bd160abcc3439185b16561963",
+      "5e2d99a532b84a8b766ee1e59814d736521f16572a034bd4eed91e2da4b25d28",
+      "847da769ac318526833745ffe454837eb5259622a5466433e1c19dc390b80485"
+    ],
+    "decoded_png_sha256": [
+      "ca4dd5bee89d13f04ffd3e5f5bd915251a061e540439138db9d6ce13e6472bb0",
+      "97f290409afee7dd1170a425c65aefd5707e0327f8654a1836916f239eef0e96",
+      "abe779dd2065ed280fe4b07ca327c8303f1a28983d44e6f100a2b318b718901b",
+      "e3d394aef56a4659d2f17e2a6ab9049cfd7ccf96b0f00d0e5344c7249e02f80d",
+      "95884b85aa8f8a7c5408cc000abd089e5eebb0f4d21ae162f75772549e6f1108",
+      "f86fbc170f8175d76b76371c9689a33f8a9c6bce2e45a8625f8207df24304114",
+      "ec7af16c121faf125a8d6e1ca37190a6dd80911572dfd7c75984bcce685e040f",
+      "a55f56d21e16b96506b465e0ee1f7af3d61a7282e968257fca549802be5384bb",
+      "e193975a0de43fd06758c104c143f9283c90bfdf5b16ea8168c519449a981a83",
+      "51cc3cd6bd25b810d2ef7ac6d7895218808a871fa3249f22ff8a2d71d206fb15",
+      "ae611238316da79bfec797476fb6e840d0cdea311ee9daba5f97fc7c6d79ab0f",
+      "936063eb0c0b7b0a2d3bcf20c3913a5dc71c4aea9ded05c164226f88dc1d7099",
+      "0ba51f363dbd2bbaabaad0dbf74629e2bc440ef668931328b368b218d6b379d0",
+      "9aef9ecdd01b9644c133ed034c79cfdaae6ae81c6fc00d27072d41fb44b96447",
+      "4068ca01754d9694b5f27feef72edd76c33ab13bc8fa6b9440e8abb658e083df",
+      "e230efd0b1b1995bd010566e919211c8294ce4de326140bd75387ff53bafcb6e",
+      "221bdf639380078425822cac4a660cf0f7f2dfd36466e437447eedd62e8c7c9f",
+      "7d559e61b921744c205cf8fa8cc6b693a146f88345bf24149d94c3239283828c",
+      "fdfb3aaa69cbc5b86ab73a6ddb10227fd71b716d56bf7d0ef8d8162b79bc00ed",
+      "2e113b7de5b709d7645a1acf33b93e144f3ae3084629686b1f27047832868765",
+      "5b525e3b0be14474b795430e9d571d94cd37a6b70ec36e8cfbed5105e4bdab8e",
+      "f96fd330a5d8cacafcb15fb5ba325263e17b52df13a140378b19d0a8c85b8613",
+      "48abb6cbcfdef31f929a937aec0d6cae29b03b2779184d93e38935aa8055845f",
+      "61ce63681a0bd0c54389f2c49e7ea718a974841974d7a32fbbc38b766806397a",
+      "5b9aa1de04f5bbbd780590bde2cbcbb5408012f63e368ff96d32ac4bb0084482",
+      "586bd32f6d0cebb50c9e27046d3fa4d0e700ede1363f8ab73e091e3c6f2c8ee7",
+      "4d782a85b2fef898dc00801846bc8f964b045e5414d7b45f3c917ea67318b643",
+      "15044d5d0c6f0311bca798ff575c6e6c1e13683943a02f742cff20788dd1433f",
+      "d42c1a1f8187a0715125d5c429c598fe73b48fc39026d8d28f734812a759f5e9",
+      "91c289706b512ead166a6d0a737e6a33fb8bfca83a0c00fab6a2c4892287857c",
+      "4bd4aca7434cb306b6f026dfc827d25de4e795c1ad2f8a299b60872e009f569f",
+      "14352afef4d74b6748752a6a6e7801284a5f028591f423ea48d8164738423d46",
+      "4a9bad51184ce140222431de7b875daa9dea3c229bb49a0c7082d2a9fdc5da67",
+      "e1a76fb7f424bf166d501b3689714ab02c9fcb7c2a6838f521fb835221e3ce9e",
+      "20c23ebe4435dfd07827c5e0443e27fe3f20c92dfd0bd002da8b2fbc8e20fe91",
+      "bb32c0c39c810628e491f5744e7e5e8b6743d96d0ae86de155b45ece2c783f0b",
+      "0041256fad9af42a482924c31ae4491686963f24d238c5263edf2427814570fc",
+      "3fd1e7ca0ad282483df46639d7844ef80db87b6fd9f25d1396cf83fb547094b7",
+      "85110864dd01a73fa4546f89924c189836ad57299452c5eb9fa2126b0280d45c",
+      "90a07bdcd0fef765a824da4219968aa5753e5ced808478f7496f776997ab40c3",
+      "771b35162015e622a1f48d504055d75ba207b15df298c0a467c1219aa613365a",
+      "bb63ff7933501fc0356000a29940cf07fca9fa151ebb37476cb489abb4d5f6a9",
+      "b5c17e6e359002e7786e05ac3c3b780f1e7dd636926759e0d43c8b8a8fd67651",
+      "e233363da1cad6a8dee450f9c42e57743af7b38fbed1ae4900fd7edb28e3c2c5",
+      "568aadc73b379ac27a29f428a5cf39190891fbff2ea2f10873543401cecd9f98",
+      "8e22d8f3b1fa4b099a02d98d76dc2e5d0369995d83addfc25894740e8be2a1fd",
+      "d73689427f94b1ca483f2bb929a576424379f8c784ce82443ee9ab5340e6b43d",
+      "13e07edf920978479f0ed283b740ca71b38b9795e4b3fa7bc6237cb6b09af70b",
+      "e36d0cfc4ee03b14de85091e72dfab626ce055d09f4e0b95ce1b42d128cf67a3",
+      "496bcf58ab8c33dc586fbecb870f1090b6fc5903b22028a612252b2506be0535",
+      "c39949221f3592f1e79567619b48cf522ec326925ac83e25a3eb1006baea2e9d",
+      "4ebf6bd4f564730121128b3f72e78a1f593b063b46dd34d06091c5585915bc69",
+      "25385ab76346a749096f4ce299c2c139cf93f5f392063598954dc461c5eb5bf8",
+      "cc26ceff92f3ef86bfb4004c7c4cfb429d80d915229d2987e7fabab49f3f0f2f",
+      "5cd24a1af90db79f31dcdd9b57f90ecc1cae456b40bc3191b8aa56cad4ca17a0",
+      "7a91451918d279d383afa52f4923da91748f08a5c2ebf24d6165c6dc6a05ee0d",
+      "d3e385706dad2b7d4444475378f38e24b20c113c7f7acc57bc364b0b916f40f2",
+      "60761f7891bdc4b6a3aae359afce6de69a952c3ef22a3fed685e67bb13431a47",
+      "021c87e2800affa74b2b80ef8f37717c506cd2210f27f65ff1d5e2127abea9c5",
+      "95d0ba55c44fca8618949a52a60e126716b339210befdf13e192fb63fb784330",
+      "506cf18f2986202e699f178d94c8c33827f8d01f91510e63d5c70db6c07554fc",
+      "749c5be7988950e36fd4520504bb28793a28a32694362bfa0999d22f8e694533",
+      "63cd53487c55c8a31e2799f253912d2cb6475a599ebfc7cb75721dc05cbb0850",
+      "2456d28a4d3ea18d73c50516c824de4fe68b7d3345eaad5655d3550559eacd47",
+      "1291543e0211155b64ef63d033420ce14c25d0aecd668ff72375cbb0a40cd88d",
+      "fa24787f63d11705133d8b77e2dfef03869c520a49a831997d4d5bc236b288b5",
+      "ca1cc1a8bd6cae73e6d00089c0ac20dd0c0d7d498fa0b10b89d677e3451bc9c5",
+      "480875ae94b93aa3582066606f344e6eb5ab12b4ed69e0c61dc6219e007867aa",
+      "77d8d60bce188e0fe739402ce97c1201ffed03d10b96e7492107af06e86e0db5",
+      "ca2f3816ae0043a75de04adf87bea5d2650fdbea954a63246c0e7ad0198b2d63",
+      "698addbafb6225bbdccfac1edd99d2d777af517795910a01ffa3009737cfc11b",
+      "19640a3239fdf27105ee5e950dac1a6bc0e099ab04cc71c17564cc60f7f62422",
+      "c459e8f74af59f2914aa7f0033cbd9c8cf3ff0e9f08abd7db37b32723bd298f6",
+      "7261faa0cd8a5c70a2db9acf3dd2f2bf0882232b84f43acec68f8bde18739761",
+      "73a9aeede3bb89755401cc3377a48bc23ef5cd933dccfee424519f2842fbb2cd",
+      "a266c0df3ecb172f6091eb4d82af56f4a8c6d404ecc90e241e964e9471dc6727",
+      "5448e403c1a16cf813520995bd8852521f29bcca7f20de1f84691b0af32c612e",
+      "7da4494a61522c6c7752f770f0a0a85306f5184a107abc80cf54a1932e77a71c",
+      "32b3760e5735390804952e38a3611b46f6c13e0d2691afaa4838b5f0267f1cd0",
+      "45cd2ccd21b66a33d4e01537c21aaf6debbdcf9fdfdbbce047c71460cdbd5e8d",
+      "07ecbcf484ea7a057ee04772863aa7a93facff66e04c6f698bdb1080b891f272",
+      "e3b86e1c360ad3c23314803f1f2804514150456db1a068edf9ead8fcfa003044",
+      "442cbf048905225a43ce1ae1e0afad87de0bd6b08d6f017708fdb7a7fc2499ac",
+      "4dde0025d605da3550bd3c9503db55817cfd80ef3909bd84ff27502666c93a20"
+    ],
+    "output_sha256": "e8e0e9091b17ebfb8b7235606b473084017c19d80e99a86ec9e2316dbbda3ddc",
+    "output_bytes": 173894
+  }
+}

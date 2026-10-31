@@ -1,0 +1,2405 @@
+{
+  "schema_version": 1,
+  "id": "lumen_111",
+  "candidate": "lumen_111_scene-acting_a",
+  "created_at": "2026-10-30T18:29:14.242682+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_111/source.webm",
+  "source_video_sha256": "8ffc45d5ab7a2f510d7153b49a3a10a757fddb6c82c061050f7152ef497346ee",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "08cd6d18a8368e538e281e695048806ea5eab06421505455c3a1f8b520984def",
+  "derived_source_frames": [
+    {
+      "index": 0,
+      "seconds": 0.0,
+      "decoded_png_sha256": "d2a756ba1ff99b75fc769641e649c23c0249571c519b81dbbd4ab0afc5ebce8c",
+      "path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_111/source-frames/000.png"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "cc60b22b3da8b82332f14090c13fd03652359afaad92e62b342b0ddc461db786",
+  "source_frame_count": 84,
+  "source_action_frames": [
+    0
+  ],
+  "method": "Single clean exact derived RGBA frame; scene-specific named anatomical parts and object-contact anchors; explicit independent temporal waves; common premultiplied RGBA sampling",
+  "character_semantics": {
+    "core_scene": "Modest surprised O-mouth backward head lean and ear lift with held empty teacup; less extreme than113.",
+    "omitted_optional_action": "Free-paw lift omitted; both original grips remain on the same cup.",
+    "contact": "Cup rim, base, handle and both gripping paws share one2px translation; planted feet pinned."
+  },
+  "semantic_tradeoff": "Free-paw lift omitted; both original grips remain on the same cup.",
+  "not_recovered_original_art": true,
+  "not_rigid_global_transform": true,
+  "local_mesh": {
+    "source_frame": 0,
+    "points_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        511,
+        0
+      ],
+      [
+        0,
+        511
+      ],
+      [
+        511,
+        511
+      ],
+      [
+        256,
+        0
+      ],
+      [
+        0,
+        256
+      ],
+      [
+        511,
+        256
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        242,
+        102
+      ],
+      [
+        118,
+        156
+      ],
+      [
+        370,
+        109
+      ],
+      [
+        217,
+        213
+      ],
+      [
+        330,
+        191
+      ],
+      [
+        290,
+        227
+      ],
+      [
+        301,
+        271
+      ],
+      [
+        280,
+        294
+      ],
+      [
+        208,
+        312
+      ],
+      [
+        410,
+        319
+      ],
+      [
+        264,
+        341
+      ],
+      [
+        395,
+        342
+      ],
+      [
+        292,
+        343
+      ],
+      [
+        380,
+        324
+      ],
+      [
+        359,
+        381
+      ],
+      [
+        330,
+        380
+      ],
+      [
+        311,
+        312
+      ],
+      [
+        210,
+        423
+      ],
+      [
+        413,
+        396
+      ],
+      [
+        250,
+        470
+      ],
+      [
+        382,
+        468
+      ],
+      [
+        294,
+        419
+      ]
+    ],
+    "parts": [
+      {
+        "name": "modest_surprised_head_lean_with_cup_drawn_close",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -7,
+            -7
+          ],
+          [
+            -7,
+            -8
+          ],
+          [
+            -7,
+            -8
+          ],
+          [
+            -7,
+            -7
+          ],
+          [
+            -7,
+            -7
+          ],
+          [
+            -6,
+            -6
+          ],
+          [
+            -6,
+            -4
+          ],
+          [
+            -4,
+            -1
+          ],
+          [
+            -2,
+            1
+          ],
+          [
+            -2,
+            1
+          ],
+          [
+            -2,
+            2
+          ],
+          [
+            -2,
+            2
+          ],
+          [
+            -2,
+            2
+          ],
+          [
+            -2,
+            2
+          ],
+          [
+            -2,
+            2
+          ],
+          [
+            -2,
+            2
+          ],
+          [
+            -2,
+            2
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.08,
+            0.24,
+            0.47,
+            0.78,
+            1
+          ],
+          "values": [
+            0,
+            0,
+            1,
+            0.7,
+            0.1,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "ears_lift_then_settle",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -2
+          ],
+          [
+            -1,
+            -4
+          ],
+          [
+            1,
+            -4
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.07,
+            0.2,
+            0.4,
+            0.7,
+            1
+          ],
+          "values": [
+            0,
+            0,
+            1,
+            0.3,
+            0.05,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      }
+    ],
+    "minimum_jacobian": 0.5,
+    "fluid_texture": null
+  },
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        0
+      ],
+      "source_seconds": [
+        0.0
+      ],
+      "kind": "explicit_authored_shared_rgba_local_mesh",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07"
+    }
+  ],
+  "candidate_sha256": "66157007bfb336976cb6e918ce8c82d32a2e2ea3fd99999649bd3c535fb0b212",
+  "poster_sha256": "ee642a9db3582642bf12b67f885d6ff065748970fb4cef629b93d0df93a91c41",
+  "bytes": 163760,
+  "crf": 30,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "jacobian_min": 0.8768087029457092,
+  "maximum_displacement_px": 15.990255355834961,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "bounding_boxes": [
+    [
+      70,
+      39,
+      456,
+      487
+    ],
+    [
+      70,
+      40,
+      456,
+      487
+    ],
+    [
+      70,
+      39,
+      456,
+      487
+    ],
+    [
+      70,
+      39,
+      456,
+      487
+    ],
+    [
+      70,
+      39,
+      456,
+      487
+    ],
+    [
+      70,
+      39,
+      456,
+      487
+    ],
+    [
+      70,
+      39,
+      456,
+      487
+    ],
+    [
+      70,
+      39,
+      456,
+      487
+    ],
+    [
+      69,
+      39,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      68,
+      37,
+      456,
+      487
+    ],
+    [
+      68,
+      36,
+      456,
+      487
+    ],
+    [
+      67,
+      36,
+      456,
+      487
+    ],
+    [
+      67,
+      35,
+      456,
+      487
+    ],
+    [
+      66,
+      35,
+      456,
+      487
+    ],
+    [
+      66,
+      34,
+      456,
+      487
+    ],
+    [
+      65,
+      33,
+      456,
+      487
+    ],
+    [
+      65,
+      33,
+      456,
+      487
+    ],
+    [
+      64,
+      32,
+      456,
+      487
+    ],
+    [
+      64,
+      32,
+      456,
+      487
+    ],
+    [
+      64,
+      32,
+      456,
+      487
+    ],
+    [
+      64,
+      32,
+      456,
+      487
+    ],
+    [
+      64,
+      32,
+      456,
+      487
+    ],
+    [
+      63,
+      32,
+      456,
+      487
+    ],
+    [
+      63,
+      32,
+      456,
+      487
+    ],
+    [
+      63,
+      32,
+      456,
+      487
+    ],
+    [
+      63,
+      32,
+      456,
+      487
+    ],
+    [
+      64,
+      33,
+      456,
+      487
+    ],
+    [
+      64,
+      33,
+      456,
+      487
+    ],
+    [
+      64,
+      33,
+      456,
+      487
+    ],
+    [
+      64,
+      33,
+      456,
+      487
+    ],
+    [
+      64,
+      34,
+      456,
+      487
+    ],
+    [
+      65,
+      34,
+      456,
+      487
+    ],
+    [
+      65,
+      35,
+      456,
+      487
+    ],
+    [
+      65,
+      35,
+      456,
+      487
+    ],
+    [
+      66,
+      35,
+      456,
+      487
+    ],
+    [
+      66,
+      36,
+      456,
+      487
+    ],
+    [
+      66,
+      36,
+      456,
+      487
+    ],
+    [
+      66,
+      36,
+      456,
+      487
+    ],
+    [
+      67,
+      36,
+      456,
+      487
+    ],
+    [
+      67,
+      37,
+      456,
+      487
+    ],
+    [
+      67,
+      37,
+      456,
+      487
+    ],
+    [
+      67,
+      37,
+      456,
+      487
+    ],
+    [
+      67,
+      37,
+      456,
+      487
+    ],
+    [
+      68,
+      37,
+      456,
+      487
+    ],
+    [
+      68,
+      37,
+      456,
+      487
+    ],
+    [
+      68,
+      38,
+      456,
+      487
+    ],
+    [
+      68,
+      38,
+      456,
+      487
+    ],
+    [
+      68,
+      38,
+      456,
+      487
+    ],
+    [
+      68,
+      38,
+      456,
+      487
+    ],
+    [
+      68,
+      38,
+      456,
+      487
+    ],
+    [
+      68,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      39,
+      456,
+      487
+    ],
+    [
+      69,
+      39,
+      456,
+      487
+    ],
+    [
+      69,
+      39,
+      456,
+      487
+    ],
+    [
+      69,
+      39,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      38,
+      456,
+      487
+    ],
+    [
+      69,
+      39,
+      456,
+      487
+    ],
+    [
+      70,
+      39,
+      456,
+      487
+    ],
+    [
+      70,
+      39,
+      456,
+      487
+    ],
+    [
+      70,
+      39,
+      456,
+      487
+    ],
+    [
+      70,
+      39,
+      456,
+      487
+    ],
+    [
+      70,
+      39,
+      456,
+      487
+    ],
+    [
+      70,
+      39,
+      456,
+      487
+    ],
+    [
+      70,
+      39,
+      456,
+      487
+    ],
+    [
+      70,
+      39,
+      456,
+      487
+    ]
+  ],
+  "adjacent_composite_mae": [
+    0.18919475376605988,
+    0.18047164380550385,
+    0.22711212933063507,
+    0.12586773931980133,
+    0.049990247935056686,
+    0.36335912346839905,
+    0.3390921354293823,
+    0.7567906975746155,
+    0.840014636516571,
+    1.1030746698379517,
+    1.0637556314468384,
+    1.1890628337860107,
+    1.2523937225341797,
+    1.2498129606246948,
+    1.248824954032898,
+    1.332297444343567,
+    1.127711534500122,
+    1.1028251647949219,
+    0.9860369563102722,
+    0.9516322612762451,
+    0.6298266053199768,
+    0.5586784482002258,
+    0.38206133246421814,
+    0.41509631276130676,
+    0.12590225040912628,
+    0.12734349071979523,
+    0.16676653921604156,
+    0.2807857096195221,
+    0.3577219545841217,
+    0.5021358132362366,
+    0.4384280741214752,
+    0.6636123061180115,
+    0.5588513612747192,
+    0.6603392362594604,
+    0.6499915719032288,
+    0.7428765296936035,
+    0.6447041630744934,
+    0.6791605949401855,
+    0.6699017882347107,
+    0.8122077584266663,
+    0.5253136157989502,
+    0.6230908632278442,
+    0.5831360220909119,
+    0.6317017078399658,
+    0.47606632113456726,
+    0.5683578848838806,
+    0.45219847559928894,
+    0.632063090801239,
+    0.35454678535461426,
+    0.5405552387237549,
+    0.28087398409843445,
+    0.4053875505924225,
+    0.3116796016693115,
+    0.36236467957496643,
+    0.31012746691703796,
+    0.5079644322395325,
+    0.1874639391899109,
+    0.2901405692100525,
+    0.22351765632629395,
+    0.4078277051448822,
+    0.15802256762981415,
+    0.1854623407125473,
+    0.1546754390001297,
+    0.3512837886810303,
+    0.04631907865405083,
+    0.15766601264476776,
+    0.0448891706764698,
+    0.14562921226024628,
+    0.0487850196659565,
+    0.23147626221179962,
+    0.002084779553115368,
+    0.09608656167984009,
+    0.007979664020240307,
+    0.08041928708553314,
+    0.07522641122341156,
+    0.08729925006628036,
+    0.05848225951194763,
+    0.1220661923289299,
+    0.15039753913879395,
+    0.3032400608062744,
+    0.09223116189241409,
+    0.3147822916507721,
+    0.2761137783527374
+  ],
+  "seam_composite_mae": 0.23595242202281952,
+  "decoded_png_sha256": [
+    "e9e8b48214e5345bd5773fe6ec1c916b61c072360ec07b92949c9b353a050b55",
+    "378d34a46b2da395b436edb21aedfbb846a7cbe471188c65e7f4c0cb01a6d6f7",
+    "b081cd4535bafff93d85e3e50430ddcc7529a6c43a5e68ad18c7340366a039a1",
+    "2fdddf67150e12c484025426246f6c3a16dce69e61e06d29dcd1fe9389228b31",
+    "c9a2933c798091ed8fe9feff9e4be3cbb4d086b2f6632d04807d3a6d1628ad6c",
+    "01da3a2414fb6355e880cd52de1acc67684bafbd99ff1d8f37a0f123001e7712",
+    "d47747420c3c47dd0d4e46b275d13122849075487746c1e17e8de2a7a7a3fe1b",
+    "30e057155fde7614484680639ce702601c0103e46c235d38d16a1b8158611371",
+    "eff71af78feca6557298c5b6865ccbd230a563437ab69ac9fef86f3693b752e5",
+    "45019d70a42cecb0858aa0430f2a2ac6e353d5aa407f15d100191b164d83a489",
+    "aa8566ee83f887d86322dc13cbcde94e80c78ec684e9f93e16679738ef6b6cc9",
+    "e698a376adc65438b00654e99af115f8125e4320d038c340fdb589624d30a929",
+    "797d71bf05640a6f077e64d1b0c6db91f75b6a7a1df79ad2ef5e2df6e9b1081e",
+    "c17f7a425781fa59e32de7cc479a1c7ab2134e38e64718c6590e2dea369b05ac",
+    "8501e791569aadd2f9860269ca4f4aed4d9e99b07d5d75572333998c11ceb829",
+    "90deadb0523d9a37a1f69817fb6353e922d327b1b3d648cbfbbb184fc764fc7e",
+    "a7c6b14e67a3d0108a2eb8c624592289c814480dbd55c646af2c9067f0dcf7cc",
+    "928877720ec19e7d997dcba079c81ddd57e2545c649a93cf287c0d2cc9c11960",
+    "1d3158f5d385109e45c3fa8dcdef003a1bd73b19148e1e480aee2e67ad95244f",
+    "c7d7897c87cc45fd104749db5b0d085779c2a7f6149545ab0e1c930037f4e17d",
+    "3e6c84d402ed020eec8bdea957b88341f0eb4b889ed91c86f8d75b77ae0bd758",
+    "ffe613487af755580ffc99db3d46e8618a67cb46a1a97db1ef31e717dd7f76c9",
+    "336521efa2c53378c195feb77643b2142eb6068227665e901b40d964208c63a1",
+    "fadcdbaa9b44e378fea6978ac7d2be9a99f1174d970627d5e80c7ecb89489362",
+    "9a3a4701a94583e52b1da6b1f2db7871afd1b6b2e3f3027fdef78e0b15135634",
+    "af8883a660b461de21eed6cfa08df24055fc394625817469dd36d018914cd486",
+    "4bacc35650363902109ee2d9a6ad9b4f16ab58f0184ceaa1398e360b140a13ac",
+    "fc700ce8c887e4a855d7c91cda4472c36861043a50560a36678037950ccc22d6",
+    "d31cbfb4b7294459771a9e0cd742045c4c0b066026e1a9cc637b2fb581406125",
+    "4b070d4a589e207cf5c96722541b9c73a8b542fb61289b5aa09d60f961d5eef9",
+    "e348561fa5acab726cd7f51474b50a4f874620ab8305efbd908b17c31fe847da",
+    "4a5dac2b68038b1cc5a8a4ef76a4bb0e33084a30084776df1b96bb864ab06d31",
+    "10dcdd556833ba95b501d6ec338b24987e941ab874d56040aa580e9cb0004925",
+    "d09b02d41b31882a47a9daeec1ecef315b3ec1bd5b1656dd7ba86597b137503a",
+    "1e36cf2552f570ec4b28361c299ba1ba3e5866faad8187865bff42ca5d13c8a4",
+    "a7e8ffe447a68e57cc74d2ace5dc6a9867a893fc6389e469c7df48d54ff53853",
+    "48729ecba19177fbcb173b06cfe74a672eb5b67c75d75694a17b7bd5215a5053",
+    "e37c4d0a5038172aebced5d4bd3a47e40b9ec1408b43c6084476235f39515df8",
+    "42ad00dd551da19fc60c4ea579d887a99259dd2f36fa2d3b1083b2a5fcacba12",
+    "9eccec3d3cb6741fadfdd9b744754b5242a09a0f8061716c385dbf73908c66d8",
+    "0dab62125ec0da7c1af92b1525258516ee6574a67c02ef8dbc03f0d34fb7a68b",
+    "a564c25803f12d582cb015f86cda87362b0e539e9043684e0d46234bd7f3b670",
+    "3d0850b783035a9e7faf35395bd1431d939a8d13827225d5362421531e6a2a02",
+    "5b55cc26f2fdb6717055ee54615305140deaaa611582a126f28f541b47e98681",
+    "552286dbc562104c7aa1f1abf3ef4510eef842eb90e4f969b441bd5714ffe3d0",
+    "df18acb81e84902d0c55a5eee28ed992665216014e23b897164bd75fba8bf2cd",
+    "2f9d8d4fd75d80a6d173d0b3d635fb8e0569e081f72e721c95410042b1ab9b1a",
+    "4d37062043ac8ec42f8ee4a7e1a86c5377de396384e15284bf4d88806bd2b35a",
+    "60189b3c21095d220707b855f309814f5285b766856be44b636cbe4432db6fed",
+    "b559bfd0c65259970eedb793b289232859322f035bbdbe5945417fe1b981f5bf",
+    "466f16c6fcc52d1f8a3b85887fa735d0cbead9332745de18966a5553932f96f5",
+    "bc1f5394b312a2afdccb071d7cfa400e2679d4b3b17152569f14f525243fd9b6",
+    "8dd29853b259d1a7a3f20dbf848e7c09b4ed96f27cf213eaff5332cce453a2a3",
+    "74b848804648a5b168175520c8732f03d95c76edd85ce4ce2c794aff6da2de33",
+    "29e25bde82c17e43227aa7e72cceb84e43084c61747b8099fb19a2ca7a972773",
+    "856e76db25c01ac65681eaca351877f9d03bc794ac69628d05d7701d821b119a",
+    "62b9ebb4bc033ffbdf0160068fabd237a621d4b53069bc410d81cb24bcf40572",
+    "81b47a1241ef9fa3a8ff0f73446e71f8801b1c413f82f4dcfb03705d60f3cb7e",
+    "c525610c665d3ff86a827272d0cd05160f5e5489927a6224f2f829ba810cf47c",
+    "1c4a629af3faf897811fa9d60599c88e9d85bd6a06d9f4c093de7a1ab53de332",
+    "31da8099a79bf6b63f0282a34e24066a4bd87e27683d5252507f84c0320f8234",
+    "5bf55d3ff6814b9ff2c9df70e21cf5555f04bbb75a067253138ad2050f2fa17f",
+    "19d36bd3db5a4fa1205f4741d9f97cc1db9ad34cdf553770df3c99e0e66aba12",
+    "636ce4c5513711f36f67d28394991ff324a16bc5978aa1e4feda239a96bb5de4",
+    "6c2441f1a4140c836a0612bca0db65f31f25dd0c4f4b6f0078ca19ec77cb8337",
+    "c5870eb15a9b7f38f4e0ed2e79e58e4e45c84ac9aa5796db2a7101b7f1568351",
+    "2cac0f7583ccb55f0e0bf72ec05c270f2b2faee488934517b241ab328f5c7595",
+    "d5e5b14bd821ff6873a2fad049d9b0867d0519848f5e68eb2a98ad72eedeba7f",
+    "73b2cc875d4516154cfe8d5c43cafcea3ebef33a8f8aa3f9d2cdf1d3bd065464",
+    "78caaa40161b78d5036cbdfdacd46427eeba10cc2aca245cda60886be7a3d8d6",
+    "5264e429ce0c15cc825ce4504fc2b018fdb4e7058bd005a29e1ce16c9c442140",
+    "d70691be7b069ebc3a8090893f2f962944a17fad0127df552be4a3975fea5d90",
+    "c236199305b9b89cc33e94d579d7cf3c2009f1ba04ba9cd9ee38177babf684f6",
+    "7a6715d8b7f0396acb255b164be19c2a666fddf477dfe2104ecec412f9123a94",
+    "df5b81afb2929ceb90d61e8da7e548f0aa2b514b39ff362c4969d10350d72a77",
+    "f2e02c9984972f83c180e6172230849e7b74d61bbf266810da644d3e570860b7",
+    "9bc55ff5685195c9a9c3a341606904e1e2aa977d508681d8533f3a39e2677cae",
+    "e3868f1749e56eab66238d23aed6310c942ce93da0b61f6a71298c391a78f08a",
+    "6d5c9999e0ec67ac801ecba461835cda6540fd8df9484b24e3bfbec27f664de1",
+    "4ee46ab1ad98f072dc98a40c25aa82366842abed8de77f29be3fbac7be542b6d",
+    "fa5036695aa514971c8e683c592d3fb17e6f41c69ce63e54e5c00b5275b387f2",
+    "845a200b428529f1ed7bc7bd16ee8544ce6319e33a40a31df241ac0cda5fdad3",
+    "1fa05a094ac45bcd97c0afd3290de97c4c31d187fdd90d580e683c6af5b6fb54",
+    "6500ff65d33bd3f3ecfa8ceca904977988cd19d280ce65fa1f32a476c05e8b2d"
+  ],
+  "decoded_pts_seconds": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "timestamps_monotonic": true,
+  "native_streams": [
+    {
+      "index": 0,
+      "codec_name": "vp9",
+      "codec_long_name": "Google VP9",
+      "profile": "Profile 0",
+      "codec_type": "video",
+      "codec_tag_string": "[0][0][0][0]",
+      "codec_tag": "0x0000",
+      "width": 512,
+      "height": 512,
+      "coded_width": 512,
+      "coded_height": 512,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 0,
+      "sample_aspect_ratio": "1:1",
+      "display_aspect_ratio": "1:1",
+      "pix_fmt": "yuv420p",
+      "level": -99,
+      "color_range": "tv",
+      "field_order": "progressive",
+      "refs": 1,
+      "r_frame_rate": "30/1",
+      "avg_frame_rate": "30/1",
+      "time_base": "1/1000",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "nb_read_frames": "84",
+      "disposition": {
+        "default": 0,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0
+      },
+      "tags": {
+        "alpha_mode": "1",
+        "ENCODER": "Lavc60.31.102 libvpx-vp9",
+        "DURATION": "00:00:02.800000000"
+      }
+    }
+  ],
+  "native_duration": 2.8,
+  "source_review": "Exact sourcef000 native512 inspected; selected12risk board seen; independent complete84baseline source triage reused with honest coverage.",
+  "candidate_visual_review": {
+    "reviewer": "/root/specialist_animation",
+    "independence": "author_self_review",
+    "all_decoded_frames_viewed": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "view_pixels": 224,
+    "native512_frames_viewed": [
+      0,
+      20,
+      36,
+      52,
+      70,
+      83
+    ],
+    "source_review": "Exact sourcef000 native512 inspected; selected12risk board seen; independent complete84baseline source triage reused with honest coverage.",
+    "verdict": "All84frames inspected individually; no doubled anatomy/props, holes, folds or foreign loop pose observed. Each scene keeps its own held prop/contact, local anatomical acting and honest UA description. Independent emoji/acting/temporal acceptance required.",
+    "limitations": [
+      "No native realtime/slow or Telegram/device playback observed."
+    ],
+    "review_artifact_paths": {
+      "normal": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_111_scene-acting_a-normal.mp4",
+      "slow": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_111_scene-acting_a-slow.mp4"
+    }
+  },
+  "baseline_independent_triage": {
+    "artifact": "docs/qa-1-13/sticker-triage-111-139.json",
+    "verdict": "repair_required",
+    "source_sha256": "8ffc45d5ab7a2f510d7153b49a3a10a757fddb6c82c061050f7152ef497346ee",
+    "defects": [
+      {
+        "frames": [
+          23,
+          30
+        ],
+        "reason": "Перехід голови й лапи розчиняє око та брову, створює прозорі подвійні вуха/контури."
+      },
+      {
+        "frames": [
+          34,
+          42
+        ],
+        "reason": "Сильний dissolve між несумісними нахилами: два набори очей, носів і ротів, подвоєні лапи/чашка; максимум f37."
+      },
+      {
+        "frames": [
+          48,
+          52
+        ],
+        "reason": "Повернення до фронту залишає подвійний контур очей і лапи."
+      },
+      {
+        "frames": [
+          59,
+          61
+        ],
+        "reason": "Напівпрозорий перехід піднятої лапи."
+      },
+      {
+        "frames": [
+          66,
+          72
+        ],
+        "reason": "Права на зображенні лапа й око знову розчиняються при поверненні до чашки."
+      }
+    ]
+  },
+  "recipe_path": "sticker-lab/production-v5/frozen-core2-and79-v2/lumen_111_scene-acting_a.json",
+  "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07",
+  "generator_snapshot": "sticker-lab/production-v5/frozen-core2-and79-v2/recipe_engine.py",
+  "generator_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+  "support_sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8",
+  "proposed_description_uk": "Здивовано округлює рот і широко дивиться, злегка відсахується голівкою та піднімає вушка. Обома лапками надійно тримає маленьку порожню чашку й обережно підтягує її ближче до себе.",
+  "independent_review": "pending",
+  "native_playback": "pending",
+  "device_playback": "pending",
+  "canonical_assets_changed": false,
+  "frozen_at": "2026-10-30T18:29:14.515212+00:00",
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_111_scene-acting_a-normal.mp4",
+      "sha256": "0d69d9ae472160c7e997481a969d5ccc7b6d639bbbb941cc59ed287876b5205c",
+      "bytes": 201506,
+      "frames": 84,
+      "duration": 2.8,
+      "actual_full_decode": true,
+      "perceptually_watched": false
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_111_scene-acting_a-slow.mp4",
+      "sha256": "15ac6bb0b97904def1d66bccac9e3bb48589630daefcb3471c0d674ff1de2783",
+      "bytes": 306016,
+      "frames": 84,
+      "duration": 5.6,
+      "actual_full_decode": true,
+      "perceptually_watched": false
+    }
+  ]
+}

@@ -1,0 +1,385 @@
+{
+  "schema_version": 1,
+  "id": "qa-animation-author-a-80c",
+  "review_mode": "addressed_bounded_newcandidate",
+  "actual_agent_id": "/root/qa_animation_trial",
+  "actual_author_agent_id": "/root/artisan_stickers_a",
+  "completed_at_utc": "2026-10-30T17:57:36.138536+00:00",
+  "id_reviewed": "lumen_80",
+  "candidate_id": "lumen_80_author-a_bounded-puff_c",
+  "verdict": "accept",
+  "accept_scope": "Only the exact80c candidate frame-sequence prototype: pale puff shape/alpha repair, preserved complete actual sigh/relaxed settling, anatomy/contact and spatial seam. No native temporal/device/production approval.",
+  "handoff_verdict": "revise",
+  "handoff_reason": "Frozen normal review MP4 is invalid and its frozen proof review metadata disagrees with package/actual bytes. Candidate WebM and84 decoded frames are valid. Artwork acceptance and handoff repair are separate.",
+  "binding": {
+    "package_path": "sticker-lab/production-v5/author_a-frozen-80c/package.json",
+    "package_sha256": "17b63b73cfbb91826d697850b26745ee2b2c8b96dbc4d35702aa345f287d91e4",
+    "files_digest": "851c3ff08f9217384806682778b7de0e78c33faa6ceea1d9ddb65e4acbaea00e",
+    "files_verified_initial_and_finish": 28,
+    "mismatches": [],
+    "candidate_path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/candidate.webm",
+    "candidate_sha256": "352631137b410c79855911ee6e4ee0b35b7822c5d1bf857b3064b9c3e5c46fbd",
+    "candidate_bytes": 242273,
+    "proof_path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/proof.json",
+    "proof_sha256": "b50c4ef439caf8b89e0c2b4c0ba42a688c9fa1699039bc3b35cdb246e4db481f",
+    "recipe_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_80/recipe.json",
+    "recipe_sha256": "541a2afb5051a05f01a7af128f094e9fd7f4cfeb15e1adb3d63a5867ca630915",
+    "source_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_80/source.webm",
+    "source_sha256": "ac40795857f8a2a21819bb9cb92c4b2677b8792456a2630a86a95c8904b98161",
+    "canonical_source_sha256_at_finish": "ac40795857f8a2a21819bb9cb92c4b2677b8792456a2630a86a95c8904b98161",
+    "source_original_status": "unresolved_original_not_recovered",
+    "derived_selected_source_bundle_sha256": "d52e6ac338063d1011e6a670def565a7514fdc1ce0ed04414467b62a6569e610",
+    "raw_and_decoded_binding": "All84 before PNGs match the package base list and fresh exact source decode. All84 pre-encode raw PNGs match immutable recipe.expected; raw pixels match proof bounded_repair_actual_checks. All84 after PNGs match frozen proof and fresh candidate decode.",
+    "mutable_generator_used": false
+  },
+  "baseline_reference": {
+    "path": "docs/qa-1-13/sticker-triage-51-80.json",
+    "sha256": "94b8e19cb21b261daf31cb1836ab38351559e3d8dae4135cf9edfdf1462c98c5",
+    "reviewer": "/root/triage_stickers_51_80",
+    "mode": "Existing independently full84 baseline retained; only required puff risk was revisited here, not a repeated whole89 triage.",
+    "addressed_defect": "Minor dark/blue-gray residue during source025–028 pale-air fade.",
+    "prior_rejected_b": "Not admitted or reviewed as current output; no verdict inherited from the author rejection."
+  },
+  "author_report": {
+    "path": "docs/qa-1-13/animation-author-a-80.json",
+    "sha256": "6de1c8b21387a27ad3186dd2ae75a9e0f5416e7f102558216b8bc971b455ebf0",
+    "role": "Handoff/provenance only; shape/alpha verdict based on independently viewed exact images."
+  },
+  "actual_visual_review": {
+    "ordered_after_frames_viewed": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "ordered_after_count": 84,
+    "ordered_after_view": "7 sequential12-frame QA boards,384px per frame; every actual frame opened in order.",
+    "fresh_decode_before_count": 84,
+    "fresh_decode_after_count": 84,
+    "source_all84_visual_reaudit_claimed": false,
+    "source_and_after_puff_frames_viewed_native512": [
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "source_and_after_puff_3x_crop_box_xyxy": [
+      32,
+      248,
+      176,
+      392
+    ],
+    "backgrounds_rgb": [
+      [
+        255,
+        255,
+        255
+      ],
+      [
+        21,
+        33,
+        46
+      ]
+    ],
+    "native512_body_phase_indices": [
+      0,
+      12,
+      24,
+      40,
+      56,
+      83
+    ],
+    "native512_seam_order": [
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      0,
+      1,
+      2
+    ],
+    "slow_review_frame_still_viewed": {
+      "candidate_frame": 26,
+      "review_frame": 52
+    },
+    "metrics_replace_eyes": false
+  },
+  "observations": {
+    "puff_shape_and_alpha": "Actual native512 та3x before/after024–029: source026/027 сіро-темнішає вузькою плямою біля щоки. After025–028 зберігає блідий цілісний лопатевий puff, що стає прозорішим до029. На білому фоні не бачу колишньої темної кайми; на темному — світла хмаринка згасає без чіткої прямокутної кромки, вертикального зрізу чи box matte. Контур лишається дуже м’яким; прийняття не означає physically simulated airflow.",
+    "roi_boundary": "3x охоплює обидві межіROI й прилеглу щоку/плащ. Не виявив прямого шва на x48/x160 або y272/y368 чи відрізаного сегмента хмаринки; щока/закритий eye та синій комір зберігають форму.",
+    "core_and_acting": "😮‍💨:000–024 видимий видих блідого повітря з округлого відкритого рота, очі заплющуються, плечі/лапки/плащ осідають;025–029 puff згасає;030–063 маленька relaxed smile та нахил/осідання в плащик;064–083 повертається tired exhale pose. Збережено цілу сцену, а не static/global bob; немає доданого реквізиту або реверсу хмаринки.",
+    "anatomy_contact": "У всіх84 after одна coherent голова, пара вух/очей/передніх лапок і дві стопи; лапки тримають край плащика біля грудей, медальйон і складки не відриваються. Native040/056 підтверджують осідання/нахил із цілісним плащем. Нової великої double anatomy чи canvas clipping не підтвердив.",
+    "loop": "Actual078–083→000–002 має невелику відмінність нахилу/розміру puff між останнім і першим, але той самий tired exhale та опора; gross spatial reset не видно. Raw seam незмінний від source. Perceived velocity/cadence seam без playback невідомий.",
+    "description": "Proposed actual UA description відповідає observed видиху, eye-close, dropping shoulders та relaxed smile/settling. Власний плащ лишається м’якою обгорткою/опорою."
+  },
+  "raw_bound_verification": {
+    "modified_indices": [
+      25,
+      26,
+      27,
+      28
+    ],
+    "roi_xyxy": [
+      48,
+      272,
+      160,
+      368
+    ],
+    "recipe_feather_px": 6,
+    "actual_changes": {
+      "25": {
+        "changed_pixels": 8282,
+        "bounds_xyxy": [
+          49,
+          273,
+          159,
+          367
+        ],
+        "outside_roi_changed_pixels": 0
+      },
+      "26": {
+        "changed_pixels": 8102,
+        "bounds_xyxy": [
+          52,
+          273,
+          159,
+          367
+        ],
+        "outside_roi_changed_pixels": 0
+      },
+      "27": {
+        "changed_pixels": 8023,
+        "bounds_xyxy": [
+          52,
+          273,
+          159,
+          367
+        ],
+        "outside_roi_changed_pixels": 0
+      },
+      "28": {
+        "changed_pixels": 7834,
+        "bounds_xyxy": [
+          52,
+          273,
+          159,
+          367
+        ],
+        "outside_roi_changed_pixels": 0
+      }
+    },
+    "all_other_80_raw_frames_pixel_exact": true,
+    "outside_roi_raw_pixels_exact_all84": true,
+    "limit": "Це independently checked pre-encode raw RGBA, не твердження про exact final decoded pixel equality: lossy VP9 reencode перевірено окремо actual кадрами/підписами."
+  },
+  "strongest_artwork_objection": "Фінал puff — дуже м’яке згасання майже того самого цілісного об’єму, а не розвиток turbulent flow. На темному фоні слабкий сірий залишок after027/028 відповідає зниженій прозорості світлого puff; native realtime необхідний, щоб оцінити, чи beat fade не читається як зависла плямка або opacity pop. Підтвердженого shape/alpha veto в actual кадрах не знайшов.",
+  "decision_reason": "Невеликий addressed matte fault став pale fade без видимого box/cutoff, при збереженій повній сценічній дії. Pixel math підтвердив межу патча, але рішення прийнято після actual full candidate та enlarged white/dark shape review.",
+  "confirmed_artwork_must_fix_returns": [],
+  "returns": [
+    {
+      "id": "80c-normal-review-invalid",
+      "scope": "review handoff only",
+      "priority": "required_before_claiming_complete_review_handoff",
+      "observed_actual_path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/review-normal.mp4",
+      "observed_actual_sha256": "24d8c3816f827c2d4659f722f965dc0113cd611c6e3315337e47b7d1daa3a231",
+      "observed_actual_bytes": 262192,
+      "package_matches_actual": true,
+      "probe_exit_code": 1,
+      "observed_error": "[mov,mp4,m4a,3gp,3g2,mj2 @ 0x55821b380400] moov atom not found\nsticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/review-normal.mp4: Invalid data found when processing input\n",
+      "frozen_proof_claimed_sha256": "8b0fdd393f55306c416b9beb3a422e3a6f6fba19a74f8161637cc1a584dcee55",
+      "frozen_proof_claimed_bytes": 387683,
+      "required_action": "Preserve original package/proof bytes. Supply a separate bound replacement normal MP4+metadata addendum tied to exact candidate352631137b410c79855911ee6e4ee0b35b7822c5d1bf857b3064b9c3e5c46fbd and proofb50c4ef439caf8b89e0c2b4c0ba42a688c9fa1699039bc3b35cdb246e4db481f; verify final copied bytes fully decode and match declared SHA. QA of that addendum is a separate addressed task."
+    }
+  ],
+  "review_media": {
+    "normal": "Frozen invalid, no frames/playback claimed.",
+    "slow": {
+      "path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/review-slow.mp4",
+      "sha256": "54244c2aaa04b4aafc4703e3ffb939af9a8959d647cda267d0226c7e7123512f",
+      "bytes": 549941,
+      "decoded_frames": 167,
+      "correspondence": "Six sampled image regions correspond to candidate frames at2x indices, errors recorded in technical scan. Repeated frames do not constitute additional native animation poses.",
+      "perceptual_playback_observed": false
+    }
+  },
+  "unresolved": {
+    "native_realtime": "not_observed",
+    "native_slow": "not_observed",
+    "device": "not_observed",
+    "perceived_fade_and_loop_cadence": "unknown",
+    "normal_review_handoff": "unresolved required companion addendum"
+  },
+  "scale_scope": {
+    "verdict": "accept",
+    "scope": "This single bounded80c puff repair as frame prototype only. No other sticker or general ROI/flow class admitted.",
+    "blanket_scale_verdict": "block",
+    "other_items_admitted": []
+  },
+  "evidence": {
+    "technical_scan_path": "docs/qa-1-13/author-a-80c-qa-evidence/technical-scan.json",
+    "technical_scan_sha256": "ddabedfa33ab5d39090f4f0597e08fb600f13486135bc0a82afe6128740f1f77",
+    "image_artifacts": [
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-after-all-1.jpg",
+        "sha256": "5f518566410e39b88fe36ec7d5bb2c777b24194fb1b66300c9a47b7058281c51"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-after-all-2.jpg",
+        "sha256": "dfad35af0a84d7151a4be64aedf9d9b2eb1f141674acad4fa5ce9e6495819cec"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-after-all-3.jpg",
+        "sha256": "08b1942b164621ac5cfc940450bdd1da63e658d06fa76d16b6a1186a1d394a56"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-after-all-4.jpg",
+        "sha256": "cfe105d5833129d4b4e70f1e2d974099ca2bfbd36bd48f615225eed5170623b0"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-after-all-5.jpg",
+        "sha256": "787260b096c6d6ec14b04a1e6e8f28452d0624e2d3e904593af9b54d723ed23b"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-after-all-6.jpg",
+        "sha256": "38fb2c3ee6d3be4284f99b5485ff24e38f2bfded547511b0b29a90ae37eb3c14"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-after-all-7.jpg",
+        "sha256": "468948012da270af9d4b538c37c02473570868de0b94c8cd2af00387217a31d3"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-after-puff-3x-dark.png",
+        "sha256": "dd1b5388c86ee335f9edc88a146d5d4a4090bb8159229877d326f7b201ce4af1"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-after-puff-3x-light.png",
+        "sha256": "b498b0d65c3ce13b0661c249d9bf3652eb3f768c0f56f1a7c97a31d35152abc0"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-after-puff-native-dark.png",
+        "sha256": "f5cbf29c13c7b748279026809e4ef4f16ecdd9c51a694a601c076af2a40fc57c"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-after-puff-native-light.png",
+        "sha256": "218b25d7997c9ed53e3057609849d54eb155071624aa41f2e2946d346bf5af52"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-before-puff-3x-dark.png",
+        "sha256": "667fb232432004a8da18a0ffa9179784e0e9ca45e900626075a7bc433639f61c"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-before-puff-3x-light.png",
+        "sha256": "8738ad126406fc43c47618e9f314bae1008142a4cd5cfe93fb81455f92aa0ffc"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-before-puff-native-dark.png",
+        "sha256": "05cbca23708bfa4b80aba5d1361912163a58c0351ad71ba154f7c00ca0d0a1a2"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-before-puff-native-light.png",
+        "sha256": "23c93e5bfafce08d91422f1dfc63ba4c7b11dcc33bd2b1a169a3379f34923b39"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-native-phases.png",
+        "sha256": "28e01cb3420d7ddec0e7daeb9582d32801958fa6bffd148e865cf66f8dbd6765"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-review-slow-026.png",
+        "sha256": "ac2b8e2a141499cbb5d55b458df50cdcda82408c7a5ff21678b978c0b421217e"
+      },
+      {
+        "path": "docs/qa-1-13/author-a-80c-qa-evidence/lumen80c-seam-native.png",
+        "sha256": "2b406f3e5348b993fd90fcafa931f93e803c1995d16af5b1458b8aea39569640"
+      }
+    ],
+    "all_listed_image_artifacts_actually_viewed": true
+  },
+  "qa_changed_canonical_assets": false,
+  "qa_ran_production": false,
+  "qa_spawned_agents": false,
+  "publication_authorized": false
+}

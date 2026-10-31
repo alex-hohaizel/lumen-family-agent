@@ -1,0 +1,2073 @@
+{
+  "schema_version": 1,
+  "id": "frozen-core2-and79-v2",
+  "files": [
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/candidate.webm",
+      "sha256": "66157007bfb336976cb6e918ce8c82d32a2e2ea3fd99999649bd3c535fb0b212",
+      "bytes": 163760
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/000.png",
+      "sha256": "e9e8b48214e5345bd5773fe6ec1c916b61c072360ec07b92949c9b353a050b55",
+      "bytes": 244353
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/001.png",
+      "sha256": "378d34a46b2da395b436edb21aedfbb846a7cbe471188c65e7f4c0cb01a6d6f7",
+      "bytes": 246313
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/002.png",
+      "sha256": "b081cd4535bafff93d85e3e50430ddcc7529a6c43a5e68ad18c7340366a039a1",
+      "bytes": 247546
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/003.png",
+      "sha256": "2fdddf67150e12c484025426246f6c3a16dce69e61e06d29dcd1fe9389228b31",
+      "bytes": 247741
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/004.png",
+      "sha256": "c9a2933c798091ed8fe9feff9e4be3cbb4d086b2f6632d04807d3a6d1628ad6c",
+      "bytes": 248111
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/005.png",
+      "sha256": "01da3a2414fb6355e880cd52de1acc67684bafbd99ff1d8f37a0f123001e7712",
+      "bytes": 247919
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/006.png",
+      "sha256": "d47747420c3c47dd0d4e46b275d13122849075487746c1e17e8de2a7a7a3fe1b",
+      "bytes": 246841
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/007.png",
+      "sha256": "30e057155fde7614484680639ce702601c0103e46c235d38d16a1b8158611371",
+      "bytes": 248167
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/008.png",
+      "sha256": "eff71af78feca6557298c5b6865ccbd230a563437ab69ac9fef86f3693b752e5",
+      "bytes": 251641
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/009.png",
+      "sha256": "45019d70a42cecb0858aa0430f2a2ac6e353d5aa407f15d100191b164d83a489",
+      "bytes": 252117
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/010.png",
+      "sha256": "aa8566ee83f887d86322dc13cbcde94e80c78ec684e9f93e16679738ef6b6cc9",
+      "bytes": 252142
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/011.png",
+      "sha256": "e698a376adc65438b00654e99af115f8125e4320d038c340fdb589624d30a929",
+      "bytes": 253446
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/012.png",
+      "sha256": "797d71bf05640a6f077e64d1b0c6db91f75b6a7a1df79ad2ef5e2df6e9b1081e",
+      "bytes": 253376
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/013.png",
+      "sha256": "c17f7a425781fa59e32de7cc479a1c7ab2134e38e64718c6590e2dea369b05ac",
+      "bytes": 254803
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/014.png",
+      "sha256": "8501e791569aadd2f9860269ca4f4aed4d9e99b07d5d75572333998c11ceb829",
+      "bytes": 255084
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/015.png",
+      "sha256": "90deadb0523d9a37a1f69817fb6353e922d327b1b3d648cbfbbb184fc764fc7e",
+      "bytes": 255351
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/016.png",
+      "sha256": "a7c6b14e67a3d0108a2eb8c624592289c814480dbd55c646af2c9067f0dcf7cc",
+      "bytes": 255181
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/017.png",
+      "sha256": "928877720ec19e7d997dcba079c81ddd57e2545c649a93cf287c0d2cc9c11960",
+      "bytes": 256793
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/018.png",
+      "sha256": "1d3158f5d385109e45c3fa8dcdef003a1bd73b19148e1e480aee2e67ad95244f",
+      "bytes": 257233
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/019.png",
+      "sha256": "c7d7897c87cc45fd104749db5b0d085779c2a7f6149545ab0e1c930037f4e17d",
+      "bytes": 258439
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/020.png",
+      "sha256": "3e6c84d402ed020eec8bdea957b88341f0eb4b889ed91c86f8d75b77ae0bd758",
+      "bytes": 258102
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/021.png",
+      "sha256": "ffe613487af755580ffc99db3d46e8618a67cb46a1a97db1ef31e717dd7f76c9",
+      "bytes": 258749
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/022.png",
+      "sha256": "336521efa2c53378c195feb77643b2142eb6068227665e901b40d964208c63a1",
+      "bytes": 258477
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/023.png",
+      "sha256": "fadcdbaa9b44e378fea6978ac7d2be9a99f1174d970627d5e80c7ecb89489362",
+      "bytes": 258740
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/024.png",
+      "sha256": "9a3a4701a94583e52b1da6b1f2db7871afd1b6b2e3f3027fdef78e0b15135634",
+      "bytes": 257860
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/025.png",
+      "sha256": "af8883a660b461de21eed6cfa08df24055fc394625817469dd36d018914cd486",
+      "bytes": 257616
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/026.png",
+      "sha256": "4bacc35650363902109ee2d9a6ad9b4f16ab58f0184ceaa1398e360b140a13ac",
+      "bytes": 257667
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/027.png",
+      "sha256": "fc700ce8c887e4a855d7c91cda4472c36861043a50560a36678037950ccc22d6",
+      "bytes": 257411
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/028.png",
+      "sha256": "d31cbfb4b7294459771a9e0cd742045c4c0b066026e1a9cc637b2fb581406125",
+      "bytes": 257667
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/029.png",
+      "sha256": "4b070d4a589e207cf5c96722541b9c73a8b542fb61289b5aa09d60f961d5eef9",
+      "bytes": 257319
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/030.png",
+      "sha256": "e348561fa5acab726cd7f51474b50a4f874620ab8305efbd908b17c31fe847da",
+      "bytes": 256744
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/031.png",
+      "sha256": "4a5dac2b68038b1cc5a8a4ef76a4bb0e33084a30084776df1b96bb864ab06d31",
+      "bytes": 257370
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/032.png",
+      "sha256": "10dcdd556833ba95b501d6ec338b24987e941ab874d56040aa580e9cb0004925",
+      "bytes": 255930
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/033.png",
+      "sha256": "d09b02d41b31882a47a9daeec1ecef315b3ec1bd5b1656dd7ba86597b137503a",
+      "bytes": 256199
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/034.png",
+      "sha256": "1e36cf2552f570ec4b28361c299ba1ba3e5866faad8187865bff42ca5d13c8a4",
+      "bytes": 255536
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/035.png",
+      "sha256": "a7e8ffe447a68e57cc74d2ace5dc6a9867a893fc6389e469c7df48d54ff53853",
+      "bytes": 256234
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/036.png",
+      "sha256": "48729ecba19177fbcb173b06cfe74a672eb5b67c75d75694a17b7bd5215a5053",
+      "bytes": 255970
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/037.png",
+      "sha256": "e37c4d0a5038172aebced5d4bd3a47e40b9ec1408b43c6084476235f39515df8",
+      "bytes": 254819
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/038.png",
+      "sha256": "42ad00dd551da19fc60c4ea579d887a99259dd2f36fa2d3b1083b2a5fcacba12",
+      "bytes": 255687
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/039.png",
+      "sha256": "9eccec3d3cb6741fadfdd9b744754b5242a09a0f8061716c385dbf73908c66d8",
+      "bytes": 254418
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/040.png",
+      "sha256": "0dab62125ec0da7c1af92b1525258516ee6574a67c02ef8dbc03f0d34fb7a68b",
+      "bytes": 253074
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/041.png",
+      "sha256": "a564c25803f12d582cb015f86cda87362b0e539e9043684e0d46234bd7f3b670",
+      "bytes": 253322
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/042.png",
+      "sha256": "3d0850b783035a9e7faf35395bd1431d939a8d13827225d5362421531e6a2a02",
+      "bytes": 253685
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/043.png",
+      "sha256": "5b55cc26f2fdb6717055ee54615305140deaaa611582a126f28f541b47e98681",
+      "bytes": 254632
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/044.png",
+      "sha256": "552286dbc562104c7aa1f1abf3ef4510eef842eb90e4f969b441bd5714ffe3d0",
+      "bytes": 253980
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/045.png",
+      "sha256": "df18acb81e84902d0c55a5eee28ed992665216014e23b897164bd75fba8bf2cd",
+      "bytes": 253176
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/046.png",
+      "sha256": "2f9d8d4fd75d80a6d173d0b3d635fb8e0569e081f72e721c95410042b1ab9b1a",
+      "bytes": 253333
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/047.png",
+      "sha256": "4d37062043ac8ec42f8ee4a7e1a86c5377de396384e15284bf4d88806bd2b35a",
+      "bytes": 253279
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/048.png",
+      "sha256": "60189b3c21095d220707b855f309814f5285b766856be44b636cbe4432db6fed",
+      "bytes": 252790
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/049.png",
+      "sha256": "b559bfd0c65259970eedb793b289232859322f035bbdbe5945417fe1b981f5bf",
+      "bytes": 252988
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/050.png",
+      "sha256": "466f16c6fcc52d1f8a3b85887fa735d0cbead9332745de18966a5553932f96f5",
+      "bytes": 251727
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/051.png",
+      "sha256": "bc1f5394b312a2afdccb071d7cfa400e2679d4b3b17152569f14f525243fd9b6",
+      "bytes": 251871
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/052.png",
+      "sha256": "8dd29853b259d1a7a3f20dbf848e7c09b4ed96f27cf213eaff5332cce453a2a3",
+      "bytes": 251825
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/053.png",
+      "sha256": "74b848804648a5b168175520c8732f03d95c76edd85ce4ce2c794aff6da2de33",
+      "bytes": 251791
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/054.png",
+      "sha256": "29e25bde82c17e43227aa7e72cceb84e43084c61747b8099fb19a2ca7a972773",
+      "bytes": 251135
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/055.png",
+      "sha256": "856e76db25c01ac65681eaca351877f9d03bc794ac69628d05d7701d821b119a",
+      "bytes": 251803
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/056.png",
+      "sha256": "62b9ebb4bc033ffbdf0160068fabd237a621d4b53069bc410d81cb24bcf40572",
+      "bytes": 251303
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/057.png",
+      "sha256": "81b47a1241ef9fa3a8ff0f73446e71f8801b1c413f82f4dcfb03705d60f3cb7e",
+      "bytes": 251257
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/058.png",
+      "sha256": "c525610c665d3ff86a827272d0cd05160f5e5489927a6224f2f829ba810cf47c",
+      "bytes": 251465
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/059.png",
+      "sha256": "1c4a629af3faf897811fa9d60599c88e9d85bd6a06d9f4c093de7a1ab53de332",
+      "bytes": 251394
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/060.png",
+      "sha256": "31da8099a79bf6b63f0282a34e24066a4bd87e27683d5252507f84c0320f8234",
+      "bytes": 252352
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/061.png",
+      "sha256": "5bf55d3ff6814b9ff2c9df70e21cf5555f04bbb75a067253138ad2050f2fa17f",
+      "bytes": 251874
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/062.png",
+      "sha256": "19d36bd3db5a4fa1205f4741d9f97cc1db9ad34cdf553770df3c99e0e66aba12",
+      "bytes": 252215
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/063.png",
+      "sha256": "636ce4c5513711f36f67d28394991ff324a16bc5978aa1e4feda239a96bb5de4",
+      "bytes": 252097
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/064.png",
+      "sha256": "6c2441f1a4140c836a0612bca0db65f31f25dd0c4f4b6f0078ca19ec77cb8337",
+      "bytes": 251757
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/065.png",
+      "sha256": "c5870eb15a9b7f38f4e0ed2e79e58e4e45c84ac9aa5796db2a7101b7f1568351",
+      "bytes": 251397
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/066.png",
+      "sha256": "2cac0f7583ccb55f0e0bf72ec05c270f2b2faee488934517b241ab328f5c7595",
+      "bytes": 250945
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/067.png",
+      "sha256": "d5e5b14bd821ff6873a2fad049d9b0867d0519848f5e68eb2a98ad72eedeba7f",
+      "bytes": 250745
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/068.png",
+      "sha256": "73b2cc875d4516154cfe8d5c43cafcea3ebef33a8f8aa3f9d2cdf1d3bd065464",
+      "bytes": 250736
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/069.png",
+      "sha256": "78caaa40161b78d5036cbdfdacd46427eeba10cc2aca245cda60886be7a3d8d6",
+      "bytes": 250538
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/070.png",
+      "sha256": "5264e429ce0c15cc825ce4504fc2b018fdb4e7058bd005a29e1ce16c9c442140",
+      "bytes": 250773
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/071.png",
+      "sha256": "d70691be7b069ebc3a8090893f2f962944a17fad0127df552be4a3975fea5d90",
+      "bytes": 250710
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/072.png",
+      "sha256": "c236199305b9b89cc33e94d579d7cf3c2009f1ba04ba9cd9ee38177babf684f6",
+      "bytes": 250424
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/073.png",
+      "sha256": "7a6715d8b7f0396acb255b164be19c2a666fddf477dfe2104ecec412f9123a94",
+      "bytes": 250270
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/074.png",
+      "sha256": "df5b81afb2929ceb90d61e8da7e548f0aa2b514b39ff362c4969d10350d72a77",
+      "bytes": 250453
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/075.png",
+      "sha256": "f2e02c9984972f83c180e6172230849e7b74d61bbf266810da644d3e570860b7",
+      "bytes": 250720
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/076.png",
+      "sha256": "9bc55ff5685195c9a9c3a341606904e1e2aa977d508681d8533f3a39e2677cae",
+      "bytes": 251124
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/077.png",
+      "sha256": "e3868f1749e56eab66238d23aed6310c942ce93da0b61f6a71298c391a78f08a",
+      "bytes": 250800
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/078.png",
+      "sha256": "6d5c9999e0ec67ac801ecba461835cda6540fd8df9484b24e3bfbec27f664de1",
+      "bytes": 251057
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/079.png",
+      "sha256": "4ee46ab1ad98f072dc98a40c25aa82366842abed8de77f29be3fbac7be542b6d",
+      "bytes": 250758
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/080.png",
+      "sha256": "fa5036695aa514971c8e683c592d3fb17e6f41c69ce63e54e5c00b5275b387f2",
+      "bytes": 250993
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/081.png",
+      "sha256": "845a200b428529f1ed7bc7bd16ee8544ce6319e33a40a31df241ac0cda5fdad3",
+      "bytes": 250225
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/082.png",
+      "sha256": "1fa05a094ac45bcd97c0afd3290de97c4c31d187fdd90d580e683c6af5b6fb54",
+      "bytes": 250796
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded/083.png",
+      "sha256": "6500ff65d33bd3f3ecfa8ceca904977988cd19d280ce65fa1f32a476c05e8b2d",
+      "bytes": 248092
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/poster.png",
+      "sha256": "ee642a9db3582642bf12b67f885d6ff065748970fb4cef629b93d0df93a91c41",
+      "bytes": 168268
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/proof.json",
+      "sha256": "fff511cc48405229c52f92c5080dde6214c88d9f49d05e168b387df2ad64e7ef",
+      "bytes": 51628
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/candidate.webm",
+      "sha256": "7b0ee576ddc106151b276e04c6c8469b9cff6d1fec7228bd046313a8ea551779",
+      "bytes": 216180
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/000.png",
+      "sha256": "9b456a679968fd2e438971935738060cbc2ae07ca476cc732a5144c01b8e71a4",
+      "bytes": 266128
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/001.png",
+      "sha256": "773774f9a0452b119a8660bcc71ce1c0d9de16b2aa4e2e9be16b9f3aa39d0be5",
+      "bytes": 269433
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/002.png",
+      "sha256": "73c5d2b5827838cf29e7a7260d355a8c8ce66b65f7ceb1dfa61779a55e04aa6b",
+      "bytes": 271968
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/003.png",
+      "sha256": "35423f1c16984ac6fec1bf9ae2c610ac2e294f9d16d9a431089f5603eb654989",
+      "bytes": 272289
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/004.png",
+      "sha256": "b937fffde3426043d8c17c55cd96e91f28ffbe16316eff2da4528d0b0de393b6",
+      "bytes": 272978
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/005.png",
+      "sha256": "48650acf6fbd83386bd7678ccd9d7db8b09ebdef261fd48b8c94a9c4a2535cce",
+      "bytes": 273040
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/006.png",
+      "sha256": "1c7c2d03149d71ce914ae0ef549231743c6f291bae7e17e33382b2fdd56c7f78",
+      "bytes": 270400
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/007.png",
+      "sha256": "d50346711513b76daf4621331e885a79e6aa80973c052273f63fdcb903fd5a1f",
+      "bytes": 274307
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/008.png",
+      "sha256": "ca81a72850bcb952d383c1473085f53158e664c145d3fffc7a8d2a1930afca49",
+      "bytes": 276280
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/009.png",
+      "sha256": "cfba7ae6e3d69d7ddd9c598436c5dd9ebfd62a0175a9b2fc8e8f324cf76f72b8",
+      "bytes": 276299
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/010.png",
+      "sha256": "80a3b0229dc2e1bdde62d8f9d87b40ce6d63a2b2c9a07d0b32072d64d4db2c8e",
+      "bytes": 277711
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/011.png",
+      "sha256": "163ea41a592f0ad8d13a8de9216be3d55cced3fc796813289e21872385434d3a",
+      "bytes": 278299
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/012.png",
+      "sha256": "176b25172070a413250cec461a66cc270364cedab6c2e532c02c105c4ce776b5",
+      "bytes": 279340
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/013.png",
+      "sha256": "798d9ae99298314c65bb6dc83691f552ca02de9d58eeee7011ce0f6f5534f4c7",
+      "bytes": 279989
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/014.png",
+      "sha256": "c68e8a43319df9f318ad3278c2494a5a2fb4da0d43713bb076c46ded8e827ed6",
+      "bytes": 281000
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/015.png",
+      "sha256": "a7bf0c0b5adc4a429707db2cbf0d95749af522ba499cdc9de8b2ed90c06e08c5",
+      "bytes": 281900
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/016.png",
+      "sha256": "5adf2cdc5bdd8b55613bc2ae4d39e4cd5d0ff1c512aef7255732a520010d4f2a",
+      "bytes": 281763
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/017.png",
+      "sha256": "99c52167580406a5bedb8f1b311ce7eed6e0b229a8db14e3087668628b7d83f2",
+      "bytes": 282493
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/018.png",
+      "sha256": "f410b5c8f936e07ecdf1195a9431e4506a9d4883acc7b5cd4e659f74d7a1e94e",
+      "bytes": 283679
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/019.png",
+      "sha256": "b5f90d5a00eb82af6ccefc6fd5b88d75f24f15516bc0fe0e1e184e4e07e15bb9",
+      "bytes": 283273
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/020.png",
+      "sha256": "b1c1c4597ed9d4ab31cdef45555ccd6efaefa2d4d393d1675f7df74d9aa431af",
+      "bytes": 283100
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/021.png",
+      "sha256": "594dc53af82f26a7b6e6f46fcdbbeb8daa11bdae1ee95d222a1d2dbd30ff3741",
+      "bytes": 283919
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/022.png",
+      "sha256": "6d546934bed62a0089a01b4ee21182665b0171640aee48d3eef1937bfe6c4cb7",
+      "bytes": 283455
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/023.png",
+      "sha256": "7920e40bce12b6e7b32d033d0300da444fc3fcd52217cd766f9d65aa09378ecc",
+      "bytes": 283140
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/024.png",
+      "sha256": "8eeb58b4e508dfcb3267b5855829f04700d1790810635cd06d00a25b0af7fcf1",
+      "bytes": 282701
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/025.png",
+      "sha256": "6c29b0702f67f5f70b5f81d435212b101cf3fe3402ab89934f7a2bc5f9ceb5fe",
+      "bytes": 282906
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/026.png",
+      "sha256": "ca2f04e386d795cfed70a808d95aaa594cd992811fe80b5d83555765e9c11504",
+      "bytes": 282648
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/027.png",
+      "sha256": "6eb792465fff2e37e4d09334435487d874522f804cecc7aa131dd2a3cc639cfb",
+      "bytes": 282577
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/028.png",
+      "sha256": "7992cb4093e119867e0561a548f9377ba406f26e2c920cd20c25ec5eb82c9811",
+      "bytes": 282744
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/029.png",
+      "sha256": "9b1ecba4a34962b9b90d7faa231b0d97f058cb438541b51d25b3c1414c37b07c",
+      "bytes": 282449
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/030.png",
+      "sha256": "6a114cdae15a0180fb437136eb9da908c89b2e494c2d8b8ab42620259d3384da",
+      "bytes": 281817
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/031.png",
+      "sha256": "992bfae69857ad8a8c0016132684076a4d8e87bc6848c1573c53660ce08c5335",
+      "bytes": 281222
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/032.png",
+      "sha256": "4babbde6add0752563c36a0465460cd26c0346819fd93a73363f6fac827c7d87",
+      "bytes": 281692
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/033.png",
+      "sha256": "a3898fc38c77a5531d77b4db3c1869c335972d5749a8de129836d52a2ee459b8",
+      "bytes": 281740
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/034.png",
+      "sha256": "e6becbb461e02dbf0a24bdd61c04a634845a7da45db71bd033233db1adec3687",
+      "bytes": 281220
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/035.png",
+      "sha256": "efc516815644c24dd18ce022e4899e48e48391522580fa855fb4d86bb07392d2",
+      "bytes": 280150
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/036.png",
+      "sha256": "c53a3745d8ed60cf77409a148df6602d10f8f5b7fe6d3117814466afb198e811",
+      "bytes": 280605
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/037.png",
+      "sha256": "087e1479f87ed4e5d36f644935d922405378f7d66697545837a5188f8bfddb11",
+      "bytes": 279788
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/038.png",
+      "sha256": "70bf35223f9ff0eb1bb6759ee09c4f6221846bb66194dcaa982022b0a998cbd8",
+      "bytes": 279484
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/039.png",
+      "sha256": "7170c5bea5bf4972e202cc89cbfb27d49139342290511c9905fb82eabbba1b44",
+      "bytes": 279129
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/040.png",
+      "sha256": "fbe53af9c8ded2f0d674922fcd48fae5a146b860f8521d5bbaef0583d68004fc",
+      "bytes": 278244
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/041.png",
+      "sha256": "7cdeb8123b4d5c6f3ed0f6c0d464ba927179a373095e1d91570d35ac7f56703e",
+      "bytes": 277974
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/042.png",
+      "sha256": "5efcde4cf633020bb63c5760287b5f91edb01dd89680851ee6a88c21151a6cc6",
+      "bytes": 277072
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/043.png",
+      "sha256": "ad35f53fe1383cf8ee52d69a9655f61b7ac3fe70bd70317b1250bdfe883b1d9f",
+      "bytes": 277539
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/044.png",
+      "sha256": "272258b54c547313e92f7c7dac2d5df2fa93e30292b465d990887e16061e24ef",
+      "bytes": 277704
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/045.png",
+      "sha256": "f784d5940cd5c14a72280dedc956c9899b8f3be94506f89f15dc348df4923980",
+      "bytes": 277369
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/046.png",
+      "sha256": "a76f22a3720faff5ac9e49f1b65f690a88d41d97e73eb402fa2178cc8fd6d1f0",
+      "bytes": 277174
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/047.png",
+      "sha256": "8dc43daace268749225e4909b465a9da2b8e65c11ef3276955e1275fba1f65ff",
+      "bytes": 277184
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/048.png",
+      "sha256": "4c6619e392c2705d2b67a18d94a635c7a5a51d90bfbc2a3c9a750a6fec66f296",
+      "bytes": 277529
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/049.png",
+      "sha256": "58a73c4eda7b2eb4acb3702684bb9d8b7f5b487f022b3f0148a85fd50b3c0793",
+      "bytes": 277265
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/050.png",
+      "sha256": "c3b227ea23841ad1e4620b6a8b6fc1d87d5a8a0a5716ed67328de0f5ee793f32",
+      "bytes": 277237
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/051.png",
+      "sha256": "7a780591a824b4a109a5eafdeee231d77547e98d0cd0d54d50a91337339fcca2",
+      "bytes": 277349
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/052.png",
+      "sha256": "7227db10c30b80d6ea9c8587276874a0191102fe759d962daa91db073afc6308",
+      "bytes": 277178
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/053.png",
+      "sha256": "2f36c072e737f1638fada62f5c34471ac0d03e1cef2063ceeb761b6963812b1a",
+      "bytes": 277373
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/054.png",
+      "sha256": "c398fe48d2c3dbfd365a961933649a2bb61658e939f635fae515bf4a3cee29b5",
+      "bytes": 277761
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/055.png",
+      "sha256": "f5293eda8639f23bcd961839f79e8c91ba8a9e6dacd405ecf86186ad7d9ba2a9",
+      "bytes": 278213
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/056.png",
+      "sha256": "10af3b4c229f3d4d9a4e2bcaf4c7419547d898f229f6e9ffc3e24651b45fcc44",
+      "bytes": 277448
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/057.png",
+      "sha256": "19ad7ab29e80bbfdb1c0a6ba1c0bc37c4d2480b9a833a1ff4fa8aa55bff88ca5",
+      "bytes": 278021
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/058.png",
+      "sha256": "da7c720c32ca9f5c993536e61540426efdba18acddf4182a21dc105dbeeb7ffc",
+      "bytes": 278134
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/059.png",
+      "sha256": "45a65fe2bb236dcc12b934545c541818a47a9ebe0f108624e61ca0c79c9d1475",
+      "bytes": 278139
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/060.png",
+      "sha256": "7df9b1ec73fe1fc56f3c3b97b2a6ccfeecc5fc7114f55c5b20c33eb60a7b758f",
+      "bytes": 278305
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/061.png",
+      "sha256": "06c788aa8edebb055da3031b8b222df7b8d1b3dc884bc1dca044c27d8a99adbb",
+      "bytes": 278076
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/062.png",
+      "sha256": "c2015a366c4ecebd8dcb88efdf41e287599234659829532196ce90326f26bcb7",
+      "bytes": 277001
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/063.png",
+      "sha256": "99767a675c6ce0e599ee52bff570d20b8c182e0de431a33e1c548899c42c6f74",
+      "bytes": 276267
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/064.png",
+      "sha256": "c7daca00724ac5bbcc8612fa26192cbbff9276516eba5c28b9c2f1654856db76",
+      "bytes": 277031
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/065.png",
+      "sha256": "b529bf8228216b87130e7e961bbf4d4c56e07874a69d7c2fb60e1f0c99ee57d7",
+      "bytes": 277005
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/066.png",
+      "sha256": "f3425584e2d53aa4b8e90e3ccd532fe332143a882094cdceb464e84cdf9d4141",
+      "bytes": 277320
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/067.png",
+      "sha256": "a9e8a530c6f7aedec7a12eee9157d0ab7d47ba643e62e7f45db386143c562386",
+      "bytes": 276396
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/068.png",
+      "sha256": "49b89c2609f5e206491197683c34a0d0118dcf51a856d0e19aefe2372a4727e4",
+      "bytes": 277547
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/069.png",
+      "sha256": "564dfef2b9d9e2447b2e95f4ee1a9b9cc309f11310f4cdc93890b7dacf49a04c",
+      "bytes": 277123
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/070.png",
+      "sha256": "d28710dd4c39f5fa834b9b49228e2204f7c249ab63e7820394bf44bdfde5034f",
+      "bytes": 275934
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/071.png",
+      "sha256": "34425bff6f26326157e5f80ae6cb2565350b4b7bdabfdf59470cd34e40a91615",
+      "bytes": 276138
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/072.png",
+      "sha256": "045f688be1f7b613f942a82094bc5a1450202d69c7a80fcd22c89432157551ac",
+      "bytes": 275818
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/073.png",
+      "sha256": "f71f47b201244b04098001c4c9f1a55d58727f6fc375455de443c7ac14e08204",
+      "bytes": 275993
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/074.png",
+      "sha256": "a7bd2ddebc87acf3d0cf635492219154416ea5010d553aee40f1785480f4f454",
+      "bytes": 275001
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/075.png",
+      "sha256": "4aee346e572d61df2fe6a915cf98f063e5f8fc533d11add74bf46fc9139e0125",
+      "bytes": 274275
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/076.png",
+      "sha256": "8844aa1db0ede733e3c96b1386c0e8688470b438ee929a3d62ea4357e6c976aa",
+      "bytes": 271819
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/077.png",
+      "sha256": "c7807d3a5aec9c1308b8e63c8467b049b5e30fd984e303e3e4b72c3c91b4aaa2",
+      "bytes": 267778
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/078.png",
+      "sha256": "78207f4a10e2c393f6bd97941f02675f13a65cddfeb11aff32c86f56c9980399",
+      "bytes": 266900
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/079.png",
+      "sha256": "649069ad9305e7f898d215773516a8376b9983e76deb415b9f6ab67bd62074df",
+      "bytes": 266967
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/080.png",
+      "sha256": "1c8348f46a1fbe91079e0ccbd20f11d66539e5416d5ce8aa1f56ba29a800e9c1",
+      "bytes": 268375
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/081.png",
+      "sha256": "720a0809f56e1d96611ed6a6697c7ad4cb419da6214503f8225f9a7a4d8293d7",
+      "bytes": 270042
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/082.png",
+      "sha256": "ce8655d1874921714a954dc0a8eaf20c0a87f67e427c336065b81a37f6ca0224",
+      "bytes": 270466
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded/083.png",
+      "sha256": "2303173538aeeb63f11508292cd70e4d69a6d0f4310b600573358b4f8b241677",
+      "bytes": 269872
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/poster.png",
+      "sha256": "1fc6f597d78916fca7b83be5893392e229cf41c97d548da2298b69589be5707d",
+      "bytes": 181763
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/proof.json",
+      "sha256": "bcb3902931cd4c0b6c31157087b2a61772c393f1795c0096f34a49b3c2e1624a",
+      "bytes": 54010
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/candidate.webm",
+      "sha256": "46e62a9d748c7640d524b451b45c325962bbc0412f35455503d15145446178f6",
+      "bytes": 185673
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/000.png",
+      "sha256": "ad7c218f91d6c4a75b4cad98c73a15ec678d3b6311246eea28ecf33c35b393a7",
+      "bytes": 284187
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/001.png",
+      "sha256": "122173f1a67d9ab4425d83ee5a84724bd01e4df85e53e4b7bafbfd07f03c85af",
+      "bytes": 287284
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/002.png",
+      "sha256": "97f32251e4915824a661756fc0125b353da58d45d3ee25b7d6f0973fe3bcd379",
+      "bytes": 288350
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/003.png",
+      "sha256": "0a267ae122bc61a2b16ee96ec6e89726f37cf80de2ade3f35d1c56d78586c295",
+      "bytes": 289186
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/004.png",
+      "sha256": "380d6ff395449953f7d801c500bd66b0d50f0516c12495c20f9513a6eb396ff9",
+      "bytes": 290110
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/005.png",
+      "sha256": "5b75c6844f1e8e5741168ecd41638476137cb28aa36ef667bfe21e1715bbfdac",
+      "bytes": 290139
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/006.png",
+      "sha256": "1c1acfcc91fb539b860255fb21e8c0d23314940ce078c698096ed20e3ff29a54",
+      "bytes": 290190
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/007.png",
+      "sha256": "5eb820943d00b5c99c065a9e83bf7b8a0c399d6bc42b35ec31c364f16a74e0f0",
+      "bytes": 290200
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/008.png",
+      "sha256": "4160d01041c8c45a041cd676296c58eae3155c3f10cff59fb0a93730e4ac70ba",
+      "bytes": 290609
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/009.png",
+      "sha256": "2ce3b260f22ddce488b0e92e525b79f224d7597a2df8b3f49a073de823a9a969",
+      "bytes": 291035
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/010.png",
+      "sha256": "53368ff236299c1d931a840729c40a4fe3ad75c8c6f1c6d0a47265bac01b3b0b",
+      "bytes": 291649
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/011.png",
+      "sha256": "e42777f43361c294ae4f9ef0ef4d8b081b6bf0ebb9a9079edeb5e12b7acf3efa",
+      "bytes": 292363
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/012.png",
+      "sha256": "57e518afd0f43895a4aba58561ed1991317fe667abeeb637d00134608fc4bbd9",
+      "bytes": 293067
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/013.png",
+      "sha256": "20ac7457f7a5e225f923f83340a75d327b345825ac3f98ef7e672b7ba40cd63f",
+      "bytes": 293156
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/014.png",
+      "sha256": "5848089291c792b13062c4d898cb35a8b3aa6581cf305246db19eccee9668b33",
+      "bytes": 292929
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/015.png",
+      "sha256": "bc10d35ac4ecc52f8a196b528ec350b6365ee5b92f6d3b479a167b297c2a846d",
+      "bytes": 293151
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/016.png",
+      "sha256": "2229b2f298ed4e6428c23b8f2226bf3d00093df6d17a00737f945447b22919fe",
+      "bytes": 293518
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/017.png",
+      "sha256": "1adcd6fe6bb2d67b0e83431d68e0bfeac636acf886114f573d9adba32dc2e64b",
+      "bytes": 293413
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/018.png",
+      "sha256": "c86f856d99dbea705e3f3f21e065347fa7c0900ec17d899f176b778e0a013a04",
+      "bytes": 293237
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/019.png",
+      "sha256": "62c8090713156de991c3dbd1b53396578501644f53d07aed32ae2f04d7e57d05",
+      "bytes": 293107
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/020.png",
+      "sha256": "3537229542986dd2c34d1b447095eed679a6b2101c01c35b0d568495b720ae39",
+      "bytes": 292008
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/021.png",
+      "sha256": "49e2e39f05e111f4c792ca3c0ad470baaf46e49e4d22a30181cf9f3d1d512b8a",
+      "bytes": 292658
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/022.png",
+      "sha256": "312879b9e41f5755e65cf75d29f38eb2da5e70729bd160053e362729454963f4",
+      "bytes": 292759
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/023.png",
+      "sha256": "3fa76ad8084f3642ea48e10bda5cb2896644744051aca4b5a701127617cd99da",
+      "bytes": 292506
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/024.png",
+      "sha256": "acad0c6af6949f9936949b24efbd264125b754d3e59a3e0dbfcacbb7871df9fc",
+      "bytes": 292464
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/025.png",
+      "sha256": "0634e39dd09adc1c43dc1f856d762d232b3b8af364bf56d62a9b9d1d293c33e4",
+      "bytes": 292021
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/026.png",
+      "sha256": "4543ff94d54f687759497b6d5585210d74c54a3b34c8c9fad05728be9e0b3ffb",
+      "bytes": 291569
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/027.png",
+      "sha256": "3979234d40fcfc4b58e388731408a13748086f1dc0d6b751ddcba1c2b1f1d911",
+      "bytes": 291342
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/028.png",
+      "sha256": "31148483120938c4cc58c2f259cdd1a14896f400934b89a39a724bdce75216f0",
+      "bytes": 291658
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/029.png",
+      "sha256": "153ec14d80facb8907b3c55248bf7b1a1f4cbb74610ec339e8a04e2b7ff94bca",
+      "bytes": 291303
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/030.png",
+      "sha256": "408282a4921cdc28fa37fb4e3634316fa9fc4d215de1d758a680abed1de9f2bc",
+      "bytes": 291200
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/031.png",
+      "sha256": "8dd5314d6b3a5acafc2f04ef269e301732c411691c9a2236f47b7e59463a5e8d",
+      "bytes": 290892
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/032.png",
+      "sha256": "adce6a304fd4c966ccd22861ec60d9340abd660de5766e4bb1e3ddf203640333",
+      "bytes": 291082
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/033.png",
+      "sha256": "8af556265b1f7631fc5f5444fc9036874f5d4b6483385907c2a9ef720326384a",
+      "bytes": 291005
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/034.png",
+      "sha256": "a56c9cc7defb621aa24bf17444b28f7530f437ec2b2c18f792cd6ccb7a2f1e6c",
+      "bytes": 290828
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/035.png",
+      "sha256": "5f2659cf9cfa5dccfe22b8c7b5d5a8001db88a132262b0a37e0863536b9ff683",
+      "bytes": 291428
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/036.png",
+      "sha256": "445cb3ccf49633e36e259a104af0d828af0950391e7c5e4ffe16c2aef57e88bf",
+      "bytes": 291121
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/037.png",
+      "sha256": "660a326416ac181c7904b81328eb5863ecb84022349116cb599c2f616d7c1479",
+      "bytes": 291000
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/038.png",
+      "sha256": "43148fa91e9727cac88cd4ba73e82f74d5c69f6f45c3a9fd020dc3af46378b40",
+      "bytes": 290744
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/039.png",
+      "sha256": "50644bce7b1cbe68fb9060eb3c65343e83728b7514b3ef60c5984d118271a92e",
+      "bytes": 290975
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/040.png",
+      "sha256": "03cdb993ccd98a63e328b9e38a46c619e3dbcbf64f784fedb1c92f83c779da07",
+      "bytes": 291188
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/041.png",
+      "sha256": "4c32e497b82088b2fc789cc46aece997cd93afb150ccb164d35112ab5277bbf1",
+      "bytes": 291774
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/042.png",
+      "sha256": "93faae1cbe22d1f7a173dbfb8730dd23db42ccc63660ef5cecd68b25aad7bdc6",
+      "bytes": 291461
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/043.png",
+      "sha256": "573a6b29d40f5c56ca45924423c3c4fa3e682176309ed6c0027e3481bfa8f733",
+      "bytes": 291826
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/044.png",
+      "sha256": "bb77eed0a2b336266e6f0b5cf2ff82e3911c6097d5c2dccee9750843943280e5",
+      "bytes": 291854
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/045.png",
+      "sha256": "8d01a51baa19de2243f8dc80af2c754f24da2623bd5a0966739b1f6e8b7d3a20",
+      "bytes": 292162
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/046.png",
+      "sha256": "c5c9010391516c2559643384bcb98eb661209d56a5cbe64660944cf80ce4a3ca",
+      "bytes": 291900
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/047.png",
+      "sha256": "0f1059e9f7ba6cec37f794a877a4616b96f48a0303d335ed042bca5c6773698d",
+      "bytes": 293186
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/048.png",
+      "sha256": "58986d72dfe5f094461e41be92ac893dc880b703fc899184f1dfdbaa4ed47483",
+      "bytes": 291861
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/049.png",
+      "sha256": "cf7cb39cd8a44aad9e62a4b17e19a8f7ceea252ba907fc354cdfac547ddabc03",
+      "bytes": 292417
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/050.png",
+      "sha256": "fdf81c9d26f221fa3cb8d51e31bc0fbbd4abfb985d6485cbe1ad562e799df066",
+      "bytes": 292207
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/051.png",
+      "sha256": "64c30eedbafe5b453038bcb87a2e0f5ad36aeebd114e9674b221742eac237c97",
+      "bytes": 292175
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/052.png",
+      "sha256": "3e3d70e44afe5df0d69d3718b8fd3543a63ad841e2dd39399c8c003a111bbcb4",
+      "bytes": 292258
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/053.png",
+      "sha256": "f7d266222bfc5ceb44418c1c3288ed44130e997ffdbfe4daaca74f1ee4c74b3f",
+      "bytes": 292291
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/054.png",
+      "sha256": "a99250905662be564028e8ab60aa2098d7291617d596dc91391064b33953ae89",
+      "bytes": 292384
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/055.png",
+      "sha256": "83ed7352fd9fbff89cfe49976dd818f35e8eac3a8520acb466ce6db2f1703c24",
+      "bytes": 292671
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/056.png",
+      "sha256": "8d53e339a5116a2c390e4f378f128c6f9c31ca988bddea793d09d8ac177fbb9c",
+      "bytes": 292159
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/057.png",
+      "sha256": "e630c16b296fbdfb30a79b9c224688c400112e06a73bd78bc8028e0324934652",
+      "bytes": 292242
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/058.png",
+      "sha256": "818f1acc1756c3ddf2492920c742790757183cd2b22c2614bbb3e2db8e52a8a6",
+      "bytes": 292305
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/059.png",
+      "sha256": "5d24132265d55eaa932a6b4863fff1abfa50bbacb8bd8a37357a93eedb35e6c7",
+      "bytes": 292545
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/060.png",
+      "sha256": "d43386a0bf720a831b5c59438c88ef49bbe4dc0b73107c398fab1c6c1440c385",
+      "bytes": 292544
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/061.png",
+      "sha256": "789d695ca41285825d053c49e3babed6de3f70c19e82a2ad9b8cbf5f01292e57",
+      "bytes": 292856
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/062.png",
+      "sha256": "7ac3f82dcd558f0c9724962b7f0fb0be97d6613d6db47dbab185520472917c4e",
+      "bytes": 292922
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/063.png",
+      "sha256": "5b3f9e7b0c69b6b74dc8bc41504d04345bfdce95813c5338b1d9dac771240235",
+      "bytes": 291896
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/064.png",
+      "sha256": "a874166102eaca1f8fede429a801827b577206785d58897dfb5da5a333f4eaba",
+      "bytes": 291205
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/065.png",
+      "sha256": "1897563997ac6e0d6095a0d41f7610111a3d54c6290aac9da020e40739d921fb",
+      "bytes": 291990
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/066.png",
+      "sha256": "cf94f6bdfb8bd069e6746bdbabb08c38fc79f8dbe0686fe554bccb31e248bed2",
+      "bytes": 291867
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/067.png",
+      "sha256": "95daacf0052bdd0449d8801ae117ea886f189faaa1b46704e266da99155b6a3e",
+      "bytes": 290109
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/068.png",
+      "sha256": "b426a3f0c93a0d46bb0b6f32c04ea1c85add89ad7d388bec519ebb3464b2966a",
+      "bytes": 289609
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/069.png",
+      "sha256": "714e29ccde80e4c1d16fa73bfcf6afb4115a690fc25da0c2f9476c6408aa583d",
+      "bytes": 288423
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/070.png",
+      "sha256": "848e1c08f31350ba20212251a12dff86a2fcfec8928870c070eb4274cd96d022",
+      "bytes": 288365
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/071.png",
+      "sha256": "9a01ab6b77b85b43da6ddb2de0ea12a4292b02160ab4f4ef544d7026f8ef2b40",
+      "bytes": 288285
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/072.png",
+      "sha256": "1f3f8bb0cb78a0856b89a3bc81962ce995108d52a96e26ac28f9098bb934e134",
+      "bytes": 288564
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/073.png",
+      "sha256": "1e86958dd6f1c2c0cf679cde113f3fb9e515eeda798acf141fb28e0e9b65ad41",
+      "bytes": 288429
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/074.png",
+      "sha256": "75e529f4432936d7e12c5cc2aaa318325094d68056889952a5fa6b644c4d9b5a",
+      "bytes": 288466
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/075.png",
+      "sha256": "24e4576af8d2657b5fb4033e0a6616ca8ec7b163e4c845a7972a4b877f2f74a4",
+      "bytes": 288378
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/076.png",
+      "sha256": "b0882c59ad367723d9675a6e1a4d3c6e421ae4120f88331a528536f35551849b",
+      "bytes": 288220
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/077.png",
+      "sha256": "36adb89bbb375aa99d0716d60de84e2d4d45150f406b8b33a4ad3a1704c640c3",
+      "bytes": 288251
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/078.png",
+      "sha256": "0726337412af5581323c7b4888d0365be0ecfaf7a802825d582093e28b7ffa25",
+      "bytes": 288206
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/079.png",
+      "sha256": "9219cb97c4dba34361b57712de4add61736702c4f77f21f022b67c1e0f1faf8d",
+      "bytes": 288262
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/080.png",
+      "sha256": "cc4ea0ece68ad155300dac3f5ef322c887ccfee3f38ebba8a581021eab7ca54c",
+      "bytes": 287623
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/081.png",
+      "sha256": "45a8becf302278072ed727289a7150a542660fed3edc0ee340612438dd099671",
+      "bytes": 287159
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/082.png",
+      "sha256": "f5c8843c028c40d987956e15028dcf7faf325c06a4be49e0ec481b6bc3ed4036",
+      "bytes": 287040
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded/083.png",
+      "sha256": "18f1dbffac021f4eff5090a26f94dc9eee8b8b3abe11509434ae599809776f20",
+      "bytes": 286440
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/poster.png",
+      "sha256": "b21492f0a8b240f9428e7dcdc8f9068f3e4b0c4281fd346357ad59d2600fe9f7",
+      "bytes": 196411
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/proof.json",
+      "sha256": "84bc5c674cc7de2199777069da7fa6d4ad2a2c7d0ed2ac15722655c5f2c56f94",
+      "bytes": 52580
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/candidate.webm",
+      "sha256": "77395207086d7fbfd39d1ef1399fe34a81cdd30208ac604f4e706ab3d5357294",
+      "bytes": 195896
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/000.png",
+      "sha256": "59038b95e6cbaf53c6de3ab2d70a41690637f4c808557a55e5d6cc5b10751575",
+      "bytes": 289882
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/001.png",
+      "sha256": "c0d0a8ef042f8a8659f2a8162c268466ea18f9a301e290143193efeeec3858ca",
+      "bytes": 295478
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/002.png",
+      "sha256": "a3cd84bc29dd647edbb3cad29397161adef5436e677d3177d940ca53c32bb6c7",
+      "bytes": 295288
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/003.png",
+      "sha256": "4878693e956c68b3bcd57b4663e3d64c8767d37d7698fc44802f304e676b748b",
+      "bytes": 295351
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/004.png",
+      "sha256": "aabcbbe6dd68c03be3046e5761790eec0f0500569bfc0954c2731320cfb69c8d",
+      "bytes": 295875
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/005.png",
+      "sha256": "083bc1c133359eefe35082d381144e9930b50c1d79f7dc6ea358346aa26f4f79",
+      "bytes": 296179
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/006.png",
+      "sha256": "57bf184335322198465cf4e79631f73b09339f239ea0c43f582e5dfa794b9a92",
+      "bytes": 296723
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/007.png",
+      "sha256": "bac31489c6b140da50251b0a05d94aa8bebc1a9623fc8c590aa2243a6f79d32a",
+      "bytes": 297367
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/008.png",
+      "sha256": "6ccc45bddc33b386fdf9da0009f63a763fb434af2d5a67dec1fd1be1e64df596",
+      "bytes": 297145
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/009.png",
+      "sha256": "95daf2f8d5237ff86a7e39495f85ac3a25c150a20118a62e8bf7de6d9e006773",
+      "bytes": 298181
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/010.png",
+      "sha256": "23cc5ff309f945686a375f0c901380aa255efcad8d8a05b1b40bb6f9cf436d8e",
+      "bytes": 296955
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/011.png",
+      "sha256": "6ad9b7719a67479a330ff844cf84e76c6f4401c4b8abb7f6208b6f8a81ea67b4",
+      "bytes": 297164
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/012.png",
+      "sha256": "a05c91726ceab8258ebf078b8b4a39c0be349bcb3be714d4c616caad3152e91a",
+      "bytes": 296623
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/013.png",
+      "sha256": "4bf79141153b0d1ac454e8c809812b03ddd168b3d4249483212d653f0283e524",
+      "bytes": 295965
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/014.png",
+      "sha256": "6e031c9e21375a450001b8d1870c6f372be39f3aa344de38680b4fe064231f73",
+      "bytes": 297890
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/015.png",
+      "sha256": "d24d7e375cd98d55f96a0d2172bc8ab8f78b454cd84f93d8ce4009363efc8e6d",
+      "bytes": 297595
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/016.png",
+      "sha256": "c48959fe11c97aed72ccb14b4c374eec16be3701c8065d94f74d83f03ce35f36",
+      "bytes": 298021
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/017.png",
+      "sha256": "20d98c6fa1bf1270287f6997bc0bbb9b992012e3745f86d968a1df9c53a93389",
+      "bytes": 297302
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/018.png",
+      "sha256": "5c3b67ba0ee6eae6e0a5e0aec9f538565af8238b65958039b6191ba0d70d72e5",
+      "bytes": 297753
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/019.png",
+      "sha256": "a3b9b39f103252d4b8733d03250d9a5cba6a362afc55ad67f8d7de2ebb5a6eff",
+      "bytes": 298208
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/020.png",
+      "sha256": "c272f054b58a8aa63feb2183f7877366b7216ad74bff5004b64664bf6048f806",
+      "bytes": 297633
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/021.png",
+      "sha256": "61ae214ee3c66e052b1c404511d61f1c4308451dcbce8351914bf0a9346d076c",
+      "bytes": 296887
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/022.png",
+      "sha256": "cbfc4edd3c07064c60c42ef95a5bf637952795bb6c0079995a3fa45c7b7fdcf9",
+      "bytes": 296333
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/023.png",
+      "sha256": "bdf00b3234200e9430023f0d13fd8a3b7c85fd5acb3afa118eff5d04d6f83fd6",
+      "bytes": 297061
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/024.png",
+      "sha256": "0412fbc43d11c2b891851ae7c438f44612c700282fcce90fc5f9133e2e9b91b4",
+      "bytes": 297401
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/025.png",
+      "sha256": "f70636139b4e9a5bc16f3588dfc5dfa7f559855960b2e107ab0507ea0525a8c5",
+      "bytes": 296979
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/026.png",
+      "sha256": "600fcfb53987cf8d5049be0902e457cced7ef59f4a0fb40a68526dadcd0b0532",
+      "bytes": 295761
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/027.png",
+      "sha256": "0fbe6639ddf8688d3da1f2a918b166bf365e019b6a6a1f39ebb2f60ca8273a2b",
+      "bytes": 296038
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/028.png",
+      "sha256": "6856507af641dbc1cbb9a9c647a1a178fba1dda252924d03d31bf8e29875e65f",
+      "bytes": 296786
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/029.png",
+      "sha256": "66e4bdd9c51c1a396a8092b7fc8e86bb04904e7ef1c0f792445e109731309909",
+      "bytes": 297149
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/030.png",
+      "sha256": "9a66f348fa91465418fa13d725b0323a4a3c833496b4d66aa8b4a39508aa7780",
+      "bytes": 296648
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/031.png",
+      "sha256": "2051b35f3db73a94aa15fb48e50d5621444525263f23d3c896a086a31df9336c",
+      "bytes": 296871
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/032.png",
+      "sha256": "379bdde76198c1ee75fe7086fd9207d432ebdb3e9185defa28b7422c531141a3",
+      "bytes": 296917
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/033.png",
+      "sha256": "be5c772c3fd6d0271a71823b3e998c979d5a822095e39eeb37b014ed2683fbbc",
+      "bytes": 297375
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/034.png",
+      "sha256": "18ca84b1d1eebc2b07e2a21afddcce6d94e27e706c286a9812b8cf8a7df370d9",
+      "bytes": 297350
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/035.png",
+      "sha256": "b6e231e70074726a8924cf01d4d812154cb6d183421dc9b74ae7b49923331930",
+      "bytes": 298823
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/036.png",
+      "sha256": "23872e9c641c4b9de2bde523091b1b14e0ba72832cac805a36225b645cf4de95",
+      "bytes": 298554
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/037.png",
+      "sha256": "11cc62f2beb00183e41ae82cc81dab5aa7157c0f34b89224a1a6009038bef869",
+      "bytes": 297940
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/038.png",
+      "sha256": "a0296dee42716f91a3e7238000e22dc4d8d5699d60e963d776b3bf37822aa4ab",
+      "bytes": 297610
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/039.png",
+      "sha256": "a23d587e883a6962d387826059e1c1e82710dff698be7989b601ba5fb67e47e4",
+      "bytes": 297397
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/040.png",
+      "sha256": "73db84bce1997fb2d312441661fd1d7cf2acc8d65719cbcd044bb6e8e7d4a482",
+      "bytes": 297177
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/041.png",
+      "sha256": "111f6b80babfff709e37d72fcc833cb602bffce3d2809c948e24adafad036997",
+      "bytes": 297289
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/042.png",
+      "sha256": "d8a2b9c6128cbab2d0ff5194d40195c52dc2fcbe19d1ca4e725e79c862f1b5fd",
+      "bytes": 297122
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/043.png",
+      "sha256": "9daa8afd52957163ac953b5133c6366d34882b7dc2e01155b420914793b2fc2b",
+      "bytes": 298143
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/044.png",
+      "sha256": "678ba1d9033d28a237d4cc5abe0210686a3a4042e3a6cec8e4bd5e6f5107fa4e",
+      "bytes": 297440
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/045.png",
+      "sha256": "5bde9e4d65916479fe43c19905d373619af15e237f961ffc92328bfcf53ab1e9",
+      "bytes": 297618
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/046.png",
+      "sha256": "94d7013fa8b4e1487c080b46e289a9aa11463b30ff5444f95191f7ec98122e2d",
+      "bytes": 297398
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/047.png",
+      "sha256": "ef12fd90aaf706ebf7744f1b803de80d8754abefff64d72a527498b1bb644cda",
+      "bytes": 297443
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/048.png",
+      "sha256": "f4286f8ef50d849fea57777e5da8f351ba996f2276951391fad8756656d1d04c",
+      "bytes": 297590
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/049.png",
+      "sha256": "46fea22532586f8d469eb562e21050950d365c60a23d7e18220d7116cf242af1",
+      "bytes": 298419
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/050.png",
+      "sha256": "8e67f0576de59d7a3964e8267c5f5a6b782c3cceb8ef55493080fccf1bb48c98",
+      "bytes": 298311
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/051.png",
+      "sha256": "8ee4e0b0ae1d996b5cc447b293bda01b6de6af19e1724821c82056128bcd5f16",
+      "bytes": 299092
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/052.png",
+      "sha256": "fe8487269ef81a4f95e72d4d52b610ba5561955e94b09f59b393420ffc41af8f",
+      "bytes": 298440
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/053.png",
+      "sha256": "9d28b635b0984ca66c1eea55cd023bec7225e025343a8295d872a1bc4307fb83",
+      "bytes": 299511
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/054.png",
+      "sha256": "2b31c91edb9923b8fc65ec58f039b1c0c19439cbda3168a1f165487e1152b868",
+      "bytes": 298668
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/055.png",
+      "sha256": "8811e5cb2c9e58b56ad2c59faece0605c3bcfcb59b3837bd30a97c536f20a150",
+      "bytes": 298630
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/056.png",
+      "sha256": "0b79c248622ced3d3af65c9eef218a15af31e6baf734a6e976ad68d331e56cbf",
+      "bytes": 298502
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/057.png",
+      "sha256": "696078e6fc742d04023060f8b0c3beeb7432c7a2378e4dc82e601b2c359c050d",
+      "bytes": 297910
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/058.png",
+      "sha256": "5be61c1e2fa8caba97c3a2a544006fc08cf14bc3439928911ed65b0b574cba31",
+      "bytes": 298487
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/059.png",
+      "sha256": "0e29bfc5bcc21fa5091600eaa4e4497c82e7d534fece2d58d8f2955bf67b8fc8",
+      "bytes": 298006
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/060.png",
+      "sha256": "9d2ac3547a7d4a3ffd5b458f1f0c7e4dcb36897c64ccfb1619e733a043765778",
+      "bytes": 297865
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/061.png",
+      "sha256": "ce7256fc372a42a5cab0f83862f03b83c280733c1e7e567f4946ad2bfa403093",
+      "bytes": 297780
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/062.png",
+      "sha256": "ac71a16850ab6b141a9150fcb78697438f9ea1d834e2b52973903f87951b4ab9",
+      "bytes": 297559
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/063.png",
+      "sha256": "8b45cd4d453e1073dfa54731e8174df057f2e9d50ad49c0eadcc8ac2abfab2a4",
+      "bytes": 296929
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/064.png",
+      "sha256": "468193ff535fdcf8775d30d1858d4f5783027db4f542570719061b0285206e84",
+      "bytes": 295581
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/065.png",
+      "sha256": "8b29ce01948debb42177ec9cd0cdb1c92e54c0fe33511d0f917eacfef4c70a7b",
+      "bytes": 296328
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/066.png",
+      "sha256": "9a6233b38e089b6ce4c13411c2028a5e12a14c59f33c6f91a3f6e5d37783a703",
+      "bytes": 296204
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/067.png",
+      "sha256": "17616aedfd32b9db3dbdf71a37567d32ecfc50a4a14478f1f1077864a001ada7",
+      "bytes": 294692
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/068.png",
+      "sha256": "9cfaafaa5ad710d025fb65845420d77d0d165ec999d6aaeb11b42d4ae1ee2127",
+      "bytes": 297012
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/069.png",
+      "sha256": "81dd9fcb346f4e7506ce8ef760af1c441664ba36ee7375ea512d09fd72426397",
+      "bytes": 296879
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/070.png",
+      "sha256": "aa56b250a42d91456768ac3af2d68b59eb140196e9ebf00edc4a2d22af657b84",
+      "bytes": 296398
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/071.png",
+      "sha256": "10d05f1746d3e58f0a3f5a623bf4bb779193b61ea8afb0296d18574043d076bc",
+      "bytes": 296054
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/072.png",
+      "sha256": "3bddfaa5ad2ea7b6cd189a7d07824b8f109b21974f70ce39fe6ea504624bca33",
+      "bytes": 295732
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/073.png",
+      "sha256": "bc3e4baa9608543e2667548f6227eaa6e223255f82014665f724ee1e902107ba",
+      "bytes": 296259
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/074.png",
+      "sha256": "3380e7258740edaed9eb66706b1eedea914badfd24c536e68419b57349f71e40",
+      "bytes": 295658
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/075.png",
+      "sha256": "d601f7910cbd698fe009e46b5403434f94071823b86f9123fb4bc9f4268270e1",
+      "bytes": 296024
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/076.png",
+      "sha256": "2d673e3bbabc38cc80f95159a9bcea7a370026adbcd7f0498177b42703d19477",
+      "bytes": 295374
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/077.png",
+      "sha256": "cff35d056c6fb5594cf5ef98ec773347945a5bfe93449f9980be36a16d1422ac",
+      "bytes": 295483
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/078.png",
+      "sha256": "f4e0934c6494ec75baff663e6ee0486fb44ab21ad6c33e9fdf1486d4362963ee",
+      "bytes": 295999
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/079.png",
+      "sha256": "220ee1e121229b3b5e47ea9119ab467748853b69c745852169065ef25bfe4a13",
+      "bytes": 296839
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/080.png",
+      "sha256": "02d9f4fc1687926a12d3efa653c9faab9da295619b9dbd70e52df10c78c81b8a",
+      "bytes": 296255
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/081.png",
+      "sha256": "d93e88080d7b1d340d856208eddc9456e8260815d0f573e24bcf64693681b523",
+      "bytes": 296262
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/082.png",
+      "sha256": "21b39390c04ff009fa9e29dcf1d2d729027d0c89a839da43044d57a2af94f71e",
+      "bytes": 296682
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded/083.png",
+      "sha256": "c0a36d357f027565c154db5f85f11dab8bb668b8c94c7fa6e7dce031e2b31f0a",
+      "bytes": 296982
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/poster.png",
+      "sha256": "31fb13b61005887625c2ac3918dab06226618fb3d0c8c678adc09bac286ef4cb",
+      "bytes": 239554
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/proof.json",
+      "sha256": "7811c07fba4c945b9d648da3b8087c58dbda8ceb83d9adcad6cc29e399ecddbe",
+      "bytes": 62522
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/freeze_guard.py",
+      "sha256": "daf39856a150692b7a3a060a563a002ddecf8706b1f608af94d576ef3ac4e04f",
+      "bytes": 4638
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/freeze_recipe.py",
+      "sha256": "3f773d827288a0569ca2b62875fbc7157c91cbe2c749c4bfdb0c72b9d3630c43",
+      "bytes": 8209
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/lumen_111_scene-acting_a.json",
+      "sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07",
+      "bytes": 22561
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/lumen_120_scene-acting_a.json",
+      "sha256": "667326da4bd2fc74c141687329b08c3231f32e9dd2292024b5a6ca2e106c35dc",
+      "bytes": 24977
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/lumen_121_scene-acting_a.json",
+      "sha256": "51fdf0a4b4aff04ef97096787ad9ba7a965374309f56b2f59c8c8aa843be3369",
+      "bytes": 23578
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/lumen_79_corrected-anchor_awkward_b.json",
+      "sha256": "87fe5af69165c607197c1a1661ad93e5681c40ed84b24412329c044334abfae1",
+      "bytes": 29885
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/package.guard.json",
+      "sha256": "d4789d60540433f05660b69c28e138223f2bccf514a6d7939cb87f913503b853",
+      "bytes": 25916
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/recipe_engine.py",
+      "sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+      "bytes": 14541
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/repair.py",
+      "sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8",
+      "bytes": 18025
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/review-preflight.json",
+      "sha256": "de7008475d27aeaf501f040545c3672bb628971da7a733b5d2741ff7adda6476",
+      "bytes": 25270
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_111_scene-acting_a-normal.mp4",
+      "sha256": "0d69d9ae472160c7e997481a969d5ccc7b6d639bbbb941cc59ed287876b5205c",
+      "bytes": 201506
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_111_scene-acting_a-slow.mp4",
+      "sha256": "15ac6bb0b97904def1d66bccac9e3bb48589630daefcb3471c0d674ff1de2783",
+      "bytes": 306016
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_120_scene-acting_a-normal.mp4",
+      "sha256": "66e5683623a9ce5113b78b440efa2259c40cb2171b94f9317c50ff72923aae4f",
+      "bytes": 211777
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_120_scene-acting_a-slow.mp4",
+      "sha256": "16bd0524e08a8e640981a6c65d57a7cfdd267b2956ebd96585b18de6aed5a2b9",
+      "bytes": 323455
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_121_scene-acting_a-normal.mp4",
+      "sha256": "6a472ff8f81e68e2184647d7ea0133962dfddcdec819f7bdb12eeb0811640da1",
+      "bytes": 235943
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_121_scene-acting_a-slow.mp4",
+      "sha256": "b3d1745a0804af659ad4117eb30ac4f0605311c0656f8f5709ba514c57049105",
+      "bytes": 358404
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_79_corrected-anchor_awkward_b-normal.mp4",
+      "sha256": "6962b6c9451180d4ef755f6642ff4b0410a848ae8f3bda44a1bc9a3838de63fd",
+      "bytes": 345596
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_79_corrected-anchor_awkward_b-slow.mp4",
+      "sha256": "e0dc6972a3925e1943186447cfb77228e5eb13a2a8e27eed48edaf18a2c4789e",
+      "bytes": 523382
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_111/author-final-review.json",
+      "sha256": "f6d9f788c3470e825b56504a7353274b2fa126720f636c05aeefb8e0bbdb74b7",
+      "bytes": 1662
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_111/source-frames/000.png",
+      "sha256": "d2a756ba1ff99b75fc769641e649c23c0249571c519b81dbbd4ab0afc5ebce8c",
+      "bytes": 250958
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_111/source.webm",
+      "sha256": "8ffc45d5ab7a2f510d7153b49a3a10a757fddb6c82c061050f7152ef497346ee",
+      "bytes": 258768
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_120/author-final-review.json",
+      "sha256": "0b766db4ad6b8150bcbd26adf75d71db3686ab7a034a0dd9dda06c558286f242",
+      "bytes": 1662
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_120/source-frames/000.png",
+      "sha256": "ee9674553a82e813095762f807bffbcc423d96994a0f06d1206805ac23233ad5",
+      "bytes": 274652
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_120/source.webm",
+      "sha256": "fccb430889742c658fc2d0d2078e34cc9ff323ceec02301377b9096bb62141c7",
+      "bytes": 237938
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_121/author-final-review.json",
+      "sha256": "7be23f71e03f2df74f380733c3dbc99ff8cd358897d2a3cedb9fd1644bf90acf",
+      "bytes": 1662
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_121/source-frames/000.png",
+      "sha256": "cee05ca574d34ef01bd3d07cbe33552ea3058f18c0a6cbaba452829964037acb",
+      "bytes": 292132
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_121/source.webm",
+      "sha256": "4e3dd3938e66d06a0b10c0d712a47ad8ddc4bd7df466b7e0d371a2a31df3cf0f",
+      "bytes": 253122
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_79/author-final-review.json",
+      "sha256": "2c12ab850f5c81d20f0ba09a89c263b6e6c5e76fa19c19fd26e14df442f27c9f",
+      "bytes": 1889
+    },
+    {
+      "path": "sticker-lab/production-v5/source-art/lumen_79/anchor.png",
+      "sha256": "01058690b40e361a0ff433ebcdd0a86a815b1d849f9c0c85577ef6f69ceff2cc",
+      "bytes": 241256
+    },
+    {
+      "path": "sticker-lab/production-v5/source-art/lumen_79/baseline-source.webm",
+      "sha256": "8bae7be8c56230b61f8248b69d2bd44a252afad43859559feb6ef36b9ff14c40",
+      "bytes": 254222
+    },
+    {
+      "path": "sticker-lab/production-v5/source-art/lumen_79/edit.json",
+      "sha256": "23780c0a62642a51dfc410c95dd7b2728a84be6f26e3c890fea334e562e44ce3",
+      "bytes": 2963
+    },
+    {
+      "path": "sticker-lab/production-v5/source-art/lumen_79/imagegen-anchor-original.png",
+      "sha256": "e9eb71c8a033727b124aca4e4db83c41d423777f32b17adc4562c51c715a1398",
+      "bytes": 1194192
+    },
+    {
+      "path": "sticker-lab/production-v5/source-art/lumen_79/input-identity51-baseline-preview.png",
+      "sha256": "f6d1c671b6653dda929fbaedab98b6e381991a72c0d6ff2d483d38763b22f21d",
+      "bytes": 259128
+    },
+    {
+      "path": "sticker-lab/production-v5/source-art/lumen_79/input-target79-frame000.png",
+      "sha256": "4ef6bd69d56ab89b36d05576f77479b88b886e2b7f5582172e43125d83210b44",
+      "bytes": 293267
+    }
+  ],
+  "items": [
+    {
+      "id": "lumen_111",
+      "candidate_id": "lumen_111_scene-acting_a",
+      "candidate_path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/candidate.webm",
+      "candidate_sha256": "66157007bfb336976cb6e918ce8c82d32a2e2ea3fd99999649bd3c535fb0b212",
+      "bytes": 163760,
+      "proof_path": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/proof.json",
+      "proof_sha256": "fff511cc48405229c52f92c5080dde6214c88d9f49d05e168b387df2ad64e7ef",
+      "recipe_path": "sticker-lab/production-v5/frozen-core2-and79-v2/lumen_111_scene-acting_a.json",
+      "recipe_sha256": "4a9a6698323691dabbfa26cebec2ffa2a04e415260e4ee9cf673d333f700bd07",
+      "description_uk": "Здивовано округлює рот і широко дивиться, злегка відсахується голівкою та піднімає вушка. Обома лапками надійно тримає маленьку порожню чашку й обережно підтягує її ближче до себе.",
+      "source_kind": "derived_decoded_video",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-111-139/lumen_111",
+      "after_frames_directory": "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/decoded",
+      "review_artifacts": [
+        {
+          "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_111_scene-acting_a-normal.mp4",
+          "sha256": "0d69d9ae472160c7e997481a969d5ccc7b6d639bbbb941cc59ed287876b5205c",
+          "bytes": 201506,
+          "frames": 84,
+          "duration": 2.8,
+          "actual_full_decode": true,
+          "perceptually_watched": false
+        },
+        {
+          "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_111_scene-acting_a-slow.mp4",
+          "sha256": "15ac6bb0b97904def1d66bccac9e3bb48589630daefcb3471c0d674ff1de2783",
+          "bytes": 306016,
+          "frames": 84,
+          "duration": 5.6,
+          "actual_full_decode": true,
+          "perceptually_watched": false
+        }
+      ]
+    },
+    {
+      "id": "lumen_120",
+      "candidate_id": "lumen_120_scene-acting_a",
+      "candidate_path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/candidate.webm",
+      "candidate_sha256": "7b0ee576ddc106151b276e04c6c8469b9cff6d1fec7228bd046313a8ea551779",
+      "bytes": 216180,
+      "proof_path": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/proof.json",
+      "proof_sha256": "bcb3902931cd4c0b6c31157087b2a61772c393f1795c0096f34a49b3c2e1624a",
+      "recipe_path": "sticker-lab/production-v5/frozen-core2-and79-v2/lumen_120_scene-acting_a.json",
+      "recipe_sha256": "667326da4bd2fc74c141687329b08c3231f32e9dd2292024b5a6ca2e106c35dc",
+      "description_uk": "Панічно хапається обома лапками за щоки й беззвучно скрикує широко розкритим ротом. Голівка й вуха різко відхиляються назад, плащик розтягується, а ніжки по черзі нервово піднімаються й повертаються на місце.",
+      "source_kind": "derived_decoded_video",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-111-139/lumen_120",
+      "after_frames_directory": "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/decoded",
+      "review_artifacts": [
+        {
+          "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_120_scene-acting_a-normal.mp4",
+          "sha256": "66e5683623a9ce5113b78b440efa2259c40cb2171b94f9317c50ff72923aae4f",
+          "bytes": 211777,
+          "frames": 84,
+          "duration": 2.8,
+          "actual_full_decode": true,
+          "perceptually_watched": false
+        },
+        {
+          "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_120_scene-acting_a-slow.mp4",
+          "sha256": "16bd0524e08a8e640981a6c65d57a7cfdd267b2956ebd96585b18de6aed5a2b9",
+          "bytes": 323455,
+          "frames": 84,
+          "duration": 5.6,
+          "actual_full_decode": true,
+          "perceptually_watched": false
+        }
+      ]
+    },
+    {
+      "id": "lumen_121",
+      "candidate_id": "lumen_121_scene-acting_a",
+      "candidate_path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/candidate.webm",
+      "candidate_sha256": "46e62a9d748c7640d524b451b45c325962bbc0412f35455503d15145446178f6",
+      "bytes": 185673,
+      "proof_path": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/proof.json",
+      "proof_sha256": "84bc5c674cc7de2199777069da7fa6d4ad2a2c7d0ed2ac15722655c5f2c56f94",
+      "recipe_path": "sticker-lab/production-v5/frozen-core2-and79-v2/lumen_121_scene-acting_a.json",
+      "recipe_sha256": "51fdf0a4b4aff04ef97096787ad9ba7a965374309f56b2f59c8c8aa843be3369",
+      "description_uk": "Мружиться від роздратування й намагається вивільнити одну ніжку із синьої нитки: підтягує лапку разом із її петлею та обережно опускає назад. Іншою ніжкою впирається, а розведеними лапками втримує рівновагу.",
+      "source_kind": "derived_decoded_video",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-111-139/lumen_121",
+      "after_frames_directory": "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/decoded",
+      "review_artifacts": [
+        {
+          "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_121_scene-acting_a-normal.mp4",
+          "sha256": "6a472ff8f81e68e2184647d7ea0133962dfddcdec819f7bdb12eeb0811640da1",
+          "bytes": 235943,
+          "frames": 84,
+          "duration": 2.8,
+          "actual_full_decode": true,
+          "perceptually_watched": false
+        },
+        {
+          "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_121_scene-acting_a-slow.mp4",
+          "sha256": "b3d1745a0804af659ad4117eb30ac4f0605311c0656f8f5709ba514c57049105",
+          "bytes": 358404,
+          "frames": 84,
+          "duration": 5.6,
+          "actual_full_decode": true,
+          "perceptually_watched": false
+        }
+      ]
+    },
+    {
+      "id": "lumen_79",
+      "candidate_id": "lumen_79_corrected-anchor_awkward_b",
+      "candidate_path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/candidate.webm",
+      "candidate_sha256": "77395207086d7fbfd39d1ef1399fe34a81cdd30208ac604f4e706ab3d5357294",
+      "bytes": 195896,
+      "proof_path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/proof.json",
+      "proof_sha256": "7811c07fba4c945b9d648da3b8087c58dbda8ceb83d9adcad6cc29e399ecddbe",
+      "recipe_path": "sticker-lab/production-v5/frozen-core2-and79-v2/lumen_79_corrected-anchor_awkward_b.json",
+      "recipe_sha256": "87fe5af69165c607197c1a1661ad93e5681c40ed84b24412329c044334abfae1",
+      "description_uk": "Ніяково кривить рот із двома передніми різцями, зіщулює плечі й нервово здригається, міцніше стискаючи краї плащика обома лапками. На щоці синя крапелька поту, ніжки лишаються заплутаними в червоній стрічці, а її вільні кінчики ледь відгукуються на рух.",
+      "source_kind": "generated_corrected_anchor",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-51-80/lumen_79/frames-rgba",
+      "after_frames_directory": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/decoded",
+      "review_artifacts": [
+        {
+          "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_79_corrected-anchor_awkward_b-normal.mp4",
+          "sha256": "6962b6c9451180d4ef755f6642ff4b0410a848ae8f3bda44a1bc9a3838de63fd",
+          "bytes": 345596,
+          "frames": 84,
+          "duration": 2.8,
+          "actual_full_decode": true,
+          "perceptually_watched": false
+        },
+        {
+          "path": "sticker-lab/production-v5/frozen-core2-and79-v2/reviews/lumen_79_corrected-anchor_awkward_b-slow.mp4",
+          "sha256": "e0dc6972a3925e1943186447cfb77228e5eb13a2a8e27eed48edaf18a2c4789e",
+          "bytes": 523382,
+          "frames": 84,
+          "duration": 5.6,
+          "actual_full_decode": true,
+          "perceptually_watched": false
+        }
+      ]
+    }
+  ],
+  "review_proofs": [
+    "sticker-lab/production-v5/candidates/lumen_111_scene-acting_a/proof.json",
+    "sticker-lab/production-v5/candidates/lumen_120_scene-acting_a/proof.json",
+    "sticker-lab/production-v5/candidates/lumen_121_scene-acting_a/proof.json",
+    "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/proof.json"
+  ],
+  "scope": "Independent per-item exact frame/scene review only; generated79 anchor/emoji review also required. No local staging or blanket method authorization.",
+  "native_realtime_slow_device": "not_observed",
+  "files_sha256": "a8637fe2d199eddc2b6d730e3ae6f12aab6355fe0b13fb194f4c5c33adadc7b4",
+  "final_path_guard": {
+    "path": "sticker-lab/production-v5/frozen-core2-and79-v2/package.guard.json",
+    "sha256": "d4789d60540433f05660b69c28e138223f2bccf514a6d7939cb87f913503b853",
+    "passed": true
+  },
+  "frozen_at": "2026-10-30T18:29:25.803144+00:00"
+}

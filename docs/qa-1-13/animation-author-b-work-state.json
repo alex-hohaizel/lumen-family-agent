@@ -1,0 +1,83 @@
+{
+  "actual_agent_id": "/root/artisan_stickers_b",
+  "scope": "All34 supported authored;32followup candidates frozen; oldfirst3 immutable.",
+  "ownership": "Only recipes-proposed/author_b, own author_b-candidates/author_b-frozen namespaces and docs/qa-1-13/animation-author-b*. No canonical/core/stage mutations.",
+  "source_inspection": "Every chosen sourcePNG individually viewed at native512;97 has a generated corrected anchor with null original timestamp, not a decoded source index.",
+  "generated97": "Root corrected anchor a029373ff7e11607710e1250b90b3a06dbeff2f9bae630abfec52aa34bccfff1; frozenbatch3 honest generated branch and pinned dense ice controls.",
+  "shared_guard": "Every followup frozen actual final normal/slow MP4 fullydecoded after copy, proofSHA/bytes bound to actual final paths and all listedfiles rechecked.",
+  "next": "Independent exact-item QA of remaining24; handle addressed returns with new immutable candidates only.",
+  "batch2_freeze": {
+    "report": "docs/qa-1-13/animation-author-b-batch2.json",
+    "package": "sticker-lab/production-v5/author_b-frozen-batch2/package.json",
+    "files_sha256": "f6fbd879bb378f2a7af0506f1f8f012a8eb07e8f42e0b52852a1416d0665bb4c",
+    "final_copied_guard": "passed",
+    "independent_QA": "See aggregate exact-candidate independent report snapshots."
+  },
+  "batch2_review": "Every84finalordered224px plus9native512phaseframes actually inspected per item. Exact copied final outputs pass shared guard.",
+  "batch3_freeze": {
+    "report": "docs/qa-1-13/animation-author-b-batch3.json",
+    "package": "sticker-lab/production-v5/author_b-frozen-batch3/package.json",
+    "files_sha256": "9995424a834d85471973010e79b543a1d7bf42ef348d140969083cdbf08def83",
+    "final_copied_guard": "passed",
+    "independent_QA": "See aggregate exact-candidate independent report snapshots."
+  },
+  "batch3_review": "Every84finalordered224px plus9native512phaseframes actually inspected per item. Exact copied final outputs pass shared guard.",
+  "batch4_freeze": {
+    "report": "docs/qa-1-13/animation-author-b-batch4.json",
+    "package": "sticker-lab/production-v5/author_b-frozen-batch4/package.json",
+    "files_sha256": "59d23ef8eac1681383d37874b9bce6bbdea3660ccc39aa610e3c2f4a1822a13f",
+    "final_copied_guard": "passed",
+    "independent_QA": "See aggregate exact-candidate independent report snapshots."
+  },
+  "batch4_review": "Every84finalordered224px plus9native512phaseframes actually inspected per item. Exact copied final outputs pass shared guard.",
+  "batch5_freeze": {
+    "report": "docs/qa-1-13/animation-author-b-batch5.json",
+    "package": "sticker-lab/production-v5/author_b-frozen-batch5/package.json",
+    "files_sha256": "61d9c53b34edfce44149a244ee295cf9cb7995bda87a3901d62e53e978fc000a",
+    "final_copied_guard": "passed",
+    "independent_QA": "See aggregate exact-candidate independent report snapshots."
+  },
+  "batch5_review": "Every84finalordered224px plus9native512phaseframes actually inspected per item. Exact copied final outputs pass shared guard.",
+  "updated_at": "2026-10-30T19:01:16.510728+00:00",
+  "status": "all34_owned_scene_candidates_authored_and_handed_off",
+  "aggregate_report": "docs/qa-1-13/animation-author-b-result.json",
+  "independent_accepted_ids_snapshot": [
+    81,
+    82,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    96,
+    104
+  ],
+  "independent_pending_ids_snapshot": [
+    90,
+    91,
+    92,
+    93,
+    95,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    128,
+    131,
+    133,
+    134,
+    135,
+    137
+  ],
+  "independent_returned_ids_snapshot": []
+}

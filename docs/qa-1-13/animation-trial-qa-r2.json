@@ -1,0 +1,628 @@
+{
+  "schema_version": 1,
+  "review_id": "animation-trial-qa-1-13-r2",
+  "review_mode": "addressed",
+  "created_at": "2026-10-30T16:24:45.018391+00:00",
+  "actual_agent_id": "/root/qa_animation_trial",
+  "role": "independent_animation_qa",
+  "prior_review": {
+    "artifact": "docs/qa-1-13/animation-trial-qa.json",
+    "sha256": "69545b99f19849a8526b762437145d82a23ec50d9a94e2de97437de438ab6803"
+  },
+  "prior_review_id": "animation-trial-qa-1-13-v1",
+  "review_intent": "Address rig1 revise/block findings while allowing explicitly proposed optional scene phase revisions; core emoji/scene/life/uniqueness remain required.",
+  "independence": {
+    "not_author": true,
+    "same_QA_as_prior_addressed_review": true,
+    "author_self_review_metadata_exposed": true,
+    "author_self_review_used_as_evidence_of_quality": false,
+    "other_judge_votes_used": false,
+    "production_or_generator_run": false,
+    "canonical_assets_changed": false
+  },
+  "package": {
+    "manifest": {
+      "artifact": "sticker-lab/production-v5/frozen-rig2/package.json",
+      "sha256": "280b8591ab0a56f92a835df01ae433fcd6b3ecaea51e3d7a89dfdbf260d7d46c"
+    },
+    "package_files_array_sha256": "afddd2928b4d545aff584306719c5562b1bb0e30ae1a242a3fff0868f4938b50",
+    "aggregate_algorithm": "sha256(json.dumps(files,ensure_ascii=False,sort_keys=True,separators=(comma,colon)))",
+    "file_count": 180,
+    "all180_match_at_start_and_finish": true,
+    "scope": "Only exact paths/hashes listed by frozen package, including frozen generator snapshots. No mutable unlisted candidates/generator content used."
+  },
+  "methodology": {
+    "skill": "/root/.codex/skills/remote-skills/skill-6ae4b1011c8c8191aee521438671cf85/SKILL.md",
+    "rubrics": [
+      "media-quality.md",
+      "judge-rubrics.md",
+      "evidence-and-delivery.md"
+    ],
+    "fresh_after_frames_viewed": 168,
+    "fresh_ordered_sheets": 14,
+    "each_frame_sheet_px": 384,
+    "native512_phases_and_direct_peaks": true,
+    "enlarged2x_risks": true,
+    "prior_before_and_control_coverage_reused": 336,
+    "reused_baseline_hashes_verified": true,
+    "native_realtime": "not_observed",
+    "native_slow": "not_observed",
+    "device": "not_observed",
+    "MP4": "Technical full decode + sampled image correspondence/view_image only",
+    "metrics_do_not_replace_visual_review": true
+  },
+  "candidate_reviews": [
+    {
+      "candidate_id": "lumen_94_local-acting_rig2",
+      "verdict": "accept",
+      "scope": "Accepted only as a frame-sequence prototype: geometry/integrity, core emoji/scene and authored local acting design under frozen proposed UA description. Ready for native playback review; this is not complete temporal_quality, device, publication, or all120 acceptance.",
+      "candidate_sha256": "c15fc28be190c6cde2f423a336af245c65e71f09bb5bfdc93596b2c627d33519",
+      "proof_sha256": "31407d916c9edc686ba6a9bd5e37342ee5a1c43534be00ea2912d935ac4e3e15",
+      "source_video_sha256": "cd24cda2f1d0f85a3b219b7e07fd0c6f9b7ae907b5b497480fd98caea97850c4",
+      "decoded_png_bundle_sha256": "d03674d7268eaad2a4f5239ea85a3ce4cfb4820835e9e02738981bf2736d2ae7",
+      "proposed_description_uk": "Нахиляється над бірюзовим відерцем, міцно тримається лапками за край і двічі здригається від нудоти; кумедний зелений струмінь стікає у відерце. Очі міцно заплющені, плащик м’яко рухається.",
+      "evidence_ids": [
+        "R2-94-ALL84",
+        "R2-NATIVE-INDEX",
+        "R2-94-PAYLOAD",
+        "R2-TECH",
+        "R2-GENERATOR-FROZEN",
+        "R2-MANIFEST-SOURCE",
+        "R2-PRIOR-BASELINES"
+      ],
+      "integrity": {
+        "verdict": "accept",
+        "scope": "All84 after frames plus selected native/enlarged risks",
+        "observations": [
+          "Character identity, two upper teeth, limbs/ears/cape and single prop remain coherent.",
+          "No source-like double face/paw/bucket/scroll or topology dissolve observed.",
+          "Selected white/dark alpha edges have no material RGB/alpha offset; bounds stay inside512.",
+          "No visible folding or severe strain at strongest reviewed phases; numerical Jacobian is supporting evidence only."
+        ]
+      },
+      "local_motion": {
+        "verdict": "accept",
+        "scope": "Frame-sequence design",
+        "whole_image_rigid_wiggle": false,
+        "observation": "Two separate head/shoulder contractions around f010 and f052, recovery between, braced rim/feet; fluid highlights change along the retained stream."
+      },
+      "loop": {
+        "frame_sequence_verdict": "accept",
+        "observation": "Native ordered081/082/083→000/001/002 has no visible large pose/prop discontinuity; no backward prop flight/teleport.",
+        "seam_composite_mae": 0.43678587371227784,
+        "median_adjacent_composite_mae": 0.6680185604718775,
+        "native_realtime": "unknown",
+        "native_slow": "unknown"
+      },
+      "verification_boundaries": {
+        "native_realtime_playback": "unknown",
+        "native_slow_playback": "unknown",
+        "Telegram_device_playback": "unknown",
+        "simulated224": "Still phase readability only, not perceived motion",
+        "full_temporal_quality_acceptance": false,
+        "publication_acceptance": false
+      },
+      "core_semantics": {
+        "emoji": "🤮",
+        "scene": "Все, не можу",
+        "verdict": "accept",
+        "reason": "Contracted face, braced paws over bucket, two heave accents and moving green texture preserve the unique nausea/vomiting core. Wipe/recovery omission is explicit and optional in this addressed review; proposed UA description matches visible scene."
+      },
+      "prior_objections_addressed": [
+        {
+          "prior": "Rig1 near-static generic head heave",
+          "status": "addressed",
+          "evidence": "Distinct double-pulse progression in ordered sequence/native phases, with stable bucket/feet reference."
+        },
+        {
+          "prior": "Frozen stream/splash content",
+          "status": "partly_addressed",
+          "evidence": "Fluid internal texture now changes downward by frozen method; silhouette and bead positions remain largely retained."
+        },
+        {
+          "prior": "Wipe phase absent",
+          "status": "accepted_scope_revision",
+          "evidence": "New explicit proposed description preserves core and does not promise wiping."
+        }
+      ],
+      "strongest_objection": "Fluid still uses a retained silhouette and bead layout; internal advection may read as sliding/boiling gel rather than flowing liquid at real tempo. Frame review found no travelling black seam, but perceptual flow and absence of shimmer remain unconfirmed.",
+      "required_art_revision_from_current_frame_evidence": false,
+      "reversal_condition": "Revise if native normal/slow or device viewing reveals plastic head strain, texture shimmer/seams, weak heave readability or a jarring loop. Strongest unresolved perception issue should be checked at stream/beads during f005–020 and f047–063.",
+      "requirement_reviews": [
+        {
+          "requirement_id": "character_semantics",
+          "verdict": "accept",
+          "scope": "Core emoji/unique scene under exact proposed UA description; canonical sync remains separate."
+        },
+        {
+          "requirement_id": "temporal_quality",
+          "verdict": "unknown",
+          "scope": "Frame geometry/local action/ordered seam accepted, but rubric real+slow playback perception was not observed. Unknown is not a full pass."
+        },
+        {
+          "requirement_id": "source_grounding",
+          "verdict": "accept",
+          "scope": "Exact package/derived source000/proofs/decoded correspondence only."
+        },
+        {
+          "requirement_id": "media_delivery",
+          "verdict": "unknown",
+          "scope": "No Telegram/device receipt or publication."
+        }
+      ]
+    },
+    {
+      "candidate_id": "lumen_113_local-acting_rig2",
+      "verdict": "accept",
+      "scope": "Accepted only as a frame-sequence prototype: geometry/integrity, core emoji/scene and authored local acting design under frozen proposed UA description. Ready for native playback review; this is not complete temporal_quality, device, publication, or all120 acceptance.",
+      "candidate_sha256": "715914b1f6ed44c3084bc757fb0053b7f6bd2f67f65ea04afe13a2c550f86bb9",
+      "proof_sha256": "fa8c784b976fe2a69a21b45a0a6702926fd55c6f4549286e4d1d24ad29ca5de3",
+      "source_video_sha256": "68256ad10062e85a584561067d29ad4c10d8b96f698c9fc8ea52bcf6ac431931",
+      "decoded_png_bundle_sha256": "dcff2087ed3ac57b2fe879c5abbc987f56cafaba0d9d1670ab7f9fbd05199556",
+      "proposed_description_uk": "З розкритим від подиву ротом і широко розплющеними очима різко відсахується, розводить вільну лапку та напружує підняту задню; в іншій лапці міцно тримає порожній сувій. Плащик відгукується на рух.",
+      "evidence_ids": [
+        "R2-113-ALL84",
+        "R2-NATIVE-INDEX",
+        "R2-113-PAYLOAD",
+        "R2-TECH",
+        "R2-GENERATOR-FROZEN",
+        "R2-MANIFEST-SOURCE",
+        "R2-PRIOR-BASELINES"
+      ],
+      "integrity": {
+        "verdict": "accept",
+        "scope": "All84 after frames plus selected native/enlarged risks",
+        "observations": [
+          "Character identity, two upper teeth, limbs/ears/cape and single prop remain coherent.",
+          "No source-like double face/paw/bucket/scroll or topology dissolve observed.",
+          "Selected white/dark alpha edges have no material RGB/alpha offset; bounds stay inside512.",
+          "No visible folding or severe strain at strongest reviewed phases; numerical Jacobian is supporting evidence only."
+        ]
+      },
+      "local_motion": {
+        "verdict": "accept",
+        "scope": "Frame-sequence design",
+        "whole_image_rigid_wiggle": false,
+        "observation": "Preparation/recoil/settle across roughly f000→020→042–063. Mouth opening increases, free paw flares, cape and raised foot respond; held scroll follows its gripping paw coherently."
+      },
+      "loop": {
+        "frame_sequence_verdict": "accept",
+        "observation": "Native ordered081/082/083→000/001/002 has no visible large pose/prop discontinuity; no backward prop flight/teleport.",
+        "seam_composite_mae": 0.298341554130604,
+        "median_adjacent_composite_mae": 0.4582618563782935,
+        "native_realtime": "unknown",
+        "native_slow": "unknown"
+      },
+      "verification_boundaries": {
+        "native_realtime_playback": "unknown",
+        "native_slow_playback": "unknown",
+        "Telegram_device_playback": "unknown",
+        "simulated224": "Still phase readability only, not perceived motion",
+        "full_temporal_quality_acceptance": false,
+        "publication_acceptance": false
+      },
+      "core_semantics": {
+        "emoji": "😲",
+        "scene": "Щелепа відпала",
+        "verdict": "accept",
+        "reason": "Widening jaw, free-paw/shoulder recoil and cape/foot response preserve an astonished reaction; the held scroll remains a coherent scene prop. Explicit UA revision accurately says it is held, so no drop/slip claim remains."
+      },
+      "prior_objections_addressed": [
+        {
+          "prior": "Rig1 almost unchanged startled pose",
+          "status": "addressed",
+          "evidence": "Native000↔020 shows a visible jaw/paw/cape accent with separate regional displacements and settle."
+        },
+        {
+          "prior": "Scroll slipping episode removed",
+          "status": "accepted_scope_revision",
+          "evidence": "Proposed UA description names a held scroll; main surprise core survives."
+        }
+      ],
+      "strongest_objection": "The drawing begins already strongly surprised, so the new recoil is an accent inside a fixed surprised expression rather than a large change from neutral. Whether it feels sufficiently sharp and alive at chat size, and whether the adverb «різко» fits, still needs native-tempo viewing.",
+      "required_art_revision_from_current_frame_evidence": false,
+      "reversal_condition": "Revise if native normal/slow or device viewing reads as breathing/stretching with weak reaction accent, excessive face strain or an obvious reset. Check jaw/free-paw/cape timing f007–030 and settle f030–063.",
+      "requirement_reviews": [
+        {
+          "requirement_id": "character_semantics",
+          "verdict": "accept",
+          "scope": "Core emoji/unique scene under exact proposed UA description; canonical sync remains separate."
+        },
+        {
+          "requirement_id": "temporal_quality",
+          "verdict": "unknown",
+          "scope": "Frame geometry/local action/ordered seam accepted, but rubric real+slow playback perception was not observed. Unknown is not a full pass."
+        },
+        {
+          "requirement_id": "source_grounding",
+          "verdict": "accept",
+          "scope": "Exact package/derived source000/proofs/decoded correspondence only."
+        },
+        {
+          "requirement_id": "media_delivery",
+          "verdict": "unknown",
+          "scope": "No Telegram/device receipt or publication."
+        }
+      ]
+    }
+  ],
+  "scaling_review": {
+    "verdict": "accept",
+    "scope": "Bounded method viability for additional individually authored, hash-frozen representative prototypes with stable topology/prop attachments; not blanket repair or canonical replacement.",
+    "limited_scope_reason": "Rig2 now supplies scene-related local pulses and secondary part/texture action without the reproduced source doubles. The earlier rig1 acting objection is addressed for these two proposed scene designs at frame level.",
+    "blanket120_scale_verdict": "block",
+    "blanket120_strongest_objection": "Two single-anchor, stable-topology examples do not establish120 unique expressive performances. General use can still collapse complex prop/contact/topology scenes into pose accents; native/device acceptance and per-file review remain unresolved.",
+    "evidence_ids": [
+      "R2-94-ALL84",
+      "R2-113-ALL84",
+      "R2-NATIVE-INDEX",
+      "R2-GENERATOR-FROZEN",
+      "R2-PRIOR-BASELINES"
+    ],
+    "uncertainty": "No native realtime/slow/device observation; uniqueness evaluated only between these two core scenes and unchanged controls, not all120.",
+    "reversal_condition": "A representative new topology/prop case that cannot preserve its core with this method must use another authored repair strategy; any weak scene accent/strain/texture seam at native playback returns that candidate. Blanket120 acceptance requires actual per-file full-cycle evidence, not method extrapolation.",
+    "production_authorization": "None added by this QA."
+  },
+  "evidence": [
+    {
+      "id": "R2-PACKAGE",
+      "kind": "source",
+      "provenance": "inspected",
+      "artifact": "sticker-lab/production-v5/frozen-rig2/package.json",
+      "sha256": "280b8591ab0a56f92a835df01ae433fcd6b3ecaea51e3d7a89dfdbf260d7d46c",
+      "files_array_package_sha256": "afddd2928b4d545aff584306719c5562b1bb0e30ae1a242a3fff0868f4938b50",
+      "files_verified": 180,
+      "verification": "All 180 manifest-bound paths, byte counts and file SHA-256 verified at start and finish; no mismatch. Aggregate SHA is compact sorted-key JSON of files array, distinct from package.json byte SHA."
+    },
+    {
+      "id": "R2-TECH",
+      "kind": "execution",
+      "provenance": "reproduced",
+      "artifact": "docs/qa-1-13/animation-trial-evidence-r2/technical-scan-r2.json",
+      "sha256": "68d0c8bec40586bfdf4f7a05315cd6e33638f26d660be8d28e4bf5242e55ca6e",
+      "result": "Independent fresh libvpx-vp9 RGBA decode matches every listed after PNG; two sequences×84, blank=[], pixel_mismatch_indices=[], 84 unique frames each, 512×512. PTS monotonic; no bounds clipping. Metrics supplement eyes."
+    },
+    {
+      "id": "R2-NATIVE-INDEX",
+      "kind": "execution",
+      "provenance": "inspected",
+      "artifact": "docs/qa-1-13/animation-trial-evidence-r2/native-evidence-index.json",
+      "sha256": "d85fc8ba354d099f65038f5f8511c51ea776ae714f44eba860ea12466815c359",
+      "artifacts": [
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-94-native-phases.png",
+          "sha256": "b36a2ce5feaf873fa0b0e87584804dd21bda0e7213432397e255fdf227220559"
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-94-alpha-native.png",
+          "sha256": "25f41114e8836164b1ac3b2c6140735c1dd737d2be1deaf03696b7e95f922757"
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-94-seam-native.png",
+          "sha256": "1f1f42cd6b3711a5c53b961333ef19f02ed207b54c41198b925fb0668fd3735e"
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-94-acting-2x.png",
+          "sha256": "311fa48939d2d89e8f953c91c027a836959f0b77ec50aa7af7da9371f8b2ddd5"
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-94-fluid-2x.png",
+          "sha256": "0b92d658b6e2505f80c4f3092a2d85f1573ef2b8ee7e8c7ef94b6c691ddaad63"
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-94-review-normal-peak.png",
+          "sha256": "8dbe417edc069158359a4800d15633c11a699c6d0a4bb4459f78a07b79d50710"
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-94-review-slow-peak.png",
+          "sha256": "8775f981c79195082c8e2b9a23ded527ab8994905be7a8644dfbf6e475594bab"
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-113-native-phases.png",
+          "sha256": "d3c107c16b101ab7654a231864079e377592c6bcb325008abc8017da405bdadf"
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-113-alpha-native.png",
+          "sha256": "ab9f67ec7a641cf6d46d33b510a594fc85f8c41bd1a38eb1e351793e77211d41"
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-113-seam-native.png",
+          "sha256": "0ce3f61f5197c6129c41520f309b51acc00893b9f84044b8353dd0d1a771b4b1"
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-113-acting-2x.png",
+          "sha256": "f504b35e02543122d7de38c1dcc74ca5dcb4cab42bd1319487bc35e674679cdc"
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-113-paw-scroll-2x.png",
+          "sha256": "1d6e992f6f75af563d793a6c0409dd0097a8a34d7312ed2825c74208a3633ccc"
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-113-review-normal-peak.png",
+          "sha256": "f829e0f1fa09f90b2a4c754e643776b4e03e90e9f270f5909243f2fd2854a623"
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-113-review-slow-peak.png",
+          "sha256": "e6391810c92544f4c767f473ff85bc7706fc81ea58c10dd60c566c515e8a43f0"
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/chat-sized-phase-stills.png",
+          "sha256": "aa9a077aacada31af3283200a4c50b1799e1e47f934d5f72d3b4d3153098b31a"
+        }
+      ],
+      "procedure": "view_image: native512 phases, direct raw peaks, white/dark alpha, ordered seam 081/082/083→000/001/002, acting/fluid/paw-scroll 2x crops, normal/slow MP4 decoded peak samples, simulated224 phase stills.",
+      "limitations": "All these are still/frame-sequence evidence; simulated224 is not device playback."
+    },
+    {
+      "id": "R2-GENERATOR-FROZEN",
+      "kind": "code",
+      "provenance": "inspected",
+      "artifacts": [
+        {
+          "artifact": "sticker-lab/production-v5/frozen-rig2/local_rig.py",
+          "sha256": "1df3c0721691f969c1ecdba98be79763076ac033b2748cc7cbc944974fc9914d"
+        },
+        {
+          "artifact": "sticker-lab/production-v5/frozen-rig2/repair.py",
+          "sha256": "71ede76a5061a1692b0dbb660cd3851dd946e44f246d6536bf09840358273cab"
+        }
+      ],
+      "result": "Frozen snapshot only. Authored local fields and asymmetric pulse timing; 94 has two heave pulses plus positive-y fluid texture advection. 113 has jaw/free paw/shoulder/foot/cape recoil with held-scroll attachment. No generator run."
+    },
+    {
+      "id": "R2-MANIFEST-SOURCE",
+      "kind": "source",
+      "provenance": "inspected",
+      "artifact": "assets/stickers/manifest.json",
+      "sha256": "c702f672573e0a67a2c5cde40976befed54cfa60ba369be7511a850d8548998f",
+      "result": "Canonical descriptions remain unchanged. Proposed UA descriptions are in frozen proofs and are evaluated as explicit scene revisions under addressed instructions; canonical sync not performed by QA."
+    },
+    {
+      "id": "R2-PRIOR-BASELINES",
+      "kind": "execution",
+      "provenance": "inspected",
+      "artifact": "docs/qa-1-13/animation-trial-qa.json",
+      "sha256": "69545b99f19849a8526b762437145d82a23ec50d9a94e2de97437de438ab6803",
+      "review_mode": "addressed",
+      "reused_evidence_ids": [
+        "EV-94-BEFORE-ALL84",
+        "EV-113-BEFORE-ALL84",
+        "EV-OLD01-ALL84",
+        "EV-OLD08-ALL84"
+      ],
+      "source_control_hashes": {
+        "assets/stickers/lumen_01.webm": {
+          "sha256": "52589f065a58d472224ea6d2e2c50b7c89638dcc55d76d0f9dba1a57975b8711",
+          "same_as_prior": true
+        },
+        "assets/stickers/lumen_08.webm": {
+          "sha256": "481e519b51a61214678c0c6d8019f4915c42630479da75f05c225dc12a405a4e",
+          "same_as_prior": true
+        },
+        "assets/stickers/lumen_94.webm": {
+          "sha256": "cd24cda2f1d0f85a3b219b7e07fd0c6f9b7ae907b5b497480fd98caea97850c4",
+          "same_as_prior": true
+        },
+        "assets/stickers/lumen_113.webm": {
+          "sha256": "68256ad10062e85a584561067d29ad4c10d8b96f698c9fc8ea52bcf6ac431931",
+          "same_as_prior": true
+        }
+      },
+      "result": "All four canonical source/control compressed hashes unchanged from prior review. Prior full before/control visual coverage reused, not recounted as fresh viewing."
+    },
+    {
+      "id": "R2-94-ALL84",
+      "kind": "execution",
+      "provenance": "inspected",
+      "artifacts": [
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-94-all-frames-1.jpg",
+          "sha256": "b793ea5ae116fb5dbc4ce39b7c44bea4cad0140ceb629ac766fcb506a49766fd",
+          "source_frames": [
+            0,
+            11
+          ]
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-94-all-frames-2.jpg",
+          "sha256": "ff68406bc87ad1c9cbd1a7209dba17b81ef1646b5a41f942edd8750e33061e95",
+          "source_frames": [
+            12,
+            23
+          ]
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-94-all-frames-3.jpg",
+          "sha256": "b33884ea7c3ff6bc81d4b2cc8bd05a7d54eac6a643f60d7560f032a9baff3884",
+          "source_frames": [
+            24,
+            35
+          ]
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-94-all-frames-4.jpg",
+          "sha256": "83f517bd85683928d7a2ee605796dc2acb640100fa9b246cc9fd91b5ab3dcf8f",
+          "source_frames": [
+            36,
+            47
+          ]
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-94-all-frames-5.jpg",
+          "sha256": "90bbd891439747f6a42f46749232fe452a61d7ac5ea56165ffb0ef4e15536f8a",
+          "source_frames": [
+            48,
+            59
+          ]
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-94-all-frames-6.jpg",
+          "sha256": "e512b0193abd077e4d8a46aa47b4749bbe47ed1bb3a251fa83b9840a6ad3fd78",
+          "source_frames": [
+            60,
+            71
+          ]
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-94-all-frames-7.jpg",
+          "sha256": "54272078088c96e8cd7aa84eb2e334905e9869da4717b133077a9a63426ff049",
+          "source_frames": [
+            72,
+            83
+          ]
+        }
+      ],
+      "procedure": "view_image all84 ordered 000–083, 7×12 sheets, 384px/frame; QA sheets derived only from hashed package-listed PNG. No unlisted author sheets used.",
+      "png_bundle_sha256": "d03674d7268eaad2a4f5239ea85a3ce4cfb4820835e9e02738981bf2736d2ae7"
+    },
+    {
+      "id": "R2-94-PAYLOAD",
+      "kind": "source",
+      "provenance": "inspected",
+      "artifacts": [
+        {
+          "artifact": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/candidate.webm",
+          "sha256": "c15fc28be190c6cde2f423a336af245c65e71f09bb5bfdc93596b2c627d33519"
+        },
+        {
+          "artifact": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/proof.json",
+          "sha256": "31407d916c9edc686ba6a9bd5e37342ee5a1c43534be00ea2912d935ac4e3e15"
+        },
+        {
+          "artifact": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/poster.png",
+          "sha256": "5b65cafee88ccd973d9d9e2f5e5fec14e1e9de35db353ce7d94202ae4d62ae26"
+        },
+        {
+          "artifact": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/review-normal.mp4",
+          "sha256": "6cc974a55086f52ecb3a33d5abfd58dadc8d2e072dc48ab0c84cd59f1c730823"
+        },
+        {
+          "artifact": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/review-slow.mp4",
+          "sha256": "48a859e09f0df8cfadd59ee3976427b7a83f83a7c29fc98f433d469e256fc0b5"
+        }
+      ],
+      "source_video": {
+        "artifact": "assets/stickers/lumen_94.webm",
+        "sha256": "cd24cda2f1d0f85a3b219b7e07fd0c6f9b7ae907b5b497480fd98caea97850c4"
+      },
+      "result": "Derived source000, original keyposes unresolved, truthful provenance. Normal/slow MP4 fully technically decoded and sampled correspondence checked. Author self-review metadata was exposed in proof; it did not establish this QA verdict."
+    },
+    {
+      "id": "R2-113-ALL84",
+      "kind": "execution",
+      "provenance": "inspected",
+      "artifacts": [
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-113-all-frames-1.jpg",
+          "sha256": "5eda88fb7d5c55cb084796fe0814fec1a036e3395803ae36f92de1b201c1ed5e",
+          "source_frames": [
+            0,
+            11
+          ]
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-113-all-frames-2.jpg",
+          "sha256": "91b1f2aa171c97c1d9334dc0b8d0e5c3a9a124a8e481a22746321e7b640c46a0",
+          "source_frames": [
+            12,
+            23
+          ]
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-113-all-frames-3.jpg",
+          "sha256": "2a9ae612cd102338fa137ffcf83cc45df5ee9b8ce36d708c30d54ded3e3380c6",
+          "source_frames": [
+            24,
+            35
+          ]
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-113-all-frames-4.jpg",
+          "sha256": "99099dd37b422661837d472d132bf4a1a26e411b9ad1a3d73b525c50e673e2e4",
+          "source_frames": [
+            36,
+            47
+          ]
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-113-all-frames-5.jpg",
+          "sha256": "6a4e03b83f41f12bdd88e8758bc481c3baa9507295d53705cbe3520ab9e268c9",
+          "source_frames": [
+            48,
+            59
+          ]
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-113-all-frames-6.jpg",
+          "sha256": "94945e71257791a87db58f64c95a69bfbc754400a8ebf13ef070d8268dd381c6",
+          "source_frames": [
+            60,
+            71
+          ]
+        },
+        {
+          "artifact": "docs/qa-1-13/animation-trial-evidence-r2/lumen-113-all-frames-7.jpg",
+          "sha256": "269d88e55f520707ae4d35bfbc02eaf3abe7f078fa5dde7119eaa8ccbcf49a15",
+          "source_frames": [
+            72,
+            83
+          ]
+        }
+      ],
+      "procedure": "view_image all84 ordered 000–083, 7×12 sheets, 384px/frame; QA sheets derived only from hashed package-listed PNG. No unlisted author sheets used.",
+      "png_bundle_sha256": "dcff2087ed3ac57b2fe879c5abbc987f56cafaba0d9d1670ab7f9fbd05199556"
+    },
+    {
+      "id": "R2-113-PAYLOAD",
+      "kind": "source",
+      "provenance": "inspected",
+      "artifacts": [
+        {
+          "artifact": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/candidate.webm",
+          "sha256": "715914b1f6ed44c3084bc757fb0053b7f6bd2f67f65ea04afe13a2c550f86bb9"
+        },
+        {
+          "artifact": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/proof.json",
+          "sha256": "fa8c784b976fe2a69a21b45a0a6702926fd55c6f4549286e4d1d24ad29ca5de3"
+        },
+        {
+          "artifact": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/poster.png",
+          "sha256": "dd54ee8c0255aa2e49805d11e88fbb7fc1dc93c68713ee5eb8b9bf4b1d6c9d9e"
+        },
+        {
+          "artifact": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/review-normal.mp4",
+          "sha256": "2067b1847aefd0520ca3cb37fe13ec196d1bc16dc4957cee181d4654e6f49b7f"
+        },
+        {
+          "artifact": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/review-slow.mp4",
+          "sha256": "123de809d48efd3a685cbd4aea468e2881d74c9241be12d54886af7bca316f82"
+        }
+      ],
+      "source_video": {
+        "artifact": "assets/stickers/lumen_113.webm",
+        "sha256": "68256ad10062e85a584561067d29ad4c10d8b96f698c9fc8ea52bcf6ac431931"
+      },
+      "result": "Derived source000, original keyposes unresolved, truthful provenance. Normal/slow MP4 fully technically decoded and sampled correspondence checked. Author self-review metadata was exposed in proof; it did not establish this QA verdict."
+    }
+  ],
+  "completion": {
+    "stage": "independently_reviewed",
+    "scope": "Frame-sequence prototype acceptance for frozen rig2 scene design/integrity only; native temporal quality remains unknown.",
+    "candidate_verdicts": {
+      "lumen_94_local-acting_rig2": "accept",
+      "lumen_113_local-acting_rig2": "accept"
+    },
+    "limited_method_verdict": "accept",
+    "blanket120_scale_verdict": "block",
+    "unresolved_requirement_ids": [
+      "temporal_quality",
+      "media_delivery"
+    ],
+    "canonical_publication_ready": false,
+    "final_round_judge": false
+  },
+  "checkpoint": {
+    "next": "Review exact frozen candidates in a native normal/slow player and Telegram/device preview. No raster revision is mandated solely by inspected frames. Keep core/descriptions synchronized if accepted into canonical assets later.",
+    "report": "docs/qa-1-13/animation-trial-qa-r2.json"
+  }
+}

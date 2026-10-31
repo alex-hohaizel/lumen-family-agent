@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "report_id": "qa-animation-79-dimensions-closure",
+  "actual_agent_id": "/root/qa_preflight",
+  "role": "independent_source_metadata_QA_non_author",
+  "created_at": "2026-10-30T19:21:06.144368+00:00",
+  "verdict": "accept_dimensions_only_source_metadata_closure",
+  "exact_new_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/source-art/lumen_79/edit-with-actual-dimensions.json",
+      "sha256": "39c16e8473bda9e361dc5017c4d69092f3855627e3d5caea8ae01c09267a2a88"
+    },
+    {
+      "path": "sticker-lab/production-v5/source-art/lumen_79/dimensions-correction-readback.json",
+      "sha256": "388543c9bd67cf6c3dac94d23bbbff22677c929794acbbc2040df56e0d83a731"
+    },
+    {
+      "path": "sticker-lab/production-v5/source-art/lumen_79/proposed-source-contract-with-actual-dimensions.json",
+      "sha256": "addcc49b3e1eeaff30eb0137ce7ac5d4d02c16a20fa2677bd3e639bacb27e94c"
+    }
+  ],
+  "old_unsupported_claim": {
+    "old_metadata_path": "sticker-lab/production-v5/source-art/lumen_79/edit.json",
+    "old_metadata_sha256": "23780c0a62642a51dfc410c95dd7b2728a84be6f26e3c890fea334e562e44ce3",
+    "claimed_dimensions": [
+      1280,
+      1280
+    ],
+    "actual_IHDR_and_Pillow": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "old_source_contract_path": "sticker-lab/production-v5/source-art/lumen_79/proposed-source-contract.json",
+    "old_source_contract_sha256": "d36bccd07927982e5491798805ef9a6d7909636d1174e3f397f606fb1e0d0926",
+    "assessment": "1280×1280 descriptor disproved by exact original PNG bytes. Historical file intentionally retained; corrected new contract binds actual1254.",
+    "reported_origin": "Root attributed mistake to UI metadata; QA proves byte mismatch and exact correction, not the UI mechanism."
+  },
+  "own_initial_bytefacts": {
+    "path": "docs/qa-1-13/qa-animation-79-dimensions-bytefacts.json",
+    "sha256": "e7756e3f95e15b0a9de5ec492c737b3664cc67cfa5734a1fabbe028e012e8360",
+    "facts": {
+      "at": "2026-10-30T19:18:24.444321+00:00",
+      "actual_agent_id": "/root/qa_preflight",
+      "source_original": {
+        "path": "sticker-lab/production-v5/source-art/lumen_79/imagegen-anchor-original.png",
+        "sha256": "e9eb71c8a033727b124aca4e4db83c41d423777f32b17adc4562c51c715a1398",
+        "IHDR": {
+          "width": 1254,
+          "height": 1254,
+          "bit_depth": 8,
+          "color_type": 6,
+          "compression": 0,
+          "filter": 0,
+          "interlace": 0
+        },
+        "Pillow_size": [
+          1254,
+          1254
+        ],
+        "Pillow_mode": "RGBA"
+      },
+      "anchor": {
+        "path": "sticker-lab/production-v5/source-art/lumen_79/anchor.png",
+        "sha256": "01058690b40e361a0ff433ebcdd0a86a815b1d849f9c0c85577ef6f69ceff2cc",
+        "Pillow_size": [
+          512,
+          512
+        ],
+        "Pillow_mode": "RGBA"
+      },
+      "resize_RGBA_pixelmatch": {
+        "procedure": "original.convert(RGBA).resize((512,512),Pillow.Image.Resampling.LANCZOS)",
+        "equal": true,
+        "mismatched_channels": 0,
+        "max_abs_channel_error": 0
+      },
+      "old_metadata": {
+        "path": "sticker-lab/production-v5/source-art/lumen_79/edit.json",
+        "sha256": "23780c0a62642a51dfc410c95dd7b2728a84be6f26e3c890fea334e562e44ce3",
+        "declared_generated_size": [
+          1280,
+          1280
+        ],
+        "claim_supported": false
+      },
+      "old_source_contract": {
+        "path": "sticker-lab/production-v5/source-art/lumen_79/proposed-source-contract.json",
+        "sha256": "d36bccd07927982e5491798805ef9a6d7909636d1174e3f397f606fb1e0d0926",
+        "declared_original_size": [
+          1280,
+          1280
+        ]
+      },
+      "frozen_package_before": {
+        "path": "sticker-lab/production-v5/frozen-core2-and79-v2/package.json",
+        "sha256": "00f516482bb759faa6a9515da971e703ccc82628b1b9cffd4d2453c7490302fc",
+        "recorded_files": 382,
+        "all_unchanged": true,
+        "mismatches": [],
+        "recorded_files_digest": "a8637fe2d199eddc2b6d730e3ae6f12aab6355fe0b13fb194f4c5c33adadc7b4"
+      },
+      "existing_core4_QA": {
+        "path": "docs/qa-1-13/qa-animation-core2-and79.json",
+        "sha256": "17e2b0321991b37e26a6e84452a671b9bd0eec8b9bf53b044ba3073ada5d9a13"
+      },
+      "old_files_before": {
+        "sticker-lab/production-v5/source-art/lumen_79/edit.json": "23780c0a62642a51dfc410c95dd7b2728a84be6f26e3c890fea334e562e44ce3",
+        "sticker-lab/production-v5/source-art/lumen_79/proposed-source-contract.json": "d36bccd07927982e5491798805ef9a6d7909636d1174e3f397f606fb1e0d0926",
+        "sticker-lab/production-v5/source-art/lumen_79/imagegen-anchor-original.png": "e9eb71c8a033727b124aca4e4db83c41d423777f32b17adc4562c51c715a1398",
+        "sticker-lab/production-v5/source-art/lumen_79/anchor.png": "01058690b40e361a0ff433ebcdd0a86a815b1d849f9c0c85577ef6f69ceff2cc"
+      }
+    }
+  },
+  "positive_field_bindings": {
+    "original_png_IHDR_Pillow": true,
+    "original_and_anchor_exact_SHA": true,
+    "LANCZOS_resize_RGBA_pixelmatch_zero_channel_difference": true,
+    "new_metadata_parent_old_SHA_history": true,
+    "new_contract_new_metadata_SHA_and_readback_SHA": true,
+    "prompt_tool_operation_actual_agent_and_archived_input_reference_records_unchanged": true,
+    "archived_reference_file_SHA_matches": true,
+    "baseline_video_and_target_frame_bindings": true,
+    "generated_source_bundle55c0d32_unchanged": true,
+    "ancestor_original_unresolved_preserved": true,
+    "generated_anchor_no_original_timestamp": true,
+    "only_allowed_dimension_binding_and_additive_history_changes": true,
+    "candidate_proof_existing_QA_and_frozen382_unchanged": true
+  },
+  "negative_field_binding_checks": [
+    {
+      "case": "old1280_generated_size",
+      "rejected": true
+    },
+    {
+      "case": "wrong_original_SHA",
+      "rejected": true
+    },
+    {
+      "case": "wrong_anchor_SHA",
+      "rejected": true
+    },
+    {
+      "case": "changed_prompt",
+      "rejected": true
+    },
+    {
+      "case": "changed_actual_reference",
+      "rejected": true
+    },
+    {
+      "case": "wrong_contract_dimensions",
+      "rejected": true
+    },
+    {
+      "case": "wrong_source_bundle",
+      "rejected": true
+    },
+    {
+      "case": "false_original_recovery",
+      "rejected": true
+    },
+    {
+      "case": "fabricated_original_timestamp",
+      "rejected": true
+    },
+    {
+      "case": "wrong_parent_binding",
+      "rejected": true
+    }
+  ],
+  "unchanged_output": {
+    "path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/candidate.webm",
+    "sha256": "77395207086d7fbfd39d1ef1399fe34a81cdd30208ac604f4e706ab3d5357294",
+    "proof_path": "sticker-lab/production-v5/candidates/lumen_79_corrected-anchor_awkward_b/proof.json",
+    "proof_sha256": "7811c07fba4c945b9d648da3b8087c58dbda8ceb83d9adcad6cc29e399ecddbe",
+    "generated_source_bundle_sha256": "55c0d32bf36bc16422f6fa25cd49cb20bcff75727ad7aa87cb7526fd821eae7b"
+  },
+  "final_immutable_guard": {
+    "frozen_file_count": 382,
+    "all_recorded_SHA_and_bytes_unchanged": true,
+    "package_manifest_SHA": "00f516482bb759faa6a9515da971e703ccc82628b1b9cffd4d2453c7490302fc",
+    "recorded_files_digest": "a8637fe2d199eddc2b6d730e3ae6f12aab6355fe0b13fb194f4c5c33adadc7b4",
+    "old_original_anchor_metadata_contract_SHA_unchanged_from_before": true,
+    "existing_core4_frame_source_QA_SHA": "17e2b0321991b37e26a6e84452a671b9bd0eec8b9bf53b044ba3073ada5d9a13"
+  },
+  "history": "Dimensions correction is a new metadata addendum and new contract. Old edit.json, old source contract, frozen package and accepted proof were not rewritten. No generation, raster editing, animation rerender or candidate replacement performed by this QA.",
+  "scope_limits": [
+    "This independently closes only the1254×1254 source descriptor and lineage field bindings.",
+    "Existing exact source/frame/semantic QA17e2b… is retained; this task does not rerun or expand art acceptance.",
+    "Raw84/decoded84 are unchanged through frozen382 file hashes; no new84-frame decode/rerender executed in this dimensions-only task.",
+    "Tool name/prompt/input references are verified as preserved archived provenance records; no independent vendor receipt or cryptographic vendor attestation claimed.",
+    "Reported preflight block before canonical write and canonical19 count belong to primary/root transaction history; this QA performs no canonical writes or new transaction acceptance.",
+    "Native realtime/slowed cadence, human device and public delivery remain unknown/not observed."
+  ],
+  "writes_by_this_QA": {
+    "only_own_evidence_and_report": true,
+    "product": false,
+    "frozen": false,
+    "canonical": false,
+    "public": false,
+    "deploy": false,
+    "subagents": false
+  },
+  "source": {
+    "provenance_acceptance": {
+      "verdict": "accept",
+      "corrected_contract_path": "sticker-lab/production-v5/source-art/lumen_79/proposed-source-contract-with-actual-dimensions.json",
+      "corrected_contract_sha256": "addcc49b3e1eeaff30eb0137ce7ac5d4d02c16a20fa2677bd3e639bacb27e94c",
+      "scope": "dimensions-only annotation; accepted source pixels/animation unchanged",
+      "actual_agent_id": "/root/qa_preflight",
+      "old_metadata_sha256": "23780c0a62642a51dfc410c95dd7b2728a84be6f26e3c890fea334e562e44ce3",
+      "new_metadata_sha256": "39c16e8473bda9e361dc5017c4d69092f3855627e3d5caea8ae01c09267a2a88",
+      "readback_sha256": "388543c9bd67cf6c3dac94d23bbbff22677c929794acbbc2040df56e0d83a731",
+      "generated_source_bundle_sha256": "55c0d32bf36bc16422f6fa25cd49cb20bcff75727ad7aa87cb7526fd821eae7b"
+    }
+  },
+  "verification_script": {
+    "path": "docs/qa-1-13/qa-animation-79-dimensions-evidence/verify.py",
+    "sha256": "64c5a8f719f189fedcdb5e4cd3834d777aaf731fc2a9ed55040d78f9e0e4ce65"
+  }
+}

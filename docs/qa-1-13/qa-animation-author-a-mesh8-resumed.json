@@ -1,0 +1,1930 @@
+{
+  "schema_version": 1,
+  "id": "qa-animation-author-a-mesh8-resumed",
+  "status": "FINAL",
+  "actual_agent_id": "/root/qa_mesh8_resume",
+  "role": "independent per-item animation QA, continuation with own fresh executed verification",
+  "completed_at": "2026-10-30T19:42:19.836795+00:00",
+  "scope_ids": [
+    "lumen_52",
+    "lumen_55",
+    "lumen_60",
+    "lumen_73",
+    "lumen_74",
+    "lumen_75",
+    "lumen_78",
+    "lumen_56"
+  ],
+  "package_binding": {
+    "path": "sticker-lab/production-v5/author_a-mesh8-frozen/package.json",
+    "sha256": "75fd24d86d238be06ec1e45ac294968650096cec7044546230c18728a8c1c1f4",
+    "files": 116,
+    "files_sha256": "ca43def78b05a14af6fac06328cc9f8f74bce93cee88e228663da391e79a246c",
+    "guard_path": "sticker-lab/production-v5/author_a-mesh8-frozen/package.guard.json",
+    "guard_sha256": "612e844b195e23a1119cb71fe87d8a9aae086c19eeab0eb9230f2277e7fc2c11"
+  },
+  "independence": {
+    "author_agent_id": "/root/artisan_stickers_a",
+    "reviewer_actual_id": "/root/qa_mesh8_resume",
+    "prior_partial_QA_authorship_not_assumed": true,
+    "performed": "Reran fresh isolated decode/baseline/frame hash/proof/MP4 tests using a copy of earlier inspection procedure, then personally viewed all48 newly made boards. Independently added all16MP4 frame correspondence/PTS and original Git byte checks.",
+    "not_performed": "Did not author animation, change frozen files, rerender the eight recipes myself, observe native-speed/slowed/device video perception or publish. Prior own-reproduction.json attributed to prior partial QA; not represented as my execution."
+  },
+  "decision_summary": {
+    "accepted_ids": [
+      "lumen_52",
+      "lumen_55",
+      "lumen_60",
+      "lumen_73",
+      "lumen_74",
+      "lumen_75",
+      "lumen_78"
+    ],
+    "revise_ids": [
+      "lumen_56"
+    ],
+    "all_eight_frame_topology_scope_clean": true,
+    "blanket_native_motion_acceptance": false,
+    "publication_approval": false
+  },
+  "coverage": {
+    "actual_ordered_after_frames": 672,
+    "actual_native512_after_phases_revisited": 72,
+    "actual_native512_spatial_loop_frames_revisited": 48,
+    "actual_native512_dark_alpha_frames_revisited": 32,
+    "actual_native512_selected_before_frames": 51,
+    "actual_viewed_boards": 48,
+    "fresh_after_decodes": 672,
+    "fresh_before_technical_decodes": 672,
+    "MP4_actual_full_decodes": 16,
+    "MP4_actual_correspondence_frames": 1344
+  },
+  "items": [
+    {
+      "id": "lumen_52",
+      "candidate_id": "lumen_52_author-a_mesh_v3",
+      "actual_agent_id": "/root/qa_mesh8_resume",
+      "verdict": "accept",
+      "verdict_scope": "Exact frozen candidate frame prototype, scene/contact/identity/alpha/spatial seam and technical provenance. Native realtime/slowed/device perception unknown; no publication approval.",
+      "output": {
+        "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/candidate.webm",
+        "sha256": "75e2ea1cbc60bbf160bae63d94fdf01f4b7c4116fb12289613f3a637f1e74eee",
+        "bytes": 254343,
+        "proof_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/proof.json",
+        "proof_sha256": "fb1545fefbd097b3767ddc88d626308b150b648ff7c3ad7ca25e9b2196516b31",
+        "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/recipe.json",
+        "recipe_sha256": "1d29443d9386ae83d2a618b8a1eb830a14b4766ecc7a2e5559f2070f63ba99d9"
+      },
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_52/source.webm",
+        "baseline_sha256": "82296745813f18c332ffc67ab0faf0a12d2af326e4c583ee631d91c0abff1cde",
+        "actual_git_baseline_bytes_match": true,
+        "actual_source_frames_RGBA_match": true,
+        "source_frames": [
+          {
+            "index": 0,
+            "timestamp_seconds": 0.0,
+            "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_52/source-frames/000.png",
+            "sha256": "df0c780c9731d8c8538a5752811abe71d23838317545c9f5373255b3e8273d12"
+          }
+        ],
+        "derived_source_bundle_sha256": "57a96daf4acd1ffb9b93c01719f8c98af924fb6fa2660c9316d96414878f7ecb",
+        "original_keyposes_status": "unresolved_original_not_recovered"
+      },
+      "actual_coverage": {
+        "ordered_after_frames_actually_viewed": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "ordered_board_tile_size": 224,
+        "native512_phase_frames": [
+          0,
+          10,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          83
+        ],
+        "native512_spatial_loop_frames": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "native512_dark_alpha_frames": [
+          0,
+          21,
+          63,
+          83
+        ],
+        "native512_before_frames": [
+          0,
+          12,
+          15,
+          17,
+          19,
+          27,
+          29,
+          31
+        ],
+        "viewed_boards": [
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_52-after-000-041.jpg",
+            "sha256": "b50b718bcbebb54f3c4812b1a4ec8943bfb661268c9149da9c7610f52ede09d7",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_52-after-042-083.jpg",
+            "sha256": "3c76330d4bee2cd490595f01ccd77416e97ff852d7273f57326f3c2e85c3bce2",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_52-after-native-phases.jpg",
+            "sha256": "0abf4d70a675e635f509aaf080f2691606fc211b46885cd5037ea5c3f77ab87c",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_52-before-critical-native.jpg",
+            "sha256": "aaf50973df464c93e78430f490d0c5e8afb83e42558143d4816bae6017baf790",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_52-after-native-loop.jpg",
+            "sha256": "8f52fed48b7acb983abcdeb4be4518b27cf4cb8da15e50772976edca67e58589",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_52-after-dark-alpha.jpg",
+            "sha256": "aea8cad926cb9067d62683247b92577462826ed867557a15122e5eec4a459eed",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          }
+        ],
+        "native_motion_perception": "not_observed"
+      },
+      "proposed_description_uk": "Весело хихоче, притиснувши лапки до щік: голівка схиляється вбік, плечі дрібно здригаються. Сидить стійко на двох ніжках, поруч блищать дві золоті іскорки.",
+      "observations": {
+        "identity_emotion": "Веселий сидячий сміх, заплющені щасливі очі й один рот; дві золоті іскорки зберігаються.",
+        "acting": "У фазах0/21/42/63 голова хилиться відносно посаджених стоп; обидві лапки слідують за щоками, плечі стискаються окремо. Це локальне хихотіння, не перенесення всього полотна.",
+        "contacts_props": "Контакт кожної лапки з відповідною щокою сталий; один медальйон, дві стопи й єдині вушні контури. У старих12/15/17/19/27/29/31 видно кілька облич і темний ghost над чубчиком; у нових84 такого не спостерігаю."
+      },
+      "generic_whole_image_wiggle_assessment": "No whole-canvas transform: local head/limb/chest acting has separate pinned feet/props. This only establishes spatial phase differences, not good native motion feel.",
+      "frame_topology_alpha_contact_result": "No confirmed remaining duplicate face/limbs/props, dark old-pose matte, contact break or clipping in actually viewed after84/native phases.",
+      "technical_checks": {
+        "fresh_decoded84_equal_proof_and_recipe": true,
+        "all_source_png_equal_exact_baseline_frames": true,
+        "timestamps_monotonic": true,
+        "vp9_no_audio512x512_30fps_84frames2_8s": true,
+        "transparent_alpha_range": [
+          0,
+          255
+        ],
+        "blank_frames": 0,
+        "bounds": [
+          56,
+          47,
+          482,
+          484
+        ],
+        "byte_size_under262144": true,
+        "two_MP4_full_decode_84_frames_at_30_and15fps": true,
+        "all_168_review_frames_correspond_to_candidate_at_rgb_MAE_under5": true,
+        "review_PTS_exact_to_fps_tolerance1e_5": true,
+        "all_116_frozen_hashes_bytes_rechecked": true
+      },
+      "strongest_objection": "Амплітуда сміху менша за стару розлогу дію; optional foot accent прибрано й чесно описано. Відчуття сміху в реальному темпі не спостерігав.",
+      "semantic_result": "accepted_with_explicit_omitted_optional_phases",
+      "native_realtime_playback": "unknown",
+      "native_slowed_playback": "unknown",
+      "telegram_device_playback": "unknown",
+      "required_fix": null,
+      "reversal_condition": "A new exact-source artifact/actual native playback shows topology/contact/semantic or timing failure; materially changed candidate invalidates this per-SHA verdict."
+    },
+    {
+      "id": "lumen_55",
+      "candidate_id": "lumen_55_author-a_mesh_v4",
+      "actual_agent_id": "/root/qa_mesh8_resume",
+      "verdict": "accept",
+      "verdict_scope": "Exact frozen candidate frame prototype, scene/contact/identity/alpha/spatial seam and technical provenance. Native realtime/slowed/device perception unknown; no publication approval.",
+      "output": {
+        "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/candidate.webm",
+        "sha256": "e6b2b7a216fc444f4cae886f1c043ae95c238eb780148c4cae5a27f9b1899f28",
+        "bytes": 210650,
+        "proof_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/proof.json",
+        "proof_sha256": "8b1a843029466b2caa739062d39404de87c091a5ea1998c9886f708db2dea828",
+        "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/recipe.json",
+        "recipe_sha256": "584530103d80f91356a8ef161b8b9b83fadca43a9f364a8362671944836aa7ed"
+      },
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_55/source.webm",
+        "baseline_sha256": "34710e9895f682e048b69c8825c381c04b31f5b0b42f438814d50fc0c4a36501",
+        "actual_git_baseline_bytes_match": true,
+        "actual_source_frames_RGBA_match": true,
+        "source_frames": [
+          {
+            "index": 0,
+            "timestamp_seconds": 0.0,
+            "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_55/source-frames/000.png",
+            "sha256": "c2cff0ce01cb1da6df2fe428395305a46bd4bd839b4ed79b759bfbd1dd3fac08"
+          }
+        ],
+        "derived_source_bundle_sha256": "e1a896b4b2905a990577520b00a94b88f2c9a52424013c5cf331af11121b1dbd",
+        "original_keyposes_status": "unresolved_original_not_recovered"
+      },
+      "actual_coverage": {
+        "ordered_after_frames_actually_viewed": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "ordered_board_tile_size": 224,
+        "native512_phase_frames": [
+          0,
+          10,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          83
+        ],
+        "native512_spatial_loop_frames": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "native512_dark_alpha_frames": [
+          0,
+          21,
+          63,
+          83
+        ],
+        "native512_before_frames": [
+          0,
+          25,
+          27,
+          29,
+          35,
+          37,
+          39
+        ],
+        "viewed_boards": [
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_55-after-000-041.jpg",
+            "sha256": "4e9a08fed626d4787befc1e2cd6265bf46263629a2b61bbdedd003fa4c3c3b43",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_55-after-042-083.jpg",
+            "sha256": "c14333cf3c1fd39996304767b1809acae7988cca890d9f4c790bc620153c4bc4",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_55-after-native-phases.jpg",
+            "sha256": "f79c9ddad2a52f892f78c9022591450cf9aad8b688bb391f2996e4dba8d71efd",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_55-before-critical-native.jpg",
+            "sha256": "79137763231dc02dc378ca98b03e17ecc2c3b4a37b93eb00047f820384d948bb",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_55-after-native-loop.jpg",
+            "sha256": "320865f027aa8abbd5e78bf7fcd615218baafa14b01f27db622b42b4a1411341",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_55-after-dark-alpha.jpg",
+            "sha256": "dd1b54132f2be4e5ebb96d7b9bb8aa62fe15910e10b8a57d63b4e1b70a115bf1",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          }
+        ],
+        "native_motion_perception": "not_observed"
+      },
+      "proposed_description_uk": "Невинно усміхається із заплющеними очима й робить маленький уклін. Білі крильця ледь тремтять на плащику, а кривуватий золотий німб м’яко слідує за голівкою.",
+      "observations": {
+        "identity_emotion": "Одна невинна усмішка із закритими очима, один похилений німб, білі крильця й лапки за спиною.",
+        "acting": "Невеликий локальний уклін голови/шиї зберігає стоячі стопи; німб і крильця мають узгоджені менші акценти. На всіх84 одинарні очі, ніс, вуха, шийний медальйон.",
+        "contacts_props": "Медальйон не відривається від плаща, німб не телепортується; маленькі золоті дуги поруч із німбом лишаються вихідним намальованим знаком. Старі25/27/29/35/37/39 мають несумісні накладені форми, яких у after не бачу."
+      },
+      "generic_whole_image_wiggle_assessment": "No whole-canvas transform: local head/limb/chest acting has separate pinned feet/props. This only establishes spatial phase differences, not good native motion feel.",
+      "frame_topology_alpha_contact_result": "No confirmed remaining duplicate face/limbs/props, dark old-pose matte, contact break or clipping in actually viewed after84/native phases.",
+      "technical_checks": {
+        "fresh_decoded84_equal_proof_and_recipe": true,
+        "all_source_png_equal_exact_baseline_frames": true,
+        "timestamps_monotonic": true,
+        "vp9_no_audio512x512_30fps_84frames2_8s": true,
+        "transparent_alpha_range": [
+          0,
+          255
+        ],
+        "blank_frames": 0,
+        "bounds": [
+          50,
+          37,
+          430,
+          488
+        ],
+        "byte_size_under262144": true,
+        "two_MP4_full_decode_84_frames_at_30_and15fps": true,
+        "all_168_review_frames_correspond_to_candidate_at_rgb_MAE_under5": true,
+        "review_PTS_exact_to_fps_tolerance1e_5": true,
+        "all_116_frozen_hashes_bytes_rechecked": true
+      },
+      "strongest_objection": "Уклін дуже малий, крильця переважно утримані. Native-speed виразність і secondary motion невідомі; не заявляю глибокий уклін або незалежний політ.",
+      "semantic_result": "accepted_with_explicit_omitted_optional_phases",
+      "native_realtime_playback": "unknown",
+      "native_slowed_playback": "unknown",
+      "telegram_device_playback": "unknown",
+      "required_fix": null,
+      "reversal_condition": "A new exact-source artifact/actual native playback shows topology/contact/semantic or timing failure; materially changed candidate invalidates this per-SHA verdict."
+    },
+    {
+      "id": "lumen_60",
+      "candidate_id": "lumen_60_author-a_mesh_v1",
+      "actual_agent_id": "/root/qa_mesh8_resume",
+      "verdict": "accept",
+      "verdict_scope": "Exact frozen candidate frame prototype, scene/contact/identity/alpha/spatial seam and technical provenance. Native realtime/slowed/device perception unknown; no publication approval.",
+      "output": {
+        "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/candidate.webm",
+        "sha256": "3646a4c39ad5c1a9ee32ea55c0d93feabdfa27a91d3ab3e945a76f0d25d56957",
+        "bytes": 135680,
+        "proof_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/proof.json",
+        "proof_sha256": "449ec43dd640a1d1ba31d6d9f9b6a601115ed899492e52193395c85fc65abf75",
+        "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/recipe.json",
+        "recipe_sha256": "4dd80e0ebfa0248d2f5c76c23372425d13f55b4b71282037e5101223d799c88b"
+      },
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_60/source.webm",
+        "baseline_sha256": "d67c2d09141f6345987b1aabe4af19486b86903461918609ad0dbbbc2316c58e",
+        "actual_git_baseline_bytes_match": true,
+        "actual_source_frames_RGBA_match": true,
+        "source_frames": [
+          {
+            "index": 21,
+            "timestamp_seconds": 0.7,
+            "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_60/source-frames/021.png",
+            "sha256": "7b124989a1daede04123b05e2f96b9f25fab9f397ff441d20ee42f0ca1f407a8"
+          }
+        ],
+        "derived_source_bundle_sha256": "3a527647f0d3dbe69b3f787638422511c3019c9a264886a779c17c764586195c",
+        "original_keyposes_status": "unresolved_original_not_recovered"
+      },
+      "actual_coverage": {
+        "ordered_after_frames_actually_viewed": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "ordered_board_tile_size": 224,
+        "native512_phase_frames": [
+          0,
+          10,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          83
+        ],
+        "native512_spatial_loop_frames": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "native512_dark_alpha_frames": [
+          0,
+          21,
+          63,
+          83
+        ],
+        "native512_before_frames": [
+          21,
+          6,
+          26,
+          55,
+          56,
+          57,
+          58
+        ],
+        "viewed_boards": [
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_60-after-000-041.jpg",
+            "sha256": "0d1913937829db933775f6a3092c439f68747aa3cb8b9ca770ca9f8345d29276",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_60-after-042-083.jpg",
+            "sha256": "6da2382ec4b21d52f6d3cbb14f0c53eea1834ec27a2f93de65bb9753d787f4b5",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_60-after-native-phases.jpg",
+            "sha256": "d06cf0cf2083773b32865d82bb816ff5fb6c36151af33ef15637f4a7bebe643e",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_60-before-critical-native.jpg",
+            "sha256": "858ffee5a5c5e510449fe0c698dbe4320c3b3ca1800d3f9e839893202acd80ea",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_60-after-native-loop.jpg",
+            "sha256": "fe805c43787d8e6c63e44b16f4a7698f45b633dab32b65936c5be6bf0d8c57bf",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_60-after-dark-alpha.jpg",
+            "sha256": "438c67ae5cf26e4cc47a201e65b03c08de27bc0b1f37d592ce18e526db16c4f1",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          }
+        ],
+        "native_motion_perception": "not_observed"
+      },
+      "proposed_description_uk": "Хоробро всміхається крізь сльозу, обережно притиснувши лапку до щоки. Ледь схиляє голівку до неї й тихо зітхає; друга лапка тримає плащик біля серця.",
+      "observations": {
+        "identity_emotion": "Тиха bittersweet усмішка, глянцеві очі та опущені вуха; одна лапка біля щоки, друга біля грудей. Сльозовий кутик частково прикритий лапкою вихідного21.",
+        "acting": "Голова трохи схиляється до тієї ж лапки й повертається; тиск лапки/рух грудної лапки малі та локальні, стопи стоять.",
+        "contacts_props": "Контакт щока–кисть не розчиняється; друга лапка не переходить на інший бік. У старих6/26/55–58 видно hand/eye/face dissolve, у всіх84 after відповідні деталі одинарні."
+      },
+      "generic_whole_image_wiggle_assessment": "No whole-canvas transform: local head/limb/chest acting has separate pinned feet/props. This only establishes spatial phase differences, not good native motion feel.",
+      "frame_topology_alpha_contact_result": "No confirmed remaining duplicate face/limbs/props, dark old-pose matte, contact break or clipping in actually viewed after84/native phases.",
+      "technical_checks": {
+        "fresh_decoded84_equal_proof_and_recipe": true,
+        "all_source_png_equal_exact_baseline_frames": true,
+        "timestamps_monotonic": true,
+        "vp9_no_audio512x512_30fps_84frames2_8s": true,
+        "transparent_alpha_range": [
+          0,
+          255
+        ],
+        "blank_frames": 0,
+        "bounds": [
+          55,
+          53,
+          435,
+          487
+        ],
+        "byte_size_under262144": true,
+        "two_MP4_full_decode_84_frames_at_30_and15fps": true,
+        "all_168_review_frames_correspond_to_candidate_at_rgb_MAE_under5": true,
+        "review_PTS_exact_to_fps_tolerance1e_5": true,
+        "all_116_frozen_hashes_bytes_rechecked": true
+      },
+      "strongest_objection": "Немає повного падіння сльози або широкого wipe: це явно вилучені optional фази. Дія читається як дотик/притискання, не треба називати її повним витиранням сльози.",
+      "semantic_result": "accepted_with_explicit_omitted_optional_phases",
+      "native_realtime_playback": "unknown",
+      "native_slowed_playback": "unknown",
+      "telegram_device_playback": "unknown",
+      "required_fix": null,
+      "reversal_condition": "A new exact-source artifact/actual native playback shows topology/contact/semantic or timing failure; materially changed candidate invalidates this per-SHA verdict."
+    },
+    {
+      "id": "lumen_73",
+      "candidate_id": "lumen_73_author-a_mesh_v1",
+      "actual_agent_id": "/root/qa_mesh8_resume",
+      "verdict": "accept",
+      "verdict_scope": "Exact frozen candidate frame prototype, scene/contact/identity/alpha/spatial seam and technical provenance. Native realtime/slowed/device perception unknown; no publication approval.",
+      "output": {
+        "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/candidate.webm",
+        "sha256": "dc89f9f4584a3b6886287b7c9b302081894ff381954b9242086c232c5dbe0dc9",
+        "bytes": 89882,
+        "proof_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/proof.json",
+        "proof_sha256": "132b9608e0d91d97cb5b4897ac36e803b1bacec50b3169ca5ced40f7ed3b9cbf",
+        "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/recipe.json",
+        "recipe_sha256": "5cb2db39af48c158e1fa8fdbc50a1d0e08cbac4081b1074a1cdea477395ed101"
+      },
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_73/source.webm",
+        "baseline_sha256": "26487ad22f0906089199cd101fb6fc3a456753c5559c1db2d56f697a1cbdf23e",
+        "actual_git_baseline_bytes_match": true,
+        "actual_source_frames_RGBA_match": true,
+        "source_frames": [
+          {
+            "index": 54,
+            "timestamp_seconds": 1.8,
+            "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_73/source-frames/054.png",
+            "sha256": "45b31b37711e2b95b63dafe11ebbc2cdac40ea79ed2a8ff52c5e140dfa14468a"
+          }
+        ],
+        "derived_source_bundle_sha256": "a058079c267ae16249bdd07b55a8d502541c2a8ff55d135ca6b5ecf3a7a0c46f",
+        "original_keyposes_status": "unresolved_original_not_recovered"
+      },
+      "actual_coverage": {
+        "ordered_after_frames_actually_viewed": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "ordered_board_tile_size": 224,
+        "native512_phase_frames": [
+          0,
+          10,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          83
+        ],
+        "native512_spatial_loop_frames": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "native512_dark_alpha_frames": [
+          0,
+          21,
+          63,
+          83
+        ],
+        "native512_before_frames": [
+          54,
+          26,
+          27,
+          46,
+          47,
+          48
+        ],
+        "viewed_boards": [
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_73-after-000-041.jpg",
+            "sha256": "e2c8ba6ca0cbb890f15c627d24231ebe791ac88bd349621d3941c6c5dc0b263b",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_73-after-042-083.jpg",
+            "sha256": "52011b97f2119189918e0e5e232e3726a08675b220a3cf03498d2fc000cbe4ae",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_73-after-native-phases.jpg",
+            "sha256": "2a00a4d2cb6eff4addd170a10afeb9152c237adf0d64308834a6f4a3b008d8c0",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_73-before-critical-native.jpg",
+            "sha256": "1f105ace80a2392f0036a1c640a3069e71fb356dbf8e7c3a96efabfc107b22c0",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_73-after-native-loop.jpg",
+            "sha256": "4317d27c088605b8fe6a3be15da85f50ac9452831b3c2ed83dcde0b181362681",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_73-after-dark-alpha.jpg",
+            "sha256": "d476f0ea9c337eeb178fc15caa0093b062d8d6c5acbc02efa7d73700b697f700",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          }
+        ],
+        "native_motion_perception": "not_observed"
+      },
+      "proposed_description_uk": "Незворушно дивиться просто перед собою й тихо дихає, опустивши лапки. Поряд стоїть маленький зупинений пісочний годинник.",
+      "observations": {
+        "identity_emotion": "Незворушне відкрите обличчя, нейтральний рот і опущені лапки; маленький пісочний годинник біля стопи.",
+        "acting": "Переважно утримана нейтральна поза: груди/живіт/плечі ледь дихають при нерухомому обличчі та годиннику. У recipe є окремі chest/shoulder/belly/paw displacement, face і prop controls pinned.",
+        "contacts_props": "Пісок і обидві опори годинника не змінюють форми. Старі26/27 мають змішані повіки,47/48 – зміщені очні/носові пози; новий84 тримає одинарне відкрите обличчя."
+      },
+      "generic_whole_image_wiggle_assessment": "No whole-canvas transform: local head/limb/chest acting has separate pinned feet/props. This only establishes spatial phase differences, not good native motion feel.",
+      "frame_topology_alpha_contact_result": "No confirmed remaining duplicate face/limbs/props, dark old-pose matte, contact break or clipping in actually viewed after84/native phases.",
+      "technical_checks": {
+        "fresh_decoded84_equal_proof_and_recipe": true,
+        "all_source_png_equal_exact_baseline_frames": true,
+        "timestamps_monotonic": true,
+        "vp9_no_audio512x512_30fps_84frames2_8s": true,
+        "transparent_alpha_range": [
+          0,
+          255
+        ],
+        "blank_frames": 0,
+        "bounds": [
+          74,
+          25,
+          452,
+          455
+        ],
+        "byte_size_under262144": true,
+        "two_MP4_full_decode_84_frames_at_30_and15fps": true,
+        "all_168_review_frames_correspond_to_candidate_at_rgb_MAE_under5": true,
+        "review_PTS_exact_to_fps_tolerance1e_5": true,
+        "all_116_frozen_hashes_bytes_rechecked": true
+      },
+      "strongest_objection": "Найслабша за силою acting сцена цього batch: майже нерухоме обличчя й дуже тихе дихання можуть сприйматися як static hold. Повного blink немає, він чесно omitted; TL прямо забороняє називати відкриті очі повним blink. Тому приймаю frame/scene scope, native відчуття не підтверджую.",
+      "semantic_result": "accepted_with_explicit_omitted_optional_phases",
+      "native_realtime_playback": "unknown",
+      "native_slowed_playback": "unknown",
+      "telegram_device_playback": "unknown",
+      "required_fix": null,
+      "reversal_condition": "A new exact-source artifact/actual native playback shows topology/contact/semantic or timing failure; materially changed candidate invalidates this per-SHA verdict."
+    },
+    {
+      "id": "lumen_74",
+      "candidate_id": "lumen_74_author-a_mesh_v1",
+      "actual_agent_id": "/root/qa_mesh8_resume",
+      "verdict": "accept",
+      "verdict_scope": "Exact frozen candidate frame prototype, scene/contact/identity/alpha/spatial seam and technical provenance. Native realtime/slowed/device perception unknown; no publication approval.",
+      "output": {
+        "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/candidate.webm",
+        "sha256": "c65b2644ae388d9179675a9f2f8ba8ae7ddcdbf4268d38b70a628ea7463c1fc2",
+        "bytes": 104087,
+        "proof_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/proof.json",
+        "proof_sha256": "276d7e9e1869f49a9f18f733e7d56f3f040a8ad89c120c7238f1eeb89d17d1b5",
+        "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/recipe.json",
+        "recipe_sha256": "a8c6104eea42a64d0eab17a7f84c9795389233e321adb45c404374e72dff374f"
+      },
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_74/source.webm",
+        "baseline_sha256": "1dd0938d8cb417b6ff9a28e5588ce934b79ac1ca99deddf47f96ca1ee83bbb87",
+        "actual_git_baseline_bytes_match": true,
+        "actual_source_frames_RGBA_match": true,
+        "source_frames": [
+          {
+            "index": 0,
+            "timestamp_seconds": 0.0,
+            "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_74/source-frames/000.png",
+            "sha256": "7007cd100773ac2215dcf28f2b7cc6ce1137a36845dcd3481d37418f5be5eea5"
+          }
+        ],
+        "derived_source_bundle_sha256": "689f4899beabe26380835e57267dbff3625140ef1c16f46aceab72c4298735c8",
+        "original_keyposes_status": "unresolved_original_not_recovered"
+      },
+      "actual_coverage": {
+        "ordered_after_frames_actually_viewed": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "ordered_board_tile_size": 224,
+        "native512_phase_frames": [
+          0,
+          10,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          83
+        ],
+        "native512_spatial_loop_frames": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "native512_dark_alpha_frames": [
+          0,
+          21,
+          63,
+          83
+        ],
+        "native512_before_frames": [
+          0,
+          65,
+          67,
+          69,
+          71
+        ],
+        "viewed_boards": [
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_74-after-000-041.jpg",
+            "sha256": "92f0f045f7f59948beaec704dcdea203f71ea93f952bf140a579541f4c94a602",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_74-after-042-083.jpg",
+            "sha256": "72ef55b2065c25aa533fe72a4d1556cefcbde3f9cfc52a3b0701b83589c0a514",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_74-after-native-phases.jpg",
+            "sha256": "b6e10254e804c9f839d14a152f627f99a7308310e217e61dd3bb27cb19d8ef6a",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_74-before-critical-native.jpg",
+            "sha256": "7fa817d59a5e1de28a86ce42b5a5822df4d8040342fa0c39c4e204d3fa523f6b",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_74-after-native-loop.jpg",
+            "sha256": "e94d3a873cedb5d455d78281d52a6b81698bbb346c04c8cab77fbeb02439d7bc",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_74-after-dark-alpha.jpg",
+            "sha256": "98d3b10da7c4e6583316aac4c5e250aa54004468b9735081afa76d352ce787ac",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          }
+        ],
+        "native_motion_perception": "not_observed"
+      },
+      "proposed_description_uk": "Сухо й повільно киває, не змінюючи незворушного виразу. Очі лишаються двома рівними закритими лініями, лапки лежать на колінах; поруч стоїть стос млинців.",
+      "observations": {
+        "identity_emotion": "Сухий несміхливий вираз із двома закритими рівними повіками, сидяча поза й одна стопка млинців.",
+        "acting": "Малий кивок голови down/up відносно стоп/колін; вираз не переходить у посмішку.",
+        "contacts_props": "Масло, сироп і млинці мають одну сталу форму; лапки на колінах, два вуха й один медальйон. Старі65/67/69/71 подвоюють брови/ніс/рот; after84 таких переходів не має."
+      },
+      "generic_whole_image_wiggle_assessment": "No whole-canvas transform: local head/limb/chest acting has separate pinned feet/props. This only establishes spatial phase differences, not good native motion feel.",
+      "frame_topology_alpha_contact_result": "No confirmed remaining duplicate face/limbs/props, dark old-pose matte, contact break or clipping in actually viewed after84/native phases.",
+      "technical_checks": {
+        "fresh_decoded84_equal_proof_and_recipe": true,
+        "all_source_png_equal_exact_baseline_frames": true,
+        "timestamps_monotonic": true,
+        "vp9_no_audio512x512_30fps_84frames2_8s": true,
+        "transparent_alpha_range": [
+          0,
+          255
+        ],
+        "blank_frames": 0,
+        "bounds": [
+          36,
+          39,
+          479,
+          484
+        ],
+        "byte_size_under262144": true,
+        "two_MP4_full_decode_84_frames_at_30_and15fps": true,
+        "all_168_review_frames_correspond_to_candidate_at_rgb_MAE_under5": true,
+        "review_PTS_exact_to_fps_tolerance1e_5": true,
+        "all_116_frozen_hashes_bytes_rechecked": true
+      },
+      "strongest_objection": "Кивок невеликий і може читатися як ледь помітний рух. Сарказм залежить від контексту розмови; не приписую йому зміну погляду чи blink.",
+      "semantic_result": "accepted_with_explicit_omitted_optional_phases",
+      "native_realtime_playback": "unknown",
+      "native_slowed_playback": "unknown",
+      "telegram_device_playback": "unknown",
+      "required_fix": null,
+      "reversal_condition": "A new exact-source artifact/actual native playback shows topology/contact/semantic or timing failure; materially changed candidate invalidates this per-SHA verdict."
+    },
+    {
+      "id": "lumen_75",
+      "candidate_id": "lumen_75_author-a_mesh_v1",
+      "actual_agent_id": "/root/qa_mesh8_resume",
+      "verdict": "accept",
+      "verdict_scope": "Exact frozen candidate frame prototype, scene/contact/identity/alpha/spatial seam and technical provenance. Native realtime/slowed/device perception unknown; no publication approval.",
+      "output": {
+        "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/candidate.webm",
+        "sha256": "4a74ab4dcea2fd73a2f8569a8fcea62f797315cad7c37b53ab2624f1aae6d299",
+        "bytes": 187739,
+        "proof_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/proof.json",
+        "proof_sha256": "fe147f02fb9373364b7ed35c0b99272cdebd494288b529ca339271a25393f8b5",
+        "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/recipe.json",
+        "recipe_sha256": "f563cc78f2c3d2599a2c27b7db5c088429a7b1c621f99d811df28ad9e5b23e9d"
+      },
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_75/source.webm",
+        "baseline_sha256": "6e1121aec2546f4b61e8f5e462f6acf605153dc59cd924fe10127638050ece0a",
+        "actual_git_baseline_bytes_match": true,
+        "actual_source_frames_RGBA_match": true,
+        "source_frames": [
+          {
+            "index": 0,
+            "timestamp_seconds": 0.0,
+            "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_75/source-frames/000.png",
+            "sha256": "9321b5138f7f0b2c53f45a6608ad026b12d2d00ca13c65bd0964ab670b9da75e"
+          }
+        ],
+        "derived_source_bundle_sha256": "0371aa3b3e551fea702395e3362d0d8f47268065b005d4d535b07a329f49f59a",
+        "original_keyposes_status": "unresolved_original_not_recovered"
+      },
+      "actual_coverage": {
+        "ordered_after_frames_actually_viewed": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "ordered_board_tile_size": 224,
+        "native512_phase_frames": [
+          0,
+          10,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          83
+        ],
+        "native512_spatial_loop_frames": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "native512_dark_alpha_frames": [
+          0,
+          21,
+          63,
+          83
+        ],
+        "native512_before_frames": [
+          0,
+          15,
+          17,
+          26,
+          28,
+          59
+        ],
+        "viewed_boards": [
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_75-after-000-041.jpg",
+            "sha256": "63995285c4765a2b98daf8b124944ab7192ced94c931f4de8f867cc46f77705e",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_75-after-042-083.jpg",
+            "sha256": "3990cd015327c7dbf5a181366de1bd035bb0996aaae0d138edad24a094921178",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_75-after-native-phases.jpg",
+            "sha256": "a347601aaedf836ba79ed523ddd0f258a7fa5ea27783535d2b1208bdeb33c0c5",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_75-before-critical-native.jpg",
+            "sha256": "7a02114f4e56d48d774e3b8361635b58e38c13a7b1799e5e0ad2ab0a8b03c979",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_75-after-native-loop.jpg",
+            "sha256": "d5b955336dfe009788bcefe6dfc40801e9529a1a51519c505315bdf45fb2bb99",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_75-after-dark-alpha.jpg",
+            "sha256": "a1775042f2388e922f973a39cecea47b87dfe862419b5c61fe9476a0f1876ff4",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          }
+        ],
+        "native_motion_perception": "not_observed"
+      },
+      "proposed_description_uk": "Без слів розводить відкриті лапки й піднімає плечі, трохи схиливши голівку. Очі широко відкриті, ротика не видно; чисті папірці біля ніжок лишаються на місці.",
+      "observations": {
+        "identity_emotion": "Speechless: рота не видно, ніс синій, очі відкриті; дві підняті відкриті долоні й порожні папірці біля стоп.",
+        "acting": "Плечі/відкриті лапки піднімаються в малому shrug, голова має окремий нахил; папірці й стопи не подорожують із головою.",
+        "contacts_props": "Одна геометрія кожної кисті; папірці не отримують тексту чи нових копій. Старі15/17/26/28/59 показують змішані очі/носи/вуха; after84 цілісні."
+      },
+      "generic_whole_image_wiggle_assessment": "No whole-canvas transform: local head/limb/chest acting has separate pinned feet/props. This only establishes spatial phase differences, not good native motion feel.",
+      "frame_topology_alpha_contact_result": "No confirmed remaining duplicate face/limbs/props, dark old-pose matte, contact break or clipping in actually viewed after84/native phases.",
+      "technical_checks": {
+        "fresh_decoded84_equal_proof_and_recipe": true,
+        "all_source_png_equal_exact_baseline_frames": true,
+        "timestamps_monotonic": true,
+        "vp9_no_audio512x512_30fps_84frames2_8s": true,
+        "transparent_alpha_range": [
+          0,
+          255
+        ],
+        "blank_frames": 0,
+        "bounds": [
+          48,
+          42,
+          474,
+          485
+        ],
+        "byte_size_under262144": true,
+        "two_MP4_full_decode_84_frames_at_30_and15fps": true,
+        "all_168_review_frames_correspond_to_candidate_at_rgb_MAE_under5": true,
+        "review_PTS_exact_to_fps_tolerance1e_5": true,
+        "all_116_frozen_hashes_bytes_rechecked": true
+      },
+      "strongest_objection": "Лапки вже відкриті у вихідній позі, тому це наголос shrug, а не повне розведення рук з опущеного стану. Різкість чи млявість у native темпі невідомі.",
+      "semantic_result": "accepted_with_explicit_omitted_optional_phases",
+      "native_realtime_playback": "unknown",
+      "native_slowed_playback": "unknown",
+      "telegram_device_playback": "unknown",
+      "required_fix": null,
+      "reversal_condition": "A new exact-source artifact/actual native playback shows topology/contact/semantic or timing failure; materially changed candidate invalidates this per-SHA verdict."
+    },
+    {
+      "id": "lumen_78",
+      "candidate_id": "lumen_78_author-a_mesh_v1",
+      "actual_agent_id": "/root/qa_mesh8_resume",
+      "verdict": "accept",
+      "verdict_scope": "Exact frozen candidate frame prototype, scene/contact/identity/alpha/spatial seam and technical provenance. Native realtime/slowed/device perception unknown; no publication approval.",
+      "output": {
+        "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/candidate.webm",
+        "sha256": "be3c59a425d886269230d4db02f61c631478fb2b1c22bbfbc2ceb2e17c988c64",
+        "bytes": 143849,
+        "proof_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/proof.json",
+        "proof_sha256": "2b4199556474283c18c3159ed72cd0f513ea5c5782d4bf43b6b25640d2881a5e",
+        "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/recipe.json",
+        "recipe_sha256": "525651af8c046128b5ce65cc9123521af27e535390c2519e637838027bc7bc38"
+      },
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_78/source.webm",
+        "baseline_sha256": "c4e3d8fba1abd311264398da4270c75927681d27450a584f2c1b2367355f4ce5",
+        "actual_git_baseline_bytes_match": true,
+        "actual_source_frames_RGBA_match": true,
+        "source_frames": [
+          {
+            "index": 32,
+            "timestamp_seconds": 1.0666666666666667,
+            "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_78/source-frames/032.png",
+            "sha256": "b70352cbe3079c5665e5c52730e0ed14718310fa3738d9acf01831d93abf5b53"
+          }
+        ],
+        "derived_source_bundle_sha256": "e16a89c76a087fbb7f5cc8e1a6fe700a7342e78881525bef9fd1bc7f67deaf54",
+        "original_keyposes_status": "unresolved_original_not_recovered"
+      },
+      "actual_coverage": {
+        "ordered_after_frames_actually_viewed": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "ordered_board_tile_size": 224,
+        "native512_phase_frames": [
+          0,
+          10,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          83
+        ],
+        "native512_spatial_loop_frames": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "native512_dark_alpha_frames": [
+          0,
+          21,
+          63,
+          83
+        ],
+        "native512_before_frames": [
+          32,
+          6,
+          17,
+          27,
+          58,
+          68
+        ],
+        "viewed_boards": [
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_78-after-000-041.jpg",
+            "sha256": "78165f87d3ec004eb25160ab54558c003792da3e81d5157060f1b28ec50ecbc0",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_78-after-042-083.jpg",
+            "sha256": "2bf56890dfad219fe093270a2ba4056369eecc20731ed280db59b5ebf7d8e08f",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_78-after-native-phases.jpg",
+            "sha256": "362aedca3d1e0ebaca53b6837821706c506f1aab41e2d74567398d96c0a26c48",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_78-before-critical-native.jpg",
+            "sha256": "47c0dc4dcf82bb267526e255f19ae2dc3456dcc41dde4e120c8a28b1a5d53d15",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_78-after-native-loop.jpg",
+            "sha256": "e7aeae556e4f2c31ee28c496cd1af6f4247233d8c4d3822ff867af881fd11bbb",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_78-after-dark-alpha.jpg",
+            "sha256": "dc44179bed491a00192ff22cfa9baa0301dea2834bb9aad1bcb92e207cc50ac7",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          }
+        ],
+        "native_motion_perception": "not_observed"
+      },
+      "proposed_description_uk": "Байдуже підпирає щоку лапкою й повільно осідає в цю позу, дивлячись скоса з-під важких повік. Друга лапка лишається біля маленької бірюзової чашки.",
+      "observations": {
+        "identity_emotion": "Нудьгуючий side-eye із важкими повіками, щока спирається на ту ж лапку; одна бірюзова чашка.",
+        "acting": "Голова/шия трохи осідають у підпору, плащ має малий окремий рух; чашка, стопи й друга лапка зберігають опору.",
+        "contacts_props": "Щока–кисть не відриваються; немає переходу на іншу руку чи другої чашки. Старі6/17/27 мають прозорі старі передпліччя,58/68 множать голову/медальйон; after84 цього не показують."
+      },
+      "generic_whole_image_wiggle_assessment": "No whole-canvas transform: local head/limb/chest acting has separate pinned feet/props. This only establishes spatial phase differences, not good native motion feel.",
+      "frame_topology_alpha_contact_result": "No confirmed remaining duplicate face/limbs/props, dark old-pose matte, contact break or clipping in actually viewed after84/native phases.",
+      "technical_checks": {
+        "fresh_decoded84_equal_proof_and_recipe": true,
+        "all_source_png_equal_exact_baseline_frames": true,
+        "timestamps_monotonic": true,
+        "vp9_no_audio512x512_30fps_84frames2_8s": true,
+        "transparent_alpha_range": [
+          0,
+          255
+        ],
+        "blank_frames": 0,
+        "bounds": [
+          32,
+          28,
+          480,
+          487
+        ],
+        "byte_size_under262144": true,
+        "two_MP4_full_decode_84_frames_at_30_and15fps": true,
+        "all_168_review_frames_correspond_to_candidate_at_rgb_MAE_under5": true,
+        "review_PTS_exact_to_fps_tolerance1e_5": true,
+        "all_116_frozen_hashes_bytes_rechecked": true
+      },
+      "strongest_objection": "Погляд утриманий, повного blink і hand-switch немає. Це скептичне осідання в позу, а не новий рух очей; native timing невідомий.",
+      "semantic_result": "accepted_with_explicit_omitted_optional_phases",
+      "native_realtime_playback": "unknown",
+      "native_slowed_playback": "unknown",
+      "telegram_device_playback": "unknown",
+      "required_fix": null,
+      "reversal_condition": "A new exact-source artifact/actual native playback shows topology/contact/semantic or timing failure; materially changed candidate invalidates this per-SHA verdict."
+    },
+    {
+      "id": "lumen_56",
+      "candidate_id": "lumen_56_author-a_mesh_v1",
+      "actual_agent_id": "/root/qa_mesh8_resume",
+      "verdict": "revise",
+      "verdict_scope": "Exact frozen candidate frame prototype, scene/contact/identity/alpha/spatial seam and technical provenance. Native realtime/slowed/device perception unknown; no publication approval.",
+      "output": {
+        "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/candidate.webm",
+        "sha256": "8344418fa36791914599a2f28dce149cf6f2ef276de30f78d26b16fe5f4146c8",
+        "bytes": 221597,
+        "proof_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/proof.json",
+        "proof_sha256": "f980fd27e552d5d0664edf6670bcdb619781d2a3ad627c8adaa1ef3dc3b91428",
+        "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/recipe.json",
+        "recipe_sha256": "2a9af5c380fd2ca38635e14328db9f88c2c19ed4a2697a5ff9660eabb9091c02"
+      },
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_56/source.webm",
+        "baseline_sha256": "beac13f62091009071977670b361025577e460bc413698f304345a52737e75f2",
+        "actual_git_baseline_bytes_match": true,
+        "actual_source_frames_RGBA_match": true,
+        "source_frames": [
+          {
+            "index": 0,
+            "timestamp_seconds": 0.0,
+            "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_56/source-frames/000.png",
+            "sha256": "39d449ae2b3e6c69105d9e1d90c40635d529a9153cdac6a3f70ee7d77516b90e"
+          }
+        ],
+        "derived_source_bundle_sha256": "4ae69d36b07b7fd6e6d956b0ac70894b74985a2ac4e97ee84f3438df41b32c82",
+        "original_keyposes_status": "unresolved_original_not_recovered"
+      },
+      "actual_coverage": {
+        "ordered_after_frames_actually_viewed": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "ordered_board_tile_size": 224,
+        "native512_phase_frames": [
+          0,
+          10,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          83
+        ],
+        "native512_spatial_loop_frames": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "native512_dark_alpha_frames": [
+          0,
+          21,
+          63,
+          83
+        ],
+        "native512_before_frames": [
+          0,
+          25,
+          27,
+          38,
+          47,
+          48
+        ],
+        "viewed_boards": [
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_56-after-000-041.jpg",
+            "sha256": "1734cdb0f93fdae1793a80a871291dd467ad3be22d798490e92285283461a2ff",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_56-after-042-083.jpg",
+            "sha256": "ca75eded513e5c1a0b43b564f45413eeb7fcf77c4205db1f04ff5261aab5e31d",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_56-after-native-phases.jpg",
+            "sha256": "828e9a0a0d181239b02d605859688d26b87a0ae79747a6042dee2e49b4b5aacc",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_56-before-critical-native.jpg",
+            "sha256": "1af066501e158d01ee5de85d5ce233ac8015ed1380424a0605b60059c7ab5db6",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_56-after-native-loop.jpg",
+            "sha256": "629eaa45e437eef5bcc6f6e263a2181ce03cc0034202e0ed11a7a1eaffb54e12",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          },
+          {
+            "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/lumen_56-after-dark-alpha.jpg",
+            "sha256": "9a89512a6210d42686445b7d7359330fb5bf1767a7ab49e7e791c7d144dcaf2b",
+            "actually_viewed_by_agent": "/root/qa_mesh8_resume"
+          }
+        ],
+        "native_motion_perception": "not_observed"
+      },
+      "proposed_description_uk": "Захоплено тягнеться лапкою до сяйливої комети, дивлячись на неї очима-зірочками. Друга лапка біля грудей, вушка й край плащика ледь тремтять від захвату.",
+      "observations": {
+        "identity_emotion": "Сяючі star-eyes і відкрита захоплена усмішка читаються; одна фантазійна комета над піднятою лапкою.",
+        "acting": "Локальне підняття лапки, нахил голови, окремий малий рух комети/вух/плаща є; обидві стопи стабільно стоять. Саме toe-rise/hop не спостерігаю.",
+        "contacts_props": "Комета не подвоюється і не оголошена предметом у хваті; старі25/27/38/47/48 мають кілька рук/очей/комет і темний matte; у after84 ці підтверджені топологічні дефекти не спостерігаються."
+      },
+      "generic_whole_image_wiggle_assessment": "No whole-canvas transform: local head/limb/chest acting has separate pinned feet/props. This only establishes spatial phase differences, not good native motion feel.",
+      "frame_topology_alpha_contact_result": "No confirmed remaining duplicate face/limbs/props, dark old-pose matte, contact break or clipping in actually viewed after84/native phases.",
+      "technical_checks": {
+        "fresh_decoded84_equal_proof_and_recipe": true,
+        "all_source_png_equal_exact_baseline_frames": true,
+        "timestamps_monotonic": true,
+        "vp9_no_audio512x512_30fps_84frames2_8s": true,
+        "transparent_alpha_range": [
+          0,
+          255
+        ],
+        "blank_frames": 0,
+        "bounds": [
+          78,
+          37,
+          470,
+          480
+        ],
+        "byte_size_under262144": true,
+        "two_MP4_full_decode_84_frames_at_30_and15fps": true,
+        "all_168_review_frames_correspond_to_candidate_at_rgb_MAE_under5": true,
+        "review_PTS_exact_to_fps_tolerance1e_5": true,
+        "all_116_frozen_hashes_bytes_rechecked": true
+      },
+      "strongest_objection": "TL вимагає окремі траєкторії носків/колін і підняття на носки/підскок, але всі3parts мають нульові foot_l/foot_r controls і recipe прямо каже stable toes. Optional omission дозволено для throw/catch, не для toe/hop. Frame-clean недостатньо для semantic acceptance.",
+      "semantic_result": "partial_returned_TL_required_toe_hop_absent",
+      "native_realtime_playback": "unknown",
+      "native_slowed_playback": "unknown",
+      "telegram_device_playback": "unknown",
+      "required_fix": "Preserve star-eyes/reach/comet and add actually visible coherent toe/knee lift or small hop with separate support trajectory; freeze new recipe/candidate/proof and independently recheck all84. Do not relabel or silently drop the TL requirement.",
+      "reversal_condition": "A new exact-source artifact/actual native playback shows topology/contact/semantic or timing failure; materially changed candidate invalidates this per-SHA verdict."
+    }
+  ],
+  "findings": [
+    {
+      "id": "QAM8-56-SCENE-01",
+      "severity": "must_return_before_semantic_acceptance",
+      "item": "lumen_56",
+      "status": "open",
+      "facts": "All84after show stable feet; frozen recipe all3parts foot_l/foot_r=[0,0]. Reach/comet/ear/cape acting is real, but required toe-rise/hop absent.",
+      "literal_TL_requirements": [
+        {
+          "path": "docs/qa-1-13/lead-stickers-integration.json",
+          "line": 1931,
+          "quote": "лапи тягнуться до малої бірюзової комети; підняття на носки/підскок і радість від наближення комети."
+        },
+        {
+          "path": "docs/qa-1-13/lead-stickers-integration.json",
+          "line": 1987,
+          "quote": "Star-eyes і захоплення: носки/коліна, плечі й лапа з однією кометою мають окремі траєкторії; не міняти руку комети. Підкидання/перехоплення можна вилучити лише як явно описану optional фазу."
+        }
+      ],
+      "recipe_control_names_reference": {
+        "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/recipe.json",
+        "line": 255
+      },
+      "not_a_frame_topology_failure": true,
+      "required_fix": "Preserve star-eyes/reach/comet and add actually visible coherent toe/knee lift or small hop with separate support trajectory; freeze new recipe/candidate/proof and independently recheck all84. Do not relabel or silently drop the TL requirement.",
+      "no_automatic_requirement_relaxation": true
+    }
+  ],
+  "criteria": {
+    "character_semantics": "accept7; return56 exact TL toe/hop mismatch.73quiet hold explicitly qualified, blink not claimed.",
+    "temporal_quality": "All84ordered spatial trajectories/loop seams inspected; native realtime/slowed/human/device temporal perception unknown. No complete temporal-quality pass.",
+    "audiovisual_fidelity": "Exact VP9/alpha/dimensions/fps/size/decode + finalcopied16review MP4/candidate correspondence accepted technicalscope. No audio applicable.",
+    "source_grounding": "Every selected derived PNG equals exact source index, timestamps index/30, exact source video equals Git baseline; not recovered originals.",
+    "media_delivery": "Not evaluated live; no Telegram publication or device receipt."
+  },
+  "evidence": [
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/inspect.py",
+      "sha256": "6d6758ff70191d67d04e5ab4e8c88b08082b42f75d8aa9bf5c7168ae358468e8"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/decode-hash-technical.json",
+      "sha256": "f75741a37074f43021ec9ffb583f44ccc3c05a7baa435d41e55a4be671a06e45"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/review_correspondence.py",
+      "sha256": "1dacaf3ae4a6f1ff0b9417c6df25d920e7084e94f3cf0fb6d1cf699f900eb09e"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh8-resumed-evidence/review-correspondence-and-baseline.json",
+      "sha256": "7e2ca178577b4f7794ac9876c7772fbc45d10eeea7d8a9888cb8172a0261f931"
+    },
+    {
+      "path": "docs/qa-1-13/lead-stickers-integration.json",
+      "sha256": "df633b275440cc27dd9c800ef0a1896c1c1c4f2d292e38db71afdba932f82212"
+    }
+  ],
+  "no_mutations": {
+    "author_frozen_package_116_files_bytes_same_start_end": true,
+    "canonical_assets_touched": false,
+    "product_code_touched": false,
+    "public_writes": false
+  }
+}

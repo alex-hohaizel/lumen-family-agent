@@ -1,0 +1,1106 @@
+{
+  "schema_version": 1,
+  "id": "lumen_63",
+  "candidate_id": "lumen_63_author-a_mesh_v1",
+  "engine_mode": "shared_local_mesh_v1",
+  "description_uk": "Заплутавшись у бірюзовій пряжі, бешкетно хихоче з висунутим язиком. Лапки ледь смикають свої нитки, піднята ніжка ворушиться, а клубочок біля опорної ніжки лишається на місці.",
+  "semantics": {
+    "core_scene": "Mischievous wink/open-eye tongue face entangled in a coherent continuous wool web, two grips, one grounded ball and one raised leg.",
+    "omitted_optional_action": "Roll/unwind and incompatible large limb swaps omitted. No ball moves through loops or disappearing wool; original mouth/eyes remain the exact single source design.",
+    "reversibility_or_contact": "Ear wrap follows head locally; both grip and nearby wool anchors move together by2–3px. Ball and ground loops pinned, only small raised foot/cape accent is independent."
+  },
+  "source_provenance": {
+    "kind": "derived_decoded_video",
+    "source_video_path": "sticker-lab/production-v5/approved-sources/lumen_63/source.webm",
+    "source_video_sha256": "790bd1d73a68313cae5e2d78598a95de58c438ad9f770f42ac3e794b1c17b548",
+    "ancestor_original_keyposes_sha256": "f81426f60935576e61380e9786e9a06fd3e478b0f72cfc2441a556726b344e61",
+    "ancestor_original_status": "unresolved_original_not_recovered",
+    "derived_source_bundle_sha256": "22352c0b3fb41d80b7dc46b8c85c8911e0555391b610958dc41d0e89e8a5434e",
+    "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+    "original_scene_prompt_english": "Мене понесло. Wild silly face with one eye comically larger, tongue peeking to one side, ears at different angles; he is tangled harmlessly in a loose turquoise yarn spool and laughing at himself. Wobbles sideways while keeping all anatomy coherent."
+  },
+  "source_frames": [
+    {
+      "index": 0,
+      "timestamp_seconds": 0.0,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_63/000.png",
+      "sha256": "79c8edf3d6cddbd13275603d394b603549addc3c692bf18e124a6f517590a86a"
+    }
+  ],
+  "baseline_independent_triage": {
+    "artifact": "docs/qa-1-13/sticker-triage-51-80.json",
+    "verdict": "repair_required",
+    "source_sha256": "790bd1d73a68313cae5e2d78598a95de58c438ad9f770f42ac3e794b1c17b548",
+    "defects": [
+      {
+        "frames": [
+          3,
+          8
+        ],
+        "reason": "Перший нахил накладає майже дві повні фігури: f6 має кілька носів/очей/вух, прозорі кінцівки та перехресні несумісні нитки."
+      },
+      {
+        "frames": [
+          14,
+          19
+        ],
+        "reason": "Наступний нахил знову dissolve: f17 містить кілька облич та накладені лапи, нитки проходять крізь змінений тулуб без стійкої відповідності."
+      },
+      {
+        "frames": [
+          25,
+          28
+        ],
+        "reason": "Локальний перехід рук/пози тулуба залишає примарні кисті й дві різні топології ниток перед животом."
+      },
+      {
+        "frames": [
+          35,
+          39
+        ],
+        "reason": "Клубок переходить із землі ліворуч до обіймів праворуч через накладання: f37 одночасно показує обидві пози предмета, подвійні руки/стопи та безформний центр тулуба."
+      },
+      {
+        "frames": [
+          45,
+          50
+        ],
+        "reason": "Перекочування до бокової пози накладає голову й усе тіло; f47–49 мають подвійні очі/ніс, множинні лапи та темні matte залишки навколо силуету."
+      },
+      {
+        "frames": [
+          56,
+          61
+        ],
+        "reason": "Повернення з бокової пози залишає другу голову/вухо та прозорі лапи й нитки, особливо f58."
+      },
+      {
+        "frames": [
+          67,
+          71
+        ],
+        "reason": "Перехід до початкового сидіння розчиняє нижні руки/нитки та повертає клубок із примарним старим положенням."
+      }
+    ]
+  },
+  "generator": {
+    "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/originals/9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c-recipe_engine.py",
+    "original_generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "original_support_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/originals/ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee-repair.py",
+    "original_support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+    "engine_path": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/recipe_engine.py",
+    "engine_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+    "support_path": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/repair.py",
+    "support_sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8"
+  },
+  "output": {
+    "width": 512,
+    "height": 512,
+    "fps": 30,
+    "frames": 84,
+    "duration": 2.8,
+    "crf": 34,
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "maximum_bytes": 262144
+  },
+  "author_source_review": {
+    "agent": "/root/artisan_stickers_a",
+    "every_selected_sourceframe_observed": true,
+    "selected_frame_view_scale_px": 256,
+    "native512_frame_indices": [
+      0
+    ],
+    "observation": "Native0 shows the exact tangled yarn path, single ball, two grips and raised/support feet. Small elastic wool deformation is limited, not a rolling-ball simulation. Exact sole source PNG inspected at native512; no source eye/limb/prop ghost accepted.",
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-inspection/meshes/63_anchor0.png"
+    ]
+  },
+  "approval": "unreviewed individual prototype, no staging or publication approval",
+  "local_mesh": {
+    "source_frame": 0,
+    "points_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        511,
+        0
+      ],
+      [
+        0,
+        511
+      ],
+      [
+        511,
+        511
+      ],
+      [
+        256,
+        0
+      ],
+      [
+        0,
+        256
+      ],
+      [
+        511,
+        256
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        263,
+        83
+      ],
+      [
+        113,
+        155
+      ],
+      [
+        357,
+        93
+      ],
+      [
+        203,
+        228
+      ],
+      [
+        316,
+        188
+      ],
+      [
+        266,
+        217
+      ],
+      [
+        265,
+        257
+      ],
+      [
+        235,
+        281
+      ],
+      [
+        267,
+        305
+      ],
+      [
+        135,
+        109
+      ],
+      [
+        102,
+        195
+      ],
+      [
+        289,
+        312
+      ],
+      [
+        296,
+        319
+      ],
+      [
+        154,
+        344
+      ],
+      [
+        179,
+        362
+      ],
+      [
+        417,
+        276
+      ],
+      [
+        393,
+        313
+      ],
+      [
+        193,
+        331
+      ],
+      [
+        357,
+        335
+      ],
+      [
+        283,
+        375
+      ],
+      [
+        215,
+        407
+      ],
+      [
+        386,
+        403
+      ],
+      [
+        277,
+        414
+      ],
+      [
+        120,
+        401
+      ],
+      [
+        88,
+        431
+      ],
+      [
+        145,
+        440
+      ],
+      [
+        118,
+        468
+      ],
+      [
+        64,
+        460
+      ],
+      [
+        169,
+        476
+      ],
+      [
+        288,
+        473
+      ],
+      [
+        217,
+        470
+      ],
+      [
+        394,
+        446
+      ],
+      [
+        345,
+        422
+      ],
+      [
+        117,
+        359
+      ],
+      [
+        410,
+        350
+      ]
+    ],
+    "point_names": [
+      "corner_tl",
+      "corner_tr",
+      "corner_bl",
+      "corner_br",
+      "edge_top",
+      "edge_left",
+      "edge_right",
+      "edge_bottom",
+      "crown",
+      "ear_l",
+      "ear_r",
+      "wink",
+      "eye",
+      "nose",
+      "mouth",
+      "tongue",
+      "jaw",
+      "wrap_ear_top",
+      "wrap_ear_side",
+      "neck",
+      "medal",
+      "paw_l",
+      "paw_l_elbow",
+      "paw_r",
+      "paw_r_elbow",
+      "yarn_chest_l",
+      "yarn_chest_r",
+      "yarn_mid",
+      "yarn_belly_l",
+      "yarn_belly_r",
+      "belly",
+      "ball_top",
+      "ball_l",
+      "ball_r",
+      "ball_bottom",
+      "floor_loop_l",
+      "floor_loop_r",
+      "floor_loop_mid",
+      "foot_support",
+      "foot_raised",
+      "raised_knee",
+      "cape_l",
+      "cape_r"
+    ],
+    "parts": [
+      {
+        "name": "entangled_tongue_out_head_chuckle_with_ear_wrap",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -10.761844336633487,
+            1.337667000030649
+          ],
+          [
+            -7.203661129834728,
+            8.323705603738915
+          ],
+          [
+            -10.39513158311189,
+            -3.1014406170560846
+          ],
+          [
+            -3.8648014814534974,
+            4.0030859120948605
+          ],
+          [
+            -5.874503639136606,
+            -1.275538016573563
+          ],
+          [
+            -4.452910316655448,
+            1.0475908928057152
+          ],
+          [
+            -2.5675421632317352,
+            1.0502923419941226
+          ],
+          [
+            -1.403683595059391,
+            2.4368428623707246
+          ],
+          [
+            -0.3086527792449374,
+            0.902793438749427
+          ],
+          [
+            -9.394980613314914,
+            7.338429439876137
+          ],
+          [
+            -5.3071917260306805,
+            8.797471560023752
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.12,
+            0.4,
+            0.65,
+            0.88,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 2,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "connected_two_paw_wool_tug_without_rolling_ball",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -0.5
+          ],
+          [
+            1,
+            -2
+          ],
+          [
+            0.5,
+            -1
+          ],
+          [
+            -1,
+            -3
+          ],
+          [
+            -0.5,
+            -1.5
+          ],
+          [
+            1,
+            -1.5
+          ],
+          [
+            -1,
+            -2
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            0.5,
+            -0.5
+          ],
+          [
+            -0.5,
+            -0.5
+          ],
+          [
+            0,
+            -0.5
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.18,
+            0.48,
+            0.72,
+            0.92,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 2,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "small_raised_foot_and_cape_fidget",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            -2
+          ],
+          [
+            0.5,
+            -1
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 2
+        }
+      }
+    ],
+    "minimum_jacobian": 0.65,
+    "fluid_texture": null
+  },
+  "expected": {
+    "frames_rgba_png_sha256": [
+      "06f352261d543e648f03bf66eca4a93e95a6543f70b6c6f6284126f0fffc6025",
+      "e83cc2618a22bfeafe912ed2c1bfd4010512432ebe06b845e49e1145c1409914",
+      "3beddd09699248c2c61efa928a8544b5cd1e1b6dace2395a0d559df3c3971b8c",
+      "c2fe27f022478ff0b703aa0fdde0791faacd75a50661976b9c76746bc447ed6c",
+      "08923cc35fb4e0eca83fdaf270934371436494784f46252531222a6ccb12ce42",
+      "23fe07732ccf963653f1ed630f81fb6557a6733f01eb17a822c797422f300b28",
+      "fd0c13b34f73aa85e402e605a67d681b2146530cb4f36b1adbfd16cadd249be5",
+      "ebd6379bf8b9ddd808943d2c73760b5a704dbecbc0a4cfcb0f8a4749a9fe72b2",
+      "5a24d0723ce7dd92fc0e75474fb559cedd444d870dca67db4540a06e7beb9230",
+      "ed1e61b06348cd270ef4c92f7eb1dea6e5ae473cc8e2c145f23e0c807961f723",
+      "63797444a480b4ef48b8777bb484ef002c5aef3be345d8193072657f08a5cd50",
+      "7fe787340afd65d92993dbd0c4f3d3d3be7435fdbbf57fef0a34bc7279256992",
+      "9e001f0d5be4d96d7322d7c08809c87fe38bcafb06704dbb470c8eed0fbdda68",
+      "75a921295c389078390e48004e72daf07a7267a59f19d236e5996ad389d1dde5",
+      "5a2fcfd16e0c3fd89639b213dbf706a67204c72dd80b37f4835dca9219ff44c1",
+      "d56e60aea1d288d351db76c83dffa11626d1e07f16556be869f8d7667a5a4ef0",
+      "c18829eebe16d08e20010db8a90a1eb23e086697798c6a19671400cad3378aad",
+      "e423f24ecf41917d7a952e2255a62b505e3952a99197e586b9c414c7e9826549",
+      "6c8a1a2c745630f19408b3662d38a7880b637bd5bc46a92680d24acb10e70c17",
+      "d9605ec5b03001f9625a3af91cf252c95b1c85a4772f8e44d92c67a3b96a0396",
+      "26870bff07efe19b1987c32a97f27c2a785f7590afc99e3204f73d9489c430ae",
+      "746f7aa893abbfc0c1fa96f02f80d742b8b420a9d0fc98e735a46d5694c45865",
+      "7c36868de364f67448e9dd8cf175a0e03d79451aee8d4f90b1f3648b78d97564",
+      "7c676371a1a2bf8c9de15c8ce5fea475f7ca8cbb93ea9cf4f002822aaeed2a89",
+      "486eae250e6ae1df6cc432d43296f37fa1d4a212a17f0433752a8d305a97f10b",
+      "14253a08545f135253fa2029eab934596340e87d7369a181c88f1fe11c701c2e",
+      "bffba1f015f32eab62e15c2ddc6e208b96d5f304c0c74c172633d221a23b7430",
+      "e54918fbdf8099a70bad54373eef6cbef0f9d11bc87145b3d8a3bf7e68113f5a",
+      "40f3532e9eb9e86632e81ab7e0e8365e62cbc43a54147dce70f11ce79da1ee4e",
+      "7b6ecefcfd03d0b4278db35b756e4ff409bc00b99b19dedee896add9c692c1f9",
+      "3cdbfc706a11aec861e4bee3297aabe2b61f58d76199cb6191b70fd4425cf1a7",
+      "de3d19d1b845efa0ea591faa6441698fab62b815a0ea98570f63c239439f126b",
+      "bd1a581bbe4b8806bcc5376f86c62b5789143dbc14e9665a80986d82950d4b0e",
+      "c530597eb48b0e3db810ac32305efac8b24b8d737b4739b9cf0bf86b7f859e3c",
+      "dc4521ff6b3f92bf336d220838b0d61966861d9d8ba8ba19600f692d9606ab19",
+      "78cfc293572d899907d02d6ec876d9af041fbd0e07befefa40d0a23413f61d06",
+      "193d824f5a67720053afda344c6fb0faaf6d357e06e04b2755d5af3b8577d601",
+      "db327bee58113caec72d4120551d5cbd1282606fbcf37ca6c644bc7035d783a7",
+      "b6a4dc6bbb30d74c87950c09f44de577df2406f14bcfe02efe8ce4ec775e48cd",
+      "2c3e7deab56f514e8d4e3f3e969f49f2bf6e4c65aa66a4a7d0e3f055a855a7dd",
+      "b7813afb8c34d59f2990f2f5850fa794b58708282f16d7d76a622902876d5e20",
+      "820c056423237ff0fab617febde4c2054ad80986933a3c3ca955885928e737f8",
+      "06f352261d543e648f03bf66eca4a93e95a6543f70b6c6f6284126f0fffc6025",
+      "e83cc2618a22bfeafe912ed2c1bfd4010512432ebe06b845e49e1145c1409914",
+      "3beddd09699248c2c61efa928a8544b5cd1e1b6dace2395a0d559df3c3971b8c",
+      "c2fe27f022478ff0b703aa0fdde0791faacd75a50661976b9c76746bc447ed6c",
+      "08923cc35fb4e0eca83fdaf270934371436494784f46252531222a6ccb12ce42",
+      "23fe07732ccf963653f1ed630f81fb6557a6733f01eb17a822c797422f300b28",
+      "fd0c13b34f73aa85e402e605a67d681b2146530cb4f36b1adbfd16cadd249be5",
+      "ebd6379bf8b9ddd808943d2c73760b5a704dbecbc0a4cfcb0f8a4749a9fe72b2",
+      "5a24d0723ce7dd92fc0e75474fb559cedd444d870dca67db4540a06e7beb9230",
+      "ed1e61b06348cd270ef4c92f7eb1dea6e5ae473cc8e2c145f23e0c807961f723",
+      "63797444a480b4ef48b8777bb484ef002c5aef3be345d8193072657f08a5cd50",
+      "7fe787340afd65d92993dbd0c4f3d3d3be7435fdbbf57fef0a34bc7279256992",
+      "9e001f0d5be4d96d7322d7c08809c87fe38bcafb06704dbb470c8eed0fbdda68",
+      "75a921295c389078390e48004e72daf07a7267a59f19d236e5996ad389d1dde5",
+      "5a2fcfd16e0c3fd89639b213dbf706a67204c72dd80b37f4835dca9219ff44c1",
+      "d56e60aea1d288d351db76c83dffa11626d1e07f16556be869f8d7667a5a4ef0",
+      "c18829eebe16d08e20010db8a90a1eb23e086697798c6a19671400cad3378aad",
+      "e423f24ecf41917d7a952e2255a62b505e3952a99197e586b9c414c7e9826549",
+      "6c8a1a2c745630f19408b3662d38a7880b637bd5bc46a92680d24acb10e70c17",
+      "d9605ec5b03001f9625a3af91cf252c95b1c85a4772f8e44d92c67a3b96a0396",
+      "26870bff07efe19b1987c32a97f27c2a785f7590afc99e3204f73d9489c430ae",
+      "746f7aa893abbfc0c1fa96f02f80d742b8b420a9d0fc98e735a46d5694c45865",
+      "7c36868de364f67448e9dd8cf175a0e03d79451aee8d4f90b1f3648b78d97564",
+      "7c676371a1a2bf8c9de15c8ce5fea475f7ca8cbb93ea9cf4f002822aaeed2a89",
+      "486eae250e6ae1df6cc432d43296f37fa1d4a212a17f0433752a8d305a97f10b",
+      "14253a08545f135253fa2029eab934596340e87d7369a181c88f1fe11c701c2e",
+      "bffba1f015f32eab62e15c2ddc6e208b96d5f304c0c74c172633d221a23b7430",
+      "e54918fbdf8099a70bad54373eef6cbef0f9d11bc87145b3d8a3bf7e68113f5a",
+      "40f3532e9eb9e86632e81ab7e0e8365e62cbc43a54147dce70f11ce79da1ee4e",
+      "7b6ecefcfd03d0b4278db35b756e4ff409bc00b99b19dedee896add9c692c1f9",
+      "3cdbfc706a11aec861e4bee3297aabe2b61f58d76199cb6191b70fd4425cf1a7",
+      "de3d19d1b845efa0ea591faa6441698fab62b815a0ea98570f63c239439f126b",
+      "bd1a581bbe4b8806bcc5376f86c62b5789143dbc14e9665a80986d82950d4b0e",
+      "c530597eb48b0e3db810ac32305efac8b24b8d737b4739b9cf0bf86b7f859e3c",
+      "dc4521ff6b3f92bf336d220838b0d61966861d9d8ba8ba19600f692d9606ab19",
+      "78cfc293572d899907d02d6ec876d9af041fbd0e07befefa40d0a23413f61d06",
+      "193d824f5a67720053afda344c6fb0faaf6d357e06e04b2755d5af3b8577d601",
+      "db327bee58113caec72d4120551d5cbd1282606fbcf37ca6c644bc7035d783a7",
+      "b6a4dc6bbb30d74c87950c09f44de577df2406f14bcfe02efe8ce4ec775e48cd",
+      "2c3e7deab56f514e8d4e3f3e969f49f2bf6e4c65aa66a4a7d0e3f055a855a7dd",
+      "b7813afb8c34d59f2990f2f5850fa794b58708282f16d7d76a622902876d5e20",
+      "820c056423237ff0fab617febde4c2054ad80986933a3c3ca955885928e737f8"
+    ],
+    "decoded_png_sha256": [
+      "27e19f1baeff897de3ea0a2990b5f1cc19e960f4c1412d80d3d59832df6339cf",
+      "cc3f8a0f28155f64ffbf6ec88546a1ac3984c03f24641ca221bc905e7dbc8987",
+      "8f156186da8b64b82b51ba927672d5e4c940df17174f5e6521f05b08e29f3b96",
+      "24740b52c766d0fa42d667e8b75c861a4e323970deda3165e58cf07f75899fdd",
+      "dc67c9e4da61ecc9f6f4be50d914657644255dd401dd7f939c36200929c09ff9",
+      "4f5f47869d9e155ec210ee2f5a05f527753a02adf7a71b947e9c16c4b75c999b",
+      "7fc30e41a6e28bbb2ba35b94d5f27f7865d5e030dec9978a814d5f5161d0f970",
+      "533613ac945272e4affd2bc546e5f12e5f09b9902497bc59f5e9340cbc17a700",
+      "4568bbb4cfb5980537277483e271fa701c7a0e9b68ee08925d6d4fa6548d0666",
+      "52ad02c4f6ca8f1e08b1b36be805c9c83560441dcf465ee537ab6b41d5941d8a",
+      "f5f58d935a100201860cf91f799fb889b2cc70df45fb08e424a00a494d43a23a",
+      "bc1fd8591efeca723ebf9c7c8e7b9d44ae88c9b5217ae8025efd58a1ef2e1b85",
+      "2cc4e2bc4b4ab32fbd3197994b6b0a20c55e92a97e31f8e1608e4a432ffa6aa8",
+      "5923fba3a815e57d7d1c73d7b2dfbdb9d8e8349e82ad5974855a19900a642a8d",
+      "556c4576f57f6d569c225738b15850606009d9f33551111df573c5c00c2474bb",
+      "599abc228460583ae87ea4fa77db62a2025445ea935f5dc0191f6474a2b0e627",
+      "41bfdef10f590652e2e1f62316ce915fa716e1d8f515c574b28e09abb9d0b3c7",
+      "200bda5a4c0c0bcff4646bf35d8ff906d8a2d95aac8a35edca1cdbf9829b7e8a",
+      "1dad65dc9e2f01d5b61100cedafa5928de3a507867d56067202cad89ea5b7850",
+      "198e273a642c184579a28863ea88af7c26f5d713c6940984f8900a6f0b11abd7",
+      "9f1a0f86da9fcf1b161b03201180b19d571f56fb8cfbf2e854b8212224fe2df7",
+      "5c8f17e81234168f35819f176826866c6cf4fe24075d58844e942ab74d795987",
+      "750fe48aad583c10331ce7c09678f55b7fd5c5dd46392452c7fa2ba51ecf2d9d",
+      "039b6d776fb6398b91fdcae88ea22e6499b3bb415ee0b5af3d7c1c79905da358",
+      "15956e448803b31d0eaff44796e41803cc4c77dd11d25c58505dcdd640c42790",
+      "bed89a08ae439bd9d05d86bba0c48f1ea8b707683556b444df99eac717eabcfc",
+      "4d62e56096f015d6d756487f5a5ab0c2ded09087db8c12ac08ca5c4ae12bdf2f",
+      "9ba832cd1b0203e157e58d7264ae898e569148894cf53e3e99e96070bb9658fb",
+      "905a6b8f7d9731382b7bd0ec031d3e91fbb8e66354034a6f30267db6821a1f3f",
+      "8ba322d290af13c5a957e67d7d8af63660099e7ffee1b22079203f0736eb0d04",
+      "9819a959faf77518904a005ad80762809c800511956436e7b771d5f13d6db2db",
+      "0c05004a7c9ad6f0a61c7f0f33656366b14bcec35e439824c9c5c479c90824a4",
+      "c2178899c3effb15a9edffc1838cf361e5a522399dbf54498e2d2b50f99592fc",
+      "23b7dc6112f9be1a23316b2d9aa23567d4fdbec5a57ed7f3c49c15fec7b89121",
+      "506e822c2737e7f87e413b739961dd947cea948b78c3689bf42ee5dd01b21f53",
+      "6e6d19e7066e50c7ac370e710dc0e4b49831851fb26689eaf5792d2fbad407a8",
+      "10d58dd00fe583a3278955090f1a5f45b7cf55535c338341fdb456538e6afe97",
+      "a1066a09fe168494b888f9337944755ccefdf00cbfaca96ef6572504d51d65d9",
+      "01227f0338e846af5a6847d2d307214843389fe0bf07d0c7a29f02353ad4a17c",
+      "acee9fb1eb6ebb2e643518d431dfa1c680ff8accdcb4cd3007fdf34f62de4a43",
+      "d06375746de1e3bd7e38873ca9057493057e6c79136428e5694badb152e39eb4",
+      "317cc1064b5a2fc42668261bc26ecf37638689f6f4b2027491a5ddf6b313e0a4",
+      "634dc4484d7d17314b019b706e3e2254250e4b4b6105dce424fb62ff43273db8",
+      "e88e8eef5b390d0449de7f7a296c6721f7f93122ebb420e5101e8448fb173b71",
+      "cc4d61934df85239ded829a96950beb9210685ec873282fd750673ce1359662a",
+      "ddf6bf9edb3084b5637a6dc4f4b8567afa1f9ac86f444cf71cacc30bb878cb57",
+      "20eaace119163f0559dfb06a0e9d09f414790d0751523ec611d6ee46afbb4d83",
+      "b14e545c619c9d9c97df594e1bedfb1a8ea16823ad90fd494b22f51794221813",
+      "3ccc67dff3d595a7d8bdcbe7d7a1c5988970d87f5a18c6da60d85352b9e6b5ae",
+      "793cacfa436850e6308bd43466e248eeee9269e523b35074439f87a62253436b",
+      "aab3a7c91ef7ffc27e59c3afcc675a4df2d2f3610941c1a634092e653f7f28de",
+      "6964596c334c619a6d659d830918228a9b66a515e673d1a711a009946eaccd51",
+      "60a950025ebdfdda686d6f613249d9b3d5306e59d2923704e4ce42e1f9b1eb0c",
+      "a22c6148b14014627a29002d15f2ac11f5880a2dea843ef1b4f9f34e4b0956ff",
+      "c79ca502cc59e3c133ae6afabe6d206fc2c42705043aba59961e69d821bf6673",
+      "7cd08963ae046fe43e49f5dd66564424e0e149af75ed8e1c478c87f61aeddf30",
+      "bef06db09676f5f1e9cc8252e1d0a2bf0a585d9d9f7ad13fe68bf73434f5700e",
+      "36a327656846a7588241f03749d4174c0a2b4cb1869174e24c98b5c7ffb4707f",
+      "92570dd258e59c59b0a09e5102939f334abe7f7b1134e979c6a01a40cf265f77",
+      "83c7e88aa0370244d46cb17ccdbcbee5eb33b3b2dc27a6aa17311318351833de",
+      "34efe1e8627de72b9223194d6a4f6d9ca6e6ef08654f722748b05eac55403646",
+      "1595e7ec0587458b336613df0c1ad7d00f0a0997d6cef2127e0e20a937334553",
+      "9262aca0dc0dfa5e80d3111b9998bb1bda1779bc39369a6a0969295d66a82b2b",
+      "7107c57cd633e051b19bdf548ef65517ab2bfbbeb96cb48bd6f3b573462ddac6",
+      "51fed9c1dc20386a9f82b3b1934112bf16a118a90a01085198295b214f749f6e",
+      "72228c2f13224992866b5f6a6ced9dec059e8567a10e1dce71528093b61ec9c9",
+      "1be0eea2009255e127c3586473c40ca158b470f4918ffd2c929411ca703484fa",
+      "b19650a9ed459743922379523220a44717d780d65b78269df6215098e40f8f4e",
+      "16296144a204c3c430a088f360d986eee6bb3bd0a3b1bedc906ea8b5cacdefba",
+      "77efe4b01f5dc703686231c45f9d8d0f55010cf9dfbaa99d1ebe186d6c768b48",
+      "0fa9f0aa13b3022d7abf816e9ea0833ca4c22638de279b8b889af373bcae2f45",
+      "a51c3435fcaf263d93128cca8f01fd1db42c832180dbab5c7a55ce6fe297e231",
+      "d568c70896ae3651231b5777acc40390e2639d7327d34fddc504f2f40bf7ff02",
+      "b4b96b8556de0cf293a2a713779566a1760b693912b5457b385a0f2d841926c1",
+      "ca2bab47031d85bf296533e3f9812a831d80a7e321344f60cc1d6ba8902b874f",
+      "4d6fe591e9b5c2c503783ad908348a6356ad87079f9f572bcd1b457f19f51adc",
+      "b5cbefe1851e79ad30738c61d993659cc88594fbf13ba456e870411ffd9c50fc",
+      "d8916960c149f38a7b0defd7398fd4520a59bd46eb846b356ed1da4008a0bf26",
+      "47b03312cf3c2f6dfa45a079e09edb2e1708c4742776c2ba16f3eba1881800f7",
+      "2a910f0d79118426bf719669561988df482ea8378c326fea5f1222c2489c990e",
+      "a6aa814a92599b029bbca9900ebe97a61d0a478fe1776b0d0a5a4cab75cd94c3",
+      "e55e7926728456496f567182a6a80cd3f71af056da1c95ccd93b6c7a801967fd",
+      "812d7439faa490d1e6726aa633fd2701b6a2506af4711b372787a58c97156ab4",
+      "25e63bc2f151c7c4c93ac0e88c3729e0431dcf95fbb9aedde36199f2391f7c15"
+    ],
+    "output_sha256": "e99d225660cba0b9ad1fdfbec9631544ba3062bf859f0f1b7443bd3cfb2f0c50",
+    "output_bytes": 177679
+  }
+}

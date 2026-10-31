@@ -1,0 +1,1641 @@
+{
+  "schema_version": 1,
+  "id": "lumen_131",
+  "candidate": "lumen_131_author-b_batch5",
+  "created_at": "2026-10-30T18:40:07.457134+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_video_sha256": "b088605aa70251cfbb49528936913c224add3b709df4a8bb94f63aebc45aa15a",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "294d222935fc71cc69a846ae42b4134a11cfc1d5e02c8232ab372ab1636eaa03",
+  "derived_source_frames": [
+    {
+      "index": 0,
+      "timestamp_seconds": 0.0,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch5/lumen_131/source-frames/000.png",
+      "sha256": "2ef4ef3b8fc47127baa063fa1be0e1542fc6c3772a01b848e040403f98eb2c9e"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "cac60146ff20cac1b6d46addafe25737a919eb4c5aa0f07454e4ca91c16762dc",
+  "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_131/recipe.json",
+  "recipe_sha256": "18e68203e5c2964b81a9440949012b062cf0e891afcb538e9721638993d5f8dd",
+  "generator": {
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "description_uk": "Сердито стискає кулачки біля грудей й двічі притупує однією ніжкою. Чорна плашка «@#$!» приховує лайку, плечі по черзі напружуються й коротко відсахуються.",
+  "semantics": {
+    "core_scene": "Сердито стискає кулачки біля грудей; чорна плашка @#$! передає цензуровану лайку/стриманий гнів.",
+    "scene_specific_instructions": "Acting repair: fixed censor strip + clenched fists; authored foot lift/stamp with planted opposite foot, staggered fist/shoulder tension and short recoil. Nine inspected anchors lack independent stamp; do not claim topology bug.",
+    "authored_decisions": [
+      "Acting repair, not a claim of source topology defect. Text/censor strip moves rigidly with the same face. Supporting right foot stays planted; left foot visibly lifts and returns."
+    ],
+    "irreversible_motion_policy": "Only coherent authored local action. No backward falling particles, liquid or free props. Decorative held marks remain explicitly decorative."
+  },
+  "method": "shared_local_mesh_v1",
+  "statistics": {
+    "minimum_jacobian": 0.6961007118225098,
+    "maximum_displacement_px": 13.398064613342285
+  },
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.0,
+        "clenched_left_fist_tension": 0.0,
+        "clenched_right_fist_staggered_tension": 0.0,
+        "face_and_rigid_censor_strip_recoil": 0.0
+      }
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.0808353910675101,
+        "clenched_left_fist_tension": 0.062063173032560766,
+        "clenched_right_fist_staggered_tension": 0.0039930815739094095,
+        "face_and_rigid_censor_strip_recoil": 0.062063173032560766
+      }
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.17925177421420124,
+        "clenched_left_fist_tension": 0.13596116657341145,
+        "clenched_right_fist_staggered_tension": 0.0026813021848105362,
+        "face_and_rigid_censor_strip_recoil": 0.13596116657341145
+      }
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.2909212963322853,
+        "clenched_left_fist_tension": 0.21884110787172006,
+        "clenched_right_fist_staggered_tension": -0.001729875193843317,
+        "face_and_rigid_censor_strip_recoil": 0.21884110787172006
+      }
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.4115161043139741,
+        "clenched_left_fist_tension": 0.3078501241766547,
+        "clenched_right_fist_staggered_tension": -0.007034987588598832,
+        "face_and_rigid_censor_strip_recoil": 0.3078501241766547
+      }
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.5367083450514796,
+        "clenched_left_fist_tension": 0.4001353427373835,
+        "clenched_right_fist_staggered_tension": -0.011028572026002714,
+        "face_and_rigid_censor_strip_recoil": 0.4001353427373835
+      }
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.6621701654370136,
+        "clenched_left_fist_tension": 0.49284389080307434,
+        "clenched_right_fist_staggered_tension": -0.011505165532601655,
+        "face_and_rigid_censor_strip_recoil": 0.49284389080307434
+      }
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.7835737123627879,
+        "clenched_left_fist_tension": 0.5831228956228955,
+        "clenched_right_fist_staggered_tension": -0.006259305134942328,
+        "face_and_rigid_censor_strip_recoil": 0.5831228956228955
+      }
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.8958649949615537,
+        "clenched_left_fist_tension": 0.668119484446015,
+        "clenched_right_fist_staggered_tension": 0.006884922120470037,
+        "face_and_rigid_censor_strip_recoil": 0.668119484446015
+      }
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.9895483775999286,
+        "clenched_left_fist_tension": 0.7450735489000794,
+        "clenched_right_fist_staggered_tension": 0.029185802271333137,
+        "face_and_rigid_censor_strip_recoil": 0.7450735489000794
+      }
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 1.0534493866921253,
+        "clenched_left_fist_tension": 0.8126130105721941,
+        "clenched_right_fist_staggered_tension": 0.06082834065297418,
+        "face_and_rigid_censor_strip_recoil": 0.8126130105721941
+      }
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 1.0763904160319393,
+        "clenched_left_fist_tension": 0.8704342992608299,
+        "clenched_right_fist_staggered_tension": 0.1019366220486797,
+        "face_and_rigid_censor_strip_recoil": 0.8704342992608299
+      }
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 1.0471938594131665,
+        "clenched_left_fist_tension": 0.9182613305062284,
+        "clenched_right_fist_staggered_tension": 0.15263473124173602,
+        "face_and_rigid_censor_strip_recoil": 0.9182613305062284
+      }
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.9550554174238072,
+        "clenched_left_fist_tension": 0.9558180198486321,
+        "clenched_right_fist_staggered_tension": 0.21304675301542983,
+        "face_and_rigid_censor_strip_recoil": 0.9558180198486321
+      }
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.8036830922765777,
+        "clenched_left_fist_tension": 0.9828282828282828,
+        "clenched_right_fist_staggered_tension": 0.2832967721530473,
+        "face_and_rigid_censor_strip_recoil": 0.9828282828282828
+      }
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.6156368792915419,
+        "clenched_left_fist_tension": 0.999016034985423,
+        "clenched_right_fist_staggered_tension": 0.36350887343787536,
+        "face_and_rigid_censor_strip_recoil": 0.999016034985423
+      }
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.41473668421920545,
+        "clenched_left_fist_tension": 1.004105191860294,
+        "clenched_right_fist_staggered_tension": 0.45380707322331976,
+        "face_and_rigid_censor_strip_recoil": 1.004105191860294
+      }
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.22480241281007324,
+        "clenched_left_fist_tension": 0.9978212641477948,
+        "clenched_right_fist_staggered_tension": 0.5531129380066829,
+        "face_and_rigid_censor_strip_recoil": 0.9978212641477948
+      }
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.06941639928938126,
+        "clenched_left_fist_tension": 0.9802279353299761,
+        "clenched_right_fist_staggered_tension": 0.6560812259607927,
+        "face_and_rigid_censor_strip_recoil": 0.9802279353299761
+      }
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.0396973933954519,
+        "clenched_left_fist_tension": 0.9521433970413562,
+        "clenched_right_fist_staggered_tension": 0.7564207205936252,
+        "face_and_rigid_censor_strip_recoil": 0.9521433970413562
+      }
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.10793612057288428,
+        "clenched_left_fist_tension": 0.9144879308144614,
+        "clenched_right_fist_staggered_tension": 0.8478402054131559,
+        "face_and_rigid_censor_strip_recoil": 0.9144879308144614
+      }
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.14203177017426394,
+        "clenched_left_fist_tension": 0.868181818181818,
+        "clenched_right_fist_staggered_tension": 0.9240484639273612,
+        "face_and_rigid_censor_strip_recoil": 0.868181818181818
+      }
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.14871633013093846,
+        "clenched_left_fist_tension": 0.8141453406759529,
+        "clenched_right_fist_staggered_tension": 0.9787542796442166,
+        "face_and_rigid_censor_strip_recoil": 0.8141453406759529
+      }
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.13472178837425572,
+        "clenched_left_fist_tension": 0.7532987798293919,
+        "clenched_right_fist_staggered_tension": 1.005666436071698,
+        "face_and_rigid_censor_strip_recoil": 0.7532987798293919
+      }
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.10678013283556348,
+        "clenched_left_fist_tension": 0.686562417174662,
+        "clenched_right_fist_staggered_tension": 0.9984942160159098,
+        "face_and_rigid_censor_strip_recoil": 0.686562417174662
+      }
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.07162335144620924,
+        "clenched_left_fist_tension": 0.6148565342442894,
+        "clenched_right_fist_staggered_tension": 0.9536980164800567,
+        "face_and_rigid_censor_strip_recoil": 0.6148565342442894
+      }
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.035983432137541405,
+        "clenched_left_fist_tension": 0.5391642371234207,
+        "clenched_right_fist_staggered_tension": 0.8769360641930761,
+        "face_and_rigid_censor_strip_recoil": 0.5391642371234207
+      }
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.006592362840907029,
+        "clenched_left_fist_tension": 0.46093294460641376,
+        "clenched_right_fist_staggered_tension": 0.7757865351292824,
+        "face_and_rigid_censor_strip_recoil": 0.46093294460641376
+      }
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.010346249909403232,
+        "clenched_left_fist_tension": 0.3818181818181819,
+        "clenched_right_fist_staggered_tension": 0.6578276052629906,
+        "face_and_rigid_censor_strip_recoil": 0.3818181818181819
+      }
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.014083605780212262,
+        "clenched_left_fist_tension": 0.3034764555172718,
+        "clenched_right_fist_staggered_tension": 0.5306374505685137,
+        "face_and_rigid_censor_strip_recoil": 0.3034764555172718
+      }
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.007088947407594819,
+        "clenched_left_fist_tension": 0.22756427246223157,
+        "clenched_right_fist_staggered_tension": 0.40179424702016714,
+        "face_and_rigid_censor_strip_recoil": 0.22756427246223157
+      }
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.008126889867649426,
+        "clenched_left_fist_tension": 0.1557381394116087,
+        "clenched_right_fist_staggered_tension": 0.2788761705922651,
+        "face_and_rigid_censor_strip_recoil": 0.1557381394116087
+      }
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.02905307070472067,
+        "clenched_left_fist_tension": 0.08965456312395097,
+        "clenched_right_fist_staggered_tension": 0.16946139725912246,
+        "face_and_rigid_censor_strip_recoil": 0.08965456312395097
+      }
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.05317875976281951,
+        "clenched_left_fist_tension": 0.030970050357805562,
+        "clenched_right_fist_staggered_tension": 0.0811020773794062,
+        "face_and_rigid_censor_strip_recoil": 0.030970050357805562
+      }
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.07799312170114614,
+        "clenched_left_fist_tension": -0.018670671731896144,
+        "clenched_right_fist_staggered_tension": 0.01786497712750664,
+        "face_and_rigid_censor_strip_recoil": -0.018670671731896144
+      }
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.10098532117890091,
+        "clenched_left_fist_tension": -0.05808080808080803,
+        "clenched_right_fist_staggered_tension": -0.023141133860842437,
+        "face_and_rigid_censor_strip_recoil": -0.05808080808080803
+      }
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.11964452285528393,
+        "clenched_left_fist_tension": -0.08666843360720897,
+        "clenched_right_fist_staggered_tension": -0.04563391973564246,
+        "face_and_rigid_censor_strip_recoil": -0.08666843360720897
+      }
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.1314598913894961,
+        "clenched_left_fist_tension": -0.10388137939158337,
+        "clenched_right_fist_staggered_tension": -0.0533310446468952,
+        "face_and_rigid_censor_strip_recoil": -0.10388137939158337
+      }
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.1339205914407372,
+        "clenched_left_fist_tension": -0.10916747651441519,
+        "clenched_right_fist_staggered_tension": -0.049950172744602006,
+        "face_and_rigid_censor_strip_recoil": -0.10916747651441519
+      }
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.1245157876682077,
+        "clenched_left_fist_tension": -0.10197455605618862,
+        "clenched_right_fist_staggered_tension": -0.0392089681787644,
+        "face_and_rigid_censor_strip_recoil": -0.10197455605618862
+      }
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.10073464473110816,
+        "clenched_left_fist_tension": -0.0817504490973879,
+        "clenched_right_fist_staggered_tension": -0.024825095099383854,
+        "face_and_rigid_censor_strip_recoil": -0.0817504490973879
+      }
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.06006632728863881,
+        "clenched_left_fist_tension": -0.0479429867184969,
+        "clenched_right_fist_staggered_tension": -0.01051621765646188,
+        "face_and_rigid_censor_strip_recoil": -0.0479429867184969
+      }
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.0,
+        "clenched_left_fist_tension": 0.0,
+        "clenched_right_fist_staggered_tension": 0.0,
+        "face_and_rigid_censor_strip_recoil": 0.0
+      }
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.08083539106750978,
+        "clenched_left_fist_tension": 0.06206317303256054,
+        "clenched_right_fist_staggered_tension": 0.003993081573909406,
+        "face_and_rigid_censor_strip_recoil": 0.06206317303256054
+      }
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.17925177421420146,
+        "clenched_left_fist_tension": 0.13596116657341162,
+        "clenched_right_fist_staggered_tension": 0.0026813021848105306,
+        "face_and_rigid_censor_strip_recoil": 0.13596116657341162
+      }
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.29092129633228514,
+        "clenched_left_fist_tension": 0.21884110787171995,
+        "clenched_right_fist_staggered_tension": -0.0017298751938433082,
+        "face_and_rigid_censor_strip_recoil": 0.21884110787171995
+      }
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.4115161043139747,
+        "clenched_left_fist_tension": 0.30785012417665514,
+        "clenched_right_fist_staggered_tension": -0.00703498758859885,
+        "face_and_rigid_censor_strip_recoil": 0.30785012417665514
+      }
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.5367083450514797,
+        "clenched_left_fist_tension": 0.4001353427373836,
+        "clenched_right_fist_staggered_tension": -0.011028572026002707,
+        "face_and_rigid_censor_strip_recoil": 0.4001353427373836
+      }
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.6621701654370133,
+        "clenched_left_fist_tension": 0.4928438908030741,
+        "clenched_right_fist_staggered_tension": -0.011505165532601655,
+        "face_and_rigid_censor_strip_recoil": 0.4928438908030741
+      }
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.7835737123627885,
+        "clenched_left_fist_tension": 0.5831228956228959,
+        "clenched_right_fist_staggered_tension": -0.0062593051349423,
+        "face_and_rigid_censor_strip_recoil": 0.5831228956228959
+      }
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.8958649949615537,
+        "clenched_left_fist_tension": 0.668119484446015,
+        "clenched_right_fist_staggered_tension": 0.006884922120470037,
+        "face_and_rigid_censor_strip_recoil": 0.668119484446015
+      }
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.9895483775999283,
+        "clenched_left_fist_tension": 0.7450735489000793,
+        "clenched_right_fist_staggered_tension": 0.029185802271333043,
+        "face_and_rigid_censor_strip_recoil": 0.7450735489000793
+      }
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 1.0534493866921253,
+        "clenched_left_fist_tension": 0.8126130105721943,
+        "clenched_right_fist_staggered_tension": 0.060828340652974267,
+        "face_and_rigid_censor_strip_recoil": 0.8126130105721943
+      }
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 1.0763904160319393,
+        "clenched_left_fist_tension": 0.8704342992608298,
+        "clenched_right_fist_staggered_tension": 0.10193662204867959,
+        "face_and_rigid_censor_strip_recoil": 0.8704342992608298
+      }
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 1.047193859413166,
+        "clenched_left_fist_tension": 0.9182613305062286,
+        "clenched_right_fist_staggered_tension": 0.15263473124173627,
+        "face_and_rigid_censor_strip_recoil": 0.9182613305062286
+      }
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.9550554174238072,
+        "clenched_left_fist_tension": 0.9558180198486321,
+        "clenched_right_fist_staggered_tension": 0.21304675301542983,
+        "face_and_rigid_censor_strip_recoil": 0.9558180198486321
+      }
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.8036830922765783,
+        "clenched_left_fist_tension": 0.9828282828282827,
+        "clenched_right_fist_staggered_tension": 0.28329677215304716,
+        "face_and_rigid_censor_strip_recoil": 0.9828282828282827
+      }
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.6156368792915413,
+        "clenched_left_fist_tension": 0.9990160349854228,
+        "clenched_right_fist_staggered_tension": 0.3635088734378756,
+        "face_and_rigid_censor_strip_recoil": 0.9990160349854228
+      }
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.41473668421920545,
+        "clenched_left_fist_tension": 1.004105191860294,
+        "clenched_right_fist_staggered_tension": 0.45380707322331976,
+        "face_and_rigid_censor_strip_recoil": 1.004105191860294
+      }
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.22480241281007401,
+        "clenched_left_fist_tension": 0.9978212641477948,
+        "clenched_right_fist_staggered_tension": 0.5531129380066825,
+        "face_and_rigid_censor_strip_recoil": 0.9978212641477948
+      }
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.06941639928938094,
+        "clenched_left_fist_tension": 0.9802279353299761,
+        "clenched_right_fist_staggered_tension": 0.6560812259607929,
+        "face_and_rigid_censor_strip_recoil": 0.9802279353299761
+      }
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.03969739339545171,
+        "clenched_left_fist_tension": 0.9521433970413562,
+        "clenched_right_fist_staggered_tension": 0.7564207205936249,
+        "face_and_rigid_censor_strip_recoil": 0.9521433970413562
+      }
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.1079361205728845,
+        "clenched_left_fist_tension": 0.9144879308144612,
+        "clenched_right_fist_staggered_tension": 0.8478402054131562,
+        "face_and_rigid_censor_strip_recoil": 0.9144879308144612
+      }
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.14203177017426394,
+        "clenched_left_fist_tension": 0.868181818181818,
+        "clenched_right_fist_staggered_tension": 0.9240484639273612,
+        "face_and_rigid_censor_strip_recoil": 0.868181818181818
+      }
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.14871633013093855,
+        "clenched_left_fist_tension": 0.814145340675953,
+        "clenched_right_fist_staggered_tension": 0.9787542796442164,
+        "face_and_rigid_censor_strip_recoil": 0.814145340675953
+      }
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.13472178837425572,
+        "clenched_left_fist_tension": 0.7532987798293919,
+        "clenched_right_fist_staggered_tension": 1.005666436071698,
+        "face_and_rigid_censor_strip_recoil": 0.7532987798293919
+      }
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.10678013283556348,
+        "clenched_left_fist_tension": 0.686562417174662,
+        "clenched_right_fist_staggered_tension": 0.9984942160159098,
+        "face_and_rigid_censor_strip_recoil": 0.686562417174662
+      }
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.0716233514462094,
+        "clenched_left_fist_tension": 0.6148565342442889,
+        "clenched_right_fist_staggered_tension": 0.9536980164800565,
+        "face_and_rigid_censor_strip_recoil": 0.6148565342442889
+      }
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.035983432137541405,
+        "clenched_left_fist_tension": 0.5391642371234207,
+        "clenched_right_fist_staggered_tension": 0.8769360641930761,
+        "face_and_rigid_censor_strip_recoil": 0.5391642371234207
+      }
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.00659236284090714,
+        "clenched_left_fist_tension": 0.46093294460641415,
+        "clenched_right_fist_staggered_tension": 0.7757865351292829,
+        "face_and_rigid_censor_strip_recoil": 0.46093294460641415
+      }
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.010346249909403278,
+        "clenched_left_fist_tension": 0.38181818181818156,
+        "clenched_right_fist_staggered_tension": 0.6578276052629899,
+        "face_and_rigid_censor_strip_recoil": 0.38181818181818156
+      }
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.014083605780212262,
+        "clenched_left_fist_tension": 0.3034764555172718,
+        "clenched_right_fist_staggered_tension": 0.5306374505685137,
+        "face_and_rigid_censor_strip_recoil": 0.3034764555172718
+      }
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": 0.007088947407594885,
+        "clenched_left_fist_tension": 0.2275642724622319,
+        "clenched_right_fist_staggered_tension": 0.4017942470201677,
+        "face_and_rigid_censor_strip_recoil": 0.2275642724622319
+      }
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.008126889867649426,
+        "clenched_left_fist_tension": 0.1557381394116087,
+        "clenched_right_fist_staggered_tension": 0.2788761705922651,
+        "face_and_rigid_censor_strip_recoil": 0.1557381394116087
+      }
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.02905307070472067,
+        "clenched_left_fist_tension": 0.08965456312395097,
+        "clenched_right_fist_staggered_tension": 0.16946139725912246,
+        "face_and_rigid_censor_strip_recoil": 0.08965456312395097
+      }
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.05317875976281962,
+        "clenched_left_fist_tension": 0.03097005035780534,
+        "clenched_right_fist_staggered_tension": 0.08110207737940585,
+        "face_and_rigid_censor_strip_recoil": 0.03097005035780534
+      }
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.07799312170114614,
+        "clenched_left_fist_tension": -0.018670671731896144,
+        "clenched_right_fist_staggered_tension": 0.01786497712750664,
+        "face_and_rigid_censor_strip_recoil": -0.018670671731896144
+      }
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.10098532117890074,
+        "clenched_left_fist_tension": -0.05808080808080788,
+        "clenched_right_fist_staggered_tension": -0.02314113386084228,
+        "face_and_rigid_censor_strip_recoil": -0.05808080808080788
+      }
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.11964452285528404,
+        "clenched_left_fist_tension": -0.08666843360720908,
+        "clenched_right_fist_staggered_tension": -0.04563391973564253,
+        "face_and_rigid_censor_strip_recoil": -0.08666843360720908
+      }
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.1314598913894961,
+        "clenched_left_fist_tension": -0.10388137939158337,
+        "clenched_right_fist_staggered_tension": -0.0533310446468952,
+        "face_and_rigid_censor_strip_recoil": -0.10388137939158337
+      }
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.1339205914407371,
+        "clenched_left_fist_tension": -0.10916747651441522,
+        "clenched_right_fist_staggered_tension": -0.04995017274460199,
+        "face_and_rigid_censor_strip_recoil": -0.10916747651441522
+      }
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.1245157876682077,
+        "clenched_left_fist_tension": -0.10197455605618862,
+        "clenched_right_fist_staggered_tension": -0.0392089681787644,
+        "face_and_rigid_censor_strip_recoil": -0.10197455605618862
+      }
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.10073464473110816,
+        "clenched_left_fist_tension": -0.0817504490973879,
+        "clenched_right_fist_staggered_tension": -0.024825095099383854,
+        "face_and_rigid_censor_strip_recoil": -0.0817504490973879
+      }
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "lift_stamp_left_foot_and_knee": -0.06006632728863859,
+        "clenched_left_fist_tension": -0.04794298671849673,
+        "clenched_right_fist_staggered_tension": -0.01051621765646188,
+        "face_and_rigid_censor_strip_recoil": -0.04794298671849673
+      }
+    }
+  ],
+  "candidate_sha256": "103c33d5b58bc6fa9bd32894473d7a3f89c23c76186840681960a06639a567ef",
+  "poster_sha256": "e16f0f4c5a9837b8c4bab52527bafa72086b21fe73dca20e93dffa15f6b8848c",
+  "bytes": 208866,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "output_pts": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "decoded_png_sha256": [
+    "f250d9eda445d9f5658169f80f8a5ad03a0ec6301bad2b4e926000c6e904565f",
+    "6c7255d1af20f049e73833944a8d4a832229916688a7b53c6a4f320409eeccec",
+    "ab9c70b89c7776c822351552eaae9233ae6497df3ad81c3cb222d635788011ca",
+    "e1bab03defb5b159e21792ecbc0e35f3cd6d30a0b2fa022af9bffaef047df05f",
+    "e383ad777b64e1ea3dbe3d3aed8b52ec77c087cf7172e2bac8e104afbeef09a1",
+    "3cfe84b4a55e0aa3675be8676c7d98c1fe846b7de5ee4ab27447e684730af5f8",
+    "2f7f6e14259c5bae092e660bc662affb5cfdef1948fa7a132bd11a9bd1da13d6",
+    "d4e2feeef7a0591a0864e7c4c7f2d0c78b2ef4b4d2abb7e543c8ba1f8ca97d0f",
+    "0d72e91c44970877cc1a15da782bcc79c7c142f98fe2f9d2d8f5626eca6a795b",
+    "8c1086558e2fb2b0e69f6fde5581e00406bc62ffb54e14db1c70d6a418c00f0f",
+    "8b11e615d0d4322a26b6c0816013a38810d27a590504b5cda7e35f06a28127b9",
+    "1b8d6c07953ac88c065b277841589270c15d0353ad5da6c3a9e44fd3c9bf07c4",
+    "6ce64ef0d7c472539d549875ae85633099d6ec791bf2507f3bfbd0a9d4287f41",
+    "67a67dd28214dd1ba744f06795491c0966c62bf7f0d0f5ec75e79d68d9a256ff",
+    "3f1d6bcdfff7b63a6beab9733f5b807499f64053265cc3d3abe3dd190dbefa44",
+    "a8b6aba3a86ab6a0160c620e3f4aeebb456a8751dca9864033006b4adbe31ba2",
+    "ab5dcd8a7b30c753178be221c20807493b258ed69d49039027b9ed271c997468",
+    "e3840ca3900d2acbe2d931f8a49441fb7a3c690218079a8b27777a1e0738ff9d",
+    "e77d19f6f29e09c48d5dc5289dadaefc547e88f350fbd56cfeb7fe3cc18a638e",
+    "aa5be8de40423e890439315f02e2f0e95ef4e1ac2117c56d9eba18e2696649b9",
+    "ea8c0c794742a071d05e2522fda2813cfdde32fb893f4e0a70623067eddac120",
+    "21e84f0f3a9fa13e0ff3bb17a75ab6cc0948741f75a8d8ce2b7c3964ea2b73f7",
+    "93e0839e0bf6dbce048345cf3b07f6b39670853d5de244812e3c7a20669324df",
+    "9ce258750aa482559080860fff12553a604024e9425af85b60103ccfff5b0c59",
+    "a9f5ea6ba7f66ec6b79958151fa3c89197e00fe71be402744a29424a26ce4586",
+    "ca12c78ddc8e9f5625b8a38e9112b82bb95d1e4bbe578866b04f7420596c5828",
+    "53a06739d7afacc2d5eebd53808b329571fd54b8d2178fb712470a68a9eddc1e",
+    "e39c60b92ccbe24f377b62f6248de6213ede5200cf63c1a1473f06ae24c6aee4",
+    "a6a4bddd984842555d9bc09a1bd48887fe5979583e76eab08b9e769e7f837152",
+    "1c0c84d159140029e35dc9775e956596fbd5a26b7edac4706ea7620810caec40",
+    "25833c3ee2e14e83ee857f9bd944716944d4b8a09359942d07ec0f9e42a1df8f",
+    "1ede8a237e3ad4a90b9b4f7226cc7d1616b282b45f7600030be5d14624fbe477",
+    "a4a4bc8abb2da74cf8873306ae3141cae7f7dcce68cf8c173294fa5f3b074106",
+    "a56737c0481ba0da485424c1c9c72a9f014cece4e3df3834cb9ef45bfb70bdd9",
+    "0f4ede3453b967d42384defd7854689ad6806c1faeebefcf95c669b993755d30",
+    "dd2c473f14430aa33197de28e7069bf5a4ec6493a1a74d1e5bd7393dc3a07006",
+    "32b7ec00d5e274f582aa5efbb0e67ce63576f9a9d1749c35406166c7ef132906",
+    "8ad1cd96e3ae79984019a101b9482556b1adf604b953a5870f1454eaf3ac8ef5",
+    "50230da3622541dbeadc43fde1146e000a4010b7f028ab917ab0f35e520fc873",
+    "1788216c098b4cf0d581974212555753a584e512f3ea65a504109d8710df9996",
+    "10f0ba518a049818d539cd0d7a69e7723006f386000cc7f982a752d9c3ad4286",
+    "4f5a427c7ec00a1fa4729c3ab17776eb333401b039fa1f3ad148c6fc8bedfe57",
+    "41270f823fd59eee566599cec0377ffbdeb0439adfb1c41ed2c32f9c295d5a48",
+    "e239ec7fbd746b875b9de908e86470a2d6010e89e4bf7baf0fa4888edada3b4c",
+    "53d4ecd90f3daf53a0720787d6214c4c50a24370713463c6840b26fbdf0e8407",
+    "808bd62c58ca8c16cd827e872398869698870ef8a859aea071cfca52d3b94e95",
+    "aa309422a3f367f5a6fa6d49f4202e11824c2e23361840009c89f47d07c41d73",
+    "bc1fce081ed406fefd39bb0273bdf9d38c12c9b753828082c57f65e36c70fa25",
+    "4d3308c555c38922adc7b8091f3aef7c434020557f88410295a2afdd16a4fca9",
+    "012cad63b352cae56cc021d5e1943512e9fbac5b5ee8951f111c74929272d39f",
+    "5116e71b05f9492692f6e6bfc142654e7556dae202adb406db7a79dbdae75058",
+    "99396e11392290f15015fa73427ddcda4e0737e23ac3b3ff64b38e050dccbf36",
+    "d5a7f2b94522ea151a6bac9d552b863e1ae79fec1fe831ed82125f29425fba19",
+    "1ef5be88a82695585c612da0d03e0ba5cc29a14f43725a1b4fc4196c69f42cbb",
+    "76d8905e36464e9f1d332d8155fd4ad4f137977ffe4065ef075a6e9c4ba43209",
+    "6404f95d59865ad98c47aeb39e28fa469634cee1f98c48700291b58d7072c507",
+    "75cf7a236fac8b25f866e2e8544d094c524976df65add74bc5197dd180d17795",
+    "7707b56c996724848ead1e1e956ae53a68429e355243d0c335ddf5ca9231f922",
+    "db5ea66fa50e5cc62aa4f4c52fc50ef7ac4ca570b1c032404446ba7e8f4ce10d",
+    "bdaa749ea50756eee6d0773b9eb4029b976a109c2781e924aafbfd443b265f52",
+    "191bdd735c46fab9368802ae284975cfc123733290fc5c8d79485d9497ab4136",
+    "2c15ce132be2b8bf499a2c23a57fb85e04bba9aadaa04d927adaf420618a7a06",
+    "a2f85b65901c6620440232847860c026fa640624174d88bdc1373d352cf4b7a2",
+    "7b143551c59779ba059239d2064f669d89e22ba629a9f1a92e719937c6a72942",
+    "859d67e95a6be22b46e34fc02f9e8d542f2c9e449d20df9efb2a50f5d7e03760",
+    "ea9c8a9ca6f3031f4d5b9f2ceea5dff0593d6371a9130bf72d3aa33fbe7e4185",
+    "730b562c4aa13333c46f9cb4dafdb756a7550218f56adba0dde8aad2205defcf",
+    "b9ec928336f32bb426f6bd19cdd79190caa800d198b4a1fac0eb75c39816ba72",
+    "e6ac2f13a978e36ccb3acefeca0c573621a9f7a4cbcceb61d7559d47380b0d4b",
+    "a2dd159df3daebc4d2f041cca384e5567cb085d51f1efe9155e93c0f22f300a0",
+    "c679635d2db0b11a8518c405fa525c0279f26e4be40660020cac35b4161b6821",
+    "3359cdff5df6de768856dab855ec64a55034377ec36cec07fec9cf86e15dd6b0",
+    "8442331b9e1e73b2791aa549662635e76d11cd8cf65a77021ebba8cc5c598de6",
+    "64bad5c91158d404c000c0c9a8896cd27da25c31b9cde47c71a20e820d073ea4",
+    "90e2ac3f089b134eb2b011cbb096146aad15084fee4304508ac72064b77c489b",
+    "6435f83818a6f1f9d5369162433a9023c982685e030bbc1b5108f4dd56adcb95",
+    "ecbcd1307d550c433eec07d7768c7ed8c5829dc95b1f1f14008cca2417ac336f",
+    "70588b8281982519087770504656bcde011177bd827cafd2fc71666c61301c10",
+    "2d457e8a8d4550c946e78909d83e11e92a7165c3966b2b971220001740e3e806",
+    "8e8ba4da79056ec2f2fbd11be31683aa9696fbb9d1de99552983333fcb88d3c1",
+    "2a9f4fb0b6a063c6429eb0baeb7342bab69a7dd0a639337023ff260ac189499c",
+    "c0925b20fdd7ba44e33e09f6b5e11863cc18472569efddc5a26b0e62408b9443",
+    "93424d6cc804e5c57f255f07f3455370ed4f1acda7a3a4408f9f9f33fab32f35",
+    "3fc76fced01d6171ad52268be1f1e0e8e57e431868b88c7ab2e39c87674292a0"
+  ],
+  "frames_rgba_png_sha256": [
+    "f315828cf7800c95012061970e0af6cb8475f7a3d49b43f0d9e8aad6a178e957",
+    "9fe88e9a4d2c963770fbe477f9678cb94418fbef95f64b7713f608190da89a86",
+    "2f7bc1025e61985511485bc282273431cb5420bc9f70e4eabcae3c907878bdb4",
+    "7328976f30ff6f52df444f11182ce944573484499d38fd01973f0a3fea3a900b",
+    "a6d984fda58e43d273ed9c9185be13d0bd4d112749988dd64cacc4bd87fe0e54",
+    "c67d07d056d3f67fc700078951437d826e58618197dc419c32e2346f6b2c400f",
+    "0d3dddc85a491798b50e3bc18160b0ce1eff45fa680ae53d4cbee654e055154d",
+    "b416b9c6f5690117a25aec857b8e34e14cfd600323efe0e8ab2f65feff380122",
+    "948d99a01575c859e4f8fc5afa4ddaaef37c071b9a5b5c75ed24c66c7c0219be",
+    "4b402d21615970825222e43d7d04bf87a382c1d068456f19fb58932aa5ffa1f8",
+    "dcd6c5b3013e5a3277095b311f27d175c857368d430715dec2799f8fb6159b96",
+    "c7f36b125db8d155ec112e35a6d5d627e5c6c321f94a1386b55999d125a04aaa",
+    "601dc4a6bd6eea0e285c8cbef287e95b5ad4f1b129b15141f212b2a67b25ade0",
+    "592c487e8f6fb79ff47e25929f3d74d794b76da3eb4c6ea99ceb034ef6ad9f83",
+    "a34dd0c3b5eb54f4225a0fde45c574994096c7c348686558c411e7d245536c3e",
+    "27e8899deb355063cf95f94039ea4404471ababbb08e6126aecc94c6e6b494db",
+    "5dedc7bb86288f9b50dd34a2e65f33ab0b6ef3b3d59203a2412d810ba9b0c5d6",
+    "bfec1512bd30d736bd136af7033c4cda316b602068fc96ca0299faf3ed6eb379",
+    "88005b008232248c9e3b1158c87bb60a1abb78cd4f4f015881b249e7d0cc5e0f",
+    "9c2de6c929d13a6d09f19d777f830c77b28565521917b597cc49fd07803055a9",
+    "bc5177f92f28d55c1da36a22fb698e7e707db7799e84898eb9931deea43d09f9",
+    "75b596afe7a84065df87f55a12db9e4852843fe6a49eaa0a0400650fafcd0f03",
+    "9f0f37c7bbc22850b6b9aad43add48115a9d5d7417fff14a3db1543c10e1a631",
+    "f132dcd94e7745f23769d482ec9fef7ffe30176b12f236d42625996d4f9cabb5",
+    "e3b9e256408d84f103f780815a89a0181d39b79da28632ecf8b6650ea24d2f17",
+    "74436ad24d18e60932af96a174891ced8aa407d47cc29659e78ff10971982515",
+    "bb29ba6efb1ef0000a9e3aadd5602e4a27c39625d0e21c533393503eb63d697e",
+    "271459d0442aa6cd1a6c7eb00f00d44356994e921e70c46bd975cec71366319d",
+    "bd22f7bf8e1e03f3f094dcc6b65f2c04e539e1d7f8361f6d0da05eb03255718d",
+    "ed32514650890ddd58c50661128233a94045eaf392a01d9d167044d953a44d55",
+    "febcaa21dfd2b155f6620e7eee611908e10efd6f3e38e4d11201a665008331bd",
+    "4fbbf537153222d5b4419096c32cf3b0fd68098a2b9aaadb52f1f0bca49ab13b",
+    "95c1f62dcd8ff2a37178597e92d1fc81e13e65225b9b9debf29964c707de9b0c",
+    "7afe4ac4d7c5db8f654729c3762f649055fa2cf8a5b311389d36597f4b08d313",
+    "d44b8cedf9eca2f91f437fbda3c879b88ec8db9faa0229459ff26b15e3b0dd1b",
+    "263ca9c2787ed780f9d2afe271648c02108007d078f104b3398475850c4307d6",
+    "c614b384ac59cacb17cfab227748aa1c81ac59a82aad9e86aa233015b996c12d",
+    "86d8b7d415e195062f4c4c370fd90be351b01fa545e7d9d462c57a216d14c962",
+    "8ba6495522425be7eccceeb644c708d2508f4227d73ebd89063303c464e01fda",
+    "182cc31be2eab7fee149167951b6567e2ad685ccb5be9f78d25b9d7e3faabe5c",
+    "4b8d1146af6276f751fa8f63a3f415b66a416dd15b62046dd8bb452a85bc1f54",
+    "cd33a12da64f3e4009c25fe6af0b25239153caa8f3a7efb31b9c217c9d6fe531",
+    "f315828cf7800c95012061970e0af6cb8475f7a3d49b43f0d9e8aad6a178e957",
+    "9fe88e9a4d2c963770fbe477f9678cb94418fbef95f64b7713f608190da89a86",
+    "2f7bc1025e61985511485bc282273431cb5420bc9f70e4eabcae3c907878bdb4",
+    "7328976f30ff6f52df444f11182ce944573484499d38fd01973f0a3fea3a900b",
+    "a6d984fda58e43d273ed9c9185be13d0bd4d112749988dd64cacc4bd87fe0e54",
+    "c67d07d056d3f67fc700078951437d826e58618197dc419c32e2346f6b2c400f",
+    "0d3dddc85a491798b50e3bc18160b0ce1eff45fa680ae53d4cbee654e055154d",
+    "b416b9c6f5690117a25aec857b8e34e14cfd600323efe0e8ab2f65feff380122",
+    "948d99a01575c859e4f8fc5afa4ddaaef37c071b9a5b5c75ed24c66c7c0219be",
+    "4b402d21615970825222e43d7d04bf87a382c1d068456f19fb58932aa5ffa1f8",
+    "dcd6c5b3013e5a3277095b311f27d175c857368d430715dec2799f8fb6159b96",
+    "c7f36b125db8d155ec112e35a6d5d627e5c6c321f94a1386b55999d125a04aaa",
+    "601dc4a6bd6eea0e285c8cbef287e95b5ad4f1b129b15141f212b2a67b25ade0",
+    "592c487e8f6fb79ff47e25929f3d74d794b76da3eb4c6ea99ceb034ef6ad9f83",
+    "a34dd0c3b5eb54f4225a0fde45c574994096c7c348686558c411e7d245536c3e",
+    "27e8899deb355063cf95f94039ea4404471ababbb08e6126aecc94c6e6b494db",
+    "5dedc7bb86288f9b50dd34a2e65f33ab0b6ef3b3d59203a2412d810ba9b0c5d6",
+    "bfec1512bd30d736bd136af7033c4cda316b602068fc96ca0299faf3ed6eb379",
+    "88005b008232248c9e3b1158c87bb60a1abb78cd4f4f015881b249e7d0cc5e0f",
+    "9c2de6c929d13a6d09f19d777f830c77b28565521917b597cc49fd07803055a9",
+    "bc5177f92f28d55c1da36a22fb698e7e707db7799e84898eb9931deea43d09f9",
+    "75b596afe7a84065df87f55a12db9e4852843fe6a49eaa0a0400650fafcd0f03",
+    "9f0f37c7bbc22850b6b9aad43add48115a9d5d7417fff14a3db1543c10e1a631",
+    "f132dcd94e7745f23769d482ec9fef7ffe30176b12f236d42625996d4f9cabb5",
+    "e3b9e256408d84f103f780815a89a0181d39b79da28632ecf8b6650ea24d2f17",
+    "74436ad24d18e60932af96a174891ced8aa407d47cc29659e78ff10971982515",
+    "bb29ba6efb1ef0000a9e3aadd5602e4a27c39625d0e21c533393503eb63d697e",
+    "271459d0442aa6cd1a6c7eb00f00d44356994e921e70c46bd975cec71366319d",
+    "bd22f7bf8e1e03f3f094dcc6b65f2c04e539e1d7f8361f6d0da05eb03255718d",
+    "ed32514650890ddd58c50661128233a94045eaf392a01d9d167044d953a44d55",
+    "febcaa21dfd2b155f6620e7eee611908e10efd6f3e38e4d11201a665008331bd",
+    "4fbbf537153222d5b4419096c32cf3b0fd68098a2b9aaadb52f1f0bca49ab13b",
+    "95c1f62dcd8ff2a37178597e92d1fc81e13e65225b9b9debf29964c707de9b0c",
+    "7afe4ac4d7c5db8f654729c3762f649055fa2cf8a5b311389d36597f4b08d313",
+    "d44b8cedf9eca2f91f437fbda3c879b88ec8db9faa0229459ff26b15e3b0dd1b",
+    "263ca9c2787ed780f9d2afe271648c02108007d078f104b3398475850c4307d6",
+    "c614b384ac59cacb17cfab227748aa1c81ac59a82aad9e86aa233015b996c12d",
+    "86d8b7d415e195062f4c4c370fd90be351b01fa545e7d9d462c57a216d14c962",
+    "8ba6495522425be7eccceeb644c708d2508f4227d73ebd89063303c464e01fda",
+    "182cc31be2eab7fee149167951b6567e2ad685ccb5be9f78d25b9d7e3faabe5c",
+    "4b8d1146af6276f751fa8f63a3f415b66a416dd15b62046dd8bb452a85bc1f54",
+    "cd33a12da64f3e4009c25fe6af0b25239153caa8f3a7efb31b9c217c9d6fe531"
+  ],
+  "raw_rgba_rerender_exact_match": null,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "adjacent_composite_mae": [
+    0.4264003336429596,
+    0.5745245814323425,
+    0.6990730166435242,
+    0.7741546630859375,
+    0.7256803512573242,
+    0.7114346623420715,
+    0.6806914210319519,
+    0.7627837657928467,
+    0.5077127814292908,
+    0.6789758205413818,
+    0.3317459523677826,
+    0.37961670756340027,
+    0.3788921535015106,
+    0.49972400069236755,
+    0.49913355708122253,
+    0.5873371958732605,
+    0.41276273131370544,
+    0.48657408356666565,
+    0.4504203796386719,
+    0.4581722915172577,
+    0.31351912021636963,
+    0.3388620913028717,
+    0.35250726342201233,
+    0.5299413800239563,
+    0.4376790225505829,
+    0.6416606307029724,
+    0.5541992783546448,
+    0.5645627379417419,
+    0.550541341304779,
+    0.6808245778083801,
+    0.49838757514953613,
+    0.6780566573143005,
+    0.4673897922039032,
+    0.3145851194858551,
+    0.31552553176879883,
+    0.2148379534482956,
+    0.11718887090682983,
+    0.08408775180578232,
+    0.018585288897156715,
+    0.2313646525144577,
+    0.2544850707054138,
+    0.373833030462265,
+    0.43750786781311035,
+    0.6046668887138367,
+    0.6641469597816467,
+    0.7853227257728577,
+    0.692788302898407,
+    0.7349386215209961,
+    0.6743820309638977,
+    0.7430562376976013,
+    0.515017032623291,
+    0.6390866637229919,
+    0.39877191185951233,
+    0.3848048150539398,
+    0.40725159645080566,
+    0.5636423230171204,
+    0.4038255214691162,
+    0.49518826603889465,
+    0.420665979385376,
+    0.4891340732574463,
+    0.4022164046764374,
+    0.40721893310546875,
+    0.3488546907901764,
+    0.4374406337738037,
+    0.30073630809783936,
+    0.4928611218929291,
+    0.5019004344940186,
+    0.6137011051177979,
+    0.5463521480560303,
+    0.5821418166160583,
+    0.49064910411834717,
+    0.6797760128974915,
+    0.509445071220398,
+    0.6372186541557312,
+    0.539458692073822,
+    0.2967710793018341,
+    0.31625938415527344,
+    0.21731899678707123,
+    0.16155938804149628,
+    0.1517750769853592,
+    0.019436312839388847,
+    0.2240309715270996,
+    0.30910560488700867
+  ],
+  "seam_composite_mae": 0.38082388043403625,
+  "review_video_validation": {
+    "normal": {
+      "sha256": "c83d50d32fb86e8a6231da9e1e8b8573a964f5f2e73c5b0ab1aac2cf7580b197",
+      "bytes": 132195,
+      "duration": "2.800000",
+      "decoded_frames": "84",
+      "full_decode": "passed"
+    },
+    "slow": {
+      "sha256": "fe2f5f70aaf9e0a61ebf421f22e01cb1c1f23b93d254f8e8e1eead1d6a197afc",
+      "bytes": 190156,
+      "duration": "5.600000",
+      "decoded_frames": "84",
+      "full_decode": "passed"
+    }
+  },
+  "source_review": "Every selected source PNG individually inspected at native512. Exact selected source indices/hashes are recorded above. Original84-frame before sequence remains available for independent QA.",
+  "candidate_visual_review": {
+    "actual_agent_id": "/root/artisan_stickers_b",
+    "full_ordered_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "full_frame_tile_px": 224,
+    "native512_after_frames": [
+      0,
+      10,
+      21,
+      31,
+      42,
+      53,
+      63,
+      73,
+      83
+    ],
+    "scope": "Every final decoded frame inspected in ordered224px boards, plus9native512phase/loop images. Author review only; no native realtime/slowed/device perception claim.",
+    "observation": "Scene-specific gesture/props/contacts retained, no double-exposure contour or limb swap observed in this author scope; independent per-item QA required."
+  },
+  "independent_review": "pending",
+  "native_playback": "unknown",
+  "device_playback": "unknown",
+  "canonical_assets_changed": false,
+  "limits_checked": {
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "side": 512,
+    "fps": 30,
+    "seconds": 2.8,
+    "max_bytes": 262144
+  },
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_131/review-normal.mp4",
+      "sha256": "c83d50d32fb86e8a6231da9e1e8b8573a964f5f2e73c5b0ab1aac2cf7580b197",
+      "bytes": 132195,
+      "frames": 84,
+      "duration": 2.8
+    },
+    {
+      "path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_131/review-slow.mp4",
+      "sha256": "fe2f5f70aaf9e0a61ebf421f22e01cb1c1f23b93d254f8e8e1eead1d6a197afc",
+      "bytes": 190156,
+      "frames": 84,
+      "duration": 5.6
+    }
+  ],
+  "review_validation_scope": "Actual copied target paths must pass shared freeze_guard synchronously before package publication. Source validation alone is insufficient.",
+  "frozen_at": "2026-10-30T18:56:08.339927+00:00"
+}

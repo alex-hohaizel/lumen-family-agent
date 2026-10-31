@@ -1,0 +1,23 @@
+{
+  "started_at": "2026-10-30T20:06:02.319836+00:00",
+  "finished_at": "2026-10-30T20:14:52.402936+00:00",
+  "command": "npm test",
+  "exit_code": 0,
+  "code_hash": "3118f4b5d759da5fa5c2356635faa6a9cd312e1661320649e3bcfa6522d4d840",
+  "source_drift": [],
+  "wall_duration_ms": 530068.9636099996,
+  "counts": {
+    "tests": 774,
+    "suites": 42,
+    "pass": 774,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "log": "docs/qa-1-13/full-suite-8.log",
+  "log_bytes": 116607,
+  "log_sha256": "847dc5e671a2ecbe08a81ed6d1b69e31bd294f127681e9e8734458a8f22409f3",
+  "capture": "Entire subprocess stdout/stderr retained in memory until observed process exit; final log atomically written afterward.",
+  "complete_summary_observed": true
+}

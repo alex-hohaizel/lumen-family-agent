@@ -1,0 +1,915 @@
+{
+  "schema_version": 1,
+  "package_id": "animation-rig2",
+  "author": "/root/specialist_animation",
+  "frozen_at": "2026-10-30T16:11:06.450717+00:00",
+  "candidate_ids": [
+    "lumen_94",
+    "lumen_113"
+  ],
+  "scope": "isolated candidates only; no canonical assets or manifest changed; no deployment",
+  "package_sha256": "afddd2928b4d545aff584306719c5562b1bb0e30ae1a242a3fff0868f4938b50",
+  "files": [
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/candidate.webm",
+      "sha256": "c15fc28be190c6cde2f423a336af245c65e71f09bb5bfdc93596b2c627d33519",
+      "bytes": 248937
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/poster.png",
+      "sha256": "5b65cafee88ccd973d9d9e2f5e5fec14e1e9de35db353ce7d94202ae4d62ae26",
+      "bytes": 170018
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/proof.json",
+      "sha256": "31407d916c9edc686ba6a9bd5e37342ee5a1c43534be00ea2912d935ac4e3e15",
+      "bytes": 50790
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/review-normal.mp4",
+      "sha256": "6cc974a55086f52ecb3a33d5abfd58dadc8d2e072dc48ab0c84cd59f1c730823",
+      "bytes": 230368
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/review-slow.mp4",
+      "sha256": "48a859e09f0df8cfadd59ee3976427b7a83f83a7c29fc98f433d469e256fc0b5",
+      "bytes": 380264
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/000.png",
+      "sha256": "f59ca013132eecb88e1c2b18fb893e307bd166fbe9b86a0fa567427bf346c50d",
+      "bytes": 253433
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/001.png",
+      "sha256": "33bbf4b70afad561d659bf7cc2600916110082d7cef693c56354bff67ac308a1",
+      "bytes": 257857
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/002.png",
+      "sha256": "647712a66d0d67c857981805a3520e60c8a1ea7587206ec345dd3e21bf1f4415",
+      "bytes": 259932
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/003.png",
+      "sha256": "ee1c9542538e15192fdf6bfe6ee0825ab8637e80557d864f575ce85d1f1ee801",
+      "bytes": 259632
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/004.png",
+      "sha256": "a5a0b591bc3baf7f25ad0461c231d548ca370a59bc4c970c470b8ba570bc14c2",
+      "bytes": 259271
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/005.png",
+      "sha256": "55dfa89a5f5e802f4cbbf312ff0bfe784bd5998dc2d975e0dab4072431ef5b59",
+      "bytes": 260088
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/006.png",
+      "sha256": "f573f2592c348907e72c63a0fd78e507a9a3e40988b1b3a8b4862f8954ed9d4c",
+      "bytes": 259657
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/007.png",
+      "sha256": "e9c4f1f121e378942acf427a7984c7e4adee0cb303cbe12ee35f7ae56fafd696",
+      "bytes": 259287
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/008.png",
+      "sha256": "c63afe3300fd3f43959642a64757d4f89f45a0984b31733087ccb07e473c251f",
+      "bytes": 257226
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/009.png",
+      "sha256": "a84ff64911f6895a38b1513817bcc8fa3fb7bbe20d609533d3d2748be9091ffa",
+      "bytes": 256878
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/010.png",
+      "sha256": "d93018c9ac7e34fc97ab5af25bdbcbaa04ab1e5e68e6cd3664bba0b907758248",
+      "bytes": 256304
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/011.png",
+      "sha256": "1ea13f2573c42698ae1a7b2e2ed3b05a168d9558a75b762dbe12940ae5508c16",
+      "bytes": 256469
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/012.png",
+      "sha256": "859c42bf720fda15e0e198ac6b43d3c9080cf24b1fa9f849634101d736036694",
+      "bytes": 256748
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/013.png",
+      "sha256": "46256a68fdc633c566c19a8c0020309aea571f7aff2befa05ea03a754cca9a62",
+      "bytes": 256901
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/014.png",
+      "sha256": "55924585ea4f09898551065b9bdc9b3970188efa4008e3cdcf8c7956850210ab",
+      "bytes": 257082
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/015.png",
+      "sha256": "67100fae2e8b2e5417d4af34ea6761ab11e23fe73afc6766b6a84dbeee31ad9a",
+      "bytes": 257706
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/016.png",
+      "sha256": "fe4fab335e9f4709718e4de67494dd64b98f234b1a552f7988c6fbfbf6238925",
+      "bytes": 257708
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/017.png",
+      "sha256": "667f55c5a79916a30dc04943998176093aced8d3a030259925e70cb44f3b7729",
+      "bytes": 257594
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/018.png",
+      "sha256": "4966db1bd159e4e2dbccf6e4c9e034ae4db8c4a4a32e3eeec0de9cdd44f0e7a9",
+      "bytes": 259225
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/019.png",
+      "sha256": "12af25f00cc890188350c6a11d048ed0de403b6af9775ad276dd373a198a8190",
+      "bytes": 259494
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/020.png",
+      "sha256": "554dc30f393db0e455e2e3c6ce7947f1752d22946be70356aca8967fb3972667",
+      "bytes": 258598
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/021.png",
+      "sha256": "f4babfd072c7562d096b2a498089893ccd0f95bd68f7e600790c3ae02d0155d6",
+      "bytes": 260044
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/022.png",
+      "sha256": "4e5217d40bc5c34d3d96c3b8ac9c71837ebfe881171f64208b01a8722e8a2927",
+      "bytes": 260480
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/023.png",
+      "sha256": "2c94b204a06e0b2a9890dea9be586d97477d4ba64c5a401a4db28c3681b2e74f",
+      "bytes": 260588
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/024.png",
+      "sha256": "fce065cfb88728244e3fee28c4d6131d3e9727a197bdc7178e6c55ff2eac417f",
+      "bytes": 260102
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/025.png",
+      "sha256": "6ce63e28a7981217e3eec2f971a22eb74e8f43d242fb8858f81484a160fea9b9",
+      "bytes": 261047
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/026.png",
+      "sha256": "013c53513b95862d6a252cca6151732eb70767abd538dd0bc93a8a5e12a7be5c",
+      "bytes": 259659
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/027.png",
+      "sha256": "380c1f4412e6b43e081bdea4520224f38b3dd76b400897bfea8b11c10e07e8a1",
+      "bytes": 260358
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/028.png",
+      "sha256": "2111943192c2ad9c77cc9287d5e9ce85ac0f537fc927f7a8f1d204cb019a6728",
+      "bytes": 259852
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/029.png",
+      "sha256": "70c70c4d71ac759d893aa6d48325cc357fbf533401ddfb27549487c7f32a26a7",
+      "bytes": 259958
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/030.png",
+      "sha256": "704fa1a46e4c83f67e47e3f1a9e07f7d9a91c965c7374d9a89fce4be0cab819c",
+      "bytes": 260833
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/031.png",
+      "sha256": "68d8c1bdc9ffda00374ce833ad02fdfcb32bc0fb25181bb99ec69a9c9afbe719",
+      "bytes": 260693
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/032.png",
+      "sha256": "b19e98080fe7bdf0329f7c807fd1a80fcd277f5990a113afbeef5571ffd3e2a9",
+      "bytes": 260635
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/033.png",
+      "sha256": "128156b40b09e4591f981fc8cdccde6544b3ca962239189b821eac338691efe7",
+      "bytes": 259817
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/034.png",
+      "sha256": "631b7426078e0e4598dbfe6b15159f2ae2c4458ca9ecccf4a051d63987d13436",
+      "bytes": 259369
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/035.png",
+      "sha256": "e817352a9db2559dae6d3e7dd6bae56fea431d86508adff17d02d3b096746710",
+      "bytes": 257895
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/036.png",
+      "sha256": "fee9910124d81d8dcd92dfd0d6e997ab72b76471b8ea901e363623b15923070a",
+      "bytes": 257574
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/037.png",
+      "sha256": "0bb141f94647bcbbbce89c162d1d500412cdcfe3612a4c5ce136e9f1da2fc2ac",
+      "bytes": 257310
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/038.png",
+      "sha256": "d46304a6c44e11cf3b8ee5dd0f8352bc514bc5531a5d6eab73a877e503186fb3",
+      "bytes": 257011
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/039.png",
+      "sha256": "78b2955e8a71a90a0a86a83f5f2f88d552d2de851019362c015287434e9c8463",
+      "bytes": 257847
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/040.png",
+      "sha256": "cd86dc1d6cf83189ed8fea47e653ee4790f565f1b44b340453ecb987b8e7c6aa",
+      "bytes": 257867
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/041.png",
+      "sha256": "6c07ecd7ae071cb88a8dd42dfe64055503c51a5fb24c788027c283b3c1126c51",
+      "bytes": 256789
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/042.png",
+      "sha256": "09f2c1dc676c9eee086bc81d8d3fbd51216fcb3db9fa5f55fcf086a13912e113",
+      "bytes": 253433
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/043.png",
+      "sha256": "e70a8b6ea69ad3af6cad3ebf6e910f911b1591464e2356a46dd5098e4ce70dac",
+      "bytes": 258455
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/044.png",
+      "sha256": "fef005b5f57e2ea638ece80f4775f649f0c591ba9c9ade9bedd391fdfc36b7c5",
+      "bytes": 259125
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/045.png",
+      "sha256": "d0a6ad0b63489808c3f5d358dd5b835cb97a2180c70cf30b922824e241d087f3",
+      "bytes": 258777
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/046.png",
+      "sha256": "6a5d952ddef532f695df31753feaa316b6e255db0ef7ca67a897a51bd1a29da2",
+      "bytes": 258357
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/047.png",
+      "sha256": "0d046aeeaee801a158eba00826682f505cd31113de214708f683b3afd1814372",
+      "bytes": 258340
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/048.png",
+      "sha256": "0981b90b2578497de4f827a1c81938d53da2ddbd5e5cbb2210dd47d6ffdafbd5",
+      "bytes": 257238
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/049.png",
+      "sha256": "586103a9aa7c9bb529ea6d6d2f8b00d3ec09c408c44b974cfaab64069e842f0f",
+      "bytes": 257412
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/050.png",
+      "sha256": "bb04a5e6de1a97c4fea39a5b562bcf29c5b886b458d376ce5f545890f4f6a6af",
+      "bytes": 254493
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/051.png",
+      "sha256": "48d76f261fc3cedb2007e516ebbfe9aff175c7db7648ddf337e910502f0e53de",
+      "bytes": 255770
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/052.png",
+      "sha256": "14ae0ed36e9012a41ee59d29b431ea5d459b3c32964dd8138f994d4f1d6532bf",
+      "bytes": 254535
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/053.png",
+      "sha256": "69d07b6bf953d1b03ffc41907d3fb3394cac4dd08c4826cf14fda112cb82024f",
+      "bytes": 254486
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/054.png",
+      "sha256": "08c4ca67ed0eee9948be3b779f52b719766289fa25d721093d6db5b6970700a4",
+      "bytes": 254180
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/055.png",
+      "sha256": "ce0c7d1805499796863d5a1153668b97c9b870a2d3ce07f35223ddba8fd2a8c8",
+      "bytes": 253371
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/056.png",
+      "sha256": "ea0c7c6bb338f79dee8c2527223ef7e18e562c114008ac2fb467be40b2e2a9de",
+      "bytes": 253491
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/057.png",
+      "sha256": "0c1f7837206a20c06d55ec0dafa103d9f5748953008b6e5abbf3ac9af585121f",
+      "bytes": 255037
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/058.png",
+      "sha256": "6e26f63e38864ab2577a8004b9d1ce3c0366e35ccf68341b1e3f4e3f068d7fd5",
+      "bytes": 254369
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/059.png",
+      "sha256": "130cb5f29c28e1f81233d1be5f224cfb18ed959600f264fe62468205a4cfa75a",
+      "bytes": 255587
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/060.png",
+      "sha256": "4a46ae16b926dcb9ceb188cb1b5d9c2ecf8a08852ea300763374ab9242711eec",
+      "bytes": 255125
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/061.png",
+      "sha256": "5e1ae8a82be8bd8b3322d16c1062d5540a8a1bbe3a4afe8a2b17200fbd06f71e",
+      "bytes": 256959
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/062.png",
+      "sha256": "41827279b6515d962fb3ff1cf125cbefb5a4001fde7c2208b405c59852b72486",
+      "bytes": 257316
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/063.png",
+      "sha256": "d56cb1aa3412a0679105b8762160d91758fa8bfcc4447444b1b078f712e7b4e2",
+      "bytes": 256701
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/064.png",
+      "sha256": "ff86b0b5bf0c559d0d8bb7d604b158e1db413de195daea926655d42bd99c5407",
+      "bytes": 256786
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/065.png",
+      "sha256": "8b0e5f903b9cba13b314c94255b343dd371a7fc92e0d96085766db6eb2c386a2",
+      "bytes": 257346
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/066.png",
+      "sha256": "9b41bc1ef6b21ff066ec9746d3d6e7e264e787bf07ca77ba2857b8709c1f47f6",
+      "bytes": 257737
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/067.png",
+      "sha256": "8c76f4a4374a45b73b09be254a7112051caf82491c9f3f0f679d56b2a7e1ed11",
+      "bytes": 258245
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/068.png",
+      "sha256": "1e97c5f113c38b93327d463576e684855171da8ce4db4153f66d7892fc86d39a",
+      "bytes": 257673
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/069.png",
+      "sha256": "ebf46fb983ae1a0c9187b19ab1f820f32b6f1cbe429301bd364e570643a39ae9",
+      "bytes": 257856
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/070.png",
+      "sha256": "b71f2c14b14d7e59e04fcc90a0eed5772daa7a57ea2543967dd761d3b47868cc",
+      "bytes": 257246
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/071.png",
+      "sha256": "c7e2d6fc25d9e3567918bc53fc8a47a5ef6b08eec4972878d296803b43c1a5db",
+      "bytes": 257995
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/072.png",
+      "sha256": "3868809ae55912ad9986a2ef43e871f9978dd85b1d0a758c36c0afbe4021fc8a",
+      "bytes": 257577
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/073.png",
+      "sha256": "1b0b3dc7bb6124d86a4d6c8b4f3b7a3c0c9fbc817a6c9858e07793055b9c5475",
+      "bytes": 258343
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/074.png",
+      "sha256": "26d9c9ee7cb903136b3b5d7d81e98fb086932a6809ad1b311e5fb22446308991",
+      "bytes": 259018
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/075.png",
+      "sha256": "4de96de639a2117b2b2c2540573c22db80cfcdd86fee7862adc47b2d89236e85",
+      "bytes": 258899
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/076.png",
+      "sha256": "d0c3ea46a03020413b370c78fe4b684003772422673f7cdfea5523073aaa3183",
+      "bytes": 257430
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/077.png",
+      "sha256": "4042f304bbdcc6c94a93f24eeaeff0a392cad526f6e2d24ac0bddcf4352bbce4",
+      "bytes": 257294
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/078.png",
+      "sha256": "41f122026802bd28f9ee84635250d82f901dea33d11a936fa4d170cfe424781d",
+      "bytes": 257476
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/079.png",
+      "sha256": "f51498895c645a8f4bb2eb82de8df2c7533b1dbe4f1faad95375e79bdd13f8f1",
+      "bytes": 257490
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/080.png",
+      "sha256": "90d0d684cb65a36cd02c63b02eac0f2e3e1aa42794dbd6c66d6fe0574a40e3e5",
+      "bytes": 255731
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/081.png",
+      "sha256": "22e94a6cf2fbceddf83d77b43f062d47a9c2a848bc8bf0fbb8adeb75948f34c0",
+      "bytes": 256841
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/082.png",
+      "sha256": "e533ef4e3ef11ad7b44629dcead8204d091256a7a4cf354aa9c72741b07ee8cc",
+      "bytes": 256740
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_94_local-acting_rig2/decoded/083.png",
+      "sha256": "264fa3c8de6b4368752d402724ba5dec861c26157cbea1b448b7fa92c7ffd71d",
+      "bytes": 256274
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/candidate.webm",
+      "sha256": "715914b1f6ed44c3084bc757fb0053b7f6bd2f67f65ea04afe13a2c550f86bb9",
+      "bytes": 222076
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/poster.png",
+      "sha256": "dd54ee8c0255aa2e49805d11e88fbb7fc1dc93c68713ee5eb8b9bf4b1d6c9d9e",
+      "bytes": 173543
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/proof.json",
+      "sha256": "fa8c784b976fe2a69a21b45a0a6702926fd55c6f4549286e4d1d24ad29ca5de3",
+      "bytes": 49546
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/review-normal.mp4",
+      "sha256": "2067b1847aefd0520ca3cb37fe13ec196d1bc16dc4957cee181d4654e6f49b7f",
+      "bytes": 225289
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/review-slow.mp4",
+      "sha256": "123de809d48efd3a685cbd4aea468e2881d74c9241be12d54886af7bca316f82",
+      "bytes": 370495
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/000.png",
+      "sha256": "3de259ed3ef1cbad719f5e3dac664558544ff8168c7d8a194a2956251b599a6b",
+      "bytes": 255177
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/001.png",
+      "sha256": "9795d759c4ecec0ac6af8b4a39ba4144a6d62db70e635f2ebd9361977ce82a84",
+      "bytes": 259386
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/002.png",
+      "sha256": "6826d96aca8e61e5b3c100651ea4aa4938372ff476f58f751cae57f2101b4a22",
+      "bytes": 261768
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/003.png",
+      "sha256": "f1c5bc182474faf0474885a4ebba7624d8cbc47971fac36a5c6a5daa57205692",
+      "bytes": 262197
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/004.png",
+      "sha256": "c0f9d85c667bba77f95e0f46d7d20496c1b179178ec94d4d3a58e03f4e5a8464",
+      "bytes": 263754
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/005.png",
+      "sha256": "4f92af5e020baec50ef2b0cc593c2e74067a587677aea88c8a37c1dd6603ebf6",
+      "bytes": 263894
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/006.png",
+      "sha256": "d58cba7d1e494b190caf2536ce58875fa1e758021bca132b3b172617e2758a54",
+      "bytes": 263400
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/007.png",
+      "sha256": "cdebc25268edf74084f00d0786fe34344cc5134d800ab5e299cbbb2bdabd14bd",
+      "bytes": 263452
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/008.png",
+      "sha256": "521184e0667ed93957a53fb95f5c5ace1880757c0d803ba0dad18fdc47084b77",
+      "bytes": 264605
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/009.png",
+      "sha256": "30b3d65f504e4c8cf6f2829dec65a4a692058215a5542f59b7a93ac80883d4ce",
+      "bytes": 265177
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/010.png",
+      "sha256": "21f528d8f002ab8cc372b0117d10cafc7e20d9fdc39771fea496757e57049e25",
+      "bytes": 265494
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/011.png",
+      "sha256": "818375a69c3885c06353f12f0b5e9aa7b1fda97cb3754301bc68928072868b3d",
+      "bytes": 266595
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/012.png",
+      "sha256": "91b4504e0d407f420acf1eed6d1a3886be011928a73dc7130312349486f00c2c",
+      "bytes": 267772
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/013.png",
+      "sha256": "2538f8c594857a5cc624925737c6cc966033581b0544e79142616896ca062de6",
+      "bytes": 268993
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/014.png",
+      "sha256": "a0c832ddc5aefb35dacee5420d957c8f8b81915d81d1487fdad4cc5895b49cd5",
+      "bytes": 269105
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/015.png",
+      "sha256": "4ed6fd791f679da54d147261c5ef6c5ffdb638bafa0a39c116c3f917456c427e",
+      "bytes": 270724
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/016.png",
+      "sha256": "b0b30a219798b06c787e263b25aba0a0be64c3006fd777acefe6241eb9d0a7c5",
+      "bytes": 272663
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/017.png",
+      "sha256": "ead080033270755e20c9066ece20da5c0782e3e7659a4f86b3134faab2c618d2",
+      "bytes": 272833
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/018.png",
+      "sha256": "a13e41bb043b7c9605a26be66f1df0153035469049385a249efb985915c0f43b",
+      "bytes": 274296
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/019.png",
+      "sha256": "6d3ca29f0666d261947115b8074f0427cf001c36c746301ed51c4c70796e8210",
+      "bytes": 276805
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/020.png",
+      "sha256": "93b853c5f5099a47412feda56921f015331e11c9effec0f8be4c773d8d04a97b",
+      "bytes": 274324
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/021.png",
+      "sha256": "94d1fabd889183706cbb5596f24e3f85a2e0e0ce216854671e827e591cdd4d3c",
+      "bytes": 276253
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/022.png",
+      "sha256": "24cc394dd11dca243dc3ccdd2cec4cc41794087324b97a16e699c9c41457af32",
+      "bytes": 277194
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/023.png",
+      "sha256": "5eafc508826ef2b8cb660e4df4d7c26296d39adc5ae0c21d3bcbbdfc7bd1dc7f",
+      "bytes": 276589
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/024.png",
+      "sha256": "ec52a75592e9e9128de77a3b978d251db17c2b96b7bf49989878b13f39ff2ce8",
+      "bytes": 275845
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/025.png",
+      "sha256": "8fbc753a9c4d60c9c609e325a88b571ff699477e0774712792de457a82454b1e",
+      "bytes": 275557
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/026.png",
+      "sha256": "eb53c6d0db601575fb4b0e9b8a4a036d73733dfe2a56378ca1239788228bae23",
+      "bytes": 275339
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/027.png",
+      "sha256": "bd53ce04fdb1868c56b42d7e93c5a0893824a628dbc4c190bdc93d59d11720bb",
+      "bytes": 275479
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/028.png",
+      "sha256": "0c8af420c5ad6937a8ee3da9abd8f9a051eb2a791af892606a34d168a4480cb1",
+      "bytes": 275179
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/029.png",
+      "sha256": "fc3637a3115ce6bee13c3c2554bde5c9976cdd6fe276bee1f54c5ecac1ff38ef",
+      "bytes": 275061
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/030.png",
+      "sha256": "6c4b2253603dc35905f42e3911a2e942d883f624438860aa1445087f69cf9228",
+      "bytes": 273728
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/031.png",
+      "sha256": "12834dde3a81e78850b024babce61dc87a458dc042a8ef0dd5909a370ce9e967",
+      "bytes": 274386
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/032.png",
+      "sha256": "077f1a456fea7ab28b0ed167b37fca6e0e3a6508ada840b5743f746ef0d8e11b",
+      "bytes": 274429
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/033.png",
+      "sha256": "bf4deec13e931accbbd60182979646bd96f8733dea2881660ac39b1d10489ed4",
+      "bytes": 273517
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/034.png",
+      "sha256": "934d3ea450e1c685086ec568795b338a07574b7cef2de62833be6b95cf0fc9cc",
+      "bytes": 273153
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/035.png",
+      "sha256": "e64a93c9d51c153e1d1dc2de1beb175bc885a1365aa2a524f06a9ea198a0de5f",
+      "bytes": 272785
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/036.png",
+      "sha256": "e0f5989c9001b615c8f8de1bdf76054852898336fdd14b2935fe4a77ddf6598a",
+      "bytes": 271448
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/037.png",
+      "sha256": "805c96ad492850b84691712847a380ba890992c2804cc7aba432bf3ef0932bd0",
+      "bytes": 271696
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/038.png",
+      "sha256": "1997c22c62dd4fa6a417ac36b4265ad51dec5ceeedacee46593c0c4068d9b965",
+      "bytes": 271312
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/039.png",
+      "sha256": "b9a3ef0ae4796f9f62959f6e1e74680055fc923b9a33b11a20689d8600a0ae99",
+      "bytes": 269749
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/040.png",
+      "sha256": "051b3f98c31a534b18a5773dbc7cb9bd37123bc89013f6a0987eb7d94ace2665",
+      "bytes": 268019
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/041.png",
+      "sha256": "9ffa8b7ac530b0803172998daf04e88913e367c7cad02a3cce0a4166b67760aa",
+      "bytes": 267995
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/042.png",
+      "sha256": "8b92c0c4a8a8935fd2e5da3618d06df38d70e3cb15197774d94a7f92eed949c7",
+      "bytes": 268499
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/043.png",
+      "sha256": "ebcb9b8f20005268f27fe86493dfc9e24b93838f1a39788864a9b160b8433378",
+      "bytes": 267458
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/044.png",
+      "sha256": "7a1148c824d41c247664b9f1fec25382cb42e5ef7489c54598ae0133e99c5a40",
+      "bytes": 266337
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/045.png",
+      "sha256": "fbc0656fcaa1c5af1e5dc91aae36639c26fa74bbd9e074b87d6a9626d857b4cc",
+      "bytes": 265747
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/046.png",
+      "sha256": "5f1d020054c7c266657075990a68c5d4c9d4b92c6d8d97389e46b31052d88f37",
+      "bytes": 264978
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/047.png",
+      "sha256": "4eb5f365f3cf7935b5222e8e94e60c0ce15e856a22ec4d7781de6e1465f813e9",
+      "bytes": 265353
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/048.png",
+      "sha256": "75adf58a5d1ec8d756854aae92b5eaffdc3efd6d9ebd949c45b01035669ecc71",
+      "bytes": 264580
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/049.png",
+      "sha256": "304cfaf118a27e99db1a274c7a0acd7ce605405bfd71d7f1628faf3779fcc1c9",
+      "bytes": 263559
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/050.png",
+      "sha256": "d6341b2f393b61deda8040f800e41674d79c31caeb9c89df40d2799252e303f5",
+      "bytes": 263283
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/051.png",
+      "sha256": "70a0b376b633a64e1489f0adc4c2d727711876c0be82747e3d98ea190de61b52",
+      "bytes": 263334
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/052.png",
+      "sha256": "3c75641290c9748a3564bcbe6bc95eb3a0f8ed4f828d1998394f9500826d3261",
+      "bytes": 263582
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/053.png",
+      "sha256": "2c1c2fd78f7872788cf6273a4700598cb69e526dfc44694367e34ea646334f1f",
+      "bytes": 262901
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/054.png",
+      "sha256": "090e8ff38df43cc36ee8d06331c3a4d58fac510f2df42a91e2b115635547b8bf",
+      "bytes": 262878
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/055.png",
+      "sha256": "7001c04a1a6539db8111b3d72f4ca3a387d611f4bffa4a89339533c39b96d2d0",
+      "bytes": 262190
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/056.png",
+      "sha256": "e4344fad2d0f587d1f44ae122ae8603159776f3ae685eb1e1620f066b773a7f7",
+      "bytes": 262457
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/057.png",
+      "sha256": "d8d3d14c5cbb2b159fe70cf3831a158e12151d330bb1735962b75e230f98a249",
+      "bytes": 262185
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/058.png",
+      "sha256": "5d0c679faeec51ec39ead1b15cd92b5e7f742fc5c42cab771e381c3b8991b764",
+      "bytes": 261834
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/059.png",
+      "sha256": "0b816e13c4499e6c9a194a4e269cbe18791277ae717328b955b10e04f691617f",
+      "bytes": 261876
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/060.png",
+      "sha256": "eeb0dd1905807064641dd977abaa072b4be0292c41e5458fd0364db18af06626",
+      "bytes": 261728
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/061.png",
+      "sha256": "e56c78904d0ca4bc792dadd9ac6bc243966d1d5e78b04c5fd81114249823e672",
+      "bytes": 262150
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/062.png",
+      "sha256": "d3439682eb2ecb2d9c621dfb053749e0a67cac9b2da1b1662220a62275207c95",
+      "bytes": 262048
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/063.png",
+      "sha256": "63442c89f0367aeef1d9b59e58b2baaf4f2e975951fde8723f89456b7a3884f5",
+      "bytes": 262661
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/064.png",
+      "sha256": "b794e835eb8189d7f680d55a2daf77ee8bf0213f5c5729f856a45a831deb5150",
+      "bytes": 263456
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/065.png",
+      "sha256": "47841e8d7c71451a7c046c391f4f198bbeda7d07f892eecd7216b002f41e5adc",
+      "bytes": 262887
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/066.png",
+      "sha256": "c7fa797f3a57e7b071c8f654e41ca3fe31a6f04a9cf3e22d848fb65040cf921e",
+      "bytes": 262836
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/067.png",
+      "sha256": "e60bc5529a477d87db36581f003928674ec7d4847d4865648c8cb48cd152a1f1",
+      "bytes": 262379
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/068.png",
+      "sha256": "e2b1893a00d881a425b6c1544ef685a98cdb4186fe9666d481d35f853115f1b7",
+      "bytes": 261092
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/069.png",
+      "sha256": "6ba944e74a82e3db07bf72256e699773a7d1ad9e11b16bb5b3339e3a6eb09257",
+      "bytes": 260570
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/070.png",
+      "sha256": "3d1fda838a50790b2ccaa194cec7a2594a9ebe23886e24049622795fd19a71f3",
+      "bytes": 259623
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/071.png",
+      "sha256": "0cd28b5004ba10c704eb8728a207203be6669147e47ec8d5362e05c7e96bf3a0",
+      "bytes": 259466
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/072.png",
+      "sha256": "6ecb1a116ffc10bfcba379bab64227607bf571b7d243dc6edc79b16c1f863bfd",
+      "bytes": 259397
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/073.png",
+      "sha256": "e7f87eedbde8469af614609e75e86f7b111190519c112eae5bae42cae75eff5f",
+      "bytes": 259116
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/074.png",
+      "sha256": "d620435ad57e338e608e0c75b7ca25655a85ae58a2549a4148d687a3a94348e1",
+      "bytes": 259625
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/075.png",
+      "sha256": "b7dcc4e41a7617d69da6bf2793e479d0f5cf84e2bf6141552524a7d2045104e5",
+      "bytes": 259653
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/076.png",
+      "sha256": "4824878461a9e32ea9c83b90b1dac97d68300182b0695368c22c2feffe3762f7",
+      "bytes": 260227
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/077.png",
+      "sha256": "26ea067ac8297c970c9597d4807f1720b3b426535b3db98352e4563c8423190b",
+      "bytes": 260857
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/078.png",
+      "sha256": "6c2cd7a91105f53ba9c7f01fef331e940a95818d7d7ee2b3dc77ab6b07593a38",
+      "bytes": 261742
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/079.png",
+      "sha256": "44b66b843d200307f44c9b1a74b68f768a55a8909b5fe5e1a81a0631cb9014fb",
+      "bytes": 262156
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/080.png",
+      "sha256": "622cdb15c12e4ebeb690cb834f957b72ba210ed8e86a4e11ffd126ee41946a39",
+      "bytes": 261530
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/081.png",
+      "sha256": "0782d977605f910a75e76447e4c10717e70b8c816ba769970f53e60a7d2bfada",
+      "bytes": 261101
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/082.png",
+      "sha256": "92b4f1989d1bcea8f14ba8e7d38f8ece4d54cd575a8e0c9eff24d81614333521",
+      "bytes": 261001
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_113_local-acting_rig2/decoded/083.png",
+      "sha256": "637a108f2559365dc2f17419aad8ed8785d9ed7d66cd6b6964fde2e318e5dcc8",
+      "bytes": 260119
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-rig2/local_rig.py",
+      "sha256": "1df3c0721691f969c1ecdba98be79763076ac033b2748cc7cbc944974fc9914d",
+      "bytes": 12458
+    },
+    {
+      "path": "sticker-lab/production-v5/frozen-rig2/repair.py",
+      "sha256": "71ede76a5061a1692b0dbb660cd3851dd946e44f246d6536bf09840358273cab",
+      "bytes": 15466
+    }
+  ],
+  "verification": "Every decoded native frame individually inspected at224px by author; listed native512px spots; independent/native playback pending."
+}

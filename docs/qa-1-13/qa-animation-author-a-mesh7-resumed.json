@@ -1,0 +1,1246 @@
+{
+  "schema_version": 1,
+  "review_id": "qa-animation-author-a-mesh7-resumed-final",
+  "actual_agent_id": "/root/qa_mesh7_resume",
+  "role": "Independent exact animation frame/scene QA; not author or integrator",
+  "reports_to": "/root",
+  "created_at": "2026-10-30T19:40:16.859333+00:00",
+  "status": "FINAL",
+  "package": {
+    "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/package.json",
+    "file_sha256": "e4f4f88ba540528fa2d969bf0d14feea4df46f90587fab3b99a3ae150dd878da",
+    "files_sha256": "688d9fcebe876fbe1da78b5eecce60aafda11b8da756e0a31e73df9e96f1d648",
+    "listed_files": 103,
+    "actual_historical_author": "/root/artisan_stickers_a",
+    "final_copy_guard_sha256": "6a3edaaf881595a8518588a269e0197a0252ec88b8aea5f625290e504ecc9366",
+    "all_listed_hashes_and_bytes_verified_start_and_end": true,
+    "author_guard_used_as_independent_visual_acceptance": false
+  },
+  "scope": "Only exact7 frozen A mesh prototypes61/62/63/65/67/71/115. No blanketclass acceptance, staging/publication/deploy or native playback acceptance.",
+  "procedure": [
+    "Read addressed TL contracts and actual recipe omissions; inspect baseline critical frames.",
+    "Independently verify all103 frozen file hashes and bytes; fresh alpha-decode7 exact WEBMs into588RGBA PNGs. Compare all588 to frozen proof and author frames; check streams/limits/count/PTS/alpha/bounds.",
+    "Actually inspect all588after frames in14ordered224px sheets,41selected baseline critical native512 images,63native512after phase images and42native512loop images. Initial61/62/63 ordered sheets were existing QA-derived boards; exact decoded pixel hash correspondence was independently re-established in this run. Remaining after boards and all critical/native boards are freshly generated in this QA namespace.",
+    "Fresh decode each of7 chosen source anchors directly from archived baseline WEBM, assert exact RGBA pixel correspondence and index/30fps timestamp. Verify source video matches TL baseline and bundle digest.",
+    "Probe and fully decode all14finalcopied MP4s, validate actualbytes/SHA/proofbinding,84frames and everyPTS at30fps/2.8s or15fps/5.6s. This does not imply perceptual playback.",
+    "Inspect additional native512black/white composites for61frame7/71frame50 low-alpha border signals, with explicitly amplified alpha diagnostic.",
+    "Recheck all103immutable files after all decodes; retain actual uncertainty and per-ID strongest objection. No author repair, product mutation or frozen mutation."
+  ],
+  "actual_coverage": {
+    "after_frames_visually_inspected": 588,
+    "after_ordered_contact_sheets": 14,
+    "ordered_tile_px": 224,
+    "critical_before_native512_images": 41,
+    "repeat_all588_before_visual_review": false,
+    "fresh_source_anchor_rgba_pixel_checks": 7,
+    "after_native512_phase_images": 63,
+    "after_native512_loop_images": 42,
+    "additional_native512_black_white_composites": 4,
+    "copied_review_mp4_full_decode_files": 14,
+    "review_mp4_pts_full_sequences_checked": 14,
+    "all103file_hashes_rechecked": true,
+    "independent_generator_rerender": "not_performed; immutable author84raw/84decoded reproducibility artifacts retained, and independent exact source/freshdecoded checks performed",
+    "native_realtime_slowed_device_human_perception": "unknown"
+  },
+  "evidence": [
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/final-integrity-source-pts.json",
+      "sha256": "dc70162a84137f65e351999b74e1a8d3258aeb83458dc135eb185eb635d6077b",
+      "bytes": 11444
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/inspect.py",
+      "sha256": "90209854a8b5642265295f806074dfda8b5462fce1c37747defebcdb8d467682",
+      "bytes": 7761
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/low-alpha-border-diagnostics.json",
+      "sha256": "0bdec6120bb2d0fbaef6d116149dcb2478cb6f93ad64832ac7c999ab6752f902",
+      "bytes": 622
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_115-after-000-041.jpg",
+      "sha256": "03271b47641a5f4b98ee7178ccf1119d77809eeb6976154a1294add33f827625",
+      "bytes": 628551
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_115-after-042-083.jpg",
+      "sha256": "265f5907167131b0079c692f8789262ce7fcbf001cf2b8d0fd5ad0881192edfe",
+      "bytes": 627955
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_115-after-native-loop.jpg",
+      "sha256": "937b18df6bac49ac671eadafdd88899f3a1721b19448df450b8304e75ba76b5d",
+      "bytes": 278782
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_115-after-native-phases.jpg",
+      "sha256": "3df605ce7676d5364ed5e359b969105c389d2cfd1c258f32f59f8538388c4749",
+      "bytes": 407330
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_115-baseline-anchor-000.png",
+      "sha256": "9159c0f4b37732515967aaea2c685f220745d8cc4958f44c087c12cf06055f60",
+      "bytes": 278527
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_115-before-critical-native.jpg",
+      "sha256": "f18963ca58719c843c0dc7a990eb251a0a71cfbee1fd1740845127e2fb902d52",
+      "bytes": 268200
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_61-after-000-041.jpg",
+      "sha256": "7d4f65cfe3a05b605e36816a3fa53ae26f186801a9181644d41064ec424152c3",
+      "bytes": 641207
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_61-after-042-083.jpg",
+      "sha256": "96657d336fe5a9a22404a7098a5cfec2db66cdadb1b77ac657005ec23248c103",
+      "bytes": 640263
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_61-after-native-loop.jpg",
+      "sha256": "10e051c5c125cf169668b81da9f964ae973c51532ed486434322c1c8e56f1c6b",
+      "bytes": 283085
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_61-after-native-phases.jpg",
+      "sha256": "336126be3cdade7404281f673693ffb8640df14b98f7ca9a092a421304261a7c",
+      "bytes": 412660
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_61-baseline-anchor-000.png",
+      "sha256": "8d12e08c306ccc06cd878b232ce0742bc1a7bb86fa150546e45b88d18660048e",
+      "bytes": 287125
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_61-before-critical-native.jpg",
+      "sha256": "e89c3225757a3b3c796585afe1884d492152f866edd621a9fb33e799274693ac",
+      "bytes": 264683
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_61-low-alpha-black-white.jpg",
+      "sha256": "818cbe35955868bb4f9e4b4b57a0d01231697727c4fb8acd922ae514d4af1123",
+      "bytes": 144137
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_62-after-000-041.jpg",
+      "sha256": "584a37cf95e2d49dc596ae2a557ada719ab1bc7236577501acc08e58e0b1ce1b",
+      "bytes": 507753
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_62-after-042-083.jpg",
+      "sha256": "07674f8f3f043175334c43fde2948d9b5a82ea89e2764f6b6c50a13be6de067c",
+      "bytes": 506597
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_62-after-native-loop.jpg",
+      "sha256": "bb97e67bc2d6d02183adec635f5a4721e9668e47b82a6f2f391b9941895dea0f",
+      "bytes": 229682
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_62-after-native-phases.jpg",
+      "sha256": "914db52f415b9d33c341a24d75e983fd5420be009e4408bc1f16708698976a4c",
+      "bytes": 333832
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_62-baseline-anchor-054.png",
+      "sha256": "28e967af5e73a1c418e47938c14a79184562a7808d8869fd848cfb5ce92aa9e7",
+      "bytes": 270979
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_62-before-critical-native.jpg",
+      "sha256": "7198a9b39f6c5f98966e46087fada033d79554459ab155aa8083c9c5ac30faa0",
+      "bytes": 191317
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_63-after-000-041.jpg",
+      "sha256": "cb35538856b3cd53ee1860286ad79cb8b3a81c5de67389e1137255cde48176e6",
+      "bytes": 748843
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_63-after-042-083.jpg",
+      "sha256": "10c1f49878438d8557be65146095a9c040faf21b47e0f07d4b19e51557d98fce",
+      "bytes": 748964
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_63-after-native-loop.jpg",
+      "sha256": "8caca6568c5cee2124bc0b2b3f14b68bc1bae277f353a09946d81b2f4ddfdc0b",
+      "bytes": 333156
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_63-after-native-phases.jpg",
+      "sha256": "584d071bb9a829e475013fad0766a26a6a4371506b35ed5801108f8d4c1ca332",
+      "bytes": 488822
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_63-baseline-anchor-000.png",
+      "sha256": "79c8edf3d6cddbd13275603d394b603549addc3c692bf18e124a6f517590a86a",
+      "bytes": 357863
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_63-before-critical-native.jpg",
+      "sha256": "602afbdf88b6d8259a006495c8149c601918321105849d200d2143a1f2295e41",
+      "bytes": 370972
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_65-after-000-041.jpg",
+      "sha256": "a40cab223e3428f203a58dd91e8a6da2bd7f2031f1e86f6540fa4de99703d485",
+      "bytes": 667459
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_65-after-042-083.jpg",
+      "sha256": "7e01ad542ea93f96515143ec6e3bebd99b74a2f16fd193870e0bd60406e5e47d",
+      "bytes": 667319
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_65-after-native-loop.jpg",
+      "sha256": "cb43535b61821c4197085785d84eb0d31fcab346210b3f9bffba8bbc1e77cf79",
+      "bytes": 303838
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_65-after-native-phases.jpg",
+      "sha256": "d04ec04543a8d1dbdc9555ed38131fd43877f8bb286fd8fe90b9cf3f113b4761",
+      "bytes": 441072
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_65-baseline-anchor-000.png",
+      "sha256": "57509e008aafb2cfe1cb0037974a57ca71f6dbf3986e3e2cf039ddba46ae2d32",
+      "bytes": 297416
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_65-before-critical-native.jpg",
+      "sha256": "87483e33c9d0fa665b2b41dd02ce6d926a9a95891480d7482a89c32bc772c9f7",
+      "bytes": 353426
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_67-after-000-041.jpg",
+      "sha256": "cd72098c89a3c7d6ef33e7bfe6bed79242744a58a092a0998f363ba0f4d41705",
+      "bytes": 588103
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_67-after-042-083.jpg",
+      "sha256": "b02de026ad78de597de8bb070f0010a28d0627c0ce1bd6e66d181e6f766137ad",
+      "bytes": 586511
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_67-after-native-loop.jpg",
+      "sha256": "1c6ccf7a7fe4787d7ed7dcce947abab95e8ea560740b9646b272b0133d7579a5",
+      "bytes": 256437
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_67-after-native-phases.jpg",
+      "sha256": "2ede4961b646f673eacda7ed3703df935017a044ffebcbe66e946ea9619e9020",
+      "bytes": 376528
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_67-baseline-anchor-000.png",
+      "sha256": "da06e42ebcd937f8120daac41788db0449027429cfb47dcaa5cf280e8763d7fa",
+      "bytes": 258696
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_67-before-critical-native.jpg",
+      "sha256": "0d92f6ea65b00dc5cf4b6a31f0840fcc029e0f81be88bc2645c6218e769bef13",
+      "bytes": 187340
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_71-after-000-041.jpg",
+      "sha256": "88881e607563522a3913d4a4feb365dbdb6d648e7f738dd9c8b1eb159de097b6",
+      "bytes": 668877
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_71-after-042-083.jpg",
+      "sha256": "aad378fcbf427330d8c93c0447605e0c90312099890f6bb1324a97e9f4c9d36e",
+      "bytes": 667714
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_71-after-native-loop.jpg",
+      "sha256": "a1a7c3a3a0ba03d4ad116666ea417464695928e2ae9391fc1ea3240e792dd4aa",
+      "bytes": 296691
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_71-after-native-phases.jpg",
+      "sha256": "4b9bfc50ecc5683e164b1bfd2df5eca15f41ca94e6c79275544bec3e5ea95eb0",
+      "bytes": 432068
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_71-baseline-anchor-000.png",
+      "sha256": "89ae5f05e822d269bd0031ecfb0536aebf8f1bd12554869256f8a1351f9c06fa",
+      "bytes": 291949
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_71-before-critical-native.jpg",
+      "sha256": "13ef17e6db2df5b3c3d6efdbe7daac49005f2d7a56646ec11deb2a40de522f27",
+      "bytes": 248863
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/lumen_71-low-alpha-black-white.jpg",
+      "sha256": "4ea1593a367a5fc9b8f400c329749968337053a67cde73bee4bd9726e2495ec1",
+      "bytes": 147483
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/technical.json",
+      "sha256": "9182798400a07c51927a72b831f788a755d84e25d017afcb6d9c768811651cc2",
+      "bytes": 128537
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/validate_addendum.py",
+      "sha256": "e670eb03a2d4705e4c05d86ac2edd316e1f14733d9fd2ee6883fd7faac7f4d35",
+      "bytes": 3868
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed-evidence/write_report.py",
+      "sha256": "15745d7e179a2d5db595c239c718136f73f67d9b8d5b2275ac421ac26eb4d0d4",
+      "bytes": 12552
+    }
+  ],
+  "items": [
+    {
+      "id": "lumen_61",
+      "review_id": "QAAM7R-61",
+      "actual_agent_id": "/root/qa_mesh7_resume",
+      "verdict": "accept",
+      "accepted_scope": "Exact frozen local frame/scene prototype and review-file integrity only; native realtime/slowed/device/human perception unknown.",
+      "candidate_id": "lumen_61_author-a_mesh_v1",
+      "candidate_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_61/candidate.webm",
+      "output_sha256": "2bd9dad4ef40f58ca2e5dc80725e6e14014546b8cd2a8c7d303dd1e7c86a1221",
+      "output_bytes": 203653,
+      "proof_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_61/proof.json",
+      "proof_sha256": "9de029515117c6d1e5666090a637f7d262f8f5b94d60637d35a3519a6c5f192f",
+      "recipe_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_61/recipe.json",
+      "recipe_sha256": "8ebba9ae605a4024b8c86104440eef3eede4e6531af969c032077174d452b3aa",
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_video_sha256": "06b1aca3546b39ed3b7a175791dc64ffb188942fdee0db14d1684908a8427730",
+        "fresh_baseline_anchor_checks": [
+          {
+            "index": 0,
+            "source_png_sha256": "8d12e08c306ccc06cd878b232ce0742bc1a7bb86fa150546e45b88d18660048e",
+            "fresh_baseline_rgba_pixels_exact": true
+          }
+        ],
+        "derived_source_bundle_sha256": "7e0293fb3bb18b581cbaf1520dd6640f51565976c0eecf6793eaebe23412d750",
+        "original_atlas": "unresolved_original_not_recovered"
+      },
+      "generator": {
+        "engine_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+        "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "support_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+        "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "addressed_tl_scene_contract": {
+        "id": "lumen_61",
+        "baseline_video_sha256": "06b1aca3546b39ed3b7a175791dc64ffb188942fdee0db14d1684908a8427730",
+        "core_scene_to_preserve": "😛 Короткий рожевий язик, пустотлива усмішка й відкриті сині очі, одна лапа на стегні, друга тримає бірюзовий ice pop; мале teasing нахиляння й рух вуха.",
+        "scene_specific_instructions": "Пустотливе tongue-out з ice pop: нахил голови, вухо й wrist з льодяником, planted друга лапа. Автор не має варпити око в synthetic blink; optional wink omission явно зазначити."
+      },
+      "description_uk_reviewed": "Пустотливо показує язика й схиляє голівку, трохи піднімаючи бірюзове морозиво в тій самій лапці. Інша лапка вперта в бік, ніжки стоять стійко.",
+      "semantics": {
+        "core_scene": "Tongue-out mischievous open-eyed grin, same single turquoise ice pop in same hand, other paw on hip, independent head/ear/wrist acting.",
+        "omitted_optional_action": "Optional wink and incompatible pose transfers omitted; no synthetic blink or claim of licking a pop that remains away from mouth.",
+        "reversibility_or_contact": "Ice-pop top/sides/base/stick and held paw share one wrist rotation; elbow has a reduced follow. Both feet pinned; tongue remains attached to same mouth shape."
+      },
+      "actual_manual_observation": "One tongue and open-eyed grin remain attached to the same face; head/ear tilt and ice-pop wrist show separate local acting over planted feet. The actual ice pop and gripping paw retain a single contact without doubled eyes, iris ghosts or a second wrist in the84 ordered frames.",
+      "semantic_acceptance": "The declared tongue-out teasing scene with the ice pop remains clear. No synthetic blink, pop licking or hand exchange is claimed.",
+      "strongest_objection": "Optional wink was removed, so expressiveness is quieter than the damaged alternating-eye baseline; real-time liveliness remains unknown. This omission is explicit and TL-permitted.",
+      "reversal_condition": "Any exact-source discrepancy, visible duplicate/contact loss or unacceptable native motion/loop on real client; reopened semantics if description promises an omitted action.",
+      "technical": {
+        "codec": "vp9",
+        "width": 512,
+        "height": 512,
+        "fps": 30,
+        "frames": 84,
+        "duration": 2.8,
+        "audio_streams": 0,
+        "every_fresh_decoded_png_matches_frozen_proof": true,
+        "all_source_frames_fresh_baseline_rgba_exact": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bounds_diagnostics": {
+          "0": {
+            "union": [
+              63,
+              30,
+              512,
+              505
+            ],
+            "max_border_pixels": 32,
+            "frames_with_border_pixels": [
+              7
+            ]
+          },
+          "16": {
+            "union": [
+              69,
+              40,
+              493,
+              485
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "128": {
+            "union": [
+              71,
+              41,
+              491,
+              484
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          }
+        },
+        "loop_rgba_mean_absolute_difference": 0.2875690460205078,
+        "review_mp4_artifacts_bound_and_full_decoded": [
+          {
+            "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_61/review-normal.mp4",
+            "sha256": "e63c32b3eff49b0354dcaa345cf512dbcab4f674698c8bf1a6f1cbcbdbd2e4f6",
+            "bytes": 207919,
+            "frames": 84,
+            "fps": 30,
+            "duration": 2.8,
+            "pts_all_exact_expected": true,
+            "ffmpeg_full_decode_exit": 0
+          },
+          {
+            "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_61/review-slow.mp4",
+            "sha256": "f2b6628ab58905c5eeb9327bd27b3dff6f0d01e9db6bb5a89bcf8be6a6b86d70",
+            "bytes": 318316,
+            "frames": 84,
+            "fps": 15,
+            "duration": 5.6,
+            "pts_all_exact_expected": true,
+            "ffmpeg_full_decode_exit": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "lumen_62",
+      "review_id": "QAAM7R-62",
+      "actual_agent_id": "/root/qa_mesh7_resume",
+      "verdict": "accept",
+      "accepted_scope": "Exact frozen local frame/scene prototype and review-file integrity only; native realtime/slowed/device/human perception unknown.",
+      "candidate_id": "lumen_62_author-a_mesh_v2",
+      "candidate_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_62/candidate.webm",
+      "output_sha256": "63597e5775094f9c1152974efb239428527db02c66226a3fc9dace74614b71f4",
+      "output_bytes": 162564,
+      "proof_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_62/proof.json",
+      "proof_sha256": "a8917271500b5116c119b98e7c468d9c4838ce3631d36e6cb2a029af86bb0f8d",
+      "recipe_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_62/recipe.json",
+      "recipe_sha256": "faaab45d13a4f980b8a624764085688afe282f45c507a310936dbfc77217b73f",
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_video_sha256": "663eaf00bb396fd10ba2181c880de8cec5a9dca036175e8c2ee0ea10c8aaaeb3",
+        "fresh_baseline_anchor_checks": [
+          {
+            "index": 54,
+            "source_png_sha256": "28e967af5e73a1c418e47938c14a79184562a7808d8869fd848cfb5ce92aa9e7",
+            "fresh_baseline_rgba_pixels_exact": true
+          }
+        ],
+        "derived_source_bundle_sha256": "737ba502ee93be5fde1a6d6f2899825db9bf91d15a556291664bc73fbcebc1d3",
+        "original_atlas": "unresolved_original_not_recovered"
+      },
+      "generator": {
+        "engine_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+        "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "support_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+        "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "addressed_tl_scene_contract": {
+        "id": "lumen_62",
+        "baseline_video_sha256": "663eaf00bb396fd10ba2181c880de8cec5a9dca036175e8c2ee0ea10c8aaaeb3",
+        "core_scene_to_preserve": "😜 Один чіткий wink, друге відкрите око й висунутий язик; малий бічний крок, грайлива лапа підкидає золоту іграшкову зірку й ловить її, плащ закручується біля стегна.",
+        "scene_specific_instructions": "Один чіткий wink+язик, золотa зірка й бічний грайливий акцент: кисть/зірка рухаються як один предмет і нога окремо. Реальний toss/catch не реверсувати; optional пропуск кидка потребує явного опису й semantic QA."
+      },
+      "description_uk_reviewed": "Пустотливо підморгує й показує язика, схиляючи голівку до лапки біля щоки. В іншій лапці тримає золоту зірку, а піднятою ніжкою робить маленький бічний акцент.",
+      "semantics": {
+        "core_scene": "One clear wink, tongue-out grin, actual single gold star gripped by one paw at chest, other paw touches cheek, one raised foot and separate playful side-kick/cape accent.",
+        "omitted_optional_action": "Optional toss/catch omitted explicitly for semantic QA. Rejected v1 source0 was airborne with motion tails, not a star wand/stem or physical grip; it is not used. Exact54 starts with a real stable grip after the catch, without claiming to perform that catch.",
+        "reversibility_or_contact": "Every gold-star boundary/interior point and same held wrist share one rotation; touching cheek/paw share head field with reduced wrist follow. Raised foot acts separately while three support-foot points stay grounded. No star handoff or backwards flight."
+      },
+      "actual_manual_observation": "The selected frame54 has a real star grip; its star remains in one paw while cheek paw/head lean together and the raised foot makes a separate side accent. One wink, one open eye and tongue remain singular; no airborne-star tails are reused as a fabricated stem.",
+      "semantic_acceptance": "Accepted the explicit TL-allowed semantic alternative: same mischievous wink/tongue and golden star, meaningful local side gesture. Do not describe this candidate as tossing/catching a star.",
+      "strongest_objection": "Toss/catch is explicitly omitted. This is a held-star teasing gesture, not a restored throw/catch animation. The small foot accent may be less lively in playback than the pose suggests.",
+      "reversal_condition": "Any exact-source discrepancy, visible duplicate/contact loss or unacceptable native motion/loop on real client; reopened semantics if description promises an omitted action.",
+      "technical": {
+        "codec": "vp9",
+        "width": 512,
+        "height": 512,
+        "fps": 30,
+        "frames": 84,
+        "duration": 2.8,
+        "audio_streams": 0,
+        "every_fresh_decoded_png_matches_frozen_proof": true,
+        "all_source_frames_fresh_baseline_rgba_exact": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bounds_diagnostics": {
+          "0": {
+            "union": [
+              72,
+              29,
+              467,
+              469
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "16": {
+            "union": [
+              84,
+              33,
+              452,
+              463
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "128": {
+            "union": [
+              87,
+              34,
+              451,
+              462
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          }
+        },
+        "loop_rgba_mean_absolute_difference": 0.09182357788085938,
+        "review_mp4_artifacts_bound_and_full_decoded": [
+          {
+            "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_62/review-normal.mp4",
+            "sha256": "2cabb1a2ff27ae7eae5029442a48bc20943b4fc32e3f43563b297f48e89e2b0a",
+            "bytes": 163011,
+            "frames": 84,
+            "fps": 30,
+            "duration": 2.8,
+            "pts_all_exact_expected": true,
+            "ffmpeg_full_decode_exit": 0
+          },
+          {
+            "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_62/review-slow.mp4",
+            "sha256": "e1b11747b1d9b956e329dc9093074eb987b5733cbb88c1924ccd15e406966dcd",
+            "bytes": 248904,
+            "frames": 84,
+            "fps": 15,
+            "duration": 5.6,
+            "pts_all_exact_expected": true,
+            "ffmpeg_full_decode_exit": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "lumen_63",
+      "review_id": "QAAM7R-63",
+      "actual_agent_id": "/root/qa_mesh7_resume",
+      "verdict": "accept",
+      "accepted_scope": "Exact frozen local frame/scene prototype and review-file integrity only; native realtime/slowed/device/human perception unknown.",
+      "candidate_id": "lumen_63_author-a_mesh_v1",
+      "candidate_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_63/candidate.webm",
+      "output_sha256": "e99d225660cba0b9ad1fdfbec9631544ba3062bf859f0f1b7443bd3cfb2f0c50",
+      "output_bytes": 177679,
+      "proof_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_63/proof.json",
+      "proof_sha256": "ca7d85e6f08ca9b4d2717c050be468b4767ae32a9af642837a881ca0453811ed",
+      "recipe_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_63/recipe.json",
+      "recipe_sha256": "4197d2a6dfdc2746cf0de8749a8653d2b6765abb16eea427cfb5aa999ab93c42",
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_video_sha256": "790bd1d73a68313cae5e2d78598a95de58c438ad9f770f42ac3e794b1c17b548",
+        "fresh_baseline_anchor_checks": [
+          {
+            "index": 0,
+            "source_png_sha256": "79c8edf3d6cddbd13275603d394b603549addc3c692bf18e124a6f517590a86a",
+            "fresh_baseline_rgba_pixels_exact": true
+          }
+        ],
+        "derived_source_bundle_sha256": "22352c0b3fb41d80b7dc46b8c85c8911e0555391b610958dc41d0e89e8a5434e",
+        "original_atlas": "unresolved_original_not_recovered"
+      },
+      "generator": {
+        "engine_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+        "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "support_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+        "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "addressed_tl_scene_contract": {
+        "id": "lumen_63",
+        "baseline_video_sha256": "790bd1d73a68313cae5e2d78598a95de58c438ad9f770f42ac3e794b1c17b548",
+        "core_scene_to_preserve": "🤪 Дуркувате обличчя з навмисно різними очима, язик набік і вуха під різними кутами; безпечно заплутався в бірюзовій пряжі, сміється з себе й хитається/перекочується, зберігаючи одну цілісну анатомію.",
+        "scene_specific_instructions": "Пустотливі різні очі/язик і пряжа: голова/плечі сміються, лапи/петлі пов’язані одним просторовим полем, клубок має одне місце. Не симулювати перекочування крізь нитки. Непридатність контакту — повернення на source art."
+      },
+      "description_uk_reviewed": "Заплутавшись у бірюзовій пряжі, бешкетно хихоче з висунутим язиком. Лапки ледь смикають свої нитки, піднята ніжка ворушиться, а клубочок біля опорної ніжки лишається на місці.",
+      "semantics": {
+        "core_scene": "Mischievous wink/open-eye tongue face entangled in a coherent continuous wool web, two grips, one grounded ball and one raised leg.",
+        "omitted_optional_action": "Roll/unwind and incompatible large limb swaps omitted. No ball moves through loops or disappearing wool; original mouth/eyes remain the exact single source design.",
+        "reversibility_or_contact": "Ear wrap follows head locally; both grip and nearby wool anchors move together by2–3px. Ball and ground loops pinned, only small raised foot/cape accent is independent."
+      },
+      "actual_manual_observation": "The original wrapped-ear yarn, two paw grips, belly loops and grounded ball retain one continuous configuration. Head chuckle and foot/paw adjustments are local; no ball rolls through the yarn, no duplicated ear or replacement face appears in84frames.",
+      "semantic_acceptance": "Distinct yarn-entangled playful scene remains readable; omission is explicit and the TL contract forbids simulating an invalid roll through the threads.",
+      "strongest_objection": "The tangled-character acting is a small fidget/chuckle; the former large body roll/unwind is omitted. Yarn deformation near the grips is subtle and cannot establish perceived physical tension without playback.",
+      "reversal_condition": "Any exact-source discrepancy, visible duplicate/contact loss or unacceptable native motion/loop on real client; reopened semantics if description promises an omitted action.",
+      "technical": {
+        "codec": "vp9",
+        "width": 512,
+        "height": 512,
+        "fps": 30,
+        "frames": 84,
+        "duration": 2.8,
+        "audio_streams": 0,
+        "every_fresh_decoded_png_matches_frozen_proof": true,
+        "all_source_frames_fresh_baseline_rgba_exact": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bounds_diagnostics": {
+          "0": {
+            "union": [
+              30,
+              18,
+              450,
+              489
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "16": {
+            "union": [
+              36,
+              28,
+              446,
+              484
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "128": {
+            "union": [
+              37,
+              29,
+              445,
+              483
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          }
+        },
+        "loop_rgba_mean_absolute_difference": 0.23871421813964844,
+        "review_mp4_artifacts_bound_and_full_decoded": [
+          {
+            "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_63/review-normal.mp4",
+            "sha256": "673e597432ab20ec6f8c544b90a0ffa789baad5311b0bfcd6b8ee26dc8808581",
+            "bytes": 257334,
+            "frames": 84,
+            "fps": 30,
+            "duration": 2.8,
+            "pts_all_exact_expected": true,
+            "ffmpeg_full_decode_exit": 0
+          },
+          {
+            "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_63/review-slow.mp4",
+            "sha256": "1ebff4a403235c300a20d6ec9b4e270fc1d48a224335ea3694f5ee27e2c1bb1c",
+            "bytes": 396900,
+            "frames": 84,
+            "fps": 15,
+            "duration": 5.6,
+            "pts_all_exact_expected": true,
+            "ffmpeg_full_decode_exit": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "lumen_65",
+      "review_id": "QAAM7R-65",
+      "actual_agent_id": "/root/qa_mesh7_resume",
+      "verdict": "accept",
+      "accepted_scope": "Exact frozen local frame/scene prototype and review-file integrity only; native realtime/slowed/device/human perception unknown.",
+      "candidate_id": "lumen_65_author-a_mesh_v1",
+      "candidate_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_65/candidate.webm",
+      "output_sha256": "b6beb591f114b0051dbd418cbacd2db1741066bc591a4a8dad12340130fcce25",
+      "output_bytes": 162173,
+      "proof_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_65/proof.json",
+      "proof_sha256": "a4e898eebb7404691337b0f26b025677028a4ee4a4b7f480aeb219e6e47b2423",
+      "recipe_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_65/recipe.json",
+      "recipe_sha256": "d5bb208824737a6b79879957470d7ff1bd55d98353d9b2493aabeee5c1e4e421",
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_video_sha256": "c977c78d3f6149fcf0cdd4ccf2be8693460a6f5cd4bf75165779fd202743bc89",
+        "fresh_baseline_anchor_checks": [
+          {
+            "index": 0,
+            "source_png_sha256": "57509e008aafb2cfe1cb0037974a57ca71f6dbf3986e3e2cf039ddba46ae2d32",
+            "fresh_baseline_rgba_pixels_exact": true
+          }
+        ],
+        "derived_source_bundle_sha256": "e6f3e2ff09374e4ad88734d3403563bf28d50f288f0014c5d48056c19cabacfa",
+        "original_atlas": "unresolved_original_not_recovered"
+      },
+      "generator": {
+        "engine_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+        "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "support_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+        "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "addressed_tl_scene_contract": {
+        "id": "lumen_65",
+        "baseline_video_sha256": "c977c78d3f6149fcf0cdd4ccf2be8693460a6f5cd4bf75165779fd202743bc89",
+        "core_scene_to_preserve": "🤑 Монетні золоті відблиски в очах і монетка на язику, захоплена усмішка, обіймає малу скриньку з іграшковими монетами; трохи нахиляє її й підхоплює одну монету.",
+        "scene_specific_instructions": "Money-eyes, монетка на язику й скринька: піднята лапа/монета тільки при стабільному хваті, chest+руки обіймають скриньку; коректний нахил скриньки. Без reverse падіння монети."
+      },
+      "description_uk_reviewed": "Захоплено схиляється до скриньки зі скарбами й обережно притискає її обома лапками. В очах блищать монетки, одна монетка лежить на язичку; від радості ледь ворушаться вушка.",
+      "semantics": {
+        "core_scene": "Coin pupils, coin-on-tongue grin and same open treasure chest held by two paws, head lean and a coherent little chest hug.",
+        "omitted_optional_action": "Optional separate coin toss/drop and large box/lid pose swaps omitted. No falling coin is reversed or added; same visible coins remain inside source chest.",
+        "reversibility_or_contact": "Open chest lid/base/corners/coins and both grip centers move as one small rigid-like transform, arm bases follow halfway. Mouth/tongue coin follows same head map; feet planted."
+      },
+      "actual_manual_observation": "Two coin eyes, mouth coin and open chest remain a single coherent source design. Head inclines toward the chest while both chest grips follow the same small hug; coins/lid/paws neither detach nor double.",
+      "semantic_acceptance": "Money-eye delight and protecting the treasure remain the purpose; no reversed coin drop or unsupported manipulation is claimed.",
+      "strongest_objection": "There is no separate falling/tossed coin and the box is not newly opened/closed. This modest hug may feel quiet in native playback.",
+      "reversal_condition": "Any exact-source discrepancy, visible duplicate/contact loss or unacceptable native motion/loop on real client; reopened semantics if description promises an omitted action.",
+      "technical": {
+        "codec": "vp9",
+        "width": 512,
+        "height": 512,
+        "fps": 30,
+        "frames": 84,
+        "duration": 2.8,
+        "audio_streams": 0,
+        "every_fresh_decoded_png_matches_frozen_proof": true,
+        "all_source_frames_fresh_baseline_rgba_exact": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bounds_diagnostics": {
+          "0": {
+            "union": [
+              40,
+              30,
+              468,
+              500
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "16": {
+            "union": [
+              57,
+              32,
+              465,
+              487
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "128": {
+            "union": [
+              59,
+              34,
+              464,
+              486
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          }
+        },
+        "loop_rgba_mean_absolute_difference": 0.1987924575805664,
+        "review_mp4_artifacts_bound_and_full_decoded": [
+          {
+            "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_65/review-normal.mp4",
+            "sha256": "795284152aeb96b55253533f7620f37835bb9365e84a023ed05b01638db82e26",
+            "bytes": 248829,
+            "frames": 84,
+            "fps": 30,
+            "duration": 2.8,
+            "pts_all_exact_expected": true,
+            "ffmpeg_full_decode_exit": 0
+          },
+          {
+            "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_65/review-slow.mp4",
+            "sha256": "fbf8ae84372b19c6aeab00288c6aae2fdcd78ce10e3cb8a501a2c4026e21f831",
+            "bytes": 380901,
+            "frames": 84,
+            "fps": 15,
+            "duration": 5.6,
+            "pts_all_exact_expected": true,
+            "ffmpeg_full_decode_exit": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "lumen_67",
+      "review_id": "QAAM7R-67",
+      "actual_agent_id": "/root/qa_mesh7_resume",
+      "verdict": "accept",
+      "accepted_scope": "Exact frozen local frame/scene prototype and review-file integrity only; native realtime/slowed/device/human perception unknown.",
+      "candidate_id": "lumen_67_author-a_mesh_v1",
+      "candidate_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_67/candidate.webm",
+      "output_sha256": "75dee48ab61827ea4a0990c4bf9002a955d648bff672ed677caa03b7e5ba9450",
+      "output_bytes": 176608,
+      "proof_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_67/proof.json",
+      "proof_sha256": "3cfe572e1e890fea033fa37fdefc5e6554640367e994d46121b2e71c7fd1f71d",
+      "recipe_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_67/recipe.json",
+      "recipe_sha256": "5df0bacce33e490cb99b7e102db1a3d1bdab89dacd41e08ba555e44755cf004b",
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_video_sha256": "0447c6ee7c1d3bcdef508ceb30acec239d641f48cc6621b7676de6e76df4d7e0",
+        "fresh_baseline_anchor_checks": [
+          {
+            "index": 0,
+            "source_png_sha256": "da06e42ebcd937f8120daac41788db0449027429cfb47dcaa5cf280e8763d7fa",
+            "fresh_baseline_rgba_pixels_exact": true
+          }
+        ],
+        "derived_source_bundle_sha256": "4023ed628525d143be711becb1e4c00fe7644b57dbb1447044098f700596d65e",
+        "original_atlas": "unresolved_original_not_recovered"
+      },
+      "generator": {
+        "engine_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+        "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "support_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+        "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "addressed_tl_scene_contract": {
+        "id": "lumen_67",
+        "baseline_video_sha256": "0447c6ee7c1d3bcdef508ceb30acec239d641f48cc6621b7676de6e76df4d7e0",
+        "core_scene_to_preserve": "🫢 Раптове «ой, сказав»: широко відкриті очі й підняті брови, одна лапа щільно над ротом, інша щойно випустила маленький жолудь; коротке відсахування й завмерлий здивований вираз, без сміху.",
+        "scene_specific_instructions": "Лапа щільно прикриває рот, очі широко відкриті, плечі відсахуються. Жолудь лишається у тій самій вільній лапі; dropping episode можна явно вилучити, не повертати жолудь із землі dissolve."
+      },
+      "description_uk_reviewed": "Раптом прикриває рот лапкою й трохи відсахується, широко розплющивши очі. В іншій лапці міцно тримає жолудь і ніяково притискає його ближче до себе.",
+      "semantics": {
+        "core_scene": "Wide-eyed oops face with same mouth-covering paw, slight upper-body recoil and one acorn retained in opposite hand.",
+        "omitted_optional_action": "Original drop/retrieval and incompatible hand moves omitted. Acorn never falls or reappears; no new jaw is drawn under cover paw.",
+        "reversibility_or_contact": "Mouth-contact and covering paw follow same head recoil, forearm follows half toward pinned elbow. Acorn boundary and opposite grip translate together; both feet grounded."
+      },
+      "actual_manual_observation": "One paw stays close over the mouth through head/shoulder recoil; the other retains the same acorn. Both eyes and acorn stay singular and the old dropped/reappearing acorn episode is absent.",
+      "semantic_acceptance": "Wide-eyed oops/surprise with a coherent covered mouth and retained acorn is preserved. Optional drop/retrieval omission is explicit.",
+      "strongest_objection": "The mouth-cover already exists at frame0, so this shows a startled recoil while covering the mouth rather than an entire approach-to-mouth gesture. The sentence about suddenly covering should be understood as the expression, not a literal reconstructed onset.",
+      "reversal_condition": "Any exact-source discrepancy, visible duplicate/contact loss or unacceptable native motion/loop on real client; reopened semantics if description promises an omitted action.",
+      "technical": {
+        "codec": "vp9",
+        "width": 512,
+        "height": 512,
+        "fps": 30,
+        "frames": 84,
+        "duration": 2.8,
+        "audio_streams": 0,
+        "every_fresh_decoded_png_matches_frozen_proof": true,
+        "all_source_frames_fresh_baseline_rgba_exact": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bounds_diagnostics": {
+          "0": {
+            "union": [
+              62,
+              30,
+              465,
+              490
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "16": {
+            "union": [
+              79,
+              40,
+              452,
+              486
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "128": {
+            "union": [
+              80,
+              41,
+              451,
+              485
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          }
+        },
+        "loop_rgba_mean_absolute_difference": 0.32333946228027344,
+        "review_mp4_artifacts_bound_and_full_decoded": [
+          {
+            "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_67/review-normal.mp4",
+            "sha256": "7c96185807d30b392673429e4abe301cbbbd92f40df9386931c35e8f528634ed",
+            "bytes": 196923,
+            "frames": 84,
+            "fps": 30,
+            "duration": 2.8,
+            "pts_all_exact_expected": true,
+            "ffmpeg_full_decode_exit": 0
+          },
+          {
+            "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_67/review-slow.mp4",
+            "sha256": "d45c2f0402b01f0259be745fba8aa178e94b3ceb9ff03a18dd29b755ad3cc6c1",
+            "bytes": 305109,
+            "frames": 84,
+            "fps": 15,
+            "duration": 5.6,
+            "pts_all_exact_expected": true,
+            "ffmpeg_full_decode_exit": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "lumen_71",
+      "review_id": "QAAM7R-71",
+      "actual_agent_id": "/root/qa_mesh7_resume",
+      "verdict": "accept",
+      "accepted_scope": "Exact frozen local frame/scene prototype and review-file integrity only; native realtime/slowed/device/human perception unknown.",
+      "candidate_id": "lumen_71_author-a_mesh_v1",
+      "candidate_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_71/candidate.webm",
+      "output_sha256": "e8e0e9091b17ebfb8b7235606b473084017c19d80e99a86ec9e2316dbbda3ddc",
+      "output_bytes": 173894,
+      "proof_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_71/proof.json",
+      "proof_sha256": "0705ab8dab6940722b15f4032e1827e9d7931d6bfb57d2699a7a32dc5d40fe44",
+      "recipe_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_71/recipe.json",
+      "recipe_sha256": "e326c205c3b6ff913ce1987489e6c4bf0c218bd2997d3841efb7e5808e4d71ce",
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_video_sha256": "dce124efa091f4c73d693ccef6c3bcb076dd0229a5e803eea8a9667d46343638",
+        "fresh_baseline_anchor_checks": [
+          {
+            "index": 0,
+            "source_png_sha256": "89ae5f05e822d269bd0031ecfb0536aebf8f1bd12554869256f8a1351f9c06fa",
+            "fresh_baseline_rgba_pixels_exact": true
+          }
+        ],
+        "derived_source_bundle_sha256": "26892311a31e8a2a76277911beaf6e36e6a9e84a7af469395f77442bc5d76f81",
+        "original_atlas": "unresolved_original_not_recovered"
+      },
+      "generator": {
+        "engine_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+        "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "support_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+        "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "addressed_tl_scene_contract": {
+        "id": "lumen_71",
+        "baseline_video_sha256": "dce124efa091f4c73d693ccef6c3bcb076dd0229a5e803eea8a9667d46343638",
+        "core_scene_to_preserve": "🤐 Акуратна золота блискавка на мордочці зі збереженим синім носом; одна лапа тримає малий ключик, інша вказує на закритий рот, широко відкриті чесні очі; делікатний поворот ключика й показ жесту тиші.",
+        "scene_specific_instructions": "Золота zipper-мордочка, один ключ у тій самій лапі: короткий wrist turn/показ ключа та вказівний жест, без зайвої руки біля вуха й без handoff."
+      },
+      "description_uk_reviewed": "Тримає ротик на золотому замочку, злегка нахиляє голівку й показує ключ тією самою лапкою. Інша лапка тихенько вказує на застібку: таємницю збереже.",
+      "semantics": {
+        "core_scene": "Single gold zipped mouth with pull, one key held by same paw, other single pointing hand, calm wide eyes and assuring head tilt.",
+        "omitted_optional_action": "Handoff, extra ear-side hand and synthetic blink omitted; zipper never opens and key never changes hands.",
+        "reversibility_or_contact": "Both zipper ends and pull follow the same head map; key ring/shaft/bit share wrist rotation with held paw. Pointing finger has a separate2px gesture, feet remain grounded."
+      },
+      "actual_manual_observation": "The gold zipper ends and pull follow one mouth/head map. One key stays in its original paw; the opposite finger makes a small separate point. No extra ear-side hand, duplicate zipper, lost key or synthetic blink is visible.",
+      "semantic_acceptance": "The secrecy scene and single key/pointing hands remain clear, in line with the TL contract.",
+      "strongest_objection": "The zipper never opens and the wrist/key movement is small; this is an assuring secrecy pose rather than an unlocking action. Native cadence remains unknown.",
+      "reversal_condition": "Any exact-source discrepancy, visible duplicate/contact loss or unacceptable native motion/loop on real client; reopened semantics if description promises an omitted action.",
+      "technical": {
+        "codec": "vp9",
+        "width": 512,
+        "height": 512,
+        "fps": 30,
+        "frames": 84,
+        "duration": 2.8,
+        "audio_streams": 0,
+        "every_fresh_decoded_png_matches_frozen_proof": true,
+        "all_source_frames_fresh_baseline_rgba_exact": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bounds_diagnostics": {
+          "0": {
+            "union": [
+              49,
+              30,
+              461,
+              512
+            ],
+            "max_border_pixels": 32,
+            "frames_with_border_pixels": [
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              71
+            ]
+          },
+          "16": {
+            "union": [
+              61,
+              37,
+              451,
+              485
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "128": {
+            "union": [
+              63,
+              38,
+              450,
+              484
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          }
+        },
+        "loop_rgba_mean_absolute_difference": 0.10299110412597656,
+        "review_mp4_artifacts_bound_and_full_decoded": [
+          {
+            "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_71/review-normal.mp4",
+            "sha256": "31cc622db1a2d2106d9931efc59d11a1019bcc556b5627c1472ae98c6e460983",
+            "bytes": 205157,
+            "frames": 84,
+            "fps": 30,
+            "duration": 2.8,
+            "pts_all_exact_expected": true,
+            "ffmpeg_full_decode_exit": 0
+          },
+          {
+            "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_71/review-slow.mp4",
+            "sha256": "f06ed4eeb420c53d83beb5a25934695dcb19c082b3e8cf0979cb304592a0f031",
+            "bytes": 312242,
+            "frames": 84,
+            "fps": 15,
+            "duration": 5.6,
+            "pts_all_exact_expected": true,
+            "ffmpeg_full_decode_exit": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "lumen_115",
+      "review_id": "QAAM7R-115",
+      "actual_agent_id": "/root/qa_mesh7_resume",
+      "verdict": "accept",
+      "accepted_scope": "Exact frozen local frame/scene prototype and review-file integrity only; native realtime/slowed/device/human perception unknown.",
+      "candidate_id": "lumen_115_author-a_mesh_v1",
+      "candidate_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_115/candidate.webm",
+      "output_sha256": "fe244e2c1671782b95fe61e144c2c6be5eb510ef2459b7a2834d4e93563383d9",
+      "output_bytes": 116705,
+      "proof_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_115/proof.json",
+      "proof_sha256": "5748a18b7e6358807cb1e22142b500c5273d9e2feadf089612a0c66fdc1f6bdf",
+      "recipe_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_115/recipe.json",
+      "recipe_sha256": "b98c672c7d979dca732950bd4d05e5086f588e0c37b0efb92cad480b60868361",
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_video_sha256": "e5225575d4891dfe9e5e48bcd162f933924e092cf9896351bde9df73458af7fb",
+        "fresh_baseline_anchor_checks": [
+          {
+            "index": 0,
+            "source_png_sha256": "9159c0f4b37732515967aaea2c685f220745d8cc4958f44c087c12cf06055f60",
+            "fresh_baseline_rgba_pixels_exact": true
+          }
+        ],
+        "derived_source_bundle_sha256": "cda562be9002cd9f82cadc90b320df3895446bcefd99559fa8a526387369cd35",
+        "original_atlas": "unresolved_original_not_recovered"
+      },
+      "generator": {
+        "engine_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+        "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "support_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+        "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "addressed_tl_scene_contract": {
+        "id": "lumen_115",
+        "baseline_video_sha256": "e5225575d4891dfe9e5e48bcd162f933924e092cf9896351bde9df73458af7fb",
+        "core_scene_to_preserve": "Тривожно плаче з хустинкою, прикладає лапу до щоки, стискає хустинку двома лапами та сумно видихає.",
+        "scene_specific_instructions": "Tearful anxiety: choose same cheek-touch contact or same two-paw-cloth grip; shoulders hitch, cheek and wiping wrist move coherently. Repair68–71 old-grip/new-cheek-hand coexistence, not blanket blur removal."
+      },
+      "description_uk_reviewed": "Стривожено притискає лапку до щоки, ледь відхиляє голівку й дрібно здригається. Друга лапка тримає складений бірюзовий рушничок; він лишається поруч, коли треба витерти очі.",
+      "semantics": {
+        "core_scene": "Anxious glossy wide eyes and open worried mouth, same cheek-touch paw, same other paw gripping folded turquoise towel; shoulders/ears breathe and tremble.",
+        "omitted_optional_action": "Old-grip/new-cheek-hand coexistence and large hand-transfer episodes omitted. No new tear stream or wipe completion claimed; exact source towel/cheek configuration stays.",
+        "reversibility_or_contact": "Cheek and touching paw follow same head field toward a reduced-follow forearm. Towel loop/folds/corners and held wrist move together by2px; two grounded feet remain."
+      },
+      "actual_manual_observation": "Anxious glossy eyes, open worried mouth and drooping ears remain stable. Same cheek-touch hand follows the head; the other hand retains folded turquoise towel, with a small separate towel/wrist breath and ear tremble. No old two-paw grip dissolves into a third cheek hand.",
+      "semantic_acceptance": "The anxious event/cheek-touch scene is preserved; no typing or invented prop is involved and no wipe completion is claimed.",
+      "strongest_objection": "No new tear stream or complete wiping motion is shown. The result conveys anxious cheek-touch with a towel, rather than the old full crying/hand-transfer episode; the exact alternate cheek-touch contract allows this.",
+      "reversal_condition": "Any exact-source discrepancy, visible duplicate/contact loss or unacceptable native motion/loop on real client; reopened semantics if description promises an omitted action.",
+      "technical": {
+        "codec": "vp9",
+        "width": 512,
+        "height": 512,
+        "fps": 30,
+        "frames": 84,
+        "duration": 2.8,
+        "audio_streams": 0,
+        "every_fresh_decoded_png_matches_frozen_proof": true,
+        "all_source_frames_fresh_baseline_rgba_exact": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "alpha_bounds_diagnostics": {
+          "0": {
+            "union": [
+              66,
+              44,
+              459,
+              509
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "16": {
+            "union": [
+              71,
+              47,
+              456,
+              486
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "128": {
+            "union": [
+              73,
+              48,
+              455,
+              485
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          }
+        },
+        "loop_rgba_mean_absolute_difference": 0.19040966033935547,
+        "review_mp4_artifacts_bound_and_full_decoded": [
+          {
+            "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_115/review-normal.mp4",
+            "sha256": "bf972dccf4156dc8d8e70c1b21c534ef2bd5deb97292f4a58a2574b6a508d11c",
+            "bytes": 196640,
+            "frames": 84,
+            "fps": 30,
+            "duration": 2.8,
+            "pts_all_exact_expected": true,
+            "ffmpeg_full_decode_exit": 0
+          },
+          {
+            "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_115/review-slow.mp4",
+            "sha256": "22bcb90e19a336eb31e5d8c0c1206402752ca2b8149758f077d4d4cd3bb44c01",
+            "bytes": 297359,
+            "frames": 84,
+            "fps": 15,
+            "duration": 5.6,
+            "pts_all_exact_expected": true,
+            "ffmpeg_full_decode_exit": 0
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "QAAM7R-61-ALPHA",
+      "kind": "measured_low_alpha_residual",
+      "frame": 7,
+      "maximum_border_alpha": 1,
+      "border_nonzero_pixels": 32,
+      "cause": "unknown",
+      "verdict": "nonblocking_in_reviewed_frame_scope",
+      "actual_visual_result": "Native512 black/white composites have no visible edge line/clipping; amplified alpha diagnostic reveals residual.",
+      "reversal_condition": "Visible line/clipping on client or higher opacity."
+    },
+    {
+      "id": "QAAM7R-71-ALPHA",
+      "kind": "measured_low_alpha_residual",
+      "frames": [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71
+      ],
+      "maximum_border_alpha_at_inspected50": 1,
+      "border_nonzero_pixels_at_inspected50": 32,
+      "cause": "unknown",
+      "verdict": "nonblocking_in_reviewed_frame_scope",
+      "actual_visual_result": "Native512 black/white frame50 composite has no visible edge line/clipping; amplified alpha diagnostic reveals residual. All84alpha bounds measured.",
+      "reversal_condition": "Visible line/clipping on client or higher opacity."
+    },
+    {
+      "id": "QAAM7R-67-COPY",
+      "kind": "description_precision_nonblocking",
+      "verdict": "recommend_natural_description_precision",
+      "note": "Candidate begins with paw already covering mouth. For literal motion narration prefer Раптом відсахується, прикриваючи рот лапкою over a claim it newly moves its hand to mouth. No animation defect established; existing sentence is expressive scene narration."
+    }
+  ],
+  "decision": {
+    "accepted": [
+      "lumen_61",
+      "lumen_62",
+      "lumen_63",
+      "lumen_65",
+      "lumen_67",
+      "lumen_71",
+      "lumen_115"
+    ],
+    "returned": [],
+    "blocked": [],
+    "acceptance_scope": "Per-ID local frame-sequence/scene prototype and exact file handoff only",
+    "native_perception_unknown": true
+  },
+  "limitations": [
+    "No native real-time/slowed playback, Telegram/device or human perception observed. Frame-sequence visual inspection and technical MP4 checks do not close that gap.",
+    "Original new89 source atlas remains unrecovered; derived decoded baseline provenance is explicit.",
+    "No independent generator rerender in this QA; author reproducibility proof not relabeled independent.",
+    "Deliberately omitted optional acts are recorded peritem; do not describe them as performed."
+  ],
+  "completion": "FINAL",
+  "product_mutated": false,
+  "frozen_mutated": false,
+  "public_writes_or_deploy": false
+}

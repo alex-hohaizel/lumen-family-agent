@@ -1,0 +1,1557 @@
+{
+  "schema_version": 1,
+  "id": "lumen_108",
+  "candidate": "lumen_108_author-b_batch4",
+  "created_at": "2026-10-30T18:40:42.064636+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_video_sha256": "18870a42d7685684296512f812d2584f31abbeefafad569475c7fa1af3c1ce3f",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "653e3f02431fd75bb324c7f1bf0c53eb23f43a3a0b3d5c3a4a7fe373976f68f9",
+  "derived_source_frames": [
+    {
+      "index": 0,
+      "timestamp_seconds": 0.0,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch4/lumen_108/source-frames/000.png",
+      "sha256": "66580ea61fdaaec9b95c219cd6ed0e618db421b01a14c7ee436860cd543ca054"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "2adffecddd33ea2ebc14d3509eb02ec578c40e5d4cf29fcb1ffabb8a5b3e1a45",
+  "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_108/recipe.json",
+  "recipe_sha256": "3a5ae5de7526dc967a095a339ec7841954580d090ebdebeab15be41be4cc585c",
+  "generator": {
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "description_uk": "Тривожно зводить брови й притискає лапки до медальйона. Плечі нервово здригаються, голівка злегка хилиться; складена синя парасолька спокійно стоїть біля ніжки.",
+  "semantics": {
+    "core_scene": "Worried inner eyebrows, tight frown/large concerned eyes, hunched paws clutching medallion, closed navy umbrella by leg; nervous breath.",
+    "scene_specific_instructions": "Worried breath with paws clutching pendant, closed umbrella ground stable; face single, nervous head/shoulders а не global whole-image bob.",
+    "authored_decisions": [
+      "One concerned face, fixed closed umbrella and ground contacts. Nervous pendant clutch distinct from relieved85 cup/breath and mild109 sadness."
+    ],
+    "irreversible_motion_policy": "Only coherent authored local action. No backward falling particles, liquid or free props. Decorative held marks remain explicitly decorative."
+  },
+  "method": "shared_local_mesh_v1",
+  "statistics": {
+    "minimum_jacobian": 0.8144145011901855,
+    "maximum_displacement_px": 7.781551361083984
+  },
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.0,
+        "pendant_clutch_nervous_tension": 0.0,
+        "worried_shoulder_hunch": 0.0
+      }
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.07473009358642425,
+        "pendant_clutch_nervous_tension": 0.2225209339563144,
+        "worried_shoulder_hunch": 0.062063173032560766
+      }
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.14904226617617444,
+        "pendant_clutch_nervous_tension": 0.4338837391175581,
+        "worried_shoulder_hunch": 0.13596116657341145
+      }
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.2225209339563144,
+        "pendant_clutch_nervous_tension": 0.6234898018587335,
+        "worried_shoulder_hunch": 0.21884110787172006
+      }
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.2947551744109042,
+        "pendant_clutch_nervous_tension": 0.7818314824680298,
+        "worried_shoulder_hunch": 0.3078501241766547
+      }
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.365341024366395,
+        "pendant_clutch_nervous_tension": 0.9009688679024191,
+        "worried_shoulder_hunch": 0.4001353427373835
+      }
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.4338837391175581,
+        "pendant_clutch_nervous_tension": 0.9749279121818236,
+        "worried_shoulder_hunch": 0.49284389080307434
+      }
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.49999999999999994,
+        "pendant_clutch_nervous_tension": 1.0,
+        "worried_shoulder_hunch": 0.5831228956228955
+      }
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.5633200580636221,
+        "pendant_clutch_nervous_tension": 0.9749279121818236,
+        "worried_shoulder_hunch": 0.668119484446015
+      }
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.6234898018587335,
+        "pendant_clutch_nervous_tension": 0.9009688679024191,
+        "worried_shoulder_hunch": 0.7450735489000794
+      }
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.6801727377709194,
+        "pendant_clutch_nervous_tension": 0.7818314824680299,
+        "worried_shoulder_hunch": 0.8126130105721941
+      }
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.7330518718298262,
+        "pendant_clutch_nervous_tension": 0.6234898018587336,
+        "worried_shoulder_hunch": 0.8704342992608299
+      }
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.7818314824680298,
+        "pendant_clutch_nervous_tension": 0.43388373911755823,
+        "worried_shoulder_hunch": 0.9182613305062284
+      }
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.8262387743159949,
+        "pendant_clutch_nervous_tension": 0.2225209339563145,
+        "worried_shoulder_hunch": 0.9558180198486321
+      }
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.8660254037844386,
+        "pendant_clutch_nervous_tension": 1.2246467991473532e-16,
+        "worried_shoulder_hunch": 0.9828282828282828
+      }
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.9009688679024191,
+        "pendant_clutch_nervous_tension": -0.22252093395631428,
+        "worried_shoulder_hunch": 0.999016034985423
+      }
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.9308737486442042,
+        "pendant_clutch_nervous_tension": -0.433883739117558,
+        "worried_shoulder_hunch": 1.004105191860294
+      }
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.9555728057861408,
+        "pendant_clutch_nervous_tension": -0.6234898018587338,
+        "worried_shoulder_hunch": 0.9978212641477948
+      }
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.9749279121818236,
+        "pendant_clutch_nervous_tension": -0.7818314824680297,
+        "worried_shoulder_hunch": 0.9802279353299761
+      }
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.9888308262251285,
+        "pendant_clutch_nervous_tension": -0.900968867902419,
+        "worried_shoulder_hunch": 0.9521433970413562
+      }
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.9972037971811801,
+        "pendant_clutch_nervous_tension": -0.9749279121818236,
+        "worried_shoulder_hunch": 0.9144879308144614
+      }
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 1.0,
+        "pendant_clutch_nervous_tension": -1.0,
+        "worried_shoulder_hunch": 0.868181818181818
+      }
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.9972037971811801,
+        "pendant_clutch_nervous_tension": -0.9749279121818236,
+        "worried_shoulder_hunch": 0.8141453406759529
+      }
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.9888308262251285,
+        "pendant_clutch_nervous_tension": -0.9009688679024193,
+        "worried_shoulder_hunch": 0.7532987798293919
+      }
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.9749279121818236,
+        "pendant_clutch_nervous_tension": -0.7818314824680299,
+        "worried_shoulder_hunch": 0.686562417174662
+      }
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.9555728057861407,
+        "pendant_clutch_nervous_tension": -0.6234898018587337,
+        "worried_shoulder_hunch": 0.6148565342442894
+      }
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.9308737486442042,
+        "pendant_clutch_nervous_tension": -0.43388373911755834,
+        "worried_shoulder_hunch": 0.5391642371234207
+      }
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.9009688679024191,
+        "pendant_clutch_nervous_tension": -0.22252093395631464,
+        "worried_shoulder_hunch": 0.46093294460641376
+      }
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.8660254037844387,
+        "pendant_clutch_nervous_tension": -2.4492935982947064e-16,
+        "worried_shoulder_hunch": 0.3818181818181819
+      }
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.8262387743159948,
+        "pendant_clutch_nervous_tension": 0.22252093395631417,
+        "worried_shoulder_hunch": 0.3034764555172718
+      }
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.7818314824680299,
+        "pendant_clutch_nervous_tension": 0.4338837391175579,
+        "worried_shoulder_hunch": 0.22756427246223157
+      }
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.7330518718298265,
+        "pendant_clutch_nervous_tension": 0.6234898018587334,
+        "worried_shoulder_hunch": 0.1557381394116087
+      }
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.6801727377709194,
+        "pendant_clutch_nervous_tension": 0.7818314824680296,
+        "worried_shoulder_hunch": 0.08965456312395097
+      }
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.6234898018587336,
+        "pendant_clutch_nervous_tension": 0.900968867902419,
+        "worried_shoulder_hunch": 0.030970050357805562
+      }
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.5633200580636218,
+        "pendant_clutch_nervous_tension": 0.9749279121818237,
+        "worried_shoulder_hunch": -0.018670671731896144
+      }
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.5000000000000003,
+        "pendant_clutch_nervous_tension": 1.0,
+        "worried_shoulder_hunch": -0.05808080808080803
+      }
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.43388373911755823,
+        "pendant_clutch_nervous_tension": 0.9749279121818237,
+        "worried_shoulder_hunch": -0.08666843360720897
+      }
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.3653410243663948,
+        "pendant_clutch_nervous_tension": 0.9009688679024185,
+        "worried_shoulder_hunch": -0.10388137939158337
+      }
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.2947551744109046,
+        "pendant_clutch_nervous_tension": 0.78183148246803,
+        "worried_shoulder_hunch": -0.10916747651441519
+      }
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.2225209339563145,
+        "pendant_clutch_nervous_tension": 0.6234898018587338,
+        "worried_shoulder_hunch": -0.10197455605618862
+      }
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.14904226617617472,
+        "pendant_clutch_nervous_tension": 0.43388373911755845,
+        "worried_shoulder_hunch": -0.0817504490973879
+      }
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 0.07473009358642467,
+        "pendant_clutch_nervous_tension": 0.22252093395631647,
+        "worried_shoulder_hunch": -0.0479429867184969
+      }
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": 1.2246467991473532e-16,
+        "pendant_clutch_nervous_tension": 3.6739403974420594e-16,
+        "worried_shoulder_hunch": 0.0
+      }
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.07473009358642398,
+        "pendant_clutch_nervous_tension": -0.22252093395631403,
+        "worried_shoulder_hunch": 0.06206317303256054
+      }
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.14904226617617403,
+        "pendant_clutch_nervous_tension": -0.4338837391175578,
+        "worried_shoulder_hunch": 0.13596116657341162
+      }
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.22252093395631428,
+        "pendant_clutch_nervous_tension": -0.6234898018587333,
+        "worried_shoulder_hunch": 0.21884110787171995
+      }
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.29475517441090393,
+        "pendant_clutch_nervous_tension": -0.7818314824680296,
+        "worried_shoulder_hunch": 0.30785012417665514
+      }
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.36534102436639504,
+        "pendant_clutch_nervous_tension": -0.9009688679024189,
+        "worried_shoulder_hunch": 0.4001353427373836
+      }
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.433883739117558,
+        "pendant_clutch_nervous_tension": -0.9749279121818235,
+        "worried_shoulder_hunch": 0.4928438908030741
+      }
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.4999999999999997,
+        "pendant_clutch_nervous_tension": -1.0,
+        "worried_shoulder_hunch": 0.5831228956228959
+      }
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.5633200580636221,
+        "pendant_clutch_nervous_tension": -0.9749279121818237,
+        "worried_shoulder_hunch": 0.668119484446015
+      }
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.6234898018587334,
+        "pendant_clutch_nervous_tension": -0.9009688679024194,
+        "worried_shoulder_hunch": 0.7450735489000793
+      }
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.6801727377709195,
+        "pendant_clutch_nervous_tension": -0.7818314824680301,
+        "worried_shoulder_hunch": 0.8126130105721943
+      }
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.7330518718298263,
+        "pendant_clutch_nervous_tension": -0.6234898018587339,
+        "worried_shoulder_hunch": 0.8704342992608298
+      }
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.7818314824680297,
+        "pendant_clutch_nervous_tension": -0.43388373911755856,
+        "worried_shoulder_hunch": 0.9182613305062286
+      }
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.8262387743159949,
+        "pendant_clutch_nervous_tension": -0.22252093395631314,
+        "worried_shoulder_hunch": 0.9558180198486321
+      }
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.8660254037844384,
+        "pendant_clutch_nervous_tension": -4.898587196589413e-16,
+        "worried_shoulder_hunch": 0.9828282828282827
+      }
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.900968867902419,
+        "pendant_clutch_nervous_tension": 0.22252093395631392,
+        "worried_shoulder_hunch": 0.9990160349854228
+      }
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.9308737486442044,
+        "pendant_clutch_nervous_tension": 0.4338837391175577,
+        "worried_shoulder_hunch": 1.004105191860294
+      }
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.9555728057861406,
+        "pendant_clutch_nervous_tension": 0.6234898018587317,
+        "worried_shoulder_hunch": 0.9978212641477948
+      }
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.9749279121818236,
+        "pendant_clutch_nervous_tension": 0.7818314824680295,
+        "worried_shoulder_hunch": 0.9802279353299761
+      }
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.9888308262251285,
+        "pendant_clutch_nervous_tension": 0.9009688679024197,
+        "worried_shoulder_hunch": 0.9521433970413562
+      }
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.9972037971811801,
+        "pendant_clutch_nervous_tension": 0.9749279121818235,
+        "worried_shoulder_hunch": 0.9144879308144612
+      }
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -1.0,
+        "pendant_clutch_nervous_tension": 1.0,
+        "worried_shoulder_hunch": 0.868181818181818
+      }
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.9972037971811801,
+        "pendant_clutch_nervous_tension": 0.9749279121818237,
+        "worried_shoulder_hunch": 0.814145340675953
+      }
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.9888308262251286,
+        "pendant_clutch_nervous_tension": 0.9009688679024201,
+        "worried_shoulder_hunch": 0.7532987798293919
+      }
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.9749279121818236,
+        "pendant_clutch_nervous_tension": 0.7818314824680301,
+        "worried_shoulder_hunch": 0.686562417174662
+      }
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.9555728057861407,
+        "pendant_clutch_nervous_tension": 0.6234898018587326,
+        "worried_shoulder_hunch": 0.6148565342442889
+      }
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.9308737486442041,
+        "pendant_clutch_nervous_tension": 0.43388373911755707,
+        "worried_shoulder_hunch": 0.5391642371234207
+      }
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.9009688679024193,
+        "pendant_clutch_nervous_tension": 0.222520933956315,
+        "worried_shoulder_hunch": 0.46093294460641415
+      }
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.866025403784439,
+        "pendant_clutch_nervous_tension": 2.388680238973927e-15,
+        "worried_shoulder_hunch": 0.38181818181818156
+      }
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.8262387743159947,
+        "pendant_clutch_nervous_tension": -0.22252093395631553,
+        "worried_shoulder_hunch": 0.3034764555172718
+      }
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.7818314824680299,
+        "pendant_clutch_nervous_tension": -0.43388373911755757,
+        "worried_shoulder_hunch": 0.2275642724622319
+      }
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.7330518718298269,
+        "pendant_clutch_nervous_tension": -0.6234898018587316,
+        "worried_shoulder_hunch": 0.1557381394116087
+      }
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.6801727377709191,
+        "pendant_clutch_nervous_tension": -0.7818314824680316,
+        "worried_shoulder_hunch": 0.08965456312395097
+      }
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.6234898018587337,
+        "pendant_clutch_nervous_tension": -0.9009688679024196,
+        "worried_shoulder_hunch": 0.03097005035780534
+      }
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.5633200580636227,
+        "pendant_clutch_nervous_tension": -0.9749279121818235,
+        "worried_shoulder_hunch": -0.018670671731896144
+      }
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.5000000000000004,
+        "pendant_clutch_nervous_tension": -1.0,
+        "worried_shoulder_hunch": -0.05808080808080788
+      }
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.43388373911755834,
+        "pendant_clutch_nervous_tension": -0.9749279121818237,
+        "worried_shoulder_hunch": -0.08666843360720908
+      }
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.36534102436639493,
+        "pendant_clutch_nervous_tension": -0.9009688679024187,
+        "worried_shoulder_hunch": -0.10388137939158337
+      }
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.2947551744109047,
+        "pendant_clutch_nervous_tension": -0.7818314824680302,
+        "worried_shoulder_hunch": -0.10916747651441522
+      }
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.22252093395631464,
+        "pendant_clutch_nervous_tension": -0.6234898018587355,
+        "worried_shoulder_hunch": -0.10197455605618862
+      }
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.14904226617617528,
+        "pendant_clutch_nervous_tension": -0.43388373911756195,
+        "worried_shoulder_hunch": -0.0817504490973879
+      }
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "worried_head_small_inquiring_dip": -0.0747300935864239,
+        "pendant_clutch_nervous_tension": -0.2225209339563134,
+        "worried_shoulder_hunch": -0.04794298671849673
+      }
+    }
+  ],
+  "candidate_sha256": "4259dfd1484bea603b24973bc6c1d14c797ee7ae8f71e99f1132783ec49063e9",
+  "poster_sha256": "715dfebaa1098a72bcc73d60f072064529e17b90bc6d307e63f8533dc454f0cd",
+  "bytes": 231337,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "output_pts": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "decoded_png_sha256": [
+    "26b4ec942b3751c2fa50fda729da25c161c91c5c105f0c75b72f0c7bc16e0440",
+    "56f2cbb598d21c89dcb09067a3c9f3c8fa1044359d49009915c27d4091490f50",
+    "d10b2f85026f324863eaf037f3a1126f52f42ce6905edb2d8ac0820a2c2dec13",
+    "7d6591f0427090983be6dec565af83315043e27fe9fb805f62720e0ae319152f",
+    "6dfdf877799175751d08c299f870ab6f740ff1a17e7dbe79f86e927ee4686d74",
+    "9c123a0d2b50db76ccb0e236cc616143a058b6fb9455263bc4c99d4dd50ba0dc",
+    "847ed682e2c9e12582673b5618e18ec8caf0ce112699dbfa4ec1de3d484206ff",
+    "11ed5b0e53b4394261ba9f7f1066b30ebd6bbc9b6d67a4afc3d7787966265de6",
+    "03d977b07839b8d787c7b90f71240a716382788de3764297e3b7291673867517",
+    "889b774a270694fa7fc5e7526a5b5b1c46e730f4bad3e3862e5f66ad29e7e962",
+    "b7da1d5c59addf49e85ab386a30093383d473078389bde012e51b5a0ac95eaac",
+    "5489c7af2bc85f1d0e0dd3c2636d883dcca7693eab582445d1f1d0f849065377",
+    "8f38544dcf6e9a2d8c533641e82853b023624cf79026c762297f191a1611ad20",
+    "b08a19490ee9be71bdc499b72724fc941531c7e9e5bb2599d0f0a31a7ccc687b",
+    "4034545ac128f32d6069575874ad72c12e8e978851fa11ff133fa015651b0dd1",
+    "f4b263562a73d0d71944574355f4e64ac1eadb037ea4cd78099449f5a412396e",
+    "c6c2959eb92e77c696eeb853365367dd63bacce89f10df76cc4af70249a363e9",
+    "3cedfa5ce3bdd6df2b6f73e7a3139facb9dc7148e80ca6d792b4f599b882cedf",
+    "4b700bef6dbcad9341d8b548fa13ec740b3228458bc52b8f574ab3b6f3a555e7",
+    "5481c063a38499ad6daf911220e67415220c834e5e108f311370ac729f8bea02",
+    "abb4cb41baa94e5c7f6c8f59fb093271f84943a43fe10226471c9d5435ae22c1",
+    "157704a96e2564dbfbd77e6303e6dc8a6ed2cf510b4ac5fcb33bf0ebc92ee078",
+    "aa3995d3467eea97fbeda516b032d0286c01ff41c220226cc1d5c0aa23ee6e43",
+    "b1adea0fe89db85f23e9ede02949b287e62723bee19068e4ff7f5f2395887ab6",
+    "442859a1bb747b2fd2818540af1346b445370a03474b2bd68d67d35ba6c9392a",
+    "00374ca8809481d2ea3616ac683ec4bcebb7fc1627b735ece0013f78a6d481b3",
+    "2c915d17065b4e6c4352d90cb93d55916337e3117368ad0547716442d5c81ea4",
+    "641144758793f76923f5b9f23c1fd85da19a1d7d48502924d6c834d89a354a00",
+    "030a17a6d81e4aa6a48f987c923416adf6188cde2445c659d55881c82cb0457f",
+    "61c2f1a58b403a64d20e9615f9669aa00391257b47356820357b2391a35c32cc",
+    "f8052c8281668bd3b2ed3918dfe28732d38cc0e7f0ffc156b04e40ccd7705e09",
+    "02d681e55b1be510dbc5fe355abe4adb807e99b26e3fab01fbb1070c9ac2cbe3",
+    "611416c60c330df67500d01fe056a5a616647ed5de6c5e08900b2fd39d8ecf1a",
+    "8d5a55ca6bc047388ce9c401dc483d01eb469ea7ac873fd1fdf5b7cf9c8ba4aa",
+    "8c9a5f3b72e40d3e3b8900157b1f617f385bc19d7a85b8bc3169ab74dd4fb5fb",
+    "d42ea40c6e7c680f8286e4c18531fc3a7f4eda3eeb7791dab963d86a2bcd29d2",
+    "da5b7c4430480b8ed0bd269ee2bdbdad6a9631320a082c296fd6c0cab5c08b9b",
+    "a25e556c78d403491d3f04aa9aee575fbf172c009ef3af25a40a3b648d505755",
+    "4fed8e7f82a7152f4284a72fd3b843de65de2032d9a2c7ecd63368162edbfa15",
+    "119fd91fa728630163d853851806a87074035fa7e70200ed936f7640de552211",
+    "b96b089f50c34dfb228a475481ba50d4cd5a805ca153b2f3f677a58026cc448a",
+    "8783910a073689459ba0f9903b7635d1b1b5ff1b424deb84081036bf79ce5533",
+    "25bfbcd4d10cccef8c1cc4eacc3661ec96ac6c70ef720378143d28673c14169f",
+    "03b90437f2af18a16af9f3d1030ebf8eb49155a758a4b12d6988dbba5ae286d0",
+    "1cd30251bb0c5390e947027802e51482d629309b5142b551033d81230a60ca45",
+    "03702120c26f15054a35e28ff63e1866d07b2906db67979392d4d4aa018c8420",
+    "bb8b5afbdec2eab83e33278c955e12ae13a8b1bd7a8baf69d78cda068524b96c",
+    "47af8edba441b4849facd11427e39227584e0fb118e8d43756affbc8b810a91d",
+    "93112603672d4232cd8f45bbeca4ce897cbce7899e9d702bc6f1c3aea9e73947",
+    "8bdd6ba4278bd206b7b163224be2f7dff8e54e51aeb1fec1b9c534df5bb0a808",
+    "3066cb2ca322abdc39e392597135bfb0ffa87536b73b41b8eec5d4e3be58ccad",
+    "c999d39e9f287cb1eeaa7671194092cb42a9c33a6bf3e3b050299cc98eb5b0ba",
+    "cc23f5a7cd4cddf7fb51a4399582c4ab92b99aefe7a939f9a8dc7f8ac0433e7b",
+    "a183b7abc5363cd3442fdb30988e03ad242d87b28125f353cb605a8484e00e55",
+    "c886933ee6a6de56539b689b7e47c6eb6d301f6b47820ea537a2914a2e3e897f",
+    "c78d86c357b182a09db976f5cba89425df5e605237e473eab97618d978fe2a3e",
+    "5b489adaa7d8530830af6717bce74fef303556ceaddfecba0b766c20bc3744dc",
+    "34a504ef863fa0eef5a807bab48545e4af255ff6a98285cd1a3b27ceedc7666b",
+    "5f4f771851fae2b731b632a648e72a6b28e6fa15e767e3df206a5f85c7482fb9",
+    "3ed8c1cac47fa1c6bdc20a784bdafcc4c9106f94e79463d8b60cc2fe977f037c",
+    "dc77fda4089557e3f4083ddbf71cd4e13c37daab8e146fecf99fd807b23eb2a6",
+    "04f156c1a3d57152027fa50cd2fdf0589510185e5c32d3ef764928de0b5dd314",
+    "950a06abd59e3ed203711866c8ea33916687e40a642fadc0eb7b3d1ec2766825",
+    "f3c163a10d94cbf0edb0bbbceb9284b3d5eb3e3616ef73032ef668eada557526",
+    "e4d9efea7365cb2cdf830965d65265a417d84864e680f0ecafb142958a17cdb4",
+    "9d98c5ea81950e82af53bed0523e043226d44eb19e21f74968c09eb40f45cd4d",
+    "81e29401618122b6399a0329051bae9e8c301c6dd27ab4059f29c56c473b13c8",
+    "6da067d3dee4ef5c735a1302b6887bec93b7660aa5f14de08f33a050c62ae81d",
+    "81f6273bce88440508f0a42f3d8f8a542b51b800e570a94ef90c3b0a8d935a55",
+    "b599ee4cdb281cbd2c026410f3f58f99e05d20fcf48d3f2739b4b14754a88f7a",
+    "d3359dc227473d8b816252d426a18a15c11ee28b9adb3c47c853c4d3c8fb80b6",
+    "8981fe29b43150f12db4255cada3966fe0962d67ec8571e283733ea5153dfb38",
+    "3795b7bee3d3d2519bcaa096cd09fd0e0cbf31ba4b04c236b63b7b062a292e08",
+    "fe7a55ba1f5f975a08e463c9d974d9847a8f6c3a015d166ad620126965bc4649",
+    "06684a3fdfe868df7fba85ffa3123acfb35a1f1e066c128a5948c86e6429b4d0",
+    "38c0addcf76539efd77ec23253b31691c6a8e669500ba72359102e45915dde52",
+    "c940a9ab359c4a5fbe04be3355202c88a5bdd8ef845e75215dfab36dc80c86bd",
+    "0e6ed88f6851a457f4ad5b701a56015a63fb56408201a1aba36f0821d498d4a3",
+    "d1db0c7166df1a65079ddc37016e97fea061d14781408db4478403fffdec1d4d",
+    "b60740962c96688a6709d28b8aec9a247b526dbbb7400622c3bb6885d1c34b91",
+    "3c5566e42ca032b8a3d1265af9646af32cc1f82ae3d3de967626ad395828ea33",
+    "2fdd79b82c73f00148be365ef4167f9a019258244d6b9ca6ec0e3a4ea11eb9b7",
+    "2069cdc3ce89a532ecef4d915d24c07b812cbf4222fbbfa8c38cebee03189d57",
+    "101000a4c5fae8c935a7f680f48f835a5660fe58e4e956c144b5c06ab74112bd"
+  ],
+  "frames_rgba_png_sha256": [
+    "c49381b3ff0a175210614422106db3ac4d88971c5ee946267d5a3fc32fef374f",
+    "164127b4450aeb227427ec098aca6fba9f67d2d0f6102834871300a68a7d11cd",
+    "c2f5881d0493372c63f4172963cc02fc2b49e4f5fef2952433dcd1d0d708e718",
+    "8a7d36ebff72b0a5816ce1c114ac12efc5c66a10206ae34815a42de42cc743c8",
+    "55790d2154eafaf7f39196e60d404856c9d352dbc46becc6b45400f7ad294dba",
+    "b8ffe22fc8ed32bbec2cfa4b52a2ed002a1b7723f234bf227d2033d17d3128c5",
+    "617dde3464e0ab009fbcd3059b83714ab4b2c51c3a6d1d53b94afd94d990baf0",
+    "85316e0a2b62870933b12b2c70b2a65ebd22fb044c54c17cb4d33d679909e7bd",
+    "503711d022fc879a60f5fdf60546e0ac647385c84499d1f31c5b01afbe32f063",
+    "ce5aedee09aff2c33f70cb834c647287ddaf5caf695bfd0811895aa86eb6ccfe",
+    "6b753383923ec206f312d6488a2887dde06af367d14a7538f7f0f7bcf46aa5af",
+    "1cb10db1d2d1c7914cf201dd2d5cd8a49f1e19d0cb260bd80ea82e28f8fac36d",
+    "13f96948514614237fb44062bb68f93b26927fcf37dae155b89fd73ca88852da",
+    "9dd763bd5e4785e85702f2174d0e3b50918b6afc683f31de65d4f3411bfbbbd7",
+    "484fbde182f4f1219b1579a7a8f3b8f66f6c2c235ee1aedbc2d9d171cbdd9c34",
+    "8cb4666d3bbac0a255b0527a2c4531c31420ce0d694d79e79fb7267b0dd53afe",
+    "3db8b1eb0399d6d580fc428ef352829da0e59569bb3d24f6c5beb877a66df083",
+    "8c083e351eb9f2ad3f0108dae8e9f4836d226bc763331a1befcd6d1571346d65",
+    "3c05d7bf5c99953bb74ee96d4b7a14332c6964daf3e153ee29fa53a0e597c6b3",
+    "5ac5762819013382de106dc2dd6ed7a91f7c3f1d5c2f691156ab5fa72f82c3e3",
+    "fc6e14133c0d2bcd620b69212e092732df5ab9d4bba7eef1f454653011b944c1",
+    "adddb41a3513f28b48764a988444d329277ce2637086fc9436a40b64fbf5dc53",
+    "7dcfed61eb70d7071cf55836866636517f8110c9610685e4523fad03fd891132",
+    "fe7720322467e2ad363c488b1fb43105fbd7d8a467a8cbc272c735f6c0f7514d",
+    "ede6930a095a532f93beec194389c34a19a50dcab874c74e7bc45c10ed90ba3d",
+    "6a46230ee2447930b14d0e070ed669811169bfc059e77d9ebbf374054505472e",
+    "40e880035fb1410a6a608ff04fd3d17cc3a6decb069cffbf22a2d2c2b690daf0",
+    "b347474cca9f8b8a32943408ac7a3bd2bd6795982cf30e045b6f188352a09b39",
+    "f8aceabb5984fff207db43d867a05da32d112402f545dc735fe72ef462a9659a",
+    "51309b0058c1605eee402b334c669eabba55f48ead1639ffd5eb1fba3d79bf5a",
+    "479654c3c56dac6242c093a8160003aac4c92c78f9b36ffdc6931f7d03d3ac02",
+    "4d943b33d50507655b211839700cbf6ad422aca0f9e0891510274c3107b5de79",
+    "72ef3e10a3d8088660787a32ef452a54d29b1a2f9ea220ded886a0efc7b1ed19",
+    "c983849d2b80e56fdc79f3bf944725d998dbf7dc425b089d7664b55797382647",
+    "0f867452c1a12aed3178cf4f23f01a1190a857d65372032130e533d037a954e2",
+    "91d2a21b67589db2690142a7f1c53bd9805e5b944d51264fc24aaa5c0c4f8455",
+    "9b2fce6ea1d134e3b962d56173ba98faba1bb8fe006472aee347a5b1b4ca7cdf",
+    "e4c30cc29167b47e4684909fee50b3e15b020e872a89a2c07a9a6c5a9c067a00",
+    "0a18e91e4572d43ccecb7e29cc0d246b3d81fd157bb13c06a00b160b0335ea2f",
+    "ec3c3d7412ec09ab2ddec5f4a00a163d0965d979ab3ebc52a42d5624b5564177",
+    "c6224bc26568256f350e4d38332e2e5b72a5a1dca93431a1f14c7e5fe0db8232",
+    "80d39da4c89aebd416398e1b78fe5e38183cd0710de56798fb942435f0ca8c5d",
+    "c49381b3ff0a175210614422106db3ac4d88971c5ee946267d5a3fc32fef374f",
+    "27bc4b47a847a369663baa6bd3d8825f762c1fda96269b7c3a7e6fd084807e24",
+    "a700b762ae823d0d9e38bb6488b20ef8904580df81bf0781658a5e2993aef0a0",
+    "03a9b1d7f39f7305b1bec38f3914e28459666ab9802556c001db4d167e8fd526",
+    "94e89782226a3dd7b0442eab7948c4cc3f86aff8fe49c15341d072a4311da41d",
+    "8d7f1e2355bc2f9e9c9fd04eadd248b92ad0d7b1c403e8e02d18ec22c9c55507",
+    "27ece6efe85745c8790740745e7cc13bfee14304fbb37983b418529878594057",
+    "30eb0a412dcff0836f45fa2a21f72e38124bb46bc225d558e04da503f4d42c60",
+    "aed74df5a5d3dd35280f730320198d322e41426409f208ebe47ef1db19d194dc",
+    "b3708ead00d7d803b12e036105227083144b5d1b008be581d2aee18d2395618d",
+    "ec5ece48d55dd970725b9f0130a6494b6277bd3c92649e1d10f24311d2c2255a",
+    "29632b6c13d05fad1be4d7cfe6797aae338b8ae3df6fb0b0d274a8d7e64e6b5e",
+    "1b56aff247745c992635e86a2732e670071ea7997543d0a71baac372101820e3",
+    "1bb783e5aef978764c1cfc89fd71603c6a4892f860196275456cff3f636a0e99",
+    "8626a2d09577b6b07d80362dba7ffbd6774b5c1127dcc8e5bca2368b721d040a",
+    "4d9ad751370b2e2814b6d34037daffbb075ee72b526f6d07d8ed4598432f93a8",
+    "0257838c5dc8f34c12706b1944b59f10a49b51b81f6dae39661134467a1fe134",
+    "77af6b24f58fde49d27e5b2a1a8f54762ce0c89fddc457c62d24980e54d1bec6",
+    "5d64438e3382763ed0d027442e78e691a0ca52e9ec8a5200286892ce9507681f",
+    "6984fc7de118891ca8a24c9b0c8a1465840afa7ad1cc17164b9201329eb99bec",
+    "342e993a32206677b897dc572a1dd9e3344fdfd956681efafeec3d559969557d",
+    "7e4a145999a9138452b0c770017ac9b1656664cabffe5664075819825a222816",
+    "54cc502e16f41aff18078764d9117acc478521e27d30ecb7179df87e01c3b456",
+    "e268bf2301c66736d10c8d808064383d59497e94fa7cac6c42c293fc4ed3f65d",
+    "60e5fd4be8ff9e9afc19ea765a56cdf2ead998f4eecc31c4eb79993fec6968ce",
+    "384c85fbc56020e5603500c1dbb5eb5c35886a2451b942f9d49022902f599e79",
+    "1a0b9654a7739e487b9d4ac7a151bb91411e6a63b9319d0a4faef6f912f5669d",
+    "2451b58b8b0f788a967ba0221a7cee27e395b32c038f0c46d8f2648dc3d0c791",
+    "e6fe09b719d8e0eebf8dbf5df5f1efcff83745772e30c7870134d22e4e1e72ed",
+    "c90bd5402c86c714f13c22a077af0a32b74be98c38c03cc5fdf7ed5977cdaf71",
+    "6344c83df9d807094de10317f960d35c7b7d3413b67075a17f2d41b78acbf2cf",
+    "729f2219770635a1a5a0acc09345701b49a3f7f0cfc6cb7450226df36a5ad0c0",
+    "5a32ca82d4d7f452d85af101896841d11b934e9290bddf7dbeb29aabd83396c2",
+    "4974ca1c98c92b98998c196ebbfa1b87d15489e9a2d3fc64204204dc02e72f71",
+    "129b0b1b129fd9288739fe8e329483e89b90f1c16167d5606bd20e5d8ca69b42",
+    "583b6e2a1ebefa1248e7616c00e9abf32b816f906dabe7f32bbd7cd8996767f7",
+    "4b56963ad744460b0179333f4a831262a2aeb629f6321d25282ea530fc701de0",
+    "866fe8138ad05d04780c799c872dc5247eea75ab26b59326f983af85b624d957",
+    "bac3c0175c478f6678176f8fee635c818fb6db8cb65201ac9e3038590c49e7f9",
+    "c6da152ee53e62c4ef01a8c737244b9753ebadd12b260cf12101984822d2bb5d",
+    "84449afd41a3213360da19729b329e04bb6f219e17757db3b903ef9a6d3128e9",
+    "7db67ba4482b368560c017b4cf5badd7a61911e1294440abd1e50d0534738639"
+  ],
+  "raw_rgba_rerender_exact_match": null,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "adjacent_composite_mae": [
+    0.6561943888664246,
+    0.7584335207939148,
+    0.6875855922698975,
+    0.7144148349761963,
+    0.5845820307731628,
+    0.6103394627571106,
+    0.5059970617294312,
+    0.6346510648727417,
+    0.4321328401565552,
+    0.6312002539634705,
+    0.4366215765476227,
+    0.6277367472648621,
+    0.5232298970222473,
+    0.6070950627326965,
+    0.45679745078086853,
+    0.624408483505249,
+    0.3116777837276459,
+    0.3226092755794525,
+    0.21805523335933685,
+    0.3547816276550293,
+    0.04656242951750755,
+    0.061542440205812454,
+    0.11411130428314209,
+    0.3157725930213928,
+    0.3080671727657318,
+    0.43987131118774414,
+    0.4869525134563446,
+    0.613412082195282,
+    0.523364782333374,
+    0.675694465637207,
+    0.4915062189102173,
+    0.6709656715393066,
+    0.4733971655368805,
+    0.573196530342102,
+    0.4888032376766205,
+    0.5375893115997314,
+    0.48657527565956116,
+    0.6298542022705078,
+    0.6459717154502869,
+    0.7631813883781433,
+    0.7119072079658508,
+    0.7536546587944031,
+    0.7097507119178772,
+    0.7739553451538086,
+    0.6762446761131287,
+    0.7458519339561462,
+    0.6087802052497864,
+    0.7277966141700745,
+    0.4654053747653961,
+    0.5655956864356995,
+    0.4520500600337982,
+    0.5743943452835083,
+    0.5278366804122925,
+    0.65740567445755,
+    0.508632242679596,
+    0.6867863535881042,
+    0.4069386422634125,
+    0.48321065306663513,
+    0.3549715280532837,
+    0.5124310851097107,
+    0.16150334477424622,
+    0.20101316273212433,
+    0.058293890208005905,
+    0.1755809187889099,
+    0.10586326569318771,
+    0.30112525820732117,
+    0.28411462903022766,
+    0.44544538855552673,
+    0.4310379922389984,
+    0.6334079504013062,
+    0.4558248519897461,
+    0.6485865116119385,
+    0.5239241719245911,
+    0.6055516004562378,
+    0.5371559262275696,
+    0.6259064674377441,
+    0.4352903664112091,
+    0.473034143447876,
+    0.5366383194923401,
+    0.6945416331291199,
+    0.5647845268249512,
+    0.7268648743629456,
+    0.8167707920074463
+  ],
+  "seam_composite_mae": 0.7035775184631348,
+  "review_video_validation": {
+    "normal": {
+      "sha256": "bb2edf40d2fc0fc9c80efb36e25eb5b556fcafb93a510d98455c78001f2362e3",
+      "bytes": 154185,
+      "duration": "2.800000",
+      "decoded_frames": "84",
+      "full_decode": "passed"
+    },
+    "slow": {
+      "sha256": "f67e872350b70844d97f7d7832de5ef90e0d77402c6b760b67f878fe8bc14f7b",
+      "bytes": 224821,
+      "duration": "5.600000",
+      "decoded_frames": "84",
+      "full_decode": "passed"
+    }
+  },
+  "source_review": "Every selected source PNG individually inspected at native512. Exact selected source indices/hashes are recorded above. Original84-frame before sequence remains available for independent QA.",
+  "candidate_visual_review": {
+    "actual_agent_id": "/root/artisan_stickers_b",
+    "full_ordered_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "full_frame_tile_px": 224,
+    "native512_after_frames": [
+      0,
+      10,
+      21,
+      31,
+      42,
+      53,
+      63,
+      73,
+      83
+    ],
+    "scope": "Every final decoded frame inspected in ordered224px boards, plus9native512phase/loop images. Author review only; no native realtime/slowed/device perception claim.",
+    "observation": "Scene-specific gesture/props/contacts retained, no double-exposure contour or limb swap observed in this author scope; independent per-item QA required."
+  },
+  "independent_review": "pending",
+  "native_playback": "unknown",
+  "device_playback": "unknown",
+  "canonical_assets_changed": false,
+  "limits_checked": {
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "side": 512,
+    "fps": 30,
+    "seconds": 2.8,
+    "max_bytes": 262144
+  },
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_108/review-normal.mp4",
+      "sha256": "bb2edf40d2fc0fc9c80efb36e25eb5b556fcafb93a510d98455c78001f2362e3",
+      "bytes": 154185,
+      "frames": 84,
+      "duration": 2.8
+    },
+    {
+      "path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_108/review-slow.mp4",
+      "sha256": "f67e872350b70844d97f7d7832de5ef90e0d77402c6b760b67f878fe8bc14f7b",
+      "bytes": 224821,
+      "frames": 84,
+      "duration": 5.6
+    }
+  ],
+  "review_validation_scope": "Actual copied target paths must pass shared freeze_guard synchronously before package publication. Source validation alone is insufficient.",
+  "frozen_at": "2026-10-30T18:51:49.099193+00:00"
+}

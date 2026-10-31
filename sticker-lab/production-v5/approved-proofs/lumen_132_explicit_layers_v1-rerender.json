@@ -1,0 +1,5061 @@
+{
+  "schema_version": 1,
+  "id": "lumen_132",
+  "actual_source_kind": "generated_layer_components",
+  "canonical_video_read": false,
+  "frames_rgba_png_sha256": [
+    "e24c772687a7cf46676074801bc7d30977e7f96079de2758cc6ff9a6c836b80b",
+    "e1e1f8a788c13274720b2e23bb555f65b1caf4da8d0dbee439547c9b688c73e2",
+    "1651b86cef30fcf2db678bd40f54cf36d5c9ff54ceb721be22c500607c1159b8",
+    "f6562d813378fff84c08600a49a0bae4a0677a74aea4924a819252f3782ade1f",
+    "d8b035698c19336a89b1f615356233de3b6d48fa885f0798e02e937c3686a795",
+    "266d849443a9f48767cc5e49e1ae8202253fcd49bd858af691c7cdc8c594a69b",
+    "d5f705d2a4af96a4095c86a51bb3f21778010894d781eeb02fe851b5ca49e857",
+    "58cce83cb66d5ac1b9f7d46143662aabe35a45c4257515b34b1d154b085ad9af",
+    "83a519d7e3a0f22f5e565e794a3f79c57f9e276bf9ecde946281076b2b103099",
+    "6617ec1890580ee24736c468d7723d3f8ad04430e16475184b2fad6744eec60d",
+    "d282baa42810b8fc722245e8a108497a4bbea7ea3f69fc69b52210ff4569a0d6",
+    "a11cb0b6c336124b7c0de308fd3f1a798e5a4a3301990185b3fa6aee470a110e",
+    "c70d1a71df78515fbfe7eb09ee676553bb5dc9771f943baadc1d56f9fbfb775b",
+    "19fb505179a39e48df8b4679d397bf231c89e4f2a082c903bc228a4fc5758cce",
+    "9cba426b10632b1a61732fc4f3d8bbb1285a4681ee07baa64811aeac0e3c25ab",
+    "9cba426b10632b1a61732fc4f3d8bbb1285a4681ee07baa64811aeac0e3c25ab",
+    "3077932a612c9137a83c2f9bc5cfff6dbffaaf32bbc760e1c9e93dad82358d80",
+    "3314143fadc5ef0303992e82ac97a08c8542cb176ca45dcd8ebd05ebe8dfe614",
+    "b894b6db100c5762920106fb322ced8f244ff0945b16e41b4d4b88121296511b",
+    "db9ca8c422dddf7a97d5a21842cc50ff940e3e3a4f7d7337a09bc4ca2f9b3d75",
+    "559cbd4a128e912c7847c6549687592c80da7d45c2ddf0f571bbf3ee302b8276",
+    "d7d1d7e9b1afc7e1d85eaa15369816b4a218696169e7815d69846677f0fa14e1",
+    "a4d9a9d8c010fc36a459fe03e0992e7fc8da2f90ec8b1ba65898e61a7ab989e9",
+    "c37ef9f8f9af0a1431a2fec9f8acd44b15f2999d658b0c213876e5e8b3f92a5b",
+    "640c349cd0ad5a324582bc36173444c0ea7b504c865574317bd796ae5b37bbf2",
+    "952e522b5746d935d9a6e93c85ae30da817fcf857ec7f6e4f9f11507cb10cf0b",
+    "16e1ff25bbf4ab27455eddc82cfa433910bdfc95d36cac2fe443cae151416d58",
+    "c199dc399610f4dc3f4e456830635f768d137219793e08629eea93d580546d3f",
+    "26abbaacccf91806bfafba89e483f5a9150d1305e38424245208daa306cab255",
+    "2d922b9461eca3effa351605ea7f52adcaf69d00f07d43d2f0df9dfe2481bd59",
+    "3dffe4c550e3d724be1a760d81262ef5a583f1987c0089f77688e898bb96de31",
+    "af5283c27ab0a143dbcfe3bd2e0a8ec3dc64a24769b81b61bddf111db4551e41",
+    "69939389a0398a1dca09c655de1ebacdeeedec1c314642416ce7a6b77d61d94d",
+    "ff24ed851c6d9fd81add262138befe72fe9b6e1cfb8d9ed09afd1d73dbb36169",
+    "77cbc16cfdb4b990796e1ae8593a8831c4d0c32d1a16035e2ce599b6d82a3909",
+    "9691efcdb320a806140c380ca699f87217697f9244fc876701e4d47c2886916d",
+    "38aaa02d7fee4d763d9145b3a1994be7fa26557b215dc28cf70c8b526a30cd9b",
+    "3455a66756a21bc9c364af254b7df45d412dc7bf62c4f7bf30e02386e293b012",
+    "bac52328713d6a5b4b1c2f6433a9291b33ecedb991e47083809cd4f9ddfe7d97",
+    "aaa5873761b46f76ac5c133fbb03f160aab9f4a4f39017e274c221646788a7c7",
+    "c0151a12002716e8a905ff47577bcb4c7b9d15553aaac74ec34da11ee919616e",
+    "ea7462cb4451a106cad7aa9bbc891d33d6db69656a1e9d3296007ae71e37e832",
+    "e5922724f55b9befd5eb5fbf9a40886749a57b12f33402207a942f9af5a34ba9",
+    "b4469f89c01a8cd282533a7914fe8f41084c4c35550ac96dca2b7b19f0c81fe0",
+    "4ee98c1bee00ae870ab49a88ddb0a5a95f291014be93f436f7dec042fdbdeecb",
+    "838a50422b1a53acbc88441d6af4d06ea85a4ef8928b9d1458a5ec45e280dc6d",
+    "5b076cab358f43ee24b5f4d8fc954fc3718d140cef4b070a6be7cb2136c9c070",
+    "a1ad16bde1ba51b7f597494bae77f571dbefa7d4f5a3f9818581ec49d3516621",
+    "970269a5ee1003ad3de246aa5f6516544067effb7a20363e6e719cd596c008b6",
+    "7210553eab7748cec79823fe8ceb49df166ea7078789ba73ff6ac28c43d1a8cc",
+    "2bc642c410b18beb8eabf47444e026e7ac2e04c1935f6a5ffa01421de729d615",
+    "cdcafcdbaad98936b55d18937a44461094b80b360173f8d7a8f450fa745e2fc5",
+    "4cf0b1d35ed9d7a6a5bdf7b66f299658dd196874268bd666405de888d4193b21",
+    "ad24faeb2fa67903d280cd6fcb13f8d03bce2dbb981109d81d976a39368b90e1",
+    "702732d06380838a2c09cdce1b9b087dc6a98897420b98ffaea55bd217bd9a8b",
+    "994790d6b0905dc9751fadc50d061838bd6e35ab228e2f3004f107bcfa400df5",
+    "ab8052ef9f7b003c30560378ce5d35a4634de54d80110ab6d654002238250897",
+    "9cc5de7b5482a314396a3f41c25ea7515d005b75ce3453f225eee832541a447e",
+    "f4608f8d972f4db993a6666a4f56d2926b36bb1081e69db8f876a628c2192748",
+    "78a6d6d33d1917548fa4d417f0d2bc6e974e139a36c69914358280ce1dca8c73",
+    "1c108dd2e57633c66c69437dd56d8017502853aaecbf340a4c8c835171655dd0",
+    "824d493217586bbf77de566f015b92fbb8b3ea34041a26dd8c6fbf0bca093a98",
+    "7ac23aacaeca474f4ec2645046f5a33ecf8bd1aa59faf36db4cb48a69ac5dff3",
+    "9148c42ebdadce7ccc5eeb5339e7c44cca45acea1362b786c1cbf7c6bffb53b6",
+    "c19dd46b6805a478d5377f31785dde46f953629af13fe6b98ae2c2638c9dbcab",
+    "4e8f27e5eecf0ef0db1952db6a6dbe524b83713d062ba53ce53bcf98da1dafa5",
+    "b371f34c218ef0184d30dc6ea6675938dad14631dcfaf7c50eb780a303a69b58",
+    "dbfba3d30c15d83ec447db1e5f6c4e4b6e8c10d3c247c7d4fddb54c6da5dee7f",
+    "b19b64bf48f01c2fc19dda7cfc2040e51404df0fb79c9534d2c57c80d6c144ec",
+    "9cba426b10632b1a61732fc4f3d8bbb1285a4681ee07baa64811aeac0e3c25ab",
+    "27997a59313f8812c9f4eaa137082b7509b63c862c3513aa18c027ac41635a26",
+    "8df890999db68aaaa933e084880e99e6557b2928f74693891ee04eafa5f54f50",
+    "b2987b9ff9b3f4d114e45588e6d92a403c89df9314a1b09b97dd3c21f8c981a4",
+    "10dddde23702968f239cbfe293ebab415bbf564ee882a3519b33b26c4f9109cc",
+    "e50ba22099d7a3a53b1a64a8289f1a6a89df3386eaf7f21a03afdac393e1df42",
+    "e40abee129d0cfd8e56c0bcedf6a1a5f61bc95650bc02ca72503d19393213064",
+    "8d837d1f296fadd5d30077537afc82467848f33d633d91470765b0ac28bef811",
+    "f6bf1c9de809b46da2cd1b96ba0bcc67736828c441b15c3f7100d270542ca09c",
+    "4ae27c03dcaab7ca97fac538bd024e76e860f150ccc6bf1c34a1782d62f42358",
+    "e527ef7c7783ac3311a154d1035ae563588ba2393d978fcd9d3c3cc88ac223d6",
+    "2931aebd04e40becd29e35edb0f6da0915bc9913c0341d238309474f03d7ac3f",
+    "eda3e73921b221e7d7c65e3c734711949f82017e2635805b63320271dbe5d34c",
+    "e24c772687a7cf46676074801bc7d30977e7f96079de2758cc6ff9a6c836b80b",
+    "e24c772687a7cf46676074801bc7d30977e7f96079de2758cc6ff9a6c836b80b"
+  ],
+  "scene_states": [
+    {
+      "lid_angle_degrees": 0.0,
+      "lid_face": "outside",
+      "lid_plane_projected_area": 3531.0,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          153.80966433244512,
+          392.2535310156563
+        ],
+        "hand": [
+          174.0,
+          403.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 0.3856712991361205,
+      "lid_face": "outside",
+      "lid_plane_projected_area": 3482.859358533432,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          153.75610375171155,
+          391.9522945492305
+        ],
+        "hand": [
+          174.001019460152,
+          402.5955852977791
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 2.7336839564717077,
+      "lid_face": "outside",
+      "lid_plane_projected_area": 3186.4488356366637,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          153.47384461170714,
+          390.12566272367576
+        ],
+        "hand": [
+          174.05120961060555,
+          400.1110670571071
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 8.116819519939048,
+      "lid_face": "outside",
+      "lid_plane_projected_area": 2487.5175019367443,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          153.13401675934364,
+          385.99764305676166
+        ],
+        "hand": [
+          174.45079863042665,
+          394.28806286885
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 16.79415366451286,
+      "lid_face": "outside",
+      "lid_plane_projected_area": 1317.4097006378406,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          153.62445500395023,
+          379.53383018201407
+        ],
+        "hand": [
+          175.9192956876887,
+          384.6403288735561
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 28.38345150427755,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -287.6186424177488,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.01174801783185,
+          370.00391600594395
+        ],
+        "wrist": [
+          156.5438141262591,
+          371.05364924917484
+        ],
+        "hand": [
+          179.40963410908662,
+          371.5926543631811
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 42.033562904494545,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -2158.04000821125,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.46906630130594,
+          370.1563554337686
+        ],
+        "wrist": [
+          163.0844555360762,
+          360.80674831379173
+        ],
+        "hand": [
+          185.57612703585121,
+          356.65211678425646
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 56.596817793669516,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -4016.684224729528,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          145.28159928961585,
+          362.1679716928365
+        ],
+        "hand": [
+          167.54560548321564,
+          356.9286703833726
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 70.80142147561972,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -5581.760136710996,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 83.42384994154123,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -6688.639566198432,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 93.46124518207625,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7340.154097010202,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 100.30381049938036,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7656.435918589133,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 103.90720581919005,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7779.376191819923,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 104.96494300288924,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7809.642822463709,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.1793087389365777e-06,
+      "star_center": [
+        256,
+        437.99984668986394
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        456.99984668986394
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.01719133009100413,
+      "star_center": [
+        256,
+        435.76512708816944
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        454.76512708816944
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          334.9987548337821
+        ],
+        "elbow": [
+          112.0,
+          369.9987548337821
+        ],
+        "wrist": [
+          130.29594995152922,
+          367.7680970713713
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          334.9987548337821
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1779102323417
+        ],
+        "wrist": [
+          348.59165237056527,
+          396.678716036762
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.10573868102576299,
+      "star_center": [
+        256,
+        424.2539714666508
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        443.2539714666508
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          334.7824747571795
+        ],
+        "elbow": [
+          112.0,
+          369.7824747571795
+        ],
+        "wrist": [
+          130.2818599323155,
+          367.64997393667727
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          334.7824747571795
+        ],
+        "elbow": [
+          401.4625338043213,
+          369.96163015573904
+        ],
+        "wrist": [
+          348.5673388232904,
+          396.6303508387231
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.2793314495444653,
+      "star_center": [
+        256,
+        401.68691155921954
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        420.68691155921954
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          333.9402998724798
+        ],
+        "elbow": [
+          112.0,
+          368.9402998724798
+        ],
+        "wrist": [
+          130.23272732256743,
+          367.1880458933561
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          333.9402998724798
+        ],
+        "elbow": [
+          401.4970998154694,
+          369.1079332673233
+        ],
+        "wrist": [
+          348.696941172504,
+          396.2385385816798
+        ],
+        "hand": [
+          328.2097254583475,
+          406.76560095831746
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.5107522780205485,
+      "star_center": [
+        256,
+        371.60220385732873
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        390.60220385732873
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          332.4912513603799
+        ],
+        "elbow": [
+          112.0,
+          367.4912513603799
+        ],
+        "wrist": [
+          130.16993406916518,
+          366.38720567823793
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          332.4912513603799
+        ],
+        "elbow": [
+          401.90478159944195,
+          367.5229908272326
+        ],
+        "wrist": [
+          352.68200201976623,
+          392.13735164674017
+        ],
+        "hand": [
+          332.0806538847419,
+          402.43926918764146
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.7508160000000004,
+      "star_center": [
+        256,
+        340.39392
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        359.39392
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          330.7768124777727
+        ],
+        "elbow": [
+          112.0,
+          365.7768124777727
+        ],
+        "wrist": [
+          130.1319322121202,
+          365.4332731804921
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          330.7768124777727
+        ],
+        "elbow": [
+          402.0,
+          365.7768124777727
+        ],
+        "wrist": [
+          363.22752908741086,
+          382.2884003616646
+        ],
+        "hand": [
+          342.03558349609375,
+          391.31317138671875
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.9473074064319181,
+      "star_center": [
+        256,
+        314.85003716385063
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        333.85003716385063
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          329.25683863610357
+        ],
+        "elbow": [
+          112.0,
+          364.25683863610357
+        ],
+        "wrist": [
+          129.60313437886154,
+          364.3354470763217
+        ],
+        "hand": [
+          152.4750782856189,
+          364.43758387744884
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          329.25683863610357
+        ],
+        "elbow": [
+          402.0,
+          364.25683863610357
+        ],
+        "wrist": [
+          378.1025274097123,
+          370.30652789753606
+        ],
+        "hand": [
+          355.77334620275064,
+          375.9592013028081
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.06391901189907,
+      "star_center": [
+        256,
+        299.6905284531209
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        318.6905284531209
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          328.30546747972807
+        ],
+        "elbow": [
+          112.0,
+          363.30546747972807
+        ],
+        "wrist": [
+          127.06753249546084,
+          362.6671844962692
+        ],
+        "hand": [
+          149.91921003110525,
+          361.6991536047556
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          328.30546747972807
+        ],
+        "elbow": [
+          402.0,
+          363.30546747972807
+        ],
+        "wrist": [
+          391.7403500403846,
+          362.73766031710875
+        ],
+        "hand": [
+          368.7419807207095,
+          361.4648450768541
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.0991888208484575,
+      "star_center": [
+        256,
+        295.10545328970056
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        314.10545328970056
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          328.007028964269
+        ],
+        "elbow": [
+          112.0,
+          363.007028964269
+        ],
+        "wrist": [
+          123.19015130722659,
+          361.08497757380206
+        ],
+        "hand": [
+          145.73221722162285,
+          357.21308988031024
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          328.007028964269
+        ],
+        "elbow": [
+          402.0,
+          363.007028964269
+        ],
+        "wrist": [
+          398.05711018924666,
+          361.3522263927495
+        ],
+        "hand": [
+          376.8182482791768,
+          352.4384283938612
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.0980414168212271,
+      "star_center": [
+        257.4216510467237,
+        295.25461581324043
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        257.4216510467237,
+        314.25461581324043
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          328.0084885964114
+        ],
+        "elbow": [
+          112.0,
+          363.0084885964114
+        ],
+        "wrist": [
+          120.023117589853,
+          360.26133651526465
+        ],
+        "hand": [
+          141.66195866462368,
+          352.8520985692396
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          328.0084885964114
+        ],
+        "elbow": [
+          402.0,
+          363.0084885964114
+        ],
+        "wrist": [
+          399.0442163403736,
+          361.3395158508846
+        ],
+        "hand": [
+          378.987148328129,
+          350.0143636332676
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.075461703022027,
+      "star_center": [
+        259.16237116499394,
+        298.1899786071365
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        259.16237116499394,
+        317.1899786071365
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          328.12578721051534
+        ],
+        "elbow": [
+          112.0,
+          363.12578721051534
+        ],
+        "wrist": [
+          118.63120334629198,
+          360.0418107369279
+        ],
+        "hand": [
+          139.3702482640095,
+          350.3966945685816
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          328.12578721051534
+        ],
+        "elbow": [
+          402.0,
+          363.12578721051534
+        ],
+        "wrist": [
+          399.0051261897425,
+          361.416653455916
+        ],
+        "hand": [
+          379.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.0271002318507558,
+      "star_center": [
+        260.28225061492134,
+        304.4769698594017
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        260.28225061492134,
+        323.4769698594017
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          328.4584704751621
+        ],
+        "elbow": [
+          112.0,
+          363.4584704751621
+        ],
+        "wrist": [
+          118.52992873506929,
+          360.20354999050124
+        ],
+        "hand": [
+          139.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          328.4584704751621
+        ],
+        "elbow": [
+          402.0,
+          363.4584704751621
+        ],
+        "wrist": [
+          398.880161523915,
+          361.6328942135245
+        ],
+        "hand": [
+          379.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.9713140688734192,
+      "star_center": [
+        260.80008180418696,
+        311.7291710464555
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        260.80008180418696,
+        330.7291710464555
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          329.04086209622517
+        ],
+        "elbow": [
+          112.0,
+          364.04086209622517
+        ],
+        "wrist": [
+          118.70768997384567,
+          360.5526491367067
+        ],
+        "hand": [
+          139.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          329.04086209622517
+        ],
+        "elbow": [
+          402.0,
+          364.04086209622517
+        ],
+        "wrist": [
+          398.65970750140815,
+          362.0017061686694
+        ],
+        "hand": [
+          379.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.9319917377413993,
+      "star_center": [
+        260.78530685783636,
+        316.8410740936181
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        260.78530685783636,
+        335.8410740936181
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          329.8492014613346
+        ],
+        "elbow": [
+          112.0,
+          364.8492014613346
+        ],
+        "wrist": [
+          118.95878878241854,
+          361.0220734407047
+        ],
+        "hand": [
+          139.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          329.8492014613346
+        ],
+        "elbow": [
+          402.0,
+          364.8492014613346
+        ],
+        "wrist": [
+          398.3510040207599,
+          362.49334596449387
+        ],
+        "hand": [
+          379.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.9201150265735318,
+      "star_center": [
+        260.3419880034914,
+        318.38504654544084
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        260.3419880034914,
+        337.38504654544084
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          330.8175136721839
+        ],
+        "elbow": [
+          112.0,
+          365.8175136721839
+        ],
+        "wrist": [
+          119.26501240679332,
+          361.56142355836766
+        ],
+        "hand": [
+          139.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          330.8175136721839
+        ],
+        "elbow": [
+          402.0,
+          365.8175136721839
+        ],
+        "wrist": [
+          397.9786904535914,
+          363.0519867708621
+        ],
+        "hand": [
+          379.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.921409829743707,
+      "star_center": [
+        259.5927487946865,
+        318.21672213331806
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        259.5927487946865,
+        337.21672213331806
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          331.85347957683723
+        ],
+        "elbow": [
+          112.0,
+          366.85347957683723
+        ],
+        "wrist": [
+          119.59748967781955,
+          362.1111041279349
+        ],
+        "hand": [
+          139.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          331.85347957683723
+        ],
+        "elbow": [
+          402.0,
+          366.85347957683723
+        ],
+        "wrist": [
+          397.579459411155,
+          363.614284336286
+        ],
+        "hand": [
+          379.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.9329744933598382,
+      "star_center": [
+        258.66413949021484,
+        316.71331586322106
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        258.66413949021484,
+        335.71331586322106
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          332.854305802036
+        ],
+        "elbow": [
+          112.0,
+          367.854305802036
+        ],
+        "wrist": [
+          119.9218218636113,
+          362.6158380219556
+        ],
+        "hand": [
+          139.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          332.854305802036
+        ],
+        "elbow": [
+          402.0,
+          367.854305802036
+        ],
+        "wrist": [
+          397.19484458008174,
+          364.1241877892738
+        ],
+        "hand": [
+          379.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.9554196251721864,
+      "star_center": [
+        257.67447120097717,
+        313.7954487276158
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        257.67447120097717,
+        332.7954487276158
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          333.72259478550603
+        ],
+        "elbow": [
+          112.0,
+          368.72259478550603
+        ],
+        "wrist": [
+          120.20455137732843,
+          363.0333173471881
+        ],
+        "hand": [
+          139.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          333.72259478550603
+        ],
+        "elbow": [
+          402.0,
+          368.72259478550603
+        ],
+        "wrist": [
+          396.8633237425684,
+          364.541207476279
+        ],
+        "hand": [
+          379.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.9798588353321839,
+      "star_center": [
+        256.7247393702862,
+        310.6183514068161
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.7247393702862,
+        329.6183514068161
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          334.3822148082645
+        ],
+        "elbow": [
+          112.0,
+          369.3822148082645
+        ],
+        "wrist": [
+          120.41960927978506,
+          363.3381157096552
+        ],
+        "hand": [
+          139.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          334.3822148082645
+        ],
+        "elbow": [
+          402.0,
+          369.3822148082645
+        ],
+        "wrist": [
+          396.6134250162016,
+          364.8429211814469
+        ],
+        "hand": [
+          379.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.9959306785018295,
+      "star_center": [
+        255.89285895509127,
+        308.52901179476214
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        255.89285895509127,
+        327.52901179476214
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          334.7941700269268
+        ],
+        "elbow": [
+          112.0,
+          369.7941700269268
+        ],
+        "wrist": [
+          120.55386705225555,
+          363.5231811817389
+        ],
+        "hand": [
+          139.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          334.7941700269268
+        ],
+        "elbow": [
+          402.0,
+          369.7941700269268
+        ],
+        "wrist": [
+          396.45838845072416,
+          365.0249699734682
+        ],
+        "hand": [
+          379.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.999993406572765,
+      "star_center": [
+        255.23109223617854,
+        308.0008571455405
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        255.23109223617854,
+        327.0008571455405
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          334.97247050601345
+        ],
+        "elbow": [
+          112.0,
+          369.97247050601345
+        ],
+        "wrist": [
+          120.61193820785252,
+          363.6020378446822
+        ],
+        "hand": [
+          139.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          334.97247050601345
+        ],
+        "elbow": [
+          402.0,
+          369.97247050601345
+        ],
+        "wrist": [
+          396.21542063014283,
+          364.97943362002815
+        ],
+        "hand": [
+          378.7790104825083,
+          349.92896348905
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.0,
+      "star_center": [
+        254.7662853378829,
+        308.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        254.7662853378829,
+        327.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          120.62090169707182,
+          363.61414689105794
+        ],
+        "hand": [
+          139.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          402.0,
+          370.0
+        ],
+        "wrist": [
+          394.23475564353,
+          363.68655717703564
+        ],
+        "hand": [
+          376.36279578458266,
+          349.15596528268475
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.0,
+      "star_center": [
+        254.5023503849246,
+        308.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        254.5023503849246,
+        327.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          120.62090169707182,
+          363.61414689105794
+        ],
+        "hand": [
+          139.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          402.0,
+          370.0
+        ],
+        "wrist": [
+          388.7133154815807,
+          360.50747940263426
+        ],
+        "hand": [
+          369.9714893969006,
+          347.1175949740216
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.0,
+      "star_center": [
+        254.42433638725538,
+        308.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        254.42433638725538,
+        327.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          120.62090169707182,
+          363.61414689105794
+        ],
+        "hand": [
+          139.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          402.0,
+          370.0
+        ],
+        "wrist": [
+          378.86559429290236,
+          355.7676709663572
+        ],
+        "hand": [
+          359.2472680244861,
+          343.6984404844263
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.0,
+      "star_center": [
+        254.50341542663642,
+        308.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        254.50341542663642,
+        327.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          120.62090169707182,
+          363.61414689105794
+        ],
+        "hand": [
+          139.0,
+          350.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          402.0,
+          370.0
+        ],
+        "wrist": [
+          365.2011764410952,
+          350.0884933122591
+        ],
+        "hand": [
+          344.94306585790014,
+          339.12701505433057
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.0,
+      "star_center": [
+        254.7021580965191,
+        308.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        254.7021580965191,
+        327.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          120.6956511705677,
+          363.6635423158107
+        ],
+        "hand": [
+          139.1807081680471,
+          350.1936158943361
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.5518966896164,
+          370.14936777012787
+        ],
+        "wrist": [
+          349.18726204899247,
+          344.1197091486341
+        ],
+        "hand": [
+          328.5614204426541,
+          333.8669188927945
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.0,
+      "star_center": [
+        254.9795668243468,
+        308.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        254.9795668243468,
+        327.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          121.5367927621951,
+          364.14190535133787
+        ],
+        "hand": [
+          141.02582257392754,
+          352.1705241863509
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          393.8861872209862,
+          372.70460425967127
+        ],
+        "wrist": [
+          332.2532186098903,
+          339.4463726486426
+        ],
+        "hand": [
+          311.98262140428744,
+          328.5080026179568
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.0,
+      "star_center": [
+        255.29546002422373,
+        308.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        255.29546002422373,
+        327.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          123.74433772111576,
+          365.0880748174118
+        ],
+        "hand": [
+          144.84532333667343,
+          356.2628464321501
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          379.60799334128734,
+          377.4640022195709
+        ],
+        "wrist": [
+          316.39571453522825,
+          336.239773656928
+        ],
+        "hand": [
+          297.1023941338686,
+          323.65753069748394
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.0,
+      "star_center": [
+        255.61393706342872,
+        308.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        255.61393706342872,
+        327.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          126.95171575120231,
+          366.33631802025826
+        ],
+        "hand": [
+          149.16669534019383,
+          360.8928878644934
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          368.01358798484387,
+          381.32880400505206
+        ],
+        "wrist": [
+          303.95879509119396,
+          333.59475680250046
+        ],
+        "hand": [
+          285.48953569889915,
+          319.8313448890202
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.0,
+      "star_center": [
+        255.9057889719556,
+        308.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        255.9057889719556,
+        327.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          129.51682003073694,
+          367.4183558359266
+        ],
+        "hand": [
+          152.14456221967964,
+          364.08345952108533
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          362.3112199645435,
+          383.2295933451522
+        ],
+        "wrist": [
+          296.20740388542833,
+          331.5343103099817
+        ],
+        "hand": [
+          278.0632778809994,
+          317.3450276806376
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.0,
+      "star_center": [
+        256.14984091792223,
+        308.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.14984091792223,
+        327.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.29121664798396,
+          367.76657800172404
+        ],
+        "hand": [
+          152.9947680874423,
+          364.9943943794025
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          360.44074425858133,
+          383.8530852471396
+        ],
+        "wrist": [
+          292.85852745376445,
+          330.48065548042376
+        ],
+        "hand": [
+          274.78222840461467,
+          316.2050657312853
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 1.0,
+      "star_center": [
+        256.33331146856716,
+        308.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.33331146856716,
+        327.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          360.2184617212877,
+          383.92717942623744
+        ],
+        "wrist": [
+          292.3993955282685,
+          330.28857997696633
+        ],
+        "hand": [
+          274.3333524463128,
+          316.00001331123946
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.9952044506384347,
+      "star_center": [
+        256,
+        308.6234214170035
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        327.6234214170035
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          360.05867535095217,
+          383.9804415496826
+        ],
+        "wrist": [
+          292.1383557245542,
+          330.82007953113487
+        ],
+        "hand": [
+          274.0,
+          316.6234214170035
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.9645061728395061,
+      "star_center": [
+        256,
+        312.6141975308642
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        331.6141975308642
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          360.05867535095217,
+          383.9804415496826
+        ],
+        "wrist": [
+          292.54797776867633,
+          334.2713411082265
+        ],
+        "hand": [
+          274.0,
+          320.6141975308642
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.894682560355388,
+      "star_center": [
+        256,
+        321.6912671537996
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        340.6912671537996
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          360.05867535095217,
+          383.9804415496826
+        ],
+        "wrist": [
+          293.4811272367337,
+          341.98072326813565
+        ],
+        "hand": [
+          274.0,
+          329.6912671537996
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.7850588265168683,
+      "star_center": [
+        256,
+        335.9423525528071
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        354.9423525528071
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          360.05867535095217,
+          383.9804415496826
+        ],
+        "wrist": [
+          294.8840162236406,
+          353.6584688741939
+        ],
+        "hand": [
+          274.0,
+          343.9423525528071
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.644307324474932,
+      "star_center": [
+        256,
+        354.24004781825886
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        373.24004781825886
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          360.05867535095217,
+          383.9804415496826
+        ],
+        "wrist": [
+          296.331988578899,
+          367.8816199494937
+        ],
+        "hand": [
+          274.0,
+          362.24004781825886
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.4872464719198757,
+      "star_center": [
+        256,
+        374.65795865041616
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        393.65795865041616
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          360.05867535095217,
+          383.9804415496826
+        ],
+        "wrist": [
+          297.03084432972054,
+          383.01187878290153
+        ],
+        "hand": [
+          274.0,
+          382.65795865041616
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.331639675800409,
+      "star_center": [
+        256,
+        394.88684214594684
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        413.88684214594684
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          360.05867535095217,
+          383.9804415496826
+        ],
+        "wrist": [
+          296.49705555292365,
+          397.9444195164393
+        ],
+        "hand": [
+          274.0,
+          402.88684214594684
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.19499425704277673,
+      "star_center": [
+        256,
+        412.65074658443905
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        431.65074658443905
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          360.05867535095217,
+          383.9804415496826
+        ],
+        "wrist": [
+          295.19003825556604,
+          411.62149807043477
+        ],
+        "hand": [
+          274.0,
+          420.65074658443905
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.09136037526985796,
+      "star_center": [
+        256,
+        426.1231512149185
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        445.1231512149185
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          360.05867535095217,
+          383.9804415496826
+        ],
+        "wrist": [
+          293.90175999410087,
+          422.5272468027044
+        ],
+        "hand": [
+          274.0,
+          434.1231512149185
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.028129953520280915,
+      "star_center": [
+        256,
+        434.3431060423635
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        453.3431060423635
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          360.05867535095217,
+          383.9804415496826
+        ],
+        "wrist": [
+          293.06324471447573,
+          429.414929413155
+        ],
+        "hand": [
+          274.0,
+          442.3431060423635
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.0028356029675403738,
+      "star_center": [
+        256,
+        437.63137161421974
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        456.63137161421974
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          360.05867535095217,
+          383.9804415496826
+        ],
+        "wrist": [
+          292.72459387519854,
+          432.21740000962484
+        ],
+        "hand": [
+          274.0,
+          445.63137161421974
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          360.06118042843366,
+          383.9796065238554
+        ],
+        "wrist": [
+          292.6920255674231,
+          432.52949756792987
+        ],
+        "hand": [
+          274.0052998007357,
+          445.99617236613534
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          360.53327269382817,
+          383.8222424353906
+        ],
+        "wrist": [
+          293.67019934681394,
+          431.8633696283871
+        ],
+        "hand": [
+          274.96437685777397,
+          445.3035056027188
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          362.8782698160223,
+          383.0405767279926
+        ],
+        "wrist": [
+          297.7362280391812,
+          429.13277406318326
+        ],
+        "hand": [
+          278.9334602645723,
+          442.4369453644756
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          368.8255086905011,
+          381.05816376983296
+        ],
+        "wrist": [
+          305.445936043373,
+          424.10804036757526
+        ],
+        "hand": [
+          286.3921320360628,
+          437.05012686284357
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8915521595193,
+          377.70281594682695
+        ],
+        "wrist": [
+          315.89578935673416,
+          417.5028987463794
+        ],
+        "hand": [
+          296.4230212789738,
+          429.8055957429634
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          389.8825683365079,
+          374.03914388783073
+        ],
+        "wrist": [
+          327.21228777419657,
+          410.3989261816041
+        ],
+        "hand": [
+          307.28905745968325,
+          421.9579029457843
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          397.3481565448754,
+          371.55061448504154
+        ],
+        "wrist": [
+          337.27767224014394,
+          403.99157071121766
+        ],
+        "hand": [
+          317.0107236720711,
+          414.9366995701709
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          400.49133932571465,
+          370.50288689142843
+        ],
+        "wrist": [
+          344.42031198532334,
+          399.382915796327
+        ],
+        "hand": [
+          323.9433099053713,
+          409.9298317350096
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.3469889951061,
+          370.2176703349646
+        ],
+        "wrist": [
+          347.9278686041832,
+          397.10941733793885
+        ],
+        "hand": [
+          327.35416631202537,
+          407.466435441315
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625264824713,
+          370.17915783917624
+        ],
+        "wrist": [
+          348.5917474425492,
+          396.67902398492606
+        ],
+        "hand": [
+          327.99995647553465,
+          407.00003143433605
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 105.0,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.600447960949,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 104.98632899871967,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7810.227355338025,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 103.85749314571575,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7777.888373666836,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 99.40078998080642,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7620.861158130507,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 90.68599342951566,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -7181.763352310988,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 77.9928838735439,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -6249.224301147976,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          130.2960327969207,
+          367.7687764881804
+        ],
+        "hand": [
+          153.0,
+          365.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 62.47513524627415,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -4700.032582535733,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          131.06722919743748,
+          367.5043494319392
+        ],
+        "hand": [
+          153.74596703226143,
+          364.5359996851398
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 45.824202128279296,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -2660.2234480393845,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.85388342732634,
+          370.28462780910877
+        ],
+        "wrist": [
+          165.35376690101302,
+          357.9369886288185
+        ],
+        "hand": [
+          187.6184303769919,
+          352.7004811761921
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 29.933206842827857,
+      "lid_face": "inside",
+      "lid_plane_projected_area": -502.79741473994045,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.02247404126857,
+          370.0074913470895
+        ],
+        "wrist": [
+          157.1305361815617,
+          369.9090795960618
+        ],
+        "hand": [
+          180.00265370499739,
+          369.8591797549161
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 16.56082655139099,
+      "lid_face": "outside",
+      "lid_plane_projected_area": 1349.3896548189487,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          153.5928569540581,
+          379.70513527829917
+        ],
+        "hand": [
+          175.86670452521517,
+          384.90243884619474
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 6.9951803491496065,
+      "lid_face": "outside",
+      "lid_plane_projected_area": 2635.1656694778235,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          153.1673040997375,
+          386.8501094725893
+        ],
+        "hand": [
+          174.33496201666293,
+          395.5142025187207
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 1.7177163604997219,
+      "lid_face": "outside",
+      "lid_plane_projected_area": 3315.3895553885777,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          153.58658294059194,
+          390.914380146139
+        ],
+        "hand": [
+          174.0202212327991,
+          401.1906964191644
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 0.06709883456016996,
+      "lid_face": "outside",
+      "lid_plane_projected_area": 3522.635958096812,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          153.80020366171468,
+          392.20110042667505
+        ],
+        "hand": [
+          174.00003085795615,
+          402.92971782324497
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 0.0,
+      "lid_face": "outside",
+      "lid_plane_projected_area": 3531.0,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          153.80966433244512,
+          392.2535310156563
+        ],
+        "hand": [
+          174.0,
+          403.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    },
+    {
+      "lid_angle_degrees": 0.0,
+      "lid_face": "outside",
+      "lid_plane_projected_area": 3531.0,
+      "spring_extension": 0.0,
+      "star_center": [
+        256,
+        438.0
+      ],
+      "spring_bottom": [
+        256.0,
+        479.0
+      ],
+      "spring_top": [
+        256.0,
+        457.0
+      ],
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          112.0,
+          370.0
+        ],
+        "wrist": [
+          153.80966433244512,
+          392.2535310156563
+        ],
+        "hand": [
+          174.0,
+          403.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.4625338043213,
+          370.1791553985596
+        ],
+        "wrist": [
+          348.5917921851128,
+          396.67899498085933
+        ],
+        "hand": [
+          328.0,
+          407.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      }
+    }
+  ],
+  "generator_path": "sticker-lab/production-v5/approved-generators/integration-layer132-r2-v1/lumen_132/layer_renderer_132_v1.py",
+  "generator_sha256": "9e0cb2579bb3517b54488d811c34d46ca7f4b1e7a3299573693353803c8846b7",
+  "extraction_sha256": "1c56cd1101539a8b466335bb8d33db11f74c9bced0b54d0d5b60b56ca64f5943",
+  "recipe_sha256": "7718775e9e8b94303953939f3b55da52f43add78a4cd068a999cf9b3ef4591bc",
+  "native_realtime_slow_device_playback": "not_observed",
+  "output_sha256": "4b8a2b128721d9e3fef57a290c13518402205d5ce5224223e05225b25c304712",
+  "output_bytes": 254457,
+  "decoded_png_sha256": [
+    "6b68623145142891d2cc7ac1ac497fca7b2d2b73f595ee96f17b40a5ec1f5546",
+    "f931f291630f678335315be5211e1b77092d4afc38877f02ed43a4938211eadb",
+    "f6c93f458985328ac01e8f721d9505f66155a8399f8530eefac86667491c6e3a",
+    "ea3ef85432c393d517c83d9dc5658fbbdcbd732badaa8dff147d78e1b9249c71",
+    "d88ed478fd6dcc28d1f6882cf7f62e4e9377e9cc03aa8bc98c989907c9e3ad91",
+    "ae2e840f6112a8774659e274ff8a71c94321dcc905c6c56ee0f2058af819fbbe",
+    "3e2195e7cc731df07635fcbdae2b1488f038b377af8126d7fe2b287657327e52",
+    "e623cc91a18b173ef726e17937f1a1af280987c94a46c0ee33b2c34d703f44cb",
+    "780e34df74870ddbb479b288d3d1336a4c8f4049759b1aa457e8000db94b59df",
+    "a42acc83957c2734a99855af3d913f867af32c16d057037f3f6e24e93c610f0d",
+    "a65ec7a331a78cd9285e51df8753b2b5d3d68daf3f7ded84a1299ece73c24eee",
+    "e4c5b5e894c2db811ef21334736aa8bcc0269340f1913df5dcc1ff99f01022cb",
+    "dc1473cf549f22afcafc7e974233a4a876420e86a5d51953383cd0f9d08758d7",
+    "764a36ed89b6aa140f9115497c4fe6fde8509c15e6290509914677dcbbcdf354",
+    "2a3b285de15d73850ffc842e0ad8d96323b13cdbcf1cf8e01d0ab3f2b1596dbf",
+    "2a3b285de15d73850ffc842e0ad8d96323b13cdbcf1cf8e01d0ab3f2b1596dbf",
+    "2320baea70e827a985128cf93480d3d82e387581b0ccb3774852ce1abf26fd03",
+    "d0235d35760754975d88723343293201afe63484f8df1c3132c63b6240bff0de",
+    "f8ec58e4c5fae12ca87f228fc62ebdf166f566829757304f9e3069d00d71ce80",
+    "f62928aaaffcba6319fde73ff1fbe1db482700a78aea960816c38a0173820b03",
+    "5bb761d3ebbe3c86b9c4466cfebb2cb96f8b06ab51ed81471dcb4f8b7e896491",
+    "ac90a4db30eee49ad4cee2697a4d030799dbb91d3c9d89374d9405af02d7d4f6",
+    "08c8a8ff6837713e7b5fdfb811d38e5a86a0a98b5bd2209eb400341869d3ba8b",
+    "a6aa7a4e0d238f446f508951b49229ddcd06b97025126552109af7ce958b1b1c",
+    "9cb328acf756339c9a38db7cf3c642409f9a3271399e6cf93df640bdb9992ecf",
+    "17cd93b4cf9e04da4ff5b590d32f74a6e1a60917e2706b1d267a4e52b689eb68",
+    "ec9b8efcebfa4a30f92fd3cde32146faa281b9b71bed99e676f652fd2866baa1",
+    "2546316b65d371ad6c0e1ec99163e8928ad0930ff1340f22f5c6697f79900dc5",
+    "1bcb9314139587ffd4c0540acd0490c33308c2094d4014a7372b9d0eb5c3fe26",
+    "a2ac5d8bd5d97c72337f44e58b944f94e7d548b1bdab134a338ce6ef78fd688d",
+    "ec9943d38e920de0b3d4ba7f466330c932b4d20dedd4055243370fb2a9477522",
+    "379b6c8ffa9ab944d427540cfbf0186f5ae01c006846ecc8c69cb4a69090b39a",
+    "022f36b5303ed3afb26fba7296ebb36181a369c019030b54ba6ae4c4e2d179fc",
+    "d848d1027e696d3898b9993517cb794574793765e792f975d1915583f69d816d",
+    "8b37f368538ad25ce6bac95191b20a9c86c86ca94db1432f1969d31053a033cc",
+    "8c3ddceefe5264c32db025fa433119b258cf8151d1124ccfb264ab0fd70b2a53",
+    "a95f5bf0be5637225ecb2f07bb7160c8c516a8e29391906c259d75f7683fd1ee",
+    "07c0a393e9769fb0d80a0d18e6b2d2751ff8d6a546e483f7dea2e68f0f88afe4",
+    "77cc29aa1f3539e3f2f162789477af0e54b51a92365a91e097b6914f6c3e9e56",
+    "d57db64e2632de9732486ef30dc75ef640e557e7e47ae3d816f0b510fb0cb588",
+    "db7583abdd6f223b0e1dcf3b76edad0d03b5bba6cc7ba476cf6c6e176cb79307",
+    "7e07bc716e470c1b6eaf8baae1b4b0f66a40f110b52ed2b6e4492f9950521644",
+    "c5a64cf8202ab165fe23a1029647b32ab7b4c190afa24e327c7d1d8bd80005e7",
+    "6335e1fe51fd87db443ed707f3736c81f6ca27f53f2c387aefa599401b595f0a",
+    "ad21f9a7a847b70a5be1aa2a65f0a2eac5c519e95094f183a4d12e2d5e7ab141",
+    "38139e1efc91748d7f9aff57e7df38b6610d349c6428ecbcab1519c1d936da9d",
+    "c4a9c1b5b874809fb6cff094d10be81a9593eeacc1d2651c912880224b736722",
+    "ae70db48fb33f339477cf5d180e56db4356f450ff3a39f0eaec9849d01e58ed6",
+    "22011565b21b462ccf83887abb54b089e1be5559509e6f7797d5888350542248",
+    "936e2dea8c01ea35317d1e7874a11934f33e4d37d70479fc748a64fd83e2f536",
+    "3320d789bd75693d0a22d29245d032bc22d48e18a2797b2810d7b7fa94b3bc76",
+    "ae43d2765a057f146b5510b18cb4605b2ac9366dcd8fed61f28f7c6b937f4280",
+    "0ce8ef596ebaa6029a83730c1cd211644ac263a09516b4888693139eb5699046",
+    "6b55f94205eefea19235f1be3aa51586725ee0a43a76b50c972e7d4a11c4c4da",
+    "09de108612376d11bc8d97b9dfd1bf1dc90101a5e812dd1d98f7a9e05ab7cf4a",
+    "9ad39da6099b82aaa5d98bfb2ba62aaa60a3460894f40bb8a56f1f34c44301c6",
+    "26f9b172bed80a18d85d055a4ed8ec3c6346dd32a92ea3f64b40304450a45dc5",
+    "3aeaf297d63bcd11352b56e4d15b755d6e29a6f24cee664cd676dbf4a575856d",
+    "cab09bb015644d764994ab27ab157090f494944d8f5e6111088b63a8333a549c",
+    "dec347a9dd3c048e3397500d31a3d604fc610d2219b8449d041f552162bd9c6c",
+    "5e40b095f2cdc5bc9ededae89f0a04dfea2d82ac98c0aafb8f2c0c0f165f7476",
+    "da7caff8031527ec2e8a29fae93bf55ea7bccb51c6c400636982982f7378c817",
+    "5f8996ac1b9c9392cf74da8f6749fb4fbdf69c43a203a415183ed7820eab0587",
+    "45180d7374dee1a16d5e5100fba701edd5cac3c5dbe5be92df9ff83915ab54ed",
+    "89a2084c05f783af2343a2827b856f19f1dba2213830acbbffafb16997db9395",
+    "083f48532dcfd7da6e7095527d80d20f1e19af1b23c0d862c861b0f382a28cea",
+    "6b16b3d2af6e8cb5831102dcdc9a33dcff592b14e1ad7abf5d14fd89c753df16",
+    "fa44243469b70b92fdc3053ee614d35587cc8c7f64e77655392436ba0e9f2406",
+    "78213616fe6c3ec4d9c60add06147318c64c30df6189a4279acf67af6ede6bb8",
+    "dfd8b6c0a7c8368c51c1ff54936b09fc7ca68254bb49382552b590b65304dd98",
+    "3a26be675896e64b455615031529e9ccb1931f1900b409ca189cc14e610b0ee8",
+    "80311cedf38c8c0a33c39b95df17d039ca709e13115de2bfc11af03eb125b10e",
+    "12ddce77abd202c499fe8a51406e18ff8f285d3dff87dea381705d2578f0c6f4",
+    "1fb64acec3a6f5cf4023bf7891780b697076d3cc465bfc6f8c5633e907992ff7",
+    "0a95e69f9731d622c2430686b474dff95f276431afaadf141d847f762f583724",
+    "9002755157298959736835dd46196257d63dfa4d9acd820d5c74260648da31f0",
+    "250dcd31f525e570061ad926dd27b22f249afbb20a13f1b54767f9770cb810b4",
+    "bc4af27ca423b475b36cfaa59c14b1af6f0c2de27bd6519cf124a8caa2d91174",
+    "650c89ae3eb0b5ba2b36d1ccb13bd16fd142cb96d6255203264271bb3f2868e1",
+    "5f3627e6071fa66ad8542037f48a4f1e06671de8f144cfc15473d03974c28ed1",
+    "1f64db48a52e4a90303e00bafba8e98289ce93d3492c253fb78eeaa2818c5df7",
+    "f917115f23305864e2fc5171315315f1c3bdb67516050f76882cd99d52b231ae",
+    "40fc402b7ed9b01ca8d5b8e089f9e2d030cf84eadbb59e6097d61f1de5a215ed",
+    "40fc402b7ed9b01ca8d5b8e089f9e2d030cf84eadbb59e6097d61f1de5a215ed"
+  ],
+  "raw_rgba_exact_match": true,
+  "encoded_frame_exact_match": true
+}

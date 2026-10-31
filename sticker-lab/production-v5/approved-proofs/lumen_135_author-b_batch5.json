@@ -1,0 +1,1641 @@
+{
+  "schema_version": 1,
+  "id": "lumen_135",
+  "candidate": "lumen_135_author-b_batch5",
+  "created_at": "2026-10-30T18:40:32.856127+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_video_sha256": "45824f380d4b88a7701a8e0334711139a011c823b5beb6e1068ef01679294093",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "d4034c98a59fec45ae9d01c5af5dc86d6ca258337b386713a7811ab5ad4a8a8c",
+  "derived_source_frames": [
+    {
+      "index": 0,
+      "timestamp_seconds": 0.0,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch5/lumen_135/source-frames/000.png",
+      "sha256": "ee112bcb09c4606e93f992c1fde2d69afa1bf788db52780cdf2826088fb28b5d"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "c62a27cdfe2eff4e4f7e10b5ee4b619fec4f52bbf06453d1c0ec1fc432e0bc15",
+  "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_135/recipe.json",
+  "recipe_sha256": "a19caa69b81ff4ce63fa5714a0d9ead4079b51ef2615b29b02f7bb87030b91df",
+  "generator": {
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "description_uk": "Затискає ніс і відсахується від смердючого фіолетового горщика. В іншій лапці міцно тримає прапорець із черепом, а клубочок фіолетового димку ледь погойдується над горщиком.",
+  "semantics": {
+    "core_scene": "Відраза до смороду: затискає ніс лапою, відсахується від фіолетового горщика з димком і тримає прапорець із черепом.",
+    "scene_specific_instructions": "Disgust from stink: nose-pinch contact, recoil away from pot and same flag grip; pot pinned, purple smoke may gently waft rather than reverse particlefall. Flag/skull є comic prop.",
+    "authored_decisions": [
+      "Same nose-pinch contact and flag grip preserved. Pot is ground-pinned; smoke is a bounded swaying decorative plume, no reversed falling particle sequence."
+    ],
+    "irreversible_motion_policy": "Only coherent authored local action. No backward falling particles, liquid or free props. Decorative held marks remain explicitly decorative."
+  },
+  "method": "shared_local_mesh_v1",
+  "statistics": {
+    "minimum_jacobian": 0.8179913759231567,
+    "maximum_displacement_px": 8.422712326049805
+  },
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.0,
+        "same_paw_flag_wrist_response": 0.0,
+        "stink_smoke_held_waft": 0.0,
+        "recoil_shoulders_small_followthrough": 0.0
+      }
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.062063173032560766,
+        "same_paw_flag_wrist_response": 0.14904226617617444,
+        "stink_smoke_held_waft": 0.07473009358642425,
+        "recoil_shoulders_small_followthrough": 0.062063173032560766
+      }
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.13596116657341145,
+        "same_paw_flag_wrist_response": 0.2947551744109042,
+        "stink_smoke_held_waft": 0.14904226617617444,
+        "recoil_shoulders_small_followthrough": 0.13596116657341145
+      }
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.21884110787172006,
+        "same_paw_flag_wrist_response": 0.4338837391175581,
+        "stink_smoke_held_waft": 0.2225209339563144,
+        "recoil_shoulders_small_followthrough": 0.21884110787172006
+      }
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.3078501241766547,
+        "same_paw_flag_wrist_response": 0.5633200580636221,
+        "stink_smoke_held_waft": 0.2947551744109042,
+        "recoil_shoulders_small_followthrough": 0.3078501241766547
+      }
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.4001353427373835,
+        "same_paw_flag_wrist_response": 0.6801727377709194,
+        "stink_smoke_held_waft": 0.365341024366395,
+        "recoil_shoulders_small_followthrough": 0.4001353427373835
+      }
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.49284389080307434,
+        "same_paw_flag_wrist_response": 0.7818314824680298,
+        "stink_smoke_held_waft": 0.4338837391175581,
+        "recoil_shoulders_small_followthrough": 0.49284389080307434
+      }
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.5831228956228955,
+        "same_paw_flag_wrist_response": 0.8660254037844386,
+        "stink_smoke_held_waft": 0.49999999999999994,
+        "recoil_shoulders_small_followthrough": 0.5831228956228955
+      }
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.668119484446015,
+        "same_paw_flag_wrist_response": 0.9308737486442042,
+        "stink_smoke_held_waft": 0.5633200580636221,
+        "recoil_shoulders_small_followthrough": 0.668119484446015
+      }
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.7450735489000794,
+        "same_paw_flag_wrist_response": 0.9749279121818236,
+        "stink_smoke_held_waft": 0.6234898018587335,
+        "recoil_shoulders_small_followthrough": 0.7450735489000794
+      }
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.8126130105721941,
+        "same_paw_flag_wrist_response": 0.9972037971811801,
+        "stink_smoke_held_waft": 0.6801727377709194,
+        "recoil_shoulders_small_followthrough": 0.8126130105721941
+      }
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.8704342992608299,
+        "same_paw_flag_wrist_response": 0.9972037971811801,
+        "stink_smoke_held_waft": 0.7330518718298262,
+        "recoil_shoulders_small_followthrough": 0.8704342992608299
+      }
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.9182613305062284,
+        "same_paw_flag_wrist_response": 0.9749279121818236,
+        "stink_smoke_held_waft": 0.7818314824680298,
+        "recoil_shoulders_small_followthrough": 0.9182613305062284
+      }
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.9558180198486321,
+        "same_paw_flag_wrist_response": 0.9308737486442042,
+        "stink_smoke_held_waft": 0.8262387743159949,
+        "recoil_shoulders_small_followthrough": 0.9558180198486321
+      }
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.9828282828282828,
+        "same_paw_flag_wrist_response": 0.8660254037844387,
+        "stink_smoke_held_waft": 0.8660254037844386,
+        "recoil_shoulders_small_followthrough": 0.9828282828282828
+      }
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.999016034985423,
+        "same_paw_flag_wrist_response": 0.7818314824680299,
+        "stink_smoke_held_waft": 0.9009688679024191,
+        "recoil_shoulders_small_followthrough": 0.999016034985423
+      }
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 1.004105191860294,
+        "same_paw_flag_wrist_response": 0.6801727377709194,
+        "stink_smoke_held_waft": 0.9308737486442042,
+        "recoil_shoulders_small_followthrough": 1.004105191860294
+      }
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.9978212641477948,
+        "same_paw_flag_wrist_response": 0.5633200580636218,
+        "stink_smoke_held_waft": 0.9555728057861408,
+        "recoil_shoulders_small_followthrough": 0.9978212641477948
+      }
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.9802279353299761,
+        "same_paw_flag_wrist_response": 0.43388373911755823,
+        "stink_smoke_held_waft": 0.9749279121818236,
+        "recoil_shoulders_small_followthrough": 0.9802279353299761
+      }
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.9521433970413562,
+        "same_paw_flag_wrist_response": 0.2947551744109046,
+        "stink_smoke_held_waft": 0.9888308262251285,
+        "recoil_shoulders_small_followthrough": 0.9521433970413562
+      }
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.9144879308144614,
+        "same_paw_flag_wrist_response": 0.14904226617617472,
+        "stink_smoke_held_waft": 0.9972037971811801,
+        "recoil_shoulders_small_followthrough": 0.9144879308144614
+      }
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.868181818181818,
+        "same_paw_flag_wrist_response": 1.2246467991473532e-16,
+        "stink_smoke_held_waft": 1.0,
+        "recoil_shoulders_small_followthrough": 0.868181818181818
+      }
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.8141453406759529,
+        "same_paw_flag_wrist_response": -0.14904226617617403,
+        "stink_smoke_held_waft": 0.9972037971811801,
+        "recoil_shoulders_small_followthrough": 0.8141453406759529
+      }
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.7532987798293919,
+        "same_paw_flag_wrist_response": -0.29475517441090393,
+        "stink_smoke_held_waft": 0.9888308262251285,
+        "recoil_shoulders_small_followthrough": 0.7532987798293919
+      }
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.686562417174662,
+        "same_paw_flag_wrist_response": -0.433883739117558,
+        "stink_smoke_held_waft": 0.9749279121818236,
+        "recoil_shoulders_small_followthrough": 0.686562417174662
+      }
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.6148565342442894,
+        "same_paw_flag_wrist_response": -0.5633200580636221,
+        "stink_smoke_held_waft": 0.9555728057861407,
+        "recoil_shoulders_small_followthrough": 0.6148565342442894
+      }
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.5391642371234207,
+        "same_paw_flag_wrist_response": -0.6801727377709195,
+        "stink_smoke_held_waft": 0.9308737486442042,
+        "recoil_shoulders_small_followthrough": 0.5391642371234207
+      }
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.46093294460641376,
+        "same_paw_flag_wrist_response": -0.7818314824680297,
+        "stink_smoke_held_waft": 0.9009688679024191,
+        "recoil_shoulders_small_followthrough": 0.46093294460641376
+      }
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.3818181818181819,
+        "same_paw_flag_wrist_response": -0.8660254037844384,
+        "stink_smoke_held_waft": 0.8660254037844387,
+        "recoil_shoulders_small_followthrough": 0.3818181818181819
+      }
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.3034764555172718,
+        "same_paw_flag_wrist_response": -0.9308737486442044,
+        "stink_smoke_held_waft": 0.8262387743159948,
+        "recoil_shoulders_small_followthrough": 0.3034764555172718
+      }
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.22756427246223157,
+        "same_paw_flag_wrist_response": -0.9749279121818236,
+        "stink_smoke_held_waft": 0.7818314824680299,
+        "recoil_shoulders_small_followthrough": 0.22756427246223157
+      }
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.1557381394116087,
+        "same_paw_flag_wrist_response": -0.9972037971811801,
+        "stink_smoke_held_waft": 0.7330518718298265,
+        "recoil_shoulders_small_followthrough": 0.1557381394116087
+      }
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.08965456312395097,
+        "same_paw_flag_wrist_response": -0.9972037971811801,
+        "stink_smoke_held_waft": 0.6801727377709194,
+        "recoil_shoulders_small_followthrough": 0.08965456312395097
+      }
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.030970050357805562,
+        "same_paw_flag_wrist_response": -0.9749279121818236,
+        "stink_smoke_held_waft": 0.6234898018587336,
+        "recoil_shoulders_small_followthrough": 0.030970050357805562
+      }
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": -0.018670671731896144,
+        "same_paw_flag_wrist_response": -0.9308737486442041,
+        "stink_smoke_held_waft": 0.5633200580636218,
+        "recoil_shoulders_small_followthrough": -0.018670671731896144
+      }
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": -0.05808080808080803,
+        "same_paw_flag_wrist_response": -0.866025403784439,
+        "stink_smoke_held_waft": 0.5000000000000003,
+        "recoil_shoulders_small_followthrough": -0.05808080808080803
+      }
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": -0.08666843360720897,
+        "same_paw_flag_wrist_response": -0.7818314824680299,
+        "stink_smoke_held_waft": 0.43388373911755823,
+        "recoil_shoulders_small_followthrough": -0.08666843360720897
+      }
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": -0.10388137939158337,
+        "same_paw_flag_wrist_response": -0.6801727377709191,
+        "stink_smoke_held_waft": 0.3653410243663948,
+        "recoil_shoulders_small_followthrough": -0.10388137939158337
+      }
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": -0.10916747651441519,
+        "same_paw_flag_wrist_response": -0.5633200580636227,
+        "stink_smoke_held_waft": 0.2947551744109046,
+        "recoil_shoulders_small_followthrough": -0.10916747651441519
+      }
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": -0.10197455605618862,
+        "same_paw_flag_wrist_response": -0.43388373911755834,
+        "stink_smoke_held_waft": 0.2225209339563145,
+        "recoil_shoulders_small_followthrough": -0.10197455605618862
+      }
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": -0.0817504490973879,
+        "same_paw_flag_wrist_response": -0.2947551744109047,
+        "stink_smoke_held_waft": 0.14904226617617472,
+        "recoil_shoulders_small_followthrough": -0.0817504490973879
+      }
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": -0.0479429867184969,
+        "same_paw_flag_wrist_response": -0.14904226617617528,
+        "stink_smoke_held_waft": 0.07473009358642467,
+        "recoil_shoulders_small_followthrough": -0.0479429867184969
+      }
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.0,
+        "same_paw_flag_wrist_response": -2.4492935982947064e-16,
+        "stink_smoke_held_waft": 1.2246467991473532e-16,
+        "recoil_shoulders_small_followthrough": 0.0
+      }
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.06206317303256054,
+        "same_paw_flag_wrist_response": 0.14904226617617392,
+        "stink_smoke_held_waft": -0.07473009358642398,
+        "recoil_shoulders_small_followthrough": 0.06206317303256054
+      }
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.13596116657341162,
+        "same_paw_flag_wrist_response": 0.29475517441090343,
+        "stink_smoke_held_waft": -0.14904226617617403,
+        "recoil_shoulders_small_followthrough": 0.13596116657341162
+      }
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.21884110787171995,
+        "same_paw_flag_wrist_response": 0.4338837391175579,
+        "stink_smoke_held_waft": -0.22252093395631428,
+        "recoil_shoulders_small_followthrough": 0.21884110787171995
+      }
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.30785012417665514,
+        "same_paw_flag_wrist_response": 0.5633200580636215,
+        "stink_smoke_held_waft": -0.29475517441090393,
+        "recoil_shoulders_small_followthrough": 0.30785012417665514
+      }
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.4001353427373836,
+        "same_paw_flag_wrist_response": 0.6801727377709194,
+        "stink_smoke_held_waft": -0.36534102436639504,
+        "recoil_shoulders_small_followthrough": 0.4001353427373836
+      }
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.4928438908030741,
+        "same_paw_flag_wrist_response": 0.7818314824680296,
+        "stink_smoke_held_waft": -0.433883739117558,
+        "recoil_shoulders_small_followthrough": 0.4928438908030741
+      }
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.5831228956228959,
+        "same_paw_flag_wrist_response": 0.8660254037844384,
+        "stink_smoke_held_waft": -0.4999999999999997,
+        "recoil_shoulders_small_followthrough": 0.5831228956228959
+      }
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.668119484446015,
+        "same_paw_flag_wrist_response": 0.9308737486442042,
+        "stink_smoke_held_waft": -0.5633200580636221,
+        "recoil_shoulders_small_followthrough": 0.668119484446015
+      }
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.7450735489000793,
+        "same_paw_flag_wrist_response": 0.9749279121818235,
+        "stink_smoke_held_waft": -0.6234898018587334,
+        "recoil_shoulders_small_followthrough": 0.7450735489000793
+      }
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.8126130105721943,
+        "same_paw_flag_wrist_response": 0.9972037971811801,
+        "stink_smoke_held_waft": -0.6801727377709195,
+        "recoil_shoulders_small_followthrough": 0.8126130105721943
+      }
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.8704342992608298,
+        "same_paw_flag_wrist_response": 0.9972037971811801,
+        "stink_smoke_held_waft": -0.7330518718298263,
+        "recoil_shoulders_small_followthrough": 0.8704342992608298
+      }
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.9182613305062286,
+        "same_paw_flag_wrist_response": 0.9749279121818237,
+        "stink_smoke_held_waft": -0.7818314824680297,
+        "recoil_shoulders_small_followthrough": 0.9182613305062286
+      }
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.9558180198486321,
+        "same_paw_flag_wrist_response": 0.9308737486442041,
+        "stink_smoke_held_waft": -0.8262387743159949,
+        "recoil_shoulders_small_followthrough": 0.9558180198486321
+      }
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.9828282828282827,
+        "same_paw_flag_wrist_response": 0.8660254037844392,
+        "stink_smoke_held_waft": -0.8660254037844384,
+        "recoil_shoulders_small_followthrough": 0.9828282828282827
+      }
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.9990160349854228,
+        "same_paw_flag_wrist_response": 0.78183148246803,
+        "stink_smoke_held_waft": -0.900968867902419,
+        "recoil_shoulders_small_followthrough": 0.9990160349854228
+      }
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 1.004105191860294,
+        "same_paw_flag_wrist_response": 0.6801727377709192,
+        "stink_smoke_held_waft": -0.9308737486442044,
+        "recoil_shoulders_small_followthrough": 1.004105191860294
+      }
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.9978212641477948,
+        "same_paw_flag_wrist_response": 0.5633200580636228,
+        "stink_smoke_held_waft": -0.9555728057861406,
+        "recoil_shoulders_small_followthrough": 0.9978212641477948
+      }
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.9802279353299761,
+        "same_paw_flag_wrist_response": 0.43388373911755845,
+        "stink_smoke_held_waft": -0.9749279121818236,
+        "recoil_shoulders_small_followthrough": 0.9802279353299761
+      }
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.9521433970413562,
+        "same_paw_flag_wrist_response": 0.294755174410904,
+        "stink_smoke_held_waft": -0.9888308262251285,
+        "recoil_shoulders_small_followthrough": 0.9521433970413562
+      }
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.9144879308144612,
+        "same_paw_flag_wrist_response": 0.1490422661761754,
+        "stink_smoke_held_waft": -0.9972037971811801,
+        "recoil_shoulders_small_followthrough": 0.9144879308144612
+      }
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.868181818181818,
+        "same_paw_flag_wrist_response": 3.6739403974420594e-16,
+        "stink_smoke_held_waft": -1.0,
+        "recoil_shoulders_small_followthrough": 0.868181818181818
+      }
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.814145340675953,
+        "same_paw_flag_wrist_response": -0.14904226617617466,
+        "stink_smoke_held_waft": -0.9972037971811801,
+        "recoil_shoulders_small_followthrough": 0.814145340675953
+      }
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.7532987798293919,
+        "same_paw_flag_wrist_response": -0.29475517441090326,
+        "stink_smoke_held_waft": -0.9888308262251286,
+        "recoil_shoulders_small_followthrough": 0.7532987798293919
+      }
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.686562417174662,
+        "same_paw_flag_wrist_response": -0.4338837391175578,
+        "stink_smoke_held_waft": -0.9749279121818236,
+        "recoil_shoulders_small_followthrough": 0.686562417174662
+      }
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.6148565342442889,
+        "same_paw_flag_wrist_response": -0.5633200580636222,
+        "stink_smoke_held_waft": -0.9555728057861407,
+        "recoil_shoulders_small_followthrough": 0.6148565342442889
+      }
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.5391642371234207,
+        "same_paw_flag_wrist_response": -0.68017273777092,
+        "stink_smoke_held_waft": -0.9308737486442041,
+        "recoil_shoulders_small_followthrough": 0.5391642371234207
+      }
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.46093294460641415,
+        "same_paw_flag_wrist_response": -0.7818314824680296,
+        "stink_smoke_held_waft": -0.9009688679024193,
+        "recoil_shoulders_small_followthrough": 0.46093294460641415
+      }
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.38181818181818156,
+        "same_paw_flag_wrist_response": -0.8660254037844378,
+        "stink_smoke_held_waft": -0.866025403784439,
+        "recoil_shoulders_small_followthrough": 0.38181818181818156
+      }
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.3034764555172718,
+        "same_paw_flag_wrist_response": -0.9308737486442046,
+        "stink_smoke_held_waft": -0.8262387743159947,
+        "recoil_shoulders_small_followthrough": 0.3034764555172718
+      }
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.2275642724622319,
+        "same_paw_flag_wrist_response": -0.9749279121818235,
+        "stink_smoke_held_waft": -0.7818314824680299,
+        "recoil_shoulders_small_followthrough": 0.2275642724622319
+      }
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.1557381394116087,
+        "same_paw_flag_wrist_response": -0.99720379718118,
+        "stink_smoke_held_waft": -0.7330518718298269,
+        "recoil_shoulders_small_followthrough": 0.1557381394116087
+      }
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.08965456312395097,
+        "same_paw_flag_wrist_response": -0.9972037971811801,
+        "stink_smoke_held_waft": -0.6801727377709191,
+        "recoil_shoulders_small_followthrough": 0.08965456312395097
+      }
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": 0.03097005035780534,
+        "same_paw_flag_wrist_response": -0.9749279121818237,
+        "stink_smoke_held_waft": -0.6234898018587337,
+        "recoil_shoulders_small_followthrough": 0.03097005035780534
+      }
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": -0.018670671731896144,
+        "same_paw_flag_wrist_response": -0.9308737486442048,
+        "stink_smoke_held_waft": -0.5633200580636227,
+        "recoil_shoulders_small_followthrough": -0.018670671731896144
+      }
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": -0.05808080808080788,
+        "same_paw_flag_wrist_response": -0.8660254037844392,
+        "stink_smoke_held_waft": -0.5000000000000004,
+        "recoil_shoulders_small_followthrough": -0.05808080808080788
+      }
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": -0.08666843360720908,
+        "same_paw_flag_wrist_response": -0.7818314824680301,
+        "stink_smoke_held_waft": -0.43388373911755834,
+        "recoil_shoulders_small_followthrough": -0.08666843360720908
+      }
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": -0.10388137939158337,
+        "same_paw_flag_wrist_response": -0.6801727377709192,
+        "stink_smoke_held_waft": -0.36534102436639493,
+        "recoil_shoulders_small_followthrough": -0.10388137939158337
+      }
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": -0.10916747651441522,
+        "same_paw_flag_wrist_response": -0.563320058063623,
+        "stink_smoke_held_waft": -0.2947551744109047,
+        "recoil_shoulders_small_followthrough": -0.10916747651441522
+      }
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": -0.10197455605618862,
+        "same_paw_flag_wrist_response": -0.43388373911755856,
+        "stink_smoke_held_waft": -0.22252093395631464,
+        "recoil_shoulders_small_followthrough": -0.10197455605618862
+      }
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": -0.0817504490973879,
+        "same_paw_flag_wrist_response": -0.2947551744109058,
+        "stink_smoke_held_waft": -0.14904226617617528,
+        "recoil_shoulders_small_followthrough": -0.0817504490973879
+      }
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "nose_pinching_paw_and_disgusted_head_recoil": -0.04794298671849673,
+        "same_paw_flag_wrist_response": -0.14904226617617375,
+        "stink_smoke_held_waft": -0.0747300935864239,
+        "recoil_shoulders_small_followthrough": -0.04794298671849673
+      }
+    }
+  ],
+  "candidate_sha256": "040eefbf98227fdf30eb7bf73775f34040ae2d99e997d1f95d7f9df6c3ff7cbb",
+  "poster_sha256": "c5331fcad6d9f3c7c52a12a187979972bcf00c7519195c13eab3f6f8bf4e8aa1",
+  "bytes": 216275,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "output_pts": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "decoded_png_sha256": [
+    "6e99e252125ca2849d45d891519e0caa84a2952c250e552df2eb5c2b0efcac33",
+    "5a27cf7b46190f59c4a932ea0d1dd4be318ed6266527ffd56416842452736f58",
+    "0ed39daf4f21a9087a716e00c56d939c7aba21a7c982f781cba0ba7f408ae5cd",
+    "19add0227570c4156579daff49d64e3568c2b2fb8e5ef26dc2f1bc80619121b2",
+    "f0cd76d4674143d39959b27dc736592c9275923031cf6dbcf89a5739d9cd4baa",
+    "3ed27e0e7c260f0e925e6e7ff4dcf42e142572bd34a2c70dfa3cfd8a50a25305",
+    "fa2514a3c9ace4b08515a8a7d8fe4ccc7439309c5431b21695c1a46d33bfeab9",
+    "3e710a77c35b65f5abf15b72d6c8497abc15c19bae010a540a8e48b3bb660398",
+    "c7aea25568f13ae51c51e9191d78ec6b13c52bda069686150ae23174bd8d08a5",
+    "826296fe88fa5e9108118779fae783af848788f4ef6e45ee58e0739258f73569",
+    "3e712eac0a59f40c5d50b57dff4b290262ba405d4c181085a03c124e49d916df",
+    "f8cd2d984283ad9646a720831dc31ea89a5673b4c1c615366260b2479b319e06",
+    "9bce46642f63827bae86795c3960f74b05ce3bc7c7734ed0fafb2fd4fe3c7234",
+    "5f74fb16c4ae0bbe82d1f2f870387fe7c7633096d8b083f10c9e011dcee87500",
+    "8dc6eee52edf54134dc734b320130639de0b6f1c4a7565a866cba443e3db2742",
+    "ea451bc20c1d5ec12a6095428e2c102d50070978e55626791ccfb9917fd71ea2",
+    "b4b41cb92f5cc522218fb4442e8acf8e0b7c830b5d7bc14dd87f0a93ac935ab4",
+    "99e271a77f72be3ebf491704144097ecd084fc36599380d791c56dbf0e98ff5a",
+    "cb1dd33e834664515bab99b08d1cc11a2f06ec16b6d1160266e537362b5900bb",
+    "3f6e608bca52fe70f03b577b3fffb7f51fd2e8bc6c2f725366eeb3b2af6a2228",
+    "ff78284f6fc6d95ee4eda811f9504d02dfb0642dce4ad76e5b57301233bf17fb",
+    "6e624ba4e01c27a4ed9109ce00a3fcbf347046154784c7fa218f67832dcf0d56",
+    "5dfee6871fa17b7a237700b221014f3f8fa5db8eb1719ee4e9e9ae6d971f44c3",
+    "b893784153721f195b7b96d1b0579b8858304becf9c44921d601c9e2ad28b0cb",
+    "6f60937a99ed72c33abf98d0b84a7828e1de52f93448a9738d42a90a9d201ddf",
+    "c649346e36fd5bac5ec6dbba7a7caa4b5f6af057962af4a0e51d5be9ab6959d5",
+    "2c0c7c95359bf42d014dc9fbe67d6da79f757ac57edf1eda15c80d093118e76a",
+    "9ab6e22247fc4c38795358b69d022cad4a0717a74a8b4da7828ece5a1c653756",
+    "163fa0cf7be6490b431b9c2de07b0959261bfa964cc1be7d95fbc46e109ad0fe",
+    "99658bc730530e354dfc30fd254db846f6c68bb348ef31f9667cd0e0175e22d4",
+    "b6a07e523791295a3e535c988530bd4cfac9af7060b8603a0cfe88642da0112f",
+    "d59ee0a5d6cdc14deae65457667641511c75170d7f4a751244c94c34ea4f888a",
+    "b872fad781696768f918d9b4e95644aafd55677d1d4c32011727d383d1336233",
+    "dd6286fce52561ea632c7d49e6a14772033831983ae5d8896577fafb0f92d1e8",
+    "491973d251a49a193212099af84db6f68947cd643584bfa1f701c2140f7896bb",
+    "a9cefaffd27ea2f9815e9a353323238b072c1b8e36968d476e056e36e511fa2b",
+    "91aad48c47d0390f48599157f8b7341b50cd9aff603b7d39cc96c730cf45fb45",
+    "dd1fcfa2ec881659fe0c7f27213af0e1d8fa1bd1f18a56b0e464200da021ba6a",
+    "b68d41d5836f970c65331b584838e968a9946ea83387e7df575ee0c1d5906c5b",
+    "662b6f163bfcf50153bf14b3d1b55bfa7b652446972965ec4401f3458c3a9a4d",
+    "9c8708982bbccf949ae710bdf0d8aac0415eaef3351c9c0d5c4ef52ef1e718de",
+    "be90e95496a2e2d18c52e7cf3e7d3dba3964ccdeb1b1bb9eb432fd6bff729292",
+    "84a1f29513582132924155d03a185b1c3b2e69747fdd2f0fec7badb9cdb15c01",
+    "09de255b79ba3b55f7391f825b4fdc639e01c9989307348f0a9fe9013d87336e",
+    "6b7621875e3ff987390dd6c18dc4241d15741b9070ca599ddd5b0757e4915ba7",
+    "fafc679d32ec3a2ec16df8ab636fcb5791a02b8169f5d218e7501351b874a5d1",
+    "ac1543c31be20ca0a927ed92087acced79f9e26ff299942aa3e3660e07facc08",
+    "ff4b162c696783c2cd28d07d0cd6f477364ba1e0a9d1efac3294e45d3da3615a",
+    "3e5042f66b7bfc479abf91e57f594903efa252892ad239dea89627869f0bdc2f",
+    "d2507958eef865ffc51808c37b938ac60ba0d40a8a486b89a2bbd2e4dbc1ab74",
+    "a29d5a5d7cfe8b119fd37c14b174ae8c417c4cde0eb2bc53580c117a20deff37",
+    "0e2881df069ef4f3e6e9ba09c49f51c82c61d15950083a6648259b3fa9234110",
+    "dc7e30bee0c998f8bbf6b86fc0cabbbfe9b084c531d56eb63aeb0f8f6a818445",
+    "b90df68f676e712f58c44e0e6f81df50ad3fe879ccbf106ef7fd261f8a22cd3b",
+    "f3646fc10c5b4ee289effafdfb587c06fb1c366e9839f6c991f2794a8c16f300",
+    "708ad35a412b5edba3542abc486fb9684d426c2ba126eeb92d7b28ab07ed7173",
+    "b2b53a1beaa2a661e84df89eb08588d4b0311d85eac98944428799796d4c814d",
+    "c29aa551340f7020d172699bfccdfca95967976f0ccb954524ee8d8c41d301ff",
+    "0cea511efd18891650dc25317e7f5768fd5b36916c58c3ee377b9fbb063c234f",
+    "b91d605ef9f330f308ad4939c462f9226935191dd81d182aee6004d100f747f6",
+    "918c8b34985ad04753efec067cfda6d98ea18545382aaf882245c3e2f5cbfd36",
+    "0abaeaf75fd309752a91843ae393a46d00f6a9dc3892b6d622b33c1a12166fed",
+    "a746337db2aff29d734ec27917c02c6ffc75cabef04043b61a67fce4cd8985ad",
+    "f54db138a27b592490dea123ccbcfcc5203c8e4e7e4baeed4f4c7bde85661cfc",
+    "e5aadb87ddec241f0a8ae71abfff307e92c76b25ccea9917560d58923e2b3f0d",
+    "c650e02615f391137299fdb87a322da68f59a9fa552852a04640a72f61fd7791",
+    "b4e6bb18164ef59a73b04fdf0f3206d45c4f76fe192058fcb3e06b6bb884869d",
+    "78c007f88af2387de401fdb32516810b9c43604a406b89277acdbf6d68da20ef",
+    "3fe164318c4dfebb255fa1fc354ed7292a5dee81d6935fd2d8ae6b6b63957f8a",
+    "f7648f2b829321b8f4383628d92d137922fe865a963b4be9182654496f28acd2",
+    "f9fd6d56372c751dd114ff718af791f4deb1dbbd9a6211e56c3fa0838c241986",
+    "68ff141b9a6b6f921ff1a832f99ff01c718a112920910d5bc29c9c9b7fb4799d",
+    "700057ba35a0fc4a1b258359956a8ba1474d372c5ced36dda9fbb15f137b5b45",
+    "45019a25520b11259866bb76b956e66023acaf6e63e676cb0e153b044fe029b1",
+    "51a8e819901922b93fede1cb6fa984a00dbb688060be348ef4e38f3204e29087",
+    "9f3482bb7b95e2518cf0c1a892cabe66a69b9751e3d5927fc86b8be912cbbb77",
+    "fba3dd4b897e9e6376e56144ac4e7abe1fa7a00f83f389f5477f3e5b5ebd17bc",
+    "4a0156b41ae382eb8509c7d06a0bfde3950bf7fc3b1d3bfd3b64dba340a447ec",
+    "3fc93fd26c929aaf43511592a0571456b6dd4e66d376ac09c1b1f2e26331ee1a",
+    "1c1af085d54f7a7c2b7ddfb816f44369329eb36fb445ff458e190679cdf3ed65",
+    "bf86ce3fad04328b91c8e69f3605a106a8686ef424979cc3df548dd0b89097cc",
+    "56f361b4938aa9425ab44bec79fbe0a7aaf8e9e4ede2208a2240461da5ee31e1",
+    "d978b0220b40aabc2a5cab02cb5d948df898203feb6864c12fa87014207d7d9d",
+    "b747d1e2f663dbdad18c3c7f3493fccdc788279f4f81eb75477b5e57ca0a952b"
+  ],
+  "frames_rgba_png_sha256": [
+    "0b9f9256e49fb15ecaae0033bd358c112604c152d49651e1f9caa206a45bd39f",
+    "24906abeb75dcec977eab69d4f0db04dc33663c59744569d0e948d64a9245cd9",
+    "09076ac70db52d07de0a758858d9cd9c698463e03b87975500dcc6af3020a62c",
+    "cc1f445129c7de17a0130f944c8a49f978825443e1954e0783b8f251d4c609d0",
+    "0076902a8b5069fa7beb0f8e8cd36bc3c5d42954c5dc9f8679e6770f3bde54b0",
+    "5f36c70c1a434a04d1605de1d5600faa9a81d9b1c96f68de0dc726ffb9a0f2ed",
+    "89787da13823f01829b2e37de47e2d4516fef326237f01723223e40ea8faeb54",
+    "529c6f8562ef739b72deef87fc74c639d0c0dfbb23bc550fdf3b79da8adfbbf1",
+    "be2ebf88fd395370c291e369c797f5a10bf265cdd45314940faa4a6f4f354a2b",
+    "bbbf868f91076a60b67d7c190d59feda9963ce6c4362778a152aeec09fa53c90",
+    "7d4f9be965d85103d520c90fa50dbc5005c4a339903f1671ad729a37899d3f82",
+    "0335e669beb59f4034cb6430ba8f0527912e8413e9a26b8246a184e57bef41b3",
+    "1df29c867a15f01c5820c88bad86f926b0e993b409decaa8d8236d1e624a7156",
+    "5d4602e48f6cbc171174eedf4ff3a0a521f48bf6b5b33a0c2e750ef29e3cd073",
+    "07add0dfd9f98ed1e49349f079384d7d2f3054318dab54afeeacb4f954fe08a0",
+    "05dfb725a50331e418583c6c2cbf85d8249bf403873b42da6ef95441c34ecdd1",
+    "edf2b5b97032e460090457bb76da8cd9fa3d6ecf82f3c24c6f04549fc343486f",
+    "079015c3adcc0a23b48fd95ade82b0cf9d1ea6582447b4db9277b8d460791587",
+    "82e5c553cb7529e71101c906c27028e1e42ebb6a00d74dfcdc1f030fa60b693d",
+    "470eddad9d382efaf56964c717405e0cf0372c5491a5e38a9587650fc93b704d",
+    "be9efc32bdeab55c280d35489915b7b71ca1ee7ac6f4d1b5837fe860354608e5",
+    "653531349270f4db625ce506fc707dbea176612550ce685c1d0ab25f9a6ba908",
+    "dc171d0794e6f62e75291f55b07d4b71a03ce827c8ddabf25569896b774f633b",
+    "dd6cdfff95114edb208dbf00646ffdc7c4aa955fbc9687938d083ea9f5253912",
+    "24fb9aa60c68b0e970d8097eb25b64dbb4ee5ddc84d91ce5108a2e20d860797d",
+    "ab8ffcd59ac148dcc1633e610e8ea49e043357bab2c98a64f0d5917e553cab23",
+    "3197fc4642016b57080bc75a85eed93e055ce872acbb667a054fed377397ee94",
+    "da72c71e363afac7558dcc849467ac7f34d0e2e92df335b3bb118dada812599c",
+    "35045db029a570932c59b7cec4a3c9b7b02dbd75dc58c4646d593e9ba3520317",
+    "8997f81aeb5cd4b79104e84b38e32ce6b13d106d91e41891cd86420382d1c709",
+    "f699cc951f7a7009e7ed4830650e8b3e1e057c5e7488f510eb1e96d18e122438",
+    "6449eef611397ab8e0135837193d85f95b390666cfd23e9b6cd3c21389c2fa19",
+    "1751677d5c030f6f83f245075f89b8e6142e86bab92fdc7e790b513fffc5ef5b",
+    "b3d780842e2aa54d58fc4f3927f6e2356e3e3330c2d56d47d50f4cc7ff62b8fb",
+    "d6b0083030c8bc0a8e7bed8a9adbe0612402e9b05631d30d15cf4c80c6c3c319",
+    "94a66566906f41e0826f3bac4aa4e0b10f1382017585dbf283317ff996f2eb8e",
+    "e65fde1e8b52bdba949be406a08fa468d2cec0c17bb5b982a9fc57cb94ae3d93",
+    "55a956ec9c8994504b77e3a450222648fb452d2506296d02b34755f51801481b",
+    "cc5a2f4280a6d9f713243a661001dbc23d7f42fe6494771093c84cd2a5c666eb",
+    "a25223fd5de6f203a3a15be3fa53dfde67e7f0992bf9681b0714f2283faa7922",
+    "bc8e6cde22dcc0ea5c11c44ec249bbdfc5d7c01ca584fa29114dbf67c1fefdd5",
+    "ed5d00b3d0ccb756f71a5aa7782bd42dff637ebc046d057598f53e2c7d03545a",
+    "0b9f9256e49fb15ecaae0033bd358c112604c152d49651e1f9caa206a45bd39f",
+    "b3f1070f2cab5c2f38256e8b3be0ba99998bb885f84f0c65de5aed33abda6629",
+    "fdf0dcfffef149a85812462aa4d30eee485d1ce43709769395bfee84d1b1293e",
+    "d41be55503f7678b83c950569b58e9dc54df7191dc755a183150c3816164b0db",
+    "d69f60134ed216f14a86acf491150dd40efa979860f3286a6b86357b6ad09164",
+    "7ca28dcd47469f00ebec39f0019cb2a186516d09fa29c79f98b4ae162a7a5555",
+    "b415e445069c9ac507d2416058dded75116e68a07e1e70b0ba5b9663482a6406",
+    "e2d1454148ee5e760fdffc96ee7447776d3ecba2a02ce09c06e19e1340fe1b58",
+    "5826f1a698893450a87f6d2f014d4d67827689c79fb19b597d546bb022631f03",
+    "308b406799ce0b768778f4f821b92e3f4ca560f0aa2428c590054d867c2228dc",
+    "f1948c2748ca4c8d9d40e9a9666f1f56c3ca806f3b9718fb1d78471309e51a59",
+    "dcd4f8434e744c011cee1f66a95d743d5d3daf64d6358aeda3fda2f001801120",
+    "9bc5ee9f2258ad63f49d385adac4197796adb56b6af225821d1edce674f9cb23",
+    "871d37bfbb397dade8d54b15c4decde6a4153a4b704555723c69befd87ec5c4d",
+    "4e77024f969825cbf70eb7291a5edf1bd3b7e81e630bf53c6c33ead614fa53e4",
+    "8a00d40d8106e6b813046464449f55d005de0a245d31bb0d469c81d58927b70b",
+    "66fb0eba3288597205dea81f032e97d5bb9a9c37411916ed63225c394c501c77",
+    "5a6cef356ad9ca7f15787e48ec3884d840df5b9bf1974ecc566b2ad16b12d187",
+    "439629e03be6584fa7ac217c8d1af1e345f8febc70fadc8de5e4dcea76c1bb69",
+    "e0d4cbac28925f9cf481bfd910ecf0cd5f141679aec29ba1b165ab797fc45fa9",
+    "a6f5fd81060fbf6a42ce19b00978613e6931e896580523ce84d34018c027213f",
+    "98e18ec45e3848712cfeb866afd91f34dbbfb06b34620a056d94d2cabd9fa670",
+    "f1e56e7eb6bdd95f90a461604f90ab938ff60ef65247bb2a2bfd8071380eebff",
+    "2cd8e639e21ec918a0b0cb99511a17fa997e86d6bc6814424970d78fcdfa4020",
+    "c5e82f7952b8459fac12a21fffb7162b844dbe89efb59a91f53a9c2dbfebe9ff",
+    "257892fd5ce00857bd27bc475519ed2d1a8be80551028ff010ae4d2f7394ba90",
+    "e0a2dc13c6fcf3f726667f08dd97e40480703541917cdd0c9f7989f76642c80c",
+    "69e70d5de2b33d53f1b04125050dd5418d5b729bafb5f1d98d8cd4d22989c96f",
+    "5608850055dc2b086b18fc39d379c985e6691a54c95b5b47b5e835301ef2dddf",
+    "39f853eb675e63d169b941e382e54829dc070c43044a091c032137e58bd05cb0",
+    "92c049683d6c574b556470c5cab48fb079365504688ec15399441fcace8f1001",
+    "2a6e369bdd120897f1dce6a4d40604fd81a36206fc6a4dcba11552fff2581dcf",
+    "21a1a7846cc72c255557991cbbb8d9d3071d5a4d53bd657834f2ad403b50bf4b",
+    "8a361330838e0618e32ad96d23d6f0c0c9fb9165865243951881df61cc7dfffe",
+    "5b1f660e53b496e6ac0482fe6613ea92d171d543d443d28de7532baed96bdf01",
+    "018eda4f12443f7b71ced3da434f721cd0ec995027d1b79fc3b7d18017905358",
+    "8112e39fa08ddcda914c48b454938adf952c3d171fcdff2cebd1835dddaf02bd",
+    "371b03e4d9521f7abb76313adffd3c69f408210d393cbb45903a8aa0eaa7a51d",
+    "f56e7e1d193a115f0693effb29dbe3141a2af254135a778855291b7dd1a0e459",
+    "0bdb9f5d7e3021b98266aec727f2b4ecf4b356b9f0af3a17d2c35920d6f4fd01",
+    "7d77932ce6f99693424c35cc7b9e87c6c69a4aa4f24faa391349ec1e87ab6414",
+    "cbd138975e8b8d8ae931e7d5004fd1911b60b396da557a7f33fdcd5fdcbc89bd"
+  ],
+  "raw_rgba_rerender_exact_match": null,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "adjacent_composite_mae": [
+    0.7655779719352722,
+    0.938199520111084,
+    0.9523479342460632,
+    1.0809999704360962,
+    0.949516773223877,
+    1.0716019868850708,
+    0.9756590723991394,
+    0.9957771301269531,
+    0.7097802758216858,
+    0.8025350570678711,
+    0.5035490989685059,
+    0.559626579284668,
+    0.46038806438446045,
+    0.4473719894886017,
+    0.2976418435573578,
+    0.4377921521663666,
+    0.16646213829517365,
+    0.3319745361804962,
+    0.46141019463539124,
+    0.668769359588623,
+    0.6221559047698975,
+    0.7258739471435547,
+    0.7779188752174377,
+    0.9016254544258118,
+    0.7236852049827576,
+    0.9325618743896484,
+    0.8593888282775879,
+    0.9764523506164551,
+    0.7738491892814636,
+    0.9095556735992432,
+    0.6721621155738831,
+    0.8060625195503235,
+    0.6791747212409973,
+    0.5165929198265076,
+    0.5415014028549194,
+    0.5276669859886169,
+    0.317082941532135,
+    0.2991965115070343,
+    0.2246849685907364,
+    0.45618605613708496,
+    0.5370157361030579,
+    0.7346028685569763,
+    0.7820436954498291,
+    0.9184132218360901,
+    0.9046924710273743,
+    1.0657209157943726,
+    0.9705395102500916,
+    1.098739743232727,
+    0.8967984318733215,
+    0.9465007185935974,
+    0.6696882843971252,
+    0.770383358001709,
+    0.5109516382217407,
+    0.5671190023422241,
+    0.5069145560264587,
+    0.5703949332237244,
+    0.23606359958648682,
+    0.1956070512533188,
+    0.18295061588287354,
+    0.35557082295417786,
+    0.37797749042510986,
+    0.5632279515266418,
+    0.6762570738792419,
+    0.8058444857597351,
+    0.7332279086112976,
+    0.8445490002632141,
+    0.8003232479095459,
+    0.9281854629516602,
+    0.8734413981437683,
+    0.9788407683372498,
+    0.7243483662605286,
+    0.8831038475036621,
+    0.6754981875419617,
+    0.7611183524131775,
+    0.6797482371330261,
+    0.5309645533561707,
+    0.5191813111305237,
+    0.4337831437587738,
+    0.3374607563018799,
+    0.4147058427333832,
+    0.18618600070476532,
+    0.41786035895347595,
+    0.6044475436210632
+  ],
+  "seam_composite_mae": 0.747863233089447,
+  "review_video_validation": {
+    "normal": {
+      "sha256": "6e2d8f7c25865b6474ce037be812209301e801e04910873abec077a85e17b9a4",
+      "bytes": 184061,
+      "duration": "2.800000",
+      "decoded_frames": "84",
+      "full_decode": "passed"
+    },
+    "slow": {
+      "sha256": "7b5d45bfefc64b92c44f2da2069914256213a4b05df5ea66a6111becd59c132c",
+      "bytes": 265720,
+      "duration": "5.600000",
+      "decoded_frames": "84",
+      "full_decode": "passed"
+    }
+  },
+  "source_review": "Every selected source PNG individually inspected at native512. Exact selected source indices/hashes are recorded above. Original84-frame before sequence remains available for independent QA.",
+  "candidate_visual_review": {
+    "actual_agent_id": "/root/artisan_stickers_b",
+    "full_ordered_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "full_frame_tile_px": 224,
+    "native512_after_frames": [
+      0,
+      10,
+      21,
+      31,
+      42,
+      53,
+      63,
+      73,
+      83
+    ],
+    "scope": "Every final decoded frame inspected in ordered224px boards, plus9native512phase/loop images. Author review only; no native realtime/slowed/device perception claim.",
+    "observation": "Scene-specific gesture/props/contacts retained, no double-exposure contour or limb swap observed in this author scope; independent per-item QA required."
+  },
+  "independent_review": "pending",
+  "native_playback": "unknown",
+  "device_playback": "unknown",
+  "canonical_assets_changed": false,
+  "limits_checked": {
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "side": 512,
+    "fps": 30,
+    "seconds": 2.8,
+    "max_bytes": 262144
+  },
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_135/review-normal.mp4",
+      "sha256": "6e2d8f7c25865b6474ce037be812209301e801e04910873abec077a85e17b9a4",
+      "bytes": 184061,
+      "frames": 84,
+      "duration": 2.8
+    },
+    {
+      "path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_135/review-slow.mp4",
+      "sha256": "7b5d45bfefc64b92c44f2da2069914256213a4b05df5ea66a6111becd59c132c",
+      "bytes": 265720,
+      "frames": 84,
+      "duration": 5.6
+    }
+  ],
+  "review_validation_scope": "Actual copied target paths must pass shared freeze_guard synchronously before package publication. Source validation alone is insufficient.",
+  "frozen_at": "2026-10-30T18:56:08.645821+00:00"
+}

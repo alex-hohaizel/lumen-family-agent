@@ -1,0 +1,1641 @@
+{
+  "schema_version": 1,
+  "id": "lumen_134",
+  "candidate": "lumen_134_author-b_batch5",
+  "created_at": "2026-10-30T18:40:23.957750+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_video_sha256": "d6ae874916557be417e77edd67d8467b2dcd4f457e691cb3b0d53af48b759dc9",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "b8fec1e6492e1282f4b457536080f806620639ff0634543695778725918c4626",
+  "derived_source_frames": [
+    {
+      "index": 11,
+      "timestamp_seconds": 0.36666666666666664,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch5/lumen_134/source-frames/011.png",
+      "sha256": "dd8676185f1f9fbfe88f1dd719b3c32a89fe803a00acb7c94d77b84a45f8dd9f"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "418c5ef2704b3597fe53ef44c4f6fd6da5fc133bb18ff07aefe27905482a488a",
+  "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_134/recipe.json",
+  "recipe_sha256": "2895a5ef160483e08ee162b2cf69ab6bdf32d46c1cb65cf0383f0990c0cb4f05",
+  "generator": {
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "description_uk": "Жартома «помер зі сміху»: лежить на плащі з очима-хрестиками й черепом на голові. Животик і щелепа здригаються від реготу, піднята лапка весело махає; кісточка лишається поруч.",
+  "semantics": {
+    "core_scene": "Жартома «помер від сміху»: лежить на плащі з очима-хрестиками, черепом на голові й кісткою поруч, сміється та махає лапою.",
+    "scene_specific_instructions": "Comic dead-from-laughter: lying pose, X eyes, skull/ground bone validprops; actual belly/jaw laugh pulses plus clean raised-paw wave around11. Repair dissolving arm6/17/37, не стирати skull/bone як anomaly.",
+    "authored_decisions": [
+      "Intentional X eyes/skull/bone kept. Raised paw is from clean11, no dissolving hand swaps; laughter movement distinct from99 limp collapse. Blue tear marks remain decorative, no backward fall."
+    ],
+    "irreversible_motion_policy": "Only coherent authored local action. No backward falling particles, liquid or free props. Decorative held marks remain explicitly decorative."
+  },
+  "method": "shared_local_mesh_v1",
+  "statistics": {
+    "minimum_jacobian": 0.8058143258094788,
+    "maximum_displacement_px": 7.009600639343262
+  },
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.0,
+        "open_jaw_laugh_pulses": 0.0,
+        "raised_paw_laughter_wave": 0.0,
+        "lying_belly_laugh_motion": 0.0
+      }
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.2225209339563144,
+        "open_jaw_laugh_pulses": 0.09771112178637686,
+        "raised_paw_laughter_wave": 0.14904226617617444,
+        "lying_belly_laugh_motion": 0.2225209339563144
+      }
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.4338837391175581,
+        "open_jaw_laugh_pulses": 0.21884110787172006,
+        "raised_paw_laughter_wave": 0.2947551744109042,
+        "lying_belly_laugh_motion": 0.4338837391175581
+      }
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.6234898018587335,
+        "open_jaw_laugh_pulses": 0.3537615127219718,
+        "raised_paw_laughter_wave": 0.4338837391175581,
+        "lying_belly_laugh_motion": 0.6234898018587335
+      }
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.7818314824680298,
+        "open_jaw_laugh_pulses": 0.49284389080307434,
+        "raised_paw_laughter_wave": 0.5633200580636221,
+        "lying_belly_laugh_motion": 0.7818314824680298
+      }
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.9009688679024191,
+        "open_jaw_laugh_pulses": 0.62645979658097,
+        "raised_paw_laughter_wave": 0.6801727377709194,
+        "lying_belly_laugh_motion": 0.9009688679024191
+      }
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.9749279121818236,
+        "open_jaw_laugh_pulses": 0.7450735489000794,
+        "raised_paw_laughter_wave": 0.7818314824680298,
+        "lying_belly_laugh_motion": 0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 1.0,
+        "open_jaw_laugh_pulses": 0.8427556818181817,
+        "raised_paw_laughter_wave": 0.8660254037844386,
+        "lying_belly_laugh_motion": 1.0
+      }
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.9749279121818236,
+        "open_jaw_laugh_pulses": 0.9182613305062284,
+        "raised_paw_laughter_wave": 0.9308737486442042,
+        "lying_belly_laugh_motion": 0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.9009688679024191,
+        "open_jaw_laugh_pulses": 0.9706587099125366,
+        "raised_paw_laughter_wave": 0.9749279121818236,
+        "lying_belly_laugh_motion": 0.9009688679024191
+      }
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.7818314824680299,
+        "open_jaw_laugh_pulses": 0.9990160349854226,
+        "raised_paw_laughter_wave": 0.9972037971811801,
+        "lying_belly_laugh_motion": 0.7818314824680299
+      }
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.6234898018587336,
+        "open_jaw_laugh_pulses": 1.0024015206732044,
+        "raised_paw_laughter_wave": 0.9972037971811801,
+        "lying_belly_laugh_motion": 0.6234898018587336
+      }
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.43388373911755823,
+        "open_jaw_laugh_pulses": 0.9802279353299761,
+        "raised_paw_laughter_wave": 0.9749279121818236,
+        "lying_belly_laugh_motion": 0.43388373911755823
+      }
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.2225209339563145,
+        "open_jaw_laugh_pulses": 0.9344545123244102,
+        "raised_paw_laughter_wave": 0.9308737486442042,
+        "lying_belly_laugh_motion": 0.2225209339563145
+      }
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 1.2246467991473532e-16,
+        "open_jaw_laugh_pulses": 0.868181818181818,
+        "raised_paw_laughter_wave": 0.8660254037844387,
+        "lying_belly_laugh_motion": 1.2246467991473532e-16
+      }
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.22252093395631428,
+        "open_jaw_laugh_pulses": 0.7845158030744765,
+        "raised_paw_laughter_wave": 0.7818314824680299,
+        "lying_belly_laugh_motion": -0.22252093395631428
+      }
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.433883739117558,
+        "open_jaw_laugh_pulses": 0.686562417174662,
+        "raised_paw_laughter_wave": 0.6801727377709194,
+        "lying_belly_laugh_motion": -0.433883739117558
+      }
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.6234898018587338,
+        "open_jaw_laugh_pulses": 0.5774309236681683,
+        "raised_paw_laughter_wave": 0.5633200580636218,
+        "lying_belly_laugh_motion": -0.6234898018587338
+      }
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.7818314824680297,
+        "open_jaw_laugh_pulses": 0.46093294460641415,
+        "raised_paw_laughter_wave": 0.43388373911755823,
+        "lying_belly_laugh_motion": -0.7818314824680297
+      }
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.900968867902419,
+        "open_jaw_laugh_pulses": 0.34244715743440224,
+        "raised_paw_laughter_wave": 0.2947551744109046,
+        "lying_belly_laugh_motion": -0.900968867902419
+      }
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.9749279121818236,
+        "open_jaw_laugh_pulses": 0.2275642724622319,
+        "raised_paw_laughter_wave": 0.14904226617617472,
+        "lying_belly_laugh_motion": -0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -1.0,
+        "open_jaw_laugh_pulses": 0.121875,
+        "raised_paw_laughter_wave": 1.2246467991473532e-16,
+        "lying_belly_laugh_motion": -1.0
+      }
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.9749279121818236,
+        "open_jaw_laugh_pulses": 0.03097005035780534,
+        "raised_paw_laughter_wave": -0.14904226617617403,
+        "lying_belly_laugh_motion": -0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.9009688679024193,
+        "open_jaw_laugh_pulses": -0.0396940432016963,
+        "raised_paw_laughter_wave": -0.29475517441090393,
+        "lying_belly_laugh_motion": -0.9009688679024193
+      }
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.7818314824680299,
+        "open_jaw_laugh_pulses": -0.08666843360720897,
+        "raised_paw_laughter_wave": -0.433883739117558,
+        "lying_belly_laugh_motion": -0.7818314824680299
+      }
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.6234898018587337,
+        "open_jaw_laugh_pulses": -0.10804979459316184,
+        "raised_paw_laughter_wave": -0.5633200580636221,
+        "lying_belly_laugh_motion": -0.6234898018587337
+      }
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.43388373911755834,
+        "open_jaw_laugh_pulses": -0.10197455605618862,
+        "raised_paw_laughter_wave": -0.6801727377709195,
+        "lying_belly_laugh_motion": -0.43388373911755834
+      }
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.22252093395631464,
+        "open_jaw_laugh_pulses": -0.06657914789292314,
+        "raised_paw_laughter_wave": -0.7818314824680297,
+        "lying_belly_laugh_motion": -0.22252093395631464
+      }
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -2.4492935982947064e-16,
+        "open_jaw_laugh_pulses": 0.0,
+        "raised_paw_laughter_wave": -0.8660254037844384,
+        "lying_belly_laugh_motion": -2.4492935982947064e-16
+      }
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.22252093395631417,
+        "open_jaw_laugh_pulses": 0.09771112178637648,
+        "raised_paw_laughter_wave": -0.9308737486442044,
+        "lying_belly_laugh_motion": 0.22252093395631417
+      }
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.4338837391175579,
+        "open_jaw_laugh_pulses": 0.21884110787171995,
+        "raised_paw_laughter_wave": -0.9749279121818236,
+        "lying_belly_laugh_motion": 0.4338837391175579
+      }
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.6234898018587334,
+        "open_jaw_laugh_pulses": 0.3537615127219721,
+        "raised_paw_laughter_wave": -0.9972037971811801,
+        "lying_belly_laugh_motion": 0.6234898018587334
+      }
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.7818314824680296,
+        "open_jaw_laugh_pulses": 0.4928438908030741,
+        "raised_paw_laughter_wave": -0.9972037971811801,
+        "lying_belly_laugh_motion": 0.7818314824680296
+      }
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.900968867902419,
+        "open_jaw_laugh_pulses": 0.6264597965809702,
+        "raised_paw_laughter_wave": -0.9749279121818236,
+        "lying_belly_laugh_motion": 0.900968867902419
+      }
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.9749279121818237,
+        "open_jaw_laugh_pulses": 0.7450735489000798,
+        "raised_paw_laughter_wave": -0.9308737486442041,
+        "lying_belly_laugh_motion": 0.9749279121818237
+      }
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 1.0,
+        "open_jaw_laugh_pulses": 0.8427556818181817,
+        "raised_paw_laughter_wave": -0.866025403784439,
+        "lying_belly_laugh_motion": 1.0
+      }
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.9749279121818237,
+        "open_jaw_laugh_pulses": 0.9182613305062282,
+        "raised_paw_laughter_wave": -0.7818314824680299,
+        "lying_belly_laugh_motion": 0.9749279121818237
+      }
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.9009688679024185,
+        "open_jaw_laugh_pulses": 0.9706587099125366,
+        "raised_paw_laughter_wave": -0.6801727377709191,
+        "lying_belly_laugh_motion": 0.9009688679024185
+      }
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.78183148246803,
+        "open_jaw_laugh_pulses": 0.9990160349854228,
+        "raised_paw_laughter_wave": -0.5633200580636227,
+        "lying_belly_laugh_motion": 0.78183148246803
+      }
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.6234898018587338,
+        "open_jaw_laugh_pulses": 1.0024015206732044,
+        "raised_paw_laughter_wave": -0.43388373911755834,
+        "lying_belly_laugh_motion": 0.6234898018587338
+      }
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.43388373911755845,
+        "open_jaw_laugh_pulses": 0.9802279353299763,
+        "raised_paw_laughter_wave": -0.2947551744109047,
+        "lying_belly_laugh_motion": 0.43388373911755845
+      }
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.22252093395631647,
+        "open_jaw_laugh_pulses": 0.9344545123244105,
+        "raised_paw_laughter_wave": -0.14904226617617528,
+        "lying_belly_laugh_motion": 0.22252093395631647
+      }
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 3.6739403974420594e-16,
+        "open_jaw_laugh_pulses": 0.868181818181818,
+        "raised_paw_laughter_wave": -2.4492935982947064e-16,
+        "lying_belly_laugh_motion": 3.6739403974420594e-16
+      }
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.22252093395631403,
+        "open_jaw_laugh_pulses": 0.7845158030744769,
+        "raised_paw_laughter_wave": 0.14904226617617392,
+        "lying_belly_laugh_motion": -0.22252093395631403
+      }
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.4338837391175578,
+        "open_jaw_laugh_pulses": 0.6865624171746614,
+        "raised_paw_laughter_wave": 0.29475517441090343,
+        "lying_belly_laugh_motion": -0.4338837391175578
+      }
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.6234898018587333,
+        "open_jaw_laugh_pulses": 0.5774309236681683,
+        "raised_paw_laughter_wave": 0.4338837391175579,
+        "lying_belly_laugh_motion": -0.6234898018587333
+      }
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.7818314824680296,
+        "open_jaw_laugh_pulses": 0.4609329446064134,
+        "raised_paw_laughter_wave": 0.5633200580636215,
+        "lying_belly_laugh_motion": -0.7818314824680296
+      }
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.9009688679024189,
+        "open_jaw_laugh_pulses": 0.34244715743440224,
+        "raised_paw_laughter_wave": 0.6801727377709194,
+        "lying_belly_laugh_motion": -0.9009688679024189
+      }
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.9749279121818235,
+        "open_jaw_laugh_pulses": 0.2275642724622319,
+        "raised_paw_laughter_wave": 0.7818314824680296,
+        "lying_belly_laugh_motion": -0.9749279121818235
+      }
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -1.0,
+        "open_jaw_laugh_pulses": 0.121875,
+        "raised_paw_laughter_wave": 0.8660254037844384,
+        "lying_belly_laugh_motion": -1.0
+      }
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.9749279121818237,
+        "open_jaw_laugh_pulses": 0.030970050357805784,
+        "raised_paw_laughter_wave": 0.9308737486442042,
+        "lying_belly_laugh_motion": -0.9749279121818237
+      }
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.9009688679024194,
+        "open_jaw_laugh_pulses": -0.03969404320169574,
+        "raised_paw_laughter_wave": 0.9749279121818235,
+        "lying_belly_laugh_motion": -0.9009688679024194
+      }
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.7818314824680301,
+        "open_jaw_laugh_pulses": -0.08666843360720908,
+        "raised_paw_laughter_wave": 0.9972037971811801,
+        "lying_belly_laugh_motion": -0.7818314824680301
+      }
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.6234898018587339,
+        "open_jaw_laugh_pulses": -0.10804979459316184,
+        "raised_paw_laughter_wave": 0.9972037971811801,
+        "lying_belly_laugh_motion": -0.6234898018587339
+      }
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.43388373911755856,
+        "open_jaw_laugh_pulses": -0.10197455605618849,
+        "raised_paw_laughter_wave": 0.9749279121818237,
+        "lying_belly_laugh_motion": -0.43388373911755856
+      }
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.22252093395631314,
+        "open_jaw_laugh_pulses": -0.06657914789292314,
+        "raised_paw_laughter_wave": 0.9308737486442041,
+        "lying_belly_laugh_motion": -0.22252093395631314
+      }
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -4.898587196589413e-16,
+        "open_jaw_laugh_pulses": 0.0,
+        "raised_paw_laughter_wave": 0.8660254037844392,
+        "lying_belly_laugh_motion": -4.898587196589413e-16
+      }
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.22252093395631392,
+        "open_jaw_laugh_pulses": 0.09771112178637648,
+        "raised_paw_laughter_wave": 0.78183148246803,
+        "lying_belly_laugh_motion": 0.22252093395631392
+      }
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.4338837391175577,
+        "open_jaw_laugh_pulses": 0.21884110787171918,
+        "raised_paw_laughter_wave": 0.6801727377709192,
+        "lying_belly_laugh_motion": 0.4338837391175577
+      }
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.6234898018587317,
+        "open_jaw_laugh_pulses": 0.3537615127219704,
+        "raised_paw_laughter_wave": 0.5633200580636228,
+        "lying_belly_laugh_motion": 0.6234898018587317
+      }
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.7818314824680295,
+        "open_jaw_laugh_pulses": 0.4928438908030741,
+        "raised_paw_laughter_wave": 0.43388373911755845,
+        "lying_belly_laugh_motion": 0.7818314824680295
+      }
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.9009688679024197,
+        "open_jaw_laugh_pulses": 0.6264597965809693,
+        "raised_paw_laughter_wave": 0.294755174410904,
+        "lying_belly_laugh_motion": 0.9009688679024197
+      }
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.9749279121818235,
+        "open_jaw_laugh_pulses": 0.7450735489000798,
+        "raised_paw_laughter_wave": 0.1490422661761754,
+        "lying_belly_laugh_motion": 0.9749279121818235
+      }
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 1.0,
+        "open_jaw_laugh_pulses": 0.8427556818181817,
+        "raised_paw_laughter_wave": 3.6739403974420594e-16,
+        "lying_belly_laugh_motion": 1.0
+      }
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.9749279121818237,
+        "open_jaw_laugh_pulses": 0.9182613305062282,
+        "raised_paw_laughter_wave": -0.14904226617617466,
+        "lying_belly_laugh_motion": 0.9749279121818237
+      }
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.9009688679024201,
+        "open_jaw_laugh_pulses": 0.9706587099125368,
+        "raised_paw_laughter_wave": -0.29475517441090326,
+        "lying_belly_laugh_motion": 0.9009688679024201
+      }
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.7818314824680301,
+        "open_jaw_laugh_pulses": 0.9990160349854228,
+        "raised_paw_laughter_wave": -0.4338837391175578,
+        "lying_belly_laugh_motion": 0.7818314824680301
+      }
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.6234898018587326,
+        "open_jaw_laugh_pulses": 1.0024015206732042,
+        "raised_paw_laughter_wave": -0.5633200580636222,
+        "lying_belly_laugh_motion": 0.6234898018587326
+      }
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.43388373911755707,
+        "open_jaw_laugh_pulses": 0.9802279353299759,
+        "raised_paw_laughter_wave": -0.68017273777092,
+        "lying_belly_laugh_motion": 0.43388373911755707
+      }
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 0.222520933956315,
+        "open_jaw_laugh_pulses": 0.9344545123244101,
+        "raised_paw_laughter_wave": -0.7818314824680296,
+        "lying_belly_laugh_motion": 0.222520933956315
+      }
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": 2.388680238973927e-15,
+        "open_jaw_laugh_pulses": 0.868181818181818,
+        "raised_paw_laughter_wave": -0.8660254037844378,
+        "lying_belly_laugh_motion": 2.388680238973927e-15
+      }
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.22252093395631553,
+        "open_jaw_laugh_pulses": 0.7845158030744769,
+        "raised_paw_laughter_wave": -0.9308737486442046,
+        "lying_belly_laugh_motion": -0.22252093395631553
+      }
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.43388373911755757,
+        "open_jaw_laugh_pulses": 0.6865624171746627,
+        "raised_paw_laughter_wave": -0.9749279121818235,
+        "lying_belly_laugh_motion": -0.43388373911755757
+      }
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.6234898018587316,
+        "open_jaw_laugh_pulses": 0.5774309236681683,
+        "raised_paw_laughter_wave": -0.99720379718118,
+        "lying_belly_laugh_motion": -0.6234898018587316
+      }
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.7818314824680316,
+        "open_jaw_laugh_pulses": 0.46093294460641415,
+        "raised_paw_laughter_wave": -0.9972037971811801,
+        "lying_belly_laugh_motion": -0.7818314824680316
+      }
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.9009688679024196,
+        "open_jaw_laugh_pulses": 0.34244715743440146,
+        "raised_paw_laughter_wave": -0.9749279121818237,
+        "lying_belly_laugh_motion": -0.9009688679024196
+      }
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.9749279121818235,
+        "open_jaw_laugh_pulses": 0.22756427246223124,
+        "raised_paw_laughter_wave": -0.9308737486442048,
+        "lying_belly_laugh_motion": -0.9749279121818235
+      }
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -1.0,
+        "open_jaw_laugh_pulses": 0.121875,
+        "raised_paw_laughter_wave": -0.8660254037844392,
+        "lying_belly_laugh_motion": -1.0
+      }
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.9749279121818237,
+        "open_jaw_laugh_pulses": 0.030970050357805784,
+        "raised_paw_laughter_wave": -0.7818314824680301,
+        "lying_belly_laugh_motion": -0.9749279121818237
+      }
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.9009688679024187,
+        "open_jaw_laugh_pulses": -0.03969404320169574,
+        "raised_paw_laughter_wave": -0.6801727377709192,
+        "lying_belly_laugh_motion": -0.9009688679024187
+      }
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.7818314824680302,
+        "open_jaw_laugh_pulses": -0.08666843360720865,
+        "raised_paw_laughter_wave": -0.563320058063623,
+        "lying_belly_laugh_motion": -0.7818314824680302
+      }
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.6234898018587355,
+        "open_jaw_laugh_pulses": -0.10804979459316184,
+        "raised_paw_laughter_wave": -0.43388373911755856,
+        "lying_belly_laugh_motion": -0.6234898018587355
+      }
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.43388373911756195,
+        "open_jaw_laugh_pulses": -0.10197455605618876,
+        "raised_paw_laughter_wave": -0.2947551744109058,
+        "lying_belly_laugh_motion": -0.43388373911756195
+      }
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        11
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "comic_laugh_head_skull_coherent_recoil": -0.2225209339563134,
+        "open_jaw_laugh_pulses": -0.06657914789292314,
+        "raised_paw_laughter_wave": -0.14904226617617375,
+        "lying_belly_laugh_motion": -0.2225209339563134
+      }
+    }
+  ],
+  "candidate_sha256": "9ca5f23a60e07a0ab261d40f259500909f6fc8e161ea101d9e0173917fc52154",
+  "poster_sha256": "9712873cb9c24daa9772e14edc8b6a7fd8352ee4c9d677e70e7ed0ca26434d54",
+  "bytes": 221192,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "output_pts": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "decoded_png_sha256": [
+    "52c761b164db0d97305b7406d8918abd716f40de1f4aefdbf29db2d9086cba9b",
+    "3fefaa19d4a94666c24a823d260acde6159ed8d864265122ebce680fb63cb99a",
+    "c7878a2bd9410a3deed382115de86ca60d5a8647adf5d21d06d6f0e94db873d3",
+    "a285a410f032a07f6bc76fba7f86c4031f8b678c77d6ff3528df214b28b05553",
+    "94c88966aa067af5646708c35389fa24b2c8e44f9392e59be4809eecc28f5ee0",
+    "4cd54a3d974b37819df97b6506950050541bbfa0ca362283dc8faf04a723a2b6",
+    "8706c47ebf4e179677f9362fdcb8072df0d05d1b716cd4923cb6df2f0c422abe",
+    "b56044bc9a05eb9c249c142e2888c07addaed79a9740298066203018a40adcd3",
+    "b41668ff2feabe0457510a10b26c471f216fb462b5a7e1f65630d2ac5b284231",
+    "12fbded0c363225b36ae841cada72f1596afc6f5f6faa1e8fd6429c774448feb",
+    "f2d106b132ae9b300e3d9f2935343c82a6a20a99fc92ade2b95a60a790d03c2a",
+    "630e5b36669b1d31f5eff36495767a3636bd6a52b53d94273bba2f2e299d9593",
+    "10250726b5006c5f4421d8f6e01810887311127178a8329527a00aafc6e294bf",
+    "859d9586de91559ae00630bf5b6bdcb6e5ddeea4cddb0ac1d2c69a0e85a6b51e",
+    "053a8caf0dbc2c2d26e2ae9a0839de84eb5130ae28b6c3b57aea7c16ae1aa64d",
+    "c481d2466b66c620eb129f7b43e29b0a237adc2eb0119fa98c62bbeabbd3a128",
+    "831cded75e13041b1641b1aba7d98980943123bb6a6684700217fd5167d763e6",
+    "893262f5df32bf5f13be63308a3cc15623fed98577406ef6b7e9742d6263fe57",
+    "353204b1fceee0578ea3dfc445d120d5c91fb880129f374fca466683774e8473",
+    "3a34b3e8cf2f6a478ae34081b4d134a29936916de6887c7294c866dab41e1d90",
+    "66a15c1aaba02a319dd78ddbcbb92ad68bcd8b6ba5e3f99d63b0f1f4c6ad19e6",
+    "861055f163583fb7b5b8e6d4323f55e73e5e091140203a0ef80948cbf10a22d7",
+    "99bf785ee969df46912e909850616534af14f13abddca615f4c62ed7464af9b5",
+    "5456848b330050773ef9d7406e8f7b28bbd5ad8ea12b0fd413062cfd5b987907",
+    "370f04625a4c503c32ec717a5abba611cc9d9afc8be53c115f1235a81ea39eee",
+    "16bde93b6200fe1a9c0dd154640543898fca85c419eef2c3411354c81cb129d9",
+    "8ad1b35f28172cbf4a1ad8781e01f1b62a1483229466f0580325f0055b2a8a1b",
+    "11c96dfb56cc50db0e17124118508e523cd15df23cd45a2ed097205b968c27b6",
+    "3bf97d63c9f9d15d0fa5e4e692e8b58a20b17ad6550980879c6071e1c9ba8d30",
+    "e80fc3a6ed7d6a003e23faee1f28a564f21bf9708d2707cf25a41f01159f8448",
+    "9c0d47f69f027ada9968c24ee3862f46f7cd4a804a7bf4919b8d0aefc800a64b",
+    "a2818af2952f60f585c529a4ae50ab12389907b473143356c90a6a519fc0f47b",
+    "811d6f297ca63ae2268c08ca63c55cfd3eb1a28354545f80eb0228ed2e2a7a2e",
+    "d3c6de07fe28ad2d4ab032f4d338d3aa40547c212f9d2774311c0c179d70b468",
+    "8a6447d573a04f77024e94faaad839b1c0fe2715474bbb3e7b181a03237e32f7",
+    "a736f0800345aec8434784d3a037fd1f5c0b98de36e9191347bf531484e6059f",
+    "a05f73466a168e0f40e126f1e584940529426dfc354f8dbe2da72aca7e24d077",
+    "1a82de85dad3fc19a67b3b2590ee834fa3a1da0640dc17ec6fa9535cce066e8d",
+    "a7ed92953e09a849d71a96acdbfdf2df100ce4e0d114837c438c0b091b21d6b9",
+    "e27e082aa4f5b2c4218afa41c6ff7eba354322f6f4756c6a712f7daa2e35317b",
+    "6a536a43dd0bbdf0fcd48e794b14a6b6122c6c22a95612ccf558e65933f9e3bb",
+    "7cfc98ad85eb0c0dd027d5fdd8cbb4908ef4dfee0e56bf63169837c71c10f749",
+    "72f740db148c541e738779550d035ec41d2db5b8ea7909b827d34190fee1ef57",
+    "f90b95b48b2a2da3a90e1a61e4f526d8198cc470139878851a332af8d945b450",
+    "363a872644be7b9be47ba58bdad85e798d9e41a108d32ba203c3671b8c8b2ce5",
+    "516c72da2639816f29769f5536caad851b67a6efc363b12719f9455a3ef697ec",
+    "d9bcff2de06b356db9d280a9611a3ea93b40ead76f94a3dba8c5100cd2c9a52a",
+    "f91899a3fe4dfc0310c510f5a159726d1f95a555168f2487ef6888b5ff73e9b3",
+    "66216f3065780b1eb9af5b3d73ccf3b0033ac92664997a5b8f26b2eddfb8d982",
+    "7023ef7cea3ee9b3c37d6efc67b84e0b193e284564df4e220e0d15c53c817d1b",
+    "594fc11ad0a311980c420f32a80e7c36a38dc7999b37406b0b4278e0a8f8a35e",
+    "014a3466f265e16bba6dfe36e544ac3674ea8d5dfc089e3ba5922e22cbcdc1b6",
+    "a36199bef4b075c5b20815a505de0c8723f75cc900a9cc028269e714e8515e30",
+    "8ab291dc2741ba0dccc44152e0af015b9a1b8ecee3a8c6a160b9edaa2ca46cdd",
+    "dba2a7f2a381759451f262d04522d539b9f3d8b2c07295d55de20beb3a7478dc",
+    "21ff3c3a496d9ab66057791b32e03ca108ad0850c3549e46d24c86050af66118",
+    "4e7d3a19355f98579b94e99742ee062dcd31120c0deb3faa351b559f5e3bd1f3",
+    "1c5f17a86f34bad346c5c6555bf2287575a8bc7e512d04ec60b6f6f70758ca40",
+    "98c4f583bccb4a0112e5eb3d29cf2bf2e12c388c552b90e7fd7578beaf0b525e",
+    "ff5606286aeb31a6344c0187c767164cb5cb22d10768f44cddf38451bc3af250",
+    "771645433ee571e77a31641d2980ea1d87ebc124075c30c9c28584973477e979",
+    "fd4476983403cce62c80b3b1087fd8917122462b052a62b942c1e631ab2141a6",
+    "b3cc8907e72272d4f3aede49f4ea4cb9d83db2f41aa6b241c9b1cee9cee04f01",
+    "e3775b27ff25741c1616e0b663d7669dd17336a43a12b299106116ef1c3ff38b",
+    "86c50f45152c3d273e4b1827c024f83ea4871f4af8cf76ca7ebdc5602be395e0",
+    "e2ce23cc1851c4f10e379de1ae75a89ee6fcfd24903f619db3f0cefbeed1baf4",
+    "0e4d9aa84534ffdb5665801eeb7a84d0a1a6eed813d7ddcfdce05ce1d953b9d3",
+    "a6810425c9f7f8a5218ee8c4724728fcb1e1d381c7a5d35ddfa36a780f89d11f",
+    "9718bcc7aea29c466f2225a45513a18af437ff1316344c424c38d63c31ca4eb2",
+    "b719cb4265e675907919b8d750a4fc2c5350ffc50fd57eeed565cd7ca40159a7",
+    "5b315cd6e66c746d9856690e24030b188b9a8e7de4ce9f92ada7e5d93e28446e",
+    "31c44a77ef37a8cffa37d9b0e7450fac1269a6217e1667ea38097860cb3794c5",
+    "acdc1a128fb6dfcfaa64d58cd867c43065a84d9d416ca3124cf6447897374e7b",
+    "f6730598b0a5b47f24214e5cebb629f670898f4cc6d6fe4511a611ae99c73c43",
+    "a5840db462c66df55bcff6c9195a47b803b0ddab58c231c1f669c997d4040343",
+    "81b38fe8c8915a330f778943886544099b68cecde2726fa78a43713265cdcdb9",
+    "f41554f40e3776573e95e63d4ecc963e190c91d7107eeb3a5c2c93ed9739e5c7",
+    "6dbd81a9f35427d48db0e0d6fdce52a8bb99d2b7ae148001bd50d178aa8a6798",
+    "b14bdc2db05b2e16bfdbe68db21e863de02106fa43a79f4949b6b47de88ee811",
+    "7421fd1d7dff09bb40125d6903734ff7aa6340253cdc43472c9e6df3018fbc1c",
+    "161f650184f7928ea357cbff51af80a4788a9f5054284efc8564506416dfbefb",
+    "8841e84a33979ccddcf584cc6e2c4b8bb174fb99dc5b00d38783338a00fb8ce2",
+    "4d783b1e8ce7bc9d5e40a3acb7a1cfd68ad0d77c9bb1d48db9b778723478e43e",
+    "78db3221d7498fec5d6aaf1e6e822b5c7a398536510c0221f35835d266abad1a"
+  ],
+  "frames_rgba_png_sha256": [
+    "21fef2791ec5d442e08db3f1ef02df3455245418ad6647eabb31dff00846effb",
+    "253eec13049e26a7023e9c3621806f568d48c99bceeb6eb458bd088b36baef75",
+    "b3625ec5044e5b14165de7ce969368d78bb99458a9edee57c7ca6dea0a179d84",
+    "3961338dec8537ceddb89621cf2058e05d9da07438f9e009cc496d26eff29796",
+    "7e2ef8da3a38aafedf69a26dfec32a9ff9487b7e706fa4f558bf3f87fb2cd1d1",
+    "5a3133ddd55459222f17eb2efca488d4aa1885349cd37bc3042eee831c1a06cc",
+    "56ebe4ccc4ab2e9e93816c19c6c0aaf01e3b981ec8b7e2a9b864963ed964c21c",
+    "429a728762951f8afb5e161c201b097bf47a95319c686764eb386be18f02d83a",
+    "b717040c96c78450db8164e563457aeb6ecceffd37ee054ff82f4211ca546053",
+    "39f05c1b56734e3ae68ab10aa5a440d3f065b92a5ff21042b70db695c009a023",
+    "66a6f3e1de9508ed4686eaa6eb91507c041a75aab61840348254d651d82ea1bd",
+    "0d640993d4873fc6f6859cdcf9ec0b43b7658f8fb5334ae986e172d0d972faff",
+    "3cde90282a5d3b575e434c0e2b26e6c1aa14d4c7244e7b4fc3480ecc8904a84a",
+    "bee5b2c13971da5b53890a1490344cd5b0885cf572aad9a936fde1b9e01827a0",
+    "153cff3dfd3f6c373caa0b4512c368eeccd3ea7c88632bed0a434162b77301e3",
+    "06a76aeb9bbe3050c4a61220342d9d1c85fb0e8dd6b411b82e187543af6cabf3",
+    "000e744af1e7a16de689686a41635603caca26d55385f3aeff933596c6e4445b",
+    "c106a4cda6fb50100df5242aa8f437c09a5b23c01b263dc3bc13fa0eec3ef9cb",
+    "caefe5904925779f3e9f56584b3e5253c5241b4bb8b9c6996d550258f0c60fa9",
+    "16537fb9faccd319490a3bab77123a3d73a4459150e37f0b74dd50142c659ff0",
+    "47e7ac6556c02db44def50293827470660629e697a9f508eb98a19b739479cd5",
+    "d74e14c6467ff6c2efdc35d24d7a16f413b53a7cf547f2463cd583a49ebb5bd9",
+    "34cbfbc6e241c47766d0febf2226ad1b29a6d66c05e0874b5d453f6a090ffb42",
+    "d0c6dbf47fbe20838528b6d43fda6a594f56ba2831302dfff11396dc9c9bf036",
+    "44dacf5c7d213733037dd827daae5cca800f107c34be233474bd0ec2a8d1185f",
+    "9df39a3dc198231a5dcb8ee0d1df7c5780382de42c7356a090804f9490b5d0b7",
+    "8ae30ae87670d37cc615592689ec708e40e3c3dfe0371998757bae8fbf34e3ad",
+    "897ec560105c5270a7825d6c105dad28d49866e021fba342f99b3245ad6b7bfa",
+    "f9572e85501caa42d086a9117b6f37948e6852c8cab9d2e1fa3c14c634b05f70",
+    "770d70a214a5e800ff96e4afcf0034ac5922c8f2264ddfdaabec5163668964cf",
+    "c1a60048eb83c1461c5b7958565354718a2b665c79053af41a6b7283912dbfc0",
+    "5c44122a2b4441e941230ce0141e9a27053a21036616cae875af4bf0ee004dee",
+    "4834caf4abbf4f75368e69bd29dc8b9a1a69f13991118ee2c735f2e71230f963",
+    "f9a20a506a5bc451ec3ce0a05ead943ee15bf7bd2ef73f0a8a01715aacf15270",
+    "4c596ec2f328e29d97435333b8bbe16a2e9c5f5ac1da10b92f5dedbb7c7f6f0e",
+    "d8b151e34c0c193f86d82abd0d5bc5f3c109c2eff25830b4b72cb32524caed0a",
+    "f248564eb0764fc1b2377f885d5e4144bdb12b6ae84cac91353329f79d1bfe9a",
+    "8d3c4d7c09f261fc021195cc97bce197308f94791156a51038c8b1baef389579",
+    "a9509b052e9e3491e07e13c4cd2c044a6ee630a44e162da684b516b6f3d20e90",
+    "b1b2e2bd1ff4934862b0a2c8bb3305906a0eb2ed484027e0f7205c0f95dc325b",
+    "a37a9c60a2821eb6929890b9f65f051ff04708514ef036a1856df61280e95e92",
+    "a2984dacb706f585e54112b22dacb3b3b76aae979261c89fd507c242b7c6c3c3",
+    "73d8aa129cb7d94186878ed2d2e2432214a32ea4066c261818feeefc805cb5e6",
+    "010f8c3b4790157d64435d1a5617f1f00dddbc434bab9da41007189d35f37705",
+    "0a78e0009861d456e7ef14b48c37006c68a2c1c46c544a40513323921f8d0309",
+    "9bd6ee5a08f40b43c082ebc4b491105c4657efb65bc3292f8194059fa4c57fc4",
+    "68583182ca0285499373002211762b4d46b6d7f67f45491f3b4c260989bc6c10",
+    "83f1e3e55f8ec86fb600062e45b889b22392596cac22a3fe818e19f07bd1e118",
+    "c557e7c1e0cd3df805abc1221f4ca62ae86071b98d7163f123bd86a7145db747",
+    "2afbc516b3739d18cb59fcdb52c43a6b6f474e872501d20c01b618f7f256f4c7",
+    "e8b76d72fb066375bda0360d54f1778cb7a7f31e7065f63eb72279a6632e6313",
+    "04b2b4ed4ace086df37633b932d0536e1b7eee9a19bbb33e1b744c78452aa240",
+    "86b70df2888c5c8928c7df1b2a92efd242ce2690a195112d608031b5770a226d",
+    "c48c11d9ade9d7aa34c315c611b81cb3a6db6424ceebb0bd2249c29bb591b0e4",
+    "18b24d8b354905ebb5566cd3011137195396dc14e7577492737c4f57d7c576f9",
+    "71b22627c88f629df72872f9229069125e0737d7e1c79df82a70daa26aaacfdd",
+    "c4bd94b1790f7997f7243088a21913521c2aa472097171950fde8115fb73e6b0",
+    "2827b21509289067de6b23ef47d2191711d6de479ae1a1fe55ed30f4bf87992c",
+    "d5b1f483168b921afb3ad26d16ff3c6b56a111191b1cf83a12f20cd59ae012da",
+    "0bf497a3462eedb8e75788d6daf4808ebc41583254fc4357fd7cb1fcf9be4e63",
+    "294980aed678d664d9554b5213465cf27143e6c54256f175f89efea54ad2644a",
+    "8c046536cf9044479554ce242234184ba3fac1f7aef7094659dec4b443704aab",
+    "f45da2111e3e495a084eeceb523932988b76acced87e378b9e5ab7d9bb194b49",
+    "090b34f961be741d2df13c39b4da64bdc4b8ba93988f7c6fa7dfa13caf5d1c76",
+    "f69f5c668d1f45f8aaacde7c823c2c977b29b6cb15fdb4c7fe1a22f40dfa1f8a",
+    "bba707c2b887137358cb8d86f8e806e6b866140a43e1865192bf957a67ec298c",
+    "678bbfe0a95ffd2e5b1df77c2221cfca79fb79bce983839ee609c2e30ddea4be",
+    "446f8d2eadb7fdf23675269627e6420e24a72acb5de49ea310b1f677247465c1",
+    "02a10e2c86c3e87cef1de4d6e688fdd2853faf66f2ae3b81febeed9fe7840704",
+    "138b17e848ac398abab679b3d46caaf6e6e4b72844a4a855599b87ba8b47004f",
+    "89340aeb4f6fb3f0eea91a000407d6ff1895ce08007c0a9a18dcd5857c8cc593",
+    "8e4538340f1ff8991bcd0d8e9381d38eb5552a1924bbb32c5e4c0c88b7b2c648",
+    "aef09525dcca2d6816a9fa7378a0bd42d2b9f669b5bf1328d60cb8a5a5ea4934",
+    "5d205a6520079162d644e47041c1019143e74903ff82d5eb34ac9c748a1598cf",
+    "16cd8d340de4221d77b1530c6accb3135b6c8d82fccbd66c3c190fb4ab22fa71",
+    "de9863b353cd14a5305ab9dda363bf0a9eb3f2fa2a40546e6161b33debdbcbab",
+    "0eed9223f24450d7d2923c17389a373da98a4aba366d2408949ff82e4234cf71",
+    "87244758a1eec870fc91f8922b84c795ef2085e1c97014c20080c71b13986e2e",
+    "d10510cb512711304ee77d2840bf9d9a0c587c76ad7451b5cd8fc3abcbde9493",
+    "942f5e6936d4a2fcf35ad1fd75c0bf2782636c11823782c874a2ab2f8f5ba425",
+    "2a34603582d2fac361f2b51e9300df79699d9df5ece669ac2ad903cd86266c8e",
+    "f136971a6c2a3c4e76b534810835cb4507551ad2a450864e97031f50ee83c8ce",
+    "1d5a7fd193de08a44421cc6c7091327b3dad01da89dc3420eccebf769a23c465",
+    "bbe92caeb88b88d9d665b5c1dd3575c93aa8c9ab72be252cfc638593e50ef874"
+  ],
+  "raw_rgba_rerender_exact_match": null,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "adjacent_composite_mae": [
+    0.5739564895629883,
+    0.6218578219413757,
+    0.5136052966117859,
+    0.5544299483299255,
+    0.39379623532295227,
+    0.34987255930900574,
+    0.2000979632139206,
+    0.31850603222846985,
+    0.141561359167099,
+    0.2880474627017975,
+    0.2351931929588318,
+    0.4433513581752777,
+    0.46326008439064026,
+    0.5194442272186279,
+    0.4932873249053955,
+    0.6116090416908264,
+    0.4498741626739502,
+    0.5239622592926025,
+    0.41102996468544006,
+    0.480520099401474,
+    0.2301846146583557,
+    0.23743140697479248,
+    0.2762393057346344,
+    0.40179863572120667,
+    0.3670389950275421,
+    0.5002732276916504,
+    0.49160805344581604,
+    0.5286011695861816,
+    0.4878765046596527,
+    0.5416438579559326,
+    0.3923979103565216,
+    0.46156254410743713,
+    0.30767104029655457,
+    0.29437509179115295,
+    0.15477591753005981,
+    0.2175445556640625,
+    0.20378805696964264,
+    0.32648125290870667,
+    0.39268121123313904,
+    0.5409578680992126,
+    0.4630734920501709,
+    0.5758445858955383,
+    0.5425254702568054,
+    0.5757890343666077,
+    0.4891033172607422,
+    0.5016221404075623,
+    0.38192471861839294,
+    0.43516746163368225,
+    0.1611778736114502,
+    0.20926924049854279,
+    0.16166186332702637,
+    0.3044625222682953,
+    0.2704879343509674,
+    0.44882872700691223,
+    0.4708835780620575,
+    0.5188093781471252,
+    0.49227914214134216,
+    0.5535781979560852,
+    0.5073642730712891,
+    0.5708132982254028,
+    0.38154932856559753,
+    0.35417187213897705,
+    0.25584569573402405,
+    0.34234437346458435,
+    0.24486219882965088,
+    0.35795772075653076,
+    0.3894924223423004,
+    0.4974348247051239,
+    0.5098564028739929,
+    0.575174868106842,
+    0.45980772376060486,
+    0.5368908643722534,
+    0.3736378848552704,
+    0.40348193049430847,
+    0.31648245453834534,
+    0.34938132762908936,
+    0.1623833179473877,
+    0.180469810962677,
+    0.2498409003019333,
+    0.4104028642177582,
+    0.3568545877933502,
+    0.5307333469390869,
+    0.601269006729126
+  ],
+  "seam_composite_mae": 0.5818853974342346,
+  "review_video_validation": {
+    "normal": {
+      "sha256": "2a9fde5afea79dbbbcaeeee70fbf3c8947f0fab6f6829846ae5889d1902c48f0",
+      "bytes": 132217,
+      "duration": "2.800000",
+      "decoded_frames": "84",
+      "full_decode": "passed"
+    },
+    "slow": {
+      "sha256": "b9d90ddcf0707373148c339d0cd1f6a21dfa9fcbfd747c632a1bc334c787b6ec",
+      "bytes": 189280,
+      "duration": "5.600000",
+      "decoded_frames": "84",
+      "full_decode": "passed"
+    }
+  },
+  "source_review": "Every selected source PNG individually inspected at native512. Exact selected source indices/hashes are recorded above. Original84-frame before sequence remains available for independent QA.",
+  "candidate_visual_review": {
+    "actual_agent_id": "/root/artisan_stickers_b",
+    "full_ordered_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "full_frame_tile_px": 224,
+    "native512_after_frames": [
+      0,
+      10,
+      21,
+      31,
+      42,
+      53,
+      63,
+      73,
+      83
+    ],
+    "scope": "Every final decoded frame inspected in ordered224px boards, plus9native512phase/loop images. Author review only; no native realtime/slowed/device perception claim.",
+    "observation": "Scene-specific gesture/props/contacts retained, no double-exposure contour or limb swap observed in this author scope; independent per-item QA required."
+  },
+  "independent_review": "pending",
+  "native_playback": "unknown",
+  "device_playback": "unknown",
+  "canonical_assets_changed": false,
+  "limits_checked": {
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "side": 512,
+    "fps": 30,
+    "seconds": 2.8,
+    "max_bytes": 262144
+  },
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_134/review-normal.mp4",
+      "sha256": "2a9fde5afea79dbbbcaeeee70fbf3c8947f0fab6f6829846ae5889d1902c48f0",
+      "bytes": 132217,
+      "frames": 84,
+      "duration": 2.8
+    },
+    {
+      "path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_134/review-slow.mp4",
+      "sha256": "b9d90ddcf0707373148c339d0cd1f6a21dfa9fcbfd747c632a1bc334c787b6ec",
+      "bytes": 189280,
+      "frames": 84,
+      "duration": 5.6
+    }
+  ],
+  "review_validation_scope": "Actual copied target paths must pass shared freeze_guard synchronously before package publication. Source validation alone is insufficient.",
+  "frozen_at": "2026-10-30T18:56:08.549059+00:00"
+}

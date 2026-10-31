@@ -1,0 +1,672 @@
+{
+  "schema_version": 1,
+  "id": "lumen_126",
+  "candidate_id": "lumen_126_scene-acting_b",
+  "engine_mode": "shared_local_mesh_v1",
+  "description_uk": "Сонно позіхає на весь рот, чемно прикриваючи його однією лапкою, а другою тримає маленьку подушку. Повільно потягує голівку й плечі, вушка та плащик м’яко осідають; ніжки стоять на місці.",
+  "semantics": {
+    "core_scene": "Slow visible yawn with covering paw, coherent jaw opening and shoulder/head stretch while holding the same pillow.",
+    "omitted_optional_action": "Large lifted-arm stretch omitted; covering-paw yawn and pillow retained.",
+    "contact": "Covering paw follows the lower jaw; pillow and gripping paw share one bounded translation; both feet pinned.",
+    "source_selection": "Exact f000 has intact natural crown tuft and sleepy half-lidded eyes; f010 used in a was declined after native review due an inherited flattened crown silhouette, not masked or repainted."
+  },
+  "source_provenance": {
+    "kind": "derived_decoded_video",
+    "source_video_path": "sticker-lab/production-v5/approved-sources/lumen_126/source.webm",
+    "source_video_sha256": "e768f5adda86f7ae03566ed9e54f44dde6bdfd01d1212b1fe817f9024330f2bc",
+    "ancestor_original_keyposes_sha256": "310e3ad87a4db125a7b633445a8c05d636eabe3f2bb2ab7ac27633e0b21d6887",
+    "ancestor_original_status": "unresolved_original_not_recovered",
+    "derived_source_bundle_sha256": "a67378afd3fc728d7bb0cd421b2a0d904960bd5b32e8539c634a6ac751bf7952",
+    "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+    "original_scene_prompt_english": "Позіхаю на весь світ. One paw politely covers a huge yawning mouth while the other holds the edge of a small pillow, sleepy half-closed eyes and ears drooping backward. A slow big yawn and tiny stretch, standing in his navy cloak."
+  },
+  "source_frames": [
+    {
+      "index": 0,
+      "timestamp_seconds": 0.0,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_126/000.png",
+      "sha256": "4b5be83997f547f97702f4aceeebcb7d0fb6cc1c95ca11f86d78fb021ecaf1de"
+    }
+  ],
+  "baseline_independent_triage": {
+    "artifact": "docs/qa-1-13/sticker-triage-111-139.json",
+    "verdict": "repair_required",
+    "source_sha256": "e768f5adda86f7ae03566ed9e54f44dde6bdfd01d1212b1fe817f9024330f2bc",
+    "defects": [
+      {
+        "frames": [
+          4,
+          8
+        ],
+        "reason": "Перехід нахилу голови дає другий контур брови/вуха й нестійку коронку хутра; f6."
+      },
+      {
+        "frames": [
+          15,
+          19
+        ],
+        "reason": "Лапа від рота до потягування проходить через напівпрозорі накладені положення біля щоки/вуха; f17."
+      },
+      {
+        "frames": [
+          25,
+          30
+        ],
+        "reason": "Повернення лапи лишає виразний фантомний відбиток біля щоки та розмитий край вуха, f27."
+      },
+      {
+        "frames": [
+          56,
+          61
+        ],
+        "reason": "Коронка хутра складається/темніє між нахилами, подвійний контур вуха; f58. Alpha bounds підтверджують, що це не обрізання canvas."
+      }
+    ]
+  },
+  "local_mesh": {
+    "source_frame": 0,
+    "points_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        511,
+        0
+      ],
+      [
+        0,
+        511
+      ],
+      [
+        511,
+        511
+      ],
+      [
+        256,
+        0
+      ],
+      [
+        0,
+        256
+      ],
+      [
+        511,
+        256
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        267,
+        85
+      ],
+      [
+        92,
+        159
+      ],
+      [
+        413,
+        100
+      ],
+      [
+        231,
+        218
+      ],
+      [
+        351,
+        184
+      ],
+      [
+        306,
+        225
+      ],
+      [
+        308,
+        269
+      ],
+      [
+        310,
+        303
+      ],
+      [
+        344,
+        270
+      ],
+      [
+        367,
+        317
+      ],
+      [
+        177,
+        343
+      ],
+      [
+        165,
+        380
+      ],
+      [
+        176,
+        418
+      ],
+      [
+        140,
+        323
+      ],
+      [
+        203,
+        334
+      ],
+      [
+        164,
+        419
+      ],
+      [
+        229,
+        478
+      ],
+      [
+        374,
+        480
+      ],
+      [
+        286,
+        424
+      ],
+      [
+        119,
+        419
+      ],
+      [
+        449,
+        359
+      ],
+      [
+        308,
+        341
+      ]
+    ],
+    "parts": [
+      {
+        "name": "slow_yawn_jaw_head_shoulders_stretch",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            -10
+          ],
+          [
+            -5,
+            -5
+          ],
+          [
+            4,
+            -9
+          ],
+          [
+            -1,
+            -6
+          ],
+          [
+            2,
+            -6
+          ],
+          [
+            1,
+            -3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            -2,
+            -4
+          ],
+          [
+            -2,
+            -4
+          ],
+          [
+            -2,
+            -4
+          ],
+          [
+            -2,
+            -4
+          ],
+          [
+            -2,
+            -4
+          ],
+          [
+            -2,
+            -4
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -2
+          ],
+          [
+            -4,
+            -3
+          ],
+          [
+            4,
+            -4
+          ],
+          [
+            0,
+            -3
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.12,
+            0.4,
+            0.63,
+            0.85,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            1,
+            0.15,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "sleepy_ear_and_cape_settle",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 1
+        }
+      }
+    ],
+    "minimum_jacobian": 0.5,
+    "fluid_texture": null
+  },
+  "output": {
+    "width": 512,
+    "height": 512,
+    "fps": 30,
+    "frames": 84,
+    "duration": 2.8,
+    "crf": 30,
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "maximum_bytes": 262144
+  },
+  "approval": "unreviewed isolated prototype; per-item full afterframe and independent QA required",
+  "generator": {
+    "engine_path": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/recipe_engine.py",
+    "engine_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+    "support_path": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/repair.py",
+    "support_sha256": "110ba6ca5bfa62dbf3731568f5aa096a6aab283a87ea3072c0abfee2aaf8bef1",
+    "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/lumen_126-original-generator.py",
+    "original_generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "original_support_snapshot": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/lumen_126-original-support.py",
+    "original_support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "expected": {
+    "frames_rgba_png_sha256": [
+      "e3a6426177eb1820baac1f23b91bcb22568fc9e508a469a9626f7b1d15d989a9",
+      "a0dac08f9fa985f7222e91d4a536f7fd8e518a00158c34b14be3493bbc447858",
+      "7ca32638cc8b8f392faa880e1fb9edb4264504bfb570b4b544f146f12de16565",
+      "6460efd403b17cfdfa7bd9b92881465b96d6246c069e65338e4de0e158ba7572",
+      "3010a0466cda6a99e45ad77ac2b0436859a8876d91ae968b55a63cd37a11d430",
+      "97174eeecdc3a652c9062e62c67979abed195260d2dd412b1dd494e80479a8b7",
+      "4b1613a068c4b9cd8121d5d6516f64fb954079e7a7cf5aade49a4ad5e3ccaca8",
+      "9a6bdf3760d650f858cb7cd4ca6794a0ca861f1d7c30509393e13ce26d99c0f4",
+      "943c1f0196a3751e88670ec29b65e5a1082f4bdeae47d9cdc66a41b0cf76213f",
+      "11a0574a0244cac422fcf3b0939c33e2be05e9df32e04f3eb6b6608e307e73eb",
+      "d7761fc9319c3c869099dc89758a7fc06af73f14987a9e97c1b6454ef286b832",
+      "ae124170af8bf18f59eae83635ad85234ce119c823f1912d39bac0a4658a42e2",
+      "710599076fd3222627f6c28d14adc7c784ad259536c20201ed6134e6b56cb8d7",
+      "f2fc5b66d22c4f74148d7f66a29f1794edf5572708784b968698b56f1f9d1cdc",
+      "12698e05d2b1f0eff2f794ced80214db10df35585f13f847e5b1b057e2a6b0f1",
+      "8eea93464ae59eafe39f89287248ddb1b6b252a62a44dbcaf46190bc49d67229",
+      "e727fc771c452b000302bb9b31b1f0fc257c2ea62457575e7b7d7ada209bf4c8",
+      "1378f1b7f5be48e257574e2d0ef334f30bb273a621c95642fb092bc06c352fa1",
+      "1ed18286c59470db1d9370dfe086ee8fa5fc86da3941bc1bdba077f57979f12d",
+      "c4941f2c45b7db5dcd8e53802aa07f0e6ba83bd4dd17a848b1918fc46976f3a3",
+      "1a55c558284a9b1ab3e6b3abb918a01507659fef735ac0966677c8575767be7b",
+      "6245ad9bcc8bf924c73e43802200035078e03eee9933a36c850228a99857c89f",
+      "cf63b84f9b5e3b6278031bcaf8baa99df93f651ad62ae58a6f6d1c16aafdaee0",
+      "e2d319be45df9a46d19c296293d0a1cc89769523de244c200c26b1beeb0f8daf",
+      "c748365c49d17295c31d23e23a5ee1d364cb1f395ee65e29d220547a93a5c0aa",
+      "6098c1c06d9f49eb1e3d1d3141899832655f36bba31751ff5239950efc32b71a",
+      "b45a9116359c7679e7c186293c9aace54693f4537681892f1b75d4cd4f600fdb",
+      "0ec4794a2dfb24f0bd217f8066c5056681949d275b72624b5460423700bb4d6d",
+      "b29eeba91bd21a3640819933593ad31235ab33a0000298ae0be29629a319afe4",
+      "3f357b57f770797b5aac6255011ead867b8cf017d337a33c7ea820d641e0b55d",
+      "4d65a0f3902923e8afa6fc491cebed5d6653241de1dc0578faf509eb9a4ae3b2",
+      "4c79ef4b7bcca520140f3f219c1c537c233fdec06297930065869826e4dfcd78",
+      "90602468ed474822d08ced483e3a816c6631340e2a67a2af404c74d3f8cc3c0f",
+      "ff41fc0969bbe2902ff2319d8deb5dfdf0d1ca088431ddb8dada8ff2722f36e2",
+      "779c852ab77b812be1f4b60d854d9d8adf09752a2ab87e0e3a31c2d28a59947b",
+      "9840b7584bd5df34b2ecffecac6c1ddbd15714ec1e0fd4b9eae1da91c35b1bc9",
+      "211974b06620426211b9562e4beb48150c8a384e79bb66f87c4b81d711c95388",
+      "f7a60bc7f70a4e4fb640172ddaf02bd2e3ceff6f54e6b1134e8d1e7fc29db4c1",
+      "78c796110922481d6e7dbdebb21a6dcf34facb450424484fb51bd29f7e703510",
+      "aace169d23143cb68c730f9dda183a1cde72d1bbd6b38eb70f8dd6f55c84e598",
+      "d71c4b664fb0a7a8d72f46532a5b286eb9796d8238b8ea621c762cc25d137e79",
+      "bb990e090f2a09edf888730008c67a3820241963f686dfdd4201f10f43611156",
+      "cb859cf0f98fb0c8dfef3ab916b0dfed35581ed49a8ebe96830db05a6fe89b4e",
+      "77cb4e3fe470f607c64c7c37d222d3c3b3018094215365a88fb0b7c5119b04ea",
+      "bb8dbba8e4da5b52e83608b4006746cd01893ea2bb6e7da76cf1d01a20f1d960",
+      "26c0fe3305fb4356295645057a73dcb2555b0b65817b3c764f5af704c20040da",
+      "bd1af5556b372f062d3459bd80c9ae2df7b749ecfabd2fdd4bbe909a6f97b6e4",
+      "3c04962bb8184ad5d3b1915cd5f5ae182cc39570415a3c21e1b0bff07fe3cce6",
+      "d4cafb182e4ca5fd07b55ee8a3052c0c0298b1c1850d7d1521c46bea6a9b6e3c",
+      "f2e3fa57b6138a513bd70191a1eb336f1fd5e152251d4cdcf31227d6143dc5c1",
+      "5709916690e0bb7a027be46db011a06c128e09e0a58f2e885868b7721d1635b8",
+      "4c342e62dd016beb1ccde8f294f54380e48beadfa4e19a6a80c120ad4262439d",
+      "ab7fa2270545fff731492cd33e977c2d7a776ac37dc3157f830e82d18c9d04d6",
+      "9a07dba5b62d3b632fadc14952b27c1ecd01e3493a93e79ce2c17aefcbe46d1c",
+      "b776c5f6c695f28653cb57bb8282ce748e371b0c7cc53287870858f2dc85c407",
+      "3865030ab386e46a2e8986aa2c09afdcd681244adffbc381124d2d4451717dce",
+      "5d9dede82c488c93fb14f89c604c506ffb863457a485506a508a1b25324df968",
+      "abed127e88f8273b51c946e8fa5790738c32ac3d9c668eadda110641ca79c871",
+      "888c0ad35d74cbd9464b18fbe454abd55c158d570e797821075e973374666cd3",
+      "945ad82066de7a32fed3211fee60388659f6524e6684ce2ad7c2f7b879515f8d",
+      "0b3d5e44f63aea21aa063fd7f45fe21012cdd2a34f4571c6bad947a54176eb2b",
+      "29f9106c61ccfa5123571d1e5a3f78079462fd106f66f043f0741d27e6dc2138",
+      "e20a7c7b2179fd42a9d26bf975eae0dfe4cae27a42ba6aded80f61b469e1fe58",
+      "71d904c5cb02f7e7977648f35a6d26271f979532bf6cdf04b0c16c06d4cf4dbf",
+      "f3a76bd91b7d6c3b008ba86632a61cadabce756b612be364e86779161c33d093",
+      "6d3f5d9903ec11e3c0f07c38e6ae2c6c33f1871dd3fe15a14703ad1f88406a51",
+      "c76907d344495813f6285dfb92b6789f04ae1ceb8ae55fcacdbba8daab57b70c",
+      "fdac7461da43de1db6c8f582fb707c7e766fef593b84a7a36744b3b18c525ae1",
+      "5d6289dd1750e655c18d742f66371abb78385777bdd4d2a7df61a43d0b0a963c",
+      "ddc640fc8b28f5096a498f39b62a6ae421113f157e40c7a0c71573be9544a7cd",
+      "1c9c40931d6a650737e48f182c896ac524a8db1356121c6c9177c7207b2756cc",
+      "c0c4c684b340171142820684e15071d2c7f562de161d157644ce2ca9edae31b1",
+      "41186b8e705b30d8ed92fdc692768fa59a88fe363c6b4c8b6abd84a37a9ab179",
+      "71f632114279538d37854aa85fd151dfc9eaeef99bdc725cd5be782b85f7cf78",
+      "d3170f98fb1696f86e79e746e1fa0d982c08f8c676d2d6a7202a9095b497d7ec",
+      "d82fdfbce0a7d0e23bafe4c803dde1e8e1fdbaa5e4137efa46e75f2a17d397c4",
+      "e1d5f1a8f35699124e9865cd12f6b22b1a2fe19e1c79c786449586c733fba885",
+      "b664297424e123088935c9b1a49ab6bed1343971068246f6671d84d75b15433f",
+      "bdf9cd3719ea63c7bfdd058c395f4efddfaa17919704c6b067f2764d5653d600",
+      "aa187e74563962d887308aa6b55dc6295baf2d245aed476e69965a4d7265d0c3",
+      "4c878dded45dc74ff2bba52491f1aaef6e1c2494d1a7624ab9f2744687b7349a",
+      "60b1cfaaab49c02e820129d6aebd8e5abba025e08bfe95104fb2ada2df05e361",
+      "dc73b0c72ebe2d8daf5f6e73c6376ee7df36493c8d3e9928b84a69504b91e75c",
+      "5622915f9119ffcd62cebb8269b3e06065fc96fb9d4e66bcb2fa8808a7b4ba5e"
+    ],
+    "decoded_png_sha256": [
+      "75d9af23be7f61264a4a7e9f06bfa9d05e4be0acdd758180c651428429723403",
+      "c6fc72ff2cbe587b0159a3e835e3179b8e38ea64022974efbcf2a8af59d05cd0",
+      "b359a5dc9351f406a46738fe235262246f6308ec13e9bbf3b72eddde0442003c",
+      "8d83813e7d9f61ecfd24ca96a525eff3df46614ee04b1a6fb28f9fd81f296bc5",
+      "3e087062e1fb841cd860fe1a3427933cb84d6e62d2e65fcc9b8fe0fb286d5ea6",
+      "084c2c92b6cb56a99f94561f94c8d7974aa6fc7955d54d299ae52feac4636563",
+      "5ff10db4a0bbc2c7060ddf8802cd7794b1a24e92faf5266e81d5a6a574c4046e",
+      "2829262db69e7ad6813a4c19c138eca98a88e0ae6e866c6c4ece4deeb17556f3",
+      "34f6b32dd59cd45643fb306eb234876f62191ca82e689714cc3fa93a9d9d876c",
+      "430f2e6cc5dbcd6369d7f7e6bc7143867c915dd8a88e576a300d769874c5de7e",
+      "88dc96df8afc0b79f628cbad29f2439e13292b162ad30ad0835b8bc7d4f0c0d4",
+      "cbf53024745a987f4adcd42aec8130b49f0e71a9f4ce14e2cbfdd561f67bdd77",
+      "fff246e2eaa4a3c5fc0d1b6fcfb028a2e5399ae80dbf26187688c70c3d47c082",
+      "261b1c8380ab7081b491c0fbee0d5a32dfccd2d5db7e910937496c67e2acd2fb",
+      "17e73f69e2f169531a6396c45e9722e94ad1f2ba78287bb868e53538540bd962",
+      "c181791b973024f17eb70cdde8e7b072d8b51ba1e0c6d831703b4af739f4da9f",
+      "c7c4b771a59b82dc7322cd1f90d61cea574c7f57b959589fb438854f0ed740c0",
+      "6e4ebc92fbaa7d070585b618830746fcd8f16182570977188dc7a814f261ef7c",
+      "7bfa0163e9df9e2a80a9127fe673146ac72d5224a50a66d96f10df8a27cc2431",
+      "11ee789005e03ca759fb03af0afd9d2ade36fa64c76d705337bee62d8882f84f",
+      "6582753e87f669f5700e15e60a93dfa4dc1a358b2ec4ae340a748cb68c4f8a02",
+      "c4ec98581d275e30f8eb42a7fc5bafc85cd931c46fcb82c762fcabe14432f1bc",
+      "3dc0e7a831e57e82efb2ed11f093659cd66c24ac3582463a42dd71954850515a",
+      "5656516bf0059ab35c1c461df472f469afcb8018e678128ee6b0d1c3adab66c5",
+      "1143177d5038908acd714c1497508cad564c3fad0408ded60b88ccfec4802ad9",
+      "d764a0b4228bdf278c3b7c73baec5f860eae26fdc5f53e2fb795d4aa5a4db59e",
+      "14854121e00ee571f60d196959f75cd01dc908be24271d9934cfc154f9f1bccc",
+      "50bbc7fe68ca276cee9e80519c1caa750dce4534c119c790068c4868eaef87d2",
+      "aef7390534ff9e520afac0ef5d9dfbcc7f8d5a207d4a7057178c843b522c7280",
+      "4a121c157ee0cf0d3d9dbe374f302a9e82037c0d6dd667962d6c02498841a720",
+      "61b455bfc750d790fcbda56ab4ec0aedaf8202df8e2be015ce24deec20bfbdf1",
+      "2a304503e4bbc7739b046c2b39974730032a5fa7bcb450aaaa1fa3157130ba06",
+      "36a79835fe7ff135484847713a84ebf4fc6fd54c91faff7906fa095ac37cca8e",
+      "226433ed63b6a1a60fe4119b98c425acb73f2471644ec05034378896ac634384",
+      "81a851d602601109e47343743792259a97829fc8d98ec161cb07fe2ca49e585c",
+      "0441edd1cdf8aebdfb3072802cb20f9507a31e3564e9c9dbe23c8221a78fbfc5",
+      "d5c367a1e75316f9807a1ca15de44911a6970aeaaa36dedc08e29542c6b9bf0c",
+      "b3c9b968b57bbca5a4ac1793a5722a632b5e0553421b38e282a9454d7fc30678",
+      "2e88160de293883bdba037b0f8679f1abe8de32631f4f654738f9dbf5ffa0d8c",
+      "82d631f1f77c3cc640dddb74a479adb9208352421a49055af7dc63a58f3a14af",
+      "1217e317fd866fb26c449cc7e449cfd476539415a52dbcc3dd848fe1ceca30d9",
+      "3f6c77263a0ecbcd8da8d070966b8e304f55780d0a4ac3542974ba7b894890e8",
+      "27bb5fbf3988ab00d99a6da36ba093c5dac10d43b5f1d721ab579d138e9c97e9",
+      "0aceff755de920ffd1490db19b8d4d5b16456a1b4d0d74e2cc86a7d88719cddf",
+      "1b1d49035adc56ddaf2f7a7a81f0d81f5516ac9da3f055eeb1199ca7e0b8722e",
+      "d5728fa100a9775d5ec35d266185648e1e423970620cf26072ed1e0c400101f1",
+      "5794162556e216bb1d44e8b3285e9d5ed6e0c9fa9fb2d6c542a60b9d8adb4a8a",
+      "f06f4d3fdfde9acac2f13626fd8c2ee7cd55a5617120c4a640b7c494b06b35f7",
+      "2db00c5590242df766ab0b3243190822c2bfa671002258cfa6bbaf60600d12bc",
+      "42575600ad787792c0f3b0aa2a1ad7469b6aa155089de22217887cf001af2a37",
+      "cc1e322736b3b2d37867a9725ea6ad24f817fa7863a0167e4e82a2e2abe23460",
+      "1b4ae2b115af19b4e843e4d66015b4831d779974691f9705095d13b226a00f30",
+      "ad54ccf0c7ace00b7af7b8b167325964a91a6e68442876c3966cbb26075fd18c",
+      "ab2ea650b4aedbeded02d154bfafe9fcd2c9a72518a1754dcf61c60f8d60a744",
+      "2dc60bd577f73a14df5b217caf12be873b911a2879718369489fd97603cf1c9c",
+      "f78ff858406c4ec14eeeec4ac7d9e9749dff0c72e2d07500652c3bdbe03bb73d",
+      "e4e3e4c9b5b28b263a4599017310385b0bf943c8ee59b83c39b8247671f75c33",
+      "d188960fddf720c0a1363c04058a05f2ca39a9e330fe0a233d390d29f7d1f23d",
+      "6f1986614da7b92705189e48f60643d982ea7f9491aafd9b0574ccb2cbb73293",
+      "1764375981f95486379590985eb1f0432746791bedea64ad5db2901db9cedec8",
+      "0e6eeb710fe720042dd30bf1cd8931823953cf103aff6ccc18b062322b53f8bd",
+      "c121d2fc0db1246ba3f3c776c13a3ad37fdf43261bb1f6a9e296bf3c6273bb4b",
+      "b7e9c75e53c93ca2e9250db59201862ecccd5328f238eb8a8c2dbb4195914453",
+      "db48dabc3fe4828d3ee081cd3708a1b220f9d48d300dadd241c25b858f9e5a58",
+      "ad2d4f134aee386a154f9236a5284b4c70a092b152add47138899bb106c91a2b",
+      "784569b18941a4843baf49468e478215dfa1cfa6ac2170a364fac7f26c6cadaf",
+      "71b310e191f02094b6feb717a36e81bce7a0ce40343fa6267c5608200713e4cf",
+      "014e07fdf5446f81a7ee08580f7a1712369243e83cc10c4404d3d21162d588ef",
+      "9022777c93b1fcfba46739922d40e76c699c79d465f8f4fc5154862c225ef0fd",
+      "147191884450857ac3f8f45b81767e7e83d807f242bc8b3a94133166765b1734",
+      "c2c0bd935dd070f5a4770cbf8ceb8936482b2cf3c5a999fd39883cd819f60041",
+      "0cc43419800523afefdaf08b5f3b8283f915c777ffa82bd4b2a5ae04144bfbaa",
+      "0cd05f66773de5c10e4c8302b67635d9559bd9e3fda2d1e575f8a63e693755e4",
+      "d40aa41314cf07fb4b81006e2f962332a6c362e7fe167afa740038b54eccf11c",
+      "0e68a76b95ad18ab5350235ce3c60d733eecee8cf68b9a775e786d5dadb27a43",
+      "3a9a3aa0e92fd3acd2261e8aea2bfe6d0aa304916930d80a91ef14be06a6d779",
+      "ff4f97837ef80a5f78fe529e284989ff60921425e7e5c4e49267b9e0d39eda99",
+      "5f1de530822c18ced10d0156f5e55ff24dabedebfae9cb1736c3d372657429dc",
+      "02c4d3cfc29d4076ab40307e2094f4b31693f0921ff8f34b6dbfef41152f4826",
+      "eb3b018f4cd19e0611f179a93b7068f49fc37d0aef8b31adb4b6255170e69b91",
+      "2e2446008e57c5e547936db4736cd466621f86dbdef672b0abc255216683e7a0",
+      "a3c45821feeeaacaa5e8955c6736eae8c087238c97695516249371f7e060d301",
+      "0cef21bc9f4986bc40e057812ca66b7279e29894cee79ccda3039745067dac8a",
+      "5372e582d1b6528e3721c23f076598cf9ff98cc44e7384a02e6d28af0eeffbc8"
+    ],
+    "output_sha256": "9b386a59b29ca7ddde8921ec59046401f9a234142cc9db841f2762f296122631",
+    "output_bytes": 173669
+  }
+}

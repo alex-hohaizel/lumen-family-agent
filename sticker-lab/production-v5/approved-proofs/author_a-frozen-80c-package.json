@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "id": "author_a-frozen-80c",
+  "actual_author_agent_id": "/root/artisan_stickers_a",
+  "frozen_at": "2026-10-30T17:46:44.954584+00:00",
+  "files_sha256": "851c3ff08f9217384806682778b7de0e78c33faa6ceea1d9ddb65e4acbaea00e",
+  "files": [
+    {
+      "path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/author-review-0.jpg",
+      "sha256": "792559bce4e31aa79defe2ccdb7e6bb9434b57ad7d79d11315ea970dbb41f3da",
+      "bytes": 198284
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/author-review-1.jpg",
+      "sha256": "ed39e48d60bd886c8ee236d507b23727e4ea7331054ae7f86ce80353fa3b3be0",
+      "bytes": 187410
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/author-review-2.jpg",
+      "sha256": "dce4a2611d03e35614e07b12c0ac65e51fdca29153fb7aac89d220911198f9e7",
+      "bytes": 176514
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/author-review-3.jpg",
+      "sha256": "507e7b83fc03c93d8a64c062eb4b9c747f21fa290c841753cf86787d48167a60",
+      "bytes": 173286
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/author-review-4.jpg",
+      "sha256": "4c66d3770b9dd4150a0e786c7966ed1f80e6616a3a87ab19acce1fb37ce2d558",
+      "bytes": 173188
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/author-review-5.jpg",
+      "sha256": "369b6224ea8e972b2fbfeb1c3120764c08cc918258c178665ad001cc2a5cc32a",
+      "bytes": 177540
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/author-review-6.jpg",
+      "sha256": "2fbc2d3e422ffba14829bdcfebdbc3a9b29edce35d33071aa607249b87b98061",
+      "bytes": 199043
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/candidate.webm",
+      "sha256": "352631137b410c79855911ee6e4ee0b35b7822c5d1bf857b3064b9c3e5c46fbd",
+      "bytes": 242273
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/poster.png",
+      "sha256": "c403551a8d2192b48b79df3612d618ab14e6a016c797f7a66e801f9e8eaa2477",
+      "bytes": 183729
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/proof.json",
+      "sha256": "b50c4ef439caf8b89e0c2b4c0ba42a688c9fa1699039bc3b35cdb246e4db481f",
+      "bytes": 46855
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/review-normal.mp4",
+      "sha256": "24d8c3816f827c2d4659f722f965dc0113cd611c6e3315337e47b7d1daa3a231",
+      "bytes": 262192
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/review-slow.mp4",
+      "sha256": "54244c2aaa04b4aafc4703e3ffb939af9a8959d647cda267d0226c7e7123512f",
+      "bytes": 549941
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/roi-native-dark.jpg",
+      "sha256": "b8edf9f68e111126bc7e833801ddfcd22b8ff8ac93f98cdab7e7aff47b7f45a4",
+      "bytes": 505067
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/roi-native-light.jpg",
+      "sha256": "9f6f36b63ef673f3db446f4ee9a56651e5cd9f2c9dbe9d0ee542b10463c6fd41",
+      "bytes": 489423
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-inspection/80_beforepage0.jpg",
+      "sha256": "efe7fefbff781388d9c3a718e15fe6ade899cb3e9d91a0ecf599cc0e017741f7",
+      "bytes": 201171
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-inspection/80_beforepage1.jpg",
+      "sha256": "16767712914414cc41230ad95b6d26785165e44697129d7da75991d8862aa1b5",
+      "bytes": 190093
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-inspection/80_beforepage2.jpg",
+      "sha256": "9562d991770c7bb564a593de5671f745cfc9f854ad63d53f4be6af04edc2d523",
+      "bytes": 179059
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-inspection/80_beforepage3.jpg",
+      "sha256": "eb05c9e5f75805d90ee1b11ad5c8988309bd0e94b4b80eb482b57e5a22efb780",
+      "bytes": 176307
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-inspection/80_beforepage4.jpg",
+      "sha256": "857c6376e5a1d4f0bee88b96b3a2f04efaf88fc5bbd943e3a73b2188b1258ced",
+      "bytes": 176596
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-inspection/80_beforepage5.jpg",
+      "sha256": "9adb9a378f4da45af7379626050bf31509ac5de75919c8dc5ace15b0ba90c63d",
+      "bytes": 180642
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-inspection/80_beforepage6.jpg",
+      "sha256": "2c506a445df861d35cd3f1ec6f51e2f337ffd06341e77c0c6408a59f34310dda",
+      "bytes": 202069
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-rerender/lumen_80_author-a_bounded-puff_c/rerender-result.json",
+      "sha256": "aef5948a53436a3a17b1a7fce238dfb78e22e4c831dc8befc43f8d2893c88134",
+      "bytes": 19860
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r2/recipe_engine.py",
+      "sha256": "8104702fd381aac1c504813362769193bdf72482047182512e072851f7757cbc",
+      "bytes": 13393
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r2/repair.py",
+      "sha256": "110ba6ca5bfa62dbf3731568f5aa096a6aab283a87ea3072c0abfee2aaf8bef1",
+      "bytes": 17921
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_80/recipe.json",
+      "sha256": "541a2afb5051a05f01a7af128f094e9fd7f4cfeb15e1adb3d63a5867ca630915",
+      "bytes": 24426
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_80/source-frames/024.png",
+      "sha256": "4241f22e90c940e16476f36e52ed9026c0b009485f7e37cc527edd17a4f6c46d",
+      "bytes": 255175
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_80/source-frames/029.png",
+      "sha256": "9d71c63e0424e3a2a6931e065e3376e82d8672117b785d033e977610be96cd10",
+      "bytes": 246712
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_80/source.webm",
+      "sha256": "ac40795857f8a2a21819bb9cb92c4b2677b8792456a2630a86a95c8904b98161",
+      "bytes": 253157
+    }
+  ],
+  "items": [
+    {
+      "id": "lumen_80",
+      "candidate_id": "lumen_80_author-a_bounded-puff_c",
+      "candidate_path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/candidate.webm",
+      "candidate_sha256": "352631137b410c79855911ee6e4ee0b35b7822c5d1bf857b3064b9c3e5c46fbd",
+      "proof_path": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/proof.json",
+      "proof_sha256": "b50c4ef439caf8b89e0c2b4c0ba42a688c9fa1699039bc3b35cdb246e4db481f",
+      "recipe_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_80/recipe.json",
+      "recipe_sha256": "541a2afb5051a05f01a7af128f094e9fd7f4cfeb15e1adb3d63a5867ca630915",
+      "description_uk": "Втомлено видихає бліду хмаринку повітря, заплющує очі й м’яко опускає плечі. Повільно осідає в плащик і розслаблено усміхається.",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-51-80/lumen_80/frames-rgba",
+      "after_frames_directory": "sticker-lab/production-v5/author_a-candidates/lumen_80_author-a_bounded-puff_c/decoded",
+      "bytes": 242273,
+      "source_sha256": "ac40795857f8a2a21819bb9cb92c4b2677b8792456a2630a86a95c8904b98161",
+      "derived_source_bundle_sha256": "d52e6ac338063d1011e6a670def565a7514fdc1ce0ed04414467b62a6569e610",
+      "source_frame_indices": [
+        24,
+        29
+      ],
+      "actual_base_decoded84_sha256": [
+        "c5c766a23d2b4e2e7220a5a933900fd6ea68c6ce020e171b4e48c9922f448e85",
+        "ad8dd6b9cd2c5df78fb65b2b6d5b238576364cf4087b3b41b3abf2315a49f5bf",
+        "993070df802dbdd097301d3fc95d4498d714125b5c6933d080bf93e54c9cfbda",
+        "0102cd4f15f00ce4418b0dea40e63c42b1a8fb2b64746ed677d2511b29da1eae",
+        "8a3847957fdcab0e872ee58446ce72184c82e81f7ab429dfc47d61979a8cb07e",
+        "ddcd666c49dd9ad5ad1146a270196db75164385ee0d130d8d643f3bd5f58d8dd",
+        "19df92cecc91c8a09ba78c31ce41e3e2e53c46fd0738baa6e57fa9b39235dc5e",
+        "27a10f78b57eaf90f810b0e725771f6df01c0783e2b9f5bbc7fd1691a99a101e",
+        "76ca56337a674aea6aa873e3025381c426124b576413395927f987303be3a510",
+        "655a4414a2aa792cb8350194d3fdfae7671f0d97d060e0a271b4dbc6bc7a9f5d",
+        "59bfb42d317245e75932bc9793833a589031bd097754459ca1e803694fb23677",
+        "c2b67eba3fc41d1abb03d651b9d1293900ce0f2c293bcee6416b66f8f9eb024f",
+        "7ada73936edf53730edf22d6ac9c7f2778d68ef93174b869fe1829b2a30fc502",
+        "7cb8d3975f64d3156d65ddd959fd3c34f15469dc8ec7b8da1d3dc49e0cd70e2a",
+        "97e4eb5f629b2c3a4aa452e6ea79301b7ce4167c53fcd7300409a0d0e7a56066",
+        "abba9ed47de367ffbb13493d32e3e8a0d893a46141a2b7d5b60c87c609350cdc",
+        "2024c1506db67be60ebea39db01fcdcf1357f2d41eb55adb5791f178684fc4c3",
+        "7b4d67703444749bd29722dced05c139d4f6e698805efffa466941f0d3871d67",
+        "ce2a9f73fcd437c68404a4de2a33cc09ba0dd7985f0196d70b2d039fd2779373",
+        "55cf93430bf3751a9aecc4a37d799c0e1b58f39c1ce1f05dce9ba85c01a98e77",
+        "91a43c44f03df0d81b8e444f4fbc422ce99580230956c8433b67da9c471fe53e",
+        "93556d8dba4a4e7ae2950833421e3e7617a99fa65a888690ed88c68c89c29572",
+        "522d7048726c6773292a925923463a2ee9ed7dd40ee15d3eb18f40755f55ebde",
+        "5229090acd8a7dc46277281715dd49f7c1b55e5963a65a780d962ef035a7fe92",
+        "4241f22e90c940e16476f36e52ed9026c0b009485f7e37cc527edd17a4f6c46d",
+        "9fb05acccaa72b4c0efa3204fbdb67778d77e0933e13d3cb71c9fd8c608abcd1",
+        "b41acb65bbde92b88f3b94652ea31a13dcb84e2b259fdf483db6105ccf8be226",
+        "7b83558d08c358a4953a671fb481af38195362a449011d3b9b70d42bb2468bf6",
+        "5512efd487ebee83a20014f5bc566e3b5f531076070c5d462cd247a932d00455",
+        "9d71c63e0424e3a2a6931e065e3376e82d8672117b785d033e977610be96cd10",
+        "541e5cc6dcb52a8b8255c406074d1fefdce5b67ed0d778d36641bdd8bebd9baf",
+        "d53adac7f70b0a1d1c4e528c5feedde336795d808559de32db0b4a858f159b49",
+        "447ceb0d88e05cac792eb2e6d769d6ed74e930d7ff26517fd7290919f78ec5a3",
+        "1a54eb12d6748a9337aa84d595857f097c0739c640638ea171fbb61974c64ad8",
+        "526f2d1bdf76cf195cbab26ea2828c7e98f1d55f642172dc78da3a7ef2a115f8",
+        "68d001bc4731525bc13510d71297e02c461ec9e047d7d2e61dbb7303e152fcbf",
+        "bf02d421001899f30bc08b4118226796db075883620d3e7dbba4e12d3e8828f6",
+        "5fa86ab7742bb0ae76d2722f1e094513eac9c0bc278023d1aad661772cf9e74d",
+        "343a6071f57bad037330a9d82c583e453eb210abaacdc6df0c226918856818ca",
+        "563b748da24fab4010160b59e7baf3e641f8f8ac7e31243c1b025c2a612ff0fa",
+        "9ae2026a1a54d8cb9b6564847cc7901c134ddb08cce73dd38b39cc090f7c3ef2",
+        "2985474838e76593d8dfebfc592659c399696034719bc5c74cc0de1633d3b8b6",
+        "4373048bda7c4a374c9df48f2a3b6b309e7a1310e1c6a09a948e9789ec674aff",
+        "58fec9ffd06b39b5d8345d83bcd3d8d0bc99589437697878325553a1400f2bab",
+        "6aa43ecb99ec2fdcd0df8435a9b5e4965c6e6b6e63fd44c4dfc1f2fe6dbc6e2c",
+        "399508310fc7befb796d9e6ebc2bd070a58eb3e4096b65584901b746015921e0",
+        "3318bb41973fbfabafd11464e7f7692a6f0164f713454922f327de720d5b16e5",
+        "ee435db29b35165338109bfdc90c27d39e39e03d0a2c95df94c7ecdb0fdc7dec",
+        "74cc530b55cde9cc379756f8078b47cf9ba782280ceb7d536780445425cef5e2",
+        "0cf98a85c47fc2d8753f8a247f1cf6c1e158f701a4b77d66890dcc881aa4bb0c",
+        "5bd4d09670419d22d5bc9babca68f6ae2b3578a6faf4740092dafb6e94d627f6",
+        "8faae351faaa3590ff14833871c59e8e38f4a5bbb00528e239788b85528e1daa",
+        "41b510b31769f825bc0a9afdb3bbaf21d4188aedce5b2c5c12e2b765d08fdd93",
+        "842e45ce6903ba1d9f3a56e7f4a092c711dc6477744c0fbd85addca63d5f79a5",
+        "620ba7d1153c198dcdd338f4b0ca2b14f939054cad4345298a3054654d950e2d",
+        "128803f5f29a2f625449151f9dbed29dabb95611bcebc83854087ad586d6e34d",
+        "14e84748e9c2f79faf0e84877a04c18f6ee8dc6c15c4780b7070366ea7ee9ba6",
+        "cdb8971612b615e2a069b6acecf81753dee7f2df69cb95fdcf6639e0041d14e9",
+        "4f726c7230cddc978884c057b5fff6e71057ff5fa0e44698ab28d404ad2ddb0d",
+        "9d8ee41a93d64b439e70ba9c023dd810d44b6b5ea6b4fb12e6e0e9654c835e3b",
+        "bb4c64cfc8bb6e24c7972e1715edd092a9d73bc321c1055c9beb92e4ccdfb08f",
+        "3df1b793ec9a4dd50c6f97f86579bea252fef320c5835fedc93b6a0daa01e1f4",
+        "af24cb1e4474cbb597f7949ef48006bf9dffc4c83c6c24af2a5f5615d823ea09",
+        "986875cc46e4d5bacd83bad4f7e7d2eb69f0238ffd1571d01041f0b6c4ffc7a2",
+        "e66641947f38133823514a33e68394b8aa624e0b26f61c9e88dddafb3b28a461",
+        "7d85af65a5d5dfcd73659670612c231127367c48ec5471f28d8feb78081406f7",
+        "9e6cfa8e24e470cee0d0b6a377f55049a162527eb7feb9793d8be7fccadaf82e",
+        "4df4a39be0f7d38ac3ac621dc1d603d5a93ac316169423773859828f721e75ec",
+        "8d763405c5ee76e0c2f029c4b2b4d416aabdff6457906c39e41595b259170c6d",
+        "5348ba940524c55df7a94253ae06bab0da54ec5881fef7e09aac5635e1c0db47",
+        "38652d09ab1f0ece66ad5f178725aafadf7ac646dff7270c87bd7dab7c9a6514",
+        "84304bf5b1a9211899a06dddb153989bff95705cc60d693156498fa1c7a9006d",
+        "f046f4fd6d0d8a1d0184ab34f90d3208d32093a8939fd3a19a83bdce0178fbee",
+        "1658a272a7ed213642dcc7fe6d9f7abf71c0a57c29f0bf485368cb536a2738d4",
+        "f9844c23f235ea02673c14382f40f57e5580fdf97e01e449d75abbc6b547faf4",
+        "7e405efed59900cf12ca2fb1cead7b2d729b1c83a35bbb1abfbc33d306a361d0",
+        "1e983a1fcd53d096fb8e5e0e47a02c2a144ac8eaceaa6be7cc2a13a8908f1bbe",
+        "83ddc00b724f2a469e4bac206f57f84ea0e5e7d929c7eb1aba0dbb13d6cf4230",
+        "f94767fe7408ded34f3f942e7cd629a1f998aba124eb8b31519745b7b499c1c5",
+        "8bb4741785d03aa638f01074ca5c299c3d12aaa42e3f0fdcbe14afdf6834d104",
+        "962c63938c20c4b9714f0d67437473587cce910e50a546404cd1391ed46c6994",
+        "fd34d8bd7a78457c644eab0ed33d2e47684bd5cc6a74513fefa3f1bbfa7817d1",
+        "6988e1971aa343af4eb1e2d185ed2f9af5905c5132cd5fa84237787f0b170ccb",
+        "f5b032b0593e0ab5fc8465350d0869214119951c7dfa0976aa4327b5874238a7"
+      ],
+      "reproducibility_path": "sticker-lab/production-v5/author_a-rerender/lumen_80_author-a_bounded-puff_c/rerender-result.json",
+      "reproducibility_sha256": "aef5948a53436a3a17b1a7fce238dfb78e22e4c831dc8befc43f8d2893c88134"
+    }
+  ],
+  "scope": "Per-item independent scene/full frame-sequence QA handoff only. Source24→29 pale puff repair only25–28; all original acting retained. No stage or publication approval.",
+  "native_realtime_slow_device": "unknown; actual normal/slowed MP4 full decode/probe pass, not perceptual playback observation",
+  "afterframe_integrity": "All84 decoded hashes pinned in immutable proof+expected recipe. Base video hash and actual decoded84 hashes checked by portable CLI; only2selectedPNG inputs retained in the small manifest."
+}

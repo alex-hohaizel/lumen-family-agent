@@ -1,0 +1,882 @@
+{
+  "schema_version": 1,
+  "id": "frozen-51b",
+  "frozen_at": "2026-10-30T16:49:45.311402+00:00",
+  "files_sha256": "844b9526c330f8d93a54727caa3e91751c62b415cb8ba5bdf004c6451a18ecf4",
+  "files": [
+    {
+      "path": "sticker-lab/production-v5/frozen-51b/repair.py",
+      "sha256": "627bde068b7b474df4430375a51941ededba29f0ee205913e8da14eb87c0b5a4",
+      "bytes": 17171
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/proof.json",
+      "sha256": "7ddb56c8269ab854f6de232d4401959a363de5201399209e4a2bb67f40eea9ad",
+      "bytes": 39346
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/candidate.webm",
+      "sha256": "95c1ec61be2506db3cc6e270a929d0adc802cfde25403a7f3175c76e433c5925",
+      "bytes": 224945
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/poster.png",
+      "sha256": "b22d833be5aa4af6699d7f9444b5d338a94bdfbcc35795b86cd48e778750d2c3",
+      "bytes": 215160
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/review-normal.mp4",
+      "sha256": "b9b6c49b88851f6cba8c5b6d21850428bf26371a1c6402c7b0f7f779860ab584",
+      "bytes": 452985
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/review-slow.mp4",
+      "sha256": "4dee14b241ddccbd749bac642471f917da60ccc4b2fcd62781e2d3d2148ac162",
+      "bytes": 660484
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/000.png",
+      "sha256": "ba69b95bec189a7f1fa7bb63b0b60f28ea1ba21634a6027860d1fcfdafd200cb",
+      "bytes": 304736
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/001.png",
+      "sha256": "d09196e5b57088d96c0076b8ba500775a733de33ed0573283f14e8be3ec8a0ad",
+      "bytes": 302676
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/002.png",
+      "sha256": "86c8f6d006ced39750a8bcb7baf4c8bbfe367f5424cea673778b24f25c557764",
+      "bytes": 307004
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/003.png",
+      "sha256": "81bc131f4a6eaad42cee269781080fb0d0c6c20509aefde005de2dc0e3935d60",
+      "bytes": 309579
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/004.png",
+      "sha256": "0e4fde94f44517722411d916caa1fa07ecc3e25a787a7bd0e64324957a957665",
+      "bytes": 313351
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/005.png",
+      "sha256": "1c065391e479025d2edef63c018644c84393c4aa439f329a763ad556294daa78",
+      "bytes": 315854
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/006.png",
+      "sha256": "578b9b2a8b7d04cd88bdef745b15fc88af8ed767c7da7b52159450d2abf9d9d7",
+      "bytes": 317440
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/007.png",
+      "sha256": "3295c0387862a97aab6e978e5d20df543a379dabb05b370100f6c4ea58143bcb",
+      "bytes": 316208
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/008.png",
+      "sha256": "245083c5129096ceeca21635608d0a2a95653fa20f10fa550a804e0b9d6eb3f5",
+      "bytes": 320054
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/009.png",
+      "sha256": "4b5e87cddacd45c6b391a0b3eb6bd7871ffbb7a5328f95e9d776b673dfb3c6f7",
+      "bytes": 321112
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/010.png",
+      "sha256": "00eebdb23b6fc63b92c72cccd944d5536a57b9bf31f3647e7303a00e9c447c42",
+      "bytes": 322271
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/011.png",
+      "sha256": "1e0023c9ffbbfa37284e0153d3b67b0086d00a5e6ca6d0e1be674454ad6edbbc",
+      "bytes": 324092
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/012.png",
+      "sha256": "303dab02fca509aec6998f7af6e586dd15825432a71034431f2a335717e75d77",
+      "bytes": 322156
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/013.png",
+      "sha256": "ecf43a3767f74288a3ce43231844e01339f17c450ade38f601b141ed3d05626e",
+      "bytes": 324872
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/014.png",
+      "sha256": "c4174ef3f52abd776dbf66adfd34c44ee4628c2a5475847fc32feea3dc9e4a92",
+      "bytes": 323007
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/015.png",
+      "sha256": "20b24183ded3e698c342f8783801bdc4e48f48d89e567fb1164fb74ed3931f8c",
+      "bytes": 324006
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/016.png",
+      "sha256": "14bba0b652e5b5f2bdf2fe0b86607b4adeeb312067105b600c21f0607c88a082",
+      "bytes": 321324
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/017.png",
+      "sha256": "64c89db0b1fdba38c79d606b9d019b59c61d08b28972cf745a6c4d305191266b",
+      "bytes": 322780
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/018.png",
+      "sha256": "8aec87e7a99e5a62d088f329d73d55dadba55ac97562c6f26b4b3884a62eb9eb",
+      "bytes": 322784
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/019.png",
+      "sha256": "67e3b5d3ea0a3441fbdbcb17f19967241ad0958493899eb818ab7b723aa46635",
+      "bytes": 314955
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/020.png",
+      "sha256": "93e5a2afdf16523c40c7734555a7df7fe7c51e37f4c2602ddaff42754b28ae0e",
+      "bytes": 316883
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/021.png",
+      "sha256": "3eab5b549aa97896352d8547c5447aa2ab5331846708ccbe74dde6beb2b7435a",
+      "bytes": 314651
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/022.png",
+      "sha256": "eaa1140f62def9cd9da466f55232dd945d40e8252c6f4d3944debc4d37d8cf7a",
+      "bytes": 311412
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/023.png",
+      "sha256": "a2100c3a0831299b04c2b3fb48e9710bde89b3e2b7898b35827430985c5f20a0",
+      "bytes": 312422
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/024.png",
+      "sha256": "a70ee4f0130c049bf99c15e7e9b11ceea7d922f1722d8f04c07d7743dfda9e09",
+      "bytes": 310920
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/025.png",
+      "sha256": "0ca87adcfb77421350df691a9d4aec498de7642aa554bce8733f532b0224ae88",
+      "bytes": 310013
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/026.png",
+      "sha256": "99718988f4bb01cbd9eb1e6d440213f53651158c7c45d59e67e326be769fab23",
+      "bytes": 309338
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/027.png",
+      "sha256": "5fc5e50f8666c11cc1aa6c75c7de990c7c68c0bee62002465a6b4ac2a867d0a7",
+      "bytes": 309530
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/028.png",
+      "sha256": "af9cb26b771a33650f38973502f6c6900a58f3253f5a84bf4cde2427bbb4e715",
+      "bytes": 311172
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/029.png",
+      "sha256": "2cdb18b897a33582de22e6ee75d23ace298701f9318455bd17fd81bb83c1a9e4",
+      "bytes": 306617
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/030.png",
+      "sha256": "37b2a5b4649e560415caf6a0bc1003d3d7b1c408dd9b864cd2951cdf88df3726",
+      "bytes": 316279
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/031.png",
+      "sha256": "6728cf008992e23a547fd66460c989fd0656ea63dd9cf4640dccdc27e200293b",
+      "bytes": 315942
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/032.png",
+      "sha256": "d7b0c554ca442767bb91c883526a2f36de012d044844adc57083682ebe800ac3",
+      "bytes": 322251
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/033.png",
+      "sha256": "21b0643018081f74bdfc4bf15d086be90a9fb181bfce4bf4cba3fdb6a234be49",
+      "bytes": 324810
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/034.png",
+      "sha256": "91dfc89824bbd33b86a1b657072aab9ead8d25e5f1b2803373f76fb24838a448",
+      "bytes": 324694
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/035.png",
+      "sha256": "ab14649294d5bdf8e1f9197a37f75f2ed799ae2970aedb8271afb37b82d69a85",
+      "bytes": 323498
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/036.png",
+      "sha256": "bf6c6ac644689eb797e29feb276a071da2f2bc2417d282bb6b9091ce8b2266b4",
+      "bytes": 324859
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/037.png",
+      "sha256": "0579034cbb5fd55bab576e0764d357d0ab9835c187ab6c4bfba67a4eb0c9dac3",
+      "bytes": 319293
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/038.png",
+      "sha256": "6830615755c82b8578305c9f4e6d5a3ea4db70dbb1e3edee50e686df0d2acd41",
+      "bytes": 316163
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/039.png",
+      "sha256": "84b2c6ec987252788afbb21aff8c2943da5137eaae542175255e391084e68663",
+      "bytes": 305832
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/040.png",
+      "sha256": "bd88bc9df2548bd46f98e01b519acace6eb62c1e0fd323b67103f14fbb862169",
+      "bytes": 315929
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/041.png",
+      "sha256": "cfd41ae2c18bd04ec6cfc9bf4cda46c0dd1d404d6714678abf47eed44e50dd81",
+      "bytes": 317644
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/042.png",
+      "sha256": "1d20fb6bc95896a7a898f3b13f8e17932f9d62d5f7bbed3676ea0583cc37bc57",
+      "bytes": 321702
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/043.png",
+      "sha256": "a88df028d9fb8f160b4149b1c531463a0f0ec8941a63777e1e4ad2b9715968ce",
+      "bytes": 321704
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/044.png",
+      "sha256": "61d5487b6556b09fb9e813643aa6fa294a154de87d744a25265dc5db1fd05828",
+      "bytes": 323004
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/045.png",
+      "sha256": "998f9aaba527250fb5c5a80ed65a5ae5ca914df7f5574b0a7d104f422fe61f9c",
+      "bytes": 320309
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/046.png",
+      "sha256": "21e26f95434d2d36ff88c9b8fef23488ca57142e144486e7c429330e1df3a587",
+      "bytes": 320361
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/047.png",
+      "sha256": "16aabdd0e7f35c680e3722bfc645b3e931e018703563cf9d7ec74d1cde9314bd",
+      "bytes": 313050
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/048.png",
+      "sha256": "3330b3838cfc561404910e1ebed4058593d62f0b17e2b5c642f71dfa7b3ec447",
+      "bytes": 310160
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/049.png",
+      "sha256": "b7cc50ec9c578ad2b856981f5ca24ac143d7592d382527e04709dcd7ebc1a0c3",
+      "bytes": 309554
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/050.png",
+      "sha256": "5107005af00e923843311dc2e83120cc52a705f473f4ea6d645d34d31c85fdac",
+      "bytes": 312113
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/051.png",
+      "sha256": "97eae146227ceddddf10a8a1bb988ff792656f574e695066a9ea7b8fe6b009c4",
+      "bytes": 312609
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/052.png",
+      "sha256": "da50ba13b24dc3973d65b12b95cd1d115fb3fe87cb311a8bf42da874e7cd91e6",
+      "bytes": 309046
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/053.png",
+      "sha256": "891209c1db6584c021a46e8906ac418725ca20b26bc5877d7da03825c5b50df0",
+      "bytes": 308075
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/054.png",
+      "sha256": "0169b20b965304e211799b9f68f73f5325aff054c035ce58980d34234e25e3c3",
+      "bytes": 306836
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/055.png",
+      "sha256": "161aad3f6c780009713b576f6a5c3b93b9448d0243de6288896aa97b66455805",
+      "bytes": 311326
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/056.png",
+      "sha256": "3ba5deaf5533a79e62ccbdf2bd5ab69be4feba22fca015c1ff00d29db62c7c9e",
+      "bytes": 310734
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/057.png",
+      "sha256": "d50b1396ce9af4fd5a0c19ecf1a253f89df43ff683a6f16a130ce98ec7f8b26d",
+      "bytes": 309069
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/058.png",
+      "sha256": "728314ec91c4f8d2a315ac860d037b2100cc4222955d8a399887ab47e5692581",
+      "bytes": 312700
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/059.png",
+      "sha256": "28a02a38df20b2f8aa8df9a51d8aa26dd53814bff851aa9f1f15f42ee67f43a3",
+      "bytes": 313725
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/060.png",
+      "sha256": "e310344b410123e97eb58b879331c1d1e4aa2977462a1397a4000b14cda348e1",
+      "bytes": 318123
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/061.png",
+      "sha256": "594564951fa87cba39ed0543331989f7b58a5d9149a8de95677b778247c20cc2",
+      "bytes": 321999
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/062.png",
+      "sha256": "15f5de1568b35f264594d32a2cea7ed579eee9ae37438694d67313f928578de8",
+      "bytes": 321912
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/063.png",
+      "sha256": "1515df2a10d1228b05a561551fe1e5ea8ee0927ee635d6731a8eb53747457cdd",
+      "bytes": 321826
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/064.png",
+      "sha256": "4ada000b652ea2cc771c2527e0ee4624b4392b7e9579b7f284874445e6e94735",
+      "bytes": 326008
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/065.png",
+      "sha256": "604207da20fe0e86716cf2f2cf6d8f2cf363ba14ae126254cfa94b447ba12a3b",
+      "bytes": 324389
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/066.png",
+      "sha256": "fd09d4a3a075a317492bf5660b92fc19d9651df986386c6f86346b7f3a1056a1",
+      "bytes": 324988
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/067.png",
+      "sha256": "914bbc841119448ddfab0f1d2d2554026a1f88f400d1358839630cfd77d6a44e",
+      "bytes": 324668
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/068.png",
+      "sha256": "dfe2f4332bcf250c812692e826d05a04cad9e37953b2629c7a14eb0c190f1bb1",
+      "bytes": 324515
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/069.png",
+      "sha256": "4b6e1219d9c3192d986f573e1dd17a95e805226ba85e4fa82dadb172cfb4dbf2",
+      "bytes": 325192
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/070.png",
+      "sha256": "5a8cb89ce30144183ee5e084fc1369db6f5930cd576aea1b4fe81a5970609078",
+      "bytes": 321319
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/071.png",
+      "sha256": "4e9784807a329812be7e91f39d25f62587fc6eabf7e35b805b26055d34a48e15",
+      "bytes": 321702
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/072.png",
+      "sha256": "d9b36bc0fd4152a0dc3056f9efc7ee33a8b9e64e4c3dc22a620d53e0ee2643ad",
+      "bytes": 323151
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/073.png",
+      "sha256": "3ea234040d9fb746d1d3356a095444279638226d06493f4b78a2a91b8fe2738f",
+      "bytes": 322956
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/074.png",
+      "sha256": "370151689f5ef4a1dec581d734d655536c7f6da44cc4f971b5b1d61ed5ed494b",
+      "bytes": 320869
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/075.png",
+      "sha256": "2f6d60642b20287ee8fb9ee2da8300425e36f7e3ea3cd46948730c3ec44e59c4",
+      "bytes": 319410
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/076.png",
+      "sha256": "f31fcdd66ff839c7750e93e732b0ac489386cf21bfdf4ae8f4eca38aa6294dd8",
+      "bytes": 316991
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/077.png",
+      "sha256": "011ec114784689b45f673a80da08c842872e8c9233d23cd597b9a5bb14a9a978",
+      "bytes": 319654
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/078.png",
+      "sha256": "6d3e35d8568cb5784f5e9c667101a8795a5af2d2fdf29542e5d209155a0d7f9c",
+      "bytes": 319827
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/079.png",
+      "sha256": "4342f052cb6585233e031a1454122aeabe8c192fa289b1ae1235af3287094853",
+      "bytes": 321612
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/080.png",
+      "sha256": "e531f7074f71e89701dc1247315d6e7aec7a4bc8388b930a7d5c2df437109434",
+      "bytes": 319958
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/081.png",
+      "sha256": "7ec030dfda98adb65155861a64aa7342ce3c16f5cf42eee8bc72951d84bcefab",
+      "bytes": 319884
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/082.png",
+      "sha256": "000bb08fdf558a84b0d0d22ee34acbca5a61c653f52ec8abca50720ea8eac28e",
+      "bytes": 311481
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/decoded/083.png",
+      "sha256": "c0b775c6028de3e6ab420605f168c15ba1b3521937c56a79e8ce4993593a495d",
+      "bytes": 307816
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/000.png",
+      "sha256": "4e66b9ef8884a393a2f1d04ef8e97d7963afa49ab71ed641c2e178fdd98f07d0",
+      "bytes": 307042
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/001.png",
+      "sha256": "8809af2f0e65648fc6e2b6460ee15eff6b0ff98de82258409e0aecfc1f2a2979",
+      "bytes": 323465
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/002.png",
+      "sha256": "85ae62fc68f39b3672cc59bd0d255e095d5b2ab59a4641fda1d4aa2ba9ccbabe",
+      "bytes": 327361
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/003.png",
+      "sha256": "1ada8f03e8a6e7308628d34fdf2213140dbad63d671212f1501d4e30cfb9e0f1",
+      "bytes": 329476
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/004.png",
+      "sha256": "0d9cc53fc1536801f7d3655687090dc2d98a05fde63945f11b7e83b7aa7e938b",
+      "bytes": 329601
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/005.png",
+      "sha256": "6adb805bebc1bfed59942670bbf2f89dc92cc113a8b46d106985e3e1b2a48c0e",
+      "bytes": 328543
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/006.png",
+      "sha256": "f0ee9e42a74579558cee9b066c767a1ff51ba14a2d0798e35e24fd9e34b6ceb1",
+      "bytes": 328408
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/007.png",
+      "sha256": "b3cf814769ae4646bc304e16850bd3930706d49b20a1eff4fe8b40a29cf20196",
+      "bytes": 322386
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/008.png",
+      "sha256": "4d09c97f5a6e76e6b3d5e56165cd7f13a9778538710b81236340f98ebb72a007",
+      "bytes": 323511
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/009.png",
+      "sha256": "00d800b640667b070f3c2f723a05d4dbb98732128fb2c0beaec7dfc529cb5990",
+      "bytes": 318382
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/010.png",
+      "sha256": "4c4010296758e6f3ff748b4db507d588110f25a790cfd610fe55d55fb9e98599",
+      "bytes": 322562
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/011.png",
+      "sha256": "4776862c38def3e778b583eae566e8f3cdc1e805b0a9ec37251b5214357a122a",
+      "bytes": 319450
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/012.png",
+      "sha256": "f8a7b9671da507ad72df9dbdea0491d3a80d3e760d56b4e22cd378cc6ee8aadf",
+      "bytes": 318603
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/013.png",
+      "sha256": "63a6a5b21834ba94c6251585caa3cba97e6219ec5f995063b98400f8fa60635b",
+      "bytes": 315785
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/014.png",
+      "sha256": "1e7d4b0f100a2c94a88cef421d30dbed7187e843d2ec3b5f9d6e9d7efbdc7fec",
+      "bytes": 318330
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/015.png",
+      "sha256": "5a231077092138527e8ada41d8a144348b334368c1c99ba497dbb902a7e23058",
+      "bytes": 317697
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/016.png",
+      "sha256": "ae12100ce4abfe6c9cd27f44fb7fc64b499144c361cb76f9e5020c25cd02e2dc",
+      "bytes": 321863
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/017.png",
+      "sha256": "6a5f0bf1107a1889367a86e96254e671fd993a7e959ce5177230fefd44470acc",
+      "bytes": 322332
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/018.png",
+      "sha256": "466fea369a76b0df35ab179e8c0dcbd330c5f2664697078789d4a83ad9f50040",
+      "bytes": 322808
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/019.png",
+      "sha256": "12e97ff5640e995e01aee1b48c43f060d0333a261be2d44a617c261775b05c99",
+      "bytes": 324661
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/020.png",
+      "sha256": "3873d7594fc03d9587380db6de12df850ca3c04dc92130d8000f94d6e5efef8d",
+      "bytes": 325642
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/021.png",
+      "sha256": "356342e114490572500ee5fb27f5692b733f2dcdbc66d2db0a595b685b79e57b",
+      "bytes": 327299
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/022.png",
+      "sha256": "f5f15cb6536b326d94f4f1cddf4f0a17e1ad7193c153e53c5af4c7f605fbdea4",
+      "bytes": 323874
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/023.png",
+      "sha256": "25e238c23f412f20d3c6a1d4b7d9ec0f8deddbb4581b55dd55c9ae364e1238d9",
+      "bytes": 322378
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/024.png",
+      "sha256": "72c34228a47c01e82e3b29dd899cf94fadea65909fe92b8707a07143dfb0b4e0",
+      "bytes": 325366
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/025.png",
+      "sha256": "f783e10da14aec2d6b174cfaf3fc2f086a39f4d84ab32c1c483c4572af134cad",
+      "bytes": 324454
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/026.png",
+      "sha256": "d3fc4872e99a09a9d0817e14e83148a3d35892dfc2d6e65afe1b5e7217994a1a",
+      "bytes": 323427
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/027.png",
+      "sha256": "007f56924bf2f3dbb9eb6764661a1d6bc39590288e8dd51318ac6d2a61044d1b",
+      "bytes": 328031
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/028.png",
+      "sha256": "0c4d1d35795432c26c2b0ea41639d264cb1797aac480c62b6549e76be34e2bcb",
+      "bytes": 325999
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/029.png",
+      "sha256": "110d00622fff0bea1d87fae471e2324cffd83bc99305abf457c964524c45ad44",
+      "bytes": 323987
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/030.png",
+      "sha256": "2013de829ba08116f619398d243610e551317bf10b1184a39f0e2015c3ab54aa",
+      "bytes": 328263
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/031.png",
+      "sha256": "5844e7c6991e7d7621c6fedba85f1d2ef02989cb5b01c667ca288e875bbd057a",
+      "bytes": 329921
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/032.png",
+      "sha256": "a8945db10bd75e3ce2ac90af70f870d036a1cb8aa0cdf8ab379de8ace2d06cc0",
+      "bytes": 323294
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/033.png",
+      "sha256": "f4bb8675b590354a4f3f63baf23f00888b103e147e08be5c78896f5bd71476c2",
+      "bytes": 324444
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/034.png",
+      "sha256": "997ecb5ec6d6327f512b43472f77ea61f440d97c0fef64bfa30702ba4cdc7f94",
+      "bytes": 325104
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/035.png",
+      "sha256": "8da3e2df14617c476bff99006cf17f01deb3338d67b1ecd6608158228002a88f",
+      "bytes": 326105
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/036.png",
+      "sha256": "ee9fe78354696b3a395d20eb5ddf8d6379808dfd32bbce15cbdb9e5b1dc7edf4",
+      "bytes": 328192
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/037.png",
+      "sha256": "32ee9e58e9d15b660e9d1a07555e687e19b52b4b0924e11e7ced1352bca4ff96",
+      "bytes": 328026
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/038.png",
+      "sha256": "4269328b634c96b42e1bd8eb5273121850b2bf422366e91a94083af0df812b6a",
+      "bytes": 327715
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/039.png",
+      "sha256": "ddd4c7a50858751138538d51aa34f4a190de092936a36e0260fdf0dcf0742cce",
+      "bytes": 331101
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/040.png",
+      "sha256": "6acfa645abf8c68cc1f9749cc80a3588d64a2c2b042472ec5ceaedcce7856508",
+      "bytes": 327403
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/041.png",
+      "sha256": "2b39ab82d8b92ce15d5e2ae5500950f95d24a44d2b4de542e9815817ac6e61f3",
+      "bytes": 327401
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/042.png",
+      "sha256": "168653647016f87f534256fa38d50483c7fd206158bdf7ef19c5778bce810f2c",
+      "bytes": 329292
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/043.png",
+      "sha256": "0bd1a8cbc41fa72279fb305ed414178a37ba7bf686aedf5e6dc1c8f13672dba6",
+      "bytes": 334122
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/044.png",
+      "sha256": "536cce34df604a7a105e31c89c06a8eaff38b8d222bcc7ab027a5abdb2452446",
+      "bytes": 335700
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/045.png",
+      "sha256": "6c499ce21fe9a2a28c3c2820231e8b2ba51faf79bd0b00d47a07f0adcc2cfc5b",
+      "bytes": 334000
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/046.png",
+      "sha256": "398788a2e6049532b019c0b6a8cfa271f36e32d5fd499ff2bfa207d8b0005e2b",
+      "bytes": 331066
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/047.png",
+      "sha256": "4bfaecd5836e807415c6de5323969697994a13c86d75ee592390516410d61691",
+      "bytes": 322701
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/048.png",
+      "sha256": "5117bcf820f2761b72065e88e9d3f14d8aba71f8a32b31f444645d79071972e2",
+      "bytes": 324845
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/049.png",
+      "sha256": "362292283dd607db41266f5b2ecca5fe52328bdbc87f089e4f4c8daabce67624",
+      "bytes": 312287
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/050.png",
+      "sha256": "8c1401c549377b67e7ffc476674c330d370b456e6d67d88fd06e7c870e0618a0",
+      "bytes": 310926
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/051.png",
+      "sha256": "1d02f9934e28012dd91cc938e6a654238b1a0498c6350772ed2a85c525cce501",
+      "bytes": 306985
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/052.png",
+      "sha256": "738d5994694c8fd6b859de4217082c31bc9d99ec7347c5a3fc57815a2e8748bb",
+      "bytes": 307582
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/053.png",
+      "sha256": "132765d75d3c2178a1a57d8d2b9c40e9b0b340826210c5af80cc348821c7c767",
+      "bytes": 296290
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/054.png",
+      "sha256": "1536bb3fea22305abf0426dd1c83a5c4650178f908f870acd12f634b5457ee55",
+      "bytes": 297309
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/055.png",
+      "sha256": "8f399a93568183bbbeebf75ec2d6dacf3f46cd0021d9fcdaa0fb14d6e35cbdd6",
+      "bytes": 299551
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/056.png",
+      "sha256": "0667f772fa76aee0697462f8d70729eb85a37fb182e53842d34ae1e598c7bc76",
+      "bytes": 305157
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/057.png",
+      "sha256": "fcb46dc9e6d22bc1b711849c9f3ba00e6ad45eba7db7130143d1eab379fc408a",
+      "bytes": 309706
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/058.png",
+      "sha256": "c7bae7d2d059f600be31faee8ed08f2f46a0c7b17e8d5d6a343eff1a6ee1d4c5",
+      "bytes": 318699
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/059.png",
+      "sha256": "2a7b64907201add054b22a38886b754a79c6688da2be92d397221d44f8296b79",
+      "bytes": 321092
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/060.png",
+      "sha256": "29a340298e6b907ce48dc304edb7cdba7ec83b3b562cb3b32601c7c5bfa0ac48",
+      "bytes": 327990
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/061.png",
+      "sha256": "e1bb7096308ab1b59fb34b232148a0ed40e0392754f679cb95353532fa18f9d1",
+      "bytes": 330552
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/062.png",
+      "sha256": "aacda0cc166ee54374d023d91db7771ae4202d638ddc0d6ce8653314b954c10e",
+      "bytes": 330582
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/063.png",
+      "sha256": "e06d65bb3621cf4062ecebb6af1b495a2237ed22787665438f763887d1f06829",
+      "bytes": 331333
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/064.png",
+      "sha256": "f3cf1f5b245aaa7eb1994be9c99673f4e8898ff30df1ce046885350a7cfc5068",
+      "bytes": 333534
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/065.png",
+      "sha256": "96de2df43c4d7a69ef5785f03c606675b716ee5702968c75754df25767f101b9",
+      "bytes": 330714
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/066.png",
+      "sha256": "4a64428791633e4be5d9687ddea302f11196ab1c39dd8daac4d48682ee5186ee",
+      "bytes": 332984
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/067.png",
+      "sha256": "89c5d7543620c5548f229be7fc5ca35ec9eab07406dc599c2c0c48fd1b53782c",
+      "bytes": 332368
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/068.png",
+      "sha256": "fc3e19ffe4bd6e93732e1243cdfb7f2e15f939ff4aebf099f373357d8ad3a370",
+      "bytes": 333770
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/069.png",
+      "sha256": "d4874e324de5eeffb2a4775d425f8c5ed6624fd95651c0d142eb8cfd5aa7e40c",
+      "bytes": 333704
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/070.png",
+      "sha256": "c38b10e385910fb011413bb9b26538c7ed911a544d68ca185d959a9bb7077e35",
+      "bytes": 334056
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/071.png",
+      "sha256": "af77956ed5a51375e9265bb5b44a44acb6f3896115c8ab0232cf7334add0af39",
+      "bytes": 333467
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/072.png",
+      "sha256": "2dc39bb4ae46115a39fc2db3d9a27a9ab31c01c441ede0213f40070554767b31",
+      "bytes": 335536
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/073.png",
+      "sha256": "b34c42d49de864c0c7a0b5968bd04e5fe1bfc584c0a382a9927539e3112db5f4",
+      "bytes": 335409
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/074.png",
+      "sha256": "6e9fdfcee57f0caf6ced919301acdf29eb4e486f780f91eb69c75c510ae057ca",
+      "bytes": 337094
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/075.png",
+      "sha256": "970521fc0600c792d7b8782b1a8e5e8c0fa0f7aa396dedc4207a7dc7119073df",
+      "bytes": 336324
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/076.png",
+      "sha256": "c5731a10e5c0d5d430a196f96041541f9585fdc5b4a30d9513ff2f8bd3c9b271",
+      "bytes": 335193
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/077.png",
+      "sha256": "ef186f00e8e060070909186da5df184af705b525423f816921f86309176b63c3",
+      "bytes": 334733
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/078.png",
+      "sha256": "1d69ba19665b308140b061d5cc01f99f73b98bfd89b2fc65a9be2a9cfd48f178",
+      "bytes": 335178
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/079.png",
+      "sha256": "e916c9c8be56e625516d315fc66ab7eb2958a14cdf92ae26e865fecb89c55cc5",
+      "bytes": 330923
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/080.png",
+      "sha256": "673f03a07605a402d6ed5bd6d4228ed8aea9314a1a45edbf62872df4cf2597de",
+      "bytes": 329149
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/081.png",
+      "sha256": "515f5a1c9c4628f622b022ac549f01416c74b2f0a2eb73e6b66c577963c9b946",
+      "bytes": 328059
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/082.png",
+      "sha256": "164fb58e2ada4f12f462b8fef3db5b16d8c09aaefb90657dedc5b574acdfd19b",
+      "bytes": 325173
+    },
+    {
+      "path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/before/083.png",
+      "sha256": "1162d10836fa4e6a0675013be73e733c4e62aaea26d56a50884095b671c3530b",
+      "bytes": 325167
+    }
+  ],
+  "candidate_id": "lumen_51_curated-bounce_b",
+  "proposed_description_uk": "Широко усміхається й розкриває лапки для сонячного привітання; двічі м’яко підстрибує на маленькій пружній подушці, примружуючись від радості. Плащик розгортається разом із рухом.",
+  "scope": "Independent frame/scene review handoff only; no staging approval",
+  "native_realtime_slow_device": "pending"
+}

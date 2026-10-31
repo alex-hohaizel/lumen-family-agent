@@ -1,0 +1,496 @@
+{
+  "schema_version": 1,
+  "batch_id": "51-core1",
+  "created_at": "2026-10-30T17:50:16.957477+00:00",
+  "authorization": {
+    "by": "/root",
+    "scope": "local_canonical_staging_only",
+    "approved_ids": [
+      "lumen_51",
+      "lumen_114",
+      "lumen_117",
+      "lumen_126"
+    ],
+    "basis": "Explicit addressed root authorization after exact independent per-item accepted frame-sequence QA. No external publication."
+  },
+  "items": [
+    {
+      "id": "lumen_51",
+      "approval_state": "approved_frame_sequence_prototype_local_staging",
+      "candidate_id": "lumen_51_curated-bounce_b",
+      "source_video_path": "sticker-lab/production-v5/approved-sources/lumen_51/source.webm",
+      "source_video_sha256": "60b0a437f6eedbc6e14f75d1ad9c60c22830a682ebeee01abeeaaba932d40e1f",
+      "ancestor_original_keyposes_sha256": "d18fc316b5b5e4ea8492bae7306815a406d16775d36949e0a5ebe86b007fb832",
+      "derived_source_bundle_sha256": "f0b57c4a5c98804f9bdaee7777b51e3785b3a59a83e73ee0feb98b63d3dc2339",
+      "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+      "derived_source_frames": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_51/000.png",
+          "sha256": "4e66b9ef8884a393a2f1d04ef8e97d7963afa49ab71ed641c2e178fdd98f07d0"
+        },
+        {
+          "index": 1,
+          "timestamp_seconds": 0.03333333333333333,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_51/001.png",
+          "sha256": "8809af2f0e65648fc6e2b6460ee15eff6b0ff98de82258409e0aecfc1f2a2979"
+        },
+        {
+          "index": 2,
+          "timestamp_seconds": 0.06666666666666667,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_51/002.png",
+          "sha256": "85ae62fc68f39b3672cc59bd0d255e095d5b2ab59a4641fda1d4aa2ba9ccbabe"
+        },
+        {
+          "index": 3,
+          "timestamp_seconds": 0.1,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_51/003.png",
+          "sha256": "1ada8f03e8a6e7308628d34fdf2213140dbad63d671212f1501d4e30cfb9e0f1"
+        },
+        {
+          "index": 4,
+          "timestamp_seconds": 0.13333333333333333,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_51/004.png",
+          "sha256": "0d9cc53fc1536801f7d3655687090dc2d98a05fde63945f11b7e83b7aa7e938b"
+        },
+        {
+          "index": 5,
+          "timestamp_seconds": 0.16666666666666666,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_51/005.png",
+          "sha256": "6adb805bebc1bfed59942670bbf2f89dc92cc113a8b46d106985e3e1b2a48c0e"
+        },
+        {
+          "index": 6,
+          "timestamp_seconds": 0.2,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_51/006.png",
+          "sha256": "f0ee9e42a74579558cee9b066c767a1ff51ba14a2d0798e35e24fd9e34b6ceb1"
+        },
+        {
+          "index": 7,
+          "timestamp_seconds": 0.23333333333333334,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_51/007.png",
+          "sha256": "b3cf814769ae4646bc304e16850bd3930706d49b20a1eff4fe8b40a29cf20196"
+        },
+        {
+          "index": 8,
+          "timestamp_seconds": 0.26666666666666666,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_51/008.png",
+          "sha256": "4d09c97f5a6e76e6b3d5e56165cd7f13a9778538710b81236340f98ebb72a007"
+        },
+        {
+          "index": 9,
+          "timestamp_seconds": 0.3,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_51/009.png",
+          "sha256": "00d800b640667b070f3c2f723a05d4dbb98732128fb2c0beaec7dfc529cb5990"
+        },
+        {
+          "index": 10,
+          "timestamp_seconds": 0.3333333333333333,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_51/010.png",
+          "sha256": "4c4010296758e6f3ff748b4db507d588110f25a790cfd610fe55d55fb9e98599"
+        },
+        {
+          "index": 11,
+          "timestamp_seconds": 0.36666666666666664,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_51/011.png",
+          "sha256": "4776862c38def3e778b583eae566e8f3cdc1e805b0a9ec37251b5214357a122a"
+        },
+        {
+          "index": 12,
+          "timestamp_seconds": 0.4,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_51/012.png",
+          "sha256": "f8a7b9671da507ad72df9dbdea0491d3a80d3e760d56b4e22cd378cc6ee8aadf"
+        }
+      ],
+      "output_path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/candidate.webm",
+      "output_sha256": "95c1ec61be2506db3cc6e270a929d0adc802cfde25403a7f3175c76e433c5925",
+      "output_bytes": 224945,
+      "poster_path": "sticker-lab/production-v5/candidates/lumen_51_curated-bounce_b/poster.png",
+      "poster_sha256": "b22d833be5aa4af6699d7f9444b5d338a94bdfbcc35795b86cd48e778750d2c3",
+      "proof_path": "sticker-lab/production-v5/approved-proofs/lumen_51_curated-bounce_b.json",
+      "proof_sha256": "7ddb56c8269ab854f6de232d4401959a363de5201399209e4a2bb67f40eea9ad",
+      "frozen_package_sha256": "844b9526c330f8d93a54727caa3e91751c62b415cb8ba5bdf004c6451a18ecf4",
+      "frozen_package_manifest_path": "sticker-lab/production-v5/approved-proofs/frozen-51b-package.json",
+      "frozen_package_manifest_sha256": "c8b8370b32de4996fabf0851f5f7eca451ce0246806aec06263c57df02a93af0",
+      "description_uk": "Широко усміхається й розкриває лапки для сонячного привітання; двічі м’яко підстрибує на маленькій пружній подушці, примружуючись від радості. Плащик розгортається разом із рухом.",
+      "qa": {
+        "artifact": "docs/qa-1-13/animation-trial-qa-51.json",
+        "artifact_sha256": "1fadc878490d2669ddd341da0d403b72b7e06d617d985344b37ad5b93028930e",
+        "review_id": "animation-trial-qa-51b",
+        "actual_agent_id": "/root/qa_animation_trial",
+        "verdict": "accept",
+        "accepted_scope": "Frame-sequence prototype only: core scene/emoji, actual multi-pose acting, integrity against large reproduced source doubles, ordered loop construction. Ready for native playback review; not complete temporal_quality/device/publication acceptance.",
+        "coverage": {
+          "candidate": "lumen_51_curated-bounce_b",
+          "source_sha256": "60b0a437f6eedbc6e14f75d1ad9c60c22830a682ebeee01abeeaaba932d40e1f",
+          "candidate_sha256": "95c1ec61be2506db3cc6e270a929d0adc802cfde25403a7f3175c76e433c5925",
+          "proof_sha256": "7ddb56c8269ab854f6de232d4401959a363de5201399209e4a2bb67f40eea9ad",
+          "before_png_bundle_sha256": "7c1dd00de6c646e9883186990432bf5aa69ea721d4e453fd6e2dfe12dcc62493",
+          "after_png_bundle_sha256": "215c2d44ad0b536851c3d2786bd4dbd445dc74e37948c6f0c3cf7d03d38ee0cf",
+          "reviewed_fresh_frames": {
+            "before": 84,
+            "after": 84
+          },
+          "ordered_sheets": 14,
+          "native_enlarged_risks": true,
+          "native_realtime_slow": "not_observed",
+          "device": "not_observed",
+          "canonical51_untouched": true,
+          "other_items_accepted": false
+        },
+        "limitations": {
+          "stage": "independently_reviewed",
+          "scope": "51b frame-sequence prototype QA; not final round judge or canonical release.",
+          "candidate_verdict": "accept",
+          "limited_method_verdict": "accept",
+          "blanket_scale_verdict": "block",
+          "unresolved_requirement_ids": [
+            "temporal_quality",
+            "media_delivery"
+          ],
+          "canonical_publication_ready": false,
+          "native_realtime": "unknown",
+          "native_slow": "unknown",
+          "device": "unknown"
+        }
+      },
+      "recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_51_curated-bounce_b.json",
+      "recipe_sha256": "2e35578311931262994a730ed717fcdf52a6433692a3a1e3dc2f03df64ba0a0d",
+      "generator": {
+        "engine_path": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/recipe_engine.py",
+        "engine_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+        "support_path": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/repair.py",
+        "support_sha256": "110ba6ca5bfa62dbf3731568f5aa096a6aab283a87ea3072c0abfee2aaf8bef1",
+        "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/lumen_51-original-generator.py",
+        "original_generator_sha256": "627bde068b7b474df4430375a51941ededba29f0ee205913e8da14eb87c0b5a4",
+        "original_support_snapshot": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/lumen_51-original-support.py",
+        "original_support_sha256": "627bde068b7b474df4430375a51941ededba29f0ee205913e8da14eb87c0b5a4"
+      },
+      "original_recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_51_curated-bounce_b-original-frozen.json",
+      "original_recipe_sha256": "5c37bf649764c81e14dd0b7289ae15b1879f497e30c54f0681f9c293cf5a465b",
+      "recipe_relocation_note": "Stable approved source/code paths only; exact numeric recipe and source PNG hashes retained; actual rerender must match every raw and decoded frame before staging."
+    },
+    {
+      "id": "lumen_114",
+      "approval_state": "approved_frame_sequence_prototype_local_staging",
+      "candidate_id": "lumen_114_scene-acting_a",
+      "source_video_path": "sticker-lab/production-v5/approved-sources/lumen_114/source.webm",
+      "source_video_sha256": "a23c5b7e29d11a64386440f9b10a11a8341d14197dc1f8ef0897b47c2789e296",
+      "ancestor_original_keyposes_sha256": "61bee622d42d3612b45398f553b9ffc2d8bfa0d6d03b7a1c2cfa44b502163271",
+      "derived_source_bundle_sha256": "086a9292d7a6bb3fcbdf3e4aa56754247d5a692d6abb35a5e711a75264df08e7",
+      "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+      "derived_source_frames": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_114/000.png",
+          "sha256": "147a4b156ed6ceb0ee9eac8ca639d09b26b689ef018771da0427e5d4a2acacbd"
+        }
+      ],
+      "output_path": "sticker-lab/production-v5/candidates/lumen_114_scene-acting_a/candidate.webm",
+      "output_sha256": "0bbbcaa3f57a31736802e9c7a0a82128a290fd9bb10b65d4ca8b17bc5f31a44f",
+      "output_bytes": 209390,
+      "poster_path": "sticker-lab/production-v5/candidates/lumen_114_scene-acting_a/poster.png",
+      "poster_sha256": "15a1b6dfb2063d080b82a6bfc07f6e34382e12933f68b0d751515de6e97bc1e4",
+      "proof_path": "sticker-lab/production-v5/approved-proofs/lumen_114_scene-acting_a.json",
+      "proof_sha256": "460a50345b0aaca4e24d37a37617d33b3f295793e25ac656686a0d107509db88",
+      "frozen_package_sha256": "58f3cb64f5fe70366b16d3ff670991a97f56bf4eaa22a042551236e272a6cb06",
+      "frozen_package_manifest_path": "sticker-lab/production-v5/approved-proofs/frozen-artisan-core1-package.json",
+      "frozen_package_manifest_sha256": "de56743c23592c6720c52ca6e88ac275e13e2f148c19788c2b0bf792c82254f2",
+      "description_uk": "Зворушено усміхається крізь блискучі сльози, схиляє голівку й обережно притискає маленьку незабудку до грудей обома лапками. Ледь тремтить від вдячності; ніжки стоять на місці.",
+      "qa": {
+        "artifact": "docs/qa-1-13/qa-animation-artisan-core1.json",
+        "artifact_sha256": "e043d5e92c0cf20c3a25d7a76bae3d35e253114018f87176b4de9706ca6f0146",
+        "review_id": "qa-animation-artisan-core1",
+        "actual_agent_id": "/root/qa_animation_trial",
+        "verdict": "accept",
+        "accepted_scope": "Тільки exact frozen candidate як frame-sequence prototype: image integrity, identity/emoji/props, локальний осмислений design руху та spatial loop closure. Не native temporal/device/production approval.",
+        "coverage": {
+          "before_indices_in_order": [
+            0,
+            83
+          ],
+          "before_frames_viewed": 84,
+          "after_indices_in_order": [
+            0,
+            83
+          ],
+          "after_frames_viewed": 84,
+          "full_sequence_view": "7 sequential 12-frame QA boards per series at384 px per frame; every one actually viewed before checkpoint.",
+          "native512_phase_indices": [
+            0,
+            12,
+            24,
+            42,
+            63,
+            83
+          ],
+          "seam_native512_order": [
+            81,
+            82,
+            83,
+            0,
+            1,
+            2
+          ],
+          "enlarged_contact_and_face": "2x crops at the same phase indices actually viewed; peak source anchor and corresponding after000 also inspected at512.",
+          "before_after_risk_indices": [
+            17,
+            37
+          ],
+          "white_dark_alpha_indices": [
+            0,
+            42
+          ],
+          "chat_size_stills_indices": [
+            0,
+            12,
+            24,
+            42,
+            63
+          ],
+          "normal_slow_review": "Decoded technically, peak stills viewed. Normal114 comes only from separate addendum; original invalid retained. No playback claimed."
+        },
+        "limitations": [
+          "Native real-time pacing, fine tremble visibility and perceptual loop velocity not observed.",
+          "Native slowed playback not observed.",
+          "Device/Telegram rendering, alpha, frame delivery and chat interaction not observed."
+        ],
+        "identity_addendum": {
+          "artifact": "docs/qa-1-13/qa-animation-artisan-core1-identity.json",
+          "artifact_sha256": "e675afa58cd044a3e7c16c0e06330d79f073c8ff27e6899756fde1d5158dc31d"
+        }
+      },
+      "recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_114_scene-acting_a.json",
+      "recipe_sha256": "818757a56609d07b23a95aeb66cf986d065a4c008df8ce120daae4b06ccea164",
+      "generator": {
+        "engine_path": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/recipe_engine.py",
+        "engine_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+        "support_path": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/repair.py",
+        "support_sha256": "110ba6ca5bfa62dbf3731568f5aa096a6aab283a87ea3072c0abfee2aaf8bef1",
+        "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/lumen_114-original-generator.py",
+        "original_generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "original_support_snapshot": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/lumen_114-original-support.py",
+        "original_support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "original_recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_114_scene-acting_a-original-frozen.json",
+      "original_recipe_sha256": "c71f77b93b161c42625352bfb0a179c21de13f58c1a3f034568829c439e6f682",
+      "recipe_relocation_note": "Stable approved source/code paths only; exact numeric recipe and source PNG hashes retained; actual rerender must match every raw and decoded frame before staging."
+    },
+    {
+      "id": "lumen_117",
+      "approval_state": "approved_frame_sequence_prototype_local_staging",
+      "candidate_id": "lumen_117_scene-acting_a",
+      "source_video_path": "sticker-lab/production-v5/approved-sources/lumen_117/source.webm",
+      "source_video_sha256": "14d65d0e209c3d9842151c8e3343cba19c18213b2a282eb7ef577118dbf3e56b",
+      "ancestor_original_keyposes_sha256": "a0ccaf4c573f97b4c0a6a6bf1dec5d054e4b0441e981b91652e13e867c48e31b",
+      "derived_source_bundle_sha256": "721af0d678d92a0ac578e5fee3f5b6638a5a1874750bb608f20714a8a49c293a",
+      "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+      "derived_source_frames": [
+        {
+          "index": 21,
+          "timestamp_seconds": 0.7,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_117/021.png",
+          "sha256": "82842b5fe367684b1b69d9cafc46205df9952c69a04039a25b42970905c66f7b"
+        }
+      ],
+      "output_path": "sticker-lab/production-v5/candidates/lumen_117_scene-acting_a/candidate.webm",
+      "output_sha256": "ad588aafa504491113e25e5169e711799de16981886d099a07ccc7a8f9635d6f",
+      "output_bytes": 246036,
+      "poster_path": "sticker-lab/production-v5/candidates/lumen_117_scene-acting_a/poster.png",
+      "poster_sha256": "73caec04fafe6378e58f66591fa2f7fb651c6759fe6b53807781c5dafa6c07ee",
+      "proof_path": "sticker-lab/production-v5/approved-proofs/lumen_117_scene-acting_a.json",
+      "proof_sha256": "c10df5df5298c07546fa3c555a4391a6d59d9c38598a1ab4316cd91b9133ff3f",
+      "frozen_package_sha256": "58f3cb64f5fe70366b16d3ff670991a97f56bf4eaa22a042551236e272a6cb06",
+      "frozen_package_manifest_path": "sticker-lab/production-v5/approved-proofs/frozen-artisan-core1-package.json",
+      "frozen_package_manifest_sha256": "de56743c23592c6720c52ca6e88ac275e13e2f148c19788c2b0bf792c82254f2",
+      "description_uk": "Перелякано визирає з-за великої темно-синьої книги, тримаючи її обома лапками як щит. Голівка обережно відхиляється вбік, вушка й край плащика нервово тремтять; книга та ніжки лишаються стійкими.",
+      "qa": {
+        "artifact": "docs/qa-1-13/qa-animation-artisan-core1.json",
+        "artifact_sha256": "e043d5e92c0cf20c3a25d7a76bae3d35e253114018f87176b4de9706ca6f0146",
+        "review_id": "qa-animation-artisan-core1",
+        "actual_agent_id": "/root/qa_animation_trial",
+        "verdict": "accept",
+        "accepted_scope": "Тільки exact frozen candidate як frame-sequence prototype: image integrity, identity/emoji/props, локальний осмислений design руху та spatial loop closure. Не native temporal/device/production approval.",
+        "coverage": {
+          "before_indices_in_order": [
+            0,
+            83
+          ],
+          "before_frames_viewed": 84,
+          "after_indices_in_order": [
+            0,
+            83
+          ],
+          "after_frames_viewed": 84,
+          "full_sequence_view": "7 sequential 12-frame QA boards per series at384 px per frame; every one actually viewed before checkpoint.",
+          "native512_phase_indices": [
+            0,
+            12,
+            24,
+            24,
+            63,
+            83
+          ],
+          "seam_native512_order": [
+            81,
+            82,
+            83,
+            0,
+            1,
+            2
+          ],
+          "enlarged_contact_and_face": "2x crops at the same phase indices actually viewed; peak source anchor and corresponding after000 also inspected at512.",
+          "before_after_risk_indices": [
+            6,
+            37
+          ],
+          "white_dark_alpha_indices": [
+            0,
+            24
+          ],
+          "chat_size_stills_indices": [
+            0,
+            12,
+            24,
+            42,
+            63
+          ],
+          "normal_slow_review": "Decoded technically, peak stills viewed. Normal114 comes only from separate addendum; original invalid retained. No playback claimed."
+        },
+        "limitations": [
+          "Native real-time pacing, fine tremble visibility and perceptual loop velocity not observed.",
+          "Native slowed playback not observed.",
+          "Device/Telegram rendering, alpha, frame delivery and chat interaction not observed."
+        ],
+        "identity_addendum": {
+          "artifact": "docs/qa-1-13/qa-animation-artisan-core1-identity.json",
+          "artifact_sha256": "e675afa58cd044a3e7c16c0e06330d79f073c8ff27e6899756fde1d5158dc31d"
+        }
+      },
+      "recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_117_scene-acting_a.json",
+      "recipe_sha256": "f244b078ed23b4a9df6134938604ba49019097b9bca7b9e323456abec2b8d29e",
+      "generator": {
+        "engine_path": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/recipe_engine.py",
+        "engine_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+        "support_path": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/repair.py",
+        "support_sha256": "110ba6ca5bfa62dbf3731568f5aa096a6aab283a87ea3072c0abfee2aaf8bef1",
+        "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/lumen_117-original-generator.py",
+        "original_generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "original_support_snapshot": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/lumen_117-original-support.py",
+        "original_support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "original_recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_117_scene-acting_a-original-frozen.json",
+      "original_recipe_sha256": "8edc2c9d82c1871449472c66e6ca4857b4f322f028a4518220bf9880ef2aeba9",
+      "recipe_relocation_note": "Stable approved source/code paths only; exact numeric recipe and source PNG hashes retained; actual rerender must match every raw and decoded frame before staging."
+    },
+    {
+      "id": "lumen_126",
+      "approval_state": "approved_frame_sequence_prototype_local_staging",
+      "candidate_id": "lumen_126_scene-acting_b",
+      "source_video_path": "sticker-lab/production-v5/approved-sources/lumen_126/source.webm",
+      "source_video_sha256": "e768f5adda86f7ae03566ed9e54f44dde6bdfd01d1212b1fe817f9024330f2bc",
+      "ancestor_original_keyposes_sha256": "310e3ad87a4db125a7b633445a8c05d636eabe3f2bb2ab7ac27633e0b21d6887",
+      "derived_source_bundle_sha256": "a67378afd3fc728d7bb0cd421b2a0d904960bd5b32e8539c634a6ac751bf7952",
+      "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+      "derived_source_frames": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_126/000.png",
+          "sha256": "4b5be83997f547f97702f4aceeebcb7d0fb6cc1c95ca11f86d78fb021ecaf1de"
+        }
+      ],
+      "output_path": "sticker-lab/production-v5/candidates/lumen_126_scene-acting_b/candidate.webm",
+      "output_sha256": "9b386a59b29ca7ddde8921ec59046401f9a234142cc9db841f2762f296122631",
+      "output_bytes": 173669,
+      "poster_path": "sticker-lab/production-v5/candidates/lumen_126_scene-acting_b/poster.png",
+      "poster_sha256": "e3a6426177eb1820baac1f23b91bcb22568fc9e508a469a9626f7b1d15d989a9",
+      "proof_path": "sticker-lab/production-v5/approved-proofs/lumen_126_scene-acting_b.json",
+      "proof_sha256": "5e836fae1908eb73687df1c9b06e5e09ea7fedd77d237b4cb2169512c511ebe8",
+      "frozen_package_sha256": "58f3cb64f5fe70366b16d3ff670991a97f56bf4eaa22a042551236e272a6cb06",
+      "frozen_package_manifest_path": "sticker-lab/production-v5/approved-proofs/frozen-artisan-core1-package.json",
+      "frozen_package_manifest_sha256": "de56743c23592c6720c52ca6e88ac275e13e2f148c19788c2b0bf792c82254f2",
+      "description_uk": "Сонно позіхає на весь рот, чемно прикриваючи його однією лапкою, а другою тримає маленьку подушку. Повільно потягує голівку й плечі, вушка та плащик м’яко осідають; ніжки стоять на місці.",
+      "qa": {
+        "artifact": "docs/qa-1-13/qa-animation-artisan-core1.json",
+        "artifact_sha256": "e043d5e92c0cf20c3a25d7a76bae3d35e253114018f87176b4de9706ca6f0146",
+        "review_id": "qa-animation-artisan-core1",
+        "actual_agent_id": "/root/qa_animation_trial",
+        "verdict": "accept",
+        "accepted_scope": "Тільки exact frozen candidate як frame-sequence prototype: image integrity, identity/emoji/props, локальний осмислений design руху та spatial loop closure. Не native temporal/device/production approval.",
+        "coverage": {
+          "before_indices_in_order": [
+            0,
+            83
+          ],
+          "before_frames_viewed": 84,
+          "after_indices_in_order": [
+            0,
+            83
+          ],
+          "after_frames_viewed": 84,
+          "full_sequence_view": "7 sequential 12-frame QA boards per series at384 px per frame; every one actually viewed before checkpoint.",
+          "native512_phase_indices": [
+            0,
+            12,
+            24,
+            42,
+            63,
+            83
+          ],
+          "seam_native512_order": [
+            81,
+            82,
+            83,
+            0,
+            1,
+            2
+          ],
+          "enlarged_contact_and_face": "2x crops at the same phase indices actually viewed; peak source anchor and corresponding after000 also inspected at512.",
+          "before_after_risk_indices": [
+            17,
+            58
+          ],
+          "white_dark_alpha_indices": [
+            0,
+            42
+          ],
+          "chat_size_stills_indices": [
+            0,
+            12,
+            24,
+            42,
+            63
+          ],
+          "normal_slow_review": "Decoded technically, peak stills viewed. Normal114 comes only from separate addendum; original invalid retained. No playback claimed."
+        },
+        "limitations": [
+          "Native real-time pacing, fine tremble visibility and perceptual loop velocity not observed.",
+          "Native slowed playback not observed.",
+          "Device/Telegram rendering, alpha, frame delivery and chat interaction not observed."
+        ],
+        "identity_addendum": {
+          "artifact": "docs/qa-1-13/qa-animation-artisan-core1-identity.json",
+          "artifact_sha256": "e675afa58cd044a3e7c16c0e06330d79f073c8ff27e6899756fde1d5158dc31d"
+        }
+      },
+      "recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_126_scene-acting_b.json",
+      "recipe_sha256": "9fe716a8ff9c9a64c49070ea841af3ca3356b097736109737d4f3eb666ed7c40",
+      "generator": {
+        "engine_path": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/recipe_engine.py",
+        "engine_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+        "support_path": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/repair.py",
+        "support_sha256": "110ba6ca5bfa62dbf3731568f5aa096a6aab283a87ea3072c0abfee2aaf8bef1",
+        "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/lumen_126-original-generator.py",
+        "original_generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "original_support_snapshot": "sticker-lab/production-v5/approved-generators/scene-runtime-v1/lumen_126-original-support.py",
+        "original_support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "original_recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_126_scene-acting_b-original-frozen.json",
+      "original_recipe_sha256": "19abe86b626c1e494e087df3af3bd8043949c17c1e1d3d1e4b3878fa93f7becc",
+      "recipe_relocation_note": "Stable approved source/code paths only; exact numeric recipe and source PNG hashes retained; actual rerender must match every raw and decoded frame before staging."
+    }
+  ]
+}

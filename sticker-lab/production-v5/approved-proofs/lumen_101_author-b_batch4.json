@@ -1,0 +1,1641 @@
+{
+  "schema_version": 1,
+  "id": "lumen_101",
+  "candidate": "lumen_101_author-b_batch4",
+  "created_at": "2026-10-30T18:39:58.816789+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_video_sha256": "3e8f88cc32e2f6d0015172a5bf986d577b32133136f69d58e5d57628cbc13da9",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "1dd9feccd20eec41e53eed3d68864d71515c23e9f26d377fee7c0fb76bf9ecb5",
+  "derived_source_frames": [
+    {
+      "index": 0,
+      "timestamp_seconds": 0.0,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch4/lumen_101/source-frames/000.png",
+      "sha256": "62dad92a7ac774501ccd442d2f411e7ec771dc1880f491fd01748e0796757fd9"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "b7e581dbd4b1c06d8e85d81f0de783c449b54567b45b86e8d87465cab7078a24",
+  "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_101/recipe.json",
+  "recipe_sha256": "286390f632ee235a35802d56da7ed2cb56552f32856cee9a7b1c5fbdea7c74bd",
+  "generator": {
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "description_uk": "Ошелешено розкриває рот і розводить лапки: над цілою голівкою пульсує пухнаста бірюзова хмарка думок із золотими кристаликами. Плечі відсахуються, вушка й плащик відгукуються на подив.",
+  "semantics": {
+    "core_scene": "Mind-blown astonished wide eyes/open mouth, paws spread, turquoise fluffy thought burst and gold crystal confetti; intact skull.",
+    "scene_specific_instructions": "Mind-blown open mouth+spread paws і turquoise thought burst: окремі shoulder recoil, ears/tuft і невелике expanding cloud motion. Semi-transparent puff задуманий; чистити grey residual, а не вилучати магічні puffs/crystals. Не reverse free-falling confetti.",
+    "authored_decisions": [
+      "Intact skull and one face. Gold pieces remain decorative suspended confetti, no backward freefall. Puffs are intended magical thought bloom, not gray dissolve residues."
+    ],
+    "irreversible_motion_policy": "Only coherent authored local action. No backward falling particles, liquid or free props. Decorative held marks remain explicitly decorative."
+  },
+  "method": "shared_local_mesh_v1",
+  "statistics": {
+    "minimum_jacobian": 0.7847671508789062,
+    "maximum_displacement_px": 10.857112884521484
+  },
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.0,
+        "spread_paws_startled_flare": 0.0,
+        "thought_cloud_attached_bloom": 0.0,
+        "cape_recoil_response": 0.0
+      }
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.062063173032560766,
+        "spread_paws_startled_flare": 0.062063173032560766,
+        "thought_cloud_attached_bloom": 0.062063173032560766,
+        "cape_recoil_response": 0.14904226617617444
+      }
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.13596116657341145,
+        "spread_paws_startled_flare": 0.13596116657341145,
+        "thought_cloud_attached_bloom": 0.13596116657341145,
+        "cape_recoil_response": 0.2947551744109042
+      }
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.21884110787172006,
+        "spread_paws_startled_flare": 0.21884110787172006,
+        "thought_cloud_attached_bloom": 0.21884110787172006,
+        "cape_recoil_response": 0.4338837391175581
+      }
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.3078501241766547,
+        "spread_paws_startled_flare": 0.3078501241766547,
+        "thought_cloud_attached_bloom": 0.3078501241766547,
+        "cape_recoil_response": 0.5633200580636221
+      }
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.4001353427373835,
+        "spread_paws_startled_flare": 0.4001353427373835,
+        "thought_cloud_attached_bloom": 0.4001353427373835,
+        "cape_recoil_response": 0.6801727377709194
+      }
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.49284389080307434,
+        "spread_paws_startled_flare": 0.49284389080307434,
+        "thought_cloud_attached_bloom": 0.49284389080307434,
+        "cape_recoil_response": 0.7818314824680298
+      }
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.5831228956228955,
+        "spread_paws_startled_flare": 0.5831228956228955,
+        "thought_cloud_attached_bloom": 0.5831228956228955,
+        "cape_recoil_response": 0.8660254037844386
+      }
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.668119484446015,
+        "spread_paws_startled_flare": 0.668119484446015,
+        "thought_cloud_attached_bloom": 0.668119484446015,
+        "cape_recoil_response": 0.9308737486442042
+      }
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.7450735489000794,
+        "spread_paws_startled_flare": 0.7450735489000794,
+        "thought_cloud_attached_bloom": 0.7450735489000794,
+        "cape_recoil_response": 0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.8126130105721941,
+        "spread_paws_startled_flare": 0.8126130105721941,
+        "thought_cloud_attached_bloom": 0.8126130105721941,
+        "cape_recoil_response": 0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.8704342992608299,
+        "spread_paws_startled_flare": 0.8704342992608299,
+        "thought_cloud_attached_bloom": 0.8704342992608299,
+        "cape_recoil_response": 0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.9182613305062284,
+        "spread_paws_startled_flare": 0.9182613305062284,
+        "thought_cloud_attached_bloom": 0.9182613305062284,
+        "cape_recoil_response": 0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.9558180198486321,
+        "spread_paws_startled_flare": 0.9558180198486321,
+        "thought_cloud_attached_bloom": 0.9558180198486321,
+        "cape_recoil_response": 0.9308737486442042
+      }
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.9828282828282828,
+        "spread_paws_startled_flare": 0.9828282828282828,
+        "thought_cloud_attached_bloom": 0.9828282828282828,
+        "cape_recoil_response": 0.8660254037844387
+      }
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.999016034985423,
+        "spread_paws_startled_flare": 0.999016034985423,
+        "thought_cloud_attached_bloom": 0.999016034985423,
+        "cape_recoil_response": 0.7818314824680299
+      }
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 1.004105191860294,
+        "spread_paws_startled_flare": 1.004105191860294,
+        "thought_cloud_attached_bloom": 1.004105191860294,
+        "cape_recoil_response": 0.6801727377709194
+      }
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.9978212641477948,
+        "spread_paws_startled_flare": 0.9978212641477948,
+        "thought_cloud_attached_bloom": 0.9978212641477948,
+        "cape_recoil_response": 0.5633200580636218
+      }
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.9802279353299761,
+        "spread_paws_startled_flare": 0.9802279353299761,
+        "thought_cloud_attached_bloom": 0.9802279353299761,
+        "cape_recoil_response": 0.43388373911755823
+      }
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.9521433970413562,
+        "spread_paws_startled_flare": 0.9521433970413562,
+        "thought_cloud_attached_bloom": 0.9521433970413562,
+        "cape_recoil_response": 0.2947551744109046
+      }
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.9144879308144614,
+        "spread_paws_startled_flare": 0.9144879308144614,
+        "thought_cloud_attached_bloom": 0.9144879308144614,
+        "cape_recoil_response": 0.14904226617617472
+      }
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.868181818181818,
+        "spread_paws_startled_flare": 0.868181818181818,
+        "thought_cloud_attached_bloom": 0.868181818181818,
+        "cape_recoil_response": 1.2246467991473532e-16
+      }
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.8141453406759529,
+        "spread_paws_startled_flare": 0.8141453406759529,
+        "thought_cloud_attached_bloom": 0.8141453406759529,
+        "cape_recoil_response": -0.14904226617617403
+      }
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.7532987798293919,
+        "spread_paws_startled_flare": 0.7532987798293919,
+        "thought_cloud_attached_bloom": 0.7532987798293919,
+        "cape_recoil_response": -0.29475517441090393
+      }
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.686562417174662,
+        "spread_paws_startled_flare": 0.686562417174662,
+        "thought_cloud_attached_bloom": 0.686562417174662,
+        "cape_recoil_response": -0.433883739117558
+      }
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.6148565342442894,
+        "spread_paws_startled_flare": 0.6148565342442894,
+        "thought_cloud_attached_bloom": 0.6148565342442894,
+        "cape_recoil_response": -0.5633200580636221
+      }
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.5391642371234207,
+        "spread_paws_startled_flare": 0.5391642371234207,
+        "thought_cloud_attached_bloom": 0.5391642371234207,
+        "cape_recoil_response": -0.6801727377709195
+      }
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.46093294460641376,
+        "spread_paws_startled_flare": 0.46093294460641376,
+        "thought_cloud_attached_bloom": 0.46093294460641376,
+        "cape_recoil_response": -0.7818314824680297
+      }
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.3818181818181819,
+        "spread_paws_startled_flare": 0.3818181818181819,
+        "thought_cloud_attached_bloom": 0.3818181818181819,
+        "cape_recoil_response": -0.8660254037844384
+      }
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.3034764555172718,
+        "spread_paws_startled_flare": 0.3034764555172718,
+        "thought_cloud_attached_bloom": 0.3034764555172718,
+        "cape_recoil_response": -0.9308737486442044
+      }
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.22756427246223157,
+        "spread_paws_startled_flare": 0.22756427246223157,
+        "thought_cloud_attached_bloom": 0.22756427246223157,
+        "cape_recoil_response": -0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.1557381394116087,
+        "spread_paws_startled_flare": 0.1557381394116087,
+        "thought_cloud_attached_bloom": 0.1557381394116087,
+        "cape_recoil_response": -0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.08965456312395097,
+        "spread_paws_startled_flare": 0.08965456312395097,
+        "thought_cloud_attached_bloom": 0.08965456312395097,
+        "cape_recoil_response": -0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.030970050357805562,
+        "spread_paws_startled_flare": 0.030970050357805562,
+        "thought_cloud_attached_bloom": 0.030970050357805562,
+        "cape_recoil_response": -0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": -0.018670671731896144,
+        "spread_paws_startled_flare": -0.018670671731896144,
+        "thought_cloud_attached_bloom": -0.018670671731896144,
+        "cape_recoil_response": -0.9308737486442041
+      }
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": -0.05808080808080803,
+        "spread_paws_startled_flare": -0.05808080808080803,
+        "thought_cloud_attached_bloom": -0.05808080808080803,
+        "cape_recoil_response": -0.866025403784439
+      }
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": -0.08666843360720897,
+        "spread_paws_startled_flare": -0.08666843360720897,
+        "thought_cloud_attached_bloom": -0.08666843360720897,
+        "cape_recoil_response": -0.7818314824680299
+      }
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": -0.10388137939158337,
+        "spread_paws_startled_flare": -0.10388137939158337,
+        "thought_cloud_attached_bloom": -0.10388137939158337,
+        "cape_recoil_response": -0.6801727377709191
+      }
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": -0.10916747651441519,
+        "spread_paws_startled_flare": -0.10916747651441519,
+        "thought_cloud_attached_bloom": -0.10916747651441519,
+        "cape_recoil_response": -0.5633200580636227
+      }
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": -0.10197455605618862,
+        "spread_paws_startled_flare": -0.10197455605618862,
+        "thought_cloud_attached_bloom": -0.10197455605618862,
+        "cape_recoil_response": -0.43388373911755834
+      }
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": -0.0817504490973879,
+        "spread_paws_startled_flare": -0.0817504490973879,
+        "thought_cloud_attached_bloom": -0.0817504490973879,
+        "cape_recoil_response": -0.2947551744109047
+      }
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": -0.0479429867184969,
+        "spread_paws_startled_flare": -0.0479429867184969,
+        "thought_cloud_attached_bloom": -0.0479429867184969,
+        "cape_recoil_response": -0.14904226617617528
+      }
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.0,
+        "spread_paws_startled_flare": 0.0,
+        "thought_cloud_attached_bloom": 0.0,
+        "cape_recoil_response": -2.4492935982947064e-16
+      }
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.06206317303256054,
+        "spread_paws_startled_flare": 0.06206317303256054,
+        "thought_cloud_attached_bloom": 0.06206317303256054,
+        "cape_recoil_response": 0.14904226617617392
+      }
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.13596116657341162,
+        "spread_paws_startled_flare": 0.13596116657341162,
+        "thought_cloud_attached_bloom": 0.13596116657341162,
+        "cape_recoil_response": 0.29475517441090343
+      }
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.21884110787171995,
+        "spread_paws_startled_flare": 0.21884110787171995,
+        "thought_cloud_attached_bloom": 0.21884110787171995,
+        "cape_recoil_response": 0.4338837391175579
+      }
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.30785012417665514,
+        "spread_paws_startled_flare": 0.30785012417665514,
+        "thought_cloud_attached_bloom": 0.30785012417665514,
+        "cape_recoil_response": 0.5633200580636215
+      }
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.4001353427373836,
+        "spread_paws_startled_flare": 0.4001353427373836,
+        "thought_cloud_attached_bloom": 0.4001353427373836,
+        "cape_recoil_response": 0.6801727377709194
+      }
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.4928438908030741,
+        "spread_paws_startled_flare": 0.4928438908030741,
+        "thought_cloud_attached_bloom": 0.4928438908030741,
+        "cape_recoil_response": 0.7818314824680296
+      }
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.5831228956228959,
+        "spread_paws_startled_flare": 0.5831228956228959,
+        "thought_cloud_attached_bloom": 0.5831228956228959,
+        "cape_recoil_response": 0.8660254037844384
+      }
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.668119484446015,
+        "spread_paws_startled_flare": 0.668119484446015,
+        "thought_cloud_attached_bloom": 0.668119484446015,
+        "cape_recoil_response": 0.9308737486442042
+      }
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.7450735489000793,
+        "spread_paws_startled_flare": 0.7450735489000793,
+        "thought_cloud_attached_bloom": 0.7450735489000793,
+        "cape_recoil_response": 0.9749279121818235
+      }
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.8126130105721943,
+        "spread_paws_startled_flare": 0.8126130105721943,
+        "thought_cloud_attached_bloom": 0.8126130105721943,
+        "cape_recoil_response": 0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.8704342992608298,
+        "spread_paws_startled_flare": 0.8704342992608298,
+        "thought_cloud_attached_bloom": 0.8704342992608298,
+        "cape_recoil_response": 0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.9182613305062286,
+        "spread_paws_startled_flare": 0.9182613305062286,
+        "thought_cloud_attached_bloom": 0.9182613305062286,
+        "cape_recoil_response": 0.9749279121818237
+      }
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.9558180198486321,
+        "spread_paws_startled_flare": 0.9558180198486321,
+        "thought_cloud_attached_bloom": 0.9558180198486321,
+        "cape_recoil_response": 0.9308737486442041
+      }
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.9828282828282827,
+        "spread_paws_startled_flare": 0.9828282828282827,
+        "thought_cloud_attached_bloom": 0.9828282828282827,
+        "cape_recoil_response": 0.8660254037844392
+      }
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.9990160349854228,
+        "spread_paws_startled_flare": 0.9990160349854228,
+        "thought_cloud_attached_bloom": 0.9990160349854228,
+        "cape_recoil_response": 0.78183148246803
+      }
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 1.004105191860294,
+        "spread_paws_startled_flare": 1.004105191860294,
+        "thought_cloud_attached_bloom": 1.004105191860294,
+        "cape_recoil_response": 0.6801727377709192
+      }
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.9978212641477948,
+        "spread_paws_startled_flare": 0.9978212641477948,
+        "thought_cloud_attached_bloom": 0.9978212641477948,
+        "cape_recoil_response": 0.5633200580636228
+      }
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.9802279353299761,
+        "spread_paws_startled_flare": 0.9802279353299761,
+        "thought_cloud_attached_bloom": 0.9802279353299761,
+        "cape_recoil_response": 0.43388373911755845
+      }
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.9521433970413562,
+        "spread_paws_startled_flare": 0.9521433970413562,
+        "thought_cloud_attached_bloom": 0.9521433970413562,
+        "cape_recoil_response": 0.294755174410904
+      }
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.9144879308144612,
+        "spread_paws_startled_flare": 0.9144879308144612,
+        "thought_cloud_attached_bloom": 0.9144879308144612,
+        "cape_recoil_response": 0.1490422661761754
+      }
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.868181818181818,
+        "spread_paws_startled_flare": 0.868181818181818,
+        "thought_cloud_attached_bloom": 0.868181818181818,
+        "cape_recoil_response": 3.6739403974420594e-16
+      }
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.814145340675953,
+        "spread_paws_startled_flare": 0.814145340675953,
+        "thought_cloud_attached_bloom": 0.814145340675953,
+        "cape_recoil_response": -0.14904226617617466
+      }
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.7532987798293919,
+        "spread_paws_startled_flare": 0.7532987798293919,
+        "thought_cloud_attached_bloom": 0.7532987798293919,
+        "cape_recoil_response": -0.29475517441090326
+      }
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.686562417174662,
+        "spread_paws_startled_flare": 0.686562417174662,
+        "thought_cloud_attached_bloom": 0.686562417174662,
+        "cape_recoil_response": -0.4338837391175578
+      }
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.6148565342442889,
+        "spread_paws_startled_flare": 0.6148565342442889,
+        "thought_cloud_attached_bloom": 0.6148565342442889,
+        "cape_recoil_response": -0.5633200580636222
+      }
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.5391642371234207,
+        "spread_paws_startled_flare": 0.5391642371234207,
+        "thought_cloud_attached_bloom": 0.5391642371234207,
+        "cape_recoil_response": -0.68017273777092
+      }
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.46093294460641415,
+        "spread_paws_startled_flare": 0.46093294460641415,
+        "thought_cloud_attached_bloom": 0.46093294460641415,
+        "cape_recoil_response": -0.7818314824680296
+      }
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.38181818181818156,
+        "spread_paws_startled_flare": 0.38181818181818156,
+        "thought_cloud_attached_bloom": 0.38181818181818156,
+        "cape_recoil_response": -0.8660254037844378
+      }
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.3034764555172718,
+        "spread_paws_startled_flare": 0.3034764555172718,
+        "thought_cloud_attached_bloom": 0.3034764555172718,
+        "cape_recoil_response": -0.9308737486442046
+      }
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.2275642724622319,
+        "spread_paws_startled_flare": 0.2275642724622319,
+        "thought_cloud_attached_bloom": 0.2275642724622319,
+        "cape_recoil_response": -0.9749279121818235
+      }
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.1557381394116087,
+        "spread_paws_startled_flare": 0.1557381394116087,
+        "thought_cloud_attached_bloom": 0.1557381394116087,
+        "cape_recoil_response": -0.99720379718118
+      }
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.08965456312395097,
+        "spread_paws_startled_flare": 0.08965456312395097,
+        "thought_cloud_attached_bloom": 0.08965456312395097,
+        "cape_recoil_response": -0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": 0.03097005035780534,
+        "spread_paws_startled_flare": 0.03097005035780534,
+        "thought_cloud_attached_bloom": 0.03097005035780534,
+        "cape_recoil_response": -0.9749279121818237
+      }
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": -0.018670671731896144,
+        "spread_paws_startled_flare": -0.018670671731896144,
+        "thought_cloud_attached_bloom": -0.018670671731896144,
+        "cape_recoil_response": -0.9308737486442048
+      }
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": -0.05808080808080788,
+        "spread_paws_startled_flare": -0.05808080808080788,
+        "thought_cloud_attached_bloom": -0.05808080808080788,
+        "cape_recoil_response": -0.8660254037844392
+      }
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": -0.08666843360720908,
+        "spread_paws_startled_flare": -0.08666843360720908,
+        "thought_cloud_attached_bloom": -0.08666843360720908,
+        "cape_recoil_response": -0.7818314824680301
+      }
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": -0.10388137939158337,
+        "spread_paws_startled_flare": -0.10388137939158337,
+        "thought_cloud_attached_bloom": -0.10388137939158337,
+        "cape_recoil_response": -0.6801727377709192
+      }
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": -0.10916747651441522,
+        "spread_paws_startled_flare": -0.10916747651441522,
+        "thought_cloud_attached_bloom": -0.10916747651441522,
+        "cape_recoil_response": -0.563320058063623
+      }
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": -0.10197455605618862,
+        "spread_paws_startled_flare": -0.10197455605618862,
+        "thought_cloud_attached_bloom": -0.10197455605618862,
+        "cape_recoil_response": -0.43388373911755856
+      }
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": -0.0817504490973879,
+        "spread_paws_startled_flare": -0.0817504490973879,
+        "thought_cloud_attached_bloom": -0.0817504490973879,
+        "cape_recoil_response": -0.2947551744109058
+      }
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "mindblown_face_and_shoulders_recoil": -0.04794298671849673,
+        "spread_paws_startled_flare": -0.04794298671849673,
+        "thought_cloud_attached_bloom": -0.04794298671849673,
+        "cape_recoil_response": -0.14904226617617375
+      }
+    }
+  ],
+  "candidate_sha256": "145a13ac45b1c79eafee9889eff775e6bef66703de0a317361040c40db11aee1",
+  "poster_sha256": "fca7bd59661465ab4f323964801136ee047b7513a0b6aa46afffbbc001d122a2",
+  "bytes": 258915,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "output_pts": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "decoded_png_sha256": [
+    "5d3002459f9ef72119dc3b9988a9b305c0c924a3c50500096389ab2720d0cb26",
+    "508f8781f85356877311fe500d9fa3d99aae0ca9da09a9308add6a8d5164875c",
+    "8d1b23d9bf4291d285db09510aa4da31c699370419fde8e240d10c830ce2c719",
+    "ff74ad14091568d940f1174eb090dcbc57a8084e11b074a759c972f1e81d87bd",
+    "f923c51b81b3cb3996e0d43a96457fd39ef463769f389abf3bd3ebb377e656bf",
+    "33b92ebf3c7f26fd16d329e126a5f40381b95b5e9ee1bf6b26cc168ecb870f82",
+    "8ab0f90055683ffa5ef3751e45ab2278dcd2c7275cab6f4b24df40c1e8459e42",
+    "ae34289fa530589bf8d5a4dbbdc2d7a3da4d9b20104ee9d1fd7e3d876312f1da",
+    "254db2adb6f98ebd5632496ce50a1c4b316d9d5e1cf595a88bc53fec7c7774e7",
+    "8aa4af6bb4b6e3312b57dd3bbaebd51756da61f08532472f78bb2f5e32d45237",
+    "791dafc1f0aee1be107dd6e79e8457291c76852525e7b7499ad78b31353f4f97",
+    "82d5d9ffd959a210122197c98fbcf33f33fdb60572e711f386ddcc2a9308b0fa",
+    "2dd5203af622fbea26db8508f9a519a1024bd692028a119eb5a8c22944bf409b",
+    "f422ed076fd7d3f98158dd58ed76910fc2bed581ae0e480b0f9e5ce3c21bb213",
+    "357cb50b5aa2428f4971e5ede7e16985b61023e1c69e75c4738612967f363c96",
+    "e0b5847154644f8472bfaec1d9d0a803f85f0fd186199e6b876c7f31b8f6bbbc",
+    "ce32e076d75c54f560ee19f61096ca6ecae5564dca704db07d8c8d20220f88b5",
+    "8f5197756ef3749e667edd7b95ff4e01a23e15d74d77ea03266cd55f212504f7",
+    "a621dfdc985990fd142e05213a33f88e132dd56a3634b2197cf16ca0163ec975",
+    "42449465806b7271da9d113f53aef671a472b0c24516e29379b4fadf02f9f398",
+    "04f3ad61a02166b85b1e06acc256557851feb555f108ed75f3c263748e0f8331",
+    "eafccde28904b3ad7daf822aaff3f07625225acf250e6d8fb518b18299d26c97",
+    "b16396a27f6e21cb1303bc8216e85d452c92f9c67abb2f4a05c19506addcd916",
+    "9ef2b47bac647ffba4914c54215528902f3895d1c318c039d0588f625d7c10c4",
+    "83427141357c925ecb2e47574c9714e60c4d198c9bb97aa1bc39495cf06a1726",
+    "ef9100f795b08b6e8e30f45e4f9f30ec2a9739fa958bc22ea66288c5163d2732",
+    "be31138f5b16b0d21c1df31f171c7ebad09414bc2a958312ecb3b5c232bb6420",
+    "e31f093172dcfaf94fa6872045c9c364ffd9df92e8c8df9a507d1358b3f95598",
+    "f4650689d92ef1b2300c991573e0c319ce4688c6f8d3b96d7970e4781dc304aa",
+    "8c465dc96d196a4d422a24383bf62aeaefd802d4a0f0b5c6ee3429726d386db1",
+    "b58c4cf12dd57623eadeb6f88a82a5cd49424e4ff1551fd8f4c2a2f61b39832d",
+    "7bdb912423e9955d64b5c4bcb191c700f0f749d26f74d052fe19c2011189ac24",
+    "ed00ae5be8100c9a2d1880251a8e5f8664e798c56d9845cd37aabf4cbd2399fa",
+    "a123a028b4debdf5ded6689f44d3bf54df96e5ccfa8697b84fc7139c986efb96",
+    "549ef1509dc70f7c616e7a5bdd27e38bb79cf366a6fcc676377eb8bee313c165",
+    "a20eb10b5d042e20a8e803f54700bc5617eef37b99ef11bb515474c07b7e6956",
+    "24660fd11566159783a105a55ba3cc95cef6efcc4b209b557bec5bec2e3595c4",
+    "109441b0ff54f9fb81323a844a3a409527c6a74a75f39af65d73bfef1e59ac37",
+    "fe9e40f6c86d16daaa373d6a39151de0024ffa9fbd1ca3d73dbaef5e17baa4d8",
+    "87bd81e93ea687c8b5d2aba37521ac8df5dc180426f69110398b0dedb12131e6",
+    "a09ad61af72258f772f3e9cfe8063adf5f1a8def5f0a9d7c28b7bc03432bcb96",
+    "8de63dd673c64bd79eb9ca455d350198cda6ccb174b35441f6f8f26bb80efac0",
+    "2a44c889fd1b47505d073b1a4c999a6e2299d71fdd0e2df88160591d001df2ec",
+    "0f9e6ebbd8c240ab021f24374e10badb87bc41fd3af57972b14193c0c80ca4a5",
+    "d67c0007d8cfbf44e432fabcd9f90365e1f99bcbcb6017922942f1b5bbb05ddb",
+    "b0a846424693686acfbfc2da543e66992815c45fea42dca965800235f4809c41",
+    "cd20b5183639b79fec968d692178a82ecc7790ec90a74f9fa6c84a84e05d50e7",
+    "f765f97f06ca40204d614060922b1f324b209c5f11ad44252575c60edecfcc5d",
+    "dcc38071e597f544847117afefacabb570b1740f7625adea807d04528994e4af",
+    "59c6ecbc490336c87d5ce43096f9fa6de27103872b2b4c48e1188ca03dfab53c",
+    "c533a9af4241b75f371ebd42ef24aa4d5f5019d3643a58b20d54ea55ddc19a16",
+    "fe6d4ae8dd2b82cf1147a2e6e0ff61357830bd272f9c750157dc4fc1a76cbeb2",
+    "9e9db1f4785e28d8324fcf296f796f8169921ef9746ba85865643fb13a5cb369",
+    "70cc0ff82e550307eb1765e106dbc57bdb0b6284e1aeb455461df2c0bcfb64f1",
+    "0abb300daba80fef0e284eae5403626c5dad1f02a6e24e7d3f89e89f5df907c5",
+    "9b4095b4254dbfff30c1f52787df0a2a7a9449e3c89ea42faa6b88e8f4926645",
+    "c6ec8aace2d715bc4451b33a9493904699b8c8bcfd8969cec74f6782fde963d0",
+    "c4ac5673857f2a791b40946cfca328fe73ba494f534812b95a2f9a5ec478f7e0",
+    "373912afe44df9fe61f20b3720a44f580f546d0c3754935de6189acf4e389fe9",
+    "459706442a65a9c962fc7dc87ae7c6e39aef1cab19be6af363ebf04f9f7236d3",
+    "18a1e372817f7fb03c7ea0f5061ed1fd5bd6e77921a90914fc906e84627635f2",
+    "370ca4191aa4fc5cd1f52d6fdb67e053a6a12365398b0fb3f3a2cccbeab83066",
+    "6fed58ffa97f91cdd964ace336630e7ac94428a55e72922991b66d829079f9f8",
+    "1b2284c47bb24b07f609930a3ecfec02344eb0f037692a2dc9737932ec95e261",
+    "325e7b221f5ebc9d85a6c565b18624e507a7b1a139345a98639e4470ddab6574",
+    "c7766c10d9952d1b81fec88d15baa64a20943ad52b831ad3714476182a4e0bcb",
+    "080f599c401a2408dfb26d3d821de8b2c2edf6171d5b1725315e69a66775a6cd",
+    "ad7d20ef00a65154fae4888808090710db0dd89771980b21f9a4d156c2857f5a",
+    "78234bea33b8f2d2d28048f5f383a3ca09949dcf39a4e03050d57d96e6c8dd00",
+    "69dd08e271ea89f6fcd7767870c14332052f81161a88629d126b4133345373ec",
+    "171e9602d432461f974882378112a499a480cd9692239e21fe0f3c27112d6dce",
+    "ecadfa7589f1ac7b782069f6e43758f06f35cb9059460d68218962c17ea0af15",
+    "28e624666e3dfc5d56acfb8ee4500fa8ae1ef2f62edca58a520a1c12b4ba79b9",
+    "f794fc960e67350a867912f370ef520c8e8557bdd980f53678abd8f000d33099",
+    "0e77fdf33f20a6200fda5b688db91f7b7f89c98a14cf4391aa8ddf670691ed20",
+    "2df9304c92f8c42c9eb2521e9b2d0ec1aa793f303c95ce278fa58919b4a53219",
+    "0bd765a9857e5511931f4978d94366bfc3c0f34592e64f303510184e06a7ad84",
+    "510a562b61071b4200c94bad1e2b76f840c8ead8e94235f851e34ae8d304f4a3",
+    "f514c2d074cfa9198a035345e1f382464385b347add38c315821b48b1e377fa2",
+    "109b8fb10aca16a98f2a014c6a5fdfbe91e2e7104d50f7b2cefd4a2628b8f477",
+    "951c69dcc9ec23e0a3abe758e281e4400b174a1d2718e94283e9979d3a064267",
+    "cf69d3f5aa5b44468ace5ba6cbfba17656dca2cb3732eef0e1554087a5fed6db",
+    "b40545a6b1c5b0acb8c55f1d2f2882629ae96a2f19e5445a921cf402223c21da",
+    "cc0cffab41eac725cd4522269c784c369ab3523f45b221223b3ab8cf1eef3a2c"
+  ],
+  "frames_rgba_png_sha256": [
+    "e4fa8b27a13c5a36e1fd1bb2839edb9a7e6266abc5985d0d75a125e57fa6f64d",
+    "99c81b50dfb54ab76151f9b5d957afa6857fdaf120015b60a021c20b9c90eb63",
+    "b923ad85678f433fec8052a1e4f32475e7d534a6d867d2cb34d23010e9cb1720",
+    "43fd909ffee242f271c4ddea3f222b05ae59ceae2549173a01ed59fc68588694",
+    "60426ab7b7b2f935653317cceb3f96073309bc8dc9332e51a6b5d2671d89f5f3",
+    "a5285a1a8babed287fbca202f483801cc344e5e0cf5e4c3cd52ccd3927c7af7b",
+    "f09b15a189b8a4811f62b5e73d4ec43113769834f5e56d05c4b35603d09e1b86",
+    "5b7577cad940f38deba4f882f1a681aa110a0724f85b5ded1239f25bdc84c4df",
+    "aa7e8bcd9c75dc482058db9a07bcc9d91192bb978d24e02c015855d13e2696e7",
+    "6794ff8ef178b986e9bde1a631c8342e8a09f2707e3cab33e890386b8de0ab0f",
+    "7a61ff4b93b03cb417972d2bb2b276bd61e0419de69b436d24ffbd3423b3aa1c",
+    "463fbc4f982e2bcdb6c747812fc44075a4ece8ee1d61f19f02ba5166b872db10",
+    "241fdcfba7b6f258fcf55e138dee19ae66d729b8019de6308744c9ea96967fbd",
+    "8c58f6761947cc93829767070adc0c82ff3fbde1ecf875f7ff2d0aaeef67b95b",
+    "e6cb4766169371ee2f751f682dda3f5231813e057e859cdfb6598677fcb6b531",
+    "7ddeccdde787d8ed33cd9070479741d825d7680e99c4a654aa9699b738a397f7",
+    "dd2c6f98fa7f07d366b05d80a70bbbabb558aca59889614a81ddb8a56a5ec7a6",
+    "5b3c40e1d6b8cd522b89364303731c24e12d18a284c0c218f6f136a6ec18f8a3",
+    "0d0f2a646e3ce9b53bb28ece6e57094ece25eef8962f992395f974e5efcdb65a",
+    "6df568d5ee0be5baee9eac4fac9d796aa5e5afdc8793ccd442fdc29af0fd2489",
+    "bf9acbf9fdaf328939783265afc2ac164571546ce0f777ea51a8e7a8b626562a",
+    "c5bab66424454280536200777ee4cf7cc48e565825c267451b2abf46e79d74ec",
+    "cfd2fc3cace30a8f7acca4ca50b4716a69caa444841cab42d4ee734ddabcd4ce",
+    "29bf4aa34ed9ad9f3e36dac0007d544f16a0505a176e38a590234bff0d7c7207",
+    "dbb17c4b29b0dd6c5a6ac6fa45ada7a7bf6b37061e8555de916df55be7ec007d",
+    "41946d94dd97dd59c97be0a12f0d801bb54a237721e707b0a5289f58b689fc5c",
+    "2fd51962b5d898fc53899eafaece02761d4c8827ef9afc95e02fd0ebf39139a5",
+    "3ef5583b12478a3111b5c4fe803beac15ecc807b6e83b675198f1e2bcba361b9",
+    "82eb7c8fcc1ac8cb3da2edca6d1a2d615adb080cc90fd8fd973733d264bff1f1",
+    "ced11931c33bd921639cef66b91f77e0e33b34819561d4ac894d083ca3edd6e5",
+    "275df2344e128cbcf6a1591ac90c419b9adfe48d23fe1921401c02625fe6790d",
+    "c256405d4c0b65b1bbad1b1980883efa8379ca8bd1f5ea94063ddd6bddd9d7b5",
+    "541d167c9bb7f4e20ae8b421a66906b3ed25d25ecb3f15ecc9019f7caf4942b9",
+    "b7000748de10972a3444662afa67a6534d729e2786bc4fa4d54a7691aa9e9d5a",
+    "0cc2513339c988653e90e7176956318318e4773634eadf7e70bbdc8e08590f89",
+    "e5a24f70f313023b78e0bdfe0762d3b9b55d0277f1d8d8d3162d592c76c4e903",
+    "e21a56a3e66e76a63a8bdf0b3404f74b0a47ee01781be0657cefbddc0176cbdb",
+    "6014a7f3205bf245a6e5ab68ffb65419bfa6e47bba8059f5065335684f42a904",
+    "0fd71aa050e92c204278cdec3573d01d06f5af172e1f481ad980530cbc6570f7",
+    "bc853882cdaf7f5571a687126f45d9284cdf31cbfac7133546180fd0513e75e6",
+    "c4a539a5c85c4445ac42814960745618fcda8c970538bc4fe7440df597658e85",
+    "d395176781cb33e1ce777e13b8dc94998f15080858e5ece180f8dc9c06b73caf",
+    "e4fa8b27a13c5a36e1fd1bb2839edb9a7e6266abc5985d0d75a125e57fa6f64d",
+    "99c81b50dfb54ab76151f9b5d957afa6857fdaf120015b60a021c20b9c90eb63",
+    "b923ad85678f433fec8052a1e4f32475e7d534a6d867d2cb34d23010e9cb1720",
+    "43fd909ffee242f271c4ddea3f222b05ae59ceae2549173a01ed59fc68588694",
+    "60426ab7b7b2f935653317cceb3f96073309bc8dc9332e51a6b5d2671d89f5f3",
+    "a5285a1a8babed287fbca202f483801cc344e5e0cf5e4c3cd52ccd3927c7af7b",
+    "f09b15a189b8a4811f62b5e73d4ec43113769834f5e56d05c4b35603d09e1b86",
+    "5b7577cad940f38deba4f882f1a681aa110a0724f85b5ded1239f25bdc84c4df",
+    "aa7e8bcd9c75dc482058db9a07bcc9d91192bb978d24e02c015855d13e2696e7",
+    "6794ff8ef178b986e9bde1a631c8342e8a09f2707e3cab33e890386b8de0ab0f",
+    "7a61ff4b93b03cb417972d2bb2b276bd61e0419de69b436d24ffbd3423b3aa1c",
+    "463fbc4f982e2bcdb6c747812fc44075a4ece8ee1d61f19f02ba5166b872db10",
+    "241fdcfba7b6f258fcf55e138dee19ae66d729b8019de6308744c9ea96967fbd",
+    "8c58f6761947cc93829767070adc0c82ff3fbde1ecf875f7ff2d0aaeef67b95b",
+    "e6cb4766169371ee2f751f682dda3f5231813e057e859cdfb6598677fcb6b531",
+    "7ddeccdde787d8ed33cd9070479741d825d7680e99c4a654aa9699b738a397f7",
+    "dd2c6f98fa7f07d366b05d80a70bbbabb558aca59889614a81ddb8a56a5ec7a6",
+    "5b3c40e1d6b8cd522b89364303731c24e12d18a284c0c218f6f136a6ec18f8a3",
+    "0d0f2a646e3ce9b53bb28ece6e57094ece25eef8962f992395f974e5efcdb65a",
+    "6df568d5ee0be5baee9eac4fac9d796aa5e5afdc8793ccd442fdc29af0fd2489",
+    "bf9acbf9fdaf328939783265afc2ac164571546ce0f777ea51a8e7a8b626562a",
+    "c5bab66424454280536200777ee4cf7cc48e565825c267451b2abf46e79d74ec",
+    "cfd2fc3cace30a8f7acca4ca50b4716a69caa444841cab42d4ee734ddabcd4ce",
+    "29bf4aa34ed9ad9f3e36dac0007d544f16a0505a176e38a590234bff0d7c7207",
+    "dbb17c4b29b0dd6c5a6ac6fa45ada7a7bf6b37061e8555de916df55be7ec007d",
+    "41946d94dd97dd59c97be0a12f0d801bb54a237721e707b0a5289f58b689fc5c",
+    "2fd51962b5d898fc53899eafaece02761d4c8827ef9afc95e02fd0ebf39139a5",
+    "3ef5583b12478a3111b5c4fe803beac15ecc807b6e83b675198f1e2bcba361b9",
+    "82eb7c8fcc1ac8cb3da2edca6d1a2d615adb080cc90fd8fd973733d264bff1f1",
+    "ced11931c33bd921639cef66b91f77e0e33b34819561d4ac894d083ca3edd6e5",
+    "275df2344e128cbcf6a1591ac90c419b9adfe48d23fe1921401c02625fe6790d",
+    "c256405d4c0b65b1bbad1b1980883efa8379ca8bd1f5ea94063ddd6bddd9d7b5",
+    "541d167c9bb7f4e20ae8b421a66906b3ed25d25ecb3f15ecc9019f7caf4942b9",
+    "b7000748de10972a3444662afa67a6534d729e2786bc4fa4d54a7691aa9e9d5a",
+    "0cc2513339c988653e90e7176956318318e4773634eadf7e70bbdc8e08590f89",
+    "e5a24f70f313023b78e0bdfe0762d3b9b55d0277f1d8d8d3162d592c76c4e903",
+    "e21a56a3e66e76a63a8bdf0b3404f74b0a47ee01781be0657cefbddc0176cbdb",
+    "6014a7f3205bf245a6e5ab68ffb65419bfa6e47bba8059f5065335684f42a904",
+    "0fd71aa050e92c204278cdec3573d01d06f5af172e1f481ad980530cbc6570f7",
+    "bc853882cdaf7f5571a687126f45d9284cdf31cbfac7133546180fd0513e75e6",
+    "c4a539a5c85c4445ac42814960745618fcda8c970538bc4fe7440df597658e85",
+    "d395176781cb33e1ce777e13b8dc94998f15080858e5ece180f8dc9c06b73caf"
+  ],
+  "raw_rgba_rerender_exact_match": null,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "adjacent_composite_mae": [
+    0.7265326380729675,
+    0.8663732409477234,
+    0.9132267832756042,
+    1.0349955558776855,
+    0.9221077561378479,
+    1.0099045038223267,
+    0.89935702085495,
+    1.028978705406189,
+    0.6992378234863281,
+    0.7872770428657532,
+    0.4673255383968353,
+    0.5327848196029663,
+    0.34850338101387024,
+    0.3582676947116852,
+    0.19991619884967804,
+    0.45101046562194824,
+    0.11167129874229431,
+    0.2949293851852417,
+    0.4021896421909332,
+    0.6054604053497314,
+    0.490812748670578,
+    0.6715005040168762,
+    0.7059487700462341,
+    0.9092469215393066,
+    0.7224435806274414,
+    0.8249133229255676,
+    0.8230215907096863,
+    1.043689250946045,
+    0.7601282000541687,
+    0.965656578540802,
+    0.6501761674880981,
+    0.854299783706665,
+    0.6510984301567078,
+    0.4603027105331421,
+    0.4411134719848633,
+    0.42616692185401917,
+    0.21660049259662628,
+    0.20198971033096313,
+    0.17659886181354523,
+    0.40902164578437805,
+    0.5023443102836609,
+    0.60617995262146,
+    0.6962652206420898,
+    0.9010770916938782,
+    0.901778519153595,
+    1.0118058919906616,
+    0.9467251896858215,
+    1.1126385927200317,
+    0.8530213832855225,
+    0.9512152671813965,
+    0.687467634677887,
+    0.7299779057502747,
+    0.5341768860816956,
+    0.5196782946586609,
+    0.38160836696624756,
+    0.6042509078979492,
+    0.16969524323940277,
+    0.12667793035507202,
+    0.12991945445537567,
+    0.30465152859687805,
+    0.33483362197875977,
+    0.4838494062423706,
+    0.5634660124778748,
+    0.7964091897010803,
+    0.642532467842102,
+    0.7742800116539001,
+    0.7891831398010254,
+    0.9398596882820129,
+    0.7525752186775208,
+    1.0727139711380005,
+    0.7481768727302551,
+    0.9232180714607239,
+    0.6665839552879333,
+    0.8145782351493835,
+    0.662813127040863,
+    0.4608985483646393,
+    0.4598420560359955,
+    0.37438392639160156,
+    0.2448117733001709,
+    0.3988332748413086,
+    0.1356794685125351,
+    0.34223246574401855,
+    0.6339151859283447
+  ],
+  "seam_composite_mae": 0.5849134922027588,
+  "review_video_validation": {
+    "normal": {
+      "sha256": "367f1360593feaa0a78afc689cf557d9e06577b58d2e42ad52535aad129a8ecf",
+      "bytes": 181035,
+      "duration": "2.800000",
+      "decoded_frames": "84",
+      "full_decode": "passed"
+    },
+    "slow": {
+      "sha256": "8cfee2acc9fceff52b5d4a27fc32ffa23dcdb6d1e33774ed532887ac7d8d7fe9",
+      "bytes": 261798,
+      "duration": "5.600000",
+      "decoded_frames": "84",
+      "full_decode": "passed"
+    }
+  },
+  "source_review": "Every selected source PNG individually inspected at native512. Exact selected source indices/hashes are recorded above. Original84-frame before sequence remains available for independent QA.",
+  "candidate_visual_review": {
+    "actual_agent_id": "/root/artisan_stickers_b",
+    "full_ordered_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "full_frame_tile_px": 224,
+    "native512_after_frames": [
+      0,
+      10,
+      21,
+      31,
+      42,
+      53,
+      63,
+      73,
+      83
+    ],
+    "scope": "Every final decoded frame inspected in ordered224px boards, plus9native512phase/loop images. Author review only; no native realtime/slowed/device perception claim.",
+    "observation": "Scene-specific gesture/props/contacts retained, no double-exposure contour or limb swap observed in this author scope; independent per-item QA required."
+  },
+  "independent_review": "pending",
+  "native_playback": "unknown",
+  "device_playback": "unknown",
+  "canonical_assets_changed": false,
+  "limits_checked": {
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "side": 512,
+    "fps": 30,
+    "seconds": 2.8,
+    "max_bytes": 262144
+  },
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_101/review-normal.mp4",
+      "sha256": "367f1360593feaa0a78afc689cf557d9e06577b58d2e42ad52535aad129a8ecf",
+      "bytes": 181035,
+      "frames": 84,
+      "duration": 2.8
+    },
+    {
+      "path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_101/review-slow.mp4",
+      "sha256": "8cfee2acc9fceff52b5d4a27fc32ffa23dcdb6d1e33774ed532887ac7d8d7fe9",
+      "bytes": 261798,
+      "frames": 84,
+      "duration": 5.6
+    }
+  ],
+  "review_validation_scope": "Actual copied target paths must pass shared freeze_guard synchronously before package publication. Source validation alone is insufficient.",
+  "frozen_at": "2026-10-30T18:51:48.565173+00:00"
+}

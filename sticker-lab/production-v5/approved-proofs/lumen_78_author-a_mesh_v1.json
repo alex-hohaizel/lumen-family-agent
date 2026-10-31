@@ -1,0 +1,2014 @@
+{
+  "schema_version": 1,
+  "id": "lumen_78",
+  "candidate": "lumen_78_author-a_mesh_v1",
+  "created_at": "2026-10-30T18:51:02.651980+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_78/source.webm",
+  "source_video_sha256": "c4e3d8fba1abd311264398da4270c75927681d27450a584f2c1b2367355f4ce5",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "53a1991dcebff8032a76780c3297e62d1cb4c3ee0029700022bde533b26aa204",
+  "derived_source_frames": [
+    {
+      "index": 32,
+      "seconds": 1.0666666666666667,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_78/source-frames/032.png",
+      "decoded_png_sha256": "b70352cbe3079c5665e5c52730e0ed14718310fa3738d9acf01831d93abf5b53"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "e16a89c76a087fbb7f5cc8e1a6fe700a7342e78881525bef9fd1bc7f67deaf54",
+  "source_frame_count": 84,
+  "source_action_frames": [
+    32
+  ],
+  "method": "shared_local_mesh_v1",
+  "character_semantics": {
+    "core_scene": "Deeply bored skeptical half-lid side-eye, slouched seated body, same cheek-supported palm and one turquoise cup.",
+    "omitted_optional_action": "Blink and all incompatible hand/head transfers omitted. No second cup, switched support hand or synthetic eye change.",
+    "reversibility_or_contact": "Cheek and support-paw contact share the head settle; elbow stays grounded. Cup rim/base/handle and free hand pinned independently; only head/neck/cape sag."
+  },
+  "semantic_tradeoff": "Blink and all incompatible hand/head transfers omitted. No second cup, switched support hand or synthetic eye change.",
+  "not_recovered_original_art": true,
+  "not_rigid_global_transform": true,
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        32
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "bored_head_settle_into_same_support_palm",
+        "slow_tired_exhale_with_pinned_cup"
+      ]
+    }
+  ],
+  "candidate_sha256": "be3c59a425d886269230d4db02f61c631478fb2b1c22bbfbc2ceb2e17c988c64",
+  "poster_sha256": "6c4eb9291e10ee32d131cefa461f16227c2a71721679071f712edf87afc3d113",
+  "bytes": 143849,
+  "crf": 30,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "adjacent_composite_mae": [
+    0.01703568547964096,
+    0.008766005747020245,
+    0.0020600117277354,
+    0.006469333078712225,
+    0.0049828276969492435,
+    0.005398809444159269,
+    0.03980627283453941,
+    0.09210643917322159,
+    0.10846934467554092,
+    0.17564374208450317,
+    0.14330272376537323,
+    0.26213276386260986,
+    0.20473749935626984,
+    0.33206436038017273,
+    0.30309396982192993,
+    0.38671889901161194,
+    0.23372501134872437,
+    0.3790982663631439,
+    0.307585746049881,
+    0.5107020735740662,
+    0.28674376010894775,
+    0.4138983190059662,
+    0.36250269412994385,
+    0.5004581809043884,
+    0.31766119599342346,
+    0.36969515681266785,
+    0.3512265384197235,
+    0.4296594560146332,
+    0.31079337000846863,
+    0.48202940821647644,
+    0.2070273607969284,
+    0.3543285131454468,
+    0.20659159123897552,
+    0.2768283486366272,
+    0.2065117359161377,
+    0.27222880721092224,
+    0.10990806668996811,
+    0.18705737590789795,
+    0.06939198821783066,
+    0.2989635765552521,
+    0.011889897286891937,
+    0.03186938539147377,
+    0.007886286824941635,
+    0.05548335239291191,
+    0.013633917085826397,
+    0.08339396864175797,
+    0.08453285694122314,
+    0.17791251838207245,
+    0.10138193517923355,
+    0.23729683458805084,
+    0.1532718390226364,
+    0.20379452407360077,
+    0.23308463394641876,
+    0.2957477271556854,
+    0.29171037673950195,
+    0.44883421063423157,
+    0.2643715441226959,
+    0.2959881126880646,
+    0.38161924481391907,
+    0.48691272735595703,
+    0.29125380516052246,
+    0.40554508566856384,
+    0.3942437469959259,
+    0.5192270874977112,
+    0.3322658836841583,
+    0.3483467400074005,
+    0.35439392924308777,
+    0.4751144349575043,
+    0.29328784346580505,
+    0.4752376079559326,
+    0.25532642006874084,
+    0.3652288019657135,
+    0.19052563607692719,
+    0.3095191419124603,
+    0.20547206699848175,
+    0.3083738684654236,
+    0.09756707400083542,
+    0.1350286900997162,
+    0.0948726162314415,
+    0.09731360524892807,
+    0.043623339384794235,
+    0.03432316705584526,
+    0.013690809719264507
+  ],
+  "seam_composite_mae": 0.029222188517451286,
+  "decoded_png_sha256": [
+    "d9774714b3768c8f01a91830fc25e998d03fce864ea1d550afb483d12ff9e567",
+    "4a5f1ddf4c0a2c288f1c42d41e56e780063d212099604db1d286c316c1085e90",
+    "ac550ea6723064398a1dc41c37aba652e8024e8d4580b3e4bfcd81b08ad5b21f",
+    "ebcf949e90a3d70c42ec29ed02ebdf47e49ae1ca8f007566d575117ff29fbe4d",
+    "9ba033a780fc5d8e37a1f354f0a369089b43d8ee477e3b299049b85a7972c755",
+    "30b6ae1b74b74f205bfbee855605058a7eb359305ad70cf7d95495e668e221a8",
+    "d978239ff7a5d1cd02cd7a4ae04770d2b3f3af5d2e4b77a33ba61326ee9fe97c",
+    "dd31798995fa3795ecbf9c1f9a04597ded7c14747b6e741edcd125bfedf5356c",
+    "c4ac434e1e7c63559418198f78de389279691e346689a838e5ff29c2ddb5c718",
+    "57c14356c57aa4086b630900a4cc711de612ce9ab46b3e3cc6e8b147a126fbba",
+    "18cbfbda02a3359f7ae7c706ab0dbbfd42dbeddfea70c0d25dc7cf7e8b7e375b",
+    "31faff6aeb929224b44db89739c4b9ae67d312c7486e6de5cade94f0de673c48",
+    "51c56291cdfafb57be3831dc21b1f8927517db2cee5283d21d107c7c86319aa2",
+    "acaded4bac64f7fe47f2b3bd04fa63d63a0050e371387c3d2a9cf1f989b2dc50",
+    "21cbe8ab0085229c57b3e9677c6fbf6ac0a19f1612d79a4046e57519bac48bdb",
+    "462b6415a7481c8ce86b30b9ce26161f7c615e6a9098e6c27c140f5674cc97bc",
+    "425c7766248ca3bdb2841e96cfbe8ffea4e2a262313cea672182af21928beeb6",
+    "97aca381d8e692ef731a08ac9b36fc4702e09bfc98ecce9b34ea949395f01abf",
+    "2f225df786acfb519691af26d3ba100c250dc8d38ea73ac4eb599d5e41bc476c",
+    "7f4e474efdb6bc0c4d3fbd4de886992ee8d5b1b9bc8f036b3d5c298f6dd5f050",
+    "e997f45f51e0f45d59f87a80f34348d9fc65810618e6446df4fcba99ca6df9b3",
+    "01b471fbf234eec57b6fb155daed2779775229c4914d693d7c111ae33b511858",
+    "485ef402032f2efa24e24a42a45699ed86b1f03d813447a06c0cc33e29107a70",
+    "36ae577a77c23b391ae5633e95aaf6761f74e9e596b3b19427b1e77a4ae795d7",
+    "9599beecc299ea67a61e8e9d680ba427efc66cccde4847a38c12d13f6b1dcb22",
+    "12aa07448f31071e4748566d657518eb1f9d9618097ad46617d99ed27ae851ed",
+    "09cd6546aa055e2580a06e4bbbf4ff5d888d48b6336f19e23efee4d3f9c7fb44",
+    "58e7e9c818ebaef22d71a3a300d53ff7af8c670fbdf60eff9595c70f8b7df53a",
+    "ba8d23d666a01078eb47ff4690b48caacbb94fc92faacaaf62af03a7ec39e2d0",
+    "f356b6f262b07a48def3f017928f82a5df9f1edb7be48a60e6e758a46b6fa870",
+    "7ef688c1ce8d196012e16547361c66d96a3a4fa4d5bbd599681f35f345952e94",
+    "c1c46c611c1f1f57df45bae54987d3dd86965e70dacb72c447cc534263dc4590",
+    "23141171aebc731b2d46a7a9e987393c8286fde82c253ae717bb063db7f2fa8e",
+    "57ba66e4bc3c93afbcfce2e14b75f07a6e6193f8f0b55c5dc080e088492abe14",
+    "bf1ee9cb65a7da385b25aab812004c34f559f34b683ba999b238aaa44c7441f2",
+    "67cff67a2d2546f510a9b7da51a101d27c3addba7c1e3584ea92f1ed6c683ce1",
+    "739e3a37103b4b6c590fd63e9eee3dafbccb7cd1ee688e7d28c4918a5a081856",
+    "95e50c080357e8a29f0350e60b3f5a62b7c6219414b6e5b26ad6b35cb42be8e4",
+    "8a9e5cf1edcc2dfe32cd848fbb8dba57f2dba93392f93553672fdc9dd20c7f20",
+    "d5d4752b0e4aa394d86010d561216e573141ed00973a3cbb680e63ce8a0d2c79",
+    "c4f2769d60239e82532ac6acc0cd88af6bd9ce4770c4170143e32118aca76293",
+    "b833f828745e40f4ff5478747547a5ab30096937b26d280aa267d775d4176be2",
+    "7fd76c7456a5f1c77e5d144ac159ff35375cb4404ead1350096f5ee1c4bfd605",
+    "dfb4e36f1ea673f098af2dc80d1df4ec581ab61ecd72488c7d272f96b303acc2",
+    "20a420d127432aed89ce76ed778a33f7e9448c71a87be07e38204c71eb6774ac",
+    "85a189191d981c33aa046ddc3dae4c86777ae910bd484112b3aae6a24114c2bb",
+    "b827258f4326113c9a4a89abae42ae4366ca88e104c60a0b19ac1190afba065e",
+    "fd4706ad55cd6f849e6f4e132ff2c23c75d4b9f36125275ea3f47c20e97520bc",
+    "33cc72d76b721de4c18cade29e3452eb38e73c774fd54b733bd6da356af1f25c",
+    "21b00b550485e40b72cdab34189648a1be18eb4f27e3b04632dc18d675d840f0",
+    "5d7cd73c385adc7a33998371d3506953d870b8f06c803bca0f972eed18432a73",
+    "5ce4891c2ea93aca44dc7a57cd8c4920401f4fd747aadaabec07a0990aa4e5fd",
+    "bebafde577cadc2f77b6f89a930ff6d6918f98651a6ededfd8019d2eb4bc1315",
+    "214f9f20d3b3846a0258e34d3e48c72bd30c810b11e19e3430e1e331b746ede1",
+    "4deeecc2caef41810492c5c3b5490275e4f780ec511e0a5dd7c9c99460b63919",
+    "c3dd4218c744b83aab72ecc91938022fdd327d9af0e994c490c89bb93045fed8",
+    "3ff4ab884f1f447c298d2de62c637cad2cb737e8362c6eec04be6b1787e438af",
+    "83a8f89e09875af70404672ee6bed1e39abae7e0ed344cb85e95ccc36e27e528",
+    "74c6d402574b16a22743828ae179015747dbfef57c3853473d469ddf0e75dea5",
+    "55e4064a2d3386b3a1afcf54073025af94fc30f94b3f850373321b654b9bfad0",
+    "cfec4b05dd5b6d794b949340ca52f826ac8e85e146e730364cbce4d038c540f7",
+    "714e1da62e2ba627c4882b2e3d0d231a404b9354e22722ef1f7ed255a521575c",
+    "6596823338a6bf7396652200b3442df0b63844db294c4a6c102dbc37d88dbb3b",
+    "32e7c8fe48ffa11bff7c1610cc25457bc37e9b84cb17bae215d795aa283d0b68",
+    "62e733a1b056cb3ace3643bad70f5f78615da9277b1918dab6c4cbd651667083",
+    "2b7f17458ec0f663c05376c98c7b6027746d3e32aa382721a45e5be09d3b3437",
+    "691c4e13120c4a35e186b8ad945b2257ab259a760a59b6e4ade5ed79a0501547",
+    "4546190d6d8e76253397ae9bb095cd962905dfd736218159ddca050c74eb081c",
+    "aa5f7368b6176ee08e84af3df58e5e65883a99242ac86e3afdc130119141785b",
+    "6523e24bae117a774f369aa3a3723a86bbc3fa58fab14e6e5d5d02423ef904c1",
+    "401c9eb9145aa5ba7bf54343a4d4e5b7b3aa853680ac4ee325fd426ad7a110ea",
+    "01745d55ceff5a420a51ce064a6745d6a1399206ec69992505d450f123c5a2f0",
+    "a45aadd3cf4d0355ab2d0c63796500430f75ac932d0a962e1aac252ec22ddc9a",
+    "e180f172c182ed1c58654f58e44d54c2331a791221afd3194f57bcf3fd5a9820",
+    "61360a14f4cf6f7262018076184fbc6024c7af1acb6aae0f94872d5af7ce12f9",
+    "07655ecab5054ee0baac4039ba0c126e9ab753c53da259559ac0380f22e3d53e",
+    "e2a703403d92bad6ee06fbe55aff39dd1bd02791beff46478b008d47af004f1f",
+    "cecc5046ef35aa40a23efaa55e8e76cdbd0d12feae7e8f29d0a32be9bc6ba521",
+    "58f80793ccae77b194270c0f428f8f3def1a346fe807dbee4458ae4a97a5971b",
+    "ff76d41c66b6831476399c9e1e8c9000ac5d5245a80b99355f80bfaefb77b3c4",
+    "f3610cb700733bbe1549395699e86dc072a1a84e7353540c7c0495b72089e9c9",
+    "a35c491dca50957e69a7adbc6c086bb1bb04be6a8942a28d69cad18000dc677f",
+    "e12c3910a6c21d7c216f5980d35a9b82c62f4703612fb546f6c7652deb581e17",
+    "40c25fce87c59c297674d4d3d268b4960a542f54f2b22cc08f226ad20aad1ed7"
+  ],
+  "decoded_pts_seconds": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "timestamps_monotonic": true,
+  "native_streams": [
+    {
+      "index": 0,
+      "codec_name": "vp9",
+      "codec_long_name": "Google VP9",
+      "profile": "Profile 0",
+      "codec_type": "video",
+      "codec_tag_string": "[0][0][0][0]",
+      "codec_tag": "0x0000",
+      "width": 512,
+      "height": 512,
+      "coded_width": 512,
+      "coded_height": 512,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 0,
+      "sample_aspect_ratio": "1:1",
+      "display_aspect_ratio": "1:1",
+      "pix_fmt": "yuv420p",
+      "level": -99,
+      "color_range": "tv",
+      "field_order": "progressive",
+      "refs": 1,
+      "r_frame_rate": "30/1",
+      "avg_frame_rate": "30/1",
+      "time_base": "1/1000",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "nb_read_frames": "84",
+      "disposition": {
+        "default": 0,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0
+      },
+      "tags": {
+        "alpha_mode": "1",
+        "ENCODER": "Lavc60.31.102 libvpx-vp9",
+        "DURATION": "00:00:02.800000000"
+      }
+    }
+  ],
+  "native_duration": "2.800000",
+  "source_review": {
+    "agent": "/root/artisan_stickers_a",
+    "every_selected_sourceframe_observed": true,
+    "selected_frame_view_scale_px": 256,
+    "native512_frame_indices": [
+      32
+    ],
+    "observation": "Native32 shows one clear cheek contact, one cup and stable handle; source30–53 reviewed before choosing no-eye-blend stable pose. Exact sole source PNG inspected at native512; no source eye/limb/prop ghost accepted.",
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-inspection/meshes/78_anchor32.png"
+    ]
+  },
+  "candidate_visual_review": {
+    "agent": "/root/artisan_stickers_a",
+    "observed_all84_afterframes": true,
+    "frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "complete_review_scale_px": 256,
+    "native512_frame_indices": [
+      0,
+      17,
+      34,
+      59
+    ],
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-candidates/lumen_78_author-a_mesh_v1/after256-0.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_78_author-a_mesh_v1/after256-1.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_78_author-a_mesh_v1/after256-2.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_78_author-a_mesh_v1/after256-3.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_78_author-a_mesh_v1/native-author-0-17-34-59.jpg"
+    ],
+    "observation": "Actually viewed all 84 decoded frames at256 and native512 frames 0/17/34/59. The half-lidded bored face slowly settles into the same supporting cheek paw; cheek and fingers keep contact while the elbow remains supported. One turquoise cup keeps its rim/base/handle and location, free paw stays beside it. Eyelids/irises stay single and readable; no swapped support hand, extra cup, cup slide or cloth/limb morph seen. The subtle sag/exhale is deliberate for the tired scene.",
+    "native_realtime_perceptual_playback": false,
+    "slow_perceptual_playback": false,
+    "device_playback": false,
+    "author_verdict": "propose_for_independent_per_item_QA"
+  },
+  "baseline_independent_triage": {
+    "artifact": "docs/qa-1-13/sticker-triage-51-80.json",
+    "verdict": "repair_required",
+    "source_sha256": "c4e3d8fba1abd311264398da4270c75927681d27450a584f2c1b2367355f4ce5",
+    "defects": [
+      {
+        "frames": [
+          4,
+          8
+        ],
+        "reason": "Зміна лапи, що підпирає щоку, зроблена dissolve: f6 має напівпрозорі вертикальні передпліччя з обох боків шиї й розмиті дві пози кистей замість одного ясного контакту зі щокою/чашкою."
+      },
+      {
+        "frames": [
+          15,
+          19
+        ],
+        "reason": "Зворотна зміна підпори знову розчиняє передпліччя; f17 містить сірий старий контур від щоки до чашки та напівпрозору нову кисть."
+      },
+      {
+        "frames": [
+          25,
+          29
+        ],
+        "reason": "Повтор локального hand dissolve: f27 одночасно має старі руки біля шиї та нові кисті поруч із чашкою; анатомія не має одного сталого положення."
+      },
+      {
+        "frames": [
+          54,
+          61
+        ],
+        "reason": "Сильний head/body dissolve: f58 накладає кілька очей, носів, брів, правих вух і медальйонів; стара щока й рука стають прозорими."
+      },
+      {
+        "frames": [
+          65,
+          72
+        ],
+        "reason": "Ще одна велика зміна нахилу розчиняє голову: f68 має дві несумісні очні/носові позиції й темний matte над чубчиком, кілька медальйонних/шийних контурів."
+      }
+    ]
+  },
+  "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/recipe.json",
+  "recipe_sha256": "525651af8c046128b5ce65cc9123521af27e535390c2519e637838027bc7bc38",
+  "generator_snapshot": {
+    "engine_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+  "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+  "statistics": {
+    "minimum_jacobian": 0.9390149116516113,
+    "maximum_displacement_px": 12.27626895904541
+  },
+  "proposed_description_uk": "Байдуже підпирає щоку лапкою й повільно осідає в цю позу, дивлячись скоса з-під важких повік. Друга лапка лишається біля маленької бірюзової чашки.",
+  "independent_review": "pending",
+  "native_playback": "not_observed",
+  "device_playback": "not_observed",
+  "canonical_assets_changed": false,
+  "local_mesh": {
+    "source_frame": 32,
+    "points_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        511,
+        0
+      ],
+      [
+        0,
+        511
+      ],
+      [
+        511,
+        511
+      ],
+      [
+        256,
+        0
+      ],
+      [
+        0,
+        256
+      ],
+      [
+        511,
+        256
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        277,
+        83
+      ],
+      [
+        163,
+        124
+      ],
+      [
+        413,
+        165
+      ],
+      [
+        217,
+        259
+      ],
+      [
+        366,
+        282
+      ],
+      [
+        295,
+        280
+      ],
+      [
+        305,
+        316
+      ],
+      [
+        316,
+        344
+      ],
+      [
+        345,
+        338
+      ],
+      [
+        344,
+        353
+      ],
+      [
+        358,
+        409
+      ],
+      [
+        354,
+        443
+      ],
+      [
+        274,
+        359
+      ],
+      [
+        247,
+        382
+      ],
+      [
+        197,
+        417
+      ],
+      [
+        234,
+        443
+      ],
+      [
+        76,
+        399
+      ],
+      [
+        412,
+        414
+      ],
+      [
+        153,
+        468
+      ],
+      [
+        368,
+        459
+      ],
+      [
+        232,
+        411
+      ],
+      [
+        329,
+        411
+      ],
+      [
+        247,
+        475
+      ],
+      [
+        316,
+        475
+      ],
+      [
+        220,
+        438
+      ]
+    ],
+    "point_names": [
+      "corner_tl",
+      "corner_tr",
+      "corner_bl",
+      "corner_br",
+      "edge_top",
+      "edge_left",
+      "edge_right",
+      "edge_bottom",
+      "crown",
+      "ear_l",
+      "ear_r",
+      "eye_l",
+      "eye_r",
+      "nose",
+      "mouth",
+      "jaw",
+      "cheek_contact",
+      "support_paw",
+      "support_mid",
+      "support_elbow",
+      "neck",
+      "medal",
+      "free_paw",
+      "belly",
+      "cape_l",
+      "cape_r",
+      "foot_l",
+      "foot_r",
+      "cup_tl",
+      "cup_tr",
+      "cup_bl",
+      "cup_br",
+      "cup_handle"
+    ],
+    "parts": [
+      {
+        "name": "bored_head_settle_into_same_support_palm",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            9.432434240578743,
+            -2.38379572741934
+          ],
+          [
+            8.071000595599315,
+            -6.387314443721522
+          ],
+          [
+            6.487827985570732,
+            2.3125836396866646
+          ],
+          [
+            3.3266731997928503,
+            -4.584979974208522
+          ],
+          [
+            2.4332180014806113,
+            0.6010340559033125
+          ],
+          [
+            2.5462682765298155,
+            -1.8756118640124555
+          ],
+          [
+            1.2837946654307189,
+            -1.5485471243000006
+          ],
+          [
+            0.2999078549707406,
+            -1.1817095040378263
+          ],
+          [
+            0.4916388187395455,
+            -0.16596906177983328
+          ],
+          [
+            -0.03124445881707061,
+            -0.21000615319593408
+          ],
+          [
+            -0.49853617397245387,
+            0.06111827842711648
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.12,
+            0.4,
+            0.65,
+            0.88,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "slow_tired_exhale_with_pinned_cup",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1.3
+          ],
+          [
+            0,
+            0.8
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0.7
+          ],
+          [
+            -1,
+            0.6
+          ],
+          [
+            1,
+            0.6
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.18,
+            0.48,
+            0.72,
+            0.92,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      }
+    ],
+    "minimum_jacobian": 0.65,
+    "fluid_texture": null
+  },
+  "strongest_objection": {
+    "objection": "Removing the blink could leave only an unexpressive static bored pose.",
+    "author_response_and_limit": "The same half-lidded face slowly sags into its supporting hand, with a separate quiet exhale and stable cup/free hand. This is proportional to a bored slouch and explicitly omits a blink; actual timing/device perception is still unknown and must not be inferred from decoded frames.",
+    "independent_semantic_QA_required": true
+  },
+  "frozen_native_author_contact_sheet": {
+    "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/native-author-0-17-34-59.jpg",
+    "sha256": "ea3ac9e66de9443dd1d677add8d3e02a8791354a207e0e2f48db1b0bbb400dce",
+    "native_frame_scale_px": 512,
+    "frame_indices": [
+      0,
+      17,
+      34,
+      59
+    ]
+  },
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/review-normal.mp4",
+      "sha256": "20e503308d485c9c1537ef9a61fbe4bb0b0e47ab3cb425e7fb495df4134a7936",
+      "bytes": 160282,
+      "frames": 84,
+      "duration": 2.8,
+      "fps": 30,
+      "perceptually_watched": false
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/review-slow.mp4",
+      "sha256": "10c704133fb3fab136ca6fad5db5eb9fc61ca93642e520b763064ad26910fd15",
+      "bytes": 243302,
+      "frames": 84,
+      "duration": 5.6,
+      "fps": 15,
+      "perceptually_watched": false
+    }
+  ],
+  "reproducibility": {
+    "artifact": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/reproducibility.json",
+    "sha256": "91b8a9211b36023e5ccc9d17bd2225f834aa47abcb9971194f8e33f1cb983f82",
+    "raw_rgba_exact_match": true,
+    "encoded_frame_exact_match": true,
+    "canonical_video_read": false,
+    "container_bytes_exact_match": false
+  },
+  "candidate_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/candidate.webm",
+  "frozen_at": "2026-10-30T19:07:06.253123+00:00"
+}

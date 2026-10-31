@@ -1,0 +1,754 @@
+{
+  "schema_version": 1,
+  "id": "lumen_121",
+  "candidate_id": "lumen_121_scene-acting_a",
+  "engine_mode": "shared_local_mesh_v1",
+  "description_uk": "Мружиться від роздратування й намагається вивільнити одну ніжку із синьої нитки: підтягує лапку разом із її петлею та обережно опускає назад. Іншою ніжкою впирається, а розведеними лапками втримує рівновагу.",
+  "semantics": {
+    "core_scene": "Scrunched displeased face, one foot struggling inside attached blue-thread loop, opposite foot planted and paws balancing.",
+    "omitted_optional_action": "Does not claim successful untangling or moving thread tail.",
+    "contact": "Left-foot and its ankle-loop anchors move together; right foot, right loop, yarn connecting midpoint and free tail remain pinned."
+  },
+  "source_provenance": {
+    "kind": "derived_decoded_video",
+    "source_video_path": "sticker-lab/production-v5/approved-sources/lumen_121/source.webm",
+    "source_video_sha256": "4e3dd3938e66d06a0b10c0d712a47ad8ddc4bd7df466b7e0d371a2a31df3cf0f",
+    "ancestor_original_keyposes_sha256": "2ad6958de9c4df5877e1a0e5882b9db1d490f58d81d31335bbc036ee0438bc9d",
+    "ancestor_original_status": "unresolved_original_not_recovered",
+    "derived_source_bundle_sha256": "1d52a4d6c72df8ae8dd458a9ecf33716185f16ceba3abaf9d8d630099ccb5240",
+    "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+    "original_scene_prompt_english": "Як же неприємно. Scrunched squeezed-shut eyes, wavy tight mouth and tense cheeks, both paws pushing outward at chest height while loose thread harmlessly tangles around his feet. He recoils and tries to untangle one foot."
+  },
+  "source_frames": [
+    {
+      "index": 0,
+      "timestamp_seconds": 0.0,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_121/000.png",
+      "sha256": "cee05ca574d34ef01bd3d07cbe33552ea3058f18c0a6cbaba452829964037acb"
+    }
+  ],
+  "baseline_independent_triage": {
+    "artifact": "docs/qa-1-13/sticker-triage-111-139.json",
+    "verdict": "repair_required",
+    "source_sha256": "4e3dd3938e66d06a0b10c0d712a47ad8ddc4bd7df466b7e0d371a2a31df3cf0f",
+    "defects": [
+      {
+        "frames": [
+          4,
+          8
+        ],
+        "reason": "Нога зникає через темний/прозорий фантом, нитка локально розчиняється; f6."
+      },
+      {
+        "frames": [
+          15,
+          18
+        ],
+        "reason": "Перехід ноги дає напівпрозору ступню й нестійку прив’язку петлі."
+      },
+      {
+        "frames": [
+          25,
+          29
+        ],
+        "reason": "Зміна сторони кроку лишає фантомну руку/ногу й темні плями в силуеті."
+      },
+      {
+        "frames": [
+          33,
+          42
+        ],
+        "reason": "Накладення несумісних нахилів голови й тіла: подвійні носи/роти/вуха/руки, f37."
+      },
+      {
+        "frames": [
+          44,
+          52
+        ],
+        "reason": "Другий масивний dissolve, півголови й тулуба стають прозорим привидом, максимум f47–49."
+      },
+      {
+        "frames": [
+          56,
+          61
+        ],
+        "reason": "Піднята нога/нитка розчиняються з темним слідом, f58."
+      },
+      {
+        "frames": [
+          66,
+          71
+        ],
+        "reason": "Повернення стоп до старту через прозорий старий контур і нестійкі петлі нитки."
+      }
+    ]
+  },
+  "local_mesh": {
+    "source_frame": 0,
+    "points_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        511,
+        0
+      ],
+      [
+        0,
+        511
+      ],
+      [
+        511,
+        511
+      ],
+      [
+        256,
+        0
+      ],
+      [
+        0,
+        256
+      ],
+      [
+        511,
+        256
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        269,
+        85
+      ],
+      [
+        142,
+        110
+      ],
+      [
+        406,
+        154
+      ],
+      [
+        209,
+        205
+      ],
+      [
+        332,
+        207
+      ],
+      [
+        271,
+        236
+      ],
+      [
+        266,
+        271
+      ],
+      [
+        169,
+        295
+      ],
+      [
+        353,
+        304
+      ],
+      [
+        173,
+        340
+      ],
+      [
+        349,
+        339
+      ],
+      [
+        136,
+        369
+      ],
+      [
+        407,
+        377
+      ],
+      [
+        169,
+        412
+      ],
+      [
+        332,
+        413
+      ],
+      [
+        151,
+        465
+      ],
+      [
+        338,
+        465
+      ],
+      [
+        155,
+        426
+      ],
+      [
+        172,
+        447
+      ],
+      [
+        118,
+        449
+      ],
+      [
+        233,
+        451
+      ],
+      [
+        282,
+        448
+      ],
+      [
+        341,
+        426
+      ],
+      [
+        363,
+        447
+      ],
+      [
+        430,
+        454
+      ],
+      [
+        285,
+        395
+      ],
+      [
+        260,
+        323
+      ]
+    ],
+    "parts": [
+      {
+        "name": "left_foot_pulls_its_thread_loop_against_pinned_right_foot",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -5,
+            -1
+          ],
+          [
+            -5,
+            -2
+          ],
+          [
+            -5,
+            -1
+          ],
+          [
+            -5,
+            -1
+          ],
+          [
+            -5,
+            -1
+          ],
+          [
+            -5,
+            -1
+          ],
+          [
+            -4,
+            -1
+          ],
+          [
+            -3,
+            -2
+          ],
+          [
+            -3,
+            1
+          ],
+          [
+            -3,
+            -2
+          ],
+          [
+            -3,
+            1
+          ],
+          [
+            -3,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            -4
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            -10
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            5,
+            -8
+          ],
+          [
+            6,
+            -10
+          ],
+          [
+            2,
+            -3
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -2
+          ],
+          [
+            -2,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.1,
+            0.28,
+            0.47,
+            0.6,
+            0.8,
+            1
+          ],
+          "values": [
+            0,
+            0,
+            1,
+            0.6,
+            1,
+            0.1,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "opposite_paws_balance_the_effort",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            -3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            -1,
+            -3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 2
+        }
+      }
+    ],
+    "minimum_jacobian": 0.5,
+    "fluid_texture": null
+  },
+  "output": {
+    "width": 512,
+    "height": 512,
+    "fps": 30,
+    "frames": 84,
+    "duration": 2.8,
+    "crf": 30,
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "maximum_bytes": 262144
+  },
+  "approval": "unreviewed isolated prototype; per-item full afterframe and independent QA required",
+  "generator": {
+    "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/integration-core4-v1/originals/a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b-recipe_engine.py",
+    "original_generator_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+    "original_support_snapshot": "sticker-lab/production-v5/approved-generators/integration-core4-v1/originals/3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8-repair.py",
+    "original_support_sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8",
+    "engine_path": "sticker-lab/production-v5/approved-generators/integration-core4-v1/recipe_engine.py",
+    "engine_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+    "support_path": "sticker-lab/production-v5/approved-generators/integration-core4-v1/repair.py",
+    "support_sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8"
+  },
+  "expected": {
+    "frames_rgba_png_sha256": [
+      "b21492f0a8b240f9428e7dcdc8f9068f3e4b0c4281fd346357ad59d2600fe9f7",
+      "574fcba9dda6305fc6ffb6d4c29d2b8e685faa767391f23592649aa2bd8c84e4",
+      "f861eff7eb2fb9efd935872dcb2020d55e7f6b77a31e25576d198a06dca05c90",
+      "3a6eb72d63b223819b3f45efb89060f60fd74e8240754bc0f925a292a3ab0b46",
+      "1dc820292163702092f38e1a42863dbdc4dc1f291450f549074ef681101b1038",
+      "e1f3eb0b86ac1aa7f39f617414ad0ae252ce4486e3fbf292a551e9be45e8cd07",
+      "14fece2bffc8c6e24310a5ffedfd57d28bf72bc67b710e831860d04d9d0d47c6",
+      "6d90a1e69eeb1f22b05acbeaf2145b7d0d361a17337345e281b896a7135cb059",
+      "573f3ca7648f4a2e9b610d6c1c3a561cc1d6156b7eedb205777b43e4e7908838",
+      "06742f405ba1d71256f769070e8bed86cb2b819801cfad7c4c7810ff82c9608c",
+      "55c6f1da84939c7fe35fb941583ecaed3152a65f63cebf42ddbcf832f440a958",
+      "0981949ae5d066d1f212cbfe9fdc49096c36d78622a6f075aa6ca5f1d1db78cc",
+      "4d2ad1d0b12a92e2241ca5c1c22689737e61f17102ec7f819fc2f0a3f6263fa9",
+      "5a448616f39f4a2c3de9972a9abcca2b1ff5055bc8b04963a4e116e91c7fe101",
+      "f855239e99a44ec90863b6c8ed3158f09014fe3f329c81a113ff7dc53c98ac57",
+      "ac9198a96a4b7a6a7f6123245c344cfc9a22199104075b9c537e838599bda857",
+      "55053836f6e66fa811f903e812f0d9b903a8036ebf76f99c12ae0780cee4824f",
+      "0e91c2c9c311679039cfe639297fe4b832982edba2718076bf54ebc6e2438612",
+      "347e383ccd7e0b06f2f9a982a6e570b0d6f89614087468a379c6daaf48007f23",
+      "1658147a533322ae5d6035da163b21dc0238b10f5f444da04fdd22f222548dd0",
+      "f3beee52acedf14f8afc6d74e5671f051724c5335f68c083d9377b8261ab99fe",
+      "21387b2fee32cece5997c403ce84bcde68b1d8fdc67ba2067b7c3c0385d3ab74",
+      "0057c1d19c5f499f1979484d62b408cf778e95b08ada042fa3661dd400a72ec8",
+      "aeb7c316819aa4c7d6d7ca7c242b9594090f9d45775e65af984d51709199bb60",
+      "635d9e5853c1bb1d6abc0f8a8965f61aaee3ba353b9185da33c6e8389a08651e",
+      "8c2320fdf9661cddce083c18ec9ea5c59e0630c15cf31a9694f8d37d8db06229",
+      "466acb282d87198802dc03007f15b56fc1f8c9532dcbe328a29cf52380d0d736",
+      "abe8e706c1335e233e4b32064ec794ac5f1bf5ef84199d8c4aebd53fbea90b11",
+      "0cf706c05b2c9388a1bcd2aa3d3348e308a5cb5f050c2cb4e54813d74f5259e5",
+      "02d20e6a6ed49fbee176f3d1b98192f9bcaeb46f39131473745b1971b0057272",
+      "8042b7eda116306c8b71eb6bd3ef7177c26ba520259dc430434afce7cf7ae645",
+      "79ef293d93393e2a7515d10d5233a355a121a657b47298d9b2012ca2eb15670f",
+      "633fc2b72a49f59e9fcd4f99af5731947cef1b2a26fff7d77b95b4fe38643c18",
+      "fcc8fc7a08a4d9c6f42a58f6837a3541ef08b65b4297cf8b139a92d6a55322c1",
+      "9f22842fc8f2ab0bfa50366b4c00c235769f630caed402c4e28f441721cda122",
+      "d63d568106d9d69d8f1535d156ae3648cfdedb3b5c95fa4e30f821a9f376ccf9",
+      "6ebfc4455aa3f6523ca9f427c10ed8e19c492ca8e52c7902d92c134144031b33",
+      "1151211cb85675cc0a4811d94528f82d6d6517831ef90306f6e59639a258496c",
+      "2d0b201f6a4f17b9f1f27d8c67475a694f27f3662c2350acc5cf17761b5f1a96",
+      "870b2baa1ef4fbf71f6762a386a0396433cf908c959060a43d82e2127b3c44af",
+      "394606361f832a0977b94ee556db1fbb2e2a2cb7793c1faafce9e038b11cb1dc",
+      "beb52c729f92a1872f8233ca25bf856db96347c6fb5af615c52609d2814ff27d",
+      "f4985c7c2ab8e9f1163c2156e931d16f81e913d15f0b32d450d780436ecc3fd6",
+      "ffce9515dbfeb96d8797d7072827037f949169f601d62450f001f314f2c9a5c9",
+      "e665f8609cd3089f3a96542c2e930991582b6417a86dc67dd8449e97af8639e3",
+      "fb7cbfd86ffc199dbd4d67826c84ce493da504c4dee6aaa5a13ca13ce0a47ca9",
+      "baa789eb43986b27e3f84b4ba56a7dd8343b2f0c1c841360bc4b7f720858d629",
+      "ae84354f8cda7eeb71047ace41e8351f0492a890c737a88b7d75de597aaa2ae1",
+      "ec533abea97d4f77ff0dd63247497806a0ca8035b59e6ca03ee123bdc6ddd516",
+      "8f1b58425928542a65b9c40cb01492292795a109db59068e763ea9bb3c3e0a06",
+      "fb65a2a5efdc5c47aafd92830c75f49dbb0939b1d3a3985a36c1a83b114cb516",
+      "f2b84de91a00876ef527f82712c00f1cdb665ce11dae7170e9d8d40d320ac63b",
+      "3be1d49c761ed368dd3c9cd1438fb18620c62b5b3761fcad56086e6e16858d84",
+      "e618b98844a53074626004d57e8f9d2061504d4259a4fa70d90b4bbd15281679",
+      "46142b2409f5d056f1ea94c6069be372964d626998759107a2cb4eab4437a20c",
+      "e1d138f58efe9e38beb42ae93698aae00c80b21f65253b66c91e37fe68e1db55",
+      "ea672872e3fd2ebbf207dda8e86835a40bc4d43025494794c60ba6a3bf0fe21d",
+      "3a5759b6fae8d97941e3f0dcaba8f422c05e60c7f5554e4282be1f6fac4940f4",
+      "8aaaa34ffd7331ca2fcc92c9999a56e324b77c52acfe6f7680b3a8bb0a2bb405",
+      "d78ce9903ee15a74021caa83fdd445b5bce2719a4126a58e8ea1061ef19b1ad5",
+      "a28729078c12a29ebbca06ae7b92bc9b3dd68c6b58b49bc881fe3a25d129a989",
+      "7ef3e0e9a7f3a4df5ffe107a32dcd65209080cbb07301b32d3b79cfe06b67466",
+      "57e6f8abda9bf9ec7782bebe949885c2c8aa554575dd939d7604f6a8ee40be47",
+      "7a8f19b9b5972c7001b9b5a6a714b4b00dc830e6e6c100c743d0fef276e14816",
+      "6bb5518d7a1768fbae22576e13590f4b8f63b834b4e2857ecbc654ae22855de8",
+      "0fe88454cb2dedd5edd86bf1112fe3140205d7feadc62a031970fecdd6d795c3",
+      "6338dddd1423c953c7b0b44930a18abbe3b1b9106743e51b2f9ebec1cb36a180",
+      "c1f3dc692b971e05d7ecab4d90d72d5f214e101e0627f1f6fb06b48c944c8979",
+      "048e621bc9cd2c6fee1bcf9f6ffa413534df32029c7c5cea9b01f16931216b9d",
+      "d2b41f056969006aa6b88a58291e3ce4c1b296926917635794f63c525ba9765c",
+      "544bc07070caa7e82159d60d0bee7d6414c09c330171cd0cd46d6b63651b8e1c",
+      "bc492a00b5ff455b715b75fb85ea4d4b924009f6bc59a52aee49f91bafa6a21a",
+      "0009d7ace29d2187593622b3935e37dbe05fb34a04c39c9487043f717976e95d",
+      "cfc6a99f2c88f9cb495b2a6a9cef0c78866c0ba169c7fb42016f72ec5e6c102d",
+      "59f7b35c1b3e4e913af9489c295d4718ef707ed41504889588bcaefc3685f5c0",
+      "8463d814d963944326030a0ebbba51f07c275d1ef749e47361c99bb04bfaed79",
+      "82f3e4f90bba4b6fe6acd288c52b03d07ff07bd1954323b489547638ceb32b85",
+      "cee238ada992799664854d5f130bc9a8f3b2fe9898ebc2a7ede97c4836616d49",
+      "822999ad89b17b84bbbcdc405c21d55e770880b7d471c15fbd6a14968a34a1cd",
+      "4a1a1fab087c25e726350124eabae1c08bafd2e0bd4df33652b3a9a905e2533b",
+      "0bdb313f807bf16714c8570aab8021812603ea597b7327392897bf66467d7809",
+      "2771e9c9efa61d3455256c582db25750614ee4ad5c9eb0c28d3e19ba59993cd3",
+      "c0ba96ce3fa3fbebaeb423c4fc0302b0924056d1474538f400a2530c724be42e",
+      "a6af8079e4a50e06d02df3d37ae8071450c493b53d0be0c792b764e8ec905f08"
+    ],
+    "decoded_png_sha256": [
+      "ad7c218f91d6c4a75b4cad98c73a15ec678d3b6311246eea28ecf33c35b393a7",
+      "122173f1a67d9ab4425d83ee5a84724bd01e4df85e53e4b7bafbfd07f03c85af",
+      "97f32251e4915824a661756fc0125b353da58d45d3ee25b7d6f0973fe3bcd379",
+      "0a267ae122bc61a2b16ee96ec6e89726f37cf80de2ade3f35d1c56d78586c295",
+      "380d6ff395449953f7d801c500bd66b0d50f0516c12495c20f9513a6eb396ff9",
+      "5b75c6844f1e8e5741168ecd41638476137cb28aa36ef667bfe21e1715bbfdac",
+      "1c1acfcc91fb539b860255fb21e8c0d23314940ce078c698096ed20e3ff29a54",
+      "5eb820943d00b5c99c065a9e83bf7b8a0c399d6bc42b35ec31c364f16a74e0f0",
+      "4160d01041c8c45a041cd676296c58eae3155c3f10cff59fb0a93730e4ac70ba",
+      "2ce3b260f22ddce488b0e92e525b79f224d7597a2df8b3f49a073de823a9a969",
+      "53368ff236299c1d931a840729c40a4fe3ad75c8c6f1c6d0a47265bac01b3b0b",
+      "e42777f43361c294ae4f9ef0ef4d8b081b6bf0ebb9a9079edeb5e12b7acf3efa",
+      "57e518afd0f43895a4aba58561ed1991317fe667abeeb637d00134608fc4bbd9",
+      "20ac7457f7a5e225f923f83340a75d327b345825ac3f98ef7e672b7ba40cd63f",
+      "5848089291c792b13062c4d898cb35a8b3aa6581cf305246db19eccee9668b33",
+      "bc10d35ac4ecc52f8a196b528ec350b6365ee5b92f6d3b479a167b297c2a846d",
+      "2229b2f298ed4e6428c23b8f2226bf3d00093df6d17a00737f945447b22919fe",
+      "1adcd6fe6bb2d67b0e83431d68e0bfeac636acf886114f573d9adba32dc2e64b",
+      "c86f856d99dbea705e3f3f21e065347fa7c0900ec17d899f176b778e0a013a04",
+      "62c8090713156de991c3dbd1b53396578501644f53d07aed32ae2f04d7e57d05",
+      "3537229542986dd2c34d1b447095eed679a6b2101c01c35b0d568495b720ae39",
+      "49e2e39f05e111f4c792ca3c0ad470baaf46e49e4d22a30181cf9f3d1d512b8a",
+      "312879b9e41f5755e65cf75d29f38eb2da5e70729bd160053e362729454963f4",
+      "3fa76ad8084f3642ea48e10bda5cb2896644744051aca4b5a701127617cd99da",
+      "acad0c6af6949f9936949b24efbd264125b754d3e59a3e0dbfcacbb7871df9fc",
+      "0634e39dd09adc1c43dc1f856d762d232b3b8af364bf56d62a9b9d1d293c33e4",
+      "4543ff94d54f687759497b6d5585210d74c54a3b34c8c9fad05728be9e0b3ffb",
+      "3979234d40fcfc4b58e388731408a13748086f1dc0d6b751ddcba1c2b1f1d911",
+      "31148483120938c4cc58c2f259cdd1a14896f400934b89a39a724bdce75216f0",
+      "153ec14d80facb8907b3c55248bf7b1a1f4cbb74610ec339e8a04e2b7ff94bca",
+      "408282a4921cdc28fa37fb4e3634316fa9fc4d215de1d758a680abed1de9f2bc",
+      "8dd5314d6b3a5acafc2f04ef269e301732c411691c9a2236f47b7e59463a5e8d",
+      "adce6a304fd4c966ccd22861ec60d9340abd660de5766e4bb1e3ddf203640333",
+      "8af556265b1f7631fc5f5444fc9036874f5d4b6483385907c2a9ef720326384a",
+      "a56c9cc7defb621aa24bf17444b28f7530f437ec2b2c18f792cd6ccb7a2f1e6c",
+      "5f2659cf9cfa5dccfe22b8c7b5d5a8001db88a132262b0a37e0863536b9ff683",
+      "445cb3ccf49633e36e259a104af0d828af0950391e7c5e4ffe16c2aef57e88bf",
+      "660a326416ac181c7904b81328eb5863ecb84022349116cb599c2f616d7c1479",
+      "43148fa91e9727cac88cd4ba73e82f74d5c69f6f45c3a9fd020dc3af46378b40",
+      "50644bce7b1cbe68fb9060eb3c65343e83728b7514b3ef60c5984d118271a92e",
+      "03cdb993ccd98a63e328b9e38a46c619e3dbcbf64f784fedb1c92f83c779da07",
+      "4c32e497b82088b2fc789cc46aece997cd93afb150ccb164d35112ab5277bbf1",
+      "93faae1cbe22d1f7a173dbfb8730dd23db42ccc63660ef5cecd68b25aad7bdc6",
+      "573a6b29d40f5c56ca45924423c3c4fa3e682176309ed6c0027e3481bfa8f733",
+      "bb77eed0a2b336266e6f0b5cf2ff82e3911c6097d5c2dccee9750843943280e5",
+      "8d01a51baa19de2243f8dc80af2c754f24da2623bd5a0966739b1f6e8b7d3a20",
+      "c5c9010391516c2559643384bcb98eb661209d56a5cbe64660944cf80ce4a3ca",
+      "0f1059e9f7ba6cec37f794a877a4616b96f48a0303d335ed042bca5c6773698d",
+      "58986d72dfe5f094461e41be92ac893dc880b703fc899184f1dfdbaa4ed47483",
+      "cf7cb39cd8a44aad9e62a4b17e19a8f7ceea252ba907fc354cdfac547ddabc03",
+      "fdf81c9d26f221fa3cb8d51e31bc0fbbd4abfb985d6485cbe1ad562e799df066",
+      "64c30eedbafe5b453038bcb87a2e0f5ad36aeebd114e9674b221742eac237c97",
+      "3e3d70e44afe5df0d69d3718b8fd3543a63ad841e2dd39399c8c003a111bbcb4",
+      "f7d266222bfc5ceb44418c1c3288ed44130e997ffdbfe4daaca74f1ee4c74b3f",
+      "a99250905662be564028e8ab60aa2098d7291617d596dc91391064b33953ae89",
+      "83ed7352fd9fbff89cfe49976dd818f35e8eac3a8520acb466ce6db2f1703c24",
+      "8d53e339a5116a2c390e4f378f128c6f9c31ca988bddea793d09d8ac177fbb9c",
+      "e630c16b296fbdfb30a79b9c224688c400112e06a73bd78bc8028e0324934652",
+      "818f1acc1756c3ddf2492920c742790757183cd2b22c2614bbb3e2db8e52a8a6",
+      "5d24132265d55eaa932a6b4863fff1abfa50bbacb8bd8a37357a93eedb35e6c7",
+      "d43386a0bf720a831b5c59438c88ef49bbe4dc0b73107c398fab1c6c1440c385",
+      "789d695ca41285825d053c49e3babed6de3f70c19e82a2ad9b8cbf5f01292e57",
+      "7ac3f82dcd558f0c9724962b7f0fb0be97d6613d6db47dbab185520472917c4e",
+      "5b3f9e7b0c69b6b74dc8bc41504d04345bfdce95813c5338b1d9dac771240235",
+      "a874166102eaca1f8fede429a801827b577206785d58897dfb5da5a333f4eaba",
+      "1897563997ac6e0d6095a0d41f7610111a3d54c6290aac9da020e40739d921fb",
+      "cf94f6bdfb8bd069e6746bdbabb08c38fc79f8dbe0686fe554bccb31e248bed2",
+      "95daacf0052bdd0449d8801ae117ea886f189faaa1b46704e266da99155b6a3e",
+      "b426a3f0c93a0d46bb0b6f32c04ea1c85add89ad7d388bec519ebb3464b2966a",
+      "714e29ccde80e4c1d16fa73bfcf6afb4115a690fc25da0c2f9476c6408aa583d",
+      "848e1c08f31350ba20212251a12dff86a2fcfec8928870c070eb4274cd96d022",
+      "9a01ab6b77b85b43da6ddb2de0ea12a4292b02160ab4f4ef544d7026f8ef2b40",
+      "1f3f8bb0cb78a0856b89a3bc81962ce995108d52a96e26ac28f9098bb934e134",
+      "1e86958dd6f1c2c0cf679cde113f3fb9e515eeda798acf141fb28e0e9b65ad41",
+      "75e529f4432936d7e12c5cc2aaa318325094d68056889952a5fa6b644c4d9b5a",
+      "24e4576af8d2657b5fb4033e0a6616ca8ec7b163e4c845a7972a4b877f2f74a4",
+      "b0882c59ad367723d9675a6e1a4d3c6e421ae4120f88331a528536f35551849b",
+      "36adb89bbb375aa99d0716d60de84e2d4d45150f406b8b33a4ad3a1704c640c3",
+      "0726337412af5581323c7b4888d0365be0ecfaf7a802825d582093e28b7ffa25",
+      "9219cb97c4dba34361b57712de4add61736702c4f77f21f022b67c1e0f1faf8d",
+      "cc4ea0ece68ad155300dac3f5ef322c887ccfee3f38ebba8a581021eab7ca54c",
+      "45a8becf302278072ed727289a7150a542660fed3edc0ee340612438dd099671",
+      "f5c8843c028c40d987956e15028dcf7faf325c06a4be49e0ec481b6bc3ed4036",
+      "18f1dbffac021f4eff5090a26f94dc9eee8b8b3abe11509434ae599809776f20"
+    ],
+    "output_sha256": "46e62a9d748c7640d524b451b45c325962bbc0412f35455503d15145446178f6",
+    "output_bytes": 185673
+  }
+}

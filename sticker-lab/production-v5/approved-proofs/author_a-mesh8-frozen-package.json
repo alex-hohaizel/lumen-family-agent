@@ -1,0 +1,728 @@
+{
+  "schema_version": 1,
+  "id": "author_a-mesh8-frozen",
+  "actual_author_agent_id": "/root/artisan_stickers_a",
+  "files": [
+    {
+      "path": "/workspace/scratch/342fb2c985cb/lumen/sticker-lab/production-v5/author_a-mesh8-frozen/package.guard.json",
+      "sha256": "612e844b195e23a1119cb71fe87d8a9aae086c19eeab0eb9230f2277e7fc2c11",
+      "bytes": 50728
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/freeze_guard.py",
+      "sha256": "daf39856a150692b7a3a060a563a002ddecf8706b1f608af94d576ef3ac4e04f",
+      "bytes": 4638
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/after256-0.jpg",
+      "sha256": "0be4ac9c8c55a28f7d455c70974d20cf7ceec713ab42c6dc733a2d23d97823c1",
+      "bytes": 496586
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/after256-1.jpg",
+      "sha256": "ad5e0df37ca0b736104562e5b44c83b0f9abaefd96ecabfdcc8e49e7c9f9f0e5",
+      "bytes": 498368
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/after256-2.jpg",
+      "sha256": "0a14f9c304c8dfa8a2431742061151b4f2e4d76afdf24bf04f0c94993044101f",
+      "bytes": 496157
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/after256-3.jpg",
+      "sha256": "bb70cc9f458b6ea054cc8031a47bdb72e516fd3cc4897abb1b6316c38609ff59",
+      "bytes": 261966
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/candidate.webm",
+      "sha256": "75e2ea1cbc60bbf160bae63d94fdf01f4b7c4116fb12289613f3a637f1e74eee",
+      "bytes": 254343
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/native-author-0-17-34-59.jpg",
+      "sha256": "a4e28cb093ba199cfbc00044a955519fe3e88eb6f487cfaf3094e39bb175dd21",
+      "bytes": 217190
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/poster.png",
+      "sha256": "315cf4bdae1786bb7c60ff961b2b4a4f8c7e187fa9f85018b7acd0947e69f4a1",
+      "bytes": 186786
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/proof.json",
+      "sha256": "fb1545fefbd097b3767ddc88d626308b150b648ff7c3ad7ca25e9b2196516b31",
+      "bytes": 54900
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/recipe.json",
+      "sha256": "1d29443d9386ae83d2a618b8a1eb830a14b4766ecc7a2e5559f2070f63ba99d9",
+      "bytes": 26208
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/reproducibility.json",
+      "sha256": "83baa3ed65de681132ef343670d543e8ea470c35cdcc8ba55cf4af1005fd624c",
+      "bytes": 13174
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/review-normal.mp4",
+      "sha256": "368e8ac53d3cc538d999345e0e65fbde65de347bbf468e3fab867c943d5f906c",
+      "bytes": 248123
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/review-slow.mp4",
+      "sha256": "8aa136a182c95b43bdc421e01f9683013e78f4f4046eb87fafcee6a7254bec79",
+      "bytes": 387036
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/after256-0.jpg",
+      "sha256": "b5876d6bed240f519b6c25aeaf55df14bb4afdbc525a2cbf9362e9979fc2b1e8",
+      "bytes": 490912
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/after256-1.jpg",
+      "sha256": "aeb9d3de75b57c03304f51e6fefa7ad3fc660c4bf978bca4c7774fb03201fd6b",
+      "bytes": 491332
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/after256-2.jpg",
+      "sha256": "a452bf5234be35bbe20830947671e84a9ac583137724d4ba2fee833963d7feff",
+      "bytes": 490956
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/after256-3.jpg",
+      "sha256": "c65df33ed2ac4dea2af9be425956fd7d8b30bb0f7d47d3651acb289bad42669a",
+      "bytes": 259938
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/candidate.webm",
+      "sha256": "e6b2b7a216fc444f4cae886f1c043ae95c238eb780148c4cae5a27f9b1899f28",
+      "bytes": 210650
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/native-author-0-17-34-59.jpg",
+      "sha256": "d4f125bb55d275e37fb37e2ee8ed4dd7a7580a868ce495b6d5c00221c49c1128",
+      "bytes": 204837
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/poster.png",
+      "sha256": "41c04843c7510ba72d28565abb375a992c20dea65f3674a81d006fb74cfd9271",
+      "bytes": 174332
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/proof.json",
+      "sha256": "8b1a843029466b2caa739062d39404de87c091a5ea1998c9886f708db2dea828",
+      "bytes": 53721
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/recipe.json",
+      "sha256": "584530103d80f91356a8ef161b8b9b83fadca43a9f364a8362671944836aa7ed",
+      "bytes": 25980
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/reproducibility.json",
+      "sha256": "54a61b87600eb443376ddbb5f1dd77b94c80c2703f26d09aa32ebe6d90fd3b85",
+      "bytes": 13174
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/review-normal.mp4",
+      "sha256": "09810903f160bf3996fd94e286f46a4e09e1c1bae3a0b994894630b2a50b4625",
+      "bytes": 224844
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/review-slow.mp4",
+      "sha256": "b65b816177f8da78f16eeeed2a5e9ee8ee654a2797e7de0f5434497788c8af5f",
+      "bytes": 347815
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/after256-0.jpg",
+      "sha256": "d9c01f8f424ac376ab993f4ef5c20473a7f2d7fafc33e02dcf59322e788b9014",
+      "bytes": 475031
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/after256-1.jpg",
+      "sha256": "4aea8675d784a6ed927cd3be0933f736b7e5cfb7d5dc02ba486fcbc5b925c03b",
+      "bytes": 480241
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/after256-2.jpg",
+      "sha256": "d4c6c5052c62a9d68e9777c262170debd4834155e3f7b1b5ce53a4b512a07651",
+      "bytes": 478773
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/after256-3.jpg",
+      "sha256": "ae1191775025fc72097463f8dac97da00b6d55b44abdbcffd5a52aeff351eb0c",
+      "bytes": 250119
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/candidate.webm",
+      "sha256": "8344418fa36791914599a2f28dce149cf6f2ef276de30f78d26b16fe5f4146c8",
+      "bytes": 221597
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/native-author-0-17-34-59.jpg",
+      "sha256": "27e9d102ee8d0772f29be9426afe84f38306a535c58b842217ec53c52d6b71b7",
+      "bytes": 211481
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/poster.png",
+      "sha256": "810009ddee4dca1e15bff32ecd3407448f9bc6473938eb35a7ed344e966428b3",
+      "bytes": 186613
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/proof.json",
+      "sha256": "f980fd27e552d5d0664edf6670bcdb619781d2a3ad627c8adaa1ef3dc3b91428",
+      "bytes": 53643
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/recipe.json",
+      "sha256": "2a9af5c380fd2ca38635e14328db9f88c2c19ed4a2697a5ff9660eabb9091c02",
+      "bytes": 26482
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/reproducibility.json",
+      "sha256": "57e4a09fabc250b7c838f17c75bbf8ec3d089e75d29f35e8f09dafd50d56b9a5",
+      "bytes": 13174
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/review-normal.mp4",
+      "sha256": "e01d57d95ca587ce3e305bcdd43b14e6923a07b79f4bac422ed611559a1ec06a",
+      "bytes": 218421
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/review-slow.mp4",
+      "sha256": "eb75771ef72094f2eca5ff40915c6c56a18d59021942ac7795bc89fdbfbefb27",
+      "bytes": 336650
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/after256-0.jpg",
+      "sha256": "25904c078a63a476b17aa79f532e3e2208460cdae91736538b923a8000717196",
+      "bytes": 431493
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/after256-1.jpg",
+      "sha256": "afdaed6a24c62f7576ff83f139f7904a5e1eb8760cdd395d1e86f934dc526e7a",
+      "bytes": 433390
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/after256-2.jpg",
+      "sha256": "93cdc735f5e23b600aa42e5e5ef05375487987a6d02ece974533a598bb2d2532",
+      "bytes": 431982
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/after256-3.jpg",
+      "sha256": "2738bb5c1e0f76ef41f3de77a419c6a4abb2defd33eabdd588de4ada41ef4533",
+      "bytes": 230128
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/candidate.webm",
+      "sha256": "3646a4c39ad5c1a9ee32ea55c0d93feabdfa27a91d3ab3e945a76f0d25d56957",
+      "bytes": 135680
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/native-author-0-17-34-59.jpg",
+      "sha256": "3d1401bbd84788ed76e6dea95e9e0ca336d19d9f059742012ec114f66dad85a1",
+      "bytes": 187677
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/poster.png",
+      "sha256": "0bc0287bc448d31c379ccf3d6a979984ceca64c734decff537d0a0152f93ba75",
+      "bytes": 174624
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/proof.json",
+      "sha256": "449ec43dd640a1d1ba31d6d9f9b6a601115ed899492e52193395c85fc65abf75",
+      "bytes": 47860
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/recipe.json",
+      "sha256": "4dd80e0ebfa0248d2f5c76c23372425d13f55b4b71282037e5101223d799c88b",
+      "bytes": 23793
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/reproducibility.json",
+      "sha256": "9085fe3dacdbffebe3e84e5f0630a27c7aa4d78b69adc52b826d7cd48951c52f",
+      "bytes": 13172
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/review-normal.mp4",
+      "sha256": "fb8b652bb522e0b5f931a3556b8923fdb1a97f5bc8704b5950b863fa9198ffb3",
+      "bytes": 145627
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/review-slow.mp4",
+      "sha256": "0979018f63b7c4e3764e7775858355fc2dc5a777b556bafb8103065ba0e3535d",
+      "bytes": 222664
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/after256-0.jpg",
+      "sha256": "9a280f6cb0b8f3c22647674427f5c8f43f1575a4e6d049c25722c80c69d880e3",
+      "bytes": 487432
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/after256-1.jpg",
+      "sha256": "b0d10ee4cd5a80a1fb7d93cee5c71f8b3c16560a5970984743e6cf261c86b892",
+      "bytes": 485009
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/after256-2.jpg",
+      "sha256": "6d346f316ee399ba87983e1be805e486108c48a1f09d6635ebd99e3566f70faa",
+      "bytes": 484563
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/after256-3.jpg",
+      "sha256": "e247cca99d354de31e4fbe3ceca34dc8bc22efd6d0ebd51807b6b15c0f5811ae",
+      "bytes": 258090
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/candidate.webm",
+      "sha256": "dc89f9f4584a3b6886287b7c9b302081894ff381954b9242086c232c5dbe0dc9",
+      "bytes": 89882
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/native-author-0-17-34-59.jpg",
+      "sha256": "fea9091d1bbcd770bc2fd86eaa244cd6408de94a6b567a70b3c12871eec0a10d",
+      "bytes": 213680
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/poster.png",
+      "sha256": "cb7201cf5d8f61d9fea81189a433dffd4c70e3ae8b368c7a3d48d58ab79e7e06",
+      "bytes": 191188
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/proof.json",
+      "sha256": "132b9608e0d91d97cb5b4897ac36e803b1bacec50b3169ca5ced40f7ed3b9cbf",
+      "bytes": 48132
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/recipe.json",
+      "sha256": "5cb2db39af48c158e1fa8fdbc50a1d0e08cbac4081b1074a1cdea477395ed101",
+      "bytes": 23610
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/reproducibility.json",
+      "sha256": "44a207cc68e431761ea2fc02c50c60d8611fea2ce59bf6ab87e6556a26bbe812",
+      "bytes": 13173
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/review-normal.mp4",
+      "sha256": "95bb5fcd313294c1d952239c01d83bc9ea13ec7e2e6b339643d176bbc702f99a",
+      "bytes": 125849
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/review-slow.mp4",
+      "sha256": "02e4a2b4d69b72425402b026f2fb14a8fca4f3695673d9375c573506214d3f93",
+      "bytes": 181112
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/after256-0.jpg",
+      "sha256": "fc346d7cd4c69c60f0e0fa6533a4591a0300e497681a2f4cd09bc94c06813dce",
+      "bytes": 551758
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/after256-1.jpg",
+      "sha256": "ea9c32a60dc1fc8de1c3dbf7a9fbe4c9221a00965a4e034b082f4842af55c115",
+      "bytes": 555207
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/after256-2.jpg",
+      "sha256": "604d0f7ac975d1b6ee3e3f5933c0d90804dd98de5a2d47506a97ba8a474ffefe",
+      "bytes": 556191
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/after256-3.jpg",
+      "sha256": "32e7a7445f28491c586a3d3b1fad9c1d9ee0cd53ea06da0b4efea1a476bbb5a2",
+      "bytes": 289451
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/candidate.webm",
+      "sha256": "c65b2644ae388d9179675a9f2f8ba8ae7ddcdbf4268d38b70a628ea7463c1fc2",
+      "bytes": 104087
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/native-author-0-17-34-59.jpg",
+      "sha256": "e35258cb541e3f56445af384cb418db713a3cd479d01dcf3f87576d1413b4b66",
+      "bytes": 244631
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/poster.png",
+      "sha256": "58490cbfd6c2c77acbc8c0a1494f972ae8a5fb4aa5f4da86599d5eece6840713",
+      "bytes": 205941
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/proof.json",
+      "sha256": "276d7e9e1869f49a9f18f733e7d56f3f040a8ad89c120c7238f1eeb89d17d1b5",
+      "bytes": 47384
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/recipe.json",
+      "sha256": "a8c6104eea42a64d0eab17a7f84c9795389233e321adb45c404374e72dff374f",
+      "bytes": 23501
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/reproducibility.json",
+      "sha256": "d9e1d2ed9a5e347007db546b1e24de81811409bb5f78a0be4eb933b9687230e3",
+      "bytes": 13174
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/review-normal.mp4",
+      "sha256": "e0a0d7cb700b74d44c4c55b288d2a582877236a24a350fcb715cc2d4c51eb5c8",
+      "bytes": 159953
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/review-slow.mp4",
+      "sha256": "1df09ae11b4e6eb5fd38d2bac1376cecd75d6f5091d7d09ccc6e21bbb4c524ad",
+      "bytes": 241400
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/after256-0.jpg",
+      "sha256": "9a6cb8b0c50c1c6f1405dca05214be45c8115ab1bd48dfc828f74c22c5ae3ada",
+      "bytes": 535236
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/after256-1.jpg",
+      "sha256": "c107dc30fc917de588bc620281320a5345dd98fa1b2a06331b22251066977063",
+      "bytes": 540284
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/after256-2.jpg",
+      "sha256": "d92340bea1c0e63680d092b35e189df009fa2f8e29f182268c6b8477ea8faa2f",
+      "bytes": 541335
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/after256-3.jpg",
+      "sha256": "6016a960f464d0344278f14cdc3c2e8ebc01b37dd0a30047af6d627f27e2b3e4",
+      "bytes": 281716
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/candidate.webm",
+      "sha256": "4a74ab4dcea2fd73a2f8569a8fcea62f797315cad7c37b53ab2624f1aae6d299",
+      "bytes": 187739
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/native-author-0-17-34-59.jpg",
+      "sha256": "d5383c648e8bf403eec66a8494a3c20f508fc5cc5d08758ce5d48cc392379fd4",
+      "bytes": 224571
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/poster.png",
+      "sha256": "bd2491e995809168828df7c18a3be2e853bea05ae0adc5de670632e10fde94b7",
+      "bytes": 193697
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/proof.json",
+      "sha256": "fe147f02fb9373364b7ed35c0b99272cdebd494288b529ca339271a25393f8b5",
+      "bytes": 49376
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/recipe.json",
+      "sha256": "f563cc78f2c3d2599a2c27b7db5c088429a7b1c621f99d811df28ad9e5b23e9d",
+      "bytes": 24865
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/reproducibility.json",
+      "sha256": "59607662a91e7bce522a589bee5c8b51d46e2dd68de5a8853c458fbb4d21f2a3",
+      "bytes": 13174
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/review-normal.mp4",
+      "sha256": "36ac7aaa2940fb31c71821faa7b6335fb7406cc73a66784176602684f2fa631a",
+      "bytes": 203972
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/review-slow.mp4",
+      "sha256": "dc4d82b03f35030402c2da27f3b5f11518d6d130cc6b3bb370c35c2f376ac6f8",
+      "bytes": 314242
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/after256-0.jpg",
+      "sha256": "92c245704e559973807e3d196dd0a673a78818eaaa42d38d065053fc38410a6b",
+      "bytes": 483810
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/after256-1.jpg",
+      "sha256": "2b8d892fa753accc1a5552ab2d6ee89c06e5eb20219283d066c732014949ddaa",
+      "bytes": 486089
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/after256-2.jpg",
+      "sha256": "be291244efcd774734321a239fd3e446d230da69d23fdba9279e5efcc1320aa0",
+      "bytes": 484114
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/after256-3.jpg",
+      "sha256": "f7f512f424f0b57b37a4434ff27f234241afe38ed794669be37d4e8d52afc4ec",
+      "bytes": 256068
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/candidate.webm",
+      "sha256": "be3c59a425d886269230d4db02f61c631478fb2b1c22bbfbc2ceb2e17c988c64",
+      "bytes": 143849
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/native-author-0-17-34-59.jpg",
+      "sha256": "ea3ac9e66de9443dd1d677add8d3e02a8791354a207e0e2f48db1b0bbb400dce",
+      "bytes": 214355
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/poster.png",
+      "sha256": "6c4eb9291e10ee32d131cefa461f16227c2a71721679071f712edf87afc3d113",
+      "bytes": 202787
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/proof.json",
+      "sha256": "2b4199556474283c18c3159ed72cd0f513ea5c5782d4bf43b6b25640d2881a5e",
+      "bytes": 48927
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/recipe.json",
+      "sha256": "525651af8c046128b5ce65cc9123521af27e535390c2519e637838027bc7bc38",
+      "bytes": 25294
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/reproducibility.json",
+      "sha256": "91b8a9211b36023e5ccc9d17bd2225f834aa47abcb9971194f8e33f1cb983f82",
+      "bytes": 13173
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/review-normal.mp4",
+      "sha256": "20e503308d485c9c1537ef9a61fbe4bb0b0e47ab3cb425e7fb495df4134a7936",
+      "bytes": 160282
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/review-slow.mp4",
+      "sha256": "10c704133fb3fab136ca6fad5db5eb9fc61ca93642e520b763064ad26910fd15",
+      "bytes": 243302
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+      "sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+      "bytes": 9847
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+      "sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+      "bytes": 17377
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_52/source-frames/000.png",
+      "sha256": "df0c780c9731d8c8538a5752811abe71d23838317545c9f5373255b3e8273d12",
+      "bytes": 284482
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_52/source.webm",
+      "sha256": "82296745813f18c332ffc67ab0faf0a12d2af326e4c583ee631d91c0abff1cde",
+      "bytes": 246614
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_55/source-frames/000.png",
+      "sha256": "c2cff0ce01cb1da6df2fe428395305a46bd4bd839b4ed79b759bfbd1dd3fac08",
+      "bytes": 258465
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_55/source.webm",
+      "sha256": "34710e9895f682e048b69c8825c381c04b31f5b0b42f438814d50fc0c4a36501",
+      "bytes": 247635
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_56/source-frames/000.png",
+      "sha256": "39d449ae2b3e6c69105d9e1d90c40635d529a9153cdac6a3f70ee7d77516b90e",
+      "bytes": 282432
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_56/source.webm",
+      "sha256": "beac13f62091009071977670b361025577e460bc413698f304345a52737e75f2",
+      "bytes": 257339
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_60/source-frames/021.png",
+      "sha256": "7b124989a1daede04123b05e2f96b9f25fab9f397ff441d20ee42f0ca1f407a8",
+      "bytes": 268339
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_60/source.webm",
+      "sha256": "d67c2d09141f6345987b1aabe4af19486b86903461918609ad0dbbbc2316c58e",
+      "bytes": 253922
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_73/source-frames/054.png",
+      "sha256": "45b31b37711e2b95b63dafe11ebbc2cdac40ea79ed2a8ff52c5e140dfa14468a",
+      "bytes": 283686
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_73/source.webm",
+      "sha256": "26487ad22f0906089199cd101fb6fc3a456753c5559c1db2d56f697a1cbdf23e",
+      "bytes": 258962
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_74/source-frames/000.png",
+      "sha256": "7007cd100773ac2215dcf28f2b7cc6ce1137a36845dcd3481d37418f5be5eea5",
+      "bytes": 318045
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_74/source.webm",
+      "sha256": "1dd0938d8cb417b6ff9a28e5588ce934b79ac1ca99deddf47f96ca1ee83bbb87",
+      "bytes": 250502
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_75/source-frames/000.png",
+      "sha256": "9321b5138f7f0b2c53f45a6608ad026b12d2d00ca13c65bd0964ab670b9da75e",
+      "bytes": 289412
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_75/source.webm",
+      "sha256": "6e1121aec2546f4b61e8f5e462f6acf605153dc59cd924fe10127638050ece0a",
+      "bytes": 253726
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_78/source-frames/032.png",
+      "sha256": "b70352cbe3079c5665e5c52730e0ed14718310fa3738d9acf01831d93abf5b53",
+      "bytes": 318362
+    },
+    {
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_78/source.webm",
+      "sha256": "c4e3d8fba1abd311264398da4270c75927681d27450a584f2c1b2367355f4ce5",
+      "bytes": 258849
+    }
+  ],
+  "review_proofs": [
+    "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/proof.json",
+    "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/proof.json",
+    "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/proof.json",
+    "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/proof.json",
+    "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/proof.json",
+    "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/proof.json",
+    "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/proof.json",
+    "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/proof.json"
+  ],
+  "items": [
+    {
+      "id": "lumen_52",
+      "candidate_id": "lumen_52_author-a_mesh_v3",
+      "candidate_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/candidate.webm",
+      "candidate_sha256": "75e2ea1cbc60bbf160bae63d94fdf01f4b7c4116fb12289613f3a637f1e74eee",
+      "proof_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/proof.json",
+      "proof_sha256": "fb1545fefbd097b3767ddc88d626308b150b648ff7c3ad7ca25e9b2196516b31",
+      "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_52/recipe.json",
+      "recipe_sha256": "1d29443d9386ae83d2a618b8a1eb830a14b4766ecc7a2e5559f2070f63ba99d9",
+      "description_uk": "Весело хихоче, притиснувши лапки до щік: голівка схиляється вбік, плечі дрібно здригаються. Сидить стійко на двох ніжках, поруч блищать дві золоті іскорки.",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-51-80/lumen_52/frames-rgba",
+      "after_frames_directory": "sticker-lab/production-v5/author_a-candidates/lumen_52_author-a_mesh_v3/decoded",
+      "source_video_sha256": "82296745813f18c332ffc67ab0faf0a12d2af326e4c583ee631d91c0abff1cde",
+      "bytes": 254343
+    },
+    {
+      "id": "lumen_55",
+      "candidate_id": "lumen_55_author-a_mesh_v4",
+      "candidate_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/candidate.webm",
+      "candidate_sha256": "e6b2b7a216fc444f4cae886f1c043ae95c238eb780148c4cae5a27f9b1899f28",
+      "proof_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/proof.json",
+      "proof_sha256": "8b1a843029466b2caa739062d39404de87c091a5ea1998c9886f708db2dea828",
+      "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/recipe.json",
+      "recipe_sha256": "584530103d80f91356a8ef161b8b9b83fadca43a9f364a8362671944836aa7ed",
+      "description_uk": "Невинно усміхається із заплющеними очима й робить маленький уклін. Білі крильця ледь тремтять на плащику, а кривуватий золотий німб м’яко слідує за голівкою.",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-51-80/lumen_55/frames-rgba",
+      "after_frames_directory": "sticker-lab/production-v5/author_a-candidates/lumen_55_author-a_mesh_v4/decoded",
+      "source_video_sha256": "34710e9895f682e048b69c8825c381c04b31f5b0b42f438814d50fc0c4a36501",
+      "bytes": 210650
+    },
+    {
+      "id": "lumen_60",
+      "candidate_id": "lumen_60_author-a_mesh_v1",
+      "candidate_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/candidate.webm",
+      "candidate_sha256": "3646a4c39ad5c1a9ee32ea55c0d93feabdfa27a91d3ab3e945a76f0d25d56957",
+      "proof_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/proof.json",
+      "proof_sha256": "449ec43dd640a1d1ba31d6d9f9b6a601115ed899492e52193395c85fc65abf75",
+      "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/recipe.json",
+      "recipe_sha256": "4dd80e0ebfa0248d2f5c76c23372425d13f55b4b71282037e5101223d799c88b",
+      "description_uk": "Хоробро всміхається крізь сльозу, обережно притиснувши лапку до щоки. Ледь схиляє голівку до неї й тихо зітхає; друга лапка тримає плащик біля серця.",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-51-80/lumen_60/frames-rgba",
+      "after_frames_directory": "sticker-lab/production-v5/author_a-candidates/lumen_60_author-a_mesh_v1/decoded",
+      "source_video_sha256": "d67c2d09141f6345987b1aabe4af19486b86903461918609ad0dbbbc2316c58e",
+      "bytes": 135680
+    },
+    {
+      "id": "lumen_73",
+      "candidate_id": "lumen_73_author-a_mesh_v1",
+      "candidate_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/candidate.webm",
+      "candidate_sha256": "dc89f9f4584a3b6886287b7c9b302081894ff381954b9242086c232c5dbe0dc9",
+      "proof_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/proof.json",
+      "proof_sha256": "132b9608e0d91d97cb5b4897ac36e803b1bacec50b3169ca5ced40f7ed3b9cbf",
+      "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/recipe.json",
+      "recipe_sha256": "5cb2db39af48c158e1fa8fdbc50a1d0e08cbac4081b1074a1cdea477395ed101",
+      "description_uk": "Незворушно дивиться просто перед собою й тихо дихає, опустивши лапки. Поряд стоїть маленький зупинений пісочний годинник.",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-51-80/lumen_73/frames-rgba",
+      "after_frames_directory": "sticker-lab/production-v5/author_a-candidates/lumen_73_author-a_mesh_v1/decoded",
+      "source_video_sha256": "26487ad22f0906089199cd101fb6fc3a456753c5559c1db2d56f697a1cbdf23e",
+      "bytes": 89882
+    },
+    {
+      "id": "lumen_74",
+      "candidate_id": "lumen_74_author-a_mesh_v1",
+      "candidate_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/candidate.webm",
+      "candidate_sha256": "c65b2644ae388d9179675a9f2f8ba8ae7ddcdbf4268d38b70a628ea7463c1fc2",
+      "proof_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/proof.json",
+      "proof_sha256": "276d7e9e1869f49a9f18f733e7d56f3f040a8ad89c120c7238f1eeb89d17d1b5",
+      "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_74/recipe.json",
+      "recipe_sha256": "a8c6104eea42a64d0eab17a7f84c9795389233e321adb45c404374e72dff374f",
+      "description_uk": "Сухо й повільно киває, не змінюючи незворушного виразу. Очі лишаються двома рівними закритими лініями, лапки лежать на колінах; поруч стоїть стос млинців.",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-51-80/lumen_74/frames-rgba",
+      "after_frames_directory": "sticker-lab/production-v5/author_a-candidates/lumen_74_author-a_mesh_v1/decoded",
+      "source_video_sha256": "1dd0938d8cb417b6ff9a28e5588ce934b79ac1ca99deddf47f96ca1ee83bbb87",
+      "bytes": 104087
+    },
+    {
+      "id": "lumen_75",
+      "candidate_id": "lumen_75_author-a_mesh_v1",
+      "candidate_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/candidate.webm",
+      "candidate_sha256": "4a74ab4dcea2fd73a2f8569a8fcea62f797315cad7c37b53ab2624f1aae6d299",
+      "proof_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/proof.json",
+      "proof_sha256": "fe147f02fb9373364b7ed35c0b99272cdebd494288b529ca339271a25393f8b5",
+      "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_75/recipe.json",
+      "recipe_sha256": "f563cc78f2c3d2599a2c27b7db5c088429a7b1c621f99d811df28ad9e5b23e9d",
+      "description_uk": "Без слів розводить відкриті лапки й піднімає плечі, трохи схиливши голівку. Очі широко відкриті, ротика не видно; чисті папірці біля ніжок лишаються на місці.",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-51-80/lumen_75/frames-rgba",
+      "after_frames_directory": "sticker-lab/production-v5/author_a-candidates/lumen_75_author-a_mesh_v1/decoded",
+      "source_video_sha256": "6e1121aec2546f4b61e8f5e462f6acf605153dc59cd924fe10127638050ece0a",
+      "bytes": 187739
+    },
+    {
+      "id": "lumen_78",
+      "candidate_id": "lumen_78_author-a_mesh_v1",
+      "candidate_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/candidate.webm",
+      "candidate_sha256": "be3c59a425d886269230d4db02f61c631478fb2b1c22bbfbc2ceb2e17c988c64",
+      "proof_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/proof.json",
+      "proof_sha256": "2b4199556474283c18c3159ed72cd0f513ea5c5782d4bf43b6b25640d2881a5e",
+      "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_78/recipe.json",
+      "recipe_sha256": "525651af8c046128b5ce65cc9123521af27e535390c2519e637838027bc7bc38",
+      "description_uk": "Байдуже підпирає щоку лапкою й повільно осідає в цю позу, дивлячись скоса з-під важких повік. Друга лапка лишається біля маленької бірюзової чашки.",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-51-80/lumen_78/frames-rgba",
+      "after_frames_directory": "sticker-lab/production-v5/author_a-candidates/lumen_78_author-a_mesh_v1/decoded",
+      "source_video_sha256": "c4e3d8fba1abd311264398da4270c75927681d27450a584f2c1b2367355f4ce5",
+      "bytes": 143849
+    },
+    {
+      "id": "lumen_56",
+      "candidate_id": "lumen_56_author-a_mesh_v1",
+      "candidate_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/candidate.webm",
+      "candidate_sha256": "8344418fa36791914599a2f28dce149cf6f2ef276de30f78d26b16fe5f4146c8",
+      "proof_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/proof.json",
+      "proof_sha256": "f980fd27e552d5d0664edf6670bcdb619781d2a3ad627c8adaa1ef3dc3b91428",
+      "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_56/recipe.json",
+      "recipe_sha256": "2a9af5c380fd2ca38635e14328db9f88c2c19ed4a2697a5ff9660eabb9091c02",
+      "description_uk": "Захоплено тягнеться лапкою до сяйливої комети, дивлячись на неї очима-зірочками. Друга лапка біля грудей, вушка й край плащика ледь тремтять від захвату.",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-51-80/lumen_56/frames-rgba",
+      "after_frames_directory": "sticker-lab/production-v5/author_a-candidates/lumen_56_author-a_mesh_v1/decoded",
+      "source_video_sha256": "beac13f62091009071977670b361025577e460bc413698f304345a52737e75f2",
+      "bytes": 221597
+    }
+  ],
+  "scope": "Individual prototype independent full-frame/scene QA only; no blanket class, canonical staging or publication approval",
+  "native_realtime_slow_device": "not_observed",
+  "files_sha256": "ca43def78b05a14af6fac06328cc9f8f74bce93cee88e228663da391e79a246c",
+  "final_path_guard": {
+    "path": "/workspace/scratch/342fb2c985cb/lumen/sticker-lab/production-v5/author_a-mesh8-frozen/package.guard.json",
+    "sha256": "612e844b195e23a1119cb71fe87d8a9aae086c19eeab0eb9230f2277e7fc2c11",
+    "passed": true
+  },
+  "frozen_at": "2026-10-30T19:07:09.955009+00:00"
+}

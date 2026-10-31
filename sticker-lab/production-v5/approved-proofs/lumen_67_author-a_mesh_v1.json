@@ -1,0 +1,2177 @@
+{
+  "schema_version": 1,
+  "id": "lumen_67",
+  "candidate": "lumen_67_author-a_mesh_v1",
+  "created_at": "2026-10-30T18:57:07.075029+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_67/source.webm",
+  "source_video_sha256": "0447c6ee7c1d3bcdef508ceb30acec239d641f48cc6621b7676de6e76df4d7e0",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "3568163098ab29c82924c2eae097223e94f2157f0146323a53e0f50cdb987f82",
+  "derived_source_frames": [
+    {
+      "index": 0,
+      "seconds": 0.0,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_67/source-frames/000.png",
+      "decoded_png_sha256": "da06e42ebcd937f8120daac41788db0449027429cfb47dcaa5cf280e8763d7fa"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "4023ed628525d143be711becb1e4c00fe7644b57dbb1447044098f700596d65e",
+  "source_frame_count": 84,
+  "source_action_frames": [
+    0
+  ],
+  "method": "shared_local_mesh_v1",
+  "character_semantics": {
+    "core_scene": "Wide-eyed oops face with same mouth-covering paw, slight upper-body recoil and one acorn retained in opposite hand.",
+    "omitted_optional_action": "Original drop/retrieval and incompatible hand moves omitted. Acorn never falls or reappears; no new jaw is drawn under cover paw.",
+    "reversibility_or_contact": "Mouth-contact and covering paw follow same head recoil, forearm follows half toward pinned elbow. Acorn boundary and opposite grip translate together; both feet grounded."
+  },
+  "semantic_tradeoff": "Original drop/retrieval and incompatible hand moves omitted. Acorn never falls or reappears; no new jaw is drawn under cover paw.",
+  "not_recovered_original_art": true,
+  "not_rigid_global_transform": true,
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "oops_startle_with_same_paw_covering_mouth",
+        "same_opposite_hand_tucks_acorn_without_drop",
+        "nervous_ear_and_cape_recoil"
+      ]
+    }
+  ],
+  "candidate_sha256": "75dee48ab61827ea4a0990c4bf9002a955d648bff672ed677caa03b7e5ba9450",
+  "poster_sha256": "56a590d306025e546d2af4bd16ae161f06558047d4260470a0d4c1100b5d6a2c",
+  "bytes": 176608,
+  "crf": 30,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "adjacent_composite_mae": [
+    0.2265249490737915,
+    0.23855233192443848,
+    0.18828003108501434,
+    0.26140621304512024,
+    0.12492867559194565,
+    0.13049466907978058,
+    0.07244376093149185,
+    0.24616290628910065,
+    0.15705257654190063,
+    0.3004845082759857,
+    0.27814769744873047,
+    0.4763171672821045,
+    0.4475882947444916,
+    0.5273135304450989,
+    0.5467005968093872,
+    0.6682973504066467,
+    0.5364915728569031,
+    0.6117941737174988,
+    0.5750553011894226,
+    0.7356886863708496,
+    0.5428476929664612,
+    0.6388304233551025,
+    0.6250517964363098,
+    0.7800116539001465,
+    0.6190195083618164,
+    0.730032742023468,
+    0.6875314712524414,
+    0.7338151335716248,
+    0.6275689005851746,
+    0.7885230183601379,
+    0.5358933210372925,
+    0.6526652574539185,
+    0.46814027428627014,
+    0.45868194103240967,
+    0.3855879306793213,
+    0.435711532831192,
+    0.24825744330883026,
+    0.31086868047714233,
+    0.2866459786891937,
+    0.4602144658565521,
+    0.21634511649608612,
+    0.2765243947505951,
+    0.2673088610172272,
+    0.30886632204055786,
+    0.22488254308700562,
+    0.31140193343162537,
+    0.24494515359401703,
+    0.4223151206970215,
+    0.19046176970005035,
+    0.37441423535346985,
+    0.2783055007457733,
+    0.3998366594314575,
+    0.45469000935554504,
+    0.5479355454444885,
+    0.4834071397781372,
+    0.6809642910957336,
+    0.5376483798027039,
+    0.6538781523704529,
+    0.6499684453010559,
+    0.7344264984130859,
+    0.5523643493652344,
+    0.6536896824836731,
+    0.613896369934082,
+    0.7661826014518738,
+    0.5818518996238708,
+    0.7236260771751404,
+    0.6205264925956726,
+    0.7680992484092712,
+    0.6532251238822937,
+    0.7579072117805481,
+    0.5566439628601074,
+    0.6761524677276611,
+    0.45071515440940857,
+    0.48518845438957214,
+    0.4275740683078766,
+    0.37104594707489014,
+    0.25602689385414124,
+    0.253372460603714,
+    0.13093797862529755,
+    0.2754092216491699,
+    0.16839905083179474,
+    0.24619142711162567,
+    0.31306192278862
+  ],
+  "seam_composite_mae": 0.22990669310092926,
+  "decoded_png_sha256": [
+    "ac0c7ba7fbe8ba8040c467c6fd628e487318d6fb794c6db46e42aea6788864d7",
+    "085adc460f97508ddf38162352d2521542d3a810ed2c316c5e7c6347ecb4c964",
+    "ea96d53b1a8804462aa96cdafae0a1fda84e1a6d4a721580f116b391d5899d1f",
+    "c16956a61e23825a7a7d0081d41c07f52f3b86ce924f643928eb227f837225c0",
+    "1d7a3ee3d753b627ed2300bc5870b09d73c987ec1bea749f555369974053f906",
+    "8ade1f2036b9babf201ef43fd1ed2d60172dd25c049b9f5d146236b7b614049d",
+    "d97d6803abd620b0f6da43ae615d0f38ade1069b010b569d58cfee4d5b35c675",
+    "5fa6796f0716ae2cae16f38eceafef6427da241ad6b5c1092a0f9e31d0c8b568",
+    "b7b1ab68f9ab8ce2f4f666c6ef122b53923e01ba4bc87d11a089389ae0f6f17f",
+    "e3ea8780178ab79314fcf24406d0eef7ec4557ff3ceed91e90a472ddba85449c",
+    "2dd38c6b78e6fe5148c795d870277857abdfd92b735017c00ba30798a88881c0",
+    "b2d73ebcce9aa432b332ab973ebefc3513e94bbea163d5776543939f9a727c83",
+    "b7129d8b9470f036a749e2b3d456b020b58d36b04b7e9c18d3c07698ea07622c",
+    "936594ac68d04d61de3165f8fb54f9b8fccd3b92c772604ac925c96110d3e3ab",
+    "8028c24af2f1dce3b852f51b96e07254dbabb2a5c9fd4641d3214c8317323e66",
+    "fc2c6bb41dd0141ed814abbb2816004ddc161c5e660bbc889632d415b08536a3",
+    "9050c93a36aa54086f830c7b0eb9d6c5c0f55d355f760e5522ee2b835e20d3f6",
+    "2f82f7394962565a5b6575a54614ba9c13280d69cb862acf59f73c842c343c83",
+    "715e930c3f4ce1464b1f535727c228a3a77a334b02daf5a0bb14082cf906b71f",
+    "adf703da658c4939110bb02303088069f9d8000d47760093b6c091bbe07d8e7c",
+    "6b1130dea09b0c212a06f921c965626eaccf357b62e402bbcc686d240f8c68b9",
+    "c95cb81c624efc70f0ec87cbbfcba1ddf2d297e1b3e1fd4d5e9f1e478c39be69",
+    "061f8bc5dd445afef73318593dfccafe726cbbea22fd3f1ad73829057c3ac0db",
+    "791559d57a8d89bf79bae0c2f06a78bb38ff4e8fb93b77c07317a60eaf0e7a75",
+    "f8a495c35f2ab61c0aae38163889ebb3360b6bcd79a2f5c3d976fe754fb6f6c7",
+    "5d9ecca4b708c56b5beb9f5eed5e95adef2a97345a50967f882d5f5f96406614",
+    "5c7b82ccc32100adc83b294f4424eebe6fc2ae039b90c4fbca6020f592b1e4e2",
+    "e4231037968ae38a892ac5abcbf1ffe4e7c47ff63b192af28f16ca51bc9cacc3",
+    "657b5aa2c083dafd102974170e784614d7362f54ae4cd0d06128c6d283a79547",
+    "c2505c623970c76f87a096cbb0ffed358641d217062bc5b0d4cd289fb3c5384e",
+    "4a100618ab4f469aecc4eebb2e8a5278c7c7528dbdb8cd6c588434b6d4b58e56",
+    "47156f55499f05b238d037bf63afb693357340fc19221c6de873370b26712a55",
+    "0fe5c1349091750654f413bf3e7e3c4b1722e43a412765b168a82d9bcc22bfe9",
+    "24adbc3f07a8e7b3a0ab3ef5cf3791dab0db0b2b02297d7d76708f29fcfe8adf",
+    "d1c0ed01842bdf97e3b9b8b87f4df9eeb7e07a10b4cd8ccbb3393a340c805fcc",
+    "9461ec14e6329b617b03dae6bb742e04da443952c6d868b84ce85aa561527bc6",
+    "fced3a7d8dea2b293fa41c9704ff67bfc5b50a2b6af1b0df205f584030aaea72",
+    "847849e2fcbd4c32d24235f02e8b5976bd8030b2eb2ae71a6e7a6c26c02b6cb9",
+    "de41a32e59febdea49e51bd075346727f692417e60e73f72e587174ed0a41de4",
+    "e602be1856d9ad8f895e0fc1e03624cdf76cc5b0cf4e2c7d981def8da9cbc68e",
+    "7eaa21969d08442efc4ae666a40946b4e692921bfa9551a96c94679e40823d14",
+    "2da4b059a0f9b49288e8b2f3608e63a3ae75444d60d3b94f5d00c05384a5a9f2",
+    "7607f4f6c43aab5f4084cb7a17a868b265e40858177930bc0e486d958e79d3ba",
+    "129f6e5fb34f157ae0578746f159709931a43db934b492b1b9e3fcee5865fa0a",
+    "0825303ba269f2d66e0158005102ebef4fe68de8f2607013b61cfac66a15d1d4",
+    "ca04806d4ae093890b74a9d192853ddbf5d577604e57dc4bf1fe966f3b0f1d4c",
+    "b59003d66b24276be27cb3f9bb8d1d3dd99c387d2ce945d8ad0db8bd2c2eefba",
+    "7268dea867e028c4c7668e85fcc0ae2c60cd89fc670f4eeaf6b8c21b5447f9be",
+    "b2ce0c886f506570774fae78113e84ea9606564e98228ec641ac59eeeb646317",
+    "4b3591c7cd8962b13b5f95027ec0b209af3f6bf4282c230c9ad399a1cd7fd62f",
+    "64a79ec023ed01f2d0e0a56344e4985189edf571d389f3388bb147c139530f31",
+    "9d97e78dbc9a3c18cc58ec8612df3728c2c6f464291bb10048f29ca8dc89a4cc",
+    "1d2f84e6b31d854482f506fdf13b5b69efaba7a468fdec10c9dde4829175b35b",
+    "d45f4ec8eb4c8ac2b7a668ef4951d6bf58ad0c8488f3330442b96e511231ca8e",
+    "641f9d63332db043f9e4f647f0bd77c8baf9a475b5d021990b1c9e1aad7c87de",
+    "b39a22631d4a1e09e892856a5d9470c08c6574f4023c1517262e32ae385620da",
+    "d26aa49c38b530f6b229e3c606bcac3510a0248609d172825518327d5b07fccd",
+    "8b4163e5ef962e056cba0e08502c3715bb335144eb65c7069c24b4a951130e73",
+    "ab3eabf39cd8b3e5e83dd2f577d729ff4feaf08764bdbdd12ed928838eeafa55",
+    "0307d1a20bcd986ea7829a2d311436c37850fe4b5971e1ca361448606efaaa98",
+    "51477b586ba0df20a4c0602e2339bd25bfdb1a8200289fb5bd15cf8beeffa773",
+    "b7fd3b1dbbce578b94813fa3fca7327da50e3cbae8a8a882aee47891ea785cf8",
+    "0bf4daa867a28b3b2e8082be78265a5a995c4ab1716adfda858d596c9e2cd76d",
+    "0e04393cbe05ea4d9ce1d5e7b7ee6175dfa7e6d2ae244f7e350346773ecab138",
+    "ca3ac56e882f9fadc42cbd9e00f47b14f6da9e6bc49954d224012de21c9635b4",
+    "996b326d84c6c52dc065f6e0dd98dedd7f2ed55d3b92c0359819df932340fb54",
+    "f5aff06da6b8d38da467bb6a34718077a6af4486b3fd0d8fe9f541352c73453d",
+    "6f9185a96b33cfbc1fdaa94786a4ebf555666caa17bf5114d267f593195a506b",
+    "a7f6dabfa134e9816f7d4065305b155b78408dc6100bd66fa2105fd5af80dad9",
+    "2fd0585c3452d4b815e1122586622d2aec0d696400d1a0f6be82e16d7cebb8f4",
+    "6c0f17f36740c918ec10df2b65f7c689d855a82f7d6d130b1d1df2f243b8d763",
+    "20528db44cb454a5257fefd12c813b0129544e4ed7beca069ff13ad5268524ae",
+    "3a2228dd574e4a26a8795c71e10c5403566dea6bd6848f9ee122441d871e7c71",
+    "9cdd5abddaf3fea7dbe129fbeb8f28d1eb8c1396bdd727295ce94220c61d891b",
+    "9387da75031a2c1779ea0af167a6b9fecbd5743260cd65a80011de763ae1279a",
+    "97a8806ad52229b9e66ea5d093c4d1857e093da9b082bc506929b493e73115c9",
+    "834d05c4fe6b222fc2a23d4b1266e77b74cc34f533c24d14683616997bff3413",
+    "f245fd6347c026ef00c610dad5fb59142cf647a34df883d8d7e2aa84774fffc5",
+    "310bd4f3c5a5a36321887b511ec2b2744fc1b13520b7314d4175baa04a0b5bdf",
+    "89740e784a089ee7f7be6cb75c122d9eeae4d81fb55d065ec887b5fb0d0c5ace",
+    "a4af8664e5b2c889232a80643f7e4af8afb60970e8fc082fa918646002940aa7",
+    "e17b6ca0a8c66bf7f71c4f422ada91167c2112fa7a5f13a088509594cec42270",
+    "5add2672afc9f78f9358ebd35f19dd23ba17239dde58a1ed38dcf36675dd208a",
+    "500bf8186326c72b9a31e538f802d831474ce03989e871c4916c234d838e691c"
+  ],
+  "decoded_pts_seconds": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "timestamps_monotonic": true,
+  "native_streams": [
+    {
+      "index": 0,
+      "codec_name": "vp9",
+      "codec_long_name": "Google VP9",
+      "profile": "Profile 0",
+      "codec_type": "video",
+      "codec_tag_string": "[0][0][0][0]",
+      "codec_tag": "0x0000",
+      "width": 512,
+      "height": 512,
+      "coded_width": 512,
+      "coded_height": 512,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 0,
+      "sample_aspect_ratio": "1:1",
+      "display_aspect_ratio": "1:1",
+      "pix_fmt": "yuv420p",
+      "level": -99,
+      "color_range": "tv",
+      "field_order": "progressive",
+      "refs": 1,
+      "r_frame_rate": "30/1",
+      "avg_frame_rate": "30/1",
+      "time_base": "1/1000",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "nb_read_frames": "84",
+      "disposition": {
+        "default": 0,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0
+      },
+      "tags": {
+        "alpha_mode": "1",
+        "ENCODER": "Lavc60.31.102 libvpx-vp9",
+        "DURATION": "00:00:02.800000000"
+      }
+    }
+  ],
+  "native_duration": "2.800000",
+  "source_review": {
+    "agent": "/root/artisan_stickers_a",
+    "every_selected_sourceframe_observed": true,
+    "selected_frame_view_scale_px": 256,
+    "native512_frame_indices": [
+      0
+    ],
+    "observation": "Native0 gives clean single mouth-cover contact, unambiguous acorn in opposite hand and two grounded feet. Exact sole source PNG inspected at native512; no source eye/limb/prop ghost accepted.",
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-inspection/meshes/67_anchor0.png"
+    ]
+  },
+  "candidate_visual_review": {
+    "agent": "/root/artisan_stickers_a",
+    "observed_all84_afterframes": true,
+    "frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "complete_review_scale_px": 256,
+    "native512_frame_indices": [
+      0,
+      17,
+      34,
+      59
+    ],
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-candidates/lumen_67_author-a_mesh_v1/after256-0.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_67_author-a_mesh_v1/after256-1.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_67_author-a_mesh_v1/after256-2.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_67_author-a_mesh_v1/after256-3.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_67_author-a_mesh_v1/native-author-0-17-34-59.jpg"
+    ],
+    "observation": "Actually viewed all 84 decoded frames at256 and native512 frames 0/17/34/59. The same mouth-covering paw follows the small surprised head recoil, while opposite paw keeps the one acorn and gives a small protective tuck. Ears/cape have a separate slight nervous accent, feet stay grounded. Face retains two clear open eyes and one nose, fingers remain attached to mouth/forearm. No acorn teleport, dropped/reversed nut, duplicate hand, broken cap or abrupt contour morph seen. Optional acorn drop/retrieval is omitted.",
+    "native_realtime_perceptual_playback": false,
+    "slow_perceptual_playback": false,
+    "device_playback": false,
+    "author_verdict": "propose_for_independent_per_item_QA"
+  },
+  "baseline_independent_triage": {
+    "artifact": "docs/qa-1-13/sticker-triage-51-80.json",
+    "verdict": "repair_required",
+    "source_sha256": "0447c6ee7c1d3bcdef508ceb30acec239d641f48cc6621b7676de6e76df4d7e0",
+    "defects": [
+      {
+        "frames": [
+          76,
+          81
+        ],
+        "reason": "Матеріальний жолудь повертається до старту через dissolve: після лежання біля стопи f78 показує його напівпрозорим на підлозі, а до f81 він уже знову в лапі біля грудей. Руху підбирання/траєкторії повернення немає, порушена scene continuity перед seam."
+      }
+    ]
+  },
+  "recipe_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_67/recipe.json",
+  "recipe_sha256": "5df0bacce33e490cb99b7e102db1a3d1bdab89dacd41e08ba555e44755cf004b",
+  "generator_snapshot": {
+    "engine_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+  "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+  "statistics": {
+    "minimum_jacobian": 0.8721324801445007,
+    "maximum_displacement_px": 11.595280647277832
+  },
+  "proposed_description_uk": "Раптом прикриває рот лапкою й трохи відсахується, широко розплющивши очі. В іншій лапці міцно тримає жолудь і ніяково притискає його ближче до себе.",
+  "independent_review": "pending",
+  "native_playback": "not_observed",
+  "device_playback": "not_observed",
+  "canonical_assets_changed": false,
+  "local_mesh": {
+    "source_frame": 0,
+    "points_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        511,
+        0
+      ],
+      [
+        0,
+        511
+      ],
+      [
+        511,
+        511
+      ],
+      [
+        256,
+        0
+      ],
+      [
+        0,
+        256
+      ],
+      [
+        511,
+        256
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        268,
+        77
+      ],
+      [
+        139,
+        127
+      ],
+      [
+        386,
+        125
+      ],
+      [
+        210,
+        203
+      ],
+      [
+        335,
+        212
+      ],
+      [
+        269,
+        236
+      ],
+      [
+        272,
+        260
+      ],
+      [
+        268,
+        287
+      ],
+      [
+        289,
+        276
+      ],
+      [
+        315,
+        310
+      ],
+      [
+        329,
+        337
+      ],
+      [
+        269,
+        302
+      ],
+      [
+        267,
+        324
+      ],
+      [
+        183,
+        341
+      ],
+      [
+        220,
+        311
+      ],
+      [
+        221,
+        343
+      ],
+      [
+        211,
+        368
+      ],
+      [
+        167,
+        359
+      ],
+      [
+        266,
+        415
+      ],
+      [
+        107,
+        372
+      ],
+      [
+        395,
+        377
+      ],
+      [
+        181,
+        473
+      ],
+      [
+        323,
+        472
+      ]
+    ],
+    "point_names": [
+      "corner_tl",
+      "corner_tr",
+      "corner_bl",
+      "corner_br",
+      "edge_top",
+      "edge_left",
+      "edge_right",
+      "edge_bottom",
+      "crown",
+      "ear_l",
+      "ear_r",
+      "eye_l",
+      "eye_r",
+      "nose",
+      "mouth_contact",
+      "jaw",
+      "cover_paw",
+      "cover_mid",
+      "cover_elbow",
+      "neck",
+      "medal",
+      "acorn_paw",
+      "acorn_top",
+      "acorn_center",
+      "acorn_tip",
+      "acorn_arm",
+      "belly",
+      "cape_l",
+      "cape_r",
+      "foot_l",
+      "foot_r"
+    ],
+    "parts": [
+      {
+        "name": "oops_startle_with_same_paw_covering_mouth",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            3,
+            -8
+          ],
+          [
+            3,
+            -8
+          ],
+          [
+            3,
+            -8
+          ],
+          [
+            3,
+            -8
+          ],
+          [
+            3,
+            -8
+          ],
+          [
+            3,
+            -8
+          ],
+          [
+            3,
+            -8
+          ],
+          [
+            3,
+            -8
+          ],
+          [
+            3,
+            -8
+          ],
+          [
+            1.5,
+            -4
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0.6,
+            -2
+          ],
+          [
+            0.3,
+            -1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.12,
+            0.4,
+            0.65,
+            0.88,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "same_opposite_hand_tucks_acorn_without_drop",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            -3
+          ],
+          [
+            2,
+            -3
+          ],
+          [
+            2,
+            -3
+          ],
+          [
+            2,
+            -3
+          ],
+          [
+            1,
+            -1.5
+          ],
+          [
+            0,
+            -0.5
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.18,
+            0.48,
+            0.72,
+            0.92,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "nervous_ear_and_cape_recoil",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -1.4,
+            -0.6
+          ],
+          [
+            1.4,
+            -0.6
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 3
+        }
+      }
+    ],
+    "minimum_jacobian": 0.65,
+    "fluid_texture": null
+  },
+  "strongest_objection": {
+    "objection": "The mouth-cover gesture could detach from the face or the acorn could transfer hands.",
+    "author_response_and_limit": "Head and same cover paw share recoil map, forearm follows at reduced amplitude; the opposite actual grip and acorn tuck together. No drop/retrieval or hand transfer is attempted. Independent QA must inspect these same contacts across all84 frames.",
+    "independent_semantic_QA_required": true
+  },
+  "frozen_native_author_contact_sheet": {
+    "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_67/native-author-0-17-34-59.jpg",
+    "sha256": "032c5d196483a73d0c8f3896c12eb0a9636abb30a001f470961765bb0e09bb5d",
+    "native_frame_scale_px": 512,
+    "frame_indices": [
+      0,
+      17,
+      34,
+      59
+    ]
+  },
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_67/review-normal.mp4",
+      "sha256": "7c96185807d30b392673429e4abe301cbbbd92f40df9386931c35e8f528634ed",
+      "bytes": 196923,
+      "frames": 84,
+      "duration": 2.8,
+      "fps": 30,
+      "perceptually_watched": false
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_67/review-slow.mp4",
+      "sha256": "d45c2f0402b01f0259be745fba8aa178e94b3ceb9ff03a18dd29b755ad3cc6c1",
+      "bytes": 305109,
+      "frames": 84,
+      "duration": 5.6,
+      "fps": 15,
+      "perceptually_watched": false
+    }
+  ],
+  "reproducibility": {
+    "artifact": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_67/reproducibility.json",
+    "sha256": "96ed72e0cbadbd28688442cd27e328b2e5b43218993a0abc9b4b76106e35efc7",
+    "raw_rgba_exact_match": true,
+    "encoded_frame_exact_match": true,
+    "canonical_video_read": false,
+    "container_bytes_exact_match": false
+  },
+  "candidate_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_67/candidate.webm",
+  "frozen_at": "2026-10-30T19:14:34.304993+00:00"
+}

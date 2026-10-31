@@ -1,0 +1,80 @@
+{
+  "kind": "generated_corrected_anchor",
+  "tool": "built-in image_gen.imagegen",
+  "operation": "precise-object-edit",
+  "date": "2026-10-30",
+  "actual_agent": "/root",
+  "transparent_background": true,
+  "steps": [
+    {
+      "step": 1,
+      "target_kind": "decoded_baseline_video_frame",
+      "output_file": "imagegen-intermediate.png",
+      "inputs": [
+        {
+          "role": "edit_target",
+          "tool_referenced_image_path": "/workspace/scratch/342fb2c985cb/media-audit/triage-81-110/lumen_97/042.png",
+          "archived_file": "input-target97-frame042.png",
+          "sha256": "1f87311620703991b0913f0d0515480d22e8c599db8544623800eece7b092229"
+        },
+        {
+          "role": "identity_reference",
+          "tool_referenced_image_path": "sticker-lab/production-v5/source-art/lumen_79/input-identity51-baseline-preview.png",
+          "archived_file": "input-identity51-baseline-preview.png",
+          "sha256": "f6d1c671b6653dda929fbaedab98b6e381991a72c0d6ff2d483d38763b22f21d"
+        }
+      ],
+      "output_sha256": "6248275078bb1b9fe5de6f9feabe7969e067a29c29d453c903db8d0c404029e3"
+    },
+    {
+      "step": 2,
+      "target_kind": "generated_intermediate",
+      "target_file": "imagegen-intermediate.png",
+      "output_file": "imagegen-anchor-original.png",
+      "inputs": [
+        {
+          "role": "edit_target",
+          "tool_referenced_image_path": "/workspace/scratch/342fb2c985cb/generated_images/exec-ee73218f-667d-474c-b399-432e11aadaaf.png",
+          "sha256": "6248275078bb1b9fe5de6f9feabe7969e067a29c29d453c903db8d0c404029e3"
+        },
+        {
+          "role": "identity_reference",
+          "tool_referenced_image_path": "sticker-lab/production-v5/source-art/lumen_79/input-identity51-baseline-preview.png",
+          "archived_file": "input-identity51-baseline-preview.png",
+          "sha256": "f6d1c671b6653dda929fbaedab98b6e381991a72c0d6ff2d483d38763b22f21d"
+        }
+      ],
+      "output_sha256": "36708fa26e091037cd565c9a39063acf66f6c16047378fe61bf86c344cd6faf8"
+    }
+  ],
+  "postprocessing": "Pillow LANCZOS proportional downscale only; no raster repaint or alpha reconstruction",
+  "status": "anchor_prepared_not_approved_for_canonical",
+  "author_inspection": "Second edit removes residual lateral enamel blocks. Exactly two central incisors, cold squint/clasp/frost/ice scene retained. Independent source/output QA pending.",
+  "actual_input_references_semantics": "Initial workflow source references; every actual tool call and intermediate is separately recorded in steps.",
+  "actual_input_references": [
+    {
+      "role": "edit_target",
+      "tool_referenced_image_path": "/workspace/scratch/342fb2c985cb/media-audit/triage-81-110/lumen_97/042.png",
+      "archived_file": "input-target97-frame042.png",
+      "sha256": "1f87311620703991b0913f0d0515480d22e8c599db8544623800eece7b092229"
+    },
+    {
+      "role": "identity_reference",
+      "tool_referenced_image_path": "sticker-lab/production-v5/source-art/lumen_79/input-identity51-baseline-preview.png",
+      "archived_file": "input-identity51-baseline-preview.png",
+      "sha256": "f6d1c671b6653dda929fbaedab98b6e381991a72c0d6ff2d483d38763b22f21d"
+    }
+  ],
+  "generated_file": "imagegen-anchor-original.png",
+  "generated_sha256": "36708fa26e091037cd565c9a39063acf66f6c16047378fe61bf86c344cd6faf8",
+  "generated_size": [
+    1254,
+    1254
+  ],
+  "animation_anchor": "anchor.png",
+  "anchor_sha256": "a029373ff7e11607710e1250b90b3a06dbeff2f9bae630abfec52aa34bccfff1",
+  "anchor_size": [
+    512,
+    512
+  ]
+}

@@ -1,0 +1,484 @@
+{
+  "schema_version": 1,
+  "batch_id": "integration-a-mesh7-v1",
+  "created_at": "2026-10-30T19:41:06.883429+00:00",
+  "authorization": {
+    "by": "/root",
+    "scope": "local_canonical_staging_only",
+    "approved_ids": [
+      "lumen_61",
+      "lumen_62",
+      "lumen_63",
+      "lumen_65",
+      "lumen_67",
+      "lumen_71",
+      "lumen_115"
+    ],
+    "basis": "Explicit root addressed authorization after actual independent resumed QA30d4c982 exactperitem ACCEPT. Keep accepted descriptions including67unchanged;62heldstar notthrow/catch;115cheektouch notcompletewipe. Native playback unknown; noexternalpublication."
+  },
+  "preparation_request": "sticker-lab/production-v5/integration-a-mesh7.request.json",
+  "items": [
+    {
+      "id": "lumen_61",
+      "approval_state": "approved_frame_sequence_prototype_local_staging",
+      "candidate_id": "lumen_61_author-a_mesh_v1",
+      "source_kind": "derived_decoded_video",
+      "source_video_path": "sticker-lab/production-v5/approved-sources/lumen_61/source.webm",
+      "source_video_sha256": "06b1aca3546b39ed3b7a175791dc64ffb188942fdee0db14d1684908a8427730",
+      "ancestor_original_keyposes_sha256": "5229bc9be39e7b87f66789087965d7f32d11be7e7da8348e09d0532d64a92f36",
+      "derived_source_bundle_sha256": "7e0293fb3bb18b581cbaf1520dd6640f51565976c0eecf6793eaebe23412d750",
+      "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+      "derived_source_frames": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_61/000.png",
+          "sha256": "8d12e08c306ccc06cd878b232ce0742bc1a7bb86fa150546e45b88d18660048e"
+        }
+      ],
+      "output_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_61/candidate.webm",
+      "output_sha256": "2bd9dad4ef40f58ca2e5dc80725e6e14014546b8cd2a8c7d303dd1e7c86a1221",
+      "output_bytes": 203653,
+      "poster_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_61/poster.png",
+      "poster_sha256": "31ce5a157b51f3293c64be441805b7f336492cb7d612a7f60865d9cf232158c9",
+      "proof_path": "sticker-lab/production-v5/approved-proofs/lumen_61_author-a_mesh_v1.json",
+      "proof_sha256": "9de029515117c6d1e5666090a637f7d262f8f5b94d60637d35a3519a6c5f192f",
+      "frozen_package_sha256": "688d9fcebe876fbe1da78b5eecce60aafda11b8da756e0a31e73df9e96f1d648",
+      "frozen_package_manifest_path": "sticker-lab/production-v5/approved-proofs/author_a-mesh7-r2-frozen-package.json",
+      "frozen_package_manifest_sha256": "e4f4f88ba540528fa2d969bf0d14feea4df46f90587fab3b99a3ae150dd878da",
+      "description_uk": "Пустотливо показує язика й схиляє голівку, трохи піднімаючи бірюзове морозиво в тій самій лапці. Інша лапка вперта в бік, ніжки стоять стійко.",
+      "qa": {
+        "artifact": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed.json",
+        "artifact_sha256": "30d4c9829be62cf99bd0f4b711441cc812c7794db2597675b9d06ec5ed3596fe",
+        "review_id": "qa-animation-author-a-mesh7-resumed-final",
+        "actual_agent_id": "/root/qa_mesh7_resume",
+        "verdict": "accept",
+        "accepted_scope": "Exact frozen local frame/scene prototype and review-file integrity only; native realtime/slowed/device/human perception unknown.",
+        "coverage": null,
+        "limitations": {
+          "reported": [
+            "No native real-time/slowed playback, Telegram/device or human perception observed. Frame-sequence visual inspection and technical MP4 checks do not close that gap.",
+            "Original new89 source atlas remains unrecovered; derived decoded baseline provenance is explicit.",
+            "No independent generator rerender in this QA; author reproducibility proof not relabeled independent.",
+            "Deliberately omitted optional acts are recorded peritem; do not describe them as performed."
+          ],
+          "native_realtime": "not_observed",
+          "native_slow": "not_observed",
+          "device": "not_observed",
+          "full_temporal_quality_acceptance": false
+        }
+      },
+      "recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_61_author-a_mesh_v1.json",
+      "recipe_sha256": "8cccc26c8ba5daa2269c2bac5e4ea3c9345102b8628a36abfcd2bfc39de59cba",
+      "generator": {
+        "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/originals/9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c-recipe_engine.py",
+        "original_generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "original_support_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/originals/ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee-repair.py",
+        "original_support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+        "engine_path": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/recipe_engine.py",
+        "engine_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+        "support_path": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/repair.py",
+        "support_sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8"
+      },
+      "original_recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_61_author-a_mesh_v1-original-frozen.json",
+      "original_recipe_sha256": "8ebba9ae605a4024b8c86104440eef3eede4e6531af969c032077174d452b3aa",
+      "recipe_relocation_note": "Only durable source/code paths and explicit expected decode metadata changed; numeric scene recipe is preserved. All84 raw/decoded frames must match before staging."
+    },
+    {
+      "id": "lumen_62",
+      "approval_state": "approved_frame_sequence_prototype_local_staging",
+      "candidate_id": "lumen_62_author-a_mesh_v2",
+      "source_kind": "derived_decoded_video",
+      "source_video_path": "sticker-lab/production-v5/approved-sources/lumen_62/source.webm",
+      "source_video_sha256": "663eaf00bb396fd10ba2181c880de8cec5a9dca036175e8c2ee0ea10c8aaaeb3",
+      "ancestor_original_keyposes_sha256": "12b8d4c9f74b68478110ef2b36bd74fbfa67b23fb328744d17978b1ac70601fb",
+      "derived_source_bundle_sha256": "737ba502ee93be5fde1a6d6f2899825db9bf91d15a556291664bc73fbcebc1d3",
+      "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+      "derived_source_frames": [
+        {
+          "index": 54,
+          "timestamp_seconds": 1.8,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_62/054.png",
+          "sha256": "28e967af5e73a1c418e47938c14a79184562a7808d8869fd848cfb5ce92aa9e7"
+        }
+      ],
+      "output_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_62/candidate.webm",
+      "output_sha256": "63597e5775094f9c1152974efb239428527db02c66226a3fc9dace74614b71f4",
+      "output_bytes": 162564,
+      "poster_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_62/poster.png",
+      "poster_sha256": "7e2d3264ec4e15d28ce458e29d0243ffe0768b7367c1c83950bb0c43075628cb",
+      "proof_path": "sticker-lab/production-v5/approved-proofs/lumen_62_author-a_mesh_v2.json",
+      "proof_sha256": "a8917271500b5116c119b98e7c468d9c4838ce3631d36e6cb2a029af86bb0f8d",
+      "frozen_package_sha256": "688d9fcebe876fbe1da78b5eecce60aafda11b8da756e0a31e73df9e96f1d648",
+      "frozen_package_manifest_path": "sticker-lab/production-v5/approved-proofs/author_a-mesh7-r2-frozen-package.json",
+      "frozen_package_manifest_sha256": "e4f4f88ba540528fa2d969bf0d14feea4df46f90587fab3b99a3ae150dd878da",
+      "description_uk": "Пустотливо підморгує й показує язика, схиляючи голівку до лапки біля щоки. В іншій лапці тримає золоту зірку, а піднятою ніжкою робить маленький бічний акцент.",
+      "qa": {
+        "artifact": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed.json",
+        "artifact_sha256": "30d4c9829be62cf99bd0f4b711441cc812c7794db2597675b9d06ec5ed3596fe",
+        "review_id": "qa-animation-author-a-mesh7-resumed-final",
+        "actual_agent_id": "/root/qa_mesh7_resume",
+        "verdict": "accept",
+        "accepted_scope": "Exact frozen local frame/scene prototype and review-file integrity only; native realtime/slowed/device/human perception unknown.",
+        "coverage": null,
+        "limitations": {
+          "reported": [
+            "No native real-time/slowed playback, Telegram/device or human perception observed. Frame-sequence visual inspection and technical MP4 checks do not close that gap.",
+            "Original new89 source atlas remains unrecovered; derived decoded baseline provenance is explicit.",
+            "No independent generator rerender in this QA; author reproducibility proof not relabeled independent.",
+            "Deliberately omitted optional acts are recorded peritem; do not describe them as performed."
+          ],
+          "native_realtime": "not_observed",
+          "native_slow": "not_observed",
+          "device": "not_observed",
+          "full_temporal_quality_acceptance": false
+        }
+      },
+      "recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_62_author-a_mesh_v2.json",
+      "recipe_sha256": "2faa2ceb93a69008465aadb52d57dcf77e67a33c5a28f8b6e6a317cd1d1fae6a",
+      "generator": {
+        "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/originals/9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c-recipe_engine.py",
+        "original_generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "original_support_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/originals/ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee-repair.py",
+        "original_support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+        "engine_path": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/recipe_engine.py",
+        "engine_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+        "support_path": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/repair.py",
+        "support_sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8"
+      },
+      "original_recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_62_author-a_mesh_v2-original-frozen.json",
+      "original_recipe_sha256": "faaab45d13a4f980b8a624764085688afe282f45c507a310936dbfc77217b73f",
+      "recipe_relocation_note": "Only durable source/code paths and explicit expected decode metadata changed; numeric scene recipe is preserved. All84 raw/decoded frames must match before staging."
+    },
+    {
+      "id": "lumen_63",
+      "approval_state": "approved_frame_sequence_prototype_local_staging",
+      "candidate_id": "lumen_63_author-a_mesh_v1",
+      "source_kind": "derived_decoded_video",
+      "source_video_path": "sticker-lab/production-v5/approved-sources/lumen_63/source.webm",
+      "source_video_sha256": "790bd1d73a68313cae5e2d78598a95de58c438ad9f770f42ac3e794b1c17b548",
+      "ancestor_original_keyposes_sha256": "f81426f60935576e61380e9786e9a06fd3e478b0f72cfc2441a556726b344e61",
+      "derived_source_bundle_sha256": "22352c0b3fb41d80b7dc46b8c85c8911e0555391b610958dc41d0e89e8a5434e",
+      "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+      "derived_source_frames": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_63/000.png",
+          "sha256": "79c8edf3d6cddbd13275603d394b603549addc3c692bf18e124a6f517590a86a"
+        }
+      ],
+      "output_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_63/candidate.webm",
+      "output_sha256": "e99d225660cba0b9ad1fdfbec9631544ba3062bf859f0f1b7443bd3cfb2f0c50",
+      "output_bytes": 177679,
+      "poster_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_63/poster.png",
+      "poster_sha256": "06f352261d543e648f03bf66eca4a93e95a6543f70b6c6f6284126f0fffc6025",
+      "proof_path": "sticker-lab/production-v5/approved-proofs/lumen_63_author-a_mesh_v1.json",
+      "proof_sha256": "ca7d85e6f08ca9b4d2717c050be468b4767ae32a9af642837a881ca0453811ed",
+      "frozen_package_sha256": "688d9fcebe876fbe1da78b5eecce60aafda11b8da756e0a31e73df9e96f1d648",
+      "frozen_package_manifest_path": "sticker-lab/production-v5/approved-proofs/author_a-mesh7-r2-frozen-package.json",
+      "frozen_package_manifest_sha256": "e4f4f88ba540528fa2d969bf0d14feea4df46f90587fab3b99a3ae150dd878da",
+      "description_uk": "Заплутавшись у бірюзовій пряжі, бешкетно хихоче з висунутим язиком. Лапки ледь смикають свої нитки, піднята ніжка ворушиться, а клубочок біля опорної ніжки лишається на місці.",
+      "qa": {
+        "artifact": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed.json",
+        "artifact_sha256": "30d4c9829be62cf99bd0f4b711441cc812c7794db2597675b9d06ec5ed3596fe",
+        "review_id": "qa-animation-author-a-mesh7-resumed-final",
+        "actual_agent_id": "/root/qa_mesh7_resume",
+        "verdict": "accept",
+        "accepted_scope": "Exact frozen local frame/scene prototype and review-file integrity only; native realtime/slowed/device/human perception unknown.",
+        "coverage": null,
+        "limitations": {
+          "reported": [
+            "No native real-time/slowed playback, Telegram/device or human perception observed. Frame-sequence visual inspection and technical MP4 checks do not close that gap.",
+            "Original new89 source atlas remains unrecovered; derived decoded baseline provenance is explicit.",
+            "No independent generator rerender in this QA; author reproducibility proof not relabeled independent.",
+            "Deliberately omitted optional acts are recorded peritem; do not describe them as performed."
+          ],
+          "native_realtime": "not_observed",
+          "native_slow": "not_observed",
+          "device": "not_observed",
+          "full_temporal_quality_acceptance": false
+        }
+      },
+      "recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_63_author-a_mesh_v1.json",
+      "recipe_sha256": "fcf8fc18f121c65d4baf942133aed950360dacfc437fc13b3c473d5d5a8b2156",
+      "generator": {
+        "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/originals/9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c-recipe_engine.py",
+        "original_generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "original_support_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/originals/ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee-repair.py",
+        "original_support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+        "engine_path": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/recipe_engine.py",
+        "engine_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+        "support_path": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/repair.py",
+        "support_sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8"
+      },
+      "original_recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_63_author-a_mesh_v1-original-frozen.json",
+      "original_recipe_sha256": "4197d2a6dfdc2746cf0de8749a8653d2b6765abb16eea427cfb5aa999ab93c42",
+      "recipe_relocation_note": "Only durable source/code paths and explicit expected decode metadata changed; numeric scene recipe is preserved. All84 raw/decoded frames must match before staging."
+    },
+    {
+      "id": "lumen_65",
+      "approval_state": "approved_frame_sequence_prototype_local_staging",
+      "candidate_id": "lumen_65_author-a_mesh_v1",
+      "source_kind": "derived_decoded_video",
+      "source_video_path": "sticker-lab/production-v5/approved-sources/lumen_65/source.webm",
+      "source_video_sha256": "c977c78d3f6149fcf0cdd4ccf2be8693460a6f5cd4bf75165779fd202743bc89",
+      "ancestor_original_keyposes_sha256": "66bb9004d9d695c98e2e7e933f92f338004b068b3f0d983808dd928eccc2061d",
+      "derived_source_bundle_sha256": "e6f3e2ff09374e4ad88734d3403563bf28d50f288f0014c5d48056c19cabacfa",
+      "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+      "derived_source_frames": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_65/000.png",
+          "sha256": "57509e008aafb2cfe1cb0037974a57ca71f6dbf3986e3e2cf039ddba46ae2d32"
+        }
+      ],
+      "output_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_65/candidate.webm",
+      "output_sha256": "b6beb591f114b0051dbd418cbacd2db1741066bc591a4a8dad12340130fcce25",
+      "output_bytes": 162173,
+      "poster_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_65/poster.png",
+      "poster_sha256": "2a9fd54c55967ab69469cc17e51dc9086fab3840da025005f821e6bcb6d306cf",
+      "proof_path": "sticker-lab/production-v5/approved-proofs/lumen_65_author-a_mesh_v1.json",
+      "proof_sha256": "a4e898eebb7404691337b0f26b025677028a4ee4a4b7f480aeb219e6e47b2423",
+      "frozen_package_sha256": "688d9fcebe876fbe1da78b5eecce60aafda11b8da756e0a31e73df9e96f1d648",
+      "frozen_package_manifest_path": "sticker-lab/production-v5/approved-proofs/author_a-mesh7-r2-frozen-package.json",
+      "frozen_package_manifest_sha256": "e4f4f88ba540528fa2d969bf0d14feea4df46f90587fab3b99a3ae150dd878da",
+      "description_uk": "Захоплено схиляється до скриньки зі скарбами й обережно притискає її обома лапками. В очах блищать монетки, одна монетка лежить на язичку; від радості ледь ворушаться вушка.",
+      "qa": {
+        "artifact": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed.json",
+        "artifact_sha256": "30d4c9829be62cf99bd0f4b711441cc812c7794db2597675b9d06ec5ed3596fe",
+        "review_id": "qa-animation-author-a-mesh7-resumed-final",
+        "actual_agent_id": "/root/qa_mesh7_resume",
+        "verdict": "accept",
+        "accepted_scope": "Exact frozen local frame/scene prototype and review-file integrity only; native realtime/slowed/device/human perception unknown.",
+        "coverage": null,
+        "limitations": {
+          "reported": [
+            "No native real-time/slowed playback, Telegram/device or human perception observed. Frame-sequence visual inspection and technical MP4 checks do not close that gap.",
+            "Original new89 source atlas remains unrecovered; derived decoded baseline provenance is explicit.",
+            "No independent generator rerender in this QA; author reproducibility proof not relabeled independent.",
+            "Deliberately omitted optional acts are recorded peritem; do not describe them as performed."
+          ],
+          "native_realtime": "not_observed",
+          "native_slow": "not_observed",
+          "device": "not_observed",
+          "full_temporal_quality_acceptance": false
+        }
+      },
+      "recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_65_author-a_mesh_v1.json",
+      "recipe_sha256": "e2be00228dc1016300a3fb32b0fd6628f1eb1d37fa39030633b3b0ceca3cab9a",
+      "generator": {
+        "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/originals/9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c-recipe_engine.py",
+        "original_generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "original_support_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/originals/ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee-repair.py",
+        "original_support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+        "engine_path": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/recipe_engine.py",
+        "engine_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+        "support_path": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/repair.py",
+        "support_sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8"
+      },
+      "original_recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_65_author-a_mesh_v1-original-frozen.json",
+      "original_recipe_sha256": "d5bb208824737a6b79879957470d7ff1bd55d98353d9b2493aabeee5c1e4e421",
+      "recipe_relocation_note": "Only durable source/code paths and explicit expected decode metadata changed; numeric scene recipe is preserved. All84 raw/decoded frames must match before staging."
+    },
+    {
+      "id": "lumen_67",
+      "approval_state": "approved_frame_sequence_prototype_local_staging",
+      "candidate_id": "lumen_67_author-a_mesh_v1",
+      "source_kind": "derived_decoded_video",
+      "source_video_path": "sticker-lab/production-v5/approved-sources/lumen_67/source.webm",
+      "source_video_sha256": "0447c6ee7c1d3bcdef508ceb30acec239d641f48cc6621b7676de6e76df4d7e0",
+      "ancestor_original_keyposes_sha256": "3568163098ab29c82924c2eae097223e94f2157f0146323a53e0f50cdb987f82",
+      "derived_source_bundle_sha256": "4023ed628525d143be711becb1e4c00fe7644b57dbb1447044098f700596d65e",
+      "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+      "derived_source_frames": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_67/000.png",
+          "sha256": "da06e42ebcd937f8120daac41788db0449027429cfb47dcaa5cf280e8763d7fa"
+        }
+      ],
+      "output_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_67/candidate.webm",
+      "output_sha256": "75dee48ab61827ea4a0990c4bf9002a955d648bff672ed677caa03b7e5ba9450",
+      "output_bytes": 176608,
+      "poster_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_67/poster.png",
+      "poster_sha256": "56a590d306025e546d2af4bd16ae161f06558047d4260470a0d4c1100b5d6a2c",
+      "proof_path": "sticker-lab/production-v5/approved-proofs/lumen_67_author-a_mesh_v1.json",
+      "proof_sha256": "3cfe572e1e890fea033fa37fdefc5e6554640367e994d46121b2e71c7fd1f71d",
+      "frozen_package_sha256": "688d9fcebe876fbe1da78b5eecce60aafda11b8da756e0a31e73df9e96f1d648",
+      "frozen_package_manifest_path": "sticker-lab/production-v5/approved-proofs/author_a-mesh7-r2-frozen-package.json",
+      "frozen_package_manifest_sha256": "e4f4f88ba540528fa2d969bf0d14feea4df46f90587fab3b99a3ae150dd878da",
+      "description_uk": "Раптом прикриває рот лапкою й трохи відсахується, широко розплющивши очі. В іншій лапці міцно тримає жолудь і ніяково притискає його ближче до себе.",
+      "qa": {
+        "artifact": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed.json",
+        "artifact_sha256": "30d4c9829be62cf99bd0f4b711441cc812c7794db2597675b9d06ec5ed3596fe",
+        "review_id": "qa-animation-author-a-mesh7-resumed-final",
+        "actual_agent_id": "/root/qa_mesh7_resume",
+        "verdict": "accept",
+        "accepted_scope": "Exact frozen local frame/scene prototype and review-file integrity only; native realtime/slowed/device/human perception unknown.",
+        "coverage": null,
+        "limitations": {
+          "reported": [
+            "No native real-time/slowed playback, Telegram/device or human perception observed. Frame-sequence visual inspection and technical MP4 checks do not close that gap.",
+            "Original new89 source atlas remains unrecovered; derived decoded baseline provenance is explicit.",
+            "No independent generator rerender in this QA; author reproducibility proof not relabeled independent.",
+            "Deliberately omitted optional acts are recorded peritem; do not describe them as performed."
+          ],
+          "native_realtime": "not_observed",
+          "native_slow": "not_observed",
+          "device": "not_observed",
+          "full_temporal_quality_acceptance": false
+        }
+      },
+      "recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_67_author-a_mesh_v1.json",
+      "recipe_sha256": "89b9a35cc0a4ba8b5662d7b191be32c6a524c64813b6914135085b334737ebcd",
+      "generator": {
+        "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/originals/9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c-recipe_engine.py",
+        "original_generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "original_support_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/originals/ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee-repair.py",
+        "original_support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+        "engine_path": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/recipe_engine.py",
+        "engine_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+        "support_path": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/repair.py",
+        "support_sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8"
+      },
+      "original_recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_67_author-a_mesh_v1-original-frozen.json",
+      "original_recipe_sha256": "5df0bacce33e490cb99b7e102db1a3d1bdab89dacd41e08ba555e44755cf004b",
+      "recipe_relocation_note": "Only durable source/code paths and explicit expected decode metadata changed; numeric scene recipe is preserved. All84 raw/decoded frames must match before staging."
+    },
+    {
+      "id": "lumen_71",
+      "approval_state": "approved_frame_sequence_prototype_local_staging",
+      "candidate_id": "lumen_71_author-a_mesh_v1",
+      "source_kind": "derived_decoded_video",
+      "source_video_path": "sticker-lab/production-v5/approved-sources/lumen_71/source.webm",
+      "source_video_sha256": "dce124efa091f4c73d693ccef6c3bcb076dd0229a5e803eea8a9667d46343638",
+      "ancestor_original_keyposes_sha256": "ac64a72e89611dd18cb4906edc74ceaa2efa58ad2e62d4f78c7bea33f15a6689",
+      "derived_source_bundle_sha256": "26892311a31e8a2a76277911beaf6e36e6a9e84a7af469395f77442bc5d76f81",
+      "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+      "derived_source_frames": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_71/000.png",
+          "sha256": "89ae5f05e822d269bd0031ecfb0536aebf8f1bd12554869256f8a1351f9c06fa"
+        }
+      ],
+      "output_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_71/candidate.webm",
+      "output_sha256": "e8e0e9091b17ebfb8b7235606b473084017c19d80e99a86ec9e2316dbbda3ddc",
+      "output_bytes": 173894,
+      "poster_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_71/poster.png",
+      "poster_sha256": "cd0c09e572657b51da68ebe8e94ac236112bf474caa4e9c77a0789e7dec98c7b",
+      "proof_path": "sticker-lab/production-v5/approved-proofs/lumen_71_author-a_mesh_v1.json",
+      "proof_sha256": "0705ab8dab6940722b15f4032e1827e9d7931d6bfb57d2699a7a32dc5d40fe44",
+      "frozen_package_sha256": "688d9fcebe876fbe1da78b5eecce60aafda11b8da756e0a31e73df9e96f1d648",
+      "frozen_package_manifest_path": "sticker-lab/production-v5/approved-proofs/author_a-mesh7-r2-frozen-package.json",
+      "frozen_package_manifest_sha256": "e4f4f88ba540528fa2d969bf0d14feea4df46f90587fab3b99a3ae150dd878da",
+      "description_uk": "Тримає ротик на золотому замочку, злегка нахиляє голівку й показує ключ тією самою лапкою. Інша лапка тихенько вказує на застібку: таємницю збереже.",
+      "qa": {
+        "artifact": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed.json",
+        "artifact_sha256": "30d4c9829be62cf99bd0f4b711441cc812c7794db2597675b9d06ec5ed3596fe",
+        "review_id": "qa-animation-author-a-mesh7-resumed-final",
+        "actual_agent_id": "/root/qa_mesh7_resume",
+        "verdict": "accept",
+        "accepted_scope": "Exact frozen local frame/scene prototype and review-file integrity only; native realtime/slowed/device/human perception unknown.",
+        "coverage": null,
+        "limitations": {
+          "reported": [
+            "No native real-time/slowed playback, Telegram/device or human perception observed. Frame-sequence visual inspection and technical MP4 checks do not close that gap.",
+            "Original new89 source atlas remains unrecovered; derived decoded baseline provenance is explicit.",
+            "No independent generator rerender in this QA; author reproducibility proof not relabeled independent.",
+            "Deliberately omitted optional acts are recorded peritem; do not describe them as performed."
+          ],
+          "native_realtime": "not_observed",
+          "native_slow": "not_observed",
+          "device": "not_observed",
+          "full_temporal_quality_acceptance": false
+        }
+      },
+      "recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_71_author-a_mesh_v1.json",
+      "recipe_sha256": "82f39b6ffc62194bc48cbd442a7dccc28b0a8aa6c5b57d9ed3509274223cab93",
+      "generator": {
+        "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/originals/9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c-recipe_engine.py",
+        "original_generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "original_support_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/originals/ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee-repair.py",
+        "original_support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+        "engine_path": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/recipe_engine.py",
+        "engine_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+        "support_path": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/repair.py",
+        "support_sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8"
+      },
+      "original_recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_71_author-a_mesh_v1-original-frozen.json",
+      "original_recipe_sha256": "e326c205c3b6ff913ce1987489e6c4bf0c218bd2997d3841efb7e5808e4d71ce",
+      "recipe_relocation_note": "Only durable source/code paths and explicit expected decode metadata changed; numeric scene recipe is preserved. All84 raw/decoded frames must match before staging."
+    },
+    {
+      "id": "lumen_115",
+      "approval_state": "approved_frame_sequence_prototype_local_staging",
+      "candidate_id": "lumen_115_author-a_mesh_v1",
+      "source_kind": "derived_decoded_video",
+      "source_video_path": "sticker-lab/production-v5/approved-sources/lumen_115/source.webm",
+      "source_video_sha256": "e5225575d4891dfe9e5e48bcd162f933924e092cf9896351bde9df73458af7fb",
+      "ancestor_original_keyposes_sha256": "4642502f05037b79db4a35fc66fd1d8e9706f9ce0b4766cd0e3b085fa299416d",
+      "derived_source_bundle_sha256": "cda562be9002cd9f82cadc90b320df3895446bcefd99559fa8a526387369cd35",
+      "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+      "derived_source_frames": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/approved-sources/lumen_115/000.png",
+          "sha256": "9159c0f4b37732515967aaea2c685f220745d8cc4958f44c087c12cf06055f60"
+        }
+      ],
+      "output_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_115/candidate.webm",
+      "output_sha256": "fe244e2c1671782b95fe61e144c2c6be5eb510ef2459b7a2834d4e93563383d9",
+      "output_bytes": 116705,
+      "poster_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_115/poster.png",
+      "poster_sha256": "990d5edacdce697806e31057a479f6dbaad3fb8354e22ce4d231d24278c4f8f1",
+      "proof_path": "sticker-lab/production-v5/approved-proofs/lumen_115_author-a_mesh_v1.json",
+      "proof_sha256": "5748a18b7e6358807cb1e22142b500c5273d9e2feadf089612a0c66fdc1f6bdf",
+      "frozen_package_sha256": "688d9fcebe876fbe1da78b5eecce60aafda11b8da756e0a31e73df9e96f1d648",
+      "frozen_package_manifest_path": "sticker-lab/production-v5/approved-proofs/author_a-mesh7-r2-frozen-package.json",
+      "frozen_package_manifest_sha256": "e4f4f88ba540528fa2d969bf0d14feea4df46f90587fab3b99a3ae150dd878da",
+      "description_uk": "Стривожено притискає лапку до щоки, ледь відхиляє голівку й дрібно здригається. Друга лапка тримає складений бірюзовий рушничок; він лишається поруч, коли треба витерти очі.",
+      "qa": {
+        "artifact": "docs/qa-1-13/qa-animation-author-a-mesh7-resumed.json",
+        "artifact_sha256": "30d4c9829be62cf99bd0f4b711441cc812c7794db2597675b9d06ec5ed3596fe",
+        "review_id": "qa-animation-author-a-mesh7-resumed-final",
+        "actual_agent_id": "/root/qa_mesh7_resume",
+        "verdict": "accept",
+        "accepted_scope": "Exact frozen local frame/scene prototype and review-file integrity only; native realtime/slowed/device/human perception unknown.",
+        "coverage": null,
+        "limitations": {
+          "reported": [
+            "No native real-time/slowed playback, Telegram/device or human perception observed. Frame-sequence visual inspection and technical MP4 checks do not close that gap.",
+            "Original new89 source atlas remains unrecovered; derived decoded baseline provenance is explicit.",
+            "No independent generator rerender in this QA; author reproducibility proof not relabeled independent.",
+            "Deliberately omitted optional acts are recorded peritem; do not describe them as performed."
+          ],
+          "native_realtime": "not_observed",
+          "native_slow": "not_observed",
+          "device": "not_observed",
+          "full_temporal_quality_acceptance": false
+        }
+      },
+      "recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_115_author-a_mesh_v1.json",
+      "recipe_sha256": "c607dbb47726253b48eee53d198255406d8b45733890d3da86342687b19201d1",
+      "generator": {
+        "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/originals/9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c-recipe_engine.py",
+        "original_generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "original_support_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/originals/ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee-repair.py",
+        "original_support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+        "engine_path": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/recipe_engine.py",
+        "engine_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+        "support_path": "sticker-lab/production-v5/approved-generators/integration-a-mesh7-v1/repair.py",
+        "support_sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8"
+      },
+      "original_recipe_path": "sticker-lab/production-v5/approved-recipes/lumen_115_author-a_mesh_v1-original-frozen.json",
+      "original_recipe_sha256": "b98c672c7d979dca732950bd4d05e5086f588e0c37b0efb92cad480b60868361",
+      "recipe_relocation_note": "Only durable source/code paths and explicit expected decode metadata changed; numeric scene recipe is preserved. All84 raw/decoded frames must match before staging."
+    }
+  ]
+}

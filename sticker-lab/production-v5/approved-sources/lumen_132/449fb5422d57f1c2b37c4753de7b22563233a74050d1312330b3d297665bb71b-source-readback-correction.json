@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "actual_agent_id": "/root/artisan_layers_resume",
+  "at": "2026-10-30T19:39:11.573141+00:00",
+  "scope": "Continuation author readback, not independent vendor proof.",
+  "parent_payload_untouched": "sticker-lab/production-v5/occlusion_c-frozen-batch1",
+  "items": [
+    {
+      "id": "lumen_132",
+      "parent_generation_sha256": "4cfd63868311558ace342a45fa92b092a495dc710278b37067ed396921f6e886",
+      "corrections": [
+        {
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_132/sources/generated-layer-atlas-initial.png",
+          "parent_container_sha256": "b3bf01b92dfa95632d7add43e89fc777a9bb184d1f1d88378d38704e3f49f0b8",
+          "actual_tool_output_path": "/workspace/scratch/342fb2c985cb/generated_images/exec-a3b5fb38-6543-4212-b14c-5c2de5ad83cb.png",
+          "actual_tool_output_sha256": "2d631aae203d4d3792841ffdcef6c6c207fd1998ba561ca193f5a5bf9747a602",
+          "restored_exact_tool_bytes": true,
+          "rgba_pixels_exactly_equal": true,
+          "size": [
+            1024,
+            1536
+          ],
+          "cause_of_parent_container_change": "unknown"
+        },
+        {
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_132/sources/generated-layer-atlas-alpha-pass.png",
+          "parent_container_sha256": "368153f9f475d98b8d7c920df4e978fc5dcb22d88f2dcbe852f3cce534034729",
+          "actual_tool_output_path": "/workspace/scratch/342fb2c985cb/generated_images/exec-c84203d4-40cd-4957-b854-4b69c95f15af.png",
+          "actual_tool_output_sha256": "81418caf3e15dad4849f1492135e0103239bc8684d7136bfbdc3a4417e7924d8",
+          "restored_exact_tool_bytes": true,
+          "rgba_pixels_exactly_equal": true,
+          "size": [
+            1024,
+            1536
+          ],
+          "cause_of_parent_container_change": "unknown"
+        }
+      ],
+      "new_generation_sha256": "07146f89efd636ad2e13845a715767261b09616cc81f5a47f675d112b51faee5",
+      "all_operations_actual_inputs_outputs_hash_bound": true,
+      "all_component_crops_pixel_exact": true,
+      "candidate_bytes_unchanged": true,
+      "raw84_and_decoded84_rerender_exact": true
+    },
+    {
+      "id": "lumen_138",
+      "parent_generation_sha256": "dc1c2f98fd7f053da7a55aa682a3d70fe1124ac62c05dda832c2db5284d105da",
+      "corrections": [],
+      "new_generation_sha256": "a966f48b28068b26b0058dbf0006c68e44fc0f8dba65b05c6fdcfd94a954c784",
+      "all_operations_actual_inputs_outputs_hash_bound": true,
+      "all_component_crops_pixel_exact": true,
+      "candidate_bytes_unchanged": true,
+      "raw84_and_decoded84_rerender_exact": true
+    }
+  ],
+  "unique_historical_tool_jobs": 6,
+  "historical_operation_references": 7,
+  "shared_operation": "shared-cream-upper-arm",
+  "new_generation_calls": 0
+}

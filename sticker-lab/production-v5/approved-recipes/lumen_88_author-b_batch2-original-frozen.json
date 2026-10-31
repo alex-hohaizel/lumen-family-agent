@@ -1,0 +1,611 @@
+{
+  "schema_version": 1,
+  "id": "lumen_88",
+  "candidate_id": "lumen_88_author-b_batch2",
+  "engine_mode": "shared_local_mesh_v1",
+  "description_uk": "Міцно спить, згорнувшись клубочком у темно-синьому плащі. Животик ледь підіймається від дихання, голівка сонно вмощується на лапках під двома золотими місяцями.",
+  "semantics": {
+    "core_scene": "Deeply sleeping curl in navy cloak, fully closed eyes, tucked ears, two moon sparkles and gentle breathing.",
+    "scene_specific_instructions": "Sleeping curl, tucked ears, breathing та moon sparkles; no limb appearing through cloak. Зберегти глибокий сон, не додавати awake blink.",
+    "authored_decisions": [
+      "Deep sleep with fully closed eyes; no awake blink, new limb, or pose swap. This curl uses belly expansion, not the seated85 head/cup gesture."
+    ],
+    "irreversible_motion_policy": "Only coherent authored local action. No backward falling particles, liquid or free props. Decorative held marks remain explicitly decorative."
+  },
+  "source_provenance": {
+    "kind": "derived_decoded_video",
+    "source_video_path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_88/baseline.webm",
+    "source_video_sha256": "de3067af555a5a0f8515b6ba55acdb0f39fc459f40634a3b30dd5897c69ae44d",
+    "ancestor_original_keyposes_sha256": "ba03d280bae3a92f2b23798996c5382e00a8b53018a9f5cda1ee47434e638088",
+    "ancestor_original_status": "unresolved_original_not_recovered",
+    "derived_source_bundle_sha256": "c40c74e16766c865b174f5dcfced0f5816d0327c8f95075048ee7ecd9122f61c",
+    "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index"
+  },
+  "source_frames": [
+    {
+      "index": 56,
+      "timestamp_seconds": 1.8666666666666667,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_88/source-frames/056.png",
+      "sha256": "9114af3a8953dfe149f4a05100783c09a9caddee851fb40dc3bb770ed3dbf9b3"
+    }
+  ],
+  "generator": {
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "local_mesh": {
+    "source_frame": 56,
+    "points_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        511,
+        0
+      ],
+      [
+        0,
+        511
+      ],
+      [
+        511,
+        511
+      ],
+      [
+        256,
+        0
+      ],
+      [
+        0,
+        256
+      ],
+      [
+        511,
+        256
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        74,
+        367
+      ],
+      [
+        103,
+        400
+      ],
+      [
+        243,
+        410
+      ],
+      [
+        396,
+        400
+      ],
+      [
+        443,
+        365
+      ],
+      [
+        129,
+        313
+      ],
+      [
+        163,
+        293
+      ],
+      [
+        195,
+        336
+      ],
+      [
+        228,
+        370
+      ],
+      [
+        167,
+        376
+      ],
+      [
+        243,
+        396
+      ],
+      [
+        229,
+        193
+      ],
+      [
+        314,
+        172
+      ],
+      [
+        400,
+        207
+      ],
+      [
+        433,
+        271
+      ],
+      [
+        350,
+        266
+      ],
+      [
+        325,
+        297
+      ],
+      [
+        341,
+        327
+      ],
+      [
+        389,
+        310
+      ],
+      [
+        272,
+        283
+      ],
+      [
+        241,
+        260
+      ],
+      [
+        382,
+        77
+      ],
+      [
+        397,
+        116
+      ],
+      [
+        430,
+        137
+      ],
+      [
+        443,
+        160
+      ]
+    ],
+    "parts": [
+      {
+        "name": "curled_sleep_belly_breath",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -1.764,
+            -0.425
+          ],
+          [
+            -0.812,
+            0.075
+          ],
+          [
+            0.084,
+            -1.0
+          ],
+          [
+            1.008,
+            -1.85
+          ],
+          [
+            -0.7,
+            -2.0
+          ],
+          [
+            1.428,
+            -2.5
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 1
+        }
+      },
+      {
+        "name": "sleeping_head_paw_nest",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1.5881,
+            0.5135
+          ],
+          [
+            1.834,
+            1.535
+          ],
+          [
+            1.4078,
+            2.5645
+          ],
+          [
+            0.6375,
+            2.9558
+          ],
+          [
+            0.7034,
+            1.9602
+          ],
+          [
+            0.3333,
+            1.658
+          ],
+          [
+            -0.0279,
+            1.8478
+          ],
+          [
+            0.1727,
+            2.4251
+          ],
+          [
+            0.5051,
+            1.023
+          ],
+          [
+            0.7833,
+            0.6527
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 1
+        }
+      },
+      {
+        "name": "moon_dream_small_float",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -2.4
+          ],
+          [
+            0,
+            -2.4
+          ],
+          [
+            0,
+            -2.4
+          ],
+          [
+            0,
+            -2.4
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 1
+        }
+      }
+    ],
+    "minimum_jacobian": 0.6
+  },
+  "output": {
+    "width": 512,
+    "height": 512,
+    "fps": 30,
+    "frames": 84,
+    "duration": 2.8,
+    "crf": 22,
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "maximum_bytes": 262144
+  }
+}

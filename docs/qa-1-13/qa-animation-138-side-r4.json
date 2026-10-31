@@ -1,0 +1,455 @@
+{
+  "schema_version": 1,
+  "id": "qa-animation-138-side-r4-independent-closure",
+  "actual_agent_id": "/root/qa_layer_scenes",
+  "role": "independent_animation_source_qa",
+  "reports_to": "/root",
+  "actual_parent": "/root",
+  "status": "FINAL_addressed_source_and_ordered_frame_closure",
+  "at": "2026-10-30T20:16:32.840829+00:00",
+  "not_author": true,
+  "not_final_judge": true,
+  "original_art_author": "/root/artisan_stickers_occlusion",
+  "continuation_author": "/root/artisan_layers_resume",
+  "author_report": {
+    "path": "docs/qa-1-13/animation-author-138-side-r4.json",
+    "sha256": "0f66ef567b836ed4bd22e8c0c2a03023e515305d519749b5296e9a5c5dad9922",
+    "kind": "author_claim_read_only",
+    "scope": "Used to locate and challenge claims; results below are separately executed and observed"
+  },
+  "assigned_requirement_ids": [
+    "character_semantics",
+    "temporal_quality",
+    "audiovisual_fidelity",
+    "source_grounding"
+  ],
+  "brief": {
+    "scope": "Only addressed lumen_138 R4 candidate and actual closure of QA-LAYER138-CLOTH-CAP-001. No132 reacceptance, no broader120-sticker approval.",
+    "current_root_TL_scene": "Ховається під білим простирадлом з одним намальованим обличчям привида → визирає → махає. Потрібні непрозорість, контакт лапи з тканиною й одне намальоване обличчя.",
+    "allowed_direction": "A coherent full-size sheet side peek is allowed; fold-back and completely unobstructed whole-face reveal are not mandatory in this addressed revision.",
+    "comparison_rule": "Earlier R2 scale-to-zero flat cap/disappearing sheet is a real returned artifact and remains returned in its untouched report. The new side-peek geometry must remove that artifact while preserving current core scene."
+  },
+  "frozen_package": {
+    "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/package.json",
+    "sha256": "874368598bdfbab12f9ecdba0449c9f8a5c496dd47a3c00d9f6660595db4366b",
+    "listed_file_count": 281,
+    "files_digest": "a0e3bcb5226da99f771ef211e72a247c07d62a7633f490197dd71b1d5a7d6826",
+    "guard_sha256": "212f60563ed82f232c126b7ea9c0fe0237057ef0dd9893f3e7a3ffe6d599787a",
+    "all281_sha256_and_byte_counts_match_start": true,
+    "all281_sha256_and_byte_counts_match_end": true
+  },
+  "item": {
+    "id": "lumen_138",
+    "candidate_id": "lumen_138_rigid_sheet_side_r4",
+    "candidate_path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/candidate.webm",
+    "candidate_sha256": "7496eea65317d3fd949a5ca3d553c71b0e671e1023fba63b6671ef36342954db",
+    "candidate_bytes": 258984,
+    "proof_sha256": "86f8c72769c9a5d4c59bf866d2d0091c843ea5aa226bf6db88d3ff4bb4da59a7",
+    "source_contract_sha256": "852ebfa8b6e9337ae48b7afa9840a779c6517b831b4500aa932265befb5001ad",
+    "recipe_sha256": "dede04b94e4b647dd277a1e57bdf4f4c224bfebce23eb5d9434e163326b4d1d7",
+    "generator_sha256": "804b592efa152a74003fc0eeb3f9cfd9d4ae7b9722d6abc04f3fbf3c4ad694bc",
+    "generation_metadata_sha256": "ab11979e8b12a4c047ec95f2b3f9d3be4f616f52fc0bae51d95bbdfa8809f644",
+    "description_uk": "Ховає мордочку за непрозорим білим простирадлом з одним намальованим обличчям привида, відводить цілу тканину вбік правою лапкою, визирає з-за її краю й махає вільною лівою лапкою.",
+    "source_kind": "generated_layer_components",
+    "verdict": "accept",
+    "verdict_scope": "Independent source provenance, scene and ordered-frame quality / exact returned flat-cap defect closure only. Native real-time/slowed feel, human/device presentation and live delivery are unknown; this verdict does not pass those checks.",
+    "native_temporal_acceptance": "unknown",
+    "human_review": "unknown",
+    "device_acceptance": "unknown",
+    "live_telegram_acceptance": "not_reviewed",
+    "source_grounding": "accept",
+    "character_scene_ordered_frame_quality": "accept",
+    "temporal_quality_beyond_ordered_continuity": "unknown",
+    "positive_claim": "У всіх84 декодованих кадрах те саме повнорозмірне простирадло з одним принтом лишається матеріально присутнім. Права лапа без зміни ідентичності тримає край; тканина переходить з положення збоку до повного cover і назад; ліва лапа приєднується біля cover, відпускає й махає. Справжня мордочка визирає з-за краю тканини; в covered hold вона не просвічує. Плаского ковпачка, зникнення тканини, дубля намальованого обличчя чи зайвої лапи не виявлено.",
+    "actual_coverage": {
+      "all_final_decoded_frames_viewed_in_order": 84,
+      "native512_white_frames_actually_viewed": 30,
+      "native512_dark_frames_actually_viewed": 18,
+      "old_returned_R2_frames_recompared_native": [
+        4,
+        46,
+        48,
+        50
+      ],
+      "current_raw_RGBA_outputs_viewed": 3,
+      "current_component_crops_pixel_checked": 5,
+      "baseline_refs_viewed_and_independently_decoded": 2,
+      "poster_actually_viewed": true
+    },
+    "phase_observations": [
+      {
+        "frames": [
+          0,
+          8
+        ],
+        "observation": "Full sheet held to the side by same right paw; real eyes/face peek around its boundary; left open paw free. The whole print rotates with fabric, without squashing."
+      },
+      {
+        "frames": [
+          9,
+          17
+        ],
+        "observation": "Same full sheet swings toward front. Left paw travels toward its left cloth edge and joins near full cover. Exposed eye is outside moving cloth silhouette, not an eye ghost inside fabric."
+      },
+      {
+        "frames": [
+          18,
+          30
+        ],
+        "observation": "Full opaque ghost cover, two hands at cloth edges, one painted ghost face. Actual eyes/nose/mouth hidden; no second print on underlying hood."
+      },
+      {
+        "frames": [
+          31,
+          39
+        ],
+        "observation": "Reverse side swing begins continuously; same held right corner and free-left transition; cloth remains full size and present."
+      },
+      {
+        "frames": [
+          40,
+          54
+        ],
+        "observation": "Left paw releases and lifts; real face peeks from the side as full sheet rotates away. ReturnedR2 frames4/46/48/50 now all contain a full sheet, with no cap or scale-to-zero."
+      },
+      {
+        "frames": [
+          55,
+          78
+        ],
+        "observation": "Right hand keeps holding same side sheet; left open paw gives gentle articulated wave. No source dissolve, extra limb or material disappearance."
+      },
+      {
+        "frames": [
+          79,
+          83
+        ],
+        "observation": "Wave settles; side-held sheet and character return to initial geometric pose."
+      }
+    ],
+    "contact_and_alpha_independent_results": {
+      "constant_uniform_scale": 0.496,
+      "all84_singular_values_constant": true,
+      "sheet_alpha_area_pixels_gt1_range": [
+        50008,
+        50088
+      ],
+      "sheet_bbox_union_gt1": [
+        102,
+        91,
+        470,
+        505
+      ],
+      "held_right_actual_target_error_max_pixels": 0.0,
+      "left_full_hold_target_error_max_pixels": 8.038873388460929e-14,
+      "covered_hold_actual_eye_patch_alpha_min_8bit": 252,
+      "covered_hold_actual_nose_mouth_patch_alpha_min_8bit": 252,
+      "opacity_interpretation": "The generated source matte is near-opaque, min252/255 in the measured covered eye/mouth regions after sampling. I do not claim every cloth pixel has alpha255. No visible eye/face detail shows through the actual fabric in native covered frames.",
+      "all84_nonblank": true,
+      "candidate_alpha_bounds_union": [
+        40,
+        44,
+        473,
+        506
+      ],
+      "canvas_edge_contact": false,
+      "scope_limit": "Target-coordinate equality is a geometry check; native phase inspection also confirmed paw/cloth overlap and release. It is not a human tactile/physical simulation claim."
+    },
+    "loop": {
+      "raw_first_last_exact": true,
+      "decoded_first_last_exact": false,
+      "decoded_max_rgba_absolute_difference": 4,
+      "decoded_composited_black_rgb_mean_absolute_difference": 0.00494742798649407,
+      "perceived_loop_feel": "unknown"
+    },
+    "fresh_reproduction": {
+      "raw84_exact": true,
+      "decoded84_exact": true,
+      "result_path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/fresh-render/render-result.json",
+      "result_sha256": "6cb2a84b2fefadf4c55ee51afa0b3539e76abf76d20fa83d02c0821dc4765437",
+      "container_bytes_equal": false,
+      "rendered_container_sha256": "d6743fb454af6e2b9186732bbaf51667968e55315ef2e3e086dc45f090d039d2",
+      "command_stdout": "{\"schema_version\": 1, \"id\": \"lumen_138\", \"actual_source_kind\": \"generated_layer_components\", \"canonical_video_read\": false, \"generator_path\": \"sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/generators/layer_renderer_138_side_r4.py\", \"generator_sha256\": \"804b592efa152a74003fc0eeb3f9cfd9d4ae7b9722d6abc04f3fbf3c4ad694bc\", \"extraction_sha256\": \"004a0af174e025b88cf0deddee8e4086287234a7a68c350e90557725993d0c5f\", \"recipe_sha256\": \"dede04b94e4b647dd277a1e57bdf4f4c224bfebce23eb5d9434e163326b4d1d7\", \"native_realtime_slow_device_playback\": \"not_observed\", \"output_sha256\": \"d6743fb454af6e2b9186732bbaf51667968e55315ef2e3e086dc45f090d039d2\", \"output_bytes\": 258984, \"raw_rgba_exact_match\": true, \"encoded_frame_exact_match\": true}"
+    },
+    "final_copied_MP4_checks": [
+      {
+        "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-normal.mp4",
+        "sha256": "f007c90ba23f48583d4b8b1bc2eb4db0ac0955bb971b30bcc5b71e32b2935fa9",
+        "bytes": 167573,
+        "full_xerror_explode_decode": true,
+        "frame_count": 84,
+        "all84_pts_order_spacing_match": true,
+        "fps": "30/1",
+        "duration_seconds": 2.8,
+        "proof_binding_exact": true
+      },
+      {
+        "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4",
+        "sha256": "95b74c92caab6768fe654b5f05d7d457300807eb9f99ae35c3e6bde78af6eef4",
+        "bytes": 214049,
+        "full_xerror_explode_decode": true,
+        "frame_count": 84,
+        "all84_pts_order_spacing_match": true,
+        "fps": "15/1",
+        "duration_seconds": 5.6,
+        "proof_binding_exact": true
+      }
+    ],
+    "strongest_objection": "The cloth is a rigid two-dimensional piece rotating90degrees, without flexible folds or weight; its full side-held shape continues to cover part of the real face. Upper-arm rounded endpoints remain visibly stylized. These are real art/motion reservations. The current assigned scene explicitly allows a side peek; I found no remaining flat-cap/departure-of-material defect or contact break in ordered/native frames.",
+    "strongest_counterargument_to_acceptance": "At actual playback speed the rigid swing or hand release might feel mechanical, or the large side cloth might impair expression readability on a small device. Ordered frames and full decode cannot settle that; native real-time/slowed/human/device perception stays unknown.",
+    "reversal_condition": "Return this candidate if native playback/device review shows rigid-cloth action, contact, loop or facial readability fails the core peek/wave scene, or if any exact source/output/proof hash changes."
+  },
+  "addressed_finding_closure": {
+    "id": "QA-LAYER138-CLOTH-CAP-001",
+    "status": "closed_for_new_R4_source_and_frame_scope_only",
+    "prior_candidate_sha256": "72f89a1f627db588e7d62e1248778a919558a06e6c222058c89cee5483ae71fb",
+    "prior_qa_report_path": "docs/qa-1-13/qa-animation-occlusion-resumed-r2.json",
+    "prior_qa_report_sha256": "a73a10d0d428c45c089151f260c208fe92a1579dd59422dd03a3ebeeb3e619c0",
+    "new_candidate_sha256": "7496eea65317d3fd949a5ca3d553c71b0e671e1023fba63b6671ef36342954db",
+    "what_closed": "Whole printed panel no longer nonuniformly shrinks into a separate flat cap or disappears over static blank hood. R4 keeps one complete material sheet at one uniform scale and side-swings it with an actual held corner.",
+    "what_not_claimed": "No retroactive R2 acceptance, no mandatory fold/full-face-uncover claim, no human or device motion approval, no other item/finding closure.",
+    "direct_comparison_frames": [
+      4,
+      46,
+      48,
+      50
+    ],
+    "native_playback_followup": "unknown"
+  },
+  "source_and_history": {
+    "historical_generation_operation_refs_checked": 3,
+    "current_raw_tool_outputs_checked": 3,
+    "original_upper_arm_job_shared_with132": true,
+    "new_generation_calls_by_R4_author_or_QA": 0,
+    "all_PNG_and_WEBM_source_bytes_equal_R2": true,
+    "saved_literal_prompts_and_original_tool_job_paths_equal_R2": true,
+    "all_actual_operation_inputs_and_outputs_match_current_archives": true,
+    "all_current_raw_outputs_match_retained_tool_original_bytes": true,
+    "all5_variable_size_component_crops_exact": true,
+    "source_bundle_sha256": "37dc2ed6b8442a98c35851541278eb8eb15f81acf8fdb06a3f57c0697364e8d6",
+    "source_contract_recipe_proof_internal_links_match": true,
+    "generated_anchor_video_timestamps": null,
+    "not_recovered_original_keyposes": true,
+    "baseline_refs": [
+      {
+        "role": "scene_revealed",
+        "archived_path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/input-scene_revealed.png",
+        "archived_sha256": "925ed27bc4c91829d71e348b46e537ff8bf7563f152225a480d33f6d5022e3ab",
+        "baseline_video_sha256": "c3459b3c2642cf4b43995a46af8d504f93cc7d6935ebb6d447f97f268fe460f8",
+        "frame_index": 0,
+        "declared_timestamp_seconds": 0.0,
+        "actual_pts": "0.000000",
+        "derived_path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/baseline-decoded/000.png",
+        "derived_sha256": "925ed27bc4c91829d71e348b46e537ff8bf7563f152225a480d33f6d5022e3ab",
+        "pixels_exact": true
+      },
+      {
+        "role": "scene_covered",
+        "archived_path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/input-scene_covered.png",
+        "archived_sha256": "dd29770fc05ecbdcfb5bf842b50d00ed1fc92e964425d84e51bb0f52a23eb9c3",
+        "baseline_video_sha256": "c3459b3c2642cf4b43995a46af8d504f93cc7d6935ebb6d447f97f268fe460f8",
+        "frame_index": 22,
+        "declared_timestamp_seconds": 0.7333333333333333,
+        "actual_pts": "0.733000",
+        "derived_path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/baseline-decoded/022.png",
+        "derived_sha256": "dd29770fc05ecbdcfb5bf842b50d00ed1fc92e964425d84e51bb0f52a23eb9c3",
+        "pixels_exact": true
+      }
+    ],
+    "author_self_return_R3_history_preserved": "R3 actual held-grip1.218px error and correction record are archived; current actual R4 held-target error0 was independently checked. This report does not turn that author self-check into a prior independent R3 review.",
+    "prior_R2_PNG_container_correction_history": "Preserved unchanged through R2 generation history; no new raster edits/corrections. Current138 raw sources are byte-identical to R2.",
+    "limitations": [
+      "Saved local tool originals and operation records establish current lineage; no external vendor execution attestation available.",
+      "Metadata timestamps are not invented generation times or baseline video timestamps for generated anchors."
+    ]
+  },
+  "visual_evidence": [
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/ordered-000-027.jpg",
+      "sha256": "b65289350fb958c94718bd4b99045b63cdefe59b6bb731e3016b4ed459e908a4",
+      "kind": "actually_viewed_ordered_frames",
+      "scope": "All actual final candidate decoded frames 0 through 27 viewed individually in order at256px cells"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/ordered-028-055.jpg",
+      "sha256": "7c8bbbc6be23c82ace8b6358ed0dcc44f57cb7efee6df3ce115a47f23cfe6d3f",
+      "kind": "actually_viewed_ordered_frames",
+      "scope": "All actual final candidate decoded frames 28 through 55 viewed individually in order at256px cells"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/ordered-056-083.jpg",
+      "sha256": "9aa48978e9a63859bb7bdcf364e3af2a4e1a0e0cb32d2db261c23bf662b91287",
+      "kind": "actually_viewed_ordered_frames",
+      "scope": "All actual final candidate decoded frames 56 through 83 viewed individually in order at256px cells"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/native-white-0.jpg",
+      "sha256": "9f84b44ed21dffcf51003a0cf7db8dce5591a160d330ee709c059876c8826b6c",
+      "kind": "actually_viewed_native512",
+      "scope": "Six actual candidate decoded critical phase frames on white;30 total"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/native-white-1.jpg",
+      "sha256": "37f80e4ec3d0242e6c21e802e9e470996cb84af9309e81a4f995d1b7acbb2c15",
+      "kind": "actually_viewed_native512",
+      "scope": "Six actual candidate decoded critical phase frames on white;30 total"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/native-white-2.jpg",
+      "sha256": "f72d2e67f8f99cc00daeb88b78c638d951c691a2918682120a9c9ab387ac774b",
+      "kind": "actually_viewed_native512",
+      "scope": "Six actual candidate decoded critical phase frames on white;30 total"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/native-white-3.jpg",
+      "sha256": "30c016c7874829f376e4ba173a2f5cd25a91af9a3d011a4c2fe75941f89ad7e7",
+      "kind": "actually_viewed_native512",
+      "scope": "Six actual candidate decoded critical phase frames on white;30 total"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/native-white-4.jpg",
+      "sha256": "0175666fe67bb152cc18dfc76a892a7eecf92a8d209d69cf6d30fb57a00084f1",
+      "kind": "actually_viewed_native512",
+      "scope": "Six actual candidate decoded critical phase frames on white;30 total"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/native-dark-1.jpg",
+      "sha256": "28220297ddad4d835304f98b6befbd7704ba8b276a70bdcb2de00225732d93c0",
+      "kind": "actually_viewed_native512",
+      "scope": "Six actual candidate decoded critical phase frames on dark;18 total"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/native-dark-3.jpg",
+      "sha256": "09cf7400633548b72b7a968a3b5f9bb9499ae2c28871e760657f0bc3316ff6ca",
+      "kind": "actually_viewed_native512",
+      "scope": "Six actual candidate decoded critical phase frames on dark;18 total"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/native-dark-4.jpg",
+      "sha256": "696f9e5bba80377dff1156b8c778b6ae22c72e7d06954a8b8855eff5d4c3ddf2",
+      "kind": "actually_viewed_native512",
+      "scope": "Six actual candidate decoded critical phase frames on dark;18 total"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/raw-source-0.png",
+      "sha256": "d0f84a053c46c40e0a52d866e986667c47a60ecbc6f0b0bcbc921a76d2d4cf12",
+      "kind": "actually_viewed_raw_RGBA",
+      "scope": "Current packet raw output composited using actual alpha; byte-identical to priorR2 source"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/raw-source-1.png",
+      "sha256": "5f16a95a6ed08a6a1930f1161b9b1379f8f339db95744ae4ec37d68487b17d86",
+      "kind": "actually_viewed_raw_RGBA",
+      "scope": "Current packet raw output composited using actual alpha; byte-identical to priorR2 source"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/raw-source-2.png",
+      "sha256": "b66b9593420e33795082fed61635c5db5384177adaa62fedb6c76dba8842b970",
+      "kind": "actually_viewed_raw_RGBA",
+      "scope": "Current packet raw output composited using actual alpha; byte-identical to priorR2 source"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/r2-return-vs-r4.jpg",
+      "sha256": "18969003bd4727a0c716f60bb5acd0431fcf1571fd57f00e177e48fde64bdf7d",
+      "kind": "actually_viewed_before_after",
+      "scope": "Exact R2 returned f4/46/48/50 on left vs corresponding actualR4 final decode frames on right; current description intentionally differs to side peek"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/baseline-references.jpg",
+      "sha256": "a3d0a0835e809844aa85e9bfa15bb0b196151021147567cd7fd8c2ecfb1be287",
+      "kind": "actually_viewed_baseline",
+      "scope": "Exact archived baseline0/22 frames compared to current scene; board labels are ordinals, actual index/PTS binds in source-checks.json"
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/poster.png",
+      "sha256": "7d5c00f74460bb28297e728b0dadad59d77070221792115f28d40f750292a0f5",
+      "kind": "actually_viewed_poster",
+      "scope": "Covered ghost preview has one printed face; no actual eye or mouth showing through"
+    }
+  ],
+  "execution_evidence": [
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/package-start.json",
+      "sha256": "87075ccd92cc81332432a23e2f061186c19ee376962240b6ad368c41b8db3a4a",
+      "kind": "independent_execution",
+      "scope": "All281 listed payload files hash/byte match before checks; R2 package/QA unchanged"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/package-end.json",
+      "sha256": "0cca5094e8ad2cb30210036501152db5cab02885dcc13e82c9470792ca1dc832",
+      "kind": "independent_execution",
+      "scope": "All281 listed payload files rechecked after checks/visual review; R2 package/QA unchanged"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/source-checks.json",
+      "sha256": "2cdbf5f54dbbaf67f01c904efb6598e746e3e38dcd7c29807eff8bb64982b75f",
+      "kind": "independent_source_execution",
+      "scope": "Actual operation input/output archived vs retained tool paths; all5 variable-size crops pixel exact; independently decoded baseline frame indices/PTS"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/source-history-checks.json",
+      "sha256": "0ab149f0067943b15712df475d4474ca6db3cba28c50b3ecf54e6de17ccbd54a",
+      "kind": "independent_source_history_execution",
+      "scope": "All current PNG/WebM source bytes vs immutableR2, exact literal prompts/input roles/output jobs, parent history SHA links, source/recipe/proof pins"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/media-checks.json",
+      "sha256": "61ac6ff412cecf6bfa23588e965d74666848fd6abc03ffd8d6a0b49f6780e6f5",
+      "kind": "independent_media_execution",
+      "scope": "Actual final candidate decode84, exact2 copied MP4 full decode/84 PTS, fresh source-bound raw84/decoded84 reproduction"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/lumen_138/fresh-render/render-result.json",
+      "sha256": "6cb2a84b2fefadf4c55ee51afa0b3539e76abf76d20fa83d02c0821dc4765437",
+      "kind": "independent_fresh_source_render",
+      "scope": "Actually executed frozen renderer/recipe with frozen source files into own isolated output"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/independent-geometry-contact-alpha.json",
+      "sha256": "49006b2d88508adc162e5bb386bc8f7161f5224c74ed0cc520703c758f613e57",
+      "kind": "independent_alpha_geometry_contact_execution",
+      "scope": "Reconstructed actual full sheet alpha transform from source; all84 constant-scale singular values/area/bounds and actual right/left contact coordinates; opacity patches and loop metrics"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-138-side-r4-evidence/run_independent_checks.py",
+      "sha256": "896c1857be6d3f9ef225527e6a2920c1c992d5f1d79665723a6eed0121cd35b9",
+      "kind": "independent_procedure",
+      "scope": "Current local QA procedure. Child renderer and support imports used bytecode writes disabled; only own evidence outputs created"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-occlusion-resumed-evidence/run_independent_checks.py",
+      "sha256": "b5e07a1542783d6c69571a6d88bd4d9e07faeeca404bf54dab4d626e491035b7",
+      "kind": "reused_independent_QA_helpers",
+      "scope": "Existing independent decode/source/probe/render helpers imported read-only; no R2 report/packet rewrite"
+    }
+  ],
+  "performed": [
+    "All281 listed final payload SHA and bytes checked at start and end; guard exact.",
+    "Actual final copied candidate WebM decoded84 with alpha; every PNG matches frozen proof.",
+    "Actual final copied normal and slowed MP4 independently fully decoded with xerror/explode and probed frame-by-frame;84 ordered PTS each,30fps2.8s /15fps5.6s.",
+    "Actual pinned renderer/recipe/source inputs run into independent evidence output; all raw84 and encoded-decoded84 PNG hashes exact. WebM container bytes differ as documented; frame bytes match.",
+    "All84 actual candidate frame sequence visually inspected;30 native white and18 dark phases, old returned frames4/46/48/50,3 current rawRGBA composites, baseline and poster actually viewed.",
+    "Independent cloth source-alpha affine reconstruction checks constant scale/area/bounds and actual paw target positions, opacity patches and loop.",
+    "Source current/archive/tool-original hashes, exact5 crops, literal prompt/input/job history vs R2 and exact baseline index/PTS decoded."
+  ],
+  "not_performed": [
+    "No native video perception tool available; full MP4 decode is technical verification, not real-time or slowed playback observation.",
+    "No human/device review, Telegram in-chat playing/delivery receipt or full120-sticker approval.",
+    "No new image generation, no canonical/published promotion, no source-code or author metadata changes."
+  ],
+  "completion": {
+    "stage": "independently_reviewed_source_and_ordered_frames_only",
+    "per_id_verdict": {
+      "lumen_138": "accept_in_assigned_source_and_frame_scope"
+    },
+    "native_realtime_perception": "unknown",
+    "native_slowed_perception": "unknown",
+    "human_and_device_perception": "unknown",
+    "canonical_assets_changed": false,
+    "author_metadata_or_source_code_changed": false,
+    "frozen281_payload_changed": false,
+    "prior_R2_report_or_packet_changed": false,
+    "external_writes": false,
+    "broader120_sticker_goal": "not_closed_by_this_one_scene_report"
+  }
+}

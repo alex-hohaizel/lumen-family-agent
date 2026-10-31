@@ -1,0 +1,1557 @@
+{
+  "schema_version": 1,
+  "id": "lumen_110",
+  "candidate": "lumen_110_author-b_batch5",
+  "created_at": "2026-10-30T18:39:58.244611+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_video_sha256": "a6c5a0be3cab00ddaf5032768a92dfa29e9e17907a69b336d0fa9a345421e589",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "fe3d5b8b061e14cf95e936292d6ab7d033b9cd87bda060ecc3657b3ee34efd0e",
+  "derived_source_frames": [
+    {
+      "index": 0,
+      "timestamp_seconds": 0.0,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch5/lumen_110/source-frames/000.png",
+      "sha256": "b3791642d710f52a550aee3ea3c2d1086ba66b43a8dd05b12daf4de3c0e716be"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "4dd441aa9eebdd341c72a6428aa6d12723f58241f69e66b141673daaa9897c54",
+  "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_110/recipe.json",
+  "recipe_sha256": "ceb8c14096af75b7e9edf2c99bdb9645f02305bb093a965973bef408dd10d6b0",
+  "generator": {
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "description_uk": "Сумно сидить, загорнувшись у синій плащ і підібгавши коліна. Голівка повільно хилиться, плечі осідають; над ним погойдується маленька дощова хмаринка.",
+  "semantics": {
+    "core_scene": "Deeper sad blue eyes/downturned frown, low seated bundled navy cloak with knees tucked in, small translucent raincloud/drops and slow sad sway.",
+    "scene_specific_instructions": "Deeper sadness with bundled seated cloak and raincloud: restrained head droop/arms settling plus cloud small drift. Не reverse falling rain; статичні decorative drops не описувати як реально falling animation.",
+    "authored_decisions": [
+      "Translucent cloud and two existing decorative drops retained. No false falling-rain or backward liquid motion; seated tucked pose remains distinct from109 standing flower sadness."
+    ],
+    "irreversible_motion_policy": "Only coherent authored local action. No backward falling particles, liquid or free props. Decorative held marks remain explicitly decorative."
+  },
+  "method": "shared_local_mesh_v1",
+  "statistics": {
+    "minimum_jacobian": 0.704419732093811,
+    "maximum_displacement_px": 10.505359649658203
+  },
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.0,
+        "arms_and_knees_quiet_settle": 0.0,
+        "small_raincloud_side_drift": 0.0
+      }
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.07473009358642425,
+        "arms_and_knees_quiet_settle": 0.07473009358642425,
+        "small_raincloud_side_drift": 0.07473009358642425
+      }
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.14904226617617444,
+        "arms_and_knees_quiet_settle": 0.14904226617617444,
+        "small_raincloud_side_drift": 0.14904226617617444
+      }
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.2225209339563144,
+        "arms_and_knees_quiet_settle": 0.2225209339563144,
+        "small_raincloud_side_drift": 0.2225209339563144
+      }
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.2947551744109042,
+        "arms_and_knees_quiet_settle": 0.2947551744109042,
+        "small_raincloud_side_drift": 0.2947551744109042
+      }
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.365341024366395,
+        "arms_and_knees_quiet_settle": 0.365341024366395,
+        "small_raincloud_side_drift": 0.365341024366395
+      }
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.4338837391175581,
+        "arms_and_knees_quiet_settle": 0.4338837391175581,
+        "small_raincloud_side_drift": 0.4338837391175581
+      }
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.49999999999999994,
+        "arms_and_knees_quiet_settle": 0.49999999999999994,
+        "small_raincloud_side_drift": 0.49999999999999994
+      }
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.5633200580636221,
+        "arms_and_knees_quiet_settle": 0.5633200580636221,
+        "small_raincloud_side_drift": 0.5633200580636221
+      }
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.6234898018587335,
+        "arms_and_knees_quiet_settle": 0.6234898018587335,
+        "small_raincloud_side_drift": 0.6234898018587335
+      }
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.6801727377709194,
+        "arms_and_knees_quiet_settle": 0.6801727377709194,
+        "small_raincloud_side_drift": 0.6801727377709194
+      }
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.7330518718298262,
+        "arms_and_knees_quiet_settle": 0.7330518718298262,
+        "small_raincloud_side_drift": 0.7330518718298262
+      }
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.7818314824680298,
+        "arms_and_knees_quiet_settle": 0.7818314824680298,
+        "small_raincloud_side_drift": 0.7818314824680298
+      }
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.8262387743159949,
+        "arms_and_knees_quiet_settle": 0.8262387743159949,
+        "small_raincloud_side_drift": 0.8262387743159949
+      }
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.8660254037844386,
+        "arms_and_knees_quiet_settle": 0.8660254037844386,
+        "small_raincloud_side_drift": 0.8660254037844386
+      }
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.9009688679024191,
+        "arms_and_knees_quiet_settle": 0.9009688679024191,
+        "small_raincloud_side_drift": 0.9009688679024191
+      }
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.9308737486442042,
+        "arms_and_knees_quiet_settle": 0.9308737486442042,
+        "small_raincloud_side_drift": 0.9308737486442042
+      }
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.9555728057861408,
+        "arms_and_knees_quiet_settle": 0.9555728057861408,
+        "small_raincloud_side_drift": 0.9555728057861408
+      }
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.9749279121818236,
+        "arms_and_knees_quiet_settle": 0.9749279121818236,
+        "small_raincloud_side_drift": 0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.9888308262251285,
+        "arms_and_knees_quiet_settle": 0.9888308262251285,
+        "small_raincloud_side_drift": 0.9888308262251285
+      }
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.9972037971811801,
+        "arms_and_knees_quiet_settle": 0.9972037971811801,
+        "small_raincloud_side_drift": 0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 1.0,
+        "arms_and_knees_quiet_settle": 1.0,
+        "small_raincloud_side_drift": 1.0
+      }
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.9972037971811801,
+        "arms_and_knees_quiet_settle": 0.9972037971811801,
+        "small_raincloud_side_drift": 0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.9888308262251285,
+        "arms_and_knees_quiet_settle": 0.9888308262251285,
+        "small_raincloud_side_drift": 0.9888308262251285
+      }
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.9749279121818236,
+        "arms_and_knees_quiet_settle": 0.9749279121818236,
+        "small_raincloud_side_drift": 0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.9555728057861407,
+        "arms_and_knees_quiet_settle": 0.9555728057861407,
+        "small_raincloud_side_drift": 0.9555728057861407
+      }
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.9308737486442042,
+        "arms_and_knees_quiet_settle": 0.9308737486442042,
+        "small_raincloud_side_drift": 0.9308737486442042
+      }
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.9009688679024191,
+        "arms_and_knees_quiet_settle": 0.9009688679024191,
+        "small_raincloud_side_drift": 0.9009688679024191
+      }
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.8660254037844387,
+        "arms_and_knees_quiet_settle": 0.8660254037844387,
+        "small_raincloud_side_drift": 0.8660254037844387
+      }
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.8262387743159948,
+        "arms_and_knees_quiet_settle": 0.8262387743159948,
+        "small_raincloud_side_drift": 0.8262387743159948
+      }
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.7818314824680299,
+        "arms_and_knees_quiet_settle": 0.7818314824680299,
+        "small_raincloud_side_drift": 0.7818314824680299
+      }
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.7330518718298265,
+        "arms_and_knees_quiet_settle": 0.7330518718298265,
+        "small_raincloud_side_drift": 0.7330518718298265
+      }
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.6801727377709194,
+        "arms_and_knees_quiet_settle": 0.6801727377709194,
+        "small_raincloud_side_drift": 0.6801727377709194
+      }
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.6234898018587336,
+        "arms_and_knees_quiet_settle": 0.6234898018587336,
+        "small_raincloud_side_drift": 0.6234898018587336
+      }
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.5633200580636218,
+        "arms_and_knees_quiet_settle": 0.5633200580636218,
+        "small_raincloud_side_drift": 0.5633200580636218
+      }
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.5000000000000003,
+        "arms_and_knees_quiet_settle": 0.5000000000000003,
+        "small_raincloud_side_drift": 0.5000000000000003
+      }
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.43388373911755823,
+        "arms_and_knees_quiet_settle": 0.43388373911755823,
+        "small_raincloud_side_drift": 0.43388373911755823
+      }
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.3653410243663948,
+        "arms_and_knees_quiet_settle": 0.3653410243663948,
+        "small_raincloud_side_drift": 0.3653410243663948
+      }
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.2947551744109046,
+        "arms_and_knees_quiet_settle": 0.2947551744109046,
+        "small_raincloud_side_drift": 0.2947551744109046
+      }
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.2225209339563145,
+        "arms_and_knees_quiet_settle": 0.2225209339563145,
+        "small_raincloud_side_drift": 0.2225209339563145
+      }
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.14904226617617472,
+        "arms_and_knees_quiet_settle": 0.14904226617617472,
+        "small_raincloud_side_drift": 0.14904226617617472
+      }
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 0.07473009358642467,
+        "arms_and_knees_quiet_settle": 0.07473009358642467,
+        "small_raincloud_side_drift": 0.07473009358642467
+      }
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": 1.2246467991473532e-16,
+        "arms_and_knees_quiet_settle": 1.2246467991473532e-16,
+        "small_raincloud_side_drift": 1.2246467991473532e-16
+      }
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.07473009358642398,
+        "arms_and_knees_quiet_settle": -0.07473009358642398,
+        "small_raincloud_side_drift": -0.07473009358642398
+      }
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.14904226617617403,
+        "arms_and_knees_quiet_settle": -0.14904226617617403,
+        "small_raincloud_side_drift": -0.14904226617617403
+      }
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.22252093395631428,
+        "arms_and_knees_quiet_settle": -0.22252093395631428,
+        "small_raincloud_side_drift": -0.22252093395631428
+      }
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.29475517441090393,
+        "arms_and_knees_quiet_settle": -0.29475517441090393,
+        "small_raincloud_side_drift": -0.29475517441090393
+      }
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.36534102436639504,
+        "arms_and_knees_quiet_settle": -0.36534102436639504,
+        "small_raincloud_side_drift": -0.36534102436639504
+      }
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.433883739117558,
+        "arms_and_knees_quiet_settle": -0.433883739117558,
+        "small_raincloud_side_drift": -0.433883739117558
+      }
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.4999999999999997,
+        "arms_and_knees_quiet_settle": -0.4999999999999997,
+        "small_raincloud_side_drift": -0.4999999999999997
+      }
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.5633200580636221,
+        "arms_and_knees_quiet_settle": -0.5633200580636221,
+        "small_raincloud_side_drift": -0.5633200580636221
+      }
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.6234898018587334,
+        "arms_and_knees_quiet_settle": -0.6234898018587334,
+        "small_raincloud_side_drift": -0.6234898018587334
+      }
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.6801727377709195,
+        "arms_and_knees_quiet_settle": -0.6801727377709195,
+        "small_raincloud_side_drift": -0.6801727377709195
+      }
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.7330518718298263,
+        "arms_and_knees_quiet_settle": -0.7330518718298263,
+        "small_raincloud_side_drift": -0.7330518718298263
+      }
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.7818314824680297,
+        "arms_and_knees_quiet_settle": -0.7818314824680297,
+        "small_raincloud_side_drift": -0.7818314824680297
+      }
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.8262387743159949,
+        "arms_and_knees_quiet_settle": -0.8262387743159949,
+        "small_raincloud_side_drift": -0.8262387743159949
+      }
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.8660254037844384,
+        "arms_and_knees_quiet_settle": -0.8660254037844384,
+        "small_raincloud_side_drift": -0.8660254037844384
+      }
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.900968867902419,
+        "arms_and_knees_quiet_settle": -0.900968867902419,
+        "small_raincloud_side_drift": -0.900968867902419
+      }
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.9308737486442044,
+        "arms_and_knees_quiet_settle": -0.9308737486442044,
+        "small_raincloud_side_drift": -0.9308737486442044
+      }
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.9555728057861406,
+        "arms_and_knees_quiet_settle": -0.9555728057861406,
+        "small_raincloud_side_drift": -0.9555728057861406
+      }
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.9749279121818236,
+        "arms_and_knees_quiet_settle": -0.9749279121818236,
+        "small_raincloud_side_drift": -0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.9888308262251285,
+        "arms_and_knees_quiet_settle": -0.9888308262251285,
+        "small_raincloud_side_drift": -0.9888308262251285
+      }
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.9972037971811801,
+        "arms_and_knees_quiet_settle": -0.9972037971811801,
+        "small_raincloud_side_drift": -0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -1.0,
+        "arms_and_knees_quiet_settle": -1.0,
+        "small_raincloud_side_drift": -1.0
+      }
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.9972037971811801,
+        "arms_and_knees_quiet_settle": -0.9972037971811801,
+        "small_raincloud_side_drift": -0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.9888308262251286,
+        "arms_and_knees_quiet_settle": -0.9888308262251286,
+        "small_raincloud_side_drift": -0.9888308262251286
+      }
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.9749279121818236,
+        "arms_and_knees_quiet_settle": -0.9749279121818236,
+        "small_raincloud_side_drift": -0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.9555728057861407,
+        "arms_and_knees_quiet_settle": -0.9555728057861407,
+        "small_raincloud_side_drift": -0.9555728057861407
+      }
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.9308737486442041,
+        "arms_and_knees_quiet_settle": -0.9308737486442041,
+        "small_raincloud_side_drift": -0.9308737486442041
+      }
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.9009688679024193,
+        "arms_and_knees_quiet_settle": -0.9009688679024193,
+        "small_raincloud_side_drift": -0.9009688679024193
+      }
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.866025403784439,
+        "arms_and_knees_quiet_settle": -0.866025403784439,
+        "small_raincloud_side_drift": -0.866025403784439
+      }
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.8262387743159947,
+        "arms_and_knees_quiet_settle": -0.8262387743159947,
+        "small_raincloud_side_drift": -0.8262387743159947
+      }
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.7818314824680299,
+        "arms_and_knees_quiet_settle": -0.7818314824680299,
+        "small_raincloud_side_drift": -0.7818314824680299
+      }
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.7330518718298269,
+        "arms_and_knees_quiet_settle": -0.7330518718298269,
+        "small_raincloud_side_drift": -0.7330518718298269
+      }
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.6801727377709191,
+        "arms_and_knees_quiet_settle": -0.6801727377709191,
+        "small_raincloud_side_drift": -0.6801727377709191
+      }
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.6234898018587337,
+        "arms_and_knees_quiet_settle": -0.6234898018587337,
+        "small_raincloud_side_drift": -0.6234898018587337
+      }
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.5633200580636227,
+        "arms_and_knees_quiet_settle": -0.5633200580636227,
+        "small_raincloud_side_drift": -0.5633200580636227
+      }
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.5000000000000004,
+        "arms_and_knees_quiet_settle": -0.5000000000000004,
+        "small_raincloud_side_drift": -0.5000000000000004
+      }
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.43388373911755834,
+        "arms_and_knees_quiet_settle": -0.43388373911755834,
+        "small_raincloud_side_drift": -0.43388373911755834
+      }
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.36534102436639493,
+        "arms_and_knees_quiet_settle": -0.36534102436639493,
+        "small_raincloud_side_drift": -0.36534102436639493
+      }
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.2947551744109047,
+        "arms_and_knees_quiet_settle": -0.2947551744109047,
+        "small_raincloud_side_drift": -0.2947551744109047
+      }
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.22252093395631464,
+        "arms_and_knees_quiet_settle": -0.22252093395631464,
+        "small_raincloud_side_drift": -0.22252093395631464
+      }
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.14904226617617528,
+        "arms_and_knees_quiet_settle": -0.14904226617617528,
+        "small_raincloud_side_drift": -0.14904226617617528
+      }
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        0
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "bundled_seated_sad_head_droop": -0.0747300935864239,
+        "arms_and_knees_quiet_settle": -0.0747300935864239,
+        "small_raincloud_side_drift": -0.0747300935864239
+      }
+    }
+  ],
+  "candidate_sha256": "419736eaa23eec00e4d916eab8716420a5db145dad9c89b269029280d03242ad",
+  "poster_sha256": "000aa5436ba6c4391ab37613bfc8ced1f3cd95d5e44351fc51f69ecad1792f22",
+  "bytes": 229800,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "output_pts": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "decoded_png_sha256": [
+    "008993abb97085cec14d667f3b018ae8f1a7b2e48a6eeb25c6f9f0611b4c4cfa",
+    "21a791e0b4fc73fd67dd4c81f866147aab8aca1e12163700b40de72aad8d3907",
+    "a9e7cc584619e4310116dfc679980d30e0777be8803dcac9e7227875a1a30876",
+    "8edf98671485ad5271d5fa00abe82fbfd9ef9d8477b06fbfb0eecf23f58f5ace",
+    "cdac2a400e27c332aa92333b1934fb7b68fb03ea0c82d09a1aba5a119ab11334",
+    "9d671ccd03219a4853c1e398546f15046d66c1b70c900b610a77ec49e9d44d48",
+    "2f32093a3c02462133b54c4d3fc81e7132aa722dd30930c4d5a2c5f9ab7046cf",
+    "7d1fd6dbd177ac401ab7301d36505d1d952c861a86a8c13cfb39b988848ba453",
+    "1fafc4b9d8916221feb8de36badbe0252a82e083da282211b3b518bc0f96972e",
+    "1e211d48676a00991619ffa8223d549da922a803ba705ddadf23bf7284fd66fe",
+    "bdc1e00fc681887b93d21d74e36fbde7bcda6d5c60d9a6605ceed10768534d04",
+    "864c4e0e3bc44e3182e880a0b86b3617245545fac0e2dfda26dacd0b5fc607ec",
+    "3a0c123e3b0ecc42e0fd2d977b854e4a27d73995b14c285b31345985c37a6940",
+    "3e928e9256cce27f432330f6d16cb27cbaa3d1fc9ec880b70846e8caaabf1761",
+    "b36d67e3eba25238dad4b1c75f9a062c3952df0b69c07f846e39e6f20aff39d4",
+    "672450ce7daeb890c2dc2444f7ae8bddf585d1810b960389df9d4d8dfe6ed866",
+    "7f2212024c744e47544aab45f4118679df821b9c28b469b213cb8d9be80eb1ca",
+    "302de9297cb8991eae546974ae9c3c57a2256dbbc81ea8b328409bacd6fdad7d",
+    "d9507dce4dcc0c927febee2dcc3c7bda4fe27dc25e5e0fb7597ca2cff4fc3c77",
+    "6bead3258e9632185dd84d4d62b60f723e1a62dd19fdd1dd375470f6e3f01ebc",
+    "54334cd148bda3e52e784354439138715053a6ad23a9ad28eb255b543ddf10e3",
+    "2ded9ea7221c3a76ac314f2d032f6ad5cedccbef2c1870f223714d6bb1b590d8",
+    "40094245366ef6c30a5d4b045aeed0b60ae044617ef84dc955d18b9fb7f31b94",
+    "ce6bd412d1ee9ee5483b3d65216214529d61e08fcdb0913bb93c72a06e59c7f9",
+    "c57c75e1df6a354f08ad221138fcae6ab5a35081862cb4ee3b9ea5330cceeb4a",
+    "2770ab83e746d4e35ac3963ee76b1df2e06da514728741683e9b435f90e9a424",
+    "2adadee87f075772eb5a22e6ad89f9bb0a12cf8b796af351a75b295da91bc819",
+    "c15b260269467ab257b0b1915d9c2e86a825dc2631e88b4eee8ddecb1e317d3f",
+    "788cb6889dfe57fce659fb73dfd1efcfd9cafe9b0bb0520485c25cad394e52cf",
+    "484a2d8c71f40c8bc175869ba53f1c37b93c55ae825f831a7376aff83fb88db4",
+    "09acd7097e719395888415f2fa8b35b7ec4f54859e4d56da2c026500db4ef627",
+    "d256bf2e3b39bb10fe04a388e6a2a6e124c7ffd0ef27bf30a3754b28c0d3b543",
+    "fecb5afc64ed99035349857ffac1df25faf1e8ec4103f90d190a867748ba1724",
+    "6851f512e06bb2e2f83e31538603f2f52d5fbd293baeba358feab71a3e6ed8fc",
+    "ff19c1dc015bf9e51b2f3189c9b58d9c13a6a727f352bcdb6e37e29eec018934",
+    "d5a1ba0394f96dcdb4e1e31c761f1e0b1ab75049c94207f91bfa04c40c2aee0f",
+    "05942c418fed04c36dddd3f73e9109352e187fe0e71cc77a73d08dac63d5842a",
+    "38ab3b145ba5642d02845e34a25eae2e24dfc5b31e21497a7fde61cf1c6a1c1c",
+    "2c22c48ac3abf894d981b226c09c46ce7ddd845686e4e15e31cd90d7d2a82923",
+    "0bca377517c7d0d010ecd71f7cabbe06c85cbd5550c23be59eddd11d60c33600",
+    "41b3a5010578cb2649e36a8b7cff05d8e0ffe0f09bea41e67f26528adbbed4f4",
+    "9510dc2100f1367e49c5bc390a0c0df25d6c536300135b5c2511183c7f1b4c19",
+    "657e689321477782c69677ba8262b215649e2f95d0e26dd2527150efd8cb1cb1",
+    "40b3a27231d8bcf009647256f3f93f125d1c4ea56bd3d59a31edfbf54399304b",
+    "a7be9314c7e6ee4a82dc45b13b16c518a967e4cb76b2841134eb2d593c88fae7",
+    "4d62e8b3289bb996221d2f3f7f1a3a1d701cdf7ba9f77982f26cbd5784c9bdd7",
+    "2365364e4d4117f8ebfe83a789e917e3b37437aca46f16119d8ab6465dd3aa57",
+    "06997cee5f36bdb1e18cde8ec61013051801e29d98fdf30542b5abd2b3122488",
+    "3b7c836ec2483a0b3c46b1e4b5275383842c581fc1d79136fc05d77ed2771410",
+    "e544654e39cb0cc54e574c432f96d98f19bcb88e5261bfb5a82117b131c4f64e",
+    "35f5a22f47b7306c6fb48d5c5d1d90063134f351e582d76954e714b7092f394f",
+    "112a9badffead3d3bf129bd150af3b58f93455647c73a86872149ffcca6ae288",
+    "4cc2ccd6589053833679695cf6352ceb1a44b5c5c07686ad4fa16e89edc178f2",
+    "7097250a5a621c4e75ecc92f031834ae6c45108ebc4ecea89c73461b51ea3185",
+    "62f87ec47ca6d4314a715ed908e757fa959c7eb7db1b96cbf495ffbe5be884b2",
+    "7d31fe35fc233ddf6ad22d87a725a1a8e1f784c83a34491bc72e7f6e2aacbb51",
+    "7b9053f2074768119ecf282ed3314d19211185df0f273b3cd0acfa1f18ff2b86",
+    "21abff18a80687e6175909167c46b1935867bfcacdcaa0e59ea46ec2e7a6f73f",
+    "0380b209b140ace2939137421d28b17deee037d07956daef9548ab608bdf2b62",
+    "a68c90ef674eb6d1952544060de0c9464b0a0bf0eb2213d31d450888abd1f087",
+    "9cdec158876c43c1eaebd9837cfcacde94e5871d680dbe3ea92daad2dc9bc9e6",
+    "d3d5bbb437a73ee2321fe4660cb4ae9dbf6ce36bb9376e07a9cf8249ea5942c3",
+    "7b1adf5880627d0f61e36fa092f54d0e22c8c603c6e3eb9e458a9eb5d16e3a93",
+    "e61ebbd6a48820d13c1ce8ef30d3a697d7629aaa4a85f1b4fda510dbb7bb80c4",
+    "18271e9017c3f776b1d56e339867a3329fe8c0f2178aa97fae8613375c704b40",
+    "ec0726c5a6878e05dcbe216252529cb727cc150bacfca4990ffd3215f10f377e",
+    "0e7af4d233bf896a08f5299f6bb88b4fb06b0541fce468b8af83fa508de818b4",
+    "f765f1e4b5925b4359086edb529d17d958b9d3b7ff5367b2bc5e018115c06af2",
+    "487c7877dd858b0bbaabf3898c17b7c619513d5dc30bcdaed79007ad35cc866e",
+    "334dd64636e473f3f4683455fe7bb26000938b4a7b22f1100a827f1c32998b43",
+    "b2a5dee80960e755f2ac21c5c0c2e2e1deea1cca2774f317b98989b6b06d508e",
+    "2a7c4c74bd9ceff4741d4d2097370bbbc4cdc307e2c1c414d0b093fa245d7bfb",
+    "c46fb653881c3c20096f0d174b5fd9aa3cc333f92c8655c6e889c17df5d2ba18",
+    "d101144e59f571a05d8fcda3eb8108bc6090ae7a67f7c579a7974e585e1e4963",
+    "8747ec404ef315f365b4cee716214b4591f876fe01b086a8e72ccbf5b548e254",
+    "e02ec60fd95ccc1592119e3402b06292a35f1dea3735f8fd4e470243e620e3e6",
+    "f4a171b8ec6b4993c3d1bb6b418ed222f71e6c95b4c7d8e4273d68944012a6d9",
+    "5378e4e3738501db2eac8209006c32374bd47eb22bd53035041849d1bca95b20",
+    "48b394e2f566f7a2eae9507692540d8df3e9b3fe2515b55536f176d80d2f5aad",
+    "e0235973ba03936b3a1d5be48c20eae2538224970e81ed057dd87f7bdb1b204a",
+    "8e1caa20eb237eabe09391e32f4259ccce58f670302dc4c94183cd1653de30cf",
+    "3fdd3fa9398fcdfe10169c1b3ca31b803d257f3786a3f2c4f37849e04fc85d0c",
+    "8c999fb740642c7078afc23f2fde1acf3343675f5b77bd5268be46149ac86070",
+    "728a6c7aae8d1ea98e52ffabce5cb4a5fa1cb32c8edfc1d9f3bc8641a245845f"
+  ],
+  "frames_rgba_png_sha256": [
+    "845949604cd5bf41ea93191181e3c3a8831d813f3679b455046163b145f05f32",
+    "4d66cd8aa17299fa54b5463a7e265cf0fec4f040fc27b78c0bc0feb1c3e254aa",
+    "967bc928912e777aa2a2afdbc7f0ba8f010f6706373614e3d8b9bf14dd4653ab",
+    "86f9ab1a8efa18525c9be7cf19e0398fc1b8d09b25348183adb8a80b988640eb",
+    "3562f6762c0fd902d1bd69caf34433ec3957b5c31c2145d180ad3d642c3e27f8",
+    "8b9111d86e3bc2ff57954c54e972d67d549a8e532414f7b308c457c600a34c34",
+    "1c3af6aa499f77c8f4e72825b0ae0791bd8f2954058be554394a29296c9d770e",
+    "9a49626d1d07fd6f7c01043009b58c0e59db98edab771924778fc83af9534fe4",
+    "95e1ba095b8f75478c1fe796893c5ac07ac88c3cca68b4ccbdbcfac138d1f5af",
+    "f1c5c306cc6b469f1116d7b56cf6eee06315a884be09db43fc52ff2dd6e6e61e",
+    "e7aa0268c86b5119cfdea27d405be55f0fd54ac9ea0149cf619eef755e579b22",
+    "d123893f98f0bac6582717ea84d3a290cf37fd1233318ffb4daa3e7b8527eadd",
+    "255bc42e18822fe4927c47a3949ba5470c98838e9fca96987ba28f66b9d6f3ad",
+    "93a54f3a2fbd6fa43b5cff06fcc629d2d3cc7c082a62462863b0f9f520aa64ae",
+    "8defbf93d0cd0d34d08b1057c6133f4bbc550b8fadde27431ca7325f94359b7e",
+    "fbab922cdff1b64245e1c35e29afa4aa4bc8cbce9d67649df331ee0364c56fed",
+    "92ac8c2ba17e66a09776f6a5fc40b0eeb90930316a3937a8955bd02a5fe83394",
+    "fc27efc8c57c8f6f6a78778ade120b10b70937c5cff2242826b354d29274c0e9",
+    "edf028bdffecca3d936d7f1d550eb6da37704c7d6e4d84d15a200f59f17c76a1",
+    "629801c0e00b60f49e347f553e561a18b5eef3b28fe4e6e6e2ca7a97e428b531",
+    "bed01cbc0dc311a445d12d50181b6942f8c9502667e01d31c3bb961953f3c58c",
+    "8c22af370fbae176c46072dd0ce036be78c477120b4f331cf296789fee39b679",
+    "bed01cbc0dc311a445d12d50181b6942f8c9502667e01d31c3bb961953f3c58c",
+    "629801c0e00b60f49e347f553e561a18b5eef3b28fe4e6e6e2ca7a97e428b531",
+    "edf028bdffecca3d936d7f1d550eb6da37704c7d6e4d84d15a200f59f17c76a1",
+    "fc27efc8c57c8f6f6a78778ade120b10b70937c5cff2242826b354d29274c0e9",
+    "92ac8c2ba17e66a09776f6a5fc40b0eeb90930316a3937a8955bd02a5fe83394",
+    "fbab922cdff1b64245e1c35e29afa4aa4bc8cbce9d67649df331ee0364c56fed",
+    "8defbf93d0cd0d34d08b1057c6133f4bbc550b8fadde27431ca7325f94359b7e",
+    "93a54f3a2fbd6fa43b5cff06fcc629d2d3cc7c082a62462863b0f9f520aa64ae",
+    "255bc42e18822fe4927c47a3949ba5470c98838e9fca96987ba28f66b9d6f3ad",
+    "d123893f98f0bac6582717ea84d3a290cf37fd1233318ffb4daa3e7b8527eadd",
+    "e7aa0268c86b5119cfdea27d405be55f0fd54ac9ea0149cf619eef755e579b22",
+    "f1c5c306cc6b469f1116d7b56cf6eee06315a884be09db43fc52ff2dd6e6e61e",
+    "95e1ba095b8f75478c1fe796893c5ac07ac88c3cca68b4ccbdbcfac138d1f5af",
+    "9a49626d1d07fd6f7c01043009b58c0e59db98edab771924778fc83af9534fe4",
+    "1c3af6aa499f77c8f4e72825b0ae0791bd8f2954058be554394a29296c9d770e",
+    "8b9111d86e3bc2ff57954c54e972d67d549a8e532414f7b308c457c600a34c34",
+    "3562f6762c0fd902d1bd69caf34433ec3957b5c31c2145d180ad3d642c3e27f8",
+    "86f9ab1a8efa18525c9be7cf19e0398fc1b8d09b25348183adb8a80b988640eb",
+    "967bc928912e777aa2a2afdbc7f0ba8f010f6706373614e3d8b9bf14dd4653ab",
+    "4d66cd8aa17299fa54b5463a7e265cf0fec4f040fc27b78c0bc0feb1c3e254aa",
+    "845949604cd5bf41ea93191181e3c3a8831d813f3679b455046163b145f05f32",
+    "ed8cbdb57bfb21c7beb81481117f148447c7842142df0666df5694169ab29c15",
+    "a521f9285ca5b94de885d81cb70f1280c0467bbfb64a1803b464a01a10b56649",
+    "f5c962f7de46071f4b0a1feb8d06cda2885cd85f74b6a871c8995c581265f575",
+    "38a1acabe452486c1731d5d6a5df878d3a940242cf4114ac795f6a27c83ae2f0",
+    "a4def46bc8fe711c6f90bd2f38aa87b80e06a84de96a7a4395a7d4cab64406f2",
+    "4999a3db136a384a56778a8bf1a8b02319e540444faf005db43931f95dc04325",
+    "ec9522c62254c220f701b1ce79a855b754c7bc1901d7e6895607ccf46a5312d7",
+    "0cad26b80760990bd94492d51627b1af0b89553abc2e0d257505b2fa03fc1e26",
+    "b0ae49b67c9d0c65ab501c53952f20d869b3fe9df39788005c0394809456d08f",
+    "c536283bb67083c06feedaf6a5acac2e3b319f16487dcbc997f0d6eb5537998f",
+    "e2e8798dd70b24fc1e16f569ef5bfb1edd5410d5ca12e247cb30533226669a89",
+    "63518f083d209d8195faed877fcac1a0898c75dba140a86e51737303d9acc41d",
+    "926bce7ca149af1d4ce2bfc91652343ac039cd1fc8839d3ca01f7f305a9c3543",
+    "3bfe97d9b1a22c3a183026fa8620c6c53cd8d36078eb97a1aececba8862e17aa",
+    "96bfe72970c012cbe75056e225846ea2ce4719106016723df5aa12c7ce7ec954",
+    "04deca980d7ed44607f7d67aaa8f38a7d4824ebdf7d1e8d867b26c82cd122f84",
+    "b1526b571b18b74e952a16026a932913eadddd22722f5b2e87963a101c39945d",
+    "2961d06a3be145fb56f4ded5080e48a85c40fd59dac662d8c088e6fcf17e6939",
+    "05a26e9631e126ef8130b2823bff6bebdc0e626d1bdcbff3b8ed6753c7423a9c",
+    "bc4c4098fc54888bc0f0d775c70ace51c4ea42c498ba3338e8b1f2c2a131c7c3",
+    "9984ba15006cf5edba315d8321c641e02c3cb0531c8406160e7084cb0959dedc",
+    "bc4c4098fc54888bc0f0d775c70ace51c4ea42c498ba3338e8b1f2c2a131c7c3",
+    "05a26e9631e126ef8130b2823bff6bebdc0e626d1bdcbff3b8ed6753c7423a9c",
+    "2961d06a3be145fb56f4ded5080e48a85c40fd59dac662d8c088e6fcf17e6939",
+    "b1526b571b18b74e952a16026a932913eadddd22722f5b2e87963a101c39945d",
+    "04deca980d7ed44607f7d67aaa8f38a7d4824ebdf7d1e8d867b26c82cd122f84",
+    "96bfe72970c012cbe75056e225846ea2ce4719106016723df5aa12c7ce7ec954",
+    "3bfe97d9b1a22c3a183026fa8620c6c53cd8d36078eb97a1aececba8862e17aa",
+    "926bce7ca149af1d4ce2bfc91652343ac039cd1fc8839d3ca01f7f305a9c3543",
+    "63518f083d209d8195faed877fcac1a0898c75dba140a86e51737303d9acc41d",
+    "e2e8798dd70b24fc1e16f569ef5bfb1edd5410d5ca12e247cb30533226669a89",
+    "c536283bb67083c06feedaf6a5acac2e3b319f16487dcbc997f0d6eb5537998f",
+    "b0ae49b67c9d0c65ab501c53952f20d869b3fe9df39788005c0394809456d08f",
+    "0cad26b80760990bd94492d51627b1af0b89553abc2e0d257505b2fa03fc1e26",
+    "ec9522c62254c220f701b1ce79a855b754c7bc1901d7e6895607ccf46a5312d7",
+    "4999a3db136a384a56778a8bf1a8b02319e540444faf005db43931f95dc04325",
+    "a4def46bc8fe711c6f90bd2f38aa87b80e06a84de96a7a4395a7d4cab64406f2",
+    "38a1acabe452486c1731d5d6a5df878d3a940242cf4114ac795f6a27c83ae2f0",
+    "f5c962f7de46071f4b0a1feb8d06cda2885cd85f74b6a871c8995c581265f575",
+    "a521f9285ca5b94de885d81cb70f1280c0467bbfb64a1803b464a01a10b56649",
+    "ed8cbdb57bfb21c7beb81481117f148447c7842142df0666df5694169ab29c15"
+  ],
+  "raw_rgba_rerender_exact_match": null,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "adjacent_composite_mae": [
+    0.8220040798187256,
+    0.8291483521461487,
+    0.8502047657966614,
+    0.8440144062042236,
+    0.7673368453979492,
+    0.8095126152038574,
+    0.7194493412971497,
+    0.8539740443229675,
+    0.6432590484619141,
+    0.7382052540779114,
+    0.5170605778694153,
+    0.6174336075782776,
+    0.4952225685119629,
+    0.5197233557701111,
+    0.4378108084201813,
+    0.5223694443702698,
+    0.21722412109375,
+    0.2504282295703888,
+    0.18077141046524048,
+    0.3204026222229004,
+    0.009643695317208767,
+    0.007136435713618994,
+    0.04214145243167877,
+    0.20200449228286743,
+    0.17644600570201874,
+    0.299591600894928,
+    0.37161684036254883,
+    0.45375266671180725,
+    0.4210873544216156,
+    0.647195041179657,
+    0.4964478015899658,
+    0.6859810948371887,
+    0.5912768244743347,
+    0.7339347004890442,
+    0.743854820728302,
+    0.8201508522033691,
+    0.7845942974090576,
+    0.8412414193153381,
+    0.8435752391815186,
+    0.9311687350273132,
+    0.8147132396697998,
+    0.8820555806159973,
+    0.8623161315917969,
+    0.862699031829834,
+    0.8297727704048157,
+    0.845088005065918,
+    0.7751882076263428,
+    0.8771975636482239,
+    0.7180671691894531,
+    0.7787125110626221,
+    0.6400451064109802,
+    0.7000682950019836,
+    0.5771711468696594,
+    0.6152210831642151,
+    0.5186507105827332,
+    0.6357051730155945,
+    0.3338923454284668,
+    0.39741912484169006,
+    0.2737050950527191,
+    0.4339729845523834,
+    0.11369336396455765,
+    0.09262746572494507,
+    0.01016644760966301,
+    0.12084665149450302,
+    0.06033853814005852,
+    0.200145423412323,
+    0.14810778200626373,
+    0.3015982210636139,
+    0.3144431412220001,
+    0.5060332417488098,
+    0.3875299394130707,
+    0.6059524416923523,
+    0.5172328352928162,
+    0.6598680019378662,
+    0.6574199795722961,
+    0.7637941241264343,
+    0.700670063495636,
+    0.8128378987312317,
+    0.7900344729423523,
+    0.910919189453125,
+    0.775897741317749,
+    0.9098170399665833,
+    0.867722749710083
+  ],
+  "seam_composite_mae": 0.8881738781929016,
+  "review_video_validation": {
+    "normal": {
+      "sha256": "db5f6445d660ddf98dc36d3c33da97a6546436f189ba5e6fe6da3a2aa2348213",
+      "bytes": 153146,
+      "duration": "2.800000",
+      "decoded_frames": "84",
+      "full_decode": "passed"
+    },
+    "slow": {
+      "sha256": "b58ea645d2d9cb871d33cf9cb30a1d6ffff5670445217923b9ca4e3622d38b71",
+      "bytes": 222914,
+      "duration": "5.600000",
+      "decoded_frames": "84",
+      "full_decode": "passed"
+    }
+  },
+  "source_review": "Every selected source PNG individually inspected at native512. Exact selected source indices/hashes are recorded above. Original84-frame before sequence remains available for independent QA.",
+  "candidate_visual_review": {
+    "actual_agent_id": "/root/artisan_stickers_b",
+    "full_ordered_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "full_frame_tile_px": 224,
+    "native512_after_frames": [
+      0,
+      10,
+      21,
+      31,
+      42,
+      53,
+      63,
+      73,
+      83
+    ],
+    "scope": "Every final decoded frame inspected in ordered224px boards, plus9native512phase/loop images. Author review only; no native realtime/slowed/device perception claim.",
+    "observation": "Scene-specific gesture/props/contacts retained, no double-exposure contour or limb swap observed in this author scope; independent per-item QA required."
+  },
+  "independent_review": "pending",
+  "native_playback": "unknown",
+  "device_playback": "unknown",
+  "canonical_assets_changed": false,
+  "limits_checked": {
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "side": 512,
+    "fps": 30,
+    "seconds": 2.8,
+    "max_bytes": 262144
+  },
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_110/review-normal.mp4",
+      "sha256": "db5f6445d660ddf98dc36d3c33da97a6546436f189ba5e6fe6da3a2aa2348213",
+      "bytes": 153146,
+      "frames": 84,
+      "duration": 2.8
+    },
+    {
+      "path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_110/review-slow.mp4",
+      "sha256": "b58ea645d2d9cb871d33cf9cb30a1d6ffff5670445217923b9ca4e3622d38b71",
+      "bytes": 222914,
+      "frames": 84,
+      "duration": 5.6
+    }
+  ],
+  "review_validation_scope": "Actual copied target paths must pass shared freeze_guard synchronously before package publication. Source validation alone is insufficient.",
+  "frozen_at": "2026-10-30T18:56:08.168237+00:00"
+}

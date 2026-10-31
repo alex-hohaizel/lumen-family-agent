@@ -1,0 +1,1973 @@
+{
+  "schema_version": 1,
+  "id": "lumen_73",
+  "candidate": "lumen_73_author-a_mesh_v1",
+  "created_at": "2026-10-30T18:50:54.662424+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_73/source.webm",
+  "source_video_sha256": "26487ad22f0906089199cd101fb6fc3a456753c5559c1db2d56f697a1cbdf23e",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "ea7db184bbcef240e5f35da624a9e06601f073ee1eef96f626015cb6b5ec3581",
+  "derived_source_frames": [
+    {
+      "index": 54,
+      "seconds": 1.8,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_73/source-frames/054.png",
+      "decoded_png_sha256": "45b31b37711e2b95b63dafe11ebbc2cdac40ea79ed2a8ff52c5e140dfa14468a"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "a058079c267ae16249bdd07b55a8d502541c2a8ff55d135ca6b5ecf3a7a0c46f",
+  "source_frame_count": 84,
+  "source_action_frames": [
+    54
+  ],
+  "method": "shared_local_mesh_v1",
+  "character_semantics": {
+    "core_scene": "Upright neutral face and flat mouth, relaxed hanging paws, proportional small body breath; one stopped hourglass at foot remains stationary.",
+    "omitted_optional_action": "Full blink omitted to avoid damaged eyelid blends; no claim of an unperformed blink. Source prop drift is replaced by a fixed-hourglass local-body recipe.",
+    "reversibility_or_contact": "Face and all hourglass boundary/sand points pinned; only chest/shoulders/belly/paws breathe gently. No sand motion, prop slide or whole-canvas bob."
+  },
+  "semantic_tradeoff": "Full blink omitted to avoid damaged eyelid blends; no claim of an unperformed blink. Source prop drift is replaced by a fixed-hourglass local-body recipe.",
+  "not_recovered_original_art": true,
+  "not_rigid_global_transform": true,
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        54
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "slow_neutral_breath_without_performative_head_bob",
+        "tiny_ear_and_hand_exhale_settle"
+      ]
+    }
+  ],
+  "candidate_sha256": "dc89f9f4584a3b6886287b7c9b302081894ff381954b9242086c232c5dbe0dc9",
+  "poster_sha256": "cb7201cf5d8f61d9fea81189a433dffd4c70e3ae8b368c7a3d48d58ab79e7e06",
+  "bytes": 89882,
+  "crf": 30,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "adjacent_composite_mae": [
+    0.03728119283914566,
+    0.03897130861878395,
+    0.020203666761517525,
+    0.05850041285157204,
+    0.014455574564635754,
+    0.048803240060806274,
+    0.033242542296648026,
+    0.12849465012550354,
+    0.007393427658826113,
+    0.0755487009882927,
+    0.020851194858551025,
+    0.054835230112075806,
+    0.05737384781241417,
+    0.08142118901014328,
+    0.04527783766388893,
+    0.22364287078380585,
+    0.01719330996274948,
+    0.07573949545621872,
+    0.06233658269047737,
+    0.1666567474603653,
+    0.018219398334622383,
+    0.09240735322237015,
+    0.05102730169892311,
+    0.17475616931915283,
+    0.03606533259153366,
+    0.07858562469482422,
+    0.05412454903125763,
+    0.1371888518333435,
+    0.026836663484573364,
+    0.1990436315536499,
+    0.022317299619317055,
+    0.12652523815631866,
+    0.018276603892445564,
+    0.08977556228637695,
+    0.06731482595205307,
+    0.11984064429998398,
+    0.031051715835928917,
+    0.07618243247270584,
+    0.048714786767959595,
+    0.1787528246641159,
+    0.02247084490954876,
+    0.03809303417801857,
+    0.019277455285191536,
+    0.05583779886364937,
+    0.022476650774478912,
+    0.060372594743967056,
+    0.02995813824236393,
+    0.12299428135156631,
+    0.018676528707146645,
+    0.10087805241346359,
+    0.01790296845138073,
+    0.09709658473730087,
+    0.019589953124523163,
+    0.09350353479385376,
+    0.05533655360341072,
+    0.19151680171489716,
+    0.025601813569664955,
+    0.07291290909051895,
+    0.06428725272417068,
+    0.17589013278484344,
+    0.019323470070958138,
+    0.09080293029546738,
+    0.038476232439279556,
+    0.20475123822689056,
+    0.04491782188415527,
+    0.07146651297807693,
+    0.06694997102022171,
+    0.153488889336586,
+    0.030246959999203682,
+    0.19336366653442383,
+    0.01978112943470478,
+    0.14559580385684967,
+    0.013281382620334625,
+    0.08886479586362839,
+    0.07190672308206558,
+    0.10807023197412491,
+    0.06854348629713058,
+    0.0750269815325737,
+    0.059340495616197586,
+    0.11176352947950363,
+    0.01792600005865097,
+    0.09726496785879135,
+    0.0625811442732811
+  ],
+  "seam_composite_mae": 0.0464070625603199,
+  "decoded_png_sha256": [
+    "921601d4f24520dd05785e61a9d963a43eb9a0e9dccb7c042f07fdb169b6e76c",
+    "5543fe5b640cd12d79b93f87b7764db140b2881a738b85db35f25ea4f87e844b",
+    "d7f0e00e998796f28b4477a9f9477afa793e4c1dea5e3a86c418ca09a10024bd",
+    "46a3a7615ea97b8fd9959fe82d063f6b8e85dabf92d9b689f943aeda28f0285c",
+    "480b6c29b5975a0c599f68a61f452836b900deba5dbf732dafcfcc4952a1649c",
+    "96e9d865c59a0943713cf94af1d5be9c5b2f10bc58b8adbd277036027f9dce65",
+    "b635cbde2a7ca80f0995b00bb16fa9bc90142ff94509f08f603fa51e82fb1807",
+    "8c62ebee69d0dfc405889c4ee66ea84e00acb366df3a17150bdee38de3ae4e03",
+    "ad60194e2cceef0ce8fa40aae47b81f87d82116fe641f844d6e21af959f17b48",
+    "b9a2678d1056c61ed8035f021660addb5a77ab433bd28abf09329a89e5bde5ed",
+    "6592dc2efa21d5dffb0141b6fe1081dd0839722a0bccc5e493d1c540befea88a",
+    "4c91b8b9cb9a6d454f898313742c31ecd3faef5a7ab9992dadd487c9b29d2d34",
+    "bead538a53a8d54e6559b83f15bb72e14fb0b726f1907e70b924acb2551701a4",
+    "0336574cb9f3745a238f4d9d841a8250db4c07ccc398b20de8233293db01c3d2",
+    "675a7f9078522886f456787d15f83fe9fd8eb4c01aa78407a0d2cab76cfde8f8",
+    "4f1a5e52ed3ebd05e1a282e99f2a90a6fff2396b795f9e83ea68cba7086c12c2",
+    "91e7cb63f60756fbcedb6f47cb1ebbaf339496a34d11e1366f2fce34d6afea3d",
+    "99c40ca2572b287fdce04da6cfefc39ab1d4bcbd8469351e9cf05758f3277366",
+    "5c3edd3628f0417d6d22555d853401173cd716539d40cbc5eabc46121e5da381",
+    "67574e8d01a5157db1bb32dabbdc369cb7ba12dd0c2ff94193eafb0be889cf09",
+    "733c4b5db42fd36f527a58d4e81a1eafb0aa4f07c576d9321e86f6feb7b6be5b",
+    "1f139765de9a44b5b2650939c45a3230d97ce2601b6637b804b80215d7d4be5e",
+    "f51904645b912519895c59af83a274b20b29e6cbf5b306c4014e602b07653743",
+    "24d62711563a34fa4188de82e012443a7bc4d295e421faf00debb0a8e3bcee0d",
+    "31a335fdce65e8f318ee6204f49442a14a411c996f7c44a0a999f864c30e0c1f",
+    "fe9c09224ceb016de11a5c56c16fda8874ecd89d8fc8edce1591457ea86be806",
+    "673f995aa3f47627f28e24e5ed3d2ed2250b94472cb19b7f61412d970d057f2f",
+    "caefcc38988f07749e22141255e410f1dd585aa42e5343543a968994d6ffb368",
+    "809aaed584325e14b9b27a2efdb72b80bdd20fb57a5b008bcd965e39366435a7",
+    "50bad801e16bc39d530c1e4aed6cfce33984a1a5c0c05c1635f75b39a4cd5566",
+    "76ab04ced954aa4603121fd9507f9dd876e2108dcf5df13bf28606ac20176191",
+    "73461683ffc123779e5928e7e9948eb6deb9fbd4f7082d780aa0f5098f78a90c",
+    "5d5b4ee0be7fb02b37e085f596567dd7f6163da5ce3f532afde4e7db837f6ca4",
+    "4d7fac6a22ee2f9d13f84b383540c2baa871ad28d40a851027018713d7609380",
+    "52158db34c3c17fe90de1d29db8628ff9ffc1a24cdc6ca62e58fc43673bd1b7c",
+    "d602f89001985e6ee1159436ee184708013caca704300d2251687dbfae5e4812",
+    "526f975c1402dfbfaae918575cf60efe9f39d3c82b86992f12f6c97453970bba",
+    "1183eef6ff8ddb608e4edf700daced797cbcf3b815d8e913ab964fb1309cec89",
+    "5ed3c269a5f3e4d75fb5ad2584e4cb4900ed1c92da60c4bb87136a2bb63e27d9",
+    "bfc5fc13cf70548533fcccb256538c8acdcbf4dae78179a37ffa64fd8896351f",
+    "120466477599251ce3c5051531b3ae3e458cc9d995fef7d816fd70d1f16f49f8",
+    "dc1d6e90f5ce8d91fa1af07ab6a6aaabbc586a217bbf0daa022232c5d985475c",
+    "8bd4aee52b227f1428ab8b14a07a17d1351a6738a3e26712652d3754299ccc86",
+    "965eec1353b7468b15b9cc930d1dfa96e0667017c3752b7640eb1acf95b5c6f4",
+    "ea15c06c9ee29530b6bc37984185f53f379b04f403dfc67940f97c29c8fb7a96",
+    "44d7633a3dc594d72dbbd41ea3914ae828ec5d8e06b6f7101b2df5f8bd18ba35",
+    "22354bf8b0b92d1b14b40e3ea8d2d78fe1d017a6d28e32e5918204599e8255a2",
+    "f5292a43962e18564e16ab952acb1755ccc791fc3d47e3709b95bab076ba05a7",
+    "52b1ae4861bf7805cf1c22e07610ba5ff6f0c6dd8353125a08767b12c1593450",
+    "9ec122b68d78273170365745b8cf41f1370ca512cbf28995d6f6a974899e309d",
+    "ef3d2113948bebc40f9cb07515b9d09a2dbce728c8a844696c748f079e27cde8",
+    "423933b38890b004580a0b76d630f580d0bb583fe0ad378eb4c6d704d17f3238",
+    "7feb9be468f0cc3af271a94ed6baa039beb9e002511b5d82b2983fb3edf07364",
+    "25386fd0de189420aaa9c13d39b2c0f72098b1e7269048304332cd76854a8ded",
+    "c7c40a6082853ae4d64410fcc6ddbfcd51df807049e1a567244a76525a3508a0",
+    "d46f98f4186ba568874608bced9d24273739b5fbf7a76e7002d4c149f9791860",
+    "4363d84e1c1cebf001edccfbe530f8a16f15f792f1ee5f7bdcb312015aeb483d",
+    "2319193b738e838bdc77bea1f00a06af907ba0eb10f26f94409214f99595519c",
+    "fbcff66200364f106b87750f5f598237b99722ebe2a2cd229b4012fdc7513661",
+    "c6a8dc72cf88e206fa5cf0985ba67ea2a4f8f6006bc600471f6929ed404020d2",
+    "1f282bc5b5741fa543b7ab745c8658a8ddfb3407c131344310be5bf3a6242cda",
+    "62ff3c16f7a1d80f71ee0b754c9047ff45e70d5905d03eeeb0a232aaab9238f6",
+    "db885ec77cb3fa24e415885dc90c5e06239e4824f987bbce228a6763b1b9a221",
+    "e8b4cfa0ca084194ab1671fdb51175eb661e2144f81d283df450248b1326ebfd",
+    "f1049d93f98b4e5b6d7b7d47d44fea662131e6766057ec082650975c9283b66d",
+    "a459181c7bb005492b0adfee549eccc4a5fb7292299ba4aeee4ab3171f32e1e2",
+    "76fffbae937237e9714422bceed4744b579ace7eb1cc4f1fef4ded783ec4fdea",
+    "473cd08cabf8582a7c9f8036be67dd34865ea6e3134a5a580c62e6a39a601060",
+    "8ef25117d681663b041b8dffa1e0d8a1b09b31ab15db112484f9b02196d3ca98",
+    "62b7e6f193304ffa4af353d3b8ce3c3cfcc4510c822f9b8fdc66165164c47281",
+    "2018858124e95010c6b60a6ce16f75487f1d53f3fd5a68b9604a81b65d8ca47e",
+    "4578dde3dd5b8bacc92a1518cf91625f1fc5e1afb15acc369c9fd1ca95a4823a",
+    "458fd7b87683a2164983b596e2f7b91e62c0cc902671dc0ad3c5d0a4dd7a624c",
+    "101e256211ac85032e9efcffc9498aad1ca2438bb731a1da182d7ce5c449f5e3",
+    "d705ed44d7dc3a4352302e4c5603bd5edeae38b1937df78b0545b08f6c35ca55",
+    "4943c9d23e28056c94341b843f66c93124ea282396c89fed2bd9277c6eadc8de",
+    "6eece8c741184c97787a13e0e28b4b54c56e735f47cb84d22a7a679650c8539f",
+    "203cd3ab51f19a579dde78fb805e135e94821d24e3694160ce02055b2028a0ad",
+    "9b86812d2335f91f066c96dd940ecbbd454efbaa34db7155d5a82226fa7176f1",
+    "d7b68f114917dd9bef4e0eb9840516d6145ffb293a3952a3ee092544b2c0dc91",
+    "793ad146ab962f8c3618080baeb321411edc190276f983ceff2429f5f516bd20",
+    "78d916fe8916a8220cc7624f76cadf0733488027448f5c0267611d59c43822a9",
+    "c3fb2929af0578fc0eae55b3e9efff3c9e34754dc1b3d72ab1b80a32eb55a90f",
+    "1ec5a632470884eb425757a9b88b7417dbd6de103d5a261aa90d3d648daa3be9"
+  ],
+  "decoded_pts_seconds": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "timestamps_monotonic": true,
+  "native_streams": [
+    {
+      "index": 0,
+      "codec_name": "vp9",
+      "codec_long_name": "Google VP9",
+      "profile": "Profile 0",
+      "codec_type": "video",
+      "codec_tag_string": "[0][0][0][0]",
+      "codec_tag": "0x0000",
+      "width": 512,
+      "height": 512,
+      "coded_width": 512,
+      "coded_height": 512,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 0,
+      "sample_aspect_ratio": "1:1",
+      "display_aspect_ratio": "1:1",
+      "pix_fmt": "yuv420p",
+      "level": -99,
+      "color_range": "tv",
+      "field_order": "progressive",
+      "refs": 1,
+      "r_frame_rate": "30/1",
+      "avg_frame_rate": "30/1",
+      "time_base": "1/1000",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "nb_read_frames": "84",
+      "disposition": {
+        "default": 0,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0
+      },
+      "tags": {
+        "alpha_mode": "1",
+        "ENCODER": "Lavc60.31.102 libvpx-vp9",
+        "DURATION": "00:00:02.800000000"
+      }
+    }
+  ],
+  "native_duration": "2.800000",
+  "source_review": {
+    "agent": "/root/artisan_stickers_a",
+    "every_selected_sourceframe_observed": true,
+    "selected_frame_view_scale_px": 256,
+    "native512_frame_indices": [
+      54
+    ],
+    "observation": "Native54 gives a clean neutral open face and single intact hourglass; selected full source51–83 was reviewed before deciding to pin the prop. Exact sole source PNG inspected at native512; no source eye/limb/prop ghost accepted.",
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-inspection/meshes/73_anchor54.png"
+    ]
+  },
+  "candidate_visual_review": {
+    "agent": "/root/artisan_stickers_a",
+    "observed_all84_afterframes": true,
+    "frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "complete_review_scale_px": 256,
+    "native512_frame_indices": [
+      0,
+      17,
+      34,
+      59
+    ],
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-candidates/lumen_73_author-a_mesh_v1/after256-0.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_73_author-a_mesh_v1/after256-1.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_73_author-a_mesh_v1/after256-2.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_73_author-a_mesh_v1/after256-3.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_73_author-a_mesh_v1/native-author-0-17-34-59.jpg"
+    ],
+    "observation": "Actually viewed all 84 decoded frames at256 and native512 frames 0/17/34/59. This deliberately quiet neutral waiting scene keeps the face fixed/open, flat mouth, arms hanging, feet grounded and stopped hourglass stable. Only small proportional chest/belly expansion, shoulders, paws and ear settle move; no full-canvas bob or prop drift. No iris/eyelid dissolve or change of expression seen. Motion amplitude is intentionally restrained per the TL scene; optional slow blink is omitted and not claimed. Independent QA must judge scene-appropriate subtlety rather than treating technical uniqueness as sufficient liveliness.",
+    "native_realtime_perceptual_playback": false,
+    "slow_perceptual_playback": false,
+    "device_playback": false,
+    "author_verdict": "propose_for_independent_per_item_QA_with_explicit_subtle_motion_limit"
+  },
+  "baseline_independent_triage": {
+    "artifact": "docs/qa-1-13/sticker-triage-51-80.json",
+    "verdict": "repair_required",
+    "source_sha256": "26487ad22f0906089199cd101fb6fc3a456753c5559c1db2d56f697a1cbdf23e",
+    "defects": [
+      {
+        "frames": [
+          24,
+          29
+        ],
+        "reason": "Відкривання очей після довгого blink накладає різні форми: f26–27 мають темні горизонтальні розводи, часткові подвійні райдужки та сірі старі дуги повік; це не одна чітка moving eyelid."
+      },
+      {
+        "frames": [
+          45,
+          50
+        ],
+        "reason": "Праве око й щока проходять локальний dissolve при зміні погляду: f47 має дві частково накладені пози райдужки/контуру ока, зайвий сірий край уздовж правої очної форми."
+      }
+    ]
+  },
+  "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/recipe.json",
+  "recipe_sha256": "5cb2db39af48c158e1fa8fdbc50a1d0e08cbac4081b1074a1cdea477395ed101",
+  "generator_snapshot": {
+    "engine_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+  "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+  "statistics": {
+    "minimum_jacobian": 0.9191721081733704,
+    "maximum_displacement_px": 2.5258514881134033
+  },
+  "proposed_description_uk": "Незворушно дивиться просто перед собою й тихо дихає, опустивши лапки. Поряд стоїть маленький зупинений пісочний годинник.",
+  "independent_review": "pending",
+  "native_playback": "not_observed",
+  "device_playback": "not_observed",
+  "canonical_assets_changed": false,
+  "local_mesh": {
+    "source_frame": 54,
+    "points_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        511,
+        0
+      ],
+      [
+        0,
+        511
+      ],
+      [
+        511,
+        511
+      ],
+      [
+        256,
+        0
+      ],
+      [
+        0,
+        256
+      ],
+      [
+        511,
+        256
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        265,
+        54
+      ],
+      [
+        132,
+        112
+      ],
+      [
+        393,
+        112
+      ],
+      [
+        200,
+        183
+      ],
+      [
+        330,
+        184
+      ],
+      [
+        262,
+        205
+      ],
+      [
+        262,
+        230
+      ],
+      [
+        260,
+        269
+      ],
+      [
+        172,
+        309
+      ],
+      [
+        344,
+        309
+      ],
+      [
+        259,
+        288
+      ],
+      [
+        259,
+        303
+      ],
+      [
+        185,
+        368
+      ],
+      [
+        328,
+        369
+      ],
+      [
+        193,
+        403
+      ],
+      [
+        325,
+        402
+      ],
+      [
+        121,
+        349
+      ],
+      [
+        375,
+        347
+      ],
+      [
+        191,
+        442
+      ],
+      [
+        323,
+        442
+      ],
+      [
+        383,
+        355
+      ],
+      [
+        439,
+        355
+      ],
+      [
+        412,
+        400
+      ],
+      [
+        383,
+        448
+      ],
+      [
+        439,
+        448
+      ]
+    ],
+    "point_names": [
+      "corner_tl",
+      "corner_tr",
+      "corner_bl",
+      "corner_br",
+      "edge_top",
+      "edge_left",
+      "edge_right",
+      "edge_bottom",
+      "crown",
+      "ear_l",
+      "ear_r",
+      "eye_l",
+      "eye_r",
+      "nose",
+      "mouth",
+      "jaw",
+      "shoulder_l",
+      "shoulder_r",
+      "neck",
+      "medal",
+      "paw_l",
+      "paw_r",
+      "belly_l",
+      "belly_r",
+      "cape_l",
+      "cape_r",
+      "foot_l",
+      "foot_r",
+      "clock_tl",
+      "clock_tr",
+      "clock_mid",
+      "clock_bl",
+      "clock_br"
+    ],
+    "parts": [
+      {
+        "name": "slow_neutral_breath_without_performative_head_bob",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            -2
+          ],
+          [
+            1,
+            -2
+          ],
+          [
+            0,
+            -0.6
+          ],
+          [
+            0,
+            -0.8
+          ],
+          [
+            -0.5,
+            -1
+          ],
+          [
+            0.5,
+            -1
+          ],
+          [
+            -2,
+            0.5
+          ],
+          [
+            2,
+            0.5
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.12,
+            0.4,
+            0.65,
+            0.88,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "tiny_ear_and_hand_exhale_settle",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -0.4,
+            0.6
+          ],
+          [
+            0.4,
+            0.6
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0.7
+          ],
+          [
+            0,
+            0.7
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 1
+        }
+      }
+    ],
+    "minimum_jacobian": 0.65,
+    "fluid_texture": null
+  },
+  "strongest_objection": {
+    "objection": "The very small breath may be too close to a static replacement.",
+    "author_response_and_limit": "The TL specifically calls for upright neutral composure, hanging paws, a stopped hourglass and barely perceptible breath. This proposal uses chest/belly/shoulder/paw motion and fixed face/prop instead of whole-canvas movement. It is explicitly submitted for proportional semantic/liveliness QA; technical unique frames are not sufficient acceptance.",
+    "independent_semantic_QA_required": true
+  },
+  "frozen_native_author_contact_sheet": {
+    "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/native-author-0-17-34-59.jpg",
+    "sha256": "fea9091d1bbcd770bc2fd86eaa244cd6408de94a6b567a70b3c12871eec0a10d",
+    "native_frame_scale_px": 512,
+    "frame_indices": [
+      0,
+      17,
+      34,
+      59
+    ]
+  },
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/review-normal.mp4",
+      "sha256": "95bb5fcd313294c1d952239c01d83bc9ea13ec7e2e6b339643d176bbc702f99a",
+      "bytes": 125849,
+      "frames": 84,
+      "duration": 2.8,
+      "fps": 30,
+      "perceptually_watched": false
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/review-slow.mp4",
+      "sha256": "02e4a2b4d69b72425402b026f2fb14a8fca4f3695673d9375c573506214d3f93",
+      "bytes": 181112,
+      "frames": 84,
+      "duration": 5.6,
+      "fps": 15,
+      "perceptually_watched": false
+    }
+  ],
+  "reproducibility": {
+    "artifact": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/reproducibility.json",
+    "sha256": "44a207cc68e431761ea2fc02c50c60d8611fea2ce59bf6ab87e6556a26bbe812",
+    "raw_rgba_exact_match": true,
+    "encoded_frame_exact_match": true,
+    "canonical_video_read": false,
+    "container_bytes_exact_match": false
+  },
+  "candidate_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_73/candidate.webm",
+  "frozen_at": "2026-10-30T19:07:05.409795+00:00"
+}

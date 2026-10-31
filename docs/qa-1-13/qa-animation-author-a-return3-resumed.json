@@ -1,0 +1,1018 @@
+{
+  "schema_version": 1,
+  "id": "qa-animation-author-a-return3-resumed",
+  "status": "FINAL",
+  "review_mode": "independent_addressed_returns_exact3",
+  "actual_agent_id": "/root/qa_returned_three",
+  "reviewer_role": "independent animation QA; not author, integrator or final criterion judge",
+  "completed_at_utc": "2026-10-30T19:44:46.391532+00:00",
+  "scope_ids": [
+    "lumen_53",
+    "lumen_70",
+    "lumen_124"
+  ],
+  "decision_summary": {
+    "accept_exact_frame_prototype": [
+      "lumen_53",
+      "lumen_70",
+      "lumen_124"
+    ],
+    "revise_exact_frame_prototype": [],
+    "native_normal_and_slow_human_perception": "unknown_not_observed",
+    "device": "unknown_not_observed",
+    "blanket_scale": "block",
+    "production_publication_approval": false
+  },
+  "package_binding": {
+    "path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/package.json",
+    "sha256": "16779a8e5347fcae9151acf6a64b83e1a98d8acff706124b8811777efabd14be",
+    "files_sha256": "2c723d61f94db812b069b25f549bc441efa780a90be25762110caf50bf4e15b0",
+    "files": 78,
+    "all_files_verified_at_start_end": true,
+    "guard_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/package.guard.json",
+    "guard_sha256": "21cc0f5d6a043274b08cfddba38fc4a84a13dc34f46836d91752f2a99b68277d",
+    "guard_independently_counterchecked": "All6 copiedreviewMP4s full-xerror decoded;84monotonicPTS/30vs15fps/2.8vs5.6sec; contentpanel all84correspondence toactualcandidate. Final78filehashes/bytes reread after allchecks.",
+    "author_report": {
+      "path": "docs/qa-1-13/animation-author-a-return3-resumed-final.json",
+      "sha256": "9f8baad808862ccdf1ec0e8ede7abf2035bfedb3d2d639d8af39dc31a8dc4fd5"
+    }
+  },
+  "independence_and_method": {
+    "actual_after_frames_viewed": 252,
+    "actual_selected_baseline_before_frames_viewed": 39,
+    "actual_old_returned_candidate_risk_frames_viewed": 6,
+    "all84_after_per_item": true,
+    "author_generator_executed": false,
+    "fresh_decoding_and_source_pixel_comparison_executed": true,
+    "authors_own_rerender_not_relabelled_as_independentQA": true,
+    "no_product_or_canonical_edits": true,
+    "no_external_actions": true,
+    "actual_own_visual_artifact_count": 21,
+    "technical_scope": "All3candidate streams VP9512x512,singlevideo,noaudio; bytes<262144,84frames/2.8sec; no blank; selected archive sourcePNG exact freshRGBA baseline index/time and SHA; frozenrecipe/proof binding;6copiedreviewMP4full84decode/PTS/content;78files recheck. Statistics are diagnostics, not perceptual scores.",
+    "inspection_harness_correction": "Supplemental review-content check first assumed512x512 but MP4 truth is512x536 with24px title bar; first run stopped before final evidence. Corrected harness uses ffprobe dimensions and compares exact512 content panel. No product/media/frozen edits."
+  },
+  "items": [
+    {
+      "id": "lumen_53",
+      "review_id": "qa-return3-resumed-lumen_53-2026-10-30",
+      "actual_agent_id": "/root/qa_returned_three",
+      "verdict": "accept",
+      "verdict_scope": "Exact SHA-bound frame/scene prototype and copied handoff integrity only; no native real-time/slowed/human/device/publication acceptance. No blanket class approval.",
+      "candidate_id": "lumen_53_author-a_scene_v3",
+      "output": {
+        "path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_53/candidate.webm",
+        "sha256": "6e030dfc2235d444021085361dce9f40554c9e3691beaee9dba75ad189f6dc98",
+        "bytes": 207728,
+        "frames": 84,
+        "fps": 30,
+        "duration": 2.8,
+        "proof_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_53/proof.json",
+        "proof_sha256": "da9507f73c86ad8bf4ac300a90cb653d625e7f2ee137f0349d5e8532865a8f3c",
+        "recipe_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_53/recipe.json",
+        "recipe_sha256": "8cdbfaf01349ca1eb88331c92e12ee344ae188a1734faf83449ad8657196b356",
+        "decoded_png_bundle_sha256": "f618b397981606b58718af02ce853f2732322a7dcd26dfebbc61d53e1cafbf46"
+      },
+      "source": {
+        "kind": "derived_decoded_video",
+        "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_53/source.webm",
+        "sha256": "c7db253aa2e498ac019ed036e3228fea0795a4417398dab3fa7beff7a2f73ccf",
+        "ancestor_original_status": "unresolved_original_not_recovered",
+        "selected_source_anchor_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "actual_baseline_source_png_pixel_match": true,
+        "exact_git_baseline_match": true
+      },
+      "proposed_description_uk": "Кумедно зависає догори дриґом і двічі м’яко погойдується усім тілом. Передні лапки біля грудей, дві задні лапки вгорі; вушка, животик і плащик природно змінюють позу разом із рухом.",
+      "actual_coverage": {
+        "after_frame_indices_actually_viewed": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "ordered_after_view": "2 fresh proof-bound boards perID; each224px frame inspected in order, all84, sixboards total252frames",
+        "selected_before_frame_indices_actually_viewed": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          10,
+          11,
+          12,
+          25,
+          26,
+          27,
+          53,
+          54,
+          55
+        ],
+        "before_scope": "Only explicitly listed baseline frames visually repeated; all84 baseline frames freshly decoded and selected source PNGs compared pixel-for-pixel technically. Tall source boards may be rescaled by image viewer; not claimed as84 native before views.",
+        "native512_phase_indices": [
+          0,
+          10,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          83
+        ],
+        "native512_spatial_loop_indices_in_order": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "dark_alpha_phase_indices": [
+          0,
+          21,
+          63,
+          83
+        ],
+        "old_returned_risk_indices_actually_viewed": [
+          26,
+          54
+        ],
+        "new_risk_indices_actually_viewed": [
+          26,
+          54
+        ],
+        "risk_crop_xyxy": [
+          110,
+          15,
+          405,
+          190
+        ],
+        "risk_zoom": 2,
+        "normal_and_slow_MP4s_fully_decoded_and_same_index_content_checked": true,
+        "normal_and_slow_perceptually_watched": false,
+        "human_or_device_observed": false
+      },
+      "addressed_return": {
+        "parent_report": "docs/qa-1-13/qa-animation-author-a-curated7.json",
+        "parent_report_sha256": "24f02e3c2bd2336cfeb0de47e7759091634727f12dc058b7e1706cf1ffebdde8",
+        "old_verdict_retained": "revise",
+        "closure_for_new_exact_candidate_only": "Old separate gray toe/foot contours at returned-v2 f026/f054 are reproduced in exact old SHA-bound candidate crops. New-v3 f026/f054 show only the two coherent turquoise hind paws, without the offset gray duplicate toes. Only baseline0–5 participate; excluded6–11 cannot reappear through this recipe.",
+        "risk_evidence": {
+          "id": "lumen_53",
+          "old_candidate_path": "sticker-lab/production-v5/author_a-curated7-frozen/lumen_53/candidate.webm",
+          "old_sha256": "bc8bb9db08dcb4e91c8ada3025ec01112b68497177ef20bd996090359040edbe",
+          "old_frames": [
+            26,
+            54
+          ],
+          "new_frames": [
+            26,
+            54
+          ],
+          "crop": [
+            110,
+            15,
+            405,
+            190
+          ],
+          "zoom": 2,
+          "artifact": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_53-returned-vs-new-risk-2x.png",
+          "sha256": "a6347709702b414f3a3a02b59312edfcc643a9622d65a385901847ce79768d06"
+        }
+      },
+      "positive_claim": "Upside-down cream/turquoise character, two front paws at chest and two hind paws above. Body rocks twice with changing head/ear/paw/cape proportions visible between actual decoded phases; it is not just one rigid global transform. Face stays readable and upside-down identity remains.",
+      "strongest_objection": "Restricting to clean0–5 narrows the rock amplitude and removes later expression changes. It is a quiet upside-down reaction; perceived liveliness and smoothness at normal sticker scale remain unobserved.",
+      "uncertainty": [
+        "Native real-time/slowed motion feel unknown",
+        "Actual mobile Telegram delivery/playback unknown",
+        "Human response/readability unknown"
+      ],
+      "reversal_condition": "Return if native playback shows a visible timing reversal/loop hitch or if any new frame reveals an extra foot contour; broader expression requires a separately clean source, not reinstating damaged11.",
+      "technical": {
+        "proof_bound84PNG_hash_match": true,
+        "pts_monotonic": true,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "blank_frames": 0,
+        "max_adjacent_composite_MAE": 3.750817153033088,
+        "spatial_seam_composite_MAE": 1.2648696949279385,
+        "same_index_review_correspondence": [
+          {
+            "id": "lumen_53",
+            "review": "normal",
+            "dimensions": [
+              512,
+              536
+            ],
+            "content_panel_y": 24,
+            "corner_background": [
+              232.0,
+              237.0,
+              245.0
+            ],
+            "same_index_candidate_composite_MAE_mean": 0.8728126041472903,
+            "same_index_MAE_max": 1.0192667643229167,
+            "full84frame_correspondence": true
+          },
+          {
+            "id": "lumen_53",
+            "review": "slow",
+            "dimensions": [
+              512,
+              536
+            ],
+            "content_panel_y": 24,
+            "corner_background": [
+              232.0,
+              237.0,
+              245.0
+            ],
+            "same_index_candidate_composite_MAE_mean": 0.8175117250472781,
+            "same_index_MAE_max": 0.9367052714029948,
+            "full84frame_correspondence": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "lumen_70",
+      "review_id": "qa-return3-resumed-lumen_70-2026-10-30",
+      "actual_agent_id": "/root/qa_returned_three",
+      "verdict": "accept",
+      "verdict_scope": "Exact SHA-bound frame/scene prototype and copied handoff integrity only; no native real-time/slowed/human/device/publication acceptance. No blanket class approval.",
+      "candidate_id": "lumen_70_author-a_mesh_v2",
+      "output": {
+        "path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_70/candidate.webm",
+        "sha256": "ae41891e11b54861b0cd766aee13dc5c500eac360a683a3c1417cfd0f8fbd6ac",
+        "bytes": 111804,
+        "frames": 84,
+        "fps": 30,
+        "duration": 2.8,
+        "proof_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_70/proof.json",
+        "proof_sha256": "acc2c20652c22a0fc81d549cf4080dc1a4a556914d31969ba98f5bbc49feb979",
+        "recipe_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_70/recipe.json",
+        "recipe_sha256": "18a6fbada80c56bd066740ac5389ce028d1fdbcbce845d7fd851f9eafd4c8675",
+        "decoded_png_bundle_sha256": "db8a09be4c35a4996e5507ff2fe7ee8c76f7a7917c524ea7ab175a723560f301"
+      },
+      "source": {
+        "kind": "derived_decoded_video",
+        "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_70/source.webm",
+        "sha256": "613a696f574886fd401c37ade4e9b8ad66822a348ae52be693b7ab0e637b6419",
+        "ancestor_original_status": "unresolved_original_not_recovered",
+        "selected_source_anchor_indices": [
+          0
+        ],
+        "actual_baseline_source_png_pixel_match": true,
+        "exact_git_baseline_match": true
+      },
+      "proposed_description_uk": "Грайливо салютує тією самою лапкою біля брови й робить маленький шанобливий кивок. Усмішка лишається щирою, друга лапка за спиною; на плащику висить одна кругла медаль.",
+      "actual_coverage": {
+        "after_frame_indices_actually_viewed": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "ordered_after_view": "2 fresh proof-bound boards perID; each224px frame inspected in order, all84, sixboards total252frames",
+        "selected_before_frame_indices_actually_viewed": [
+          0,
+          31,
+          37,
+          38,
+          39,
+          40,
+          54,
+          59,
+          60,
+          61
+        ],
+        "before_scope": "Only explicitly listed baseline frames visually repeated; all84 baseline frames freshly decoded and selected source PNGs compared pixel-for-pixel technically. Tall source boards may be rescaled by image viewer; not claimed as84 native before views.",
+        "native512_phase_indices": [
+          0,
+          10,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          83
+        ],
+        "native512_spatial_loop_indices_in_order": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "dark_alpha_phase_indices": [
+          0,
+          21,
+          63,
+          83
+        ],
+        "old_returned_risk_indices_actually_viewed": [
+          60
+        ],
+        "new_risk_indices_actually_viewed": [
+          27,
+          60
+        ],
+        "risk_crop_xyxy": [
+          250,
+          275,
+          405,
+          400
+        ],
+        "risk_zoom": 2,
+        "normal_and_slow_MP4s_fully_decoded_and_same_index_content_checked": true,
+        "normal_and_slow_perceptually_watched": false,
+        "human_or_device_observed": false
+      },
+      "addressed_return": {
+        "parent_report": "docs/qa-1-13/qa-animation-author-a-curated7.json",
+        "parent_report_sha256": "24f02e3c2bd2336cfeb0de47e7759091634727f12dc058b7e1706cf1ffebdde8",
+        "old_verdict_retained": "revise",
+        "closure_for_new_exact_candidate_only": "Exact old-v2 f060 has two offset small medal/ribbon contours. New-mesh-v2 f027/f060 has one sharply coherent small round medal/ribbon. Large central cape clasp is a different intended prop, not a duplicate medal. Only clean baseline0 is sampled, with coherent local nod/contact anchors.",
+        "risk_evidence": {
+          "id": "lumen_70",
+          "old_candidate_path": "sticker-lab/production-v5/author_a-curated7-frozen/lumen_70/candidate.webm",
+          "old_sha256": "f224b25599f4e78bb17c4098c1a3c7dd11b090cd7f03ecf80ff8516788d419d4",
+          "old_frames": [
+            60
+          ],
+          "new_frames": [
+            27,
+            60
+          ],
+          "crop": [
+            250,
+            275,
+            405,
+            400
+          ],
+          "zoom": 2,
+          "artifact": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_70-returned-vs-new-risk-2x.png",
+          "sha256": "5baa0868b5a8f7bb7ded6412e6b861819c534a0c45fc3baa10e418c40ad8e67b"
+        }
+      },
+      "positive_claim": "Same saluting paw stays touching the same brow, the other hand stays behind the body, and both feet remain grounded. Head descends/returns relative to feet/cape with a small respectful nod; one small medal stays attached to cape. Open eyes are truthful in the proposed description; prior closed-eye action is explicitly omitted.",
+      "strongest_objection": "The nod is deliberately small and the raised-paw salute is already held at the first frame. At small chat scale this could read as an almost still proud pose; I accept only the exact frame/scene prototype, not a claim of vivid native motion or full original blink/salute choreography.",
+      "uncertainty": [
+        "Native real-time/slowed motion feel unknown",
+        "Actual mobile Telegram delivery/playback unknown",
+        "Human response/readability unknown"
+      ],
+      "reversal_condition": "Return if normal-size real-time viewing finds the local nod imperceptible or puppet-like, or if medal detaches/deforms. A larger gesture needs new coherent pose work rather than restoring source38/39 flow.",
+      "technical": {
+        "proof_bound84PNG_hash_match": true,
+        "pts_monotonic": true,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "blank_frames": 0,
+        "max_adjacent_composite_MAE": 0.8480142979840047,
+        "spatial_seam_composite_MAE": 0.10959863600388071,
+        "same_index_review_correspondence": [
+          {
+            "id": "lumen_70",
+            "review": "normal",
+            "dimensions": [
+              512,
+              536
+            ],
+            "content_panel_y": 24,
+            "corner_background": [
+              232.0,
+              237.0,
+              245.0
+            ],
+            "same_index_candidate_composite_MAE_mean": 0.9174526759556363,
+            "same_index_MAE_max": 0.9920641581217448,
+            "full84frame_correspondence": true
+          },
+          {
+            "id": "lumen_70",
+            "review": "slow",
+            "dimensions": [
+              512,
+              536
+            ],
+            "content_panel_y": 24,
+            "corner_background": [
+              232.0,
+              237.0,
+              245.0
+            ],
+            "same_index_candidate_composite_MAE_mean": 0.8938115135071767,
+            "same_index_MAE_max": 0.9476979573567709,
+            "full84frame_correspondence": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "lumen_124",
+      "review_id": "qa-return3-resumed-lumen_124-2026-10-30",
+      "actual_agent_id": "/root/qa_returned_three",
+      "verdict": "accept",
+      "verdict_scope": "Exact SHA-bound frame/scene prototype and copied handoff integrity only; no native real-time/slowed/human/device/publication acceptance. No blanket class approval.",
+      "candidate_id": "lumen_124_author-a_forehead-wipe_v2",
+      "output": {
+        "path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_124/candidate.webm",
+        "sha256": "e18427ebc1fb084c711fb8db951a5ce3c0e8ced8a1ca1e89153fe8504337887d",
+        "bytes": 191877,
+        "frames": 84,
+        "fps": 30,
+        "duration": 2.8,
+        "proof_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_124/proof.json",
+        "proof_sha256": "aa734fbbac692ec1020b0fc3d69c028ad69fc3d94e9c7c3160a02dc112ea0344",
+        "recipe_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_124/recipe.json",
+        "recipe_sha256": "a95130044c1af6e7623e2e2beef6846feaf14a562481b4771ce3d82d1aa3b122",
+        "decoded_png_bundle_sha256": "976348de82fed6852fd1f19fa6e470b14f8c46bbdbeb324f337c27655cd269f6"
+      },
+      "source": {
+        "kind": "derived_decoded_video",
+        "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_124/source.webm",
+        "sha256": "452e4c29f41caf2e8ae4b9e46680edf001444dc3dc3159cbfba7225d6e9c6a9c",
+        "ancestor_original_status": "unresolved_original_not_recovered",
+        "selected_source_anchor_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "actual_baseline_source_png_pixel_match": true,
+        "exact_git_baseline_match": true
+      },
+      "proposed_description_uk": "Зніяковіло прикладає лапку з краєм плащика до чола, повільно схиляє голівку й повертається з тихою втомленою усмішкою. Друга лапка лишається біля грудей.",
+      "actual_coverage": {
+        "after_frame_indices_actually_viewed": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "ordered_after_view": "2 fresh proof-bound boards perID; each224px frame inspected in order, all84, sixboards total252frames",
+        "selected_before_frame_indices_actually_viewed": [
+          0,
+          1,
+          8,
+          16,
+          17,
+          21,
+          22,
+          23,
+          24,
+          38,
+          39,
+          40,
+          41,
+          42
+        ],
+        "before_scope": "Only explicitly listed baseline frames visually repeated; all84 baseline frames freshly decoded and selected source PNGs compared pixel-for-pixel technically. Tall source boards may be rescaled by image viewer; not claimed as84 native before views.",
+        "native512_phase_indices": [
+          0,
+          10,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          83
+        ],
+        "native512_spatial_loop_indices_in_order": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "dark_alpha_phase_indices": [
+          0,
+          21,
+          63,
+          83
+        ],
+        "old_returned_risk_indices_actually_viewed": [
+          38,
+          40,
+          42
+        ],
+        "new_risk_indices_actually_viewed": [
+          38,
+          40,
+          42
+        ],
+        "risk_crop_xyxy": [
+          70,
+          55,
+          420,
+          280
+        ],
+        "risk_zoom": 2,
+        "normal_and_slow_MP4s_fully_decoded_and_same_index_content_checked": true,
+        "normal_and_slow_perceptually_watched": false,
+        "human_or_device_observed": false
+      },
+      "addressed_return": {
+        "parent_report": "docs/qa-1-13/qa-animation-author-a-curated7.json",
+        "parent_report_sha256": "24f02e3c2bd2336cfeb0de47e7759091634727f12dc058b7e1706cf1ffebdde8",
+        "old_verdict_retained": "revise",
+        "closure_for_new_exact_candidate_only": "Exact old-v1 f038/f040/f042 reproduce translucent displaced crown/ear/sweat/brow matte; new-v2 f038/f040/f042 retain a single crown and ear edge, one sweat drop and one brow/cloth contact. New selected0–17 excludes damaged22–24 and later cloth-side swap.",
+        "risk_evidence": {
+          "id": "lumen_124",
+          "old_candidate_path": "sticker-lab/production-v5/author_a-curated7-frozen/lumen_124/candidate.webm",
+          "old_sha256": "1ea69df720927b335758833b0e43c704213e6a86fa764a89042a4d48bbadd803",
+          "old_frames": [
+            38,
+            40,
+            42
+          ],
+          "new_frames": [
+            38,
+            40,
+            42
+          ],
+          "crop": [
+            70,
+            55,
+            420,
+            280
+          ],
+          "zoom": 2,
+          "artifact": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_124-returned-vs-new-risk-2x.png",
+          "sha256": "e2f4d632a24c024055ac1b8b5ad3759bd4bdf429ff01c462aef40d5d21e365b0"
+        }
+      },
+      "positive_claim": "Same paw with navy cape edge remains at same brow; other paw stays at chest/clasp. Character makes an actual weary/embarrassed head dip and returns. Closed eyes and small tired smile are consistent; no unsupported falling-drop or completed side transfer is claimed.",
+      "strongest_objection": "The cloth is held at brow rather than performing a broad wiping stroke; sweat remains fixed to the face. This supports a quiet forehead dab/facepalm under the proposed description, not a dramatic completed wipe. Native cadence/loop feel still needs observation.",
+      "uncertainty": [
+        "Native real-time/slowed motion feel unknown",
+        "Actual mobile Telegram delivery/playback unknown",
+        "Human response/readability unknown"
+      ],
+      "reversal_condition": "Return if native playback reveals crown/ear matte residue or cloth/brow slide, or if the release copy claims a full wiping/side-transfer action that this source selection omits.",
+      "technical": {
+        "proof_bound84PNG_hash_match": true,
+        "pts_monotonic": true,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "blank_frames": 0,
+        "max_adjacent_composite_MAE": 3.6646263720942476,
+        "spatial_seam_composite_MAE": 0.5526281070085911,
+        "same_index_review_correspondence": [
+          {
+            "id": "lumen_124",
+            "review": "normal",
+            "dimensions": [
+              512,
+              536
+            ],
+            "content_panel_y": 24,
+            "corner_background": [
+              232.0,
+              237.0,
+              245.0
+            ],
+            "same_index_candidate_composite_MAE_mean": 0.9587525110396127,
+            "same_index_MAE_max": 1.0663541158040364,
+            "full84frame_correspondence": true
+          },
+          {
+            "id": "lumen_124",
+            "review": "slow",
+            "dimensions": [
+              512,
+              536
+            ],
+            "content_panel_y": 24,
+            "corner_background": [
+              232.0,
+              237.0,
+              245.0
+            ],
+            "same_index_candidate_composite_MAE_mean": 0.9097812440660262,
+            "same_index_MAE_max": 1.0070699055989583,
+            "full84frame_correspondence": true
+          }
+        ]
+      }
+    }
+  ],
+  "control_comparison": {
+    "exact_old_defective_candidate_SHA_and_adaptive2x_crops": "Each original returned anomaly visually reproduced at listedoldframe; current sameindex/peak checked",
+    "exact_baseline_Git_bytes_checked": "d66fd3fa44dbf3627a57c5c5e790eb7ce4dec1e2",
+    "old1_8_accepted_control_repeated_this_run": false,
+    "no_global120review_claim": true
+  },
+  "scale_scope": {
+    "accepted_only": [
+      "lumen_53",
+      "lumen_70",
+      "lumen_124"
+    ],
+    "blanket_other_assets": "not_accepted"
+  },
+  "unresolved_boundaries": [
+    "No native real-time or slowed-video perception API used",
+    "No human/device Telegram acceptance",
+    "Quiet local acting tradeoffs retained peritem, not hidden by file integrity"
+  ],
+  "evidence": [
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/inspect.py",
+      "sha256": "7b145dc370f24687bc09a1901e4479691a0b1a0f4caa77177049dcdfb27d3226"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/decode-hash-technical.json",
+      "sha256": "279b4e738ed042118752919ab6b09f1d2d06f32d172d8ba51aa26394ef3df5b0"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/risk_and_content.py",
+      "sha256": "eae4779aa9739a3ec3597c2fd78e91a6f3a29ed340afb169b90f67b6721630c8"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/risk-and-review-content.json",
+      "sha256": "50698c7e3ae8ad5a74fe55b98befbdea391d80177636e86c132df93ee3c70f26"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/final-integrity.json",
+      "sha256": "c831e59f89766b374d273de41a23f65e9b3e2b4684acc9522e5ac46b3a249185"
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_124-after-000-041.jpg",
+      "sha256": "d4782499ea94ba04f13f1bc1b1f6961b63d74de147454f783756fbf5ee9bfabf",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_124-after-042-083.jpg",
+      "sha256": "06db9e570342a02feef2d367266382a0b3bed020d291ed36facd3fce6ac7cf0c",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_124-after-dark-alpha.jpg",
+      "sha256": "445b47fe3d0829bc17396638910977a8530e5187ae91e01bdb9a65ea3bf3aa22",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_124-after-native-loop.jpg",
+      "sha256": "5cf63714ae6f7cada83065e94b80a5fd95210a5b8adde186242e76bff942b47f",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_124-after-native-phases.jpg",
+      "sha256": "2858b066e46c8a88e765dc7d7b22014c7aed0cc9c0ccf7b37c9e5cf3ecee7f8d",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_124-before-critical-native.jpg",
+      "sha256": "b305dd1d351f9d0c1fd9c59a38fef884eb62f85c04f035e4cb63d720c118cc6d",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_53-after-000-041.jpg",
+      "sha256": "71a8c5b8be98ace4dd46b118721b0f3f6a44db25e38543926aebf5a326e81cba",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_53-after-042-083.jpg",
+      "sha256": "d1cb03b1f151dcbad8a600180621e7e5c8ff0d9c2664f7217bbd612ef23b72f8",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_53-after-dark-alpha.jpg",
+      "sha256": "fac83f840b7b79298ceafd9c3e43fc0f784d5a3ebe8c5a03937a7d5bdacba0f9",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_53-after-native-loop.jpg",
+      "sha256": "673b69343daedaa525dd70e1ba4ed1b1c5a400ece924deca0d8a0d4e23843ab0",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_53-after-native-phases.jpg",
+      "sha256": "0b577454d9527e2f47d5c6929c0483c145e1b30a826b489880e723990434863a",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_53-before-critical-native.jpg",
+      "sha256": "4270c189bda87ce117e7eaf5b365376d26b9178edeba95ef07ee348b68f30b9e",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_70-after-000-041.jpg",
+      "sha256": "19ffe46cdd5053659c2011040d1e35008b8c9c89304751eff1b63aa004d96d2c",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_70-after-042-083.jpg",
+      "sha256": "f3e4f03352121656c8dffa6337ba79a6ed872f57b93e5fdda3bab069e9eea70d",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_70-after-dark-alpha.jpg",
+      "sha256": "bf0da9ae9d3cf866a890d540d6d0d1845fe0797580ab8363d465a4e076398656",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_70-after-native-loop.jpg",
+      "sha256": "900608210486c056007d92a157deaa24902c99c169ea15406fc65cda6562ec5a",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_70-after-native-phases.jpg",
+      "sha256": "f6de59da1d1902f8c8a3284222568449a336099d08144fec171718d2b47b8e75",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_70-before-critical-native.jpg",
+      "sha256": "94666b5f5ac24d8614a69df5840d3f03deff863e3245bcd482d2e60ded3eb10a",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_124-returned-vs-new-risk-2x.png",
+      "sha256": "e2f4d632a24c024055ac1b8b5ad3759bd4bdf429ff01c462aef40d5d21e365b0",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_53-returned-vs-new-risk-2x.png",
+      "sha256": "a6347709702b414f3a3a02b59312edfcc643a9622d65a385901847ce79768d06",
+      "actually_viewed": true
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-a-return3-resumed-evidence/lumen_70-returned-vs-new-risk-2x.png",
+      "sha256": "5baa0868b5a8f7bb7ded6412e6b861819c534a0c45fc3baa10e418c40ad8e67b",
+      "actually_viewed": true
+    }
+  ]
+}

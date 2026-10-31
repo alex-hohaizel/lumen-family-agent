@@ -1,0 +1,18 @@
+{
+  "id": "author56-resumed-toe-rise-v2-rejected",
+  "actual_agent_id": "/root/artisan_a_resume",
+  "recipe_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_56/recipe-mesh-resumed-v2.json",
+  "recipe_sha256": "b052556fc9aa78f5d9f32319a40d782410795da275f8c85fe88f54da83b7e421",
+  "stage": "renderer stopped beforeencoding",
+  "raw_frame_count_before_guard_stop": 28,
+  "reason": "MinimumJacobian falls below unchanged.65 threshold nearx418/y226 narrowreachingpaw/comet gap; v2comet onlyold4pxrise whilebody14+reach9.",
+  "diagnostic_actual_mins": {
+    "frame28": 0.6444808840751648,
+    "frame34": 0.5257161855697632,
+    "frame40": 0.5020462274551392,
+    "frame50": 0.6022089719772339
+  },
+  "accepted": false,
+  "fix": "v3comet rises10px plusseparatehover; actualtoe/contactriseunchanged",
+  "threshold_weakened": false
+}

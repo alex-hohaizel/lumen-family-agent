@@ -1,0 +1,1044 @@
+{
+  "schema_version": 1,
+  "id": "lumen_70",
+  "candidate_id": "lumen_70_author-a_mesh_v2",
+  "engine_mode": "shared_local_mesh_v1",
+  "description_uk": "Грайливо салютує тією самою лапкою біля брови й робить маленький шанобливий кивок. Усмішка лишається щирою, друга лапка за спиною; на плащику висить одна кругла медаль.",
+  "semantics": {
+    "core_scene": "Proud upright friendly salute with the same single paw at the same brow, open clear eyes and small smile, respectful actual head-down local nod and return; other hand behind back, one additional round gold medal/ribbon.",
+    "omitted_optional_action": "No synthetic eye closure or original source31–54 interpolation is used. The independent QA old medal double contour at source39→38 is fully excluded: only exact clean source0 bitmap participates. This is not a rigid whole-image wiggle.",
+    "reversibility_or_contact": "Saluting fingertips/brow share the nod field, wrist/elbow follow at reduced amplitude. All eight small medal/ribbon boundary/interior anchors follow the exact same3px chest translation, with no medal shape/opacity interpolation. Feet and behind-back hand pinned; cape/ears settle separately."
+  },
+  "source_provenance": {
+    "kind": "derived_decoded_video",
+    "source_video_path": "sticker-lab/production-v5/approved-sources/lumen_70/source.webm",
+    "source_video_sha256": "613a696f574886fd401c37ade4e9b8ad66822a348ae52be693b7ab0e637b6419",
+    "ancestor_original_keyposes_sha256": "62466583c96cf4de00d2564f3f6a42a364906242345289566f37a84a2212ac25",
+    "ancestor_original_status": "unresolved_original_not_recovered",
+    "derived_source_bundle_sha256": "546d0667bb52601c07c96e0b4e714266f7208a1d80d241b607028e3b813ea8e7",
+    "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index",
+    "original_scene_prompt_english": "Прийняв, зроблю. Proud upright stance, one paw touching his brow in a crisp playful salute, another tucked behind his back, sincere closed-mouth smile; a tiny polished extra medal on the cloak. Small respectful nod, no military insignia or weapon."
+  },
+  "source_frames": [
+    {
+      "index": 0,
+      "timestamp_seconds": 0.0,
+      "path": "sticker-lab/production-v5/approved-sources/lumen_70/000.png",
+      "sha256": "4c93e47d4f7152e3cd3184e6af3806e16792c8a695a17943c562b099722c2776"
+    }
+  ],
+  "baseline_independent_triage": {
+    "artifact": "docs/qa-1-13/sticker-triage-51-80.json",
+    "verdict": "repair_required",
+    "source_sha256": "613a696f574886fd401c37ade4e9b8ad66822a348ae52be693b7ab0e637b6419",
+    "defects": [
+      {
+        "frames": [
+          24,
+          30
+        ],
+        "reason": "Перехід у кивок накладає два положення обличчя: f26–28 мають зайві сірі брови/повіки й подвійну усмішку/ніс, праве око виглядає розчиненим замість цільної форми."
+      },
+      {
+        "frames": [
+          55,
+          60
+        ],
+        "reason": "Повернення з кивка дає виразний head dissolve: f58 показує два носи, змішані закриті очі й кілька брів, напівпрозорий старий рот/щоку."
+      }
+    ]
+  },
+  "generator": {
+    "original_generator_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-return3-v1/originals/9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c-recipe_engine.py",
+    "original_generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "original_support_snapshot": "sticker-lab/production-v5/approved-generators/integration-a-return3-v1/originals/ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee-repair.py",
+    "original_support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+    "engine_path": "sticker-lab/production-v5/approved-generators/integration-a-return3-v1/recipe_engine.py",
+    "engine_sha256": "a7a728be4b961066970f388bc8e7d2ae63f6ca59ee60cb3b2b12a707c66c544b",
+    "support_path": "sticker-lab/production-v5/approved-generators/integration-a-return3-v1/repair.py",
+    "support_sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8"
+  },
+  "output": {
+    "width": 512,
+    "height": 512,
+    "fps": 30,
+    "frames": 84,
+    "duration": 2.8,
+    "crf": 34,
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "maximum_bytes": 262144
+  },
+  "author_source_review": {
+    "agent": "/root/artisan_stickers_a",
+    "every_selected_sourceframe_observed": true,
+    "selected_frame_view_scale_px": 512,
+    "native512_frame_indices": [
+      0
+    ],
+    "observation": "Native0/31/54 compared; exact0 viewed directly at native512 and extra medal4x nearest crop. One circular gold medal with a consistent source drop-shadow and one blue/gold ribbon, no separated old medal outline. Source0 retains clean salute contact and single open-eyed face. Exact sole source PNG inspected at native512; no source eye/limb/prop ghost accepted.",
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-inspection/70-return-v2/source-native0.png",
+      "sticker-lab/production-v5/author_a-inspection/70-return-v2/source0-medal4x.png"
+    ]
+  },
+  "approval": "unreviewed individual prototype, no staging or publication approval",
+  "local_mesh": {
+    "source_frame": 0,
+    "points_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        511,
+        0
+      ],
+      [
+        0,
+        511
+      ],
+      [
+        511,
+        511
+      ],
+      [
+        256,
+        0
+      ],
+      [
+        0,
+        256
+      ],
+      [
+        511,
+        256
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        307,
+        50
+      ],
+      [
+        187,
+        91
+      ],
+      [
+        411,
+        134
+      ],
+      [
+        230,
+        125
+      ],
+      [
+        354,
+        145
+      ],
+      [
+        223,
+        171
+      ],
+      [
+        345,
+        193
+      ],
+      [
+        284,
+        203
+      ],
+      [
+        278,
+        232
+      ],
+      [
+        179,
+        218
+      ],
+      [
+        384,
+        242
+      ],
+      [
+        278,
+        281
+      ],
+      [
+        195,
+        141
+      ],
+      [
+        185,
+        144
+      ],
+      [
+        181,
+        144
+      ],
+      [
+        145,
+        187
+      ],
+      [
+        134,
+        244
+      ],
+      [
+        263,
+        289
+      ],
+      [
+        264,
+        320
+      ],
+      [
+        263,
+        401
+      ],
+      [
+        120,
+        325
+      ],
+      [
+        402,
+        350
+      ],
+      [
+        368,
+        365
+      ],
+      [
+        194,
+        470
+      ],
+      [
+        336,
+        470
+      ],
+      [
+        324,
+        311
+      ],
+      [
+        335,
+        311
+      ],
+      [
+        330,
+        333
+      ],
+      [
+        330,
+        337
+      ],
+      [
+        313,
+        353
+      ],
+      [
+        346,
+        353
+      ],
+      [
+        330,
+        371
+      ],
+      [
+        330,
+        354
+      ]
+    ],
+    "point_names": [
+      "corner_tl",
+      "corner_tr",
+      "corner_bl",
+      "corner_br",
+      "edge_top",
+      "edge_left",
+      "edge_right",
+      "edge_bottom",
+      "crown",
+      "ear_l",
+      "ear_r",
+      "brow_l",
+      "brow_r",
+      "eye_l",
+      "eye_r",
+      "nose",
+      "mouth",
+      "cheek_l",
+      "cheek_r",
+      "jaw",
+      "brow_contact",
+      "salute_contact",
+      "salute_top",
+      "salute_wrist",
+      "salute_elbow",
+      "neck",
+      "brooch",
+      "belly",
+      "cape_l",
+      "cape_r",
+      "behind_hand",
+      "foot_l",
+      "foot_r",
+      "ribbon_tl",
+      "ribbon_tr",
+      "ribbon_bottom",
+      "medal_top",
+      "medal_left",
+      "medal_right",
+      "medal_bottom",
+      "medal_center"
+    ],
+    "parts": [
+      {
+        "name": "same_paw_brow_salute_with_respectful_head_down_nod",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            -0.6,
+            5
+          ],
+          [
+            0.6,
+            5
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            14
+          ],
+          [
+            0,
+            13
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            0.7
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.12,
+            0.4,
+            0.65,
+            0.88,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "gentle_brow_contact_press_without_lifting_the_salute",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0.4,
+            0.6
+          ],
+          [
+            0.7,
+            0.7
+          ],
+          [
+            0.7,
+            0.7
+          ],
+          [
+            0.2,
+            0.2
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.18,
+            0.48,
+            0.72,
+            0.92,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 2,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "proud_small_cape_and_ear_settle_with_stationary_feet",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -1.8,
+            0.8
+          ],
+          [
+            1.8,
+            0.8
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 2
+        }
+      }
+    ],
+    "minimum_jacobian": 0.65,
+    "fluid_texture": null
+  },
+  "independent_addressed_return": {
+    "id": "lumen_70",
+    "old_candidate": "lumen_70_author-a_scene_v2",
+    "evidence": "docs/qa-1-13/author-a-curated7-qa-evidence/lumen_70-medal-cape-2x.png",
+    "defect": "Old output60 source39→38 has separate dark/gold medal contours. New local-part recipe uses only clean source0 with the whole medal/ribbon coherently anchored, no source39/38 transition or opacity interpolation."
+  },
+  "expected": {
+    "frames_rgba_png_sha256": [
+      "9c21aa1ed313cf9a12c07de1175c52da887c40c7b2bbd86f8f94e9ae2d102fd7",
+      "9123d8d4477e4130b64324db7469ead3b91d977c6913db17e9a4ae9945481bd6",
+      "b0bb67c6981c7d6ce22ba835d027486626fe1222fb444a147c59a1426fa75f8f",
+      "897e79468eed81993d0539bea341e4520e254eb287cf98a19085669f49dd04ea",
+      "d1721cb5b863c63f02aad0aa5ddfb6490096e3812035dc462e6134efb0d37a30",
+      "a47c0a599324954f050f1f9300c8ca2adf787565197b025ee5a7c1d85a9ac6e5",
+      "a7344639abda62e9797e52fe40ef323d8883f89513b81017fdfe1d5369978146",
+      "05ab9037696a8da038b7c11e03cbbdb6d401aae43424ca8a2cbdd7aa30c9ecf4",
+      "2d8c9dd01c1590a163b78f8abc41030ab146bb4f217488f985b7c0e8ed5709a8",
+      "af9bc20c5219a6a8c7379736d158f8ba64ed8959c3aaa08c801570c622d7e066",
+      "5c9fc0e8c98f88b66eac19293eecdef78b79aa85c2653b95cbb83d8bd68bc404",
+      "0b1ac9201588c3ccfd55c36e59054d712eca96ea65288149b9750d84a846740e",
+      "4e08b360f8f312a5e11aed28ba65d69163c09429cac3fc5b6e67bd617bf7877c",
+      "5a444b35cfdd4a0ddc4d53331ffd45398f73a72942f27dd74006aa8754a8b310",
+      "60b03d52ab7cf2a851009c1ee2d11280261a47ac1fe9934a040e0d51a8e3e045",
+      "27b0dc50d6d2b79bae955cff1e6178ba0bf6b0f8db7124a669af18f4db0708fe",
+      "8fe871df69740ced5fc68fa8cce718b8b2fc435a479738ac99ada6146a9148cb",
+      "5ae1c99753b7a626ec78e28445709e0b263259cda6ecbc1f946fd93fc4a2f49a",
+      "c40774a6bcd0088be99c23aaa8659b8ea637350fd63cc885d16545fcb5944e25",
+      "cfebb7adea5b6d2c330ee312157067a5cabeaab7920eb8b4e2c4a620b8bb0c79",
+      "8379f646f9a4cbca240751f6de7c1f9845726ae519550f5be9adf58dde7c1c7c",
+      "129ae9aa5693f9c634497c369a6940dc2d667f4d547425ca33f569743162e6b5",
+      "1dae97a9647215a7fe861cfc9561d8f345ae60c109ae2daa5a996bd6fc41ca1e",
+      "c865a0d0ee2b39e371c538042f5490aff524ed0d1c7c03b62ffb83191b8fd940",
+      "d19f21906a070ca3caa54dc38a6690d3fe15a81f98b46d8785166eff5d7e5e18",
+      "72f7b6160965781f9095edca719e699f3db2b61804e8866cc7eca84e501dd655",
+      "fb2d30cb81539e10d9396500875d109b21cd0b27e510c21e4bf72b10cefd225c",
+      "b060f8663d12355bac2879e2757119f8cdc53158d889826781fd2f0f3bd08b1b",
+      "07a9e0559699ce6a37a455108690e27b18a7b90d2c05e8aa6e6d154a5e21fc8a",
+      "a7dd561dacadb2b6140974c78a6925437b44f9f564ee0b86f2f5bb6d98ca5f6e",
+      "5a37044f2bb9ab97becfd58841cce3487f1657c6753dd76dc68a799fcdf779b9",
+      "b4f32a3655a1b529aa2a7693a244ac8f12502a52541d6a25dd913c248af20c72",
+      "541a4de9cc7fe932c86e9229d915e4a91f36ec92ce3508286047be21e2ab3507",
+      "993a68b07480cfdb1f61725f85b1d6f1f99cf5041a184d81f84254f6cb9cd86b",
+      "baa7b3e4a8987fb1fc610907f147ae432dd069fcf37b212c0af1f467328b9999",
+      "8482eea4efa4527b4d49f4ef41367d170abcf9f97c31a0025cd5daf18f9db93e",
+      "9d6bb2913ac256d94c88d1bc2a58d6379e252560a6d436c4b40365969daa8997",
+      "fa7c3784a7342fbc857217ffb52c6e0b1c70d19ed67f9b13b3cb3218cdc7dba6",
+      "9281d9d7fad2ee0e4450bbadf2daae95db08692326cf2afcd9c5a6a873ceaf7b",
+      "86def0052b3018a816a6edc7a6a7b587a254776c8e099e9717a7073cb532c480",
+      "a9e73b5fcfb19e4ee42488d30799a4eae5386521567774aeafe10a71651ca48b",
+      "43df894ab4858f79aa14ad09debc0f2178456db3472b786231182d291371e7d3",
+      "40e2de9806d7cae491878e995e31267a3dcd2fa883a59073263a85b4697e12d3",
+      "d57fdcf9230b7560b655c4743dda53cf0b6d19345b03587a1209976379942fdb",
+      "35f09579631b014a94d1e307a948d555e35e2e17e3b17a138ca2692dfaa15abf",
+      "66358c55617b031cbb227ffa800ee709ec2e7b07723111f8d53a3d1b0a346502",
+      "585c820a0d458d693a2ecb54e0b45964e43fd40a7d788f660d37917651dda93d",
+      "8a04efbe04dcf3a933cc461a7a834e5beaa6a91caa6823836ca8c003078b0ee6",
+      "6ee6978afedd907103b0ae4d2191208772e70ace68a171eaa941098dbbb896d0",
+      "10ec2c820f3d6768fec5fa15970bf69464b5d92dfce3d241311820bf0e55ddec",
+      "0360fadd40267358638d3f0a5d6d24657a6d612fc9dc7ccf79b18bfa65055b3b",
+      "b8461dffb70616ad2e8bd92a4566e95cabfc65d79d67eed6cdb6bec4b3e83d12",
+      "438dcddd52d80a5c32a02f3168f8bd6680557916ad5db53f9fb635a741dc480f",
+      "2fa69f2d74f062615ddcfc3330a9d73ed66dea08966a45b64aba671c56501b9f",
+      "f46f7c355ec19ff50f0cd10e8863f55966da6ad2deb2673fcf8e59905434d249",
+      "d60a5a4b27b023b1e968876fa3975df751eceff1f5ffb0f2e5015528a8b58012",
+      "1c0bc7da3b8646e6a1a44d225290c5b219ff87642ba3fa4d0404ef998ed25a4e",
+      "976413f90c81c4f84c854b13dbea3de1f62f8a3758a855d81d7fdf5adc6ae486",
+      "cd27d2233d0fe741546c485ba2f414bc56dac4dcd07cc3e9a4490aa21c2e1939",
+      "c184abe562b437cd1600c6c8f22c6d6c53159d1e1afeba557ab2fdda54d1843e",
+      "9c94757fda637989dd58be0a3d81bc8e03a1e9c30993546abd7a2ec1ea6f00e6",
+      "cade9ca0713501ade725d31fdca99ae9c3e35f7daa3bf761217cda7953845c4d",
+      "d7e71ba296f383f851a9c3e53f45e96e9df6a5ebb970d1c607247adb4d2b9a1d",
+      "374f447108b939d89b1df2e7eafae612fe11b039bd53692412a2538c4fadf22b",
+      "a19cf33671aa2f508bf7eed3524aca074317f6b61fa502bb60173c094a5cd3a6",
+      "1050d5729ca322468d2d0266005ecd79559710c07f52151513282274831561c6",
+      "4516bf4c549f80a7b5d870919da4c344de5cc2eeb01ae2e354910ae730ce5982",
+      "abcc6b0f59207df6a2caf2979dcda2e03e5cb3c89e5a6c7e39d2708b61b57dba",
+      "f578fa70be78b5472695d92ec687a6781c763e992beac67fabf7aa13dc106fd5",
+      "ff932b766c5d60335bc30899f9b503b6badfa66b5f6c90d2c79262a355d9864b",
+      "0392eefcedb96741963af68c45384dcf85a96939d898ecf723cf28e45b443881",
+      "ecdcf1b948648a61af3d6458781b1ed80e605de730fa40eaf4618d2ff83f62d7",
+      "838a275f1ca92c61bbb04d7ccc342d0f06c05adb5c46c532c1e5f081a718aaaf",
+      "0bc9356d5c12de864ebdea4b0c73fa71a8420344dc70cabf110584838c276e69",
+      "3e8be1094c17f73d223c717571328ab167c5877aea5eacd6b0ed90e701fd6cab",
+      "56f029d4367fdbca8cc2a608625cae51f86df540b90b3d8f423acb3cc8bd18a5",
+      "c831950cb3a94c1b9027907e0fd2438d71e3c97daa492d6e67b065ef0c046741",
+      "4a007ac4adeb2086e67ce638e56b399b1737f9b4c484bdf6da470ef1a03d0b35",
+      "11ff8d2ad8bc364f62f9e54afb6d207864a9f96894354dd2bcc0610f46c5bd52",
+      "c73eea2359b0d454876ce1c5a056fe57a9a3a53e8915f762442d02d598cfc4e7",
+      "6e8d615af61bc4a579a11e644ce4ebd480f93d0288c2c9c438660807af7dd394",
+      "6970a8368cd71d48d0db2ece02bdc9ec25cec2f77be51e815aacd7f776541427",
+      "576ab664113878838a7db9536c555eeb855fc787909150aac50a6ce80c573289",
+      "515f6d26fb77d2ec517cf56b0d116b53822d557f143b816d6c93b9a0c31768d9"
+    ],
+    "decoded_png_sha256": [
+      "64ed23268226dead9ee48d3350e7a9c61a32f482414ba6a165129b29283c5e84",
+      "bf952744bc17b180b2ed48c3f975f9be387cd88cc0d4a4612e9c43af7f75a391",
+      "41714932d9d159a4135ed7be1c020aad1bbf547e6427952bd214676306479b6e",
+      "d168bf5cf8df049bad17dcf424982f9c517b7d68f05ff1177d76dbefb2acea36",
+      "8304bf96771021f81df1f7d627bf9a41fc9fa08a13f1f72dd2b509c144fe7636",
+      "0333fa41bd2492eb2df0cb0e247dad4ee9e01ad5abffcf2635b9f3a64916b69b",
+      "7ca6df0b7dfa7ffe8189ed72d310806993aeda171ac37d17c0a0da86cdf0e8e3",
+      "3caf2efd614b8ac97d4f64fafea6b5714059ee7aeb0b0939ff094713fbc8dc92",
+      "b37e910042f4e6043bb9e2a549b59c057a4be0bc36b87dceef72874168e6b053",
+      "6a4a1d60655ae117bc192b535b5fb6bf7631399343d4d75be39b3360f423d914",
+      "a30fdf1d5f601b742a435635aea4ef9e462a9792b652a8cf0a99d015a09fad0d",
+      "c50b65734f2aa26ce669bd7a9929188300d8c8915a83e2b0dd4c5db5c9a95d11",
+      "9dfddce0949bb133db988b5664e4a4e67c995ee894d4aeb6d9c3730f52c48ac9",
+      "f00a7fddb40268025a63474021a4a1d32990d14611b05cee676711194059ba74",
+      "cb04b89de390b6d692001ef00cfe6ab598453f2bfa53bccf729833e33c1733da",
+      "885e9984f143130398a2f5cf93c88c71a563e31d341483e044e6dce83523746c",
+      "267b9aca04ad338f6d38cd31bed5c3fe58c53f47d5b7fe45b675a664963edd01",
+      "f11da5e82b7c2141003020360031416005faeb8cde36907c36e3e908b45cb20f",
+      "ba66011284d733ee1183697ad69c76b322946f6fc64bbeb436f032042b66ef60",
+      "57ff4ffc0f75cd7487ca0d33490b6320ca7d36d4e1060ab97004d09ad774c488",
+      "28ef3f1cbbc7dc86af174a414b3c6999e4721e086b1c48ad781ecacc76fddda8",
+      "a0f030e7146d304b73c39165097ad34db29fb29aa356f91771cbcbdcb6c73ea8",
+      "e2c84b74fafb3a6952262dfd155908caefaeef145068a536293cf53ff30ce77d",
+      "7f12eb0379c68e493c94b1bb371181d956ea1f77d3ebafc9df04d537ada29dfc",
+      "60be478525831c119c5f5118e10787c37927f01fba82c866b3b3177f5ccf86e7",
+      "b672c9ced6d0802d7ead57b45a34a9a1ac2b69eba724e2845e26d8753654fb7e",
+      "16783068e0ff02cc73dc3b9460f02868598fee03f2bc5fb5d14e357c41ea7c69",
+      "581e6b3bebc729b174e054d7c6b8a235ecb6723f2df953545341b55b6b7ef14b",
+      "4192029940707746bc8275049cac6d7f831bf9213bfafdbdac87103bf3664463",
+      "033e1d0c1efe30d0d5f6114dc9c89b7cb763ae251da2ba8a369ca2e75c856df7",
+      "42e52125d99cf2542411d898c1a0310baa8f33368ef2eab5ca9d3a4f8bc56d7a",
+      "8121eb16a4ed345d2a7c93786b74df5df363b37aff73686a026ab0d9b821bb84",
+      "0d99934991a0094e1780f17993e90f723dd49d7c6e8f32ba02abe88193078380",
+      "8f8a06dbea3f725d2253ea61b5ffbedae178223996c40fd387e7ec187d1c3070",
+      "2ceefdb79046b0a8eaa8578602e1522c1e46fcb18ea983d9e83fb0359a962f10",
+      "6b0d3d3fc2f276991f980cdbfe98dabe8cc01318dc119c84013a5970c0b9e6dc",
+      "7a27801c208342efff9e2293c8c267a4fbe788411188450032ee8dd806f1427c",
+      "e273e1b9216c493505fd1465c4556cd265fa1f2f507de3793ef99ef8836c78c2",
+      "3a580fbb98af586c29d6740efe5510a506fd5543a40d6eb8b55c465bbe86b306",
+      "98b9addcdc94f454e201b22c50611e0e9c6147b945b62de9a1ca58627deac55b",
+      "ae4c20f2631bc749945b27a3dd637817d576f02aeee726c64a7c02012b5170d0",
+      "8be08136ba164641dfce023f23e63914c0842a1c050a190632fa9e6652e82ad3",
+      "faa67ace68f427e4f80093527a169138a373679803626d6a4e537f37e859de15",
+      "72ddff51f45f752aa02a4e493b592cab5789bd9df454536fa50536da9d135698",
+      "fd48282cc72348c9a68cb0db7902cd2f9f055fb3e158d69e9aa6f34d56019643",
+      "fa94f51ded60147a2b32fce3f58dd04fda0f615f75379f3884a98651399517ff",
+      "e0415f303303773a8ea4f7428933e7d3a3dfec2e43b0da03b325c053a4b3644f",
+      "39bae3faa9055f72e233241e0f0674b68d5ce50ea40a84196c1992687ccd97f5",
+      "d488d9069ce3504fc68d276f8d95d0d2caa0f2e2ef851ef53943f588f3153653",
+      "a90937d42d3434203e12e09d49bba4ba2df300c58a40c5cc76bfb9b0522a18d1",
+      "9f8de45434444fc374373348c570bd6349122b7c118f10e9a94e9bb059125076",
+      "5703688a63da3a58c3dbe132aaeef02d8978c0fe67eb0c29f02cc89d1c7a7802",
+      "2ca9d4a68d128c120c8ebb4b4d9f51eccb867136d72305f0e98c6bfb95213f4f",
+      "5692011675f2dfeeafd0aee2701da9e1ab92e06314bd5f412c22082ddcd9420b",
+      "0b25b57fcd1ec99f9533d4cf0b8951989231a96960ebf1aa7fd6f425ec83e266",
+      "3e4c6f7e4fcf68349123912cf0405f4de7855694f5346c76765f5909d742aa8a",
+      "7182889a49b411a644d536b9bcf64b8bcd6b1f303dde91bd541cd622ecd2f898",
+      "7bd617631e93bce068d881e9f9b22d15b3b9b93ff66b4dce96822c0a99c41795",
+      "4381ead44257b7cbb1d2571dc1869197df1f7507c11b7fac796b061667b2bb04",
+      "5077e912c901ec7f1a02efad60f6093a7019127678551b8a3bd60fa60a0eac2a",
+      "03e2b842f81707937e3664c633e9d3ad03ffd0d8fabad5c21228a7ada1921d35",
+      "541e7965a50661139ef32801839adf11a6978409e66d6017053a0299b9bd113e",
+      "c412f80506a61b81e84029ae4fa87e799114503f85f31c013106c5a88a11c34d",
+      "a2d25896abb1cd4c0d4eec4bc8e2d1a0f999d629ef38f1d5a9ba57680c5cd652",
+      "4128289bb13485a56e31e17c9610441531a3b368cdf720288a611da572e52b82",
+      "e60fccc7ce22320df417c3b2813004d3fa6011e22c939b007cfb4c70f167b61e",
+      "76b39b06b17c1b5aadc95164f323b75e830481a0fce382f4266f17e6f4037ed6",
+      "9162f54d7ae6d66a7935f87add36cc044cb0b6ba037baa9c757430b29d90643b",
+      "da3a52ae4b06cc87c950c69f2dcccf0f5d89b7a4183dd2a7b16df8e902aa50ee",
+      "9c3e872f50d46e2d95558e3124b0feb0eaaab329b17f4a005da2d724ff9c3dac",
+      "f570cabf74151cf01adff3616f4e59db8fb9125521943aaa1fb0e12c7a3b56e2",
+      "8d901dc7b8131be978e00152bedc047bb60d15949d86710e6b635b936070ec75",
+      "a0d22f899eb0a8b5451ad05831927f817584352fb1aa6e5455a6e0140ea386bd",
+      "03a7ff3c5af9c48665990c202fe2c765eb8adbc8406c6d6fd982877758592ce8",
+      "14b9bfdc294ba8dcd902f1064944a6ac42af898aac94a5557d53b68e41cedb01",
+      "af9742cb3f55cda357542161f9e31240b01f5a616d41b26cbd0e292d89f67570",
+      "118b740dde3f0c3ac51b2a4ad32267d3e0efe847664f1e391c698f8693a1fab3",
+      "5207631ba46d69c7fb3172093e8ba18893a6a446056e61e4e01a771b8a53a39e",
+      "66f5d05c8b7dc4c841c6fe39325097019b6001874f489f54c937a35d9101a61a",
+      "908bea697409b97e036600d4c5ab7b87afb9f024816ee0fe3c869bacbb486233",
+      "aa85c124fa3df630a857ca1b6616e0be9bf07a6bd19ab706960c6c5ae9328139",
+      "9fe7c6fa0f0941adabc628b73cddb369bf4e0c24ddfa9a4a0c51470ee224359e",
+      "d6a71cc699fe25078ec1b916470135f915407a46406f3574ffff3793d8f4e105",
+      "5640d2b7096c77fb0212a04107971aec15c97117f5fa68436b39077b2f39bb1c"
+    ],
+    "output_sha256": "ae41891e11b54861b0cd766aee13dc5c500eac360a683a3c1417cfd0f8fbd6ac",
+    "output_bytes": 111804
+  }
+}

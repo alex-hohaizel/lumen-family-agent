@@ -13,6 +13,7 @@ export const ConfigSchema = z.object({
   quietEnd: z.number().int().min(0).max(23).default(9),
   dailyTurnLimit:z.number().int().min(0).default(0),
   agentSteps:z.number().int().min(2).max(12).default(8),browserEnabled:z.boolean().default(true),
+  requireVerifiedStickerPack:z.boolean().default(false),
   runtimeDir: z.string().default(resolve('runtime')), healthPort: z.number().int().default(8080)
 });
 export type Config = z.infer<typeof ConfigSchema>;
@@ -38,6 +39,10 @@ export async function loadConfig(): Promise<Config> {
   })) if (val) override[key] = val;
   if (env.ENABLE_WEB_SEARCH) override.webSearch = env.ENABLE_WEB_SEARCH === 'true';
   if (env.ENABLE_BROWSER) override.browserEnabled=env.ENABLE_BROWSER==='true';
+  if (env.LUMEN_REQUIRE_VERIFIED_STICKER_PACK!==undefined){
+    if(!['true','false'].includes(env.LUMEN_REQUIRE_VERIFIED_STICKER_PACK))throw Error('invalid_joint_sticker_pack_flag');
+    override.requireVerifiedStickerPack=env.LUMEN_REQUIRE_VERIFIED_STICKER_PACK==='true';
+  }
   if (env.AGENT_MAX_STEPS) override.agentSteps=Number(env.AGENT_MAX_STEPS);
   if (env.QUIET_START) override.quietStart = Number(env.QUIET_START);
   if (env.QUIET_END) override.quietEnd = Number(env.QUIET_END);

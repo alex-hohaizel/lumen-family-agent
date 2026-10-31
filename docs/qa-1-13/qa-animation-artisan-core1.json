@@ -1,0 +1,481 @@
+{
+  "schema_version": 1,
+  "id": "qa-animation-artisan-core1",
+  "review_mode": "scopednewcandidates",
+  "reviewer": "independent_animation_qa",
+  "completed_at_utc": "2026-10-30T17:39:58.202134+00:00",
+  "round": "ROUND_1_13 v2",
+  "role_limit": "Адресне animation QA трьох frozen prototypes; не фінальний суддя всього раунду.",
+  "decision_summary": {
+    "lumen_114": "accept",
+    "lumen_117": "accept",
+    "lumen_126": "accept",
+    "accepted_scope": "Exact per-item frame-sequence prototypes only. All three preserve scene core and have different local scene gestures; no new confirmed must-fix artwork defect found.",
+    "full_temporal_device_readiness": "unknown",
+    "blanket_method_or_class_admission": "block"
+  },
+  "package_binding": {
+    "path": "sticker-lab/production-v5/frozen-artisan-core1/package.json",
+    "package_file_sha256": "de56743c23592c6720c52ca6e88ac275e13e2f148c19788c2b0bf792c82254f2",
+    "files_array_sha256": "58f3cb64f5fe70366b16d3ff670991a97f56bf4eaa22a042551236e272a6cb06",
+    "file_count": 282,
+    "initial_check": {
+      "matched_files": 282,
+      "mismatches": []
+    },
+    "finish_check": {
+      "matched_files": 282,
+      "mismatches": []
+    },
+    "candidate_generator_working_tree_used": false,
+    "manifest_path": "assets/stickers/manifest.json",
+    "manifest_sha256_at_review": "0c6ddfbad672444fa22c4b526717ef70506197b08e8275829a2fe857057f73ef",
+    "before_directory_limit": "Before PNGs are manifest-referenced external directories, not entries in package.files; all84 each independently matched pixel-for-pixel to a fresh decode of the hash-pinned source.webm, with raw PNG hashes in technical-scan.json. Extra zoom files not counted.",
+    "prior_originals": "Decoded source anchors are transparently derived inputs. Unrecovered ancestor originals were not represented as recovered assets."
+  },
+  "method_and_independence": {
+    "skill": "evolve-chat-companion, media-quality + judge-rubrics",
+    "tools": "view_image on actual QA composites/native/crops; ffmpeg/ffprobe only technical decode/hash/correspondence support. No generated images, no app playback.",
+    "observed_frame_count": 504,
+    "all84_before_and_after_for_each": true,
+    "ordered_board_count": 42,
+    "native_additional_artifacts_viewed": [
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-114-native-phases.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-114-seam-native.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-114-alpha-native.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-114-flower-grips-2x.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-114-face-tears-2x.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-114-before-after-risks.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-114-review-slow-peak.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-117-native-phases.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-117-seam-native.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-117-alpha-native.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-117-book-grips-2x.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-117-peek-face-2x.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-117-before-after-risks.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-117-review-normal-peak.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-117-review-slow-peak.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-126-native-phases.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-126-seam-native.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-126-alpha-native.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-126-jaw-covering-paw-2x.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-126-pillow-grip-2x.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-126-before-after-risks.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-126-review-normal-peak.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-126-review-slow-peak.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/chat-size-phase-stills.png",
+      "docs/qa-1-13/artisan-core1-qa-evidence/lumen-114-addendum-normal-peak.png"
+    ],
+    "metrics_replace_eyes": false,
+    "author_review_verdict_used_as_evidence": false,
+    "metadata_caveat": "Recipe contains baseline triage statements; major source faults cited here were independently seen in the full source sequence and enlarged risks. Proof motion/geometry numbers did not establish artistic acceptance.",
+    "checkpoint_continuity": "504/504 full sequence observations completed before interruption; resumed with remaining native contact/seam/alpha views, no invented replay. A truncated QA-side117 risk composite was regenerated from exact raw frames and then actually viewed."
+  },
+  "items": [
+    {
+      "id": "lumen_114",
+      "candidate_id": "lumen_114_scene-acting_a",
+      "verdict": "accept",
+      "scope": "Тільки exact frozen candidate як frame-sequence prototype: image integrity, identity/emoji/props, локальний осмислений design руху та spatial loop closure. Не native temporal/device/production approval.",
+      "scene": "Ледь стримую сльози",
+      "emoji": "🥹",
+      "manifest_description_uk": "Ледь стримую сльози. Both blue eyes glossy and welling with clear tears, tiny grateful trembling smile, paws carefully holding one little forget-me-not flower to his chest. He blinks gently and hugs the flower, no large tear streams.",
+      "proposed_actual_description_uk": "Зворушено усміхається крізь блискучі сльози, схиляє голівку й обережно притискає маленьку незабудку до грудей обома лапками. Ледь тремтить від вдячності; ніжки стоять на місці.",
+      "evidence_binding": {
+        "candidate_path": "sticker-lab/production-v5/candidates/lumen_114_scene-acting_a/candidate.webm",
+        "candidate_sha256": "0bbbcaa3f57a31736802e9c7a0a82128a290fd9bb10b65d4ca8b17bc5f31a44f",
+        "proof_path": "sticker-lab/production-v5/candidates/lumen_114_scene-acting_a/proof.json",
+        "proof_sha256": "460a50345b0aaca4e24d37a37617d33b3f295793e25ac656686a0d107509db88",
+        "recipe_path": "sticker-lab/production-v5/frozen-artisan-core1/lumen_114_scene-acting_a.json",
+        "recipe_sha256": "c71f77b93b161c42625352bfb0a179c21de13f58c1a3f034568829c439e6f682",
+        "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-111-139/lumen_114",
+        "after_frames_directory": "sticker-lab/production-v5/candidates/lumen_114_scene-acting_a/decoded",
+        "source_path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_114/source.webm",
+        "source_sha256": "a23c5b7e29d11a64386440f9b10a11a8341d14197dc1f8ef0897b47c2789e296",
+        "canonical_source_sha256_at_finish": "a23c5b7e29d11a64386440f9b10a11a8341d14197dc1f8ef0897b47c2789e296",
+        "anchor": [
+          {
+            "index": 0,
+            "timestamp_seconds": 0.0,
+            "path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_114/source-frames/000.png",
+            "sha256": "147a4b156ed6ceb0ee9eac8ca639d09b26b689ef018771da0427e5d4a2acacbd"
+          }
+        ],
+        "ancestor_original_status": "unresolved_original_not_recovered",
+        "before_png_bundle_sha256": "343564899c0ef00f46c5164123ab5358fabb3f75f8e16cdf48e15c94d03a08e5",
+        "after_png_bundle_sha256": "863dc6e6fd14e56c30928555b7cb235ce4538da71fdd0c03ba0ab4da3bae89ae"
+      },
+      "actual_visual_coverage": {
+        "before_indices_in_order": [
+          0,
+          83
+        ],
+        "before_frames_viewed": 84,
+        "after_indices_in_order": [
+          0,
+          83
+        ],
+        "after_frames_viewed": 84,
+        "full_sequence_view": "7 sequential 12-frame QA boards per series at384 px per frame; every one actually viewed before checkpoint.",
+        "native512_phase_indices": [
+          0,
+          12,
+          24,
+          42,
+          63,
+          83
+        ],
+        "seam_native512_order": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "enlarged_contact_and_face": "2x crops at the same phase indices actually viewed; peak source anchor and corresponding after000 also inspected at512.",
+        "before_after_risk_indices": [
+          17,
+          37
+        ],
+        "white_dark_alpha_indices": [
+          0,
+          42
+        ],
+        "chat_size_stills_indices": [
+          0,
+          12,
+          24,
+          42,
+          63
+        ],
+        "normal_slow_review": "Decoded technically, peak stills viewed. Normal114 comes only from separate addendum; original invalid retained. No playback claimed."
+      },
+      "observations": {
+        "core_emoji_props_identity": "Обидва великі блакитні ока зі слізьми, вдячна маленька усмішка, дві лапки, синя незабудка зі стеблом біля грудей, плащик та медальйон збережені. Немає потоку великих сліз.",
+        "action_sufficiency": "Кадри000→024→042 показують нахил/підйом голівки відносно незмінних стоп і м’яке підняття та зближення лапок із квіткою біля грудей;063→083 повертаються. Це локально узгоджений жест обіймання, хоча дуже стриманий.",
+        "source_repair_evidence": "В actual source017 накладені різні обличчя/очі/ніс/вухо;037 змішує нахили та квітку. Відповідні after017/037 чисті, є один ніс, пара очей, ціла квітка та безперервний хват.",
+        "object_anatomy_contact": "Native512 та 2x flower/grip000/012/024/042/063/083: одна квітка, стебло не відривається, обидві лапки тримають його; пальці не множаться. Face/tears2x: одне узгоджене обличчя, чисті сльози без фантомного другого ока.",
+        "edges_alpha": "White/dark native512 phase views show coherent ears, crown, cape and prop edges; no new large double silhouettes, clipping or opaque matte. Fine inherited compression/raster softness is visible, but no confirmed must-fix anatomy fault.",
+        "loop": "81/82/83→000/001/002 native sequence retains same body/prop/face configuration, without visible spatial jump or foreign closure pose. Perceived speed/velocity seam remains unknown.",
+        "optional_phases": "Omitted original optional phases were assessed against the core scene. Their absence alone was not used as an automatic veto."
+      },
+      "strongest_objection": "Квітка/хват змінюються лише на кілька пікселів, очі й усмішка лишаються відкритою позою. На simulated224 саме нахил голови читається сильніше за обіймання; мікротремтіння може загубитися у відтворенні. Не можу з кадрів підтвердити живість cadence у реальному часі.",
+      "decision_reason": "Для тихої вдячності наявний локальний нахил та невеликий притиск квітки достатні як frame-design prototype; відсутній необов’язковий blink не руйнує 🥹. Це не схвалення timing чи будь-якого іншого стікера.",
+      "confirmed_new_artwork_must_fix": [],
+      "technical_support": {
+        "all84_before_fresh_decode_bitexact": true,
+        "all84_after_fresh_decode_bitexact": true,
+        "blank_frames": [],
+        "before_seam_mae_support_only": 7.628741205751506,
+        "after_seam_mae_support_only": 0.14270918603036917
+      },
+      "unresolved": [
+        "Native real-time pacing, fine tremble visibility and perceptual loop velocity not observed.",
+        "Native slowed playback not observed.",
+        "Device/Telegram rendering, alpha, frame delivery and chat interaction not observed."
+      ],
+      "other_stickers_admitted": []
+    },
+    {
+      "id": "lumen_117",
+      "candidate_id": "lumen_117_scene-acting_a",
+      "verdict": "accept",
+      "scope": "Тільки exact frozen candidate як frame-sequence prototype: image integrity, identity/emoji/props, локальний осмислений design руху та spatial loop closure. Не native temporal/device/production approval.",
+      "scene": "Мені страшно",
+      "emoji": "😨",
+      "manifest_description_uk": "Мені страшно. Pale shocked expression with wide eyes and a small open mouth, ears stiff out sideways, body shrinking behind one oversized plain navy book used as a shield. Paws grip the book edge as he peeks and trembles.",
+      "proposed_actual_description_uk": "Перелякано визирає з-за великої темно-синьої книги, тримаючи її обома лапками як щит. Голівка обережно відхиляється вбік, вушка й край плащика нервово тремтять; книга та ніжки лишаються стійкими.",
+      "evidence_binding": {
+        "candidate_path": "sticker-lab/production-v5/candidates/lumen_117_scene-acting_a/candidate.webm",
+        "candidate_sha256": "ad588aafa504491113e25e5169e711799de16981886d099a07ccc7a8f9635d6f",
+        "proof_path": "sticker-lab/production-v5/candidates/lumen_117_scene-acting_a/proof.json",
+        "proof_sha256": "c10df5df5298c07546fa3c555a4391a6d59d9c38598a1ab4316cd91b9133ff3f",
+        "recipe_path": "sticker-lab/production-v5/frozen-artisan-core1/lumen_117_scene-acting_a.json",
+        "recipe_sha256": "8edc2c9d82c1871449472c66e6ca4857b4f322f028a4518220bf9880ef2aeba9",
+        "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-111-139/lumen_117",
+        "after_frames_directory": "sticker-lab/production-v5/candidates/lumen_117_scene-acting_a/decoded",
+        "source_path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_117/source.webm",
+        "source_sha256": "14d65d0e209c3d9842151c8e3343cba19c18213b2a282eb7ef577118dbf3e56b",
+        "canonical_source_sha256_at_finish": "14d65d0e209c3d9842151c8e3343cba19c18213b2a282eb7ef577118dbf3e56b",
+        "anchor": [
+          {
+            "index": 21,
+            "timestamp_seconds": 0.7,
+            "path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_117/source-frames/021.png",
+            "sha256": "82842b5fe367684b1b69d9cafc46205df9952c69a04039a25b42970905c66f7b"
+          }
+        ],
+        "ancestor_original_status": "unresolved_original_not_recovered",
+        "before_png_bundle_sha256": "6ba290712409d2085eadc9143a1e89fc2f0fe0f2a961a40a43985a7647a8d478",
+        "after_png_bundle_sha256": "ea862786bb7e8d98e3e9e2105a61311a4e4a4bccbde8778d0be6b2f42021a07d"
+      },
+      "actual_visual_coverage": {
+        "before_indices_in_order": [
+          0,
+          83
+        ],
+        "before_frames_viewed": 84,
+        "after_indices_in_order": [
+          0,
+          83
+        ],
+        "after_frames_viewed": 84,
+        "full_sequence_view": "7 sequential 12-frame QA boards per series at384 px per frame; every one actually viewed before checkpoint.",
+        "native512_phase_indices": [
+          0,
+          12,
+          24,
+          24,
+          63,
+          83
+        ],
+        "seam_native512_order": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "enlarged_contact_and_face": "2x crops at the same phase indices actually viewed; peak source anchor and corresponding after000 also inspected at512.",
+        "before_after_risk_indices": [
+          6,
+          37
+        ],
+        "white_dark_alpha_indices": [
+          0,
+          24
+        ],
+        "chat_size_stills_indices": [
+          0,
+          12,
+          24,
+          42,
+          63
+        ],
+        "normal_slow_review": "Decoded technically, peak stills viewed. Normal114 comes only from separate addendum; original invalid retained. No playback claimed."
+      },
+      "observations": {
+        "core_emoji_props_identity": "Широкі перелякані очі, підняті брови, відкритий рот, пригнуте тіло за великою темно-синьою книгою, дві лапки на протилежних краях та плащик збережені. Білі хвилясті знаки страху ліворуч уже присутні в exact source anchor021, це не зайва кінцівка.",
+        "action_sufficiency": "Голівка з обома вушками відхиляється праворуч/вгору між000 і024 відносно майже нерухомої книги, лапок на її краях та стопи; потім повертається. Край плащика/вушка мають дрібну додаткову зміну, а весь персонаж не рухається одним жорстким блоком.",
+        "source_repair_evidence": "Source006 має накладені краї/золотий кут книги і змішані хвати;037 має накладені дуги очей/брови. After006/037 має одну чітку книгу з двома хватами й одне coherent frightened face.",
+        "object_anatomy_contact": "Book/grips2x000/012/024/024/063/083: корінець, золоті кути та обидві лапки стабільні й цілі, голова не протикає обкладинку. Face2x у maximum peek024 не додає очей/брів чи подвійного рота; кромки вух без нових великих виривів.",
+        "edges_alpha": "White/dark native512 phase views show coherent ears, crown, cape and prop edges; no new large double silhouettes, clipping or opaque matte. Fine inherited compression/raster softness is visible, but no confirmed must-fix anatomy fault.",
+        "loop": "81/82/83→000/001/002 native sequence retains same body/prop/face configuration, without visible spatial jump or foreign closure pose. Perceived speed/velocity seam remains unknown.",
+        "optional_phases": "Omitted original optional phases were assessed against the core scene. Their absence alone was not used as an automatic veto."
+      },
+      "strongest_objection": "Сам вираз страху нерухомий; peek має невелику амплітуду, tremble вух/плащика ще менший. Без native real-time невідомо, чи дрібна складова читатиметься як нервове тремтіння, чи як майже утримана перелякана поза.",
+      "decision_reason": "Видиме відхилення голови відносно книги-щита дає осмислену сцені локальну дію; необов’язкове велике хитання книги/моргання не потрібне для збереження 😨. Frame prototype приймається, perceived temporal acting лишається unknown.",
+      "confirmed_new_artwork_must_fix": [],
+      "technical_support": {
+        "all84_before_fresh_decode_bitexact": true,
+        "all84_after_fresh_decode_bitexact": true,
+        "blank_frames": [],
+        "before_seam_mae_support_only": 5.125318903704874,
+        "after_seam_mae_support_only": 0.6925658132515702
+      },
+      "unresolved": [
+        "Native real-time pacing, fine tremble visibility and perceptual loop velocity not observed.",
+        "Native slowed playback not observed.",
+        "Device/Telegram rendering, alpha, frame delivery and chat interaction not observed."
+      ],
+      "other_stickers_admitted": []
+    },
+    {
+      "id": "lumen_126",
+      "candidate_id": "lumen_126_scene-acting_b",
+      "verdict": "accept",
+      "scope": "Тільки exact frozen candidate як frame-sequence prototype: image integrity, identity/emoji/props, локальний осмислений design руху та spatial loop closure. Не native temporal/device/production approval.",
+      "scene": "Позіхаю на весь світ",
+      "emoji": "🥱",
+      "manifest_description_uk": "Позіхаю на весь світ. One paw politely covers a huge yawning mouth while the other holds the edge of a small pillow, sleepy half-closed eyes and ears drooping backward. A slow big yawn and tiny stretch, standing in his navy cloak.",
+      "proposed_actual_description_uk": "Сонно позіхає на весь рот, чемно прикриваючи його однією лапкою, а другою тримає маленьку подушку. Повільно потягує голівку й плечі, вушка та плащик м’яко осідають; ніжки стоять на місці.",
+      "evidence_binding": {
+        "candidate_path": "sticker-lab/production-v5/candidates/lumen_126_scene-acting_b/candidate.webm",
+        "candidate_sha256": "9b386a59b29ca7ddde8921ec59046401f9a234142cc9db841f2762f296122631",
+        "proof_path": "sticker-lab/production-v5/candidates/lumen_126_scene-acting_b/proof.json",
+        "proof_sha256": "5e836fae1908eb73687df1c9b06e5e09ea7fedd77d237b4cb2169512c511ebe8",
+        "recipe_path": "sticker-lab/production-v5/frozen-artisan-core1/lumen_126_scene-acting_b.json",
+        "recipe_sha256": "19abe86b626c1e494e087df3af3bd8043949c17c1e1d3d1e4b3878fa93f7becc",
+        "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-111-139/lumen_126",
+        "after_frames_directory": "sticker-lab/production-v5/candidates/lumen_126_scene-acting_b/decoded",
+        "source_path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_126/source.webm",
+        "source_sha256": "e768f5adda86f7ae03566ed9e54f44dde6bdfd01d1212b1fe817f9024330f2bc",
+        "canonical_source_sha256_at_finish": "e768f5adda86f7ae03566ed9e54f44dde6bdfd01d1212b1fe817f9024330f2bc",
+        "anchor": [
+          {
+            "index": 0,
+            "timestamp_seconds": 0.0,
+            "path": "sticker-lab/production-v5/recipes-proposed/specialist_animation/lumen_126/source-frames/000.png",
+            "sha256": "4b5be83997f547f97702f4aceeebcb7d0fb6cc1c95ca11f86d78fb021ecaf1de"
+          }
+        ],
+        "ancestor_original_status": "unresolved_original_not_recovered",
+        "before_png_bundle_sha256": "fc1bc4048d03687ead9d0451d733a08097ac30e206de07663cfa4cfc65916b5e",
+        "after_png_bundle_sha256": "3dfdd364de31566494d13d1e4d2e843065d43761468d30c4ed54e25d34dd35bf"
+      },
+      "actual_visual_coverage": {
+        "before_indices_in_order": [
+          0,
+          83
+        ],
+        "before_frames_viewed": 84,
+        "after_indices_in_order": [
+          0,
+          83
+        ],
+        "after_frames_viewed": 84,
+        "full_sequence_view": "7 sequential 12-frame QA boards per series at384 px per frame; every one actually viewed before checkpoint.",
+        "native512_phase_indices": [
+          0,
+          12,
+          24,
+          42,
+          63,
+          83
+        ],
+        "seam_native512_order": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "enlarged_contact_and_face": "2x crops at the same phase indices actually viewed; peak source anchor and corresponding after000 also inspected at512.",
+        "before_after_risk_indices": [
+          17,
+          58
+        ],
+        "white_dark_alpha_indices": [
+          0,
+          42
+        ],
+        "chat_size_stills_indices": [
+          0,
+          12,
+          24,
+          42,
+          63
+        ],
+        "normal_slow_review": "Decoded technically, peak stills viewed. Normal114 comes only from separate addendum; original invalid retained. No playback claimed."
+      },
+      "observations": {
+        "core_emoji_props_identity": "Сонні напівзакриті очі, великий відкритий позіхаючий рот, одна лапка чемно прикриває рот, інша тримає маленьку подушку зі зірками; два вуха, ціла коронка хутра, плащик і медальйон збережені.",
+        "action_sufficiency": "Між000 і042 голівка/плечі піднімаються, нижня щелепа та прикривальна лапка зміщуються разом і рот помітно подовжується; подушка з другою лапкою мають менший спільний зсув. Стопи залишаються на місці,063→083 м’яко повертаються за послідовністю кадрів.",
+        "source_repair_evidence": "Source017 має кілька змішаних положень піднятої лапи біля щоки/вуха;058 — сплощену/подвоєну коронку і край вуха. After017/058 зберігає один arm/contact і цілий crown anchor000, source mis-shapes не переносяться.",
+        "object_anatomy_contact": "Jaw/covering-paw2x000/012/024/042/063/083: лапка лишається біля рота, один суцільний контур передпліччя, щелепа/зуби/язик не дублюються. Pillow/grip2x: одна лапка тримає одну подушку, тканина не відривається й зірки залишаються впізнаваними.",
+        "edges_alpha": "White/dark native512 phase views show coherent ears, crown, cape and prop edges; no new large double silhouettes, clipping or opaque matte. Fine inherited compression/raster softness is visible, but no confirmed must-fix anatomy fault.",
+        "loop": "81/82/83→000/001/002 native sequence retains same body/prop/face configuration, without visible spatial jump or foreign closure pose. Perceived speed/velocity seam remains unknown.",
+        "optional_phases": "Omitted original optional phases were assessed against the core scene. Their absence alone was not used as an automatic veto."
+      },
+      "strongest_objection": "Рот відкритий уже в000 і не закривається повністю; це подовжений yawn-and-stretch loop, а не повний початок–кінець нового позіху. У224 різниця рота тонка; cadence плато та повернення без actual playback не оцінено.",
+      "decision_reason": "Великий позіх із коректним прикриванням, подушкою та локальною зміною щелепи/плечей зберігає 🥱 та достатню дію для frame prototype. Додаткова фаза повного закривання рота не є автоматичним veto.",
+      "confirmed_new_artwork_must_fix": [],
+      "technical_support": {
+        "all84_before_fresh_decode_bitexact": true,
+        "all84_after_fresh_decode_bitexact": true,
+        "blank_frames": [],
+        "before_seam_mae_support_only": 4.377122562383515,
+        "after_seam_mae_support_only": 0.09959823508667788
+      },
+      "unresolved": [
+        "Native real-time pacing, fine tremble visibility and perceptual loop velocity not observed.",
+        "Native slowed playback not observed.",
+        "Device/Telegram rendering, alpha, frame delivery and chat interaction not observed."
+      ],
+      "other_stickers_admitted": []
+    }
+  ],
+  "review_artifact_defect_and_addendum": {
+    "original_frozen_114_normal": {
+      "path": "sticker-lab/production-v5/candidates/lumen_114_scene-acting_a/review-normal.mp4",
+      "sha256": "64d52708f594e8a1a3a4f76deef7275c8ad5184480c9473d8f60a0c9b6f4628b",
+      "bytes": 48,
+      "status": "invalid",
+      "observed_error": "moov atom not found / Invalid data found when processing input",
+      "resolution": "Original remains invalid and preserved. Handoff is repaired only when the separate verified addendum is supplied beside it."
+    },
+    "addendum_path": "sticker-lab/production-v5/frozen-artisan-core1-review-addendum/addendum.json",
+    "addendum_sha256": "4a8ab47786c8f272cb8c4be33261cad55b6f6298b49da9ff183c9067d8c8779f",
+    "replacement_path": "sticker-lab/production-v5/frozen-artisan-core1-review-addendum/lumen_114-review-normal.mp4",
+    "replacement_sha256": "1676268c3e84ab74aa8669e56c5511414750bad5b5e14da737c720578082f78f",
+    "replacement_bytes": 217759,
+    "independent_verification": {
+      "decoded_frames": 84,
+      "duration_seconds": 2.8,
+      "size": [
+        512,
+        536
+      ],
+      "all84_candidate_image_region_correspondence_max_rgb_mae": 1.3832931518554688,
+      "lossy_rgb_comparison_not_bitexact_claim": true,
+      "peak42_still_actually_viewed": true
+    },
+    "original_package_candidate_proof_unchanged": true,
+    "paired_handoff_status": "accept_with_explicit_original_defect_and_companion_addendum",
+    "realtime_slow_device": "not_observed"
+  },
+  "control_comparison": {
+    "mode": "Qualitative reuse of independently full84-viewed controls old01/old08 from prior trial; hashes reconfirmed. Not new temporal/device playback.",
+    "controls": [
+      {
+        "id": "old01",
+        "path": "assets/stickers/lumen_01.webm",
+        "sha256": "52589f065a58d472224ea6d2e2c50b7c89638dcc55d76d0f9dba1a57975b8711"
+      },
+      {
+        "id": "old08",
+        "path": "assets/stickers/lumen_08.webm",
+        "sha256": "481e519b51a61214678c0c6d8019f4915c42630479da75f05c225dc12a405a4e"
+      }
+    ],
+    "assessment": "Old01 laugh and old08 heart hug have clearer pose/expression changes. These three retain fixed facial poses but supply different scene-linked local gestures: flower hug/head tilt, head peek relative book, yawn/jaw/shoulder stretch. Their subtlety suits the specific emotions at frame-design level; old acceptance is no waiver for any new anatomy/contact error or proof of cadence."
+  },
+  "scale_scope": {
+    "verdict": "accept",
+    "scope": "Метод локальних custom scene gestures придатний для цих трьох exact prototypes і наступних адресних per-item frozen trials, якщо кожна має власний семантичний жест і перевірений предметний контакт.",
+    "strongest_objection": "Single clean anchor plus local deformation can easily preserve a fixed expression while hiding inadequate action. This small sample does not establish robust mesh quality, perceived acting, prop physics or class-wide suitability.",
+    "blanket_scale_verdict": "block",
+    "automatic_other_items": [],
+    "next_gate": "Кожний новий кандидат: exact source/proof/output binding, actual all84 frame inspection, enlarged anatomy/prop/contact and loop. Actual native realtime/slow/device observation is still required for claims in those scopes.",
+    "production_or_staging_authorized": false
+  },
+  "unresolved_boundaries": {
+    "native_realtime": "not_observed",
+    "native_slow": "not_observed",
+    "device": "not_observed",
+    "perceptual_speed_and_loop_seam": "unknown",
+    "source_canonical_integrity": "All three source hashes still match pinned copies at finish; no canonical assets edited by QA.",
+    "no_unconfirmed_must_fix": "No blink-softness repair demand without demonstrated defect; optional phase differences are explicitly evaluated, not automatic rejection."
+  },
+  "evidence_files": [
+    {
+      "path": "docs/qa-1-13/artisan-core1-qa-evidence/technical-scan.json",
+      "sha256": "8a4ab65c5a9ed3d42d1b570b477e2614232329c344945a7132d95aa15c85a9b9"
+    },
+    {
+      "path": "docs/qa-1-13/artisan-core1-qa-evidence/native-evidence-index.json",
+      "sha256": "1a2f7fd4452572f186becbe0810e67b96d4d0c46e52cc8964f6c9e0ed0b32936"
+    },
+    {
+      "path": "docs/qa-1-13/artisan-core1-qa-evidence/addendum-technical-scan.json",
+      "sha256": "a6f9b07d28ff3862c122a50e102a667f48dffafce49cb9c6bfc0f88d37b11083"
+    }
+  ],
+  "prior_reviews": [
+    {
+      "path": "docs/qa-1-13/animation-trial-qa.json",
+      "review_mode": "context_only_prior_rig1"
+    },
+    {
+      "path": "docs/qa-1-13/animation-trial-qa-r2.json",
+      "review_mode": "context_only_addressed_rig2"
+    },
+    {
+      "path": "docs/qa-1-13/animation-trial-qa-51.json",
+      "review_mode": "context_only_distinct_method"
+    }
+  ]
+}

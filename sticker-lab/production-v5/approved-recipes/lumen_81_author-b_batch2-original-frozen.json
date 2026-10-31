@@ -1,0 +1,627 @@
+{
+  "schema_version": 1,
+  "id": "lumen_81",
+  "candidate_id": "lumen_81_author-b_batch2",
+  "engine_mode": "shared_local_mesh_v1",
+  "description_uk": "Винувато зиркає вбік і трохи хилить голову; довгий дерев’яний носик кумедно погойдується, а схована за спиною банка печива й крихта лишаються на місці.",
+  "semantics": {
+    "core_scene": "Guilty sideways glance, small wooden extension over blue nose, hidden cookie jar and crumb; restrained nose wiggle.",
+    "scene_specific_instructions": "Винуватий glance і м’який wooden-nose wiggle, cookie jar/crumb pinned; closure не має знову повторити4–7 double-eye.",
+    "authored_decisions": [
+      "Cookie jar and ground crumb pinned. Wooden nose remains attached to the same blue-nose root."
+    ],
+    "irreversible_motion_policy": "Only coherent authored local action. No backward falling particles, liquid or free props. Decorative held marks remain explicitly decorative."
+  },
+  "source_provenance": {
+    "kind": "derived_decoded_video",
+    "source_video_path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_81/baseline.webm",
+    "source_video_sha256": "5ea636d02f939bb485b8901ce5d116123f371a2c26a99a2c1f8a49f52d897330",
+    "ancestor_original_keyposes_sha256": "4118f5ec22af0987b3b3f2df1e8cedea425e92d55281c73dc57c27608add50b5",
+    "ancestor_original_status": "unresolved_original_not_recovered",
+    "derived_source_bundle_sha256": "623127d1ce27fe28aad5be0cb206c4980c0669418e4f22e3e8150b6b7721e3ef",
+    "derived_source_bundle_algorithm": "sha256 of ASCII concatenation of exact decoded PNG SHA256 hex strings sorted by source frame index"
+  },
+  "source_frames": [
+    {
+      "index": 12,
+      "timestamp_seconds": 0.4,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_81/source-frames/012.png",
+      "sha256": "02073b4adef0f41ac325cdee75388a2ed0ec75bfb1647a85f2436784f3defaed"
+    }
+  ],
+  "generator": {
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "local_mesh": {
+    "source_frame": 12,
+    "points_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        511,
+        0
+      ],
+      [
+        0,
+        511
+      ],
+      [
+        511,
+        511
+      ],
+      [
+        256,
+        0
+      ],
+      [
+        0,
+        256
+      ],
+      [
+        511,
+        256
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        177,
+        477
+      ],
+      [
+        287,
+        477
+      ],
+      [
+        349,
+        474
+      ],
+      [
+        77,
+        319
+      ],
+      [
+        90,
+        354
+      ],
+      [
+        116,
+        361
+      ],
+      [
+        256,
+        444
+      ],
+      [
+        124,
+        132
+      ],
+      [
+        189,
+        74
+      ],
+      [
+        350,
+        113
+      ],
+      [
+        404,
+        177
+      ],
+      [
+        185,
+        197
+      ],
+      [
+        345,
+        222
+      ],
+      [
+        298,
+        241
+      ],
+      [
+        267,
+        272
+      ],
+      [
+        319,
+        278
+      ],
+      [
+        144,
+        250
+      ],
+      [
+        390,
+        283
+      ],
+      [
+        315,
+        250
+      ],
+      [
+        356,
+        254
+      ],
+      [
+        404,
+        260
+      ],
+      [
+        172,
+        329
+      ],
+      [
+        319,
+        333
+      ],
+      [
+        178,
+        389
+      ],
+      [
+        313,
+        392
+      ]
+    ],
+    "parts": [
+      {
+        "name": "guilty_head_glance_tilt",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            5.1538,
+            -3.7377
+          ],
+          [
+            6.6959,
+            -1.9617
+          ],
+          [
+            5.5843,
+            2.3705
+          ],
+          [
+            3.8369,
+            3.805
+          ],
+          [
+            3.3768,
+            -2.1145
+          ],
+          [
+            2.6435,
+            2.1958
+          ],
+          [
+            2.1477,
+            0.92
+          ],
+          [
+            1.3221,
+            0.0719
+          ],
+          [
+            1.1412,
+            1.4735
+          ],
+          [
+            1.9609,
+            -3.2407
+          ],
+          [
+            0.9803,
+            3.3884
+          ],
+          [
+            1.8985,
+            1.3757
+          ],
+          [
+            1.7756,
+            2.4811
+          ],
+          [
+            1.5961,
+            3.7748
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 1
+        }
+      },
+      {
+        "name": "wooden_nose_same_face_wiggle",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0.8333333333333334
+          ],
+          [
+            0,
+            3.111111111111111
+          ],
+          [
+            0,
+            5.777777777777778
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 3
+        }
+      },
+      {
+        "name": "small_shoulders_nervous_settle",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            2.8
+          ],
+          [
+            0,
+            2.8
+          ],
+          [
+            0,
+            2.8
+          ],
+          [
+            0,
+            2.8
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.2,
+            0.4,
+            0.6,
+            0.8,
+            1
+          ],
+          "values": [
+            0,
+            0.7,
+            1,
+            0.6,
+            0,
+            0
+          ],
+          "repeats": 2
+        }
+      }
+    ],
+    "minimum_jacobian": 0.6
+  },
+  "output": {
+    "width": 512,
+    "height": 512,
+    "fps": 30,
+    "frames": 84,
+    "duration": 2.8,
+    "crf": 22,
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "maximum_bytes": 262144
+  }
+}

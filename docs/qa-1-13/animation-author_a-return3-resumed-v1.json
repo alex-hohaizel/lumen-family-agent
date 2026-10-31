@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "actual_agent_id": "/root/artisan_a_resume",
+  "prior_candidate_author_agent_id": "/root/artisan_stickers_a",
+  "stage": "frozen_for_independent_per_item_QA",
+  "package": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/package.json",
+  "package_sha256": "16779a8e5347fcae9151acf6a64b83e1a98d8acff706124b8811777efabd14be",
+  "files_sha256": "2c723d61f94db812b069b25f549bc441efa780a90be25762110caf50bf4e15b0",
+  "items": [
+    {
+      "id": "lumen_53",
+      "candidate_id": "lumen_53_author-a_scene_v3",
+      "candidate_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_53/candidate.webm",
+      "candidate_sha256": "6e030dfc2235d444021085361dce9f40554c9e3691beaee9dba75ad189f6dc98",
+      "proof_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_53/proof.json",
+      "proof_sha256": "da9507f73c86ad8bf4ac300a90cb653d625e7f2ee137f0349d5e8532865a8f3c",
+      "recipe_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_53/recipe.json",
+      "recipe_sha256": "8cdbfaf01349ca1eb88331c92e12ee344ae188a1734faf83449ad8657196b356",
+      "description_uk": "Кумедно зависає догори дриґом і двічі м’яко погойдується усім тілом. Передні лапки біля грудей, дві задні лапки вгорі; вушка, животик і плащик природно змінюють позу разом із рухом.",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-51-80/lumen_53/frames-rgba",
+      "after_frames_directory": "sticker-lab/production-v5/author_a-candidates/lumen_53_author-a_scene_v3/decoded",
+      "source_video_sha256": "c7db253aa2e498ac019ed036e3228fea0795a4417398dab3fa7beff7a2f73ccf",
+      "bytes": 207728
+    },
+    {
+      "id": "lumen_70",
+      "candidate_id": "lumen_70_author-a_mesh_v2",
+      "candidate_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_70/candidate.webm",
+      "candidate_sha256": "ae41891e11b54861b0cd766aee13dc5c500eac360a683a3c1417cfd0f8fbd6ac",
+      "proof_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_70/proof.json",
+      "proof_sha256": "acc2c20652c22a0fc81d549cf4080dc1a4a556914d31969ba98f5bbc49feb979",
+      "recipe_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_70/recipe.json",
+      "recipe_sha256": "18a6fbada80c56bd066740ac5389ce028d1fdbcbce845d7fd851f9eafd4c8675",
+      "description_uk": "Грайливо салютує тією самою лапкою біля брови й робить маленький шанобливий кивок. Усмішка лишається щирою, друга лапка за спиною; на плащику висить одна кругла медаль.",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-51-80/lumen_70/frames-rgba",
+      "after_frames_directory": "sticker-lab/production-v5/author_a-candidates/lumen_70_author-a_mesh_v2/decoded",
+      "source_video_sha256": "613a696f574886fd401c37ade4e9b8ad66822a348ae52be693b7ab0e637b6419",
+      "bytes": 111804
+    },
+    {
+      "id": "lumen_124",
+      "candidate_id": "lumen_124_author-a_forehead-wipe_v2",
+      "candidate_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_124/candidate.webm",
+      "candidate_sha256": "e18427ebc1fb084c711fb8db951a5ce3c0e8ced8a1ca1e89153fe8504337887d",
+      "proof_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_124/proof.json",
+      "proof_sha256": "aa734fbbac692ec1020b0fc3d69c028ad69fc3d94e9c7c3160a02dc112ea0344",
+      "recipe_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_124/recipe.json",
+      "recipe_sha256": "a95130044c1af6e7623e2e2beef6846feaf14a562481b4771ce3d82d1aa3b122",
+      "description_uk": "Зніяковіло прикладає лапку з краєм плащика до чола, повільно схиляє голівку й повертається з тихою втомленою усмішкою. Друга лапка лишається біля грудей.",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-111-139/lumen_124",
+      "after_frames_directory": "sticker-lab/production-v5/author_a-candidates/lumen_124_author-a_forehead-wipe_v2/decoded",
+      "source_video_sha256": "452e4c29f41caf2e8ae4b9e46680edf001444dc3dc3159cbfba7225d6e9c6a9c",
+      "bytes": 191877
+    }
+  ],
+  "final_path_guard": {
+    "path": "/workspace/scratch/342fb2c985cb/lumen/sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/package.guard.json",
+    "sha256": "21cc0f5d6a043274b08cfddba38fc4a84a13dc34f46836d91752f2a99b68277d",
+    "passed": true
+  },
+  "independent_QA": "pending",
+  "canonical_assets_changed": false,
+  "remote_actions": false
+}

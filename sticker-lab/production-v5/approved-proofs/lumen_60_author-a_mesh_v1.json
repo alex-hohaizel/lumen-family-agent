@@ -1,0 +1,1935 @@
+{
+  "schema_version": 1,
+  "id": "lumen_60",
+  "candidate": "lumen_60_author-a_mesh_v1",
+  "created_at": "2026-10-30T18:50:54.555188+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_60/source.webm",
+  "source_video_sha256": "d67c2d09141f6345987b1aabe4af19486b86903461918609ad0dbbbc2316c58e",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "81bc1dd4d09bf11fc1bf3360107679c3c39b81c4098f29e0bc536569e6ac1078",
+  "derived_source_frames": [
+    {
+      "index": 21,
+      "seconds": 0.7,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_60/source-frames/021.png",
+      "decoded_png_sha256": "7b124989a1daede04123b05e2f96b9f25fab9f397ff441d20ee42f0ca1f407a8"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "3a527647f0d3dbe69b3f787638422511c3019c9a264886a779c17c764586195c",
+  "source_frame_count": 84,
+  "source_action_frames": [
+    21
+  ],
+  "method": "shared_local_mesh_v1",
+  "character_semantics": {
+    "core_scene": "Quiet bittersweet small smile, glossy open eyes, wiping/touching paw at one cheek and other paw by chest, lowered gentle ears.",
+    "omitted_optional_action": "Large tear fall and incompatible eye/head changes omitted. The tear corner is partly occluded by the same wiping paw in exact source21; no new tear artwork or flowing-liquid reversal.",
+    "reversibility_or_contact": "Cheek and touching paw share the head lean, wrist blends toward stationary elbow; other paw remains by chest, feet stay planted. Small press gives a restrained comfort gesture."
+  },
+  "semantic_tradeoff": "Large tear fall and incompatible eye/head changes omitted. The tear corner is partly occluded by the same wiping paw in exact source21; no new tear artwork or flowing-liquid reversal.",
+  "not_recovered_original_art": true,
+  "not_rigid_global_transform": true,
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        21
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "quiet_brave_smile_lean_into_same_cheek_paw",
+        "gentle_cheek_press_and_small_breath"
+      ]
+    }
+  ],
+  "candidate_sha256": "3646a4c39ad5c1a9ee32ea55c0d93feabdfa27a91d3ab3e945a76f0d25d56957",
+  "poster_sha256": "0bc0287bc448d31c379ccf3d6a979984ceca64c734decff537d0a0152f93ba75",
+  "bytes": 135680,
+  "crf": 30,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "adjacent_composite_mae": [
+    0.02265482395887375,
+    0.007066698279231787,
+    0.0024786905851215124,
+    0.0035598352551460266,
+    0.011220037005841732,
+    0.013710220344364643,
+    0.0272796880453825,
+    0.11824866384267807,
+    0.12447146326303482,
+    0.24711920320987701,
+    0.16244827210903168,
+    0.2928664982318878,
+    0.22866672277450562,
+    0.33939477801322937,
+    0.29991087317466736,
+    0.46505093574523926,
+    0.2680698037147522,
+    0.3620511591434479,
+    0.27656060457229614,
+    0.5151849985122681,
+    0.2503434717655182,
+    0.35552915930747986,
+    0.30327948927879333,
+    0.4449255168437958,
+    0.2513308823108673,
+    0.3035544455051422,
+    0.29766300320625305,
+    0.3633052110671997,
+    0.26154211163520813,
+    0.4294075667858124,
+    0.22832368314266205,
+    0.38136646151542664,
+    0.2502874433994293,
+    0.2767316997051239,
+    0.2889641225337982,
+    0.34008535742759705,
+    0.16408245265483856,
+    0.18939638137817383,
+    0.09594906121492386,
+    0.2644413411617279,
+    0.007412828970700502,
+    0.01257698517292738,
+    0.0010573145700618625,
+    0.01701279915869236,
+    0.008210955187678337,
+    0.060672204941511154,
+    0.06477589160203934,
+    0.15985549986362457,
+    0.09036613255739212,
+    0.22581028938293457,
+    0.1347513049840927,
+    0.23691022396087646,
+    0.2592475712299347,
+    0.3249014914035797,
+    0.29143738746643066,
+    0.4500215947628021,
+    0.26270702481269836,
+    0.35827431082725525,
+    0.31637120246887207,
+    0.5305032134056091,
+    0.25530698895454407,
+    0.35745617747306824,
+    0.35072946548461914,
+    0.4850858151912689,
+    0.2660633623600006,
+    0.31026124954223633,
+    0.3161218464374542,
+    0.34608134627342224,
+    0.2607133686542511,
+    0.3883680999279022,
+    0.21484099328517914,
+    0.34094861149787903,
+    0.16902458667755127,
+    0.2878783941268921,
+    0.27676287293434143,
+    0.3624618947505951,
+    0.16888312995433807,
+    0.26338276267051697,
+    0.19436724483966827,
+    0.15580248832702637,
+    0.09324207156896591,
+    0.05422024801373482,
+    0.018595611676573753
+  ],
+  "seam_composite_mae": 0.022855764254927635,
+  "decoded_png_sha256": [
+    "b1a6b160222da95830d6f23d9fae912243f348b2ae8d659b2e3849d6988c8cf3",
+    "7fed41c3894f5aa1ec21caa617158061445d5726748efef533426248fa6e8c61",
+    "1d1f9ee0fee471c6f7e99514f9d1fa8add2d7a0a70412356d9eb4047ad53e392",
+    "a5b63373aa740e78f28a33ec6f2ea69e002b66fd7a3e7a098b8fa9e06a1bd5be",
+    "fffb1d783580f245c752d65ed42d5ae2ee7fba27115f81c4372a02d2790647e0",
+    "7d806be61fcb18626045ca28eac6c8b9b053ca4db066a970839f96eea51a7ff2",
+    "51000c5f88decda594bd8856d0ca5a88982d985dfb32500749757fc964dcf7b5",
+    "dcab6d57147c3d94ad5c1c8c25c679c948f5ce1554582c7156f72cbfd368cce1",
+    "5cca2d35bae4a73e07bae91ba3e3012f10aa5528abcaa43dfe3f53a562cbd557",
+    "e11ca09bd8dc998c90ba854507c85786d69b22bf6031dfd843cc10c69ace84a6",
+    "71e2b22d8ae6d2e32d3a4677be329976b1d8a695135e8415d5af6c3b52a7ccbf",
+    "fc34c68664a72324097acdf262b782d49eb47dab24cb5409c954ad5cd8084209",
+    "3b6495f93052a40482833cc414edb351c9027445e126b09bccd9039370207040",
+    "5a6216c7bd54761b8061aa9a4ae4200c593bee1b55248003c3e9344757ba8084",
+    "a6b9e0e784da4af7675affe29dc8400271ad64461007e5c6276056a0c03744fe",
+    "b95c0275c4d19392b965145b495f36fee64200d3c146f66026c5c13f2ae2b7a5",
+    "17976a3cf7f76763ba3c020e60b657e80507d5b2ce9dbf7b6046a0a5a1a0dd0a",
+    "e2921cda961eb1942621757b200977ab1a6786d9f648fbf6cc6dd83b9ac2afe9",
+    "ed23d728982f857909c1ca745864e2b5e2aa1ac52187507c41a85e5fadbe1935",
+    "4494f4f4200a06f9add158c7450a7ee2df122167e1c194a76225d7a4d3439f03",
+    "dfd142af787b84cf16c6290967c4686218a4fc8dac5212d09483c36a05089962",
+    "150baf33a13eab045e1ff01ac635ea484ec0713c386e6f4208fc4bbd7f431be8",
+    "b1a7b13a2ab64b79fd3d5da254b393a40cc9ebc6c85c932850d3af0a222648ea",
+    "9f2ff9e781d69bef391ae8e7c78d88a6e45bdf58bed9b7ee4381ea9b401826ab",
+    "74b0a07326361e77a4a62a00531ec9bd8b4b5b3ec8981383b70717f73bf27230",
+    "8dc4e914196c2b6223a4593c8c7f125b64b854ceed4332f992474385b399a354",
+    "14e0f99de376ac20e35f949c132b8b2bba56118bbd8def050a16f725a8098ca1",
+    "abc91a62799bb902f3250b7b354fbe3ee2834f13501cd45e7aac832a22bf0703",
+    "e3ef102585dcf3f59cae1dcf9af94b37b8f200e3e5b6213cfbbb45a08c09d93c",
+    "8c718c917a4c4711e97acef8ea933a13c6f77ada6650da58ba6758d7d60473f1",
+    "e8f49f4f39642fa90175c24f5b9a692bc61721126281fcfe8e2def4ceeaa4bf2",
+    "344df00f972543575296d040bb8b1b1ba49ef7e99a2c71c15ec64d8e7e2eaaca",
+    "1ae07879d6aa2d5e53c928de5b8e3247cd55425a1d6f92ded4701eca4d8d6d0a",
+    "15679507260c673f6f2f87bcd415dff8e648e062c0324abb647690a5a4394e50",
+    "455c1d10e65f1274d5fbcc4a42ff23d738754bcbc2c96eaa436b1d2ce61365fe",
+    "eac20a93d8575ae1e8ace9e7beb008a25c81b0964a1e7e7283a411541d1086d9",
+    "466d7873435305fe260b7ad160590ec86218f18e06a5fb02a5c0fd46be614518",
+    "e9f5bf9a14f697d9d71f3c46c1f597c2d35a8327920ea02bfe56372d18d19300",
+    "6808fc0466a719209b88f360254883724a5cb2d5e3d9820a45fbdecc1fd73845",
+    "b7022e93055c65d671fc52f7c0beb20d74dafda8f988513d2baa0d9d1c80414e",
+    "429f2c3bbc3851b2207d3e8e7c191e4f8e0c5d4374c32dded80409465181bd96",
+    "59f0db8219a684d19bf59eb70d581aa3182a5939294cf965acf8fdc14da0f485",
+    "17e13009d44d89beea09026ac479d69d8a2bc18b8c3c832dc894160b00dc273a",
+    "9ae9bd1fd1d6ce36c3d1d2e6edb9430f2eee37807f99f00605e2d3814028baa3",
+    "8e0232899a66da0aeb8bfc8c2cfcf6bbaec5f54b2c79708f0c5f0a1ca5a86f69",
+    "201d5491938c451068df45c359b75f3202730ab72a0d87a8498181ba9755c658",
+    "924abb279e1e78f0d9da48ebb3198e0124a5b3ce0208a50105e1bba4f81e007f",
+    "6d137780d1f32bf5943adf08fb8a8780fff018e9375c853577262fa1726dae8b",
+    "889b9d9b73c0fe7be77925653e842eb7929e0c928cbfd501e6a03988fad08662",
+    "1df1e659ec9467839a0b42844efc5fb55cf1468912e6d221243cd83eece77912",
+    "8dcdb54a091504fe14ab02ba83ee0a2dbfbb7e16516e5046a42818a395d7c0ac",
+    "e3b1c7749431ea705fe7e1f6f3a82b6949c91381723e41fd2f33513f10005b08",
+    "c5880e92c1502123f27700caeb322b774a24bb506540efcb98c8eea069dcbf51",
+    "1750f22eb850e088fae165a122d3d13e65a52b45ad7291e4bb6bdb0039f7e113",
+    "eefd8fdf5c7de984f5e82e2abf28495fa481154a43af54fbf1ead559f25a81a9",
+    "84ce47dba020ddeb01495e46e5cd930129e2b963515d1a01d724ee99fb52905f",
+    "4feea28e318f8f64484052ecb0c7853557bb80214e37e649c7526d04c9863927",
+    "a08b61195dc273d72b573ab10156cea70e73c3479d1f28057e5c6b64622bf5e9",
+    "20fd43432fedc2f2ca91bc5f85d249f62f13f0e02863f68f2540e821f5e55b37",
+    "b09450182f545eed0679afba39182e7b106da3a754da393302abd65ab28103f8",
+    "4a39b5fa663785969cd55d629c3739539a8b2f356e7c5b0e335f49a9ae62219c",
+    "7b1bf2bc20c5479cbadc5d2f5a88a67166148290ced687ab5036286e5df46423",
+    "591ff3a83935cc8829debb8763af5ddb9736e1752d4c078f5b1d56941b5f1020",
+    "fea9d526a09000dd490b72b2f6c73dc44f7b719fbdc37637801d517009863902",
+    "0be59b51d48d55066a782e5dd4461e0e8782a9b0b047502723b17898848febaf",
+    "5b8664a92f73635aa3094f1a1e10b6fedc6d66f239fb68ad17fe5459c2373188",
+    "63267b40a709247677787a481f786c4778713d699d7900717a14f3993b9d828b",
+    "85d3fcbf9038d6f8b0156335dafad6f23eecce4464bb767dac36e702544cd237",
+    "a3e031a3d93d6a89bba82ed1f94fd4c603b4d86c4048e6e9d79d4a2e3495cb0f",
+    "14aba6e32cf36115b3e789a398234692e9e71829b325fc2306501037ab6f9ee5",
+    "7996cbcca1d8b211a0524b5d30bfd6809624fba55d97fb7ed0a9c35a2f1d4c88",
+    "2ee92bdf818ffbe872dfa0fdfffcab624aca8e04f841c01b20477382d2cc11f8",
+    "dc9e36b0e917ac55bc762f24b408ef2e5d16bef9d729889010c6a45effc7579f",
+    "14431d75f8f524a259449981e45bd3a4aa4774c617db4f078a063822f02091eb",
+    "28c21a0d900a498df262a8287b76d49284ed3cdf4df97efda5eff40903e831e2",
+    "916a83b8257262ca21f04b75b6cb63bbafccd6f8c7d8b797f06efcee3f088446",
+    "1bdc12e7bc0a58309fc199bbdd63182902cfd23a31f0a405d54df06c6af5e314",
+    "f4453a82d4acaa8c2d7f57b6dab5aa9090a5c2cc4626b5cbce6b95b85734acc6",
+    "9f2f003fd87712a21413856624768c4298fd885632f4a070ec3df03132612724",
+    "b10617444847533db046754d7bbc9baef3f096248ec977f38ba3361256655894",
+    "63a2b9da84aa05d494c5b8d80fcd4f227fb11109381027d4915f97aae0ed6dee",
+    "a6bdda3a7944d2a23cc752d449f54ed6c73374bf33c6e0dd355e6051440c7e95",
+    "2576ac64b12e7f79cbfb346bb28bd6c22e244ae79999ee6e6cf62f179741a27c",
+    "409723e0d06362bb0d7bbff095a18118d0bcf040f96879a066654ffc19711554"
+  ],
+  "decoded_pts_seconds": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "timestamps_monotonic": true,
+  "native_streams": [
+    {
+      "index": 0,
+      "codec_name": "vp9",
+      "codec_long_name": "Google VP9",
+      "profile": "Profile 0",
+      "codec_type": "video",
+      "codec_tag_string": "[0][0][0][0]",
+      "codec_tag": "0x0000",
+      "width": 512,
+      "height": 512,
+      "coded_width": 512,
+      "coded_height": 512,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 0,
+      "sample_aspect_ratio": "1:1",
+      "display_aspect_ratio": "1:1",
+      "pix_fmt": "yuv420p",
+      "level": -99,
+      "color_range": "tv",
+      "field_order": "progressive",
+      "refs": 1,
+      "r_frame_rate": "30/1",
+      "avg_frame_rate": "30/1",
+      "time_base": "1/1000",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "nb_read_frames": "84",
+      "disposition": {
+        "default": 0,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0
+      },
+      "tags": {
+        "alpha_mode": "1",
+        "ENCODER": "Lavc60.31.102 libvpx-vp9",
+        "DURATION": "00:00:02.800000000"
+      }
+    }
+  ],
+  "native_duration": "2.800000",
+  "source_review": {
+    "agent": "/root/artisan_stickers_a",
+    "every_selected_sourceframe_observed": true,
+    "selected_frame_view_scale_px": 256,
+    "native512_frame_indices": [
+      21
+    ],
+    "observation": "Native0/10/21/64 compared; selected21 has the correct single cheek contact and brave small smile, unlike both-paws-at-chest0/64. Exact sole source PNG inspected at native512; no source eye/limb/prop ghost accepted.",
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-inspection/meshes/60_anchor21.png"
+    ]
+  },
+  "candidate_visual_review": {
+    "agent": "/root/artisan_stickers_a",
+    "observed_all84_afterframes": true,
+    "frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "complete_review_scale_px": 256,
+    "native512_frame_indices": [
+      0,
+      17,
+      34,
+      59
+    ],
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-candidates/lumen_60_author-a_mesh_v1/after256-0.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_60_author-a_mesh_v1/after256-1.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_60_author-a_mesh_v1/after256-2.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_60_author-a_mesh_v1/after256-3.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_60_author-a_mesh_v1/native-author-0-17-34-59.jpg"
+    ],
+    "observation": "Actually viewed all 84 decoded frames at256 and native512 frames 0/17/34/59. The same raised wiping paw stays at the lower eye/cheek during a small brave head lean and gentle press, while the other paw rests at the chest. Glossy worried eyes and small reassuring smile stay readable; the tear corner is partly occluded by that paw in the selected source21 and remains so. Feet, cape, medal and two-hand topology stay coherent. No invented fully visible falling bead, second wiping hand, blinking morph or abrupt expression change seen.",
+    "native_realtime_perceptual_playback": false,
+    "slow_perceptual_playback": false,
+    "device_playback": false,
+    "author_verdict": "propose_for_independent_per_item_QA"
+  },
+  "baseline_independent_triage": {
+    "artifact": "docs/qa-1-13/sticker-triage-51-80.json",
+    "verdict": "repair_required",
+    "source_sha256": "d67c2d09141f6345987b1aabe4af19486b86903461918609ad0dbbbc2316c58e",
+    "defects": [
+      {
+        "frames": [
+          4,
+          7
+        ],
+        "reason": "Піднята для витирання лапа виникає через прозорий ghost: f6 показує тільки сіру примару руки вздовж плаща під видимою сльозою замість цільної кінцівки."
+      },
+      {
+        "frames": [
+          24,
+          28
+        ],
+        "reason": "Опускання лапи знову розчиняє передпліччя; f26 має напівпрозорий сірий старий контур від щоки до грудей."
+      },
+      {
+        "frames": [
+          53,
+          60
+        ],
+        "reason": "Нахил голови накладає два обличчя: f55–58 мають подвійні ніс, усмішку, брови й праве око/вухо. Це помітний face ghost, не сам blink."
+      }
+    ]
+  },
+  "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/recipe.json",
+  "recipe_sha256": "4dd80e0ebfa0248d2f5c76c23372425d13f55b4b71282037e5101223d799c88b",
+  "generator_snapshot": {
+    "engine_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+  "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+  "statistics": {
+    "minimum_jacobian": 0.914548933506012,
+    "maximum_displacement_px": 12.72096061706543
+  },
+  "proposed_description_uk": "Хоробро всміхається крізь сльозу, обережно притиснувши лапку до щоки. Ледь схиляє голівку до неї й тихо зітхає; друга лапка тримає плащик біля серця.",
+  "independent_review": "pending",
+  "native_playback": "not_observed",
+  "device_playback": "not_observed",
+  "canonical_assets_changed": false,
+  "local_mesh": {
+    "source_frame": 21,
+    "points_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        511,
+        0
+      ],
+      [
+        0,
+        511
+      ],
+      [
+        511,
+        511
+      ],
+      [
+        256,
+        0
+      ],
+      [
+        0,
+        256
+      ],
+      [
+        511,
+        256
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        275,
+        60
+      ],
+      [
+        117,
+        170
+      ],
+      [
+        390,
+        135
+      ],
+      [
+        207,
+        211
+      ],
+      [
+        335,
+        180
+      ],
+      [
+        275,
+        228
+      ],
+      [
+        271,
+        261
+      ],
+      [
+        281,
+        293
+      ],
+      [
+        197,
+        251
+      ],
+      [
+        196,
+        263
+      ],
+      [
+        187,
+        305
+      ],
+      [
+        191,
+        335
+      ],
+      [
+        272,
+        307
+      ],
+      [
+        270,
+        330
+      ],
+      [
+        326,
+        351
+      ],
+      [
+        274,
+        414
+      ],
+      [
+        102,
+        373
+      ],
+      [
+        413,
+        373
+      ],
+      [
+        199,
+        471
+      ],
+      [
+        336,
+        471
+      ]
+    ],
+    "point_names": [
+      "corner_tl",
+      "corner_tr",
+      "corner_bl",
+      "corner_br",
+      "edge_top",
+      "edge_left",
+      "edge_right",
+      "edge_bottom",
+      "crown",
+      "ear_l",
+      "ear_r",
+      "eye_l",
+      "eye_r",
+      "nose",
+      "smile",
+      "jaw",
+      "cheek_touch",
+      "paw_touch",
+      "paw_mid",
+      "paw_elbow",
+      "neck",
+      "medal",
+      "chest_paw",
+      "belly",
+      "cape_l",
+      "cape_r",
+      "foot_l",
+      "foot_r"
+    ],
+    "parts": [
+      {
+        "name": "quiet_brave_smile_lean_into_same_cheek_paw",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            10.339777791507743,
+            0.38416358049877886
+          ],
+          [
+            5.872048725676166,
+            -6.328678397840349
+          ],
+          [
+            7.098229223186479,
+            5.134076016771104
+          ],
+          [
+            4.076201631676213,
+            -2.595833528159176
+          ],
+          [
+            5.262069149935314,
+            2.791442416113739
+          ],
+          [
+            3.3046679650021815,
+            0.236799037107005
+          ],
+          [
+            1.9262800715432036,
+            0.04034981545248684
+          ],
+          [
+            0.5774874531973637,
+            0.4310369159079528
+          ],
+          [
+            2.4099471815196694,
+            -3.0496768614968346
+          ],
+          [
+            1.9083165066704169,
+            -3.1020785540397355
+          ],
+          [
+            0.0708451106194417,
+            -1.5821102580527082
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.12,
+            0.4,
+            0.65,
+            0.88,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "gentle_cheek_press_and_small_breath",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0.8,
+            -0.8
+          ],
+          [
+            1.5,
+            -1.5
+          ],
+          [
+            0.6,
+            -0.5
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            -1,
+            -2
+          ],
+          [
+            0,
+            -1.5
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.18,
+            0.48,
+            0.72,
+            0.92,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 2,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      }
+    ],
+    "minimum_jacobian": 0.65,
+    "fluid_texture": null
+  },
+  "strongest_objection": {
+    "objection": "With no falling tear and a partially covered tear corner, the emotional gesture could lose its meaning.",
+    "author_response_and_limit": "Exact21 retains worried glossy eyes, brave small smile and real same-paw cheek contact. Head leans into that hand with a gentle press, opposite paw remains at chest. Falling liquid is omitted rather than reversed; description never claims a newly created tear stream.",
+    "independent_semantic_QA_required": true
+  },
+  "frozen_native_author_contact_sheet": {
+    "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/native-author-0-17-34-59.jpg",
+    "sha256": "3d1401bbd84788ed76e6dea95e9e0ca336d19d9f059742012ec114f66dad85a1",
+    "native_frame_scale_px": 512,
+    "frame_indices": [
+      0,
+      17,
+      34,
+      59
+    ]
+  },
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/review-normal.mp4",
+      "sha256": "fb8b652bb522e0b5f931a3556b8923fdb1a97f5bc8704b5950b863fa9198ffb3",
+      "bytes": 145627,
+      "frames": 84,
+      "duration": 2.8,
+      "fps": 30,
+      "perceptually_watched": false
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/review-slow.mp4",
+      "sha256": "0979018f63b7c4e3764e7775858355fc2dc5a777b556bafb8103065ba0e3535d",
+      "bytes": 222664,
+      "frames": 84,
+      "duration": 5.6,
+      "fps": 15,
+      "perceptually_watched": false
+    }
+  ],
+  "reproducibility": {
+    "artifact": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/reproducibility.json",
+    "sha256": "9085fe3dacdbffebe3e84e5f0630a27c7aa4d78b69adc52b826d7cd48951c52f",
+    "raw_rgba_exact_match": true,
+    "encoded_frame_exact_match": true,
+    "canonical_video_read": false,
+    "container_bytes_exact_match": false
+  },
+  "candidate_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_60/candidate.webm",
+  "frozen_at": "2026-10-30T19:07:05.182390+00:00"
+}

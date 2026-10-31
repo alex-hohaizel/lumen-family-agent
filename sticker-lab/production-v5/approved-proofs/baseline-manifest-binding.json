@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "upstream_commit": "4a1b5b4ee9eb7fa031aa9c451732cdc4a03b2d9e",
+  "upstream_tree": "d3e12db22205981d59a516d644cc80abca1d529e",
+  "local_synthetic_baseline_commit": "d66fd3fa44dbf3627a57c5c5e790eb7ce4dec1e2",
+  "local_baseline_tree": "d3e12db22205981d59a516d644cc80abca1d529e",
+  "manifest_path": "sticker-lab/production-v5/approved-proofs/baseline-manifest-4a1b5b4ee9.json",
+  "manifest_sha256": "c702f672573e0a67a2c5cde40976befed54cfa60ba369be7511a850d8548998f",
+  "status": "Exact immutable baseline manifest bytes; synthetic baseline tree equals fetched upstream tree, not an actual deployed release claim."
+}

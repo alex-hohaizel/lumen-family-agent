@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "id": "lumen_138",
+  "actual_author": "/root/artisan_stickers_occlusion",
+  "proposed_manifest_fields": {
+    "motion_version": 5,
+    "source_keyposes_sha256": "37dc2ed6b8442a98c35851541278eb8eb15f81acf8fdb06a3f57c0697364e8d6",
+    "previous_source_keyposes_sha256": "e52c9abd873586544f27b8e84254907131458401416775b47676f706ad7a0cd8",
+    "source_provenance": {
+      "kind": "generated_layer_components",
+      "baseline_video_path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/baseline-source.webm",
+      "baseline_video_sha256": "c3459b3c2642cf4b43995a46af8d504f93cc7d6935ebb6d447f97f268fe460f8",
+      "ancestor_original_keyposes_sha256": "e52c9abd873586544f27b8e84254907131458401416775b47676f706ad7a0cd8",
+      "ancestor_original_status": "unresolved_original_not_recovered",
+      "baseline_frames": [
+        {
+          "frame_index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/input-scene_revealed.png",
+          "sha256": "925ed27bc4c91829d71e348b46e537ff8bf7563f152225a480d33f6d5022e3ab",
+          "kind": "decoded_baseline_video_frame"
+        },
+        {
+          "frame_index": 22,
+          "timestamp_seconds": 0.7333333333333333,
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/input-scene_covered.png",
+          "sha256": "dd29770fc05ecbdcfb5bf842b50d00ed1fc92e964425d84e51bb0f52a23eb9c3",
+          "kind": "decoded_baseline_video_frame"
+        }
+      ],
+      "generation": {
+        "tool": "built-in image_gen.imagegen",
+        "actual_agent_id": "/root/artisan_stickers_occlusion",
+        "operation": "layer_component_generation_and_targeted_source_edits",
+        "metadata_path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/generation.json",
+        "metadata_sha256": "a966f48b28068b26b0058dbf0006c68e44fc0f8dba65b05c6fdcfd94a954c784",
+        "raw_outputs": [
+          {
+            "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/generated-layer-atlas.png",
+            "sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+            "size": [
+              1254,
+              1254
+            ],
+            "actual_tool_returned_path": "generated_images/exec-0138e113-d7c4-4875-a91b-55f4130b4156.png"
+          },
+          {
+            "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/generated-blank-hood-atlas.png",
+            "sha256": "07104f9d4678602827479969d7c12498f9977d5b8ee4487af7bcd2108c538bf5",
+            "size": [
+              1254,
+              1254
+            ],
+            "actual_tool_returned_path": "generated_images/exec-769889f9-6deb-4beb-9f93-9c09aa25842a.png"
+          },
+          {
+            "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/generated-upper-arm.png",
+            "sha256": "83e896aa3bcd816d6ffe058ab6bfed0fab27b869d9074ffd0a6b2b7a12f16d8e",
+            "size": [
+              1536,
+              1024
+            ],
+            "actual_tool_returned_path": "generated_images/exec-96dfad66-8e7a-4642-90ce-c5a78788d0a2.png"
+          }
+        ],
+        "literal_prompts_preserved": true,
+        "operation_chain_count": 3,
+        "input_references": [
+          {
+            "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/generated-layer-atlas.png",
+            "sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+            "role": "edit_target",
+            "operation_ids": [
+              "138-remove-underhood-painted-marks"
+            ]
+          },
+          {
+            "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/input-identity.png",
+            "sha256": "f6d1c671b6653dda929fbaedab98b6e381991a72c0d6ff2d483d38763b22f21d",
+            "role": "identity",
+            "operation_ids": [
+              "138-initial-components"
+            ]
+          },
+          {
+            "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/input-scene_covered.png",
+            "sha256": "dd29770fc05ecbdcfb5bf842b50d00ed1fc92e964425d84e51bb0f52a23eb9c3",
+            "role": "scene_covered",
+            "operation_ids": [
+              "138-initial-components"
+            ]
+          },
+          {
+            "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/input-scene_revealed.png",
+            "sha256": "925ed27bc4c91829d71e348b46e537ff8bf7563f152225a480d33f6d5022e3ab",
+            "role": "scene_revealed",
+            "operation_ids": [
+              "138-initial-components"
+            ]
+          },
+          {
+            "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/input-upper-style-132.png",
+            "sha256": "81418caf3e15dad4849f1492135e0103239bc8684d7136bfbdc3a4417e7924d8",
+            "role": "style_reference_132",
+            "operation_ids": [
+              "shared-cream-upper-arm"
+            ]
+          },
+          {
+            "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/input-upper-style-138.png",
+            "sha256": "07104f9d4678602827479969d7c12498f9977d5b8ee4487af7bcd2108c538bf5",
+            "role": "style_reference_138",
+            "operation_ids": [
+              "shared-cream-upper-arm"
+            ]
+          }
+        ]
+      },
+      "anchors": [
+        {
+          "key": "arm_left",
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/arm_left.png",
+          "sha256": "9f3e97e9733ca1c0c65e9d0ed32aab3844cf1685736b1934b48f7337cbf572fc",
+          "width": 314,
+          "height": 332,
+          "origin": "generated_layer_components",
+          "original_video_timestamp": null,
+          "derivation": {
+            "raw_output_sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+            "crop_box_xyxy": [
+              805,
+              218,
+              1119,
+              550
+            ],
+            "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+            "resize": null,
+            "padding": null
+          }
+        },
+        {
+          "key": "arm_right",
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/arm_right.png",
+          "sha256": "5f054289232b62f50935458a89211ca132eae8a47e659aceb99e186ca3b5f2e3",
+          "width": 308,
+          "height": 292,
+          "origin": "generated_layer_components",
+          "original_video_timestamp": null,
+          "derivation": {
+            "raw_output_sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+            "crop_box_xyxy": [
+              173,
+              829,
+              481,
+              1121
+            ],
+            "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+            "resize": null,
+            "padding": null
+          }
+        },
+        {
+          "key": "body",
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/body.png",
+          "sha256": "3cdaed7057dfb165e6dd6137894bda85ba04d2c89fc166e6f0d9572822156c9b",
+          "width": 599,
+          "height": 613,
+          "origin": "generated_layer_components",
+          "original_video_timestamp": null,
+          "derivation": {
+            "raw_output_sha256": "07104f9d4678602827479969d7c12498f9977d5b8ee4487af7bcd2108c538bf5",
+            "crop_box_xyxy": [
+              41,
+              36,
+              640,
+              649
+            ],
+            "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+            "resize": null,
+            "padding": null
+          }
+        },
+        {
+          "key": "cloth",
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/cloth.png",
+          "sha256": "1c256f7eac05619835438f4acf839861f2d482a508f0df083c41af53036a178c",
+          "width": 625,
+          "height": 515,
+          "origin": "generated_layer_components",
+          "original_video_timestamp": null,
+          "derivation": {
+            "raw_output_sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+            "crop_box_xyxy": [
+              616,
+              684,
+              1241,
+              1199
+            ],
+            "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+            "resize": null,
+            "padding": null
+          }
+        },
+        {
+          "key": "upper_arm",
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/upper_arm.png",
+          "sha256": "85b69eaa79f3ac6472f039598133fe3bf95f58852dc14631193d3c0e8966e066",
+          "width": 843,
+          "height": 766,
+          "origin": "generated_layer_components",
+          "original_video_timestamp": null,
+          "derivation": {
+            "raw_output_sha256": "83e896aa3bcd816d6ffe058ab6bfed0fab27b869d9074ffd0a6b2b7a12f16d8e",
+            "crop_box_xyxy": [
+              381,
+              144,
+              1224,
+              910
+            ],
+            "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+            "resize": null,
+            "padding": null
+          }
+        }
+      ],
+      "generated_source_bundle_sha256": "37dc2ed6b8442a98c35851541278eb8eb15f81acf8fdb06a3f57c0697364e8d6",
+      "generated_source_bundle_algorithm": "sha256 of ASCII concatenation of exact component PNG SHA256 hex strings sorted by anchor key",
+      "not_recovered_original_art": true,
+      "not_original_keyposes": true,
+      "technical_derivation": "Only declared rectangle crops; rendered source-pixel segmentation/affine transforms and explicit opaque depth ordering. No Python repaint or clone-fill."
+    },
+    "description": "Ховає мордочку під непрозорим білим простирадлом з одним намальованим обличчям привида, піднімає його назад до каптура, визирає з усмішкою і махає відкритою лапкою."
+  },
+  "renderer": {
+    "entrypoint": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/generators/layer_renderer.py",
+    "sha256": "6000bab2f88d311608c6f3ef4509c395b71e415641525ca30b618e7e6da3d73f",
+    "support_snapshot_path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/generators/support_snapshot.py",
+    "support_sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8",
+    "interface": "python layer_renderer.py recipe.json EMPTY_OUTPUTDIR [--no-encode]",
+    "path_resolution": "Find actual repo root by assets/stickers/manifest.json; support_snapshot.py must be beside entrypoint. Recipe pins all sources/generation metadata, no canonical-video reads.",
+    "original_generator": "Own deterministic explicit layer renderer, not shared recipe_engine.py",
+    "preparation_path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/generators/prepare_layers.py",
+    "preparation_sha256": "b8d3f36f66b1a5cc8bc9308d8e5ea9700ba423a2c262d05689cf9b1ef40873e6"
+  },
+  "acceptance": "Proposed only, no canonical stage permitted before full84 author inspection and independent source/scene/frame QA.",
+  "continuation_actual_agent_id": "/root/artisan_layers_resume"
+}

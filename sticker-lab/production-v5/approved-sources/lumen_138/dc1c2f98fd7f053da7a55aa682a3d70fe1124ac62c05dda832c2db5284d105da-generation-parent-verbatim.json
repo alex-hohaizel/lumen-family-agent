@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "kind": "generated_layer_components",
+  "actual_agent_id": "/root/artisan_stickers_occlusion",
+  "metadata_written_at": "2026-10-30T18:58:20.873477+00:00",
+  "operations": [
+    {
+      "id": "138-initial-components",
+      "operation": "precise-object-edit",
+      "prompt": "Use case: precise-object-edit, production animation source components, not a finished sticker. Create ONE transparent PNG with FOUR equal square quadrants in a 2x2 grid, no text, no labels, no dividers. Use Images 1 and 2 to preserve the exact same cream-and-turquoise mouse-like character, rounded ears, large blue eyes, navy cape and amber-gold round clasp, with a playful white ghost costume. Image 3 is identity reference for the correct TWO small upper central front teeth: no side teeth, no lower teeth. Keep the existing polished soft 3D sticker look. Every quadrant is a separate clean animation layer with generous transparent margins and no overlap across quadrant borders. TOP LEFT: the full-body character from Image1, ears/head/face/belly/feet/cape/clasp and white hood side drapes preserved; remove BOTH arms and paws entirely, reconstruct the small regions of cloak and hood behind them naturally. Face fully visible, warm mischievous smile showing exactly two upper front teeth. This is an underlying armless body animation plate; no detached stumps, arms are hidden under the cape. TOP RIGHT: ONLY one isolated left arm from shoulder to large open paw, cream fur with turquoise paw tips and blue paw pads facing viewer, matching Image1's waving arm; short rounded forearm aimed down-right toward its shoulder, no body/head/other objects. BOTTOM LEFT: ONLY one isolated right arm from shoulder to gently curved gripping paw, same fur/shading, palm inward, short rounded forearm aimed down-left, no body/head. BOTTOM RIGHT: ONLY an opaque white draping front veil panel, matching the white fabric covering the face in Image2. Soft triangular hanging shape with curved top and curved lower hem, about 1.15 times taller than wide, visible cloth folds, a SINGLE painted ghost face (two dark oval eyes and one small dark oval mouth) on its front. No actual eyes, no character, no hands, no clasp, no legs, no ears behind or through this cloth. The cloth must be fully opaque inside its silhouette; background transparent. Do not add extra characters or props. Keep every isolated layer complete inside its own quadrant and on an actual transparent background. The components will later be composited and rigged; anatomically consistent source layers are essential.",
+      "inputs": [
+        {
+          "role": "scene_revealed",
+          "actual_tool_input_path": "/workspace/scratch/342fb2c985cb/media-audit/triage-111-139/lumen_138/000.png",
+          "archived_path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/input-scene_revealed.png",
+          "sha256": "925ed27bc4c91829d71e348b46e537ff8bf7563f152225a480d33f6d5022e3ab",
+          "frame_index": 0,
+          "timestamp_seconds": 0.0
+        },
+        {
+          "role": "scene_covered",
+          "actual_tool_input_path": "/workspace/scratch/342fb2c985cb/media-audit/triage-111-139/lumen_138/022.png",
+          "archived_path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/input-scene_covered.png",
+          "sha256": "dd29770fc05ecbdcfb5bf842b50d00ed1fc92e964425d84e51bb0f52a23eb9c3",
+          "frame_index": 22,
+          "timestamp_seconds": 0.7333333333333333
+        },
+        {
+          "role": "identity",
+          "actual_tool_input_path": "/workspace/scratch/342fb2c985cb/lumen/sticker-lab/production-v5/source-art/lumen_79/input-identity51-baseline-preview.png",
+          "archived_path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/input-identity.png",
+          "sha256": "f6d1c671b6653dda929fbaedab98b6e381991a72c0d6ff2d483d38763b22f21d"
+        }
+      ],
+      "output_path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/generated-layer-atlas.png",
+      "actual_tool_output": "generated_images/exec-0138e113-d7c4-4875-a91b-55f4130b4156.png",
+      "tool": "built-in image_gen.imagegen",
+      "actual_agent_id": "/root/artisan_stickers_occlusion",
+      "transparent_background": true,
+      "output_sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+      "output_size": [
+        1254,
+        1254
+      ],
+      "output_mode": "RGBA",
+      "actual_alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "138-remove-underhood-painted-marks",
+      "operation": "precise-object-edit",
+      "prompt": "Precise edit to this exact four-part transparent animation component atlas. Change ONLY the TOP-LEFT armless full-body character's white hood: remove the three dark painted ghost marks from that hood and replace those tiny marked areas with the same plain unmarked white cloth and natural folds. The underlying character's hood should be plain white, with its face completely visible. KEEP the two dark oval eyes and one dark mouth painted on the separate BOTTOM-RIGHT front veil component EXACTLY; that separate cloth is the only painted ghost face. Preserve all four component positions, proportions, clean silhouettes, colors and fur, all blue paw pads, exactly TWO small upper front teeth, the navy cape and gold clasp. Do not add arms to the body. Do not move, merge, crop or resize any layer. REAL transparent alpha background outside all components, not a gray/color gradient or checkerboard.",
+      "inputs": [
+        {
+          "role": "edit_target",
+          "archived_path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/generated-layer-atlas.png",
+          "sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+          "actual_tool_input_path": "/workspace/scratch/342fb2c985cb/generated_images/exec-0138e113-d7c4-4875-a91b-55f4130b4156.png"
+        }
+      ],
+      "output_path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/generated-blank-hood-atlas.png",
+      "actual_tool_output": "generated_images/exec-769889f9-6deb-4beb-9f93-9c09aa25842a.png",
+      "tool": "built-in image_gen.imagegen",
+      "actual_agent_id": "/root/artisan_stickers_occlusion",
+      "transparent_background": true,
+      "output_sha256": "07104f9d4678602827479969d7c12498f9977d5b8ee4487af7bcd2108c538bf5",
+      "output_size": [
+        1254,
+        1254
+      ],
+      "output_mode": "RGBA",
+      "actual_alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "shared-cream-upper-arm",
+      "operation": "generate_component_from_references",
+      "prompt": "Generate ONE isolated upper-arm source component for the exact soft 3D cream-and-turquoise mouse character in the references. Only a short rounded cream-furred upper-arm segment, shaped like a softly curved tapered capsule with natural fluffy fur at its ends, matching the character's body fur and lighting. No hand, no paw, no fingers, no pads, no nails, no blue fingertips, no stump markings, no body, no head or other objects. It will be joined behind the existing forearm and cape in an animation rig, so keep a clean complete silhouette and plain cream fur throughout. Orient diagonally from lower-left to upper-right; roughly three times as long as thick. Real transparent alpha background, no cast shadow, no backdrop or glow, generous transparent margin. One component only.",
+      "inputs": [
+        {
+          "role": "style_reference_138",
+          "archived_path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/input-upper-style-138.png",
+          "sha256": "07104f9d4678602827479969d7c12498f9977d5b8ee4487af7bcd2108c538bf5",
+          "actual_tool_input_path": "/workspace/scratch/342fb2c985cb/generated_images/exec-769889f9-6deb-4beb-9f93-9c09aa25842a.png"
+        },
+        {
+          "role": "style_reference_132",
+          "archived_path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/input-upper-style-132.png",
+          "sha256": "81418caf3e15dad4849f1492135e0103239bc8684d7136bfbdc3a4417e7924d8",
+          "actual_tool_input_path": "/workspace/scratch/342fb2c985cb/generated_images/exec-c84203d4-40cd-4957-b854-4b69c95f15af.png"
+        }
+      ],
+      "output_path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/generated-upper-arm.png",
+      "actual_tool_output": "generated_images/exec-96dfad66-8e7a-4642-90ce-c5a78788d0a2.png",
+      "tool": "built-in image_gen.imagegen",
+      "actual_agent_id": "/root/artisan_stickers_occlusion",
+      "transparent_background": true,
+      "output_sha256": "83e896aa3bcd816d6ffe058ab6bfed0fab27b869d9074ffd0a6b2b7a12f16d8e",
+      "output_size": [
+        1536,
+        1024
+      ],
+      "output_mode": "RGBA",
+      "actual_alpha_extrema": [
+        0,
+        254
+      ]
+    }
+  ],
+  "source_anchors": [
+    {
+      "key": "arm_left",
+      "path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/arm_left.png",
+      "sha256": "9f3e97e9733ca1c0c65e9d0ed32aab3844cf1685736b1934b48f7337cbf572fc",
+      "width": 314,
+      "height": 332,
+      "origin": "generated_layer_components",
+      "original_video_timestamp": null,
+      "derivation": {
+        "raw_output_sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+        "crop_box_xyxy": [
+          805,
+          218,
+          1119,
+          550
+        ],
+        "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+        "resize": null,
+        "padding": null
+      }
+    },
+    {
+      "key": "arm_right",
+      "path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/arm_right.png",
+      "sha256": "5f054289232b62f50935458a89211ca132eae8a47e659aceb99e186ca3b5f2e3",
+      "width": 308,
+      "height": 292,
+      "origin": "generated_layer_components",
+      "original_video_timestamp": null,
+      "derivation": {
+        "raw_output_sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+        "crop_box_xyxy": [
+          173,
+          829,
+          481,
+          1121
+        ],
+        "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+        "resize": null,
+        "padding": null
+      }
+    },
+    {
+      "key": "body",
+      "path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/body.png",
+      "sha256": "3cdaed7057dfb165e6dd6137894bda85ba04d2c89fc166e6f0d9572822156c9b",
+      "width": 599,
+      "height": 613,
+      "origin": "generated_layer_components",
+      "original_video_timestamp": null,
+      "derivation": {
+        "raw_output_sha256": "07104f9d4678602827479969d7c12498f9977d5b8ee4487af7bcd2108c538bf5",
+        "crop_box_xyxy": [
+          41,
+          36,
+          640,
+          649
+        ],
+        "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+        "resize": null,
+        "padding": null
+      }
+    },
+    {
+      "key": "cloth",
+      "path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/cloth.png",
+      "sha256": "1c256f7eac05619835438f4acf839861f2d482a508f0df083c41af53036a178c",
+      "width": 625,
+      "height": 515,
+      "origin": "generated_layer_components",
+      "original_video_timestamp": null,
+      "derivation": {
+        "raw_output_sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+        "crop_box_xyxy": [
+          616,
+          684,
+          1241,
+          1199
+        ],
+        "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+        "resize": null,
+        "padding": null
+      }
+    },
+    {
+      "key": "upper_arm",
+      "path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/upper_arm.png",
+      "sha256": "85b69eaa79f3ac6472f039598133fe3bf95f58852dc14631193d3c0e8966e066",
+      "width": 843,
+      "height": 766,
+      "origin": "generated_layer_components",
+      "original_video_timestamp": null,
+      "derivation": {
+        "raw_output_sha256": "83e896aa3bcd816d6ffe058ab6bfed0fab27b869d9074ffd0a6b2b7a12f16d8e",
+        "crop_box_xyxy": [
+          381,
+          144,
+          1224,
+          910
+        ],
+        "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+        "resize": null,
+        "padding": null
+      }
+    }
+  ],
+  "raw_outputs": [
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/generated-layer-atlas.png",
+      "sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+      "size": [
+        1254,
+        1254
+      ],
+      "actual_tool_returned_path": "generated_images/exec-0138e113-d7c4-4875-a91b-55f4130b4156.png"
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/generated-blank-hood-atlas.png",
+      "sha256": "07104f9d4678602827479969d7c12498f9977d5b8ee4487af7bcd2108c538bf5",
+      "size": [
+        1254,
+        1254
+      ],
+      "actual_tool_returned_path": "generated_images/exec-769889f9-6deb-4beb-9f93-9c09aa25842a.png"
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/generated-upper-arm.png",
+      "sha256": "83e896aa3bcd816d6ffe058ab6bfed0fab27b869d9074ffd0a6b2b7a12f16d8e",
+      "size": [
+        1536,
+        1024
+      ],
+      "actual_tool_returned_path": "generated_images/exec-96dfad66-8e7a-4642-90ce-c5a78788d0a2.png"
+    }
+  ],
+  "actual_input_references": [
+    {
+      "role": "scene_revealed",
+      "actual_tool_input_path": "/workspace/scratch/342fb2c985cb/media-audit/triage-111-139/lumen_138/000.png",
+      "archived_path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/input-scene_revealed.png",
+      "sha256": "925ed27bc4c91829d71e348b46e537ff8bf7563f152225a480d33f6d5022e3ab",
+      "frame_index": 0,
+      "timestamp_seconds": 0.0
+    },
+    {
+      "role": "scene_covered",
+      "actual_tool_input_path": "/workspace/scratch/342fb2c985cb/media-audit/triage-111-139/lumen_138/022.png",
+      "archived_path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/input-scene_covered.png",
+      "sha256": "dd29770fc05ecbdcfb5bf842b50d00ed1fc92e964425d84e51bb0f52a23eb9c3",
+      "frame_index": 22,
+      "timestamp_seconds": 0.7333333333333333
+    },
+    {
+      "role": "identity",
+      "actual_tool_input_path": "/workspace/scratch/342fb2c985cb/lumen/sticker-lab/production-v5/source-art/lumen_79/input-identity51-baseline-preview.png",
+      "archived_path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/input-identity.png",
+      "sha256": "f6d1c671b6653dda929fbaedab98b6e381991a72c0d6ff2d483d38763b22f21d"
+    }
+  ],
+  "limitations": [
+    "Generated production components; not original or recovered keyposes.",
+    "Raw output RGB may include invisible color/glow at alpha0; only the actual RGBA matte is composited.",
+    "Only declared rectangular crops and deterministic geometry/occlusion masks are applied; no Python raster repaint or hidden-content clone fill."
+  ],
+  "archival_rebinding": {
+    "original_metadata_path": "sticker-lab/production-v5/recipes-proposed/occlusion_c/source-art/lumen_138/generation.json",
+    "original_metadata_sha256": "47df7d496eecc2d0b0aadc920efca8ae896b3a450ccf8e9476ca0bf659991481",
+    "archive_path": "sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/sources/generation-author-original.json",
+    "change": "Only archived relative file references rebound to exact frozen copies; actual tool paths, literal prompts, raw and component bytes unchanged."
+  }
+}

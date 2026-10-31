@@ -1,0 +1,2215 @@
+{
+  "schema_version": 1,
+  "id": "lumen_55",
+  "candidate": "lumen_55_author-a_mesh_v4",
+  "created_at": "2026-10-30T18:50:50.296270+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_55/source.webm",
+  "source_video_sha256": "34710e9895f682e048b69c8825c381c04b31f5b0b42f438814d50fc0c4a36501",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "f33a2106023b9c905a48112922742a90efebf10a88e8d14c4065658f9a8000b3",
+  "derived_source_frames": [
+    {
+      "index": 0,
+      "seconds": 0.0,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_55/source-frames/000.png",
+      "decoded_png_sha256": "c2cff0ce01cb1da6df2fe428395305a46bd4bd839b4ed79b759bfbd1dd3fac08"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "e1a896b4b2905a990577520b00a94b88f2c9a52424013c5cf331af11121b1dbd",
+  "source_frame_count": 84,
+  "source_action_frames": [
+    0
+  ],
+  "method": "shared_local_mesh_v1",
+  "character_semantics": {
+    "core_scene": "A clear small innocent head-down bow, closed smiling eyes, paws behind back, attached little white wings and one tilted gold halo.",
+    "omitted_optional_action": "All incompatible source head transitions omitted. Own curated55v2 was rejected for double eyebrows/nose at after31/47; only clean original0 used.",
+    "reversibility_or_contact": "Both feet planted, neck/torso stable. Halo boundary points move as one coherent hovering prop with crown; wing roots pinned and tips move gently. No halo teleport or limb interchange."
+  },
+  "semantic_tradeoff": "All incompatible source head transitions omitted. Own curated55v2 was rejected for double eyebrows/nose at after31/47; only clean original0 used.",
+  "not_recovered_original_art": true,
+  "not_rigid_global_transform": true,
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "innocent_head_bow_with_following_whole_halo",
+        "small_attached_white_wing_flutter",
+        "hovering_halo_soft_secondary_settle"
+      ]
+    }
+  ],
+  "candidate_sha256": "e6b2b7a216fc444f4cae886f1c043ae95c238eb780148c4cae5a27f9b1899f28",
+  "poster_sha256": "41c04843c7510ba72d28565abb375a992c20dea65f3674a81d006fb74cfd9271",
+  "bytes": 210650,
+  "crf": 34,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "adjacent_composite_mae": [
+    0.2691234052181244,
+    0.3043626844882965,
+    0.30712413787841797,
+    0.28540194034576416,
+    0.20233793556690216,
+    0.25379160046577454,
+    0.2498411387205124,
+    0.34768912196159363,
+    0.21976451575756073,
+    0.46972811222076416,
+    0.36383524537086487,
+    0.5654418468475342,
+    0.5439086556434631,
+    0.6276248097419739,
+    0.6295376420021057,
+    0.6884058117866516,
+    0.6216279864311218,
+    0.6958255171775818,
+    0.6392872333526611,
+    0.795017659664154,
+    0.5980009436607361,
+    0.7466428875923157,
+    0.6941272616386414,
+    0.8486515879631042,
+    0.6803458333015442,
+    0.7840314507484436,
+    0.7622525691986084,
+    0.8186590075492859,
+    0.7327365279197693,
+    0.8763524889945984,
+    0.6139140129089355,
+    0.7751104831695557,
+    0.6252855658531189,
+    0.5469394326210022,
+    0.4674898684024811,
+    0.5412328243255615,
+    0.3991868197917938,
+    0.4086698591709137,
+    0.3780701458454132,
+    0.53469318151474,
+    0.26505348086357117,
+    0.3136267066001892,
+    0.26582884788513184,
+    0.34469711780548096,
+    0.2898814380168915,
+    0.3118509352207184,
+    0.30512526631355286,
+    0.49157747626304626,
+    0.28073665499687195,
+    0.3917524814605713,
+    0.3734031617641449,
+    0.4883356988430023,
+    0.5948581695556641,
+    0.6856806874275208,
+    0.6842598915100098,
+    0.8726143836975098,
+    0.7962434887886047,
+    0.9000542759895325,
+    0.8719480633735657,
+    1.0129643678665161,
+    0.87652587890625,
+    0.9385783076286316,
+    0.8873665928840637,
+    1.0117367506027222,
+    0.8644614219665527,
+    0.9282584190368652,
+    0.9022236466407776,
+    0.9495668411254883,
+    0.8289036154747009,
+    0.9229860901832581,
+    0.6857861876487732,
+    0.7408490180969238,
+    0.5523380637168884,
+    0.5397579669952393,
+    0.3763620853424072,
+    0.3846312463283539,
+    0.20203189551830292,
+    0.24364103376865387,
+    0.2011866420507431,
+    0.33260926604270935,
+    0.17995792627334595,
+    0.39252200722694397,
+    0.3424374759197235
+  ],
+  "seam_composite_mae": 0.3020666539669037,
+  "decoded_png_sha256": [
+    "092dfe78a645cfa3df321c9c966513618fad0164e752966e8bbfc1c2fd4750bc",
+    "3727f7c9409ae5d7e275483350b2adb9af19e5a571d52af7900160a2051c781d",
+    "5538538d78d76b3292a0585d0b62b6146cf0802e6f41b6c8dea916b7be6a9b29",
+    "a896c99404eff23524d81c53bd1eb8f41095e4c7dbf6940ab25786c63fe81f74",
+    "cf7c94ad13952f6d10d55edeabe2c45ccd3c5305547fb4da9c46ff8995f714e3",
+    "2ac0a4c34f3cc845d2adc605945c0975d54da17dab094c6b67c5bd6b279e3af7",
+    "954e3aa626a4a88ec0547878566dc67d742601bcfe51d8d03de7a2fcae7353a5",
+    "e51cac7435770f82ab935cfb586f56d57392b72234e1b19bf2928d78321b41ae",
+    "021d4a3ae6fbcd14204a415378be3c0a9070c4294336f1acab2324f173a6e666",
+    "9cdc27f6c29fba4ab96b3ccda0034929087c763e4c4a909a3a3c5e8a0a1a8521",
+    "d77959d79925ccb1aa92809659c8d7fa5ef1e440f6180745d453f6e6213a70c5",
+    "d5a9b13fe907b123330e8bbceba499f6a7c299c4291824da5c0432fce99f7da3",
+    "f48dbd63f447ab883aa7a06586f32544a9b626a5f74b5044d44c089448fc5c90",
+    "cbc7e92cac4559029516e857974ad087adfd22ea19a3fe7327acff2af086f7db",
+    "aec40634495318a4e31a76bca98d1f3837d83da7783f509b19f26cf02e8816a9",
+    "52c41207e48cef71c888904a3bc6a5d58d0be96fbc8c953e71073ac61eedda75",
+    "fa432626f0881b3245663a190819f30f9b076b7252f2bec740e683dad70cff62",
+    "7438a9313cd7a217345a74b553f2fc00c79450db5c98529a9f6dd55c51d84870",
+    "18236f1b74b65eb8bff3118d18f8c112bd62c86159182eb09629af3af38b6203",
+    "9418545885ae9a01b7f24ec53112899b809e6058c19c42f68451cc688c002bc5",
+    "4b495114579fb9848bb91d7464363feb329860d2178bc80c30afa47ebac187bd",
+    "a75fbced16568d5cca250971e044f59f6e820e783aad6dd3158b42e349de4038",
+    "8c79ea48bc99f0575ac5f470186e87c6c2c080400e56d2ae7d5e46bca8749a28",
+    "af0410e004b1ac5733256d53c46382c4600c243d0757131a3aa0c792c099daf0",
+    "722ba4bc9ad6626874d13ccb92b2299e54f08532886b957ab9b682039ab7df4e",
+    "f6e490df82db536823122aad3202123a95accf13f655ab9205b5025307cf74f5",
+    "11bbaaf312d834209c9b83b641b3ad4fab9f398587c7e00dfd0c6d05bb0be37e",
+    "601bf229239243150cc6b68ab6a10df7a2d6a384ce9ec790d97578dbb4f3a80e",
+    "88b30505708af50d2ba40c64826bacc5349730b8de3517aaff75b9edb04991c6",
+    "90b647bc64f64b5d78e212b10b05fb9db2e69d1caac2840c648954de20900376",
+    "587acf86063636f9134c434750ed127a26bd2d56df874b7392f31149807d8b38",
+    "fe8f52a998744f73c208306f6f040066f03a2478c5d73a2ac51ff59d9a99d493",
+    "4c80684238f9a34376bacf71228c9f7d25f372fdb86da430bfd87b596004fa3d",
+    "a4b15e2364bc0cd13dcff1590080e64de130168355b5d97bf2904f9f1f122760",
+    "b09cf7333d365ec37875e6e2a08ed8726ef3dc1e7bd0aa700ec0490ad769289b",
+    "7bd25ebd7c41bbd32f172418d42ab5ffb55f6e8250ae29e6513be5b033fe0f72",
+    "42beeebd60ce1133b43bcd2ca15fc890f0d75fe03e4027138c22b4ad856cdc81",
+    "47f2f19fbd1c8397c78b941de416129cd848f9eed1c2882192cf103102797a2d",
+    "9d59299aabe00ecbb7ec14bfba6f0af92ed60aa77257aec953a6efed7e5ab60a",
+    "b2d3798e73382caf452a91b9b8181776c8ee060801111e69fd9783021a69e958",
+    "5ff5268192e799db0db7c28504a4624e7706369617e3096b902c492b5a59d91a",
+    "8a6fec6655e863a219710c96f43c6602ba7d97526e18006d80b1131f5cf98d35",
+    "e6960eabaf323a54c92e5c0db594e53628d349ca4626c3b92acf29f504fd01d5",
+    "03729505da149eb6daac09486e1428fb69c91a5c98c3a2f46a7dae2fcf589dfd",
+    "46ef5d948e3687475a46393a39c1207245044017781204250654aea625e0bb78",
+    "ae29345fb800f197d0484db760ce007867c7f1f8ac019811fa715d4b9c26c0f5",
+    "c0d1a1d4e5dd36c1f22f8e5ad1460b29b48a45a8e53cceb4fdedb7a890d0d7c7",
+    "e63760b59cd7109aacdfabb14affa6a88d9a9baac0b460181329894244b24d76",
+    "0bd88e848da32e4c2daf9881ddd038d3595501735d1d783dca3ab1d9131dead4",
+    "bfb0088b794c9852e5d756c778e2464c8094bde3617f1ea8fcf47d5d49c4519a",
+    "b8d8374d4f7d914cfb6be04c3b6aae47f5ad5f45579d84dc20b61218c573e0a4",
+    "3fdedbb8b64259f8dbb1c6e74d2e3800d003198b4095403ede8733e6b7ba5c4a",
+    "7a73f35801d6004b837ce9f2d9236814a22a44e5159e64510f5627886bd5035d",
+    "97cb6a23e47a85e326a9a578bb91fcffc92fcf626b3b5ff324118a0f44d0d2d8",
+    "af1a1dee023c5eceeab9b5997ac228de9176ed97e8a7efae6546b9420669f2f2",
+    "aafda33a0ee76488a26d4c158eed66d75a9c947a0b79b83f374870a5dfe9a45c",
+    "2c42d5321b1e171becb03a30969a9a374d16423512c8ae1e5b118ba7d4ed86f2",
+    "11a8b4852c4a3915e23dd90fcf53039d34f6cfb90afdb0efd67a6d711eea3c5f",
+    "b5987b646aaff726288be00eae18bd25df3e3904f814e59744673f8af9c34aba",
+    "27d5ba944af07f59d337d43508358b3aee462741791500eeb1cd7f9221032c77",
+    "24f87ade0914e08aba1be05716f428c4ce51345a93e3444fdde74688acfd0aa8",
+    "7e53d48f9c31fdea5c6cb788e9c678cfff7eeabeefeacfaf9d8d3852bc3093dc",
+    "959d1bb1faeb9217a7a7deeda761044917f22b82acebfea5e70b47bc69670e63",
+    "5d46711a2f2620a4cdea1e8b2154538b264c835768263723a8c9c0819fcfe680",
+    "f5b298162b8462cb56ee48ce293d05c12d316b9576427427b4af1ee4b5033977",
+    "620da52e147d3fea9e40f93fa1482f42ae613ddb57e52d26af4067247f780b25",
+    "29b6d69abd1795683b2a367ca6f204f5fb8b28bab7276d03091ac6029ae79bfa",
+    "cd006f62a864af05816809384738f28a6e6d7539de517a82ce0056ac1cc4464b",
+    "8a6520262f7d0e3c97152368d8a704a97473b2ec6664c4aeec784bfaee2ad83e",
+    "72ea611c2a39aeb1eeff71acddabe23ca0f9fd4080022ab753e301254eb37a08",
+    "6d00f9c479a69752d5a23fda3e75193be96672aa4bab2121eda9804b1dfacf7f",
+    "af37e51e15f1a0547a45dbb9329b92770e86e0a5d2c4e0b8339fa4c08a136fa1",
+    "bacb9af0e796b34e4a933e2d58d70c22b487decedad351657f6baa0a557d237c",
+    "fdd4f18f4f0c2cd6c9115f6d2f3df86cbcf3c14f931528b2c0a03fac85da6453",
+    "44a9b5126011b1644e47b121efce323c7aeb96ad767c577cddb46e728c405db0",
+    "6dc5358ee30c74aa623027889d2580f3601271197b5c5d23b1549c5f43480a89",
+    "9b2245216f1e25f29bcd9e29fa220ac65679e897a45e22770b02938b7a6eee90",
+    "5397798d644549d71fd8741fc605d0a5f38da349c5818f3a5c7d8cd288c5df3d",
+    "cf49abd508458f9267b0f82dd79a41b9f28867b4de71c154ca0d1fe8c07a14dd",
+    "bf8cd1fd78c31f158bc08dcfd7ff4282f4e2ff6214acb26c254516f83b7d3358",
+    "e449d323c8092a67ec47283293cfc228430d4dd6e56c169a18cb66e5fd7659d5",
+    "38bc2aec60d176aecaa84ad0b18dba06d3f06ec94286ae9cec5a291684ecf430",
+    "9b3578a6ea0f06532dbaf0afb169588163dd804b36ac827159404af409b6f0cb",
+    "a34839a4cf4b4b17989c2e34626899185cd7ff8bdd48a3da04f784d43d2d29c0"
+  ],
+  "decoded_pts_seconds": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "timestamps_monotonic": true,
+  "native_streams": [
+    {
+      "index": 0,
+      "codec_name": "vp9",
+      "codec_long_name": "Google VP9",
+      "profile": "Profile 0",
+      "codec_type": "video",
+      "codec_tag_string": "[0][0][0][0]",
+      "codec_tag": "0x0000",
+      "width": 512,
+      "height": 512,
+      "coded_width": 512,
+      "coded_height": 512,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 0,
+      "sample_aspect_ratio": "1:1",
+      "display_aspect_ratio": "1:1",
+      "pix_fmt": "yuv420p",
+      "level": -99,
+      "color_range": "tv",
+      "field_order": "progressive",
+      "refs": 1,
+      "r_frame_rate": "30/1",
+      "avg_frame_rate": "30/1",
+      "time_base": "1/1000",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "nb_read_frames": "84",
+      "disposition": {
+        "default": 0,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0
+      },
+      "tags": {
+        "alpha_mode": "1",
+        "ENCODER": "Lavc60.31.102 libvpx-vp9",
+        "DURATION": "00:00:02.800000000"
+      }
+    }
+  ],
+  "native_duration": "2.800000",
+  "source_review": {
+    "agent": "/root/artisan_stickers_a",
+    "every_selected_sourceframe_observed": true,
+    "selected_frame_view_scale_px": 256,
+    "native512_frame_indices": [
+      0
+    ],
+    "observation": "Native0 has one clean smiling face, one halo and two attached wings; body/halo bow and wing flutter are distinct named local parts. Meshv3 failed the unchanged0.65Jacobian guard at short neck324;v4 moves neck/medal support6/5px with bow to avoid local compression rather than relaxing the guard. Exact sole source PNG inspected at native512; no source eye/limb/prop ghost accepted.",
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-inspection/meshes/55_anchor0.png"
+    ]
+  },
+  "candidate_visual_review": {
+    "agent": "/root/artisan_stickers_a",
+    "observed_all84_afterframes": true,
+    "frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "complete_review_scale_px": 256,
+    "native512_frame_indices": [
+      0,
+      17,
+      34,
+      59
+    ],
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-candidates/lumen_55_author-a_mesh_v4/after256-0.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_55_author-a_mesh_v4/after256-1.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_55_author-a_mesh_v4/after256-2.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_55_author-a_mesh_v4/after256-3.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_55_author-a_mesh_v4/native-author-0-17-34-59.jpg"
+    ],
+    "observation": "Actually viewed all 84 decoded frames at256 and four native512 frames. Closed smiling eyes keep one eyebrow pair/nose/mouth; the head makes a small innocent bow while halo follows overhead with its own gentle offset and the two wings flutter. Neck and medal follow the bow enough to avoid the rejected v3 short-neck compression. Both feet remain planted; no disappearing halo, duplicated nose/eyebrows or wing tear seen. Motion is deliberately a modest bow/angel flutter, not optional flight or synthetic blink.",
+    "native_realtime_perceptual_playback": false,
+    "slow_perceptual_playback": false,
+    "device_playback": false,
+    "author_verdict": "propose_for_independent_per_item_QA"
+  },
+  "baseline_independent_triage": {
+    "artifact": "docs/qa-1-13/sticker-triage-51-80.json",
+    "verdict": "repair_required",
+    "source_sha256": "34710e9895f682e048b69c8825c381c04b31f5b0b42f438814d50fc0c4a36501",
+    "defects": [
+      {
+        "frames": [
+          23,
+          30
+        ],
+        "reason": "Повернення з уклону накладає два різні нахили голови: f25–29 подвоюють вуха, очі, щоки та німб; за старим положенням німба є темний червонувато-сірий ghost/matte."
+      },
+      {
+        "frames": [
+          34,
+          40
+        ],
+        "reason": "Наступний перехід розчиняє вже весь верх тулуба: f35–39 мають подвійні крильця, плащ і медальйон, очі та вуха; f37 сильно втрачає чіткий одинарний вираз обличчя."
+      }
+    ]
+  },
+  "recipe_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/recipe.json",
+  "recipe_sha256": "584530103d80f91356a8ef161b8b9b83fadca43a9f364a8362671944836aa7ed",
+  "generator_snapshot": {
+    "engine_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+  "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+  "statistics": {
+    "minimum_jacobian": 0.6937353610992432,
+    "maximum_displacement_px": 16.904239654541016
+  },
+  "proposed_description_uk": "Невинно усміхається із заплющеними очима й робить маленький уклін. Білі крильця ледь тремтять на плащику, а кривуватий золотий німб м’яко слідує за голівкою.",
+  "independent_review": "pending",
+  "native_playback": "not_observed",
+  "device_playback": "not_observed",
+  "canonical_assets_changed": false,
+  "local_mesh": {
+    "source_frame": 0,
+    "points_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        511,
+        0
+      ],
+      [
+        0,
+        511
+      ],
+      [
+        511,
+        511
+      ],
+      [
+        256,
+        0
+      ],
+      [
+        0,
+        256
+      ],
+      [
+        511,
+        256
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        268,
+        105
+      ],
+      [
+        126,
+        167
+      ],
+      [
+        383,
+        135
+      ],
+      [
+        182,
+        218
+      ],
+      [
+        338,
+        200
+      ],
+      [
+        259,
+        232
+      ],
+      [
+        256,
+        272
+      ],
+      [
+        136,
+        254
+      ],
+      [
+        387,
+        244
+      ],
+      [
+        260,
+        312
+      ],
+      [
+        260,
+        336
+      ],
+      [
+        265,
+        343
+      ],
+      [
+        265,
+        415
+      ],
+      [
+        211,
+        474
+      ],
+      [
+        331,
+        474
+      ],
+      [
+        105,
+        392
+      ],
+      [
+        415,
+        378
+      ],
+      [
+        133,
+        323
+      ],
+      [
+        88,
+        290
+      ],
+      [
+        382,
+        311
+      ],
+      [
+        426,
+        277
+      ],
+      [
+        165,
+        66
+      ],
+      [
+        242,
+        20
+      ],
+      [
+        287,
+        37
+      ],
+      [
+        231,
+        91
+      ],
+      [
+        123,
+        88
+      ]
+    ],
+    "point_names": [
+      "corner_tl",
+      "corner_tr",
+      "corner_bl",
+      "corner_br",
+      "edge_top",
+      "edge_left",
+      "edge_right",
+      "edge_bottom",
+      "crown",
+      "ear_l",
+      "ear_r",
+      "eye_l",
+      "eye_r",
+      "nose",
+      "smile",
+      "cheek_l",
+      "cheek_r",
+      "jaw",
+      "neck",
+      "medal",
+      "belly",
+      "foot_l",
+      "foot_r",
+      "cape_l",
+      "cape_r",
+      "wing_l_root",
+      "wing_l_tip",
+      "wing_r_root",
+      "wing_r_tip",
+      "halo_l",
+      "halo_top",
+      "halo_r",
+      "halo_bottom",
+      "halo_lines"
+    ],
+    "parts": [
+      {
+        "name": "innocent_head_bow_with_following_whole_halo",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            -1,
+            8
+          ],
+          [
+            1,
+            8
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            15
+          ],
+          [
+            0,
+            14
+          ],
+          [
+            -1,
+            10
+          ],
+          [
+            1,
+            10
+          ],
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            8
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.12,
+            0.4,
+            0.65,
+            0.88,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "small_attached_white_wing_flutter",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            0.5
+          ],
+          [
+            1,
+            0.5
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -2,
+            -3
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            -3
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 3
+        }
+      },
+      {
+        "name": "hovering_halo_soft_secondary_settle",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 2
+        }
+      }
+    ],
+    "minimum_jacobian": 0.65,
+    "fluid_texture": null
+  },
+  "strongest_objection": {
+    "objection": "The small angel bow may compress the short neck or become an almost still halo picture.",
+    "author_response_and_limit": "V3 was rejected by the unchanged0.65 Jacobian guard. V4 follows head-down motion through neck6/medal5px, plus independent attached-wing flutter and whole-halo settle; actual all84 reviewed. The modest innocent bow still needs independent scene/liveliness judgment.",
+    "independent_semantic_QA_required": true
+  },
+  "frozen_native_author_contact_sheet": {
+    "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/native-author-0-17-34-59.jpg",
+    "sha256": "d4f125bb55d275e37fb37e2ee8ed4dd7a7580a868ce495b6d5c00221c49c1128",
+    "native_frame_scale_px": 512,
+    "frame_indices": [
+      0,
+      17,
+      34,
+      59
+    ]
+  },
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/review-normal.mp4",
+      "sha256": "09810903f160bf3996fd94e286f46a4e09e1c1bae3a0b994894630b2a50b4625",
+      "bytes": 224844,
+      "frames": 84,
+      "duration": 2.8,
+      "fps": 30,
+      "perceptually_watched": false
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/review-slow.mp4",
+      "sha256": "b65b816177f8da78f16eeeed2a5e9ee8ee654a2797e7de0f5434497788c8af5f",
+      "bytes": 347815,
+      "frames": 84,
+      "duration": 5.6,
+      "fps": 15,
+      "perceptually_watched": false
+    }
+  ],
+  "reproducibility": {
+    "artifact": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/reproducibility.json",
+    "sha256": "54a61b87600eb443376ddbb5f1dd77b94c80c2703f26d09aa32ebe6d90fd3b85",
+    "raw_rgba_exact_match": true,
+    "encoded_frame_exact_match": true,
+    "canonical_video_read": false,
+    "container_bytes_exact_match": false
+  },
+  "candidate_path": "sticker-lab/production-v5/author_a-mesh8-frozen/lumen_55/candidate.webm",
+  "frozen_at": "2026-10-30T19:07:04.964197+00:00"
+}

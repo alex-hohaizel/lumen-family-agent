@@ -1,0 +1,730 @@
+{
+  "schema_version": 1,
+  "id": "lumen_138",
+  "candidate": "lumen_138_explicit_layers_v1",
+  "candidate_id": "lumen_138_explicit_layers_v1",
+  "actual_author": "/root/artisan_layers_resume",
+  "original_art_author": "/root/artisan_stickers_occlusion",
+  "status": "author_verified_pending_independent_qa",
+  "method": "Explicit generated component composition; deterministic rigid limb parts, premultiplied source-pixel transforms and authored opaque occlusion; no whole-frame dissolve.",
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "description_uk": "Ховає мордочку під непрозорим білим простирадлом з одним намальованим обличчям привида, піднімає його назад до каптура, визирає з усмішкою і махає відкритою лапкою.",
+  "proposed_description_uk": "Ховає мордочку під непрозорим білим простирадлом з одним намальованим обличчям привида, піднімає його назад до каптура, визирає з усмішкою і махає відкритою лапкою.",
+  "source_kind": "generated_layer_components",
+  "source_provenance": {
+    "kind": "generated_layer_components",
+    "baseline_video_path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/baseline-source.webm",
+    "baseline_video_sha256": "c3459b3c2642cf4b43995a46af8d504f93cc7d6935ebb6d447f97f268fe460f8",
+    "ancestor_original_keyposes_sha256": "e52c9abd873586544f27b8e84254907131458401416775b47676f706ad7a0cd8",
+    "ancestor_original_status": "unresolved_original_not_recovered",
+    "baseline_frames": [
+      {
+        "frame_index": 0,
+        "timestamp_seconds": 0.0,
+        "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/input-scene_revealed.png",
+        "sha256": "925ed27bc4c91829d71e348b46e537ff8bf7563f152225a480d33f6d5022e3ab",
+        "kind": "decoded_baseline_video_frame"
+      },
+      {
+        "frame_index": 22,
+        "timestamp_seconds": 0.7333333333333333,
+        "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/input-scene_covered.png",
+        "sha256": "dd29770fc05ecbdcfb5bf842b50d00ed1fc92e964425d84e51bb0f52a23eb9c3",
+        "kind": "decoded_baseline_video_frame"
+      }
+    ],
+    "generation": {
+      "tool": "built-in image_gen.imagegen",
+      "actual_agent_id": "/root/artisan_stickers_occlusion",
+      "operation": "layer_component_generation_and_targeted_source_edits",
+      "metadata_path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/generation.json",
+      "metadata_sha256": "a966f48b28068b26b0058dbf0006c68e44fc0f8dba65b05c6fdcfd94a954c784",
+      "raw_outputs": [
+        {
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/generated-layer-atlas.png",
+          "sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+          "size": [
+            1254,
+            1254
+          ],
+          "actual_tool_returned_path": "generated_images/exec-0138e113-d7c4-4875-a91b-55f4130b4156.png"
+        },
+        {
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/generated-blank-hood-atlas.png",
+          "sha256": "07104f9d4678602827479969d7c12498f9977d5b8ee4487af7bcd2108c538bf5",
+          "size": [
+            1254,
+            1254
+          ],
+          "actual_tool_returned_path": "generated_images/exec-769889f9-6deb-4beb-9f93-9c09aa25842a.png"
+        },
+        {
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/generated-upper-arm.png",
+          "sha256": "83e896aa3bcd816d6ffe058ab6bfed0fab27b869d9074ffd0a6b2b7a12f16d8e",
+          "size": [
+            1536,
+            1024
+          ],
+          "actual_tool_returned_path": "generated_images/exec-96dfad66-8e7a-4642-90ce-c5a78788d0a2.png"
+        }
+      ],
+      "literal_prompts_preserved": true,
+      "operation_chain_count": 3,
+      "input_references": [
+        {
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/generated-layer-atlas.png",
+          "sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+          "role": "edit_target",
+          "operation_ids": [
+            "138-remove-underhood-painted-marks"
+          ]
+        },
+        {
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/input-identity.png",
+          "sha256": "f6d1c671b6653dda929fbaedab98b6e381991a72c0d6ff2d483d38763b22f21d",
+          "role": "identity",
+          "operation_ids": [
+            "138-initial-components"
+          ]
+        },
+        {
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/input-scene_covered.png",
+          "sha256": "dd29770fc05ecbdcfb5bf842b50d00ed1fc92e964425d84e51bb0f52a23eb9c3",
+          "role": "scene_covered",
+          "operation_ids": [
+            "138-initial-components"
+          ]
+        },
+        {
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/input-scene_revealed.png",
+          "sha256": "925ed27bc4c91829d71e348b46e537ff8bf7563f152225a480d33f6d5022e3ab",
+          "role": "scene_revealed",
+          "operation_ids": [
+            "138-initial-components"
+          ]
+        },
+        {
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/input-upper-style-132.png",
+          "sha256": "81418caf3e15dad4849f1492135e0103239bc8684d7136bfbdc3a4417e7924d8",
+          "role": "style_reference_132",
+          "operation_ids": [
+            "shared-cream-upper-arm"
+          ]
+        },
+        {
+          "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/input-upper-style-138.png",
+          "sha256": "07104f9d4678602827479969d7c12498f9977d5b8ee4487af7bcd2108c538bf5",
+          "role": "style_reference_138",
+          "operation_ids": [
+            "shared-cream-upper-arm"
+          ]
+        }
+      ]
+    },
+    "anchors": [
+      {
+        "key": "arm_left",
+        "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/arm_left.png",
+        "sha256": "9f3e97e9733ca1c0c65e9d0ed32aab3844cf1685736b1934b48f7337cbf572fc",
+        "width": 314,
+        "height": 332,
+        "origin": "generated_layer_components",
+        "original_video_timestamp": null,
+        "derivation": {
+          "raw_output_sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+          "crop_box_xyxy": [
+            805,
+            218,
+            1119,
+            550
+          ],
+          "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+          "resize": null,
+          "padding": null
+        }
+      },
+      {
+        "key": "arm_right",
+        "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/arm_right.png",
+        "sha256": "5f054289232b62f50935458a89211ca132eae8a47e659aceb99e186ca3b5f2e3",
+        "width": 308,
+        "height": 292,
+        "origin": "generated_layer_components",
+        "original_video_timestamp": null,
+        "derivation": {
+          "raw_output_sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+          "crop_box_xyxy": [
+            173,
+            829,
+            481,
+            1121
+          ],
+          "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+          "resize": null,
+          "padding": null
+        }
+      },
+      {
+        "key": "body",
+        "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/body.png",
+        "sha256": "3cdaed7057dfb165e6dd6137894bda85ba04d2c89fc166e6f0d9572822156c9b",
+        "width": 599,
+        "height": 613,
+        "origin": "generated_layer_components",
+        "original_video_timestamp": null,
+        "derivation": {
+          "raw_output_sha256": "07104f9d4678602827479969d7c12498f9977d5b8ee4487af7bcd2108c538bf5",
+          "crop_box_xyxy": [
+            41,
+            36,
+            640,
+            649
+          ],
+          "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+          "resize": null,
+          "padding": null
+        }
+      },
+      {
+        "key": "cloth",
+        "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/cloth.png",
+        "sha256": "1c256f7eac05619835438f4acf839861f2d482a508f0df083c41af53036a178c",
+        "width": 625,
+        "height": 515,
+        "origin": "generated_layer_components",
+        "original_video_timestamp": null,
+        "derivation": {
+          "raw_output_sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+          "crop_box_xyxy": [
+            616,
+            684,
+            1241,
+            1199
+          ],
+          "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+          "resize": null,
+          "padding": null
+        }
+      },
+      {
+        "key": "upper_arm",
+        "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/upper_arm.png",
+        "sha256": "85b69eaa79f3ac6472f039598133fe3bf95f58852dc14631193d3c0e8966e066",
+        "width": 843,
+        "height": 766,
+        "origin": "generated_layer_components",
+        "original_video_timestamp": null,
+        "derivation": {
+          "raw_output_sha256": "83e896aa3bcd816d6ffe058ab6bfed0fab27b869d9074ffd0a6b2b7a12f16d8e",
+          "crop_box_xyxy": [
+            381,
+            144,
+            1224,
+            910
+          ],
+          "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+          "resize": null,
+          "padding": null
+        }
+      }
+    ],
+    "generated_source_bundle_sha256": "37dc2ed6b8442a98c35851541278eb8eb15f81acf8fdb06a3f57c0697364e8d6",
+    "generated_source_bundle_algorithm": "sha256 of ASCII concatenation of exact component PNG SHA256 hex strings sorted by anchor key",
+    "not_recovered_original_art": true,
+    "not_original_keyposes": true,
+    "technical_derivation": "Only declared rectangle crops; rendered source-pixel segmentation/affine transforms and explicit opaque depth ordering. No Python repaint or clone-fill."
+  },
+  "ancestor_original_keyposes_sha256": "e52c9abd873586544f27b8e84254907131458401416775b47676f706ad7a0cd8",
+  "source_anchors": [
+    {
+      "key": "arm_left",
+      "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/arm_left.png",
+      "sha256": "9f3e97e9733ca1c0c65e9d0ed32aab3844cf1685736b1934b48f7337cbf572fc",
+      "width": 314,
+      "height": 332,
+      "origin": "generated_layer_components",
+      "original_video_timestamp": null,
+      "derivation": {
+        "raw_output_sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+        "crop_box_xyxy": [
+          805,
+          218,
+          1119,
+          550
+        ],
+        "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+        "resize": null,
+        "padding": null
+      }
+    },
+    {
+      "key": "arm_right",
+      "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/arm_right.png",
+      "sha256": "5f054289232b62f50935458a89211ca132eae8a47e659aceb99e186ca3b5f2e3",
+      "width": 308,
+      "height": 292,
+      "origin": "generated_layer_components",
+      "original_video_timestamp": null,
+      "derivation": {
+        "raw_output_sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+        "crop_box_xyxy": [
+          173,
+          829,
+          481,
+          1121
+        ],
+        "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+        "resize": null,
+        "padding": null
+      }
+    },
+    {
+      "key": "body",
+      "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/body.png",
+      "sha256": "3cdaed7057dfb165e6dd6137894bda85ba04d2c89fc166e6f0d9572822156c9b",
+      "width": 599,
+      "height": 613,
+      "origin": "generated_layer_components",
+      "original_video_timestamp": null,
+      "derivation": {
+        "raw_output_sha256": "07104f9d4678602827479969d7c12498f9977d5b8ee4487af7bcd2108c538bf5",
+        "crop_box_xyxy": [
+          41,
+          36,
+          640,
+          649
+        ],
+        "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+        "resize": null,
+        "padding": null
+      }
+    },
+    {
+      "key": "cloth",
+      "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/cloth.png",
+      "sha256": "1c256f7eac05619835438f4acf839861f2d482a508f0df083c41af53036a178c",
+      "width": 625,
+      "height": 515,
+      "origin": "generated_layer_components",
+      "original_video_timestamp": null,
+      "derivation": {
+        "raw_output_sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+        "crop_box_xyxy": [
+          616,
+          684,
+          1241,
+          1199
+        ],
+        "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+        "resize": null,
+        "padding": null
+      }
+    },
+    {
+      "key": "upper_arm",
+      "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/sources/upper_arm.png",
+      "sha256": "85b69eaa79f3ac6472f039598133fe3bf95f58852dc14631193d3c0e8966e066",
+      "width": 843,
+      "height": 766,
+      "origin": "generated_layer_components",
+      "original_video_timestamp": null,
+      "derivation": {
+        "raw_output_sha256": "83e896aa3bcd816d6ffe058ab6bfed0fab27b869d9074ffd0a6b2b7a12f16d8e",
+        "crop_box_xyxy": [
+          381,
+          144,
+          1224,
+          910
+        ],
+        "operation": "Pillow exact rectangular crop only; no repaint, recolor, alpha reconstruction or hidden-content cloning",
+        "resize": null,
+        "padding": null
+      }
+    }
+  ],
+  "generated_source_bundle_sha256": "37dc2ed6b8442a98c35851541278eb8eb15f81acf8fdb06a3f57c0697364e8d6",
+  "baseline_video_sha256": "c3459b3c2642cf4b43995a46af8d504f93cc7d6935ebb6d447f97f268fe460f8",
+  "source_video_sha256": "c3459b3c2642cf4b43995a46af8d504f93cc7d6935ebb6d447f97f268fe460f8",
+  "candidate_sha256": "72f89a1f627db588e7d62e1248778a919558a06e6c222058c89cee5483ae71fb",
+  "output_sha256": "72f89a1f627db588e7d62e1248778a919558a06e6c222058c89cee5483ae71fb",
+  "output_bytes": 251307,
+  "poster_sha256": "e90213d3db942f4806a2a5e95ad3c96ada204e75e0d58520200f544f6a4d13df",
+  "poster_frame_index": 24,
+  "frames_rgba_png_sha256": [
+    "1a069656cb7dc10ef23eaac614936f8e7ca33de370086dfccc50b64366827e8e",
+    "75e8d4bcc2d4d8e37895f3cfafc67bd90743ed115afa33fc99160d66b0606029",
+    "61cd9fa6a64e1c0e459319bae5a3d86f7f506a4ae3e233cf2fd282ab13c48526",
+    "369daf2a3aad77d21d05628a884ef2e709b6d729cc600d25283c9e118f2626f9",
+    "76f9e16cb98668e52826bf85414919d55f15b0cb29282623f9c50ccf5dcdfbf7",
+    "dd679358ef4f2d96bd95793cd309029e5063c363ea1f52e5365f3fa3d276087d",
+    "349e0344d80d4693a163490fa114d7f54218232e665101dbe32a7ff24b935a16",
+    "73bdcea43f35945b1c8081fc0250f2902ce92710c777dbde12d11024d4708d58",
+    "bfc31b584a9e66fe303b3b90070d09a0d99c5a4cb032abea7a6f674efa30a93c",
+    "e041599cd2e015e68ad9dce8d7c56733055e9978fef6904f270d66c91834b3fd",
+    "b42ee149dbc061cc0b12059f30676091661cf4254d7a7b2ddb0a335fadad1de2",
+    "7330dfbc6f3aae0712be179007c793e1d7805901a47838075fee97dc4ad1bc8c",
+    "7d21ae3b487de02c2f3f383c9595f634461da770eb42038477ea81dacefc6780",
+    "e0a51049157879feb3779e4c455dc2652a6b341149dfe7cffaa18b1c968529d6",
+    "7d1df861c6583dfb66820a02992b59f848037172722cdc39d1e365819b20d60b",
+    "705d762e07ef17fbd7c3f355cbe0f5a3121ee926e1360d2618c651f7b9f32253",
+    "44c9a15974a3f35aa18bda93b0bdaec391ec9129b758ed236f3cdc213691c829",
+    "a33c4205be2790edda3a16092ee160af2a350428875a43047820ea93022e87f2",
+    "1f09c988ebe2ca1345ac8dab2edf21b29483101c3bd203c05aa556e2d95dc4c9",
+    "02a087beea51833ab76a618a95d7582f8c7c5d009957635d3487d90ffe23133b",
+    "495985fc1e178e38e5f39917fc13b8eccd729f46c620983ef194a9b6afc7c287",
+    "495985fc1e178e38e5f39917fc13b8eccd729f46c620983ef194a9b6afc7c287",
+    "495985fc1e178e38e5f39917fc13b8eccd729f46c620983ef194a9b6afc7c287",
+    "495985fc1e178e38e5f39917fc13b8eccd729f46c620983ef194a9b6afc7c287",
+    "495985fc1e178e38e5f39917fc13b8eccd729f46c620983ef194a9b6afc7c287",
+    "495985fc1e178e38e5f39917fc13b8eccd729f46c620983ef194a9b6afc7c287",
+    "495985fc1e178e38e5f39917fc13b8eccd729f46c620983ef194a9b6afc7c287",
+    "495985fc1e178e38e5f39917fc13b8eccd729f46c620983ef194a9b6afc7c287",
+    "495985fc1e178e38e5f39917fc13b8eccd729f46c620983ef194a9b6afc7c287",
+    "495985fc1e178e38e5f39917fc13b8eccd729f46c620983ef194a9b6afc7c287",
+    "495985fc1e178e38e5f39917fc13b8eccd729f46c620983ef194a9b6afc7c287",
+    "0ae0befa11eeb4d801a75bba49e0cda295a0eed1fa55fbb9a8bc3f9268ed2dd6",
+    "8397679e542e6a4b6cf640dc6425683fa773b8767ead7e10427d6ad244c4704d",
+    "885573d3c3763463c4f0151758132348c6f2889c9a3c0583bc1943e122574dcf",
+    "883c6ce9bd058896217c45748c3c5f929d0d5768702b67bff177b9219965fdb8",
+    "4f1715a0f5985f3259ee6c943efd67cf1b54bdc939d71fd8695c2c084c1f82a9",
+    "e4962d0c1749acc13e0d328a95e41dec1b3b50775650b748f56508d71b58f014",
+    "9a9f609c8bbc8c2b506a1c948c333de3ee07dd34192887a4eecb3cbac7c13a1e",
+    "7500e4e45e579dd6aba35438851a502b85c36b19c1827d6765c81bd664f06b1c",
+    "5cfdfec1ee332b9dee631859713483cd7dc9476f1e02819e3cbd64e1848530a2",
+    "0716e8f17959c72b3129d6c2f51645ca97424f1ff8fa7f6e289be14c53ba42b1",
+    "0ef3fddc945f6797f20242dc191de6f168aa6279ff22e644f060627284bfcedf",
+    "2d4472ad3fc5cdd83990b832aa97b2c16271a2b158203a4b7e38328468e394eb",
+    "a186e5a742097a727aad735df059888c13434f299835a704c9c2aa27a51b89fb",
+    "bc892b725a6d0f53e7697fca6da2a3295def3b042f2acf1492cc248e890cb1d4",
+    "35bd64a626d9ae21c31f9481841a86cd9f60c7ed2059b2d59579a3b05fc5edae",
+    "c0867a8bfadaeb3fdd7bd1e2f30ae5f67f4e9330ffeceb4de863b614af403ecb",
+    "a8861672c02e3ca06bd74c31deebf3cfeffefb279e43f92aeec70e25dee3de3d",
+    "dc1f0808dbbbd7d7bc4b6cee67d8aa9a968746e07f0b8633e1da1433baeecf5d",
+    "9edcdbf9d54ebaa9bd8e1ea1694d9180cc4bfc3bff9a30ad6d797601712d8f81",
+    "ac436b793d012fffe0ca81a282ab48d0d05bbff3e7ce6d80bcf2e302fba4af79",
+    "864aa1533284b5fed6e289fb3749b1744c0031d083ccce323abf8134f2831505",
+    "dfdeb700f74ec503cc1a0d16930848f4f00445033f18e8ed4849a56589d78804",
+    "c05e1290db253dcec17f727440d3eab4a8658ec9c409a01b620310bbf418aba6",
+    "1a069656cb7dc10ef23eaac614936f8e7ca33de370086dfccc50b64366827e8e",
+    "1a069656cb7dc10ef23eaac614936f8e7ca33de370086dfccc50b64366827e8e",
+    "0f694a30d4dc60c99123a755776e90da4de6750c7d94e0fa5319e5815b47139d",
+    "29198987f7e9ff4c8b9eafe35d0a86197329535033e5eccecbf5f09c6fc30fdf",
+    "74cb79798e7d5a7c064fc7f9c48d4db5df6dba4311da439d58096910988982e5",
+    "dd37ceeb928cafa8ee8a9dd9d80401151e5edf5df24d3145c26da5e1afc8d935",
+    "238102b419c30e7e33095cdb816b498f82c0ded3d19c761c271ac1fd5c5ed779",
+    "d9ec1b71193f229e6a84df8801a44762cddd71263574827b300bca7304d83c8b",
+    "d393ed5b9de8521a257986b769f5c66fa71cac4602301b74489c494633612455",
+    "93278fca0b9deab894475d3977b187e270674c545b6cf48b23fb596151e13987",
+    "7336266ffc15e2e5b1e78b1f59c3de6b4734114939f0d1ce6991140bbf516d70",
+    "4b99dde2cdd33ae66375925c2fb015c411ae7b3888f9260792c79a7c108eab4f",
+    "5817a1e0517f8c3349d0978dfa935f17fc179830985ab4e8e5d00071f57121c8",
+    "aa9ff720e37849e76468f03e312c8dcaff44efe3b87a4dcb97ccac2401a006f1",
+    "229300b81e063aa458855a19ddce996d8712761af828ab7adae5bd5e8418ab6d",
+    "c636dd2d060efac813c582534c5981f121b4e660b74367110e112f9eef6be7ae",
+    "95aa35c57273f9aa54efbeb3fc5f89af697c74e02852110523282c263bf59d42",
+    "ff1803c9aafecab07ca01c11890f44acf1c891dc45e54da5be1812721403d3e2",
+    "915853a5752f3bde5e02ca9a253404439f2b5f5596b9cbce7fb3fe7782490941",
+    "317476062c9b3a9923dc9f4097dc4d96d7ecc387bc85bb034e1598910ad6a7f9",
+    "4a2493c3d43031fafaaadb14ed08fafeb306b9347c20375f8af5363d707165b9",
+    "009faf9b1ab615c17f0b2516c59a1f65e5fbaac4038b9938c3e6f7b785b2b87a",
+    "09751246f9ade92356798d1ae94abe8067c94cf41f47800a1420b3bf0521d022",
+    "682a02204462c60c694cc486e6f1ebc6be9603b03f4da35adc36fb51d134817d",
+    "d7e2a3179a2bdb878c9df8e3e92855bbbacbf3b3edcab063df022d377c443298",
+    "1a069656cb7dc10ef23eaac614936f8e7ca33de370086dfccc50b64366827e8e",
+    "1a069656cb7dc10ef23eaac614936f8e7ca33de370086dfccc50b64366827e8e",
+    "1a069656cb7dc10ef23eaac614936f8e7ca33de370086dfccc50b64366827e8e",
+    "1a069656cb7dc10ef23eaac614936f8e7ca33de370086dfccc50b64366827e8e",
+    "1a069656cb7dc10ef23eaac614936f8e7ca33de370086dfccc50b64366827e8e"
+  ],
+  "decoded_png_sha256": [
+    "8fb277009b82797227da012b8280a959be05ac3ad3e2a4e0b932ee35330a4179",
+    "5c77be4e9bb30551f07b3f7f5b010b4a56657420c041f94cc5f616a4ea144090",
+    "dd40233463db04af7e856c5988874a93ffde025630fe06d1a3a8e49f261f6e11",
+    "f02c0b268557cde664458f5a94713e9093c8774b946e5f1754efa44604ff742a",
+    "71418ec7e84029ca332bdcacc115194807d204d53f3dd3b8a7f8646de3567499",
+    "60fa11eaa587cd50f1e0f84ae86bcd1a916e12d45abaa201ce9c066be32f4a8d",
+    "480a8d327875509f9e653ad0c472324f5eea2be3484eb1e3358ec1cbc91d2a90",
+    "581452a2be3715bb68c022d52657c6b1d5483babfda2b2fda1b47df7224b38a0",
+    "3be270a4ec2018a73fd2e9f5bac7a98013be286612954e6cd8e2eb3351c8cf0c",
+    "eb821ce7f330d53eca22b5569f8d890f5b40cd7fe10955d64e4c5a6e32d4918c",
+    "f2e89cc3d2cb10d59a40199f0097c4bbe340d24c8cb511a2142c5082aab1f326",
+    "bf2e92f9dea4aa675880d2b06daed3641040a235c22fb8bedcc3513515b87ef2",
+    "49046cce617b2264fac1c969848cd4cc63f965d4087534d5f49e3f432bbd2e21",
+    "a782808026bf0ab2a41402a64f6df6c983de0a478b76e275ac12bd4cc5ddf53c",
+    "67ec9d4725ee4f6d92b0ac179c263335ecf5f54b56641dbb468c4a394805fa47",
+    "5527030345dfa069b8cedb61f3e79b96296096593b5a55d665e2a258e3294ccd",
+    "2397322af42e8ea26b34e4c811018ce5f380604b5537591802f87f6c58244ccc",
+    "b62cb7e2d6b960f3be86f712912377f3890cad5471a0c0efe4017fbe91d94abc",
+    "a902a6c48ed6f4ec5768977e3bf6302ad67fafcca0783cb0a7f339869662a71e",
+    "bf9e4848b21d064c061107f5d0c8e8e6537cc462f0608cfac6db11b7b13c402b",
+    "0fc91358387f6cac439144231b5e6b1d8138eb4f052c2205fca446ac8a4cffed",
+    "0907fa1ec9d3d9e3b603958ac53cf5bf3bcaf16714bf70c7450268c0cf330640",
+    "67e8aa65c97f8c1908c705378e83209be4416a551004f465eae464e4cd7b7efe",
+    "67e8aa65c97f8c1908c705378e83209be4416a551004f465eae464e4cd7b7efe",
+    "e90213d3db942f4806a2a5e95ad3c96ada204e75e0d58520200f544f6a4d13df",
+    "e90213d3db942f4806a2a5e95ad3c96ada204e75e0d58520200f544f6a4d13df",
+    "e90213d3db942f4806a2a5e95ad3c96ada204e75e0d58520200f544f6a4d13df",
+    "e90213d3db942f4806a2a5e95ad3c96ada204e75e0d58520200f544f6a4d13df",
+    "c131cbe705a03083f289e397ef609e5c2cbd1dcd2265fcfd145bd060777ee338",
+    "c131cbe705a03083f289e397ef609e5c2cbd1dcd2265fcfd145bd060777ee338",
+    "1ec45ee4b4018c0f81d9fea3d6a1f2885b0e4fb3517b76e75496bc2c09eaaa9b",
+    "4d5c47227094b11ea4922ae501dd5432159d1799473a09399b9ae5849370ee34",
+    "df93eb3f3a76f6a40448ca38929773d21fb9db0875da9fd1d04c6c1558d9db89",
+    "7d8034d338e76d55f5580e939014eb420e4b2f56c9f30ce833d0d39451cfb507",
+    "7c3a215a68433e9d7ca270c455bf757fd8dabacfe95fcc2597be1d1007b4c8f5",
+    "d477b74b1ff273eb83ca5104863f34854c90bdad0769512e063620ddaa536ecc",
+    "bf3819a810c8457242ad58d5c589b5ceddfcf8bba735e92b2fb7708a3515968c",
+    "ce0d62a0eb4fac94b39a4ef7cef29b772119ac653799e27f01868550414ef849",
+    "1476312eb5c472eb0e2df4207a7cc7e06ee157eff7594791c21e6f304264ec74",
+    "b3757f2b645e0944ee5e6d34c2a47a93049b3d0c4457b7ca7a043db28f62c722",
+    "3924ea1abddab0e404e13d880af898234e9e80be5d84e07b1815c625ebfead31",
+    "efc04b2f08b0915157bbfbfe88a476b0eabc7eba344522fe2815170cf1de488a",
+    "6338040c5512b7526d290aa78dd73f6c6d3e400a9a302e0507e381baca08a4e0",
+    "b1ac114d7a7c5f40bf77740d6ffa3daf2fd339cc74722c244a78d18aaab8f67f",
+    "791143692de1f86fa1b49db025e0f6e510a049374de66981d5925750487d7ecc",
+    "f77afe5491b86169942b1a438a690e60c20cc4444fbc69a398105a11133376a7",
+    "ac51dd38588c5e899958546fc57b893f68e4b5f6c5c8db41f928fe637a7a9ef7",
+    "ffe52f6e3cc75d88af8803b23b6da1d56e9274c9dcd58ffe1a9f89b21ff6f813",
+    "36fb1b9e47b40ca75b12e493f9d0d1c76c532a4e35bbdcf53088c36745db3a5f",
+    "26e8258d0dedefc57002d5d8d3c620473224ec7e0528682b0219ff411d7bda5c",
+    "dfbbd09a9905d2b567220929259e9faa452058f20917bb8b6b6eaaa2237c924f",
+    "5c9acd531a65820dd5a395b704c335c6234cfceeab07b396337935f22c36cf81",
+    "30f9b29f333bce5b7b39521fb6e1449af6df5217efef2952379ec1b766caedff",
+    "ddd4c9970616b4c32b15409595d4090d41fe9045a971620fe33d4cf19fd38cfb",
+    "574e1343a58dcb082439304d95448505c7b19c56003cace75099338b53f01ebc",
+    "574e1343a58dcb082439304d95448505c7b19c56003cace75099338b53f01ebc",
+    "cc59b7ab53d81b20b1c86a17f1fcabed714f364a0a38c7b5791562bfa37ee6e1",
+    "0edf511b395a1e853ed1ee30c7516b2dd8e7f6e1d828733273e0c3ee4444ae31",
+    "22b12dbc6bb62748a794416e55f96f9d4b8e1347c17feefc26372ccbd7a10532",
+    "9b641fe7c299af71dd1fa02c62df9db0c8f3731feb9411a9c7c95fbc984494e1",
+    "639093bd8deb9ba691eeaabfc6c8e3292b8cf54d730b7e9b3175abb6257d0413",
+    "aa1eda279168556869c16df619d69ad007efcb22b0e87e149bda9a753e9699f1",
+    "0e8e1ebecfc4463fc9285c197042f0e0e85abe26615386e9c9e1123352ca52b5",
+    "4c82594c43a9083bfae1203e8353bd9ed4a6c967d0c90a71fb6474370600dcb6",
+    "016c2fba227e14bf49e00df7e056a2e70313ccfa37f272121d7d4721e29233a1",
+    "ab410b5e6027cfa5a8b01c30b780cc4ff2730ed79d9d1c638ef7929859fcc336",
+    "b369068be69baf8646d02e603d96530c8245b6c27e63863a0f0a1b9d2e6a899b",
+    "76f1b2024ccbacd96eb95151438e705ba633809b92e6e4d587374738a9cc6cc4",
+    "4162d81522cc247a633bbafaa7018b8852041a2f64e877c4e58ba9ae94a346ee",
+    "b2095b87eea553e77f6468f35101f684bce1b7a2c3e8a63e63faa77cd4b249fe",
+    "b6374b2f2c146b0ea8b4f89809d7085fe9e320b7a74f77dd50b0c05752e51d9d",
+    "aeaf659ad7fdf8342eda811a0fd566531b1b0fa2b25ce1f43b29a4b443a6c991",
+    "60cc2230efbc079dca6b65b1c91e1d5898e3228e14076a3367e9a9c440df1000",
+    "80a305f7fe5c7d1a5bcfad3fadb46dbc63692c8c026f145aa40982afe6220e4e",
+    "0cf1ecdbb6af72472e0db01d2cb3bfa77dec95369869dcb2647ab99b2d8ace2c",
+    "6bae5d827469f5187142c99e947f65b913ccf60671bf4373ea17e1c016dca25f",
+    "749ab734a3f9ccc8d18782010f21be4280f7d99d8252df413aa01e6062d35631",
+    "8a514847c6fd7444de99fc8326917b10d58104cf622e5021cbd64352e5733503",
+    "6f9e7ec6e80c7667b2a2531af039fcaaa74d8e0bc97c16430633df77175c900c",
+    "e929a7c1015470afd9432f1419c9ee22f9232e2ba4d7c82e05d32407d373d829",
+    "1d577b1a0d45e9702169fb3809134609fe2452c9881ece4bc91a1c45fcb00fbe",
+    "1d577b1a0d45e9702169fb3809134609fe2452c9881ece4bc91a1c45fcb00fbe",
+    "1d577b1a0d45e9702169fb3809134609fe2452c9881ece4bc91a1c45fcb00fbe",
+    "1d577b1a0d45e9702169fb3809134609fe2452c9881ece4bc91a1c45fcb00fbe"
+  ],
+  "recipe_path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/recipe.json",
+  "recipe_sha256": "249b98cd012e312bf2416f192ec2b14c983b7b7cf4a39e9a1e2bdc22de9002fb",
+  "source_contract_path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/source-contract.json",
+  "source_contract_sha256": "3b0d4049fbd0c6cbe9692bc93f4db389d82609c78a257726709c70c5a82b900f",
+  "reproducibility_path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/reproducibility.json",
+  "reproducibility_sha256": "1cb9e9e91c396e42d5c596dc0597a7dffb062876d588bb3a8dabde2f8da8de55",
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/review-normal.mp4",
+      "sha256": "5a2390ef8317764410aaca012ccbb3f719228ed69df9d279e995a2f97cd5e96e",
+      "bytes": 139900,
+      "frames": 84,
+      "fps": 30,
+      "duration": 2.8,
+      "actual_final_path_full_decode": true,
+      "all84_source_view_rgb_correspondence_max_mae": 1.7972882588704426,
+      "ffprobe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "width": 512,
+            "height": 512,
+            "coded_width": 512,
+            "coded_height": 512,
+            "closed_captions": 0,
+            "film_grain": 0,
+            "has_b_frames": 2,
+            "pix_fmt": "yuv420p",
+            "level": 30,
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "refs": 4,
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 43008,
+            "duration": "2.800000",
+            "bit_rate": "394405",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "84",
+            "nb_read_frames": "84",
+            "extradata_size": 45,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "VideoHandler",
+              "vendor_id": "[0][0][0][0]",
+              "encoder": "Lavc60.31.102 libx264"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/workspace/scratch/342fb2c985cb/lumen/sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/review-normal.mp4",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "2.800000",
+          "size": "139900",
+          "bit_rate": "399714",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf60.16.100"
+          }
+        }
+      }
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/lumen_138/review-slow.mp4",
+      "sha256": "bd830b6f4a79419d948f6ba14190f1185cc5978b6d70c5d973b1eeac1e43b0a4",
+      "bytes": 180583,
+      "frames": 84,
+      "fps": 15,
+      "duration": 5.6,
+      "actual_final_path_full_decode": true,
+      "all84_source_view_rgb_correspondence_max_mae": 1.6779123942057292,
+      "ffprobe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "width": 512,
+            "height": 512,
+            "coded_width": 512,
+            "coded_height": 512,
+            "closed_captions": 0,
+            "film_grain": 0,
+            "has_b_frames": 2,
+            "pix_fmt": "yuv420p",
+            "level": 22,
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "refs": 4,
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "15/1",
+            "avg_frame_rate": "15/1",
+            "time_base": "1/15360",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 86016,
+            "duration": "5.600000",
+            "bit_rate": "255321",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "84",
+            "nb_read_frames": "84",
+            "extradata_size": 45,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "VideoHandler",
+              "vendor_id": "[0][0][0][0]",
+              "encoder": "Lavc60.31.102 libx264"
+            }
+          }
+        ],
+        "format": {
+          "filename": "/workspace/scratch/342fb2c985cb/lumen/sticker-lab/production-v5/occlusion_c-frozen-batch1/lumen_138/review-slow.mp4",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "5.600000",
+          "size": "180583",
+          "bit_rate": "257975",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf60.16.100"
+          }
+        }
+      }
+    }
+  ],
+  "author_review_path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/author-review.json",
+  "author_review_sha256": "d64c1c0f856f34ee0447edf664b3b525383a03581170b75835fda1c55dc1d1d2",
+  "source_readback_path": "sticker-lab/production-v5/occlusion_c-resumed-r2-frozen/source-readback-correction.json",
+  "source_readback_sha256": "449fb5422d57f1c2b37c4753de7b22563233a74050d1312330b3d297665bb71b",
+  "scope": "Actual final frame sequences and source readback; native realtime/slowed/device perception not observed. No independent approval.",
+  "canonical_video_read": false,
+  "canonical_assets_changed": false
+}

@@ -1,0 +1,2373 @@
+{
+  "schema_version": 1,
+  "id": "lumen_70",
+  "candidate": "lumen_70_author-a_mesh_v2",
+  "created_at": "2026-10-30T19:25:19.589701+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_70/source.webm",
+  "source_video_sha256": "613a696f574886fd401c37ade4e9b8ad66822a348ae52be693b7ab0e637b6419",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "62466583c96cf4de00d2564f3f6a42a364906242345289566f37a84a2212ac25",
+  "derived_source_frames": [
+    {
+      "index": 0,
+      "seconds": 0.0,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_70/source-frames/000.png",
+      "decoded_png_sha256": "4c93e47d4f7152e3cd3184e6af3806e16792c8a695a17943c562b099722c2776"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "546d0667bb52601c07c96e0b4e714266f7208a1d80d241b607028e3b813ea8e7",
+  "source_frame_count": 84,
+  "source_action_frames": [
+    0
+  ],
+  "method": "shared_local_mesh_v1",
+  "character_semantics": {
+    "core_scene": "Proud upright friendly salute with the same single paw at the same brow, open clear eyes and small smile, respectful actual head-down local nod and return; other hand behind back, one additional round gold medal/ribbon.",
+    "omitted_optional_action": "No synthetic eye closure or original source31–54 interpolation is used. The independent QA old medal double contour at source39→38 is fully excluded: only exact clean source0 bitmap participates. This is not a rigid whole-image wiggle.",
+    "reversibility_or_contact": "Saluting fingertips/brow share the nod field, wrist/elbow follow at reduced amplitude. All eight small medal/ribbon boundary/interior anchors follow the exact same3px chest translation, with no medal shape/opacity interpolation. Feet and behind-back hand pinned; cape/ears settle separately."
+  },
+  "semantic_tradeoff": "No synthetic eye closure or original source31–54 interpolation is used. The independent QA old medal double contour at source39→38 is fully excluded: only exact clean source0 bitmap participates. This is not a rigid whole-image wiggle.",
+  "not_recovered_original_art": true,
+  "not_rigid_global_transform": true,
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "same_paw_brow_salute_with_respectful_head_down_nod",
+        "gentle_brow_contact_press_without_lifting_the_salute",
+        "proud_small_cape_and_ear_settle_with_stationary_feet"
+      ]
+    }
+  ],
+  "candidate_sha256": "ae41891e11b54861b0cd766aee13dc5c500eac360a683a3c1417cfd0f8fbd6ac",
+  "poster_sha256": "9c21aa1ed313cf9a12c07de1175c52da887c40c7b2bbd86f8f94e9ae2d102fd7",
+  "bytes": 111804,
+  "crf": 34,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "adjacent_composite_mae": [
+    0.11979517340660095,
+    0.12808480858802795,
+    0.11253130435943604,
+    0.13904054462909698,
+    0.08166953176259995,
+    0.1060650646686554,
+    0.1279517561197281,
+    0.292248010635376,
+    0.20373636484146118,
+    0.33461835980415344,
+    0.2443915158510208,
+    0.4204041659832001,
+    0.4172530472278595,
+    0.4760827124118805,
+    0.5124344825744629,
+    0.6427926421165466,
+    0.5286732316017151,
+    0.6253690123558044,
+    0.6505005955696106,
+    0.7647643685340881,
+    0.5947723388671875,
+    0.6473967432975769,
+    0.6342746615409851,
+    0.770517110824585,
+    0.5961996912956238,
+    0.6305429935455322,
+    0.5973259806632996,
+    0.6406493186950684,
+    0.522024393081665,
+    0.6764779090881348,
+    0.45371606945991516,
+    0.505472719669342,
+    0.3904883861541748,
+    0.4265291690826416,
+    0.36503612995147705,
+    0.4270608127117157,
+    0.26589763164520264,
+    0.2993110716342926,
+    0.2410389631986618,
+    0.43063369393348694,
+    0.10193854570388794,
+    0.15450429916381836,
+    0.12380072474479675,
+    0.18414528667926788,
+    0.14610342681407928,
+    0.23204459249973297,
+    0.1846867799758911,
+    0.40592053532600403,
+    0.203367218375206,
+    0.40954408049583435,
+    0.2662906050682068,
+    0.3841514587402344,
+    0.3674856722354889,
+    0.4754573404788971,
+    0.47405052185058594,
+    0.6597233414649963,
+    0.5222195982933044,
+    0.6346634030342102,
+    0.6163430213928223,
+    0.804574728012085,
+    0.6161210536956787,
+    0.7343708872795105,
+    0.7491552233695984,
+    0.8451614379882812,
+    0.657045304775238,
+    0.7073521614074707,
+    0.6674046516418457,
+    0.6892111301422119,
+    0.5523579716682434,
+    0.7101502418518066,
+    0.4537227153778076,
+    0.5358352065086365,
+    0.3628729283809662,
+    0.37780657410621643,
+    0.31527820229530334,
+    0.2848166525363922,
+    0.22772692143917084,
+    0.24096323549747467,
+    0.17454977333545685,
+    0.18388144671916962,
+    0.14287537336349487,
+    0.17385339736938477,
+    0.1425582617521286
+  ],
+  "seam_composite_mae": 0.1083315834403038,
+  "decoded_png_sha256": [
+    "64ed23268226dead9ee48d3350e7a9c61a32f482414ba6a165129b29283c5e84",
+    "bf952744bc17b180b2ed48c3f975f9be387cd88cc0d4a4612e9c43af7f75a391",
+    "41714932d9d159a4135ed7be1c020aad1bbf547e6427952bd214676306479b6e",
+    "d168bf5cf8df049bad17dcf424982f9c517b7d68f05ff1177d76dbefb2acea36",
+    "8304bf96771021f81df1f7d627bf9a41fc9fa08a13f1f72dd2b509c144fe7636",
+    "0333fa41bd2492eb2df0cb0e247dad4ee9e01ad5abffcf2635b9f3a64916b69b",
+    "7ca6df0b7dfa7ffe8189ed72d310806993aeda171ac37d17c0a0da86cdf0e8e3",
+    "3caf2efd614b8ac97d4f64fafea6b5714059ee7aeb0b0939ff094713fbc8dc92",
+    "b37e910042f4e6043bb9e2a549b59c057a4be0bc36b87dceef72874168e6b053",
+    "6a4a1d60655ae117bc192b535b5fb6bf7631399343d4d75be39b3360f423d914",
+    "a30fdf1d5f601b742a435635aea4ef9e462a9792b652a8cf0a99d015a09fad0d",
+    "c50b65734f2aa26ce669bd7a9929188300d8c8915a83e2b0dd4c5db5c9a95d11",
+    "9dfddce0949bb133db988b5664e4a4e67c995ee894d4aeb6d9c3730f52c48ac9",
+    "f00a7fddb40268025a63474021a4a1d32990d14611b05cee676711194059ba74",
+    "cb04b89de390b6d692001ef00cfe6ab598453f2bfa53bccf729833e33c1733da",
+    "885e9984f143130398a2f5cf93c88c71a563e31d341483e044e6dce83523746c",
+    "267b9aca04ad338f6d38cd31bed5c3fe58c53f47d5b7fe45b675a664963edd01",
+    "f11da5e82b7c2141003020360031416005faeb8cde36907c36e3e908b45cb20f",
+    "ba66011284d733ee1183697ad69c76b322946f6fc64bbeb436f032042b66ef60",
+    "57ff4ffc0f75cd7487ca0d33490b6320ca7d36d4e1060ab97004d09ad774c488",
+    "28ef3f1cbbc7dc86af174a414b3c6999e4721e086b1c48ad781ecacc76fddda8",
+    "a0f030e7146d304b73c39165097ad34db29fb29aa356f91771cbcbdcb6c73ea8",
+    "e2c84b74fafb3a6952262dfd155908caefaeef145068a536293cf53ff30ce77d",
+    "7f12eb0379c68e493c94b1bb371181d956ea1f77d3ebafc9df04d537ada29dfc",
+    "60be478525831c119c5f5118e10787c37927f01fba82c866b3b3177f5ccf86e7",
+    "b672c9ced6d0802d7ead57b45a34a9a1ac2b69eba724e2845e26d8753654fb7e",
+    "16783068e0ff02cc73dc3b9460f02868598fee03f2bc5fb5d14e357c41ea7c69",
+    "581e6b3bebc729b174e054d7c6b8a235ecb6723f2df953545341b55b6b7ef14b",
+    "4192029940707746bc8275049cac6d7f831bf9213bfafdbdac87103bf3664463",
+    "033e1d0c1efe30d0d5f6114dc9c89b7cb763ae251da2ba8a369ca2e75c856df7",
+    "42e52125d99cf2542411d898c1a0310baa8f33368ef2eab5ca9d3a4f8bc56d7a",
+    "8121eb16a4ed345d2a7c93786b74df5df363b37aff73686a026ab0d9b821bb84",
+    "0d99934991a0094e1780f17993e90f723dd49d7c6e8f32ba02abe88193078380",
+    "8f8a06dbea3f725d2253ea61b5ffbedae178223996c40fd387e7ec187d1c3070",
+    "2ceefdb79046b0a8eaa8578602e1522c1e46fcb18ea983d9e83fb0359a962f10",
+    "6b0d3d3fc2f276991f980cdbfe98dabe8cc01318dc119c84013a5970c0b9e6dc",
+    "7a27801c208342efff9e2293c8c267a4fbe788411188450032ee8dd806f1427c",
+    "e273e1b9216c493505fd1465c4556cd265fa1f2f507de3793ef99ef8836c78c2",
+    "3a580fbb98af586c29d6740efe5510a506fd5543a40d6eb8b55c465bbe86b306",
+    "98b9addcdc94f454e201b22c50611e0e9c6147b945b62de9a1ca58627deac55b",
+    "ae4c20f2631bc749945b27a3dd637817d576f02aeee726c64a7c02012b5170d0",
+    "8be08136ba164641dfce023f23e63914c0842a1c050a190632fa9e6652e82ad3",
+    "faa67ace68f427e4f80093527a169138a373679803626d6a4e537f37e859de15",
+    "72ddff51f45f752aa02a4e493b592cab5789bd9df454536fa50536da9d135698",
+    "fd48282cc72348c9a68cb0db7902cd2f9f055fb3e158d69e9aa6f34d56019643",
+    "fa94f51ded60147a2b32fce3f58dd04fda0f615f75379f3884a98651399517ff",
+    "e0415f303303773a8ea4f7428933e7d3a3dfec2e43b0da03b325c053a4b3644f",
+    "39bae3faa9055f72e233241e0f0674b68d5ce50ea40a84196c1992687ccd97f5",
+    "d488d9069ce3504fc68d276f8d95d0d2caa0f2e2ef851ef53943f588f3153653",
+    "a90937d42d3434203e12e09d49bba4ba2df300c58a40c5cc76bfb9b0522a18d1",
+    "9f8de45434444fc374373348c570bd6349122b7c118f10e9a94e9bb059125076",
+    "5703688a63da3a58c3dbe132aaeef02d8978c0fe67eb0c29f02cc89d1c7a7802",
+    "2ca9d4a68d128c120c8ebb4b4d9f51eccb867136d72305f0e98c6bfb95213f4f",
+    "5692011675f2dfeeafd0aee2701da9e1ab92e06314bd5f412c22082ddcd9420b",
+    "0b25b57fcd1ec99f9533d4cf0b8951989231a96960ebf1aa7fd6f425ec83e266",
+    "3e4c6f7e4fcf68349123912cf0405f4de7855694f5346c76765f5909d742aa8a",
+    "7182889a49b411a644d536b9bcf64b8bcd6b1f303dde91bd541cd622ecd2f898",
+    "7bd617631e93bce068d881e9f9b22d15b3b9b93ff66b4dce96822c0a99c41795",
+    "4381ead44257b7cbb1d2571dc1869197df1f7507c11b7fac796b061667b2bb04",
+    "5077e912c901ec7f1a02efad60f6093a7019127678551b8a3bd60fa60a0eac2a",
+    "03e2b842f81707937e3664c633e9d3ad03ffd0d8fabad5c21228a7ada1921d35",
+    "541e7965a50661139ef32801839adf11a6978409e66d6017053a0299b9bd113e",
+    "c412f80506a61b81e84029ae4fa87e799114503f85f31c013106c5a88a11c34d",
+    "a2d25896abb1cd4c0d4eec4bc8e2d1a0f999d629ef38f1d5a9ba57680c5cd652",
+    "4128289bb13485a56e31e17c9610441531a3b368cdf720288a611da572e52b82",
+    "e60fccc7ce22320df417c3b2813004d3fa6011e22c939b007cfb4c70f167b61e",
+    "76b39b06b17c1b5aadc95164f323b75e830481a0fce382f4266f17e6f4037ed6",
+    "9162f54d7ae6d66a7935f87add36cc044cb0b6ba037baa9c757430b29d90643b",
+    "da3a52ae4b06cc87c950c69f2dcccf0f5d89b7a4183dd2a7b16df8e902aa50ee",
+    "9c3e872f50d46e2d95558e3124b0feb0eaaab329b17f4a005da2d724ff9c3dac",
+    "f570cabf74151cf01adff3616f4e59db8fb9125521943aaa1fb0e12c7a3b56e2",
+    "8d901dc7b8131be978e00152bedc047bb60d15949d86710e6b635b936070ec75",
+    "a0d22f899eb0a8b5451ad05831927f817584352fb1aa6e5455a6e0140ea386bd",
+    "03a7ff3c5af9c48665990c202fe2c765eb8adbc8406c6d6fd982877758592ce8",
+    "14b9bfdc294ba8dcd902f1064944a6ac42af898aac94a5557d53b68e41cedb01",
+    "af9742cb3f55cda357542161f9e31240b01f5a616d41b26cbd0e292d89f67570",
+    "118b740dde3f0c3ac51b2a4ad32267d3e0efe847664f1e391c698f8693a1fab3",
+    "5207631ba46d69c7fb3172093e8ba18893a6a446056e61e4e01a771b8a53a39e",
+    "66f5d05c8b7dc4c841c6fe39325097019b6001874f489f54c937a35d9101a61a",
+    "908bea697409b97e036600d4c5ab7b87afb9f024816ee0fe3c869bacbb486233",
+    "aa85c124fa3df630a857ca1b6616e0be9bf07a6bd19ab706960c6c5ae9328139",
+    "9fe7c6fa0f0941adabc628b73cddb369bf4e0c24ddfa9a4a0c51470ee224359e",
+    "d6a71cc699fe25078ec1b916470135f915407a46406f3574ffff3793d8f4e105",
+    "5640d2b7096c77fb0212a04107971aec15c97117f5fa68436b39077b2f39bb1c"
+  ],
+  "decoded_pts_seconds": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "timestamps_monotonic": true,
+  "native_streams": [
+    {
+      "index": 0,
+      "codec_name": "vp9",
+      "codec_long_name": "Google VP9",
+      "profile": "Profile 0",
+      "codec_type": "video",
+      "codec_tag_string": "[0][0][0][0]",
+      "codec_tag": "0x0000",
+      "width": 512,
+      "height": 512,
+      "coded_width": 512,
+      "coded_height": 512,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 0,
+      "sample_aspect_ratio": "1:1",
+      "display_aspect_ratio": "1:1",
+      "pix_fmt": "yuv420p",
+      "level": -99,
+      "color_range": "tv",
+      "field_order": "progressive",
+      "refs": 1,
+      "r_frame_rate": "30/1",
+      "avg_frame_rate": "30/1",
+      "time_base": "1/1000",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "nb_read_frames": "84",
+      "disposition": {
+        "default": 0,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0
+      },
+      "tags": {
+        "alpha_mode": "1",
+        "ENCODER": "Lavc60.31.102 libvpx-vp9",
+        "DURATION": "00:00:02.800000000"
+      }
+    }
+  ],
+  "native_duration": "2.800000",
+  "source_review": {
+    "agent": "/root/artisan_stickers_a",
+    "every_selected_sourceframe_observed": true,
+    "selected_frame_view_scale_px": 512,
+    "native512_frame_indices": [
+      0
+    ],
+    "observation": "Native0/31/54 compared; exact0 viewed directly at native512 and extra medal4x nearest crop. One circular gold medal with a consistent source drop-shadow and one blue/gold ribbon, no separated old medal outline. Source0 retains clean salute contact and single open-eyed face. Exact sole source PNG inspected at native512; no source eye/limb/prop ghost accepted.",
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-inspection/70-return-v2/source-native0.png",
+      "sticker-lab/production-v5/author_a-inspection/70-return-v2/source0-medal4x.png"
+    ]
+  },
+  "candidate_visual_review": {
+    "agent": "/root/artisan_a_resume",
+    "observed_all84_afterframes": true,
+    "frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "complete_full_frame_review_scale_px": 256,
+    "native512_full_frame_indices": [
+      0,
+      17,
+      34,
+      59
+    ],
+    "native_additional_risk_frame_indices": [
+      0,
+      17,
+      25,
+      26,
+      27,
+      34,
+      40,
+      53,
+      54,
+      55,
+      60,
+      83
+    ],
+    "observation": "Single source0 local acting retains same paw/brow salute and actual local head-down nod while feet/behind-back paw remain steady. All84 frames show one round medal/ribbon.12native4x medal crops show the same source drop shadow, no separate old medal at60. No eye closure or broad arm lift claimed.",
+    "native_realtime_perceptual_playback": false,
+    "slow_perceptual_playback": false,
+    "device_playback": false,
+    "author_verdict": "propose_for_addressed_independent_QA",
+    "observed_at_utc": "2026-10-30T19:36:02.695795+00:00"
+  },
+  "baseline_independent_triage": {
+    "artifact": "docs/qa-1-13/sticker-triage-51-80.json",
+    "verdict": "repair_required",
+    "source_sha256": "613a696f574886fd401c37ade4e9b8ad66822a348ae52be693b7ab0e637b6419",
+    "defects": [
+      {
+        "frames": [
+          24,
+          30
+        ],
+        "reason": "Перехід у кивок накладає два положення обличчя: f26–28 мають зайві сірі брови/повіки й подвійну усмішку/ніс, праве око виглядає розчиненим замість цільної форми."
+      },
+      {
+        "frames": [
+          55,
+          60
+        ],
+        "reason": "Повернення з кивка дає виразний head dissolve: f58 показує два носи, змішані закриті очі й кілька брів, напівпрозорий старий рот/щоку."
+      }
+    ]
+  },
+  "recipe_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_70/recipe.json",
+  "recipe_sha256": "18a6fbada80c56bd066740ac5389ce028d1fdbcbce845d7fd851f9eafd4c8675",
+  "generator_snapshot": {
+    "engine_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+  "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+  "statistics": {
+    "minimum_jacobian": 0.8220512866973877,
+    "maximum_displacement_px": 15.736056327819824
+  },
+  "proposed_description_uk": "Грайливо салютує тією самою лапкою біля брови й робить маленький шанобливий кивок. Усмішка лишається щирою, друга лапка за спиною; на плащику висить одна кругла медаль.",
+  "independent_review": "pending",
+  "native_playback": "not_observed",
+  "device_playback": "not_observed",
+  "canonical_assets_changed": false,
+  "local_mesh": {
+    "source_frame": 0,
+    "points_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        511,
+        0
+      ],
+      [
+        0,
+        511
+      ],
+      [
+        511,
+        511
+      ],
+      [
+        256,
+        0
+      ],
+      [
+        0,
+        256
+      ],
+      [
+        511,
+        256
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        307,
+        50
+      ],
+      [
+        187,
+        91
+      ],
+      [
+        411,
+        134
+      ],
+      [
+        230,
+        125
+      ],
+      [
+        354,
+        145
+      ],
+      [
+        223,
+        171
+      ],
+      [
+        345,
+        193
+      ],
+      [
+        284,
+        203
+      ],
+      [
+        278,
+        232
+      ],
+      [
+        179,
+        218
+      ],
+      [
+        384,
+        242
+      ],
+      [
+        278,
+        281
+      ],
+      [
+        195,
+        141
+      ],
+      [
+        185,
+        144
+      ],
+      [
+        181,
+        144
+      ],
+      [
+        145,
+        187
+      ],
+      [
+        134,
+        244
+      ],
+      [
+        263,
+        289
+      ],
+      [
+        264,
+        320
+      ],
+      [
+        263,
+        401
+      ],
+      [
+        120,
+        325
+      ],
+      [
+        402,
+        350
+      ],
+      [
+        368,
+        365
+      ],
+      [
+        194,
+        470
+      ],
+      [
+        336,
+        470
+      ],
+      [
+        324,
+        311
+      ],
+      [
+        335,
+        311
+      ],
+      [
+        330,
+        333
+      ],
+      [
+        330,
+        337
+      ],
+      [
+        313,
+        353
+      ],
+      [
+        346,
+        353
+      ],
+      [
+        330,
+        371
+      ],
+      [
+        330,
+        354
+      ]
+    ],
+    "point_names": [
+      "corner_tl",
+      "corner_tr",
+      "corner_bl",
+      "corner_br",
+      "edge_top",
+      "edge_left",
+      "edge_right",
+      "edge_bottom",
+      "crown",
+      "ear_l",
+      "ear_r",
+      "brow_l",
+      "brow_r",
+      "eye_l",
+      "eye_r",
+      "nose",
+      "mouth",
+      "cheek_l",
+      "cheek_r",
+      "jaw",
+      "brow_contact",
+      "salute_contact",
+      "salute_top",
+      "salute_wrist",
+      "salute_elbow",
+      "neck",
+      "brooch",
+      "belly",
+      "cape_l",
+      "cape_r",
+      "behind_hand",
+      "foot_l",
+      "foot_r",
+      "ribbon_tl",
+      "ribbon_tr",
+      "ribbon_bottom",
+      "medal_top",
+      "medal_left",
+      "medal_right",
+      "medal_bottom",
+      "medal_center"
+    ],
+    "parts": [
+      {
+        "name": "same_paw_brow_salute_with_respectful_head_down_nod",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            -0.6,
+            5
+          ],
+          [
+            0.6,
+            5
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            10
+          ],
+          [
+            0,
+            14
+          ],
+          [
+            0,
+            13
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            0.7
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.12,
+            0.4,
+            0.65,
+            0.88,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "gentle_brow_contact_press_without_lifting_the_salute",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0.4,
+            0.6
+          ],
+          [
+            0.7,
+            0.7
+          ],
+          [
+            0.7,
+            0.7
+          ],
+          [
+            0.2,
+            0.2
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.18,
+            0.48,
+            0.72,
+            0.92,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 2,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "proud_small_cape_and_ear_settle_with_stationary_feet",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -0.5,
+            0.5
+          ],
+          [
+            0.5,
+            0.5
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -1.8,
+            0.8
+          ],
+          [
+            1.8,
+            0.8
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 2
+        }
+      }
+    ],
+    "minimum_jacobian": 0.65,
+    "fluid_texture": null
+  },
+  "extra_visual_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_a-candidates/lumen_70_author-a_mesh_v2/resume-author-risk/risk-12.png",
+      "sha256": "acd568736baba7437d78d6f1002459bdad1bd3df0f1e9014a103b0ac4e80de6d",
+      "kind": "resumed author actual native risk crop observation; exact crop and nearest enlargement only"
+    }
+  ],
+  "frozen_native_author_contact_sheet": {
+    "path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_70/native-author-0-17-34-59.jpg",
+    "sha256": "87ae81aad0f5bb9370651121d0bbe445ecca142da63d25df52a7850f45b5f1ba",
+    "native_frame_scale_px": 512,
+    "frame_indices": [
+      0,
+      17,
+      34,
+      59
+    ]
+  },
+  "frozen_extra_visual_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_70/risk-12.png",
+      "sha256": "acd568736baba7437d78d6f1002459bdad1bd3df0f1e9014a103b0ac4e80de6d",
+      "kind": "resumed author actual native risk crop observation; exact crop and nearest enlargement only",
+      "bytes": 194716
+    }
+  ],
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_70/review-normal.mp4",
+      "sha256": "7b5ec792ca56482d196a017d3a7a3ae56bee6ad359a380612b9507c71a97995e",
+      "bytes": 181023,
+      "frames": 84,
+      "duration": 2.8,
+      "fps": 30,
+      "perceptually_watched": false
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_70/review-slow.mp4",
+      "sha256": "48d7682f75a9328f009e805702517422d1868a4d7afb68335dd3b10788eba58a",
+      "bytes": 275569,
+      "frames": 84,
+      "duration": 5.6,
+      "fps": 15,
+      "perceptually_watched": false
+    }
+  ],
+  "reproducibility": {
+    "artifact": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_70/reproducibility.json",
+    "sha256": "21d2f0fcd6b8a8f0934e78b6a75e8ace8c71f59af9abd73d15c6db6e2a694e75",
+    "raw_rgba_exact_match": true,
+    "encoded_frame_exact_match": true,
+    "canonical_video_read": false,
+    "container_bytes_exact_match": false
+  },
+  "candidate_path": "sticker-lab/production-v5/author_a-return3-resumed-v1-frozen/lumen_70/candidate.webm",
+  "frozen_at": "2026-10-30T19:36:49.814197+00:00"
+}

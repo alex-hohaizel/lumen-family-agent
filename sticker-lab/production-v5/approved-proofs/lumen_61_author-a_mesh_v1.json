@@ -1,0 +1,2241 @@
+{
+  "schema_version": 1,
+  "id": "lumen_61",
+  "candidate": "lumen_61_author-a_mesh_v1",
+  "created_at": "2026-10-30T18:56:58.264896+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_61/source.webm",
+  "source_video_sha256": "06b1aca3546b39ed3b7a175791dc64ffb188942fdee0db14d1684908a8427730",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "5229bc9be39e7b87f66789087965d7f32d11be7e7da8348e09d0532d64a92f36",
+  "derived_source_frames": [
+    {
+      "index": 0,
+      "seconds": 0.0,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_61/source-frames/000.png",
+      "decoded_png_sha256": "8d12e08c306ccc06cd878b232ce0742bc1a7bb86fa150546e45b88d18660048e"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "7e0293fb3bb18b581cbaf1520dd6640f51565976c0eecf6793eaebe23412d750",
+  "source_frame_count": 84,
+  "source_action_frames": [
+    0
+  ],
+  "method": "shared_local_mesh_v1",
+  "character_semantics": {
+    "core_scene": "Tongue-out mischievous open-eyed grin, same single turquoise ice pop in same hand, other paw on hip, independent head/ear/wrist acting.",
+    "omitted_optional_action": "Optional wink and incompatible pose transfers omitted; no synthetic blink or claim of licking a pop that remains away from mouth.",
+    "reversibility_or_contact": "Ice-pop top/sides/base/stick and held paw share one wrist rotation; elbow has a reduced follow. Both feet pinned; tongue remains attached to same mouth shape."
+  },
+  "semantic_tradeoff": "Optional wink and incompatible pose transfers omitted; no synthetic blink or claim of licking a pop that remains away from mouth.",
+  "not_recovered_original_art": true,
+  "not_rigid_global_transform": true,
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        0
+      ],
+      "kind": "explicit_scene_local_mesh",
+      "parts": [
+        "tongue_out_playful_head_tilt_with_pinned_feet",
+        "same_wrist_and_whole_ice_pop_showing_gesture",
+        "independent_ear_and_cape_cheeky_accent"
+      ]
+    }
+  ],
+  "candidate_sha256": "2bd9dad4ef40f58ca2e5dc80725e6e14014546b8cd2a8c7d303dd1e7c86a1221",
+  "poster_sha256": "31ce5a157b51f3293c64be441805b7f336492cb7d612a7f60865d9cf232158c9",
+  "bytes": 203653,
+  "crf": 30,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "adjacent_composite_mae": [
+    0.18995380401611328,
+    0.246273472905159,
+    0.2071288377046585,
+    0.24597108364105225,
+    0.12756375968456268,
+    0.1999145895242691,
+    0.15148867666721344,
+    0.34937795996665955,
+    0.11931189894676208,
+    0.3323533535003662,
+    0.2290612906217575,
+    0.36254093050956726,
+    0.3693777620792389,
+    0.4538525640964508,
+    0.4655091464519501,
+    0.6293492913246155,
+    0.5076606273651123,
+    0.6355135440826416,
+    0.599933385848999,
+    0.7664427757263184,
+    0.5910581946372986,
+    0.662077009677887,
+    0.6603981852531433,
+    0.743327796459198,
+    0.5812540054321289,
+    0.6600809693336487,
+    0.5965735912322998,
+    0.6539555191993713,
+    0.5114406943321228,
+    0.6684320569038391,
+    0.438134104013443,
+    0.5317559242248535,
+    0.3935354948043823,
+    0.4685901403427124,
+    0.3756418228149414,
+    0.45177575945854187,
+    0.2781301438808441,
+    0.354642391204834,
+    0.2782702147960663,
+    0.5061001181602478,
+    0.16896694898605347,
+    0.2422146052122116,
+    0.2204456776380539,
+    0.3261364698410034,
+    0.24030733108520508,
+    0.31128060817718506,
+    0.261252760887146,
+    0.4418872892856598,
+    0.22629936039447784,
+    0.4057382643222809,
+    0.25211992859840393,
+    0.3793611228466034,
+    0.36106228828430176,
+    0.42600560188293457,
+    0.44184398651123047,
+    0.6203222870826721,
+    0.4667731523513794,
+    0.6389674544334412,
+    0.618867814540863,
+    0.792293131351471,
+    0.5893858075141907,
+    0.7444092631340027,
+    0.6894235610961914,
+    0.8647274374961853,
+    0.6321948170661926,
+    0.7232093214988708,
+    0.6840096116065979,
+    0.7202607989311218,
+    0.6041288375854492,
+    0.7246977686882019,
+    0.47142741084098816,
+    0.572232186794281,
+    0.3730963170528412,
+    0.45121169090270996,
+    0.31479084491729736,
+    0.39964163303375244,
+    0.2498476505279541,
+    0.256181001663208,
+    0.19600848853588104,
+    0.35675498843193054,
+    0.14657585322856903,
+    0.3482936918735504,
+    0.2770274579524994
+  ],
+  "seam_composite_mae": 0.1891602724790573,
+  "decoded_png_sha256": [
+    "5682c3cc86e3fea324cb45a46b92056583940f288ce21e3382342fb522f4ad05",
+    "b564495fe1766179c86febea8f4456585450df369abc2357834a11cf15a4dd6d",
+    "4dd6dd35829fc425c698ed28dfe2fa2cfa068eedee94932dcfbccfed44dff1d9",
+    "43eecfd0f23a392832a3c5427a10938456541f99324e169ff6afcac4e0ad5093",
+    "fd838ece6d96218a63b14dab747440dbb6cde4a7ebd68119233808e13a6768cc",
+    "99c55105331b18a93bd6eba2c4664d2f452645a6a703cd6756fbd18af4800e35",
+    "0fc251e3ebe0c3558be308de4d8edd5b8d744f00ff9b47c24fbc0d4174623b35",
+    "d2cb0ac982f9b183ce8ea589163f6aa05a2aee5a86aaab96554778ade167281d",
+    "053e98e0afc3c306b87e7c2c28075720e2e18438d24530503cf03fc081ae7ce3",
+    "4c3f31e20c72e276bcda95fdbba54f4ff6f0e50cadef6d5b2464e6d621bbcdec",
+    "18687f9f893c55261c0e1f9178c6ae8643dad7eb5203333841e339a95ce20773",
+    "77e3051b6fde2e5e5b8ab9978d8cb3a8ce620ef9d3a26c3f5e42a3f8c195de6a",
+    "7e69d0619b020f0c5f0a43f3028966dd0c3ec6a855a716e81800a0eb82978c7c",
+    "3b726898972823e043cc060fb198402cb0d9aeef3fbe9027ea364203f49ef8e4",
+    "25e0347509dd0c1156243ea675e2e3b5d43d7d894194c93976b49bce7a12e688",
+    "a3fce0b0c98328fdfd09988b5b2cf704fbc0e860baa50516af186b0bc8118eb0",
+    "c55d604d57863f75ac4c985f92d0b893798131d68d82b6bbe3d1078b0997c724",
+    "6304082f569d131bf679b4ec059c4be5537f7398ac74f58f689f5ecac393ce25",
+    "7191f6dbdcac3485f5a5bfcb85e78537729dd248a3ae2737a95eedee582afd6e",
+    "ac313a610ac86a3ad5c353493d1cfdefdf419e503620fec29b012575f5c7cce4",
+    "631d7eab813305e702f6d73680eb084db8d5cb0f2d1692911ce9d04d91371c7c",
+    "4bcba5cdd53ee600590b2c0a24d85be1150c807faceee92bce8cefedff75002b",
+    "7f22990258be863cf11cc1756096fd2d4e922dad0189b69514829f09049e60f4",
+    "2bb9a4174e45b32734c93a7ddb0763f4b523f745575fba2a679df0ede00c36e0",
+    "af6df357d0ec34d21eeb82b37f4aae12884703bc7d6b6aeeae55508f83af5fb2",
+    "0209aa45ad04a73215a70fb914b8dc61e2b3d20120c8071588215ed5dc240b06",
+    "ef85460b43828f627e2277037caf2b1076e58c723833b0facd14d3c0c93fd394",
+    "f3c3cf488258707ab7bc0a693901b7e50c11a8f07d3b508eba394f21ee9f801a",
+    "33926e659ac25ff8906a01de41390034c393b18333b335faa424aabdc24f1c8b",
+    "1c3e03d8e91b491e9fac8ef4da1a1b95aeb04e716a4cc65bef8bb80a39065e7a",
+    "8d9d1db38370a49d7362f68bb63ca2c9c1b1f931bf588d1425b2048a7ca453e3",
+    "fcb7f9e2fcafc1109c136d79ddf955e7a545bd9f5802141fccddd5bb2952112a",
+    "8914713659287399a3ba5644d15ef59daa58a126d745e9bbad2cd0a2c0e022c3",
+    "1646267294cfe488662bad55b5918396e4506bf00d6b4be0677dc1d527a3c09c",
+    "39b88fdd6c1163abd68da9fedbcb393b282d5472fb9920846017b1bacbbe4a59",
+    "9d603328c34cbd40899a3ec2a89d625cef759f200629cbade97b7e33f48d8539",
+    "5ddffe9644003067f964c8884d4c7e17264d331e477d0bc49d3d30eaebe3daff",
+    "3433d9fca9a461644f4554af50325ba151649dc6f36cfa0b5bc0c16e87c0b006",
+    "7d385830de51aeec1c9d9ae2abd38dbe02635f4490ae0dabfff940b8c0742b46",
+    "d9f3825f3e56b8579030dcf22a045f4e908e70b2ab2997494248bb1417ef398b",
+    "d9460cf9e9a5954ab9fe6e58a0187c1285cf737ace69c48701c901f57160ef1e",
+    "6d01d7b2421bfbe23ea3849c26e444bf0bff7d6f9e4bbc373217b3a961875a81",
+    "3d6ba364e693bf14afe166333979f5d635bc4f6003cc71a749ca47e90a71eaf8",
+    "d919efdc903cfb1d377416982613e26ab99858e58c63635acdf913e89fd79824",
+    "f6c4f87e3bbf62a1d9fa13fd3df76000e55138d036efd19ec215d71856ed593a",
+    "128006de02a190898cafff5697ac88c36b0a1fdedc21899f9147c6229e5190f6",
+    "016a7f4681c8b1bf8204e1d1f20f362215930aed3f961561d9f9b6bd9c730360",
+    "15a19b2cca19f25bdf59c375b28082178cc60359f4b0170b20a9adfeafdb5985",
+    "8bb9230741e4dc87255a856f2b9cc1eff064cd1fbdfb436f865eb08fb59be493",
+    "a58d115d19fe9e8e09a334927806bb2f293eff7906f8a17fb5243b68f2fdb155",
+    "29ccc081ce9d798448eca884993ad9e60bf8c271043512ad9be0ab6cdddc99be",
+    "fe9f3cc516e83fccce927e7b669b6e947a760cd587869c4a46ab99a5b3330223",
+    "61c8d7321a99f52f2a68b6cf61bc1d6de87112058cb681c5b9d9aae69006ae5b",
+    "c358e4b55c7982be27bf770efb7ff6d1ebea9788d86bad64cad3174cb0cda525",
+    "defdb878bbb42e1310f31bff7a13444575fdc861f1de8c3ed0ebe48dcaba6cc5",
+    "87f2ae6ac78c9b5f2cdc053a3f51b306fdb04f311959ee7534b07533d7f90a70",
+    "acf4049ebb41740cca1d84018fa11d15e88fbfc94c84ffcd41138537689d4165",
+    "83fd12a2013e55f845751ccb0fede723923c0c9089a9aab719311e78bc06f380",
+    "442cd620030cc1c781a23e48a46cfc8c2d5ee513ecc047b0e574dc604e479abd",
+    "b1575e7766bf8deae101ddaf1470e98db1efe5a7cfc836540d564e214daae21d",
+    "f85768585db9c4c0b6efa0672ba54922d0847073833c0140ca7b7aa9f089ad21",
+    "7efcf8697cae5d73ba7cdff220554ff1957bf425b218f37524204d60b9cebc10",
+    "c1b5ec6daaf24b877aa02d30b783c35e20e731adc1c506c20b2127086d6264a3",
+    "1f3f0b0bca7911ef3252b7a08713192090dded73700c0799025305b0f1f3e78d",
+    "75f427ac8ac4a1742ccc10a89a62309b28c10b119b348539e51ff9cb9b03010f",
+    "2d66593530f4214cc6afbec25783226964220eb1b84fa92de222304293bc7fab",
+    "dbd624fa667296b7bdcfd325bc3049c637959f44d2a9045e5ea824350e4dcdf1",
+    "7253797aaaf2eb3749975845e8fbbf3f7fdf4a6983922545973b68fd2b6c21ac",
+    "e4c80e6d67664c705cd5b8cfbf0166887e895d57426f50869deefcd81f5da8db",
+    "abe77b67c21bbff96703ca7e3ef739ee8c4d503defcedac44591abc8cf13219a",
+    "505e5573d99fb91d318fddc35cd471e98c55eba7e5e923c1bf8081292adb8a28",
+    "88e809468ca470ab6757df539b5d3b15e61a0f577e9d8e61663b1d15d3f34f53",
+    "cdd943326c925abbc2bac91ecc77646c91e40e2609a6ed7f5f7f979e52eb57a7",
+    "82eba82220b4e2bf1aa24db0851e340cc8a59a2598e8d40514569064335d0005",
+    "2a35459d26dde213bf7710bd89ac5f76db0b90f0d3f75c5de2292c8b14149b2f",
+    "c21cd863ee0dc747d8e8201ea1da48b2bd132656744db1f57ae026737b5e69e6",
+    "cd733cd1deefe6bed32a95e425ec227dd93ce953dad91fafe6aeafd5b6f8c929",
+    "1bb4e383fc0e99eab0a3cd7254d94c0160e4f54772fdf10820ac69ebfaa2e592",
+    "75e408d399965382621055543a98d0c2a22161b82d232c2a11e427babe26ee86",
+    "c13735b0e425d755e3b9527e31042b633e56c2b2a6501fb419657fa01bee9528",
+    "630e8dc6f0a800a8f3070c8d32ffa2ffa9c1d09ae5b3d5103aa90c2f250ea523",
+    "fa62b32dc0f3ee11b992adca20df450b154740fe190e79246e4128e56b06a083",
+    "4cb6a8167f7696c48139e3d73c7a625f73924dd4ded2a25d1a170598e5295eab",
+    "9d79cdc30dfd97896ef0bbb16ae77d386656a1e27b74db3213a9c297615e213b"
+  ],
+  "decoded_pts_seconds": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "timestamps_monotonic": true,
+  "native_streams": [
+    {
+      "index": 0,
+      "codec_name": "vp9",
+      "codec_long_name": "Google VP9",
+      "profile": "Profile 0",
+      "codec_type": "video",
+      "codec_tag_string": "[0][0][0][0]",
+      "codec_tag": "0x0000",
+      "width": 512,
+      "height": 512,
+      "coded_width": 512,
+      "coded_height": 512,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 0,
+      "sample_aspect_ratio": "1:1",
+      "display_aspect_ratio": "1:1",
+      "pix_fmt": "yuv420p",
+      "level": -99,
+      "color_range": "tv",
+      "field_order": "progressive",
+      "refs": 1,
+      "r_frame_rate": "30/1",
+      "avg_frame_rate": "30/1",
+      "time_base": "1/1000",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "nb_read_frames": "84",
+      "disposition": {
+        "default": 0,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0
+      },
+      "tags": {
+        "alpha_mode": "1",
+        "ENCODER": "Lavc60.31.102 libvpx-vp9",
+        "DURATION": "00:00:02.800000000"
+      }
+    }
+  ],
+  "native_duration": "2.800000",
+  "source_review": {
+    "agent": "/root/artisan_stickers_a",
+    "every_selected_sourceframe_observed": true,
+    "selected_frame_view_scale_px": 256,
+    "native512_frame_indices": [
+      0
+    ],
+    "observation": "Native0 has a clear single pop/stick/grip, two open eyes, tongue and hip paw. Exact sole source PNG inspected at native512; no source eye/limb/prop ghost accepted.",
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-inspection/meshes/61_anchor0.png"
+    ]
+  },
+  "candidate_visual_review": {
+    "agent": "/root/artisan_stickers_a",
+    "observed_all84_afterframes": true,
+    "frame_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "complete_review_scale_px": 256,
+    "native512_frame_indices": [
+      0,
+      17,
+      34,
+      59
+    ],
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-candidates/lumen_61_author-a_mesh_v1/after256-0.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_61_author-a_mesh_v1/after256-1.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_61_author-a_mesh_v1/after256-2.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_61_author-a_mesh_v1/after256-3.jpg",
+      "sticker-lab/production-v5/author_a-candidates/lumen_61_author-a_mesh_v1/native-author-0-17-34-59.jpg"
+    ],
+    "observation": "Actually viewed all 84 decoded frames at256 and native512 frames 0/17/34/59. A tongue-out playful head tilt accompanies a small showing gesture of the same turquoise ice pop; stick and held wrist move together, elbow remains attached. Other paw stays at hip and toes grounded. Eyes/nose/tongue remain single; no melting/replacement popsicle, detached grip or expression dissolve seen. No wink or licking of the distant pop is claimed; optional licking/wink omitted.",
+    "native_realtime_perceptual_playback": false,
+    "slow_perceptual_playback": false,
+    "device_playback": false,
+    "author_verdict": "propose_for_independent_per_item_QA"
+  },
+  "baseline_independent_triage": {
+    "artifact": "docs/qa-1-13/sticker-triage-51-80.json",
+    "verdict": "repair_required",
+    "source_sha256": "06b1aca3546b39ed3b7a175791dc64ffb188942fdee0db14d1684908a8427730",
+    "defects": [
+      {
+        "frames": [
+          14,
+          18
+        ],
+        "reason": "Перехід wink між очима накладає відкриті й закриті риси: f15–17 показують сірі напівпрозорі райдужки/дуги повік і подвійні контури в очних отворах замість одного цільного blink."
+      },
+      {
+        "frames": [
+          35,
+          39
+        ],
+        "reason": "Повторний вихід із wink залишає прозорий попередній контур ока та часткову стару райдужку (особливо f37)."
+      },
+      {
+        "frames": [
+          56,
+          60
+        ],
+        "reason": "Повтор першого defective переходу: f58 має одночасні напівпрозорі відкриті очі та smile-lid arcs."
+      },
+      {
+        "frames": [
+          77,
+          81
+        ],
+        "reason": "Повтор другого переходу з локальним ghosting очей (f80)."
+      }
+    ]
+  },
+  "recipe_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_61/recipe.json",
+  "recipe_sha256": "8ebba9ae605a4024b8c86104440eef3eede4e6531af969c032077174d452b3aa",
+  "generator_snapshot": {
+    "engine_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+  "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+  "statistics": {
+    "minimum_jacobian": 0.7176650762557983,
+    "maximum_displacement_px": 16.349807739257812
+  },
+  "proposed_description_uk": "Пустотливо показує язика й схиляє голівку, трохи піднімаючи бірюзове морозиво в тій самій лапці. Інша лапка вперта в бік, ніжки стоять стійко.",
+  "independent_review": "pending",
+  "native_playback": "not_observed",
+  "device_playback": "not_observed",
+  "canonical_assets_changed": false,
+  "local_mesh": {
+    "source_frame": 0,
+    "points_xy": [
+      [
+        0,
+        0
+      ],
+      [
+        511,
+        0
+      ],
+      [
+        0,
+        511
+      ],
+      [
+        511,
+        511
+      ],
+      [
+        256,
+        0
+      ],
+      [
+        0,
+        256
+      ],
+      [
+        511,
+        256
+      ],
+      [
+        256,
+        511
+      ],
+      [
+        267,
+        76
+      ],
+      [
+        139,
+        120
+      ],
+      [
+        415,
+        121
+      ],
+      [
+        219,
+        201
+      ],
+      [
+        347,
+        223
+      ],
+      [
+        280,
+        239
+      ],
+      [
+        275,
+        274
+      ],
+      [
+        269,
+        283
+      ],
+      [
+        274,
+        313
+      ],
+      [
+        260,
+        329
+      ],
+      [
+        262,
+        343
+      ],
+      [
+        139,
+        332
+      ],
+      [
+        162,
+        356
+      ],
+      [
+        391,
+        347
+      ],
+      [
+        353,
+        365
+      ],
+      [
+        429,
+        244
+      ],
+      [
+        401,
+        267
+      ],
+      [
+        447,
+        280
+      ],
+      [
+        413,
+        315
+      ],
+      [
+        406,
+        328
+      ],
+      [
+        251,
+        418
+      ],
+      [
+        83,
+        359
+      ],
+      [
+        414,
+        397
+      ],
+      [
+        146,
+        469
+      ],
+      [
+        326,
+        469
+      ]
+    ],
+    "point_names": [
+      "corner_tl",
+      "corner_tr",
+      "corner_bl",
+      "corner_br",
+      "edge_top",
+      "edge_left",
+      "edge_right",
+      "edge_bottom",
+      "crown",
+      "ear_l",
+      "ear_r",
+      "eye_l",
+      "eye_r",
+      "nose",
+      "mouth",
+      "tongue",
+      "jaw",
+      "neck",
+      "medal",
+      "hip_paw",
+      "hip_elbow",
+      "pop_paw",
+      "pop_elbow",
+      "pop_top",
+      "pop_l",
+      "pop_r",
+      "pop_bottom",
+      "pop_stick",
+      "belly",
+      "cape_l",
+      "cape_r",
+      "foot_l",
+      "foot_r"
+    ],
+    "parts": [
+      {
+        "name": "tongue_out_playful_head_tilt_with_pinned_feet",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            12.769973323278293,
+            0.3343935198839745
+          ],
+          [
+            10.642610800003297,
+            -6.424909350011575
+          ],
+          [
+            10.212026436022768,
+            8.018444107795489
+          ],
+          [
+            6.293761124690775,
+            -2.349040535455572
+          ],
+          [
+            4.96695053593146,
+            4.319811628241837
+          ],
+          [
+            4.22139640748793,
+            0.7913751160377842
+          ],
+          [
+            2.3964902652119804,
+            0.4817290512331738
+          ],
+          [
+            1.9336894504980933,
+            0.15537912656668595
+          ],
+          [
+            0.35675843698260223,
+            0.37594495041861364
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.12,
+            0.4,
+            0.65,
+            0.88,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "same_wrist_and_whole_ice_pop_showing_gesture",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -1.7618495605053113,
+            -2.452770261024284
+          ],
+          [
+            -1,
+            -2
+          ],
+          [
+            -9.039332446276944,
+            -4.852613440062953
+          ],
+          [
+            -7.366726957437095,
+            -2.955459019251464
+          ],
+          [
+            -6.571946486811555,
+            -6.195924158103537
+          ],
+          [
+            -4.047647614601203,
+            -3.909462291709417
+          ],
+          [
+            -3.123761807746348,
+            -3.4528343221228397
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "periodic_cubic_pulse",
+          "times": [
+            0,
+            0.18,
+            0.48,
+            0.72,
+            0.92,
+            1
+          ],
+          "values": [
+            0,
+            0.05,
+            1,
+            0.88,
+            0.08,
+            0
+          ],
+          "repeats": 1,
+          "amplitude_modulation": {
+            "base": 1.0,
+            "cosine": 0.0
+          }
+        }
+      },
+      {
+        "name": "independent_ear_and_cape_cheeky_accent",
+        "displacement_xy_px": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            -1
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -2,
+            1
+          ],
+          [
+            1.5,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "wave": {
+          "kind": "sin",
+          "repeats": 2
+        }
+      }
+    ],
+    "minimum_jacobian": 0.65,
+    "fluid_texture": null
+  },
+  "strongest_objection": {
+    "objection": "An ice-pop showing gesture could be falsely sold as a lick or lose physical grip.",
+    "author_response_and_limit": "The pop is deliberately distant from the tongue; no lick/wink is claimed. Pop body/stick/held wrist share one transform with reduced elbow follow, separate head tilt and cape/ear accents. Optional licking remains omitted for semantic QA.",
+    "independent_semantic_QA_required": true
+  },
+  "review_preview_regeneration": {
+    "artifact": "sticker-lab/production-v5/author_a-preview61-final-7f9b2/repair-proof.json",
+    "sha256": "4d8ae20c17d305307912ec1990f916493f9561e31500f042b9317dfbee0451e7",
+    "actual_slow_source_sha256": "f2b6628ab58905c5eeb9327bd27b3dff6f0d01e9db6bb5a89bcf8be6a6b86d70",
+    "actual_slow_bytes": 318316,
+    "source_images_same84": true,
+    "old_failed_final_directory": "sticker-lab/production-v5/author_a-mesh7-frozen",
+    "old_directory_has_no_package": true
+  },
+  "frozen_native_author_contact_sheet": {
+    "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_61/native-author-0-17-34-59.jpg",
+    "sha256": "80386cd77cd8a8bba8db87967ec64ff5b7f7b91b4858c0dc5d63a22488fdf433",
+    "native_frame_scale_px": 512,
+    "frame_indices": [
+      0,
+      17,
+      34,
+      59
+    ]
+  },
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_61/review-normal.mp4",
+      "sha256": "e63c32b3eff49b0354dcaa345cf512dbcab4f674698c8bf1a6f1cbcbdbd2e4f6",
+      "bytes": 207919,
+      "frames": 84,
+      "duration": 2.8,
+      "fps": 30,
+      "perceptually_watched": false
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_61/review-slow.mp4",
+      "sha256": "f2b6628ab58905c5eeb9327bd27b3dff6f0d01e9db6bb5a89bcf8be6a6b86d70",
+      "bytes": 318316,
+      "frames": 84,
+      "duration": 5.6,
+      "fps": 15,
+      "perceptually_watched": false
+    }
+  ],
+  "reproducibility": {
+    "artifact": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_61/reproducibility.json",
+    "sha256": "cf88552df15435d7f62b84a416d5703d71e89142b0d864e74fcdfb3f6f52415a",
+    "raw_rgba_exact_match": true,
+    "encoded_frame_exact_match": true,
+    "canonical_video_read": false,
+    "container_bytes_exact_match": false
+  },
+  "candidate_path": "sticker-lab/production-v5/author_a-mesh7-r2-frozen/lumen_61/candidate.webm",
+  "frozen_at": "2026-10-30T19:14:33.374118+00:00"
+}

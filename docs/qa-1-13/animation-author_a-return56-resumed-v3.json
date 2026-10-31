@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "actual_agent_id": "/root/artisan_a_resume",
+  "stage": "frozen_for_independent_per_item_QA",
+  "package": "sticker-lab/production-v5/author_a-return56-resumed-v3-frozen/package.json",
+  "package_sha256": "d30b0482340d449c1483c352262a4f4c96314cdb5dd49bb5e4d4ac2a9abb0c68",
+  "files_sha256": "aaa0be68b8504232a49dc6646aaa268a233d2697a7d8f854831be93b78495436",
+  "items": [
+    {
+      "id": "lumen_56",
+      "candidate_id": "lumen_56_author-a-resumed_toe-rise_v3",
+      "candidate_path": "sticker-lab/production-v5/author_a-return56-resumed-v3-frozen/lumen_56/candidate.webm",
+      "candidate_sha256": "ea546d71d889e52299b16c8573799b39e04304f611ee90877fbb7213561a8b40",
+      "proof_path": "sticker-lab/production-v5/author_a-return56-resumed-v3-frozen/lumen_56/proof.json",
+      "proof_sha256": "2b8887e71112655783fa25ec802c94000f609f39ece02664dced326c131592c8",
+      "recipe_path": "sticker-lab/production-v5/author_a-return56-resumed-v3-frozen/lumen_56/recipe.json",
+      "recipe_sha256": "1448e1be3c6f6bd70b060ecee414a6cc79e5c0e741ccdf97c0d62606140951f1",
+      "description_uk": "Очима-зірочками захоплено стежить за сяйливою кометою й піднімається на носочки, тягнучись до неї лапкою. П’яточки підіймаються, коліна й плечі випростуються, а вушка та плащик радісно тремтять.",
+      "before_frames_directory": "/workspace/scratch/342fb2c985cb/media-audit/triage-51-80/lumen_56/frames-rgba",
+      "after_frames_directory": "sticker-lab/production-v5/author_a-candidates/lumen_56_author-a-resumed_toe-rise_v3/decoded",
+      "source_video_sha256": "beac13f62091009071977670b361025577e460bc413698f304345a52737e75f2",
+      "bytes": 260548
+    }
+  ],
+  "final_path_guard": {
+    "path": "/workspace/scratch/342fb2c985cb/lumen/sticker-lab/production-v5/author_a-return56-resumed-v3-frozen/package.guard.json",
+    "sha256": "6552d401c5321919b4c11c21ca7b3d8c375ade0309ff8c5251b43e93cc9fc7ee",
+    "passed": true
+  },
+  "independent_QA": "pending",
+  "canonical_assets_changed": false,
+  "remote_actions": false
+}

@@ -1,0 +1,1668 @@
+{
+  "schema_version": 1,
+  "actual_author": "/root/artisan_stickers_b",
+  "created_at": "2026-10-30T19:01:16.510728+00:00",
+  "status": "all34_owned_scene_candidates_authored_and_handed_off",
+  "scope": {
+    "owned_ids": [
+      81,
+      82,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      128,
+      131,
+      133,
+      134,
+      135,
+      137
+    ],
+    "owned_total": 34,
+    "first3_kept_exact": [
+      96,
+      104
+    ],
+    "returned84_replaced_with_new_immutable_candidate": true,
+    "followup32_frozen": true,
+    "independent_per_item_frame_scene_accepted_ids": [
+      81,
+      82,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      96,
+      104
+    ],
+    "independent_review_pending_ids": [
+      90,
+      91,
+      92,
+      93,
+      95,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      128,
+      131,
+      133,
+      134,
+      135,
+      137
+    ],
+    "independent_returned_ids": [],
+    "whole_renderer_or_pack_approval": false,
+    "production_or_publication_by_this_author": false
+  },
+  "packets": [
+    {
+      "id": "first3",
+      "package_path": "sticker-lab/production-v5/author_b-frozen-first3/package.json",
+      "package_sha256": "c2bfede61712cb540f7a6f8a9af0e9461c24ac4bd2dcda2476a1f730645d494c",
+      "files_sha256": "e590fb57b965c8315b63c04eaac452f12236cb9feebfeffb4ea4a6cf56520f6b",
+      "files": 321,
+      "listed_file_hashes_rechecked": true,
+      "author_report_path": "docs/qa-1-13/animation-author-b-first3.json",
+      "author_report_sha256": "f5e7fe2e3a89db7d839bcb549e540a4c98bbf816f9b2909cf039e69bd0e1892a",
+      "item_ids": [
+        "lumen_84",
+        "lumen_96",
+        "lumen_104"
+      ],
+      "historical_handoff_defect": "lumen104 slowMP4 is invalid in this immutable historical package; use primary-owned separate addendum. Do not silently replace its bytes."
+    },
+    {
+      "id": "batch2",
+      "package_path": "sticker-lab/production-v5/author_b-frozen-batch2/package.json",
+      "package_sha256": "4106d20397b12d8cc19ebd771803a1b4067dc624b28d1ebe375982bb8d10addc",
+      "files_sha256": "f6fbd879bb378f2a7af0506f1f8f012a8eb07e8f42e0b52852a1416d0665bb4c",
+      "files": 806,
+      "listed_file_hashes_rechecked": true,
+      "author_report_path": "docs/qa-1-13/animation-author-b-batch2.json",
+      "author_report_sha256": "712c9b59e3e8824aa80baf6e1fa60a331a0fe6021b904f00b8e14d03a63cf2dc",
+      "item_ids": [
+        "lumen_84",
+        "lumen_81",
+        "lumen_82",
+        "lumen_85",
+        "lumen_86",
+        "lumen_87",
+        "lumen_88",
+        "lumen_89"
+      ],
+      "copied_final_path_guard": {
+        "path": "/workspace/scratch/342fb2c985cb/lumen/sticker-lab/production-v5/author_b-frozen-batch2/package.guard.json",
+        "sha256": "0ac1e9674a0c1b820f4fc2e43821a2c6e6ee790bb01b67e4da4f2cb096eab0fe",
+        "passed": true
+      }
+    },
+    {
+      "id": "batch3",
+      "package_path": "sticker-lab/production-v5/author_b-frozen-batch3/package.json",
+      "package_sha256": "f921945d25e7a3d74b16364a87c7f9bb69968c316baf614b958ac75155deca9f",
+      "files_sha256": "9995424a834d85471973010e79b543a1d7bf42ef348d140969083cdbf08def83",
+      "files": 815,
+      "listed_file_hashes_rechecked": true,
+      "author_report_path": "docs/qa-1-13/animation-author-b-batch3.json",
+      "author_report_sha256": "a26f85578e73f89dbc552f16d3ce9e9a765576a52b02a0d88e365c6e62edd19e",
+      "item_ids": [
+        "lumen_90",
+        "lumen_91",
+        "lumen_92",
+        "lumen_93",
+        "lumen_95",
+        "lumen_97",
+        "lumen_98",
+        "lumen_99"
+      ],
+      "copied_final_path_guard": {
+        "path": "/workspace/scratch/342fb2c985cb/lumen/sticker-lab/production-v5/author_b-frozen-batch3/package.guard.json",
+        "sha256": "d1eb71cd498790bd25fc43aa84169fc1980430f7afd7d3312dd8a1ac148afc92",
+        "passed": true
+      }
+    },
+    {
+      "id": "batch4",
+      "package_path": "sticker-lab/production-v5/author_b-frozen-batch4/package.json",
+      "package_sha256": "67d7fcc7bc608d6a598e40a15319d8f3c774574c42e6532e52e1e66d932b104f",
+      "files_sha256": "59d23ef8eac1681383d37874b9bce6bbdea3660ccc39aa610e3c2f4a1822a13f",
+      "files": 807,
+      "listed_file_hashes_rechecked": true,
+      "author_report_path": "docs/qa-1-13/animation-author-b-batch4.json",
+      "author_report_sha256": "9d39a0b1b8df95236d75a9251aa0c24b4632065dfec3f3228c999ab05ed7f530",
+      "item_ids": [
+        "lumen_100",
+        "lumen_101",
+        "lumen_102",
+        "lumen_103",
+        "lumen_105",
+        "lumen_106",
+        "lumen_107",
+        "lumen_108"
+      ],
+      "copied_final_path_guard": {
+        "path": "/workspace/scratch/342fb2c985cb/lumen/sticker-lab/production-v5/author_b-frozen-batch4/package.guard.json",
+        "sha256": "160beea731ed9bfbd57ff48f2fdc77ee9b9f877509fe7917a676700a59605f46",
+        "passed": true
+      }
+    },
+    {
+      "id": "batch5",
+      "package_path": "sticker-lab/production-v5/author_b-frozen-batch5/package.json",
+      "package_sha256": "3d2717087e2118c4b664f389aede5158fb569ed3753d4a293d3dcecde83eb2a0",
+      "files_sha256": "61d9c53b34edfce44149a244ee295cf9cb7995bda87a3901d62e53e978fc000a",
+      "files": 807,
+      "listed_file_hashes_rechecked": true,
+      "author_report_path": "docs/qa-1-13/animation-author-b-batch5.json",
+      "author_report_sha256": "a6bbe209c92c8231c8862efe21f9e9cb4ee5d9363610083acbd17ef79a2e7311",
+      "item_ids": [
+        "lumen_109",
+        "lumen_110",
+        "lumen_128",
+        "lumen_131",
+        "lumen_133",
+        "lumen_134",
+        "lumen_135",
+        "lumen_137"
+      ],
+      "copied_final_path_guard": {
+        "path": "/workspace/scratch/342fb2c985cb/lumen/sticker-lab/production-v5/author_b-frozen-batch5/package.guard.json",
+        "sha256": "a066cc46fdb2d8e67d3c7e25da79eec6213c31b6e592f7f644a74d757edce22f",
+        "passed": true
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "lumen_81",
+      "batch": "batch2",
+      "candidate_id": "lumen_81_author-b_batch2",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_81/candidate.webm",
+      "candidate_sha256": "0808e493f4ebd92970d6a61715ffca42aac45a0b29a30dcec4894d8383a897b9",
+      "bytes": 257697,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_81/recipe.json",
+      "recipe_sha256": "1f420c86d909d731c17f444f9ebeb73c740bc4868dee9de1cd09eff6ec226a23",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_81/proof.json",
+      "proof_sha256": "811f2f2d37c60b953b41f92097806ccfbcf748bdf8e6b0d4c242cf7855b1a12e",
+      "description_uk": "Винувато зиркає вбік і трохи хилить голову; довгий дерев’яний носик кумедно погойдується, а схована за спиною банка печива й крихта лишаються на місці.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "5ea636d02f939bb485b8901ce5d116123f371a2c26a99a2c1f8a49f52d897330",
+      "source_anchors": [
+        {
+          "index": 12,
+          "timestamp_seconds": 0.4,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_81/source-frames/012.png",
+          "sha256": "02073b4adef0f41ac325cdee75388a2ed0ec75bfb1647a85f2436784f3defaed"
+        }
+      ],
+      "named_acting_parts": [
+        "guilty_head_glance_tilt",
+        "wooden_nose_same_face_wiggle",
+        "small_shoulders_nervous_settle"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.7703707814216614,
+        "maximum_displacement_px": 8.378091812133789
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "accept",
+      "native_realtime_slow_device_human_acceptance": "unknown",
+      "independent_review": {
+        "path": "docs/qa-1-13/qa-animation-author-b-batch2.json",
+        "sha256": "338db97ea0124601dd4c8709d80f5137efbc2d71bcd8ae470f8e9ade9cbe1b44",
+        "actual_agent_id": "/root/qa_stickers_b",
+        "accepted_scope": "Exact candidate all84 decoded-frame scene/anatomy/prop/alpha and loop-boundary still-image prototype acceptance. No native real-time/slowed/device/human motionfeel or whole-pack/class acceptance.",
+        "verdict": "accept"
+      }
+    },
+    {
+      "id": "lumen_82",
+      "batch": "batch2",
+      "candidate_id": "lumen_82_author-b_batch2",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_82/candidate.webm",
+      "candidate_sha256": "064d4eae7c75ab3c0b4ac5f502ec3ed997ddbef822e826e78f31c24fc490f405",
+      "bytes": 221393,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_82/recipe.json",
+      "recipe_sha256": "c94f636950c06dc5933395ae4d5c00c68d45715e7b150e6d3ee9ac4d98047ca9",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_82/proof.json",
+      "proof_sha256": "a0012357d72839ae985d429378ba781169f5bdc081674e6d248569605f8c3a8e",
+      "description_uk": "Від несподіванки широко розплющує очі й розкриває рот; дрібно тремтить плечима та розведеними лапками, довкола миготять бірюзові рисочки руху.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "068e7f98ee597b5ce71f9b297511aa2dda5862548b4bd5a25928fb1a79880be3",
+      "source_anchors": [
+        {
+          "index": 12,
+          "timestamp_seconds": 0.4,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_82/source-frames/012.png",
+          "sha256": "e4bf3be31beecee5bff8274c0efc588f3e5324eac5cbe96a604b8138f604470e"
+        }
+      ],
+      "named_acting_parts": [
+        "startled_coherent_shiver",
+        "small_jaw_gasp",
+        "spread_paws_alternating_tension"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.8237864971160889,
+        "maximum_displacement_px": 7.090000152587891
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "accept",
+      "native_realtime_slow_device_human_acceptance": "unknown",
+      "independent_review": {
+        "path": "docs/qa-1-13/qa-animation-author-b-batch2.json",
+        "sha256": "338db97ea0124601dd4c8709d80f5137efbc2d71bcd8ae470f8e9ade9cbe1b44",
+        "actual_agent_id": "/root/qa_stickers_b",
+        "accepted_scope": "Exact candidate all84 decoded-frame scene/anatomy/prop/alpha and loop-boundary still-image prototype acceptance. No native real-time/slowed/device/human motionfeel or whole-pack/class acceptance.",
+        "verdict": "accept"
+      }
+    },
+    {
+      "id": "lumen_84",
+      "batch": "batch2",
+      "candidate_id": "lumen_84_author-b_batch2",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_84/candidate.webm",
+      "candidate_sha256": "8ddc8458b66b232ea851fa308d1a2a28df9e13feee84f89ac89434144ae06bce",
+      "bytes": 248151,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_84/recipe.json",
+      "recipe_sha256": "9282a5413b1776d9b3c42212ee7c6f813918b32b47383de34c966cc8e9190e37",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_84/proof.json",
+      "proof_sha256": "902f5606ffbb7e821d14e029a3e805744b246c34f96f0bbcfb67b7dd0b021d3e",
+      "description_uk": "Тепло усміхається із заплющеними очима й двічі виразно киває на знак згоди; лапки тримає разом біля медальйона, ніжки стоять на місці.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "840b0a271411402028f70cc117a7fe68ed6cca9b0a75b43056663206d4574011",
+      "source_anchors": [
+        {
+          "index": 63,
+          "timestamp_seconds": 2.1,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_84/source-frames/063.png",
+          "sha256": "cc19fa2c8addd24a67cad50cd9565fa312f89c9abba1d67020ff068072b5fa21"
+        }
+      ],
+      "named_acting_parts": [
+        "warm_full_face_bow_single_contour",
+        "paws_and_medallion_small_bow_response",
+        "cape_bow_followthrough"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.6355817317962646,
+        "maximum_displacement_px": 27.309091567993164
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "accept",
+      "native_realtime_slow_device_human_acceptance": "unknown",
+      "independent_review": {
+        "path": "docs/qa-1-13/qa-animation-author-b-batch2.json",
+        "sha256": "338db97ea0124601dd4c8709d80f5137efbc2d71bcd8ae470f8e9ade9cbe1b44",
+        "actual_agent_id": "/root/qa_stickers_b",
+        "accepted_scope": "Exact candidate all84 decoded-frame scene/anatomy/prop/alpha and loop-boundary still-image prototype acceptance. No native real-time/slowed/device/human motionfeel or whole-pack/class acceptance.",
+        "verdict": "accept"
+      }
+    },
+    {
+      "id": "lumen_85",
+      "batch": "batch2",
+      "candidate_id": "lumen_85_author-b_batch2",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_85/candidate.webm",
+      "candidate_sha256": "f564fc03f4b0d8c5a362748927101da8ae14caf36185219ce0db6eff06581333",
+      "bytes": 226698,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_85/recipe.json",
+      "recipe_sha256": "aa317539e78a2b085a7ded9dbef492dafc189ad5070afec9ac7ab830dfc18087",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_85/proof.json",
+      "proof_sha256": "6589ff7d2d9f5a8f0995a3bd32cfc35412fc1a6e6143fd9566f24c105477dda6",
+      "description_uk": "Полегшено видихає й спокійно схиляє голівку з усмішкою та заплющеними очима. Сидить на синій подушці й обережно тримає теплу бірюзову чашку обома лапками.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "ee08726184aaca7f3f0a2cdda6137afd1c7cc3a83c204b588127615dc4c6cf08",
+      "source_anchors": [
+        {
+          "index": 63,
+          "timestamp_seconds": 2.1,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_85/source-frames/063.png",
+          "sha256": "4b1a3dc879238d342f92ef2c6667904e0ab2e9f86fbdd2d57b5bc264cd1eb9db"
+        }
+      ],
+      "named_acting_parts": [
+        "relieved_slow_head_lean",
+        "held_cup_and_paws_breath_response",
+        "soft_exhale_puff_decorative_bloom"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.833690881729126,
+        "maximum_displacement_px": 10.02668571472168
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "accept",
+      "native_realtime_slow_device_human_acceptance": "unknown",
+      "independent_review": {
+        "path": "docs/qa-1-13/qa-animation-author-b-batch2.json",
+        "sha256": "338db97ea0124601dd4c8709d80f5137efbc2d71bcd8ae470f8e9ade9cbe1b44",
+        "actual_agent_id": "/root/qa_stickers_b",
+        "accepted_scope": "Exact candidate all84 decoded-frame scene/anatomy/prop/alpha and loop-boundary still-image prototype acceptance. No native real-time/slowed/device/human motionfeel or whole-pack/class acceptance.",
+        "verdict": "accept"
+      }
+    },
+    {
+      "id": "lumen_86",
+      "batch": "batch2",
+      "candidate_id": "lumen_86_author-b_batch2",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_86/candidate.webm",
+      "candidate_sha256": "dae862997f6abadf7e5fbe7f394b87f4eb50ecdc6a0274b8cd2e2468623df807",
+      "bytes": 243983,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_86/recipe.json",
+      "recipe_sha256": "2b159654c2e27cd76501758eabeac45c38e4ac1feae0dca146d4c2a7552ae80f",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_86/proof.json",
+      "proof_sha256": "3e007e9a843fad561cef627781cfe405dd960dd6cfaa07c13af528d0556b435e",
+      "description_uk": "Сонно хилить голову й опускає вушка, притискаючи зоряну подушку. Маленька бульбашка біля носа м’яко роздувається й спадає в такт повільному диханню.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "3876f179e2d3344680d8e1f97d88f53b669dd6a3137ba29baf2d592def231e6b",
+      "source_anchors": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_86/source-frames/000.png",
+          "sha256": "4aa7b4e4b2e2047d4777927e16b18d83fe7547432f5c8283a0d674b4b8dabe98"
+        }
+      ],
+      "named_acting_parts": [
+        "drowsy_slow_head_droop",
+        "sleep_bubble_breath",
+        "pillow_held_arm_settle",
+        "drooping_ear_secondary"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.7086614966392517,
+        "maximum_displacement_px": 14.457432746887207
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "accept",
+      "native_realtime_slow_device_human_acceptance": "unknown",
+      "independent_review": {
+        "path": "docs/qa-1-13/qa-animation-author-b-batch2.json",
+        "sha256": "338db97ea0124601dd4c8709d80f5137efbc2d71bcd8ae470f8e9ade9cbe1b44",
+        "actual_agent_id": "/root/qa_stickers_b",
+        "accepted_scope": "Exact candidate all84 decoded-frame scene/anatomy/prop/alpha and loop-boundary still-image prototype acceptance. No native real-time/slowed/device/human motionfeel or whole-pack/class acceptance.",
+        "verdict": "accept"
+      }
+    },
+    {
+      "id": "lumen_87",
+      "batch": "batch2",
+      "candidate_id": "lumen_87_author-b_batch2",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_87/candidate.webm",
+      "candidate_sha256": "985d15350eba02d0b5c0c2499e2b1c84a5549fac9bac64fb8b558c29b149fda4",
+      "bytes": 246746,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_87/recipe.json",
+      "recipe_sha256": "dd816fb23464cf0892bc9cde84b36054073997689b9b5644da11ba53a65e439e",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_87/proof.json",
+      "proof_sha256": "9ef69fa649289ff13c5e40b650a11047cccf490781eec5a88d4bba341ab3c07d",
+      "description_uk": "Замріяно мружиться й нахиляється до булочки з корицею, ласо облизуючи глазур. Тарілочку міцно тримає обома лапками, щоб не перекинути смаколик.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "3ff1a0595132bf8a3481eff2eb9ffc441f776663b464e1b0980045cb2b9fad07",
+      "source_anchors": [
+        {
+          "index": 35,
+          "timestamp_seconds": 1.1666666666666667,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_87/source-frames/035.png",
+          "sha256": "8f809f4c08b4c761e0f6a8466ba03b3e2cd7a384a42128ef667b8adc3ebe6bc3"
+        }
+      ],
+      "named_acting_parts": [
+        "hungry_head_lean_to_bun",
+        "tongue_lick_small_reach",
+        "contented_shoulders"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.650164783000946,
+        "maximum_displacement_px": 9.415535926818848
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "accept",
+      "native_realtime_slow_device_human_acceptance": "unknown",
+      "independent_review": {
+        "path": "docs/qa-1-13/qa-animation-author-b-batch2.json",
+        "sha256": "338db97ea0124601dd4c8709d80f5137efbc2d71bcd8ae470f8e9ade9cbe1b44",
+        "actual_agent_id": "/root/qa_stickers_b",
+        "accepted_scope": "Exact candidate all84 decoded-frame scene/anatomy/prop/alpha and loop-boundary still-image prototype acceptance. No native real-time/slowed/device/human motionfeel or whole-pack/class acceptance.",
+        "verdict": "accept"
+      }
+    },
+    {
+      "id": "lumen_88",
+      "batch": "batch2",
+      "candidate_id": "lumen_88_author-b_batch2",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_88/candidate.webm",
+      "candidate_sha256": "3b1dcd52ea8cf657336c440b7fe06dc08e2754c52fe202adb9d7bb36f1afd8c3",
+      "bytes": 134866,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_88/recipe.json",
+      "recipe_sha256": "7aaf217174a5b994e4fc22cbe9642ae7f82109261b362ddd3e4850191775948c",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_88/proof.json",
+      "proof_sha256": "8d13c4a2b2433ee672525ef2e53472ceb8105f9f496f26cd46359001f967726d",
+      "description_uk": "Міцно спить, згорнувшись клубочком у темно-синьому плащі. Животик ледь підіймається від дихання, голівка сонно вмощується на лапках під двома золотими місяцями.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "de3067af555a5a0f8515b6ba55acdb0f39fc459f40634a3b30dd5897c69ae44d",
+      "source_anchors": [
+        {
+          "index": 56,
+          "timestamp_seconds": 1.8666666666666667,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_88/source-frames/056.png",
+          "sha256": "9114af3a8953dfe149f4a05100783c09a9caddee851fb40dc3bb770ed3dbf9b3"
+        }
+      ],
+      "named_acting_parts": [
+        "curled_sleep_belly_breath",
+        "sleeping_head_paw_nest",
+        "moon_dream_small_float"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.7906574010848999,
+        "maximum_displacement_px": 3.3785200119018555
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "accept",
+      "native_realtime_slow_device_human_acceptance": "unknown",
+      "independent_review": {
+        "path": "docs/qa-1-13/qa-animation-author-b-batch2.json",
+        "sha256": "338db97ea0124601dd4c8709d80f5137efbc2d71bcd8ae470f8e9ade9cbe1b44",
+        "actual_agent_id": "/root/qa_stickers_b",
+        "accepted_scope": "Exact candidate all84 decoded-frame scene/anatomy/prop/alpha and loop-boundary still-image prototype acceptance. No native real-time/slowed/device/human motionfeel or whole-pack/class acceptance.",
+        "verdict": "accept"
+      }
+    },
+    {
+      "id": "lumen_89",
+      "batch": "batch2",
+      "candidate_id": "lumen_89_author-b_batch2",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_89/candidate.webm",
+      "candidate_sha256": "3b4ea6c7f3087ebfa98ce4caf47068c9404bcbe67afb1836dd25d6eb1845aafc",
+      "bytes": 214841,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_89/recipe.json",
+      "recipe_sha256": "825635653e0c912af761eb2ac84b27dd5622611f0667db7bfbeb891e5491157e",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_89/proof.json",
+      "proof_sha256": "8d22ef6b970379b1f6a1589ff2ee31d0463792f9c54a27b6bccc38542255f6ee",
+      "description_uk": "Після довгої ночі широко позіхає, прикриваючи рот лапкою, й безсило опускає вушка. Біля нього стоять дві порожні чашки та майже догоріла свічка.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "5ca7bfc3b4304c6875f49aba662e2f2c41a689bb649d437eed1a46163de9e146",
+      "source_anchors": [
+        {
+          "index": 21,
+          "timestamp_seconds": 0.7,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_89/source-frames/021.png",
+          "sha256": "4b00fb2ea9bd02f56f4c2a275b762505f95ee5b73f97314353a5132bd7fb8baa"
+        }
+      ],
+      "named_acting_parts": [
+        "exhausted_yawn_head_recovery",
+        "yawn_jaw_and_covering_paw",
+        "drooping_ears_tired_followthrough",
+        "low_candle_flame_flicker"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.7577496767044067,
+        "maximum_displacement_px": 7.18870735168457
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "accept",
+      "native_realtime_slow_device_human_acceptance": "unknown",
+      "independent_review": {
+        "path": "docs/qa-1-13/qa-animation-author-b-batch2.json",
+        "sha256": "338db97ea0124601dd4c8709d80f5137efbc2d71bcd8ae470f8e9ade9cbe1b44",
+        "actual_agent_id": "/root/qa_stickers_b",
+        "accepted_scope": "Exact candidate all84 decoded-frame scene/anatomy/prop/alpha and loop-boundary still-image prototype acceptance. No native real-time/slowed/device/human motionfeel or whole-pack/class acceptance.",
+        "verdict": "accept"
+      }
+    },
+    {
+      "id": "lumen_90",
+      "batch": "batch3",
+      "candidate_id": "lumen_90_author-b_batch3",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_90/candidate.webm",
+      "candidate_sha256": "db9d2b2ec5b05682705706a15dab0e109781cc8c1d5b288d30df26ac5b375825",
+      "bytes": 256896,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_90/recipe.json",
+      "recipe_sha256": "e3f6e26771b2fba062dfeeeafaba9b3dc142e49ce11ea0b84bda4ea322f83840",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_90/proof.json",
+      "proof_sha256": "e6f55cd55a095dfd599cb5c6b427a9588f951dbf192af1add4519eee83e58780",
+      "description_uk": "Прикриваючись маскою й ліктем, тихенько кашляє; плечі коротко стискаються, а вільною лапкою притримує теплий плащ.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "10ccedd7c1e13d2e9e0121ea0066914d27071c709dc8f7431347120890195897",
+      "source_anchors": [
+        {
+          "index": 12,
+          "timestamp_seconds": 0.4,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch3/lumen_90/source-frames/012.png",
+          "sha256": "4b6a14fad39299ec22126793dd0cc99059cdb6bd20beeee6777ae0dda8925213"
+        }
+      ],
+      "named_acting_parts": [
+        "masked_head_elbow_protective_cough",
+        "shoulders_cloak_cough_contraction",
+        "cloak_edge_small_response"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.6215431690216064,
+        "maximum_displacement_px": 5.677589416503906
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_91",
+      "batch": "batch3",
+      "candidate_id": "lumen_91_author-b_batch3",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_91/candidate.webm",
+      "candidate_sha256": "d848ffd4ab8860575190230c57867cad22af928bdf126465ab5144d6bc55c8a1",
+      "bytes": 258911,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_91/recipe.json",
+      "recipe_sha256": "4b01450b0f3d47593d33ffc83a22b105b2a067bcbe4309dcf1dc420ff58ca4de",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_91/proof.json",
+      "proof_sha256": "c3127893972a6c8efb267cf537677f3fc8f6b32d41947521a35b82f18de7f225",
+      "description_uk": "Розпашілий і знесилений, дрібно тремтить під бірюзовою ковдрою та притискає її до грудей. Термометр залишається біля рота, а важка голівка повільно хилиться.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "629681acd7fd38527532ed1d4ae94543aedb1a2f3b560dbbd907e377c5e331ac",
+      "source_anchors": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch3/lumen_91/source-frames/000.png",
+          "sha256": "08898971b0cc503a10f724fe8d372e00d0ab32493d60a886dc35592d998574d4"
+        }
+      ],
+      "named_acting_parts": [
+        "fever_head_and_same_thermometer_shiver",
+        "tired_head_droop_with_thermometer",
+        "hugged_blanket_and_paws_tremble"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.9208968281745911,
+        "maximum_displacement_px": 8.035807609558105
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_92",
+      "batch": "batch3",
+      "candidate_id": "lumen_92_author-b_batch3",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_92/candidate.webm",
+      "candidate_sha256": "487949a36a52ba0859da73a4325eb52ce4848f97debc151ab178278264855ceb",
+      "bytes": 260238,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_92/recipe.json",
+      "recipe_sha256": "1488a809c907d94ff83a2d0be35ed81f256e2f97684da0f11f490ea6ec739743",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_92/proof.json",
+      "proof_sha256": "e4f16ddb5767504a5c7e8c3e52c741fd8485ac47084da5d07cb92f52f9930de7",
+      "description_uk": "Сидячи на синій подушці, обережно торкається білої пов’язки й трохи схиляє наболілу голівку. Зморщується, тоді повільно розслабляє плечі.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "388af949b735964045a29ffd73c891670550171f6f46856cffc4feb96e2eb01f",
+      "source_anchors": [
+        {
+          "index": 12,
+          "timestamp_seconds": 0.4,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch3/lumen_92/source-frames/012.png",
+          "sha256": "961e250d575227aa1fd8513e94bf0f65da99985e8f53aa23c24dfaa18f58a6ea"
+        }
+      ],
+      "named_acting_parts": [
+        "bandaged_head_and_touching_paw_tilt",
+        "small_gentle_bandage_touch",
+        "seated_shoulder_release"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.932634174823761,
+        "maximum_displacement_px": 8.009593963623047
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_93",
+      "batch": "batch3",
+      "candidate_id": "lumen_93_author-b_batch3",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_93/candidate.webm",
+      "candidate_sha256": "725b80599bbf549703174078c61b6c3138902026e470914193bda0682fe137f7",
+      "bytes": 197260,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_93/recipe.json",
+      "recipe_sha256": "095a19f85526d40432f64a1259778215302bc5ac3508664def74f95aaf8d26cf",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_93/proof.json",
+      "proof_sha256": "dc370728a2c4ada00aef758cf1bf0b1301afcbe69ae2c8b282d3b96684497c45",
+      "description_uk": "З нудотно-зеленими щічками морщиться й згорблюється, обома лапками тримаючись за живіт. Поряд стоїть порожнє бірюзове відерце — він лише стримує нудоту.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "1149e44a9525b348c9c3c7d9bd11c457d25405b8a15adee6414f5abc80283e9f",
+      "source_anchors": [
+        {
+          "index": 12,
+          "timestamp_seconds": 0.4,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch3/lumen_93/source-frames/012.png",
+          "sha256": "50453bbd0620829393024ae53a3f7738a7d0b5814732a598192ee22408baa6d7"
+        }
+      ],
+      "named_acting_parts": [
+        "queasy_head_shoulders_small_heave",
+        "paws_on_belly_heave_contact",
+        "abdomen_tension"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.7771326899528503,
+        "maximum_displacement_px": 10.396329879760742
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_95",
+      "batch": "batch3",
+      "candidate_id": "lumen_95_author-b_batch3",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_95/candidate.webm",
+      "candidate_sha256": "5495d07efb189818cb3024ea26ec21af435bfaf49c246232d82e8535034d46a9",
+      "bytes": 217584,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_95/recipe.json",
+      "recipe_sha256": "3f81dc6f071098c102f5e51ffaa3518d7a2c3f7c9b416fb1feb8e224d4ff3078",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_95/proof.json",
+      "proof_sha256": "7fc5e5b2354dd890f61cd426194be704f164d0e675444954df318c36c5a83e35",
+      "description_uk": "Із заплющеними очима двічі чхає в велику білу хустинку. Вушка підскакують, тканина хвилею розгортається й м’яко осідає, а плащик трохи злітає слідом.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "c4c404e2ab288be89d68fb4a639bc91a4522bc16ae22a01bec6731c49e461e5e",
+      "source_anchors": [
+        {
+          "index": 21,
+          "timestamp_seconds": 0.7,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch3/lumen_95/source-frames/021.png",
+          "sha256": "c16012fd8774c12043b4a0760423763738a940ffbd10051d79f2e42356609c2b"
+        }
+      ],
+      "named_acting_parts": [
+        "sneeze_closed_face_ear_lift",
+        "handkerchief_same_paw_billows",
+        "sneeze_gripping_paw_and_shoulders",
+        "cloak_sneeze_followthrough"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.6891703605651855,
+        "maximum_displacement_px": 12.455184936523438
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_96",
+      "batch": "first3",
+      "candidate_id": "lumen_96_author-b_scene-a",
+      "candidate_path": "sticker-lab/production-v5/candidates/author_b_lumen_96_b/candidate.webm",
+      "candidate_sha256": "351f6b0353121427b09010312dc1dc0b58d7815b42d901a9a01be139e5966116",
+      "bytes": 240514,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-first3/lumen_96-recipe.json",
+      "recipe_sha256": "c104e65ea83613a7482051ff5cd4d3507d847781ef88f26ef006e8cad7372412",
+      "proof_path": "sticker-lab/production-v5/candidates/author_b_lumen_96_b/proof.json",
+      "proof_sha256": "e9edb5a9ee98c2147f6efece77f4f081893d8e88e7a75a4bd7d644b6eb30b29f",
+      "description_uk": "Розпашілий від спеки, з крапельками поту й висунутим язичком, обмахується зеленим листком у тій самій лапці; важко дихає й трохи опускає плечі.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "240a3927ce00c9095c050fdc4a9433fb2dc3148e68f3cdd6c835814dd8b00947",
+      "source_anchors": [
+        {
+          "index": 31,
+          "timestamp_seconds": 1.0333333333333334,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/lumen_96/source-frames/031.png",
+          "sha256": "e95c4bab8c9e1c504d74665f14c4c0ca45c451c47494c884787bed7384034313"
+        }
+      ],
+      "named_acting_parts": [
+        "same_paw_leaf_fanning_arc",
+        "small_tongue_pant_shoulders"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.6240851283073425,
+        "maximum_displacement_px": 22.602386474609375
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "accept",
+      "native_realtime_slow_device_human_acceptance": "unknown",
+      "independent_review": {
+        "path": "docs/qa-1-13/qa-animation-author-b-first3.json",
+        "sha256": "296a0ebfba915cccbf5e6113f03377b74e4cd03e02be90c9a2cef8e6e5065ee6",
+        "actual_agent_id": "/root/qa_stickers_b",
+        "accepted_scope": "Exact output all84 decoded frame/scene/anatomy/prop and loop-boundary still-image prototype acceptance only.",
+        "verdict": "accept"
+      }
+    },
+    {
+      "id": "lumen_97",
+      "batch": "batch3",
+      "candidate_id": "lumen_97_author-b_batch3",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_97/candidate.webm",
+      "candidate_sha256": "3c689962324c76f0069f17fc63ed70aa6f90e97acfd8dfc8a9e7f1eac8e90ed8",
+      "bytes": 219744,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_97/recipe.json",
+      "recipe_sha256": "0d2f50ec1392aa1d6a1856cedaa5cd9c4089c30be203bfb2ed6dd5b840f1d548",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_97/proof.json",
+      "proof_sha256": "4be1bd53b11db17f4e12c8555a44dba2b421542248ba2b26858a8ba9d851f370",
+      "description_uk": "Змерз до кісточок: заплющивши очі й показуючи лише два передні зубки, дрібно тремтить плечима та вушками й притискає лапки до грудей. Нижня частина тіла скута прозорою блакитною крижинкою.",
+      "source_kind": "generated_corrected_anchor",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "7e2235c1f8f1df3947af75047856bd8bd27fc9938a4035b3bcf56b5e81492a68",
+      "source_anchors": [
+        {
+          "key": "corrected_anchor",
+          "path": "sticker-lab/production-v5/source-art/lumen_97/anchor.png",
+          "sha256": "a029373ff7e11607710e1250b90b3a06dbeff2f9bae630abfec52aa34bccfff1",
+          "width": 512,
+          "height": 512,
+          "origin": "generated_corrected_anchor",
+          "original_video_timestamp": null
+        }
+      ],
+      "named_acting_parts": [
+        "cold_coherent_head_shiver",
+        "clasped_paws_chest_cold_tension",
+        "huge_ears_cold_tremble",
+        "cold_shoulder_hunch"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.8722432255744934,
+        "maximum_displacement_px": 4.163210391998291
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_98",
+      "batch": "batch3",
+      "candidate_id": "lumen_98_author-b_batch3",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_98/candidate.webm",
+      "candidate_sha256": "55508878ca6b1bae36bf04b0dfd4f47c4ac798cde3c80a426518304846838e4c",
+      "bytes": 225922,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_98/recipe.json",
+      "recipe_sha256": "dc824c88284babe03f6c4a17e823853eb805d2a575c48e638b8ea549274364de",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_98/proof.json",
+      "proof_sha256": "235a371509391cdc8fa0e4623bb07322dfc8b9320b5cfcb4f0134b66b90f4ce8",
+      "description_uk": "Зі спантеличеною усмішкою хитко погойдується, тримаючись за одну бірюзову соломинку як за ціпок. Вільна лапка безсило теліпається, а голівка кумедно хилиться.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "f33e76a272a53b9edcdc61845296758e197b2088dca75d1f69f982725b56f62e",
+      "source_anchors": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch3/lumen_98/source-frames/000.png",
+          "sha256": "44510c5d0fc3a60eee43314f2d8fcd18c0c062750c2710e4f73ee0dd541c4dcd"
+        }
+      ],
+      "named_acting_parts": [
+        "woozy_head_cane_grip_sway",
+        "loose_free_paw_lag",
+        "unsteady_torso_balance"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.6786234378814697,
+        "maximum_displacement_px": 11.529714584350586
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_99",
+      "batch": "batch3",
+      "candidate_id": "lumen_99_author-b_batch3",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_99/candidate.webm",
+      "candidate_sha256": "ea99b048e4c84e2c96f4b668acd101f1768df950cba6874e061423b3eaa2d4bf",
+      "bytes": 200964,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_99/recipe.json",
+      "recipe_sha256": "c7e2619630bcb840b5d8e167b3a17f3e1f9f11051362abe9d7d5b436fe8f2f4b",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_99/proof.json",
+      "proof_sha256": "e0bc1e568782cd9c17056497431ffac6829fdd7ff2077c76374dd0121c5af400",
+      "description_uk": "Безпечно розпластався на синьому килимку з комічними хрестиками замість очей. Лапка й обвислі вушка ледь сіпаються, язичок кумедно звисає; золота зірочка лежить поруч.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "54e6e40ab7190e0b5a8bc513c9b09fcdab16eef81d543491e126e82283c0b6d6",
+      "source_anchors": [
+        {
+          "index": 12,
+          "timestamp_seconds": 0.4,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch3/lumen_99/source-frames/012.png",
+          "sha256": "7ca34849eeab7209415eee248c704a08ca53cbdff7b6694f5215363fb0233c1f"
+        }
+      ],
+      "named_acting_parts": [
+        "limp_dazed_forepaw_twitch",
+        "flopped_ears_dazed_tremor",
+        "slack_jaw_tongue_small_settle",
+        "lying_belly_quiet_motion"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.8629025220870972,
+        "maximum_displacement_px": 3.5872106552124023
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_100",
+      "batch": "batch4",
+      "candidate_id": "lumen_100_author-b_batch4",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_100/candidate.webm",
+      "candidate_sha256": "0648028976a114af634afe8168e5bb6d29207c00bf5e3300b50b7c81869b686c",
+      "bytes": 227309,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_100/recipe.json",
+      "recipe_sha256": "21126aaf7d0f47581f68d274890f22580646ce2a2988910c839751ebfd9326bf",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_100/proof.json",
+      "proof_sha256": "bd79ea42f3530424f69a013c3ebe0838ef2cb1b7948a0f71cb3dc3cef30a452a",
+      "description_uk": "Зі спіральками в очах хапається лапками за голову й розгублено погойдується. Золоті зірочки над ним та маленька бірюзова дзиґа поруч ледь похитуються, підкреслюючи запаморочення.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "2f51d0aa27f6bd3c2dc839af5d7b0d3165d3a22eb96c1e587107a76f1fd58721",
+      "source_anchors": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch4/lumen_100/source-frames/000.png",
+          "sha256": "9db187802fabc574ec7795b14b5e63da18fb8a689bdf1fb0418cb5b262c75724"
+        }
+      ],
+      "named_acting_parts": [
+        "dizzy_spiral_face_and_bracing_paws_sway",
+        "small_star_halo_tilt",
+        "decorative_top_wobble",
+        "dizzy_ear_followthrough"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.831635594367981,
+        "maximum_displacement_px": 8.633563995361328
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_101",
+      "batch": "batch4",
+      "candidate_id": "lumen_101_author-b_batch4",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_101/candidate.webm",
+      "candidate_sha256": "145a13ac45b1c79eafee9889eff775e6bef66703de0a317361040c40db11aee1",
+      "bytes": 258915,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_101/recipe.json",
+      "recipe_sha256": "286390f632ee235a35802d56da7ed2cb56552f32856cee9a7b1c5fbdea7c74bd",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_101/proof.json",
+      "proof_sha256": "db9d1708f295363d95b62e05d88e05b4b45abd339551f2ea2f99d37b411ea7b6",
+      "description_uk": "Ошелешено розкриває рот і розводить лапки: над цілою голівкою пульсує пухнаста бірюзова хмарка думок із золотими кристаликами. Плечі відсахуються, вушка й плащик відгукуються на подив.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "3e8f88cc32e2f6d0015172a5bf986d577b32133136f69d58e5d57628cbc13da9",
+      "source_anchors": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch4/lumen_101/source-frames/000.png",
+          "sha256": "62dad92a7ac774501ccd442d2f411e7ec771dc1880f491fd01748e0796757fd9"
+        }
+      ],
+      "named_acting_parts": [
+        "mindblown_face_and_shoulders_recoil",
+        "spread_paws_startled_flare",
+        "thought_cloud_attached_bloom",
+        "cape_recoil_response"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.7847671508789062,
+        "maximum_displacement_px": 10.857112884521484
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_102",
+      "batch": "batch4",
+      "candidate_id": "lumen_102_author-b_batch4",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_102/candidate.webm",
+      "candidate_sha256": "b5d51d235d6234871ee00c344b0e62f51d21447505fa2bdff31e2c6164181e87",
+      "bytes": 211192,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_102/recipe.json",
+      "recipe_sha256": "062a67fe39d99cff025fb2f2e8915093dddf3cd9a7880ea6c39d008e7a223755",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_102/proof.json",
+      "proof_sha256": "9a3103e3b8c6e1560e5424fe57e57a6e404880ca3c2eaea536465a14d14c3081",
+      "description_uk": "Підморгує з-під ковбойського капелюха, весело киває та погойдує м’яку петлю золотого ласо тією самою лапкою. Піднята ніжка злегка притупує в такт.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "b747f927e610b25964dbbaa91118c3a10eccbfaf77b3c0572c607a328f3e961e",
+      "source_anchors": [
+        {
+          "index": 12,
+          "timestamp_seconds": 0.4,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch4/lumen_102/source-frames/012.png",
+          "sha256": "f6f08a003ded464fae0f94e141bc1fed7bae98d26a349f053111366d9b1184b5"
+        }
+      ],
+      "named_acting_parts": [
+        "cowboy_head_hat_jaunty_nod",
+        "one_rope_loop_wrist_swing",
+        "raised_foot_small_jaunty_tap",
+        "free_paw_and_cape_lag"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.6331658959388733,
+        "maximum_displacement_px": 11.978395462036133
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_103",
+      "batch": "batch4",
+      "candidate_id": "lumen_103_author-b_batch4",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_103/candidate.webm",
+      "candidate_sha256": "97df793c01450f3b8f1e52b7127c9ed769e8e2698406f1c8d2cebcb78c6b1a75",
+      "bytes": 240561,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_103/recipe.json",
+      "recipe_sha256": "0c1f4ede89584b2d122130c88e09d7bc00926892a78910711beb055cc90b7435",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_103/proof.json",
+      "proof_sha256": "ec5c85ddfda332e6414ef15b1f6ddd1004ce7686500ad1e95df417cf98ad6919",
+      "description_uk": "Ховається за газетою в кумедних окулярах із накладними бровами й вусами. Потай визирає, трохи схиляючи голову, а газету обережно підтягує й опускає обома лапками.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "ec6275b30e185e413197eac8940089a3b65438723d0129527e1d14a54755d5d7",
+      "source_anchors": [
+        {
+          "index": 12,
+          "timestamp_seconds": 0.4,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch4/lumen_103/source-frames/012.png",
+          "sha256": "4873bf16cc8c92c625f6ea311d5e866c5af33d96f5dd8436ebc17c16982987b5"
+        }
+      ],
+      "named_acting_parts": [
+        "disguised_peeking_head_glasses_moustache",
+        "newspaper_both_grips_raise_lower",
+        "shoulder_peek_small_shift"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.7000538110733032,
+        "maximum_displacement_px": 10.42425537109375
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_104",
+      "batch": "first3",
+      "candidate_id": "lumen_104_author-b_scene-b",
+      "candidate_path": "sticker-lab/production-v5/candidates/author_b_lumen_104_d/candidate.webm",
+      "candidate_sha256": "a8145c97dbc0d36c7d500a98512c3effe627b74b2f165139aece5c7034f76f35",
+      "bytes": 254053,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-first3/lumen_104-recipe.json",
+      "recipe_sha256": "f19e3e51ae11890ab7d357e38b4e566bcad50a95165d4902a036a8bf9121a3c5",
+      "proof_path": "sticker-lab/production-v5/candidates/author_b_lumen_104_d/proof.json",
+      "proof_sha256": "a75e6980f3411d60866632f2362e3a52addcaf9c0b367143f9b2d338891a9574",
+      "description_uk": "З усмішкою пояснює щось цікаве: киває головою в окулярах і підносить маленьку золоту лампочку, а розгорнуту синю книжку тримає в іншій лапці.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "1c04deab5af7a559f094a15b05d646f33cabb2d200e69d20e7e2ffecabdbcd51",
+      "source_anchors": [
+        {
+          "index": 12,
+          "timestamp_seconds": 0.4,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/lumen_104/source-frames/012.png",
+          "sha256": "52991432f967a06442903f8a50ec57ddd6bbc70f4b12e21d803932109b7bb4b4"
+        }
+      ],
+      "named_acting_parts": [
+        "eager_coherent_head_glasses_nod",
+        "bulb_wrist_lift_and_book_response"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.7050433158874512,
+        "maximum_displacement_px": 16.602813720703125
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "accept",
+      "native_realtime_slow_device_human_acceptance": "unknown",
+      "independent_review": {
+        "path": "docs/qa-1-13/qa-animation-author-b-first3.json",
+        "sha256": "296a0ebfba915cccbf5e6113f03377b74e4cd03e02be90c9a2cef8e6e5065ee6",
+        "actual_agent_id": "/root/qa_stickers_b",
+        "accepted_scope": "Exact output all84 decoded frame/scene/anatomy/prop and loop-boundary still-image prototype acceptance only; broken slow reviewMP4 is a separate unclosed handoff defect.",
+        "verdict": "accept"
+      }
+    },
+    {
+      "id": "lumen_105",
+      "batch": "batch4",
+      "candidate_id": "lumen_105_author-b_batch4",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_105/candidate.webm",
+      "candidate_sha256": "975151105166ca554956ccd2ab5f8f29495a5a789036d610e2a11c17bbad04b9",
+      "bytes": 249223,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_105/recipe.json",
+      "recipe_sha256": "3011a7c54c1cd441c66609b245a1f3d42bb7368101ccb43ba1d933094763b5e2",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_105/proof.json",
+      "proof_sha256": "45fc4040eb991250cc8d9d2ba49f13970ae0d2b8fa2465b9bbbf24b860f734bb",
+      "description_uk": "Примружується крізь монокль і допитливо схиляє голівку. Підносить бірюзовий кристал тією самою лапкою, уважно розглядаючи його; золотий шнурок монокля м’яко відгукується на рух.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "27ed3a5d9019f1730b742f4d0960c77f50c1b0f65d4bcd51a70096f2d1207c88",
+      "source_anchors": [
+        {
+          "index": 12,
+          "timestamp_seconds": 0.4,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch4/lumen_105/source-frames/012.png",
+          "sha256": "9fb24c8cb6bbb019d995e383ceaeab312bf864a1a3f9ab6855b29ffff3d5350f"
+        }
+      ],
+      "named_acting_parts": [
+        "curious_head_monocle_cord_tilt",
+        "same_paw_crystal_inspection_lift",
+        "raised_eyebrow_small_accent"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.6162922978401184,
+        "maximum_displacement_px": 12.716217041015625
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_106",
+      "batch": "batch4",
+      "candidate_id": "lumen_106_author-b_batch4",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_106/candidate.webm",
+      "candidate_sha256": "e0e1c00d053c80920d94148ac7b37947d434f0b24e80ddbf4d4c0286e6357671",
+      "bytes": 251138,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_106/recipe.json",
+      "recipe_sha256": "6eb9bf19d81e89a36e23458b9c08dab3875add30a9bf57d011421b255cd55f13",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_106/proof.json",
+      "proof_sha256": "73d48c378f8dd818bf3e31965f80a072616a09192ad7075c60a5a11d42d14398",
+      "description_uk": "Спантеличено схиляє голову й знизує плечима, повертаючи бірюзовий шматочок пазла в лапках. Поряд чекає кругла золота рамка, а над головою завис знак запитання.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "b0356e2967eedb107a9f56f6eacf51aa9722a3c131d888d59d528606123e478b",
+      "source_anchors": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch4/lumen_106/source-frames/000.png",
+          "sha256": "a5394ba96b9c9baeeaac9049a9c470e12fa7bfb3ec5b1edc6236a4458101ae53"
+        }
+      ],
+      "named_acting_parts": [
+        "puzzled_head_countertilt",
+        "same_two_paws_puzzle_small_turn",
+        "confused_shoulder_shrug",
+        "decorative_question_small_float"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.8245061039924622,
+        "maximum_displacement_px": 7.816118240356445
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_107",
+      "batch": "batch4",
+      "candidate_id": "lumen_107_author-b_batch4",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_107/candidate.webm",
+      "candidate_sha256": "105e9f28f4e7c671bb6ebcf4f5b2bdf3e7b0cb074b368ec88006c27a19af7811",
+      "bytes": 209230,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_107/recipe.json",
+      "recipe_sha256": "9914fe1ced43747e0734f1fbf3626a99e5a2aef583429a8fe506d3583f6a3cc0",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_107/proof.json",
+      "proof_sha256": "0f73a470b814eb78f2f7a903036f44b734ba6f3f5a29d2c880e45b2592817d43",
+      "description_uk": "З нерішучою усмішкою почергово зважує в лапках дві різні чашечки: одну трохи підіймає, іншу опускає. Голівка й нерівно підняті вушка кумедно хиляться слідом.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "28d929f7dd291b44952f3d36ed67a03dbb269e76e969977864d6b2935e8e961b",
+      "source_anchors": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch4/lumen_107/source-frames/000.png",
+          "sha256": "37101cb928daf4e5cc010caf6216b541c15f52343dda3375a28649c47d4513a9"
+        }
+      ],
+      "named_acting_parts": [
+        "ambivalent_head_opposite_cups",
+        "left_cup_same_paw_lift",
+        "right_cup_same_paw_lower",
+        "small_uneven_shoulders_balance"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.6710925102233887,
+        "maximum_displacement_px": 13.348773002624512
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_108",
+      "batch": "batch4",
+      "candidate_id": "lumen_108_author-b_batch4",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_108/candidate.webm",
+      "candidate_sha256": "4259dfd1484bea603b24973bc6c1d14c797ee7ae8f71e99f1132783ec49063e9",
+      "bytes": 231337,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_108/recipe.json",
+      "recipe_sha256": "3a5ae5de7526dc967a095a339ec7841954580d090ebdebeab15be41be4cc585c",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch4/lumen_108/proof.json",
+      "proof_sha256": "1950dcf826b7067ec7048a8e9eba02c79bdf5066576db44907a7e354d04005f7",
+      "description_uk": "Тривожно зводить брови й притискає лапки до медальйона. Плечі нервово здригаються, голівка злегка хилиться; складена синя парасолька спокійно стоїть біля ніжки.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "18870a42d7685684296512f812d2584f31abbeefafad569475c7fa1af3c1ce3f",
+      "source_anchors": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch4/lumen_108/source-frames/000.png",
+          "sha256": "66580ea61fdaaec9b95c219cd6ed0e618db421b01a14c7ee436860cd543ca054"
+        }
+      ],
+      "named_acting_parts": [
+        "worried_head_small_inquiring_dip",
+        "pendant_clutch_nervous_tension",
+        "worried_shoulder_hunch"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.8144145011901855,
+        "maximum_displacement_px": 7.781551361083984
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_109",
+      "batch": "batch5",
+      "candidate_id": "lumen_109_author-b_batch5",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_109/candidate.webm",
+      "candidate_sha256": "e4e5af8877d7ab6ef422d25e70d28f7a474dd8cbeba7f5bee5c2be222098f529",
+      "bytes": 236611,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_109/recipe.json",
+      "recipe_sha256": "5f8d31dc2fb1eaaa79dea5abb7b267b92e1be1fd4423bc3dd6e4908a85cba8d6",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_109/proof.json",
+      "proof_sha256": "0f5e4f0f4b11eaf2f6c6d343341099e02578847305be1cd2cc4c8f43be524933",
+      "description_uk": "Тихо засмучується й опускає голівку та обвислі вушка, склавши лапки перед собою. Поряд схилила голівку маленька фіолетова квітка — без гучного плачу чи перебільшення.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "762eb18020859695ef1066473572e32168ebde6ffc3b6d0a2966c7e6cd099825",
+      "source_anchors": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch5/lumen_109/source-frames/000.png",
+          "sha256": "0ed9054e9eed114f4a41566c50db264d844accd97ad609555547c8a707ec2b87"
+        }
+      ],
+      "named_acting_parts": [
+        "quiet_sad_face_soft_dip",
+        "folded_paws_small_sad_settle",
+        "drooping_ear_ends",
+        "drooping_flower_soft_nod"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.8093228340148926,
+        "maximum_displacement_px": 10.711688995361328
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_110",
+      "batch": "batch5",
+      "candidate_id": "lumen_110_author-b_batch5",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_110/candidate.webm",
+      "candidate_sha256": "419736eaa23eec00e4d916eab8716420a5db145dad9c89b269029280d03242ad",
+      "bytes": 229800,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_110/recipe.json",
+      "recipe_sha256": "ceb8c14096af75b7e9edf2c99bdb9645f02305bb093a965973bef408dd10d6b0",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_110/proof.json",
+      "proof_sha256": "d923788d1d65a309937115756806653becc97c203c0b888e90c9c85aee9d778d",
+      "description_uk": "Сумно сидить, загорнувшись у синій плащ і підібгавши коліна. Голівка повільно хилиться, плечі осідають; над ним погойдується маленька дощова хмаринка.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "a6c5a0be3cab00ddaf5032768a92dfa29e9e17907a69b336d0fa9a345421e589",
+      "source_anchors": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch5/lumen_110/source-frames/000.png",
+          "sha256": "b3791642d710f52a550aee3ea3c2d1086ba66b43a8dd05b12daf4de3c0e716be"
+        }
+      ],
+      "named_acting_parts": [
+        "bundled_seated_sad_head_droop",
+        "arms_and_knees_quiet_settle",
+        "small_raincloud_side_drift"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.704419732093811,
+        "maximum_displacement_px": 10.505359649658203
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_128",
+      "batch": "batch5",
+      "candidate_id": "lumen_128_author-b_batch5",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_128/candidate.webm",
+      "candidate_sha256": "9729b6c0968e35cd7541c37af7360fd17ddda0d8b0033d55b9b018857719e77c",
+      "bytes": 222396,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_128/recipe.json",
+      "recipe_sha256": "bec127c2641cece1f9228a2e09b3c7a2b56673db34d3c48ef57c5337f6541304",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_128/proof.json",
+      "proof_sha256": "78d169bcb7a1dcc00708af433a97907bf9351d1d2109e8f1103da05d0e3f0c50",
+      "description_uk": "Сердито схрещує лапи й двічі виразно тупає піднятою ніжкою, випускаючи з носа маленькі хмарки пари. Плечі напружуються, а голівка коротко відсахується після удару.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "c202e4fdab0d1ac898b1eb99587ca1cf85c0fbf855660949cb37eb21f976d1c0",
+      "source_anchors": [
+        {
+          "index": 43,
+          "timestamp_seconds": 1.4333333333333333,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch5/lumen_128/source-frames/043.png",
+          "sha256": "ccec0c9ff04efe7f4e2a49a024361976f9b3e581013ddcb1ec101dd9b64e40f2"
+        }
+      ],
+      "named_acting_parts": [
+        "raised_foot_coherent_stamp",
+        "folded_arms_angry_tension",
+        "angry_face_short_recoil",
+        "nostril_steam_decorative_pulse"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.7490309476852417,
+        "maximum_displacement_px": 19.329683303833008
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_131",
+      "batch": "batch5",
+      "candidate_id": "lumen_131_author-b_batch5",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_131/candidate.webm",
+      "candidate_sha256": "103c33d5b58bc6fa9bd32894473d7a3f89c23c76186840681960a06639a567ef",
+      "bytes": 208866,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_131/recipe.json",
+      "recipe_sha256": "18e68203e5c2964b81a9440949012b062cf0e891afcb538e9721638993d5f8dd",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_131/proof.json",
+      "proof_sha256": "9496d1088d48782832e82e7af5ab08505f99269d425f47b779fc7a798949440e",
+      "description_uk": "Сердито стискає кулачки біля грудей й двічі притупує однією ніжкою. Чорна плашка «@#$!» приховує лайку, плечі по черзі напружуються й коротко відсахуються.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "b088605aa70251cfbb49528936913c224add3b709df4a8bb94f63aebc45aa15a",
+      "source_anchors": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch5/lumen_131/source-frames/000.png",
+          "sha256": "2ef4ef3b8fc47127baa063fa1be0e1542fc6c3772a01b848e040403f98eb2c9e"
+        }
+      ],
+      "named_acting_parts": [
+        "lift_stamp_left_foot_and_knee",
+        "clenched_left_fist_tension",
+        "clenched_right_fist_staggered_tension",
+        "face_and_rigid_censor_strip_recoil"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.6961007118225098,
+        "maximum_displacement_px": 13.398064613342285
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_133",
+      "batch": "batch5",
+      "candidate_id": "lumen_133_author-b_batch5",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_133/candidate.webm",
+      "candidate_sha256": "2f9ea4b84d734294bb6aa262648bd386a8be8d1b32194bbc16e98b59e9baef8b",
+      "bytes": 233516,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_133/recipe.json",
+      "recipe_sha256": "ecad73b613d6c6ba122a2822388466e065ee90abb014d4440337c16acc3b1cbf",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_133/proof.json",
+      "proof_sha256": "44a18dfd6faa81ef0bd17c6777085588a9976927a1a72ff47a78e7b92e9efe42",
+      "description_uk": "У фіолетовому каптурі сердито схрещує лапи, відвертає голівку й тупає ніжкою поруч зі зім’ятим папірцем. Папір лежить на місці — його нікуди не відкидає.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "ef1c9cdd6742c44b5d0e417a61e6657f1a60a6e5d044a01a03fcd046079d8e72",
+      "source_anchors": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch5/lumen_133/source-frames/000.png",
+          "sha256": "f9553e26e08f2b900ffffb56fe6c90d5e7f6d9399d5f615f9d90ac2ee382ea74"
+        }
+      ],
+      "named_acting_parts": [
+        "purple_hood_head_angry_turn",
+        "right_foot_lift_and_stamp_beside_paper",
+        "folded_arms_crossed_tension"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.7135493159294128,
+        "maximum_displacement_px": 14.558076858520508
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_134",
+      "batch": "batch5",
+      "candidate_id": "lumen_134_author-b_batch5",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_134/candidate.webm",
+      "candidate_sha256": "9ca5f23a60e07a0ab261d40f259500909f6fc8e161ea101d9e0173917fc52154",
+      "bytes": 221192,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_134/recipe.json",
+      "recipe_sha256": "2895a5ef160483e08ee162b2cf69ab6bdf32d46c1cb65cf0383f0990c0cb4f05",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_134/proof.json",
+      "proof_sha256": "9456e1330fb2228478b14649090b128b18232d59344e132127113c7c82256944",
+      "description_uk": "Жартома «помер зі сміху»: лежить на плащі з очима-хрестиками й черепом на голові. Животик і щелепа здригаються від реготу, піднята лапка весело махає; кісточка лишається поруч.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "d6ae874916557be417e77edd67d8467b2dcd4f457e691cb3b0d53af48b759dc9",
+      "source_anchors": [
+        {
+          "index": 11,
+          "timestamp_seconds": 0.36666666666666664,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch5/lumen_134/source-frames/011.png",
+          "sha256": "dd8676185f1f9fbfe88f1dd719b3c32a89fe803a00acb7c94d77b84a45f8dd9f"
+        }
+      ],
+      "named_acting_parts": [
+        "comic_laugh_head_skull_coherent_recoil",
+        "open_jaw_laugh_pulses",
+        "raised_paw_laughter_wave",
+        "lying_belly_laugh_motion"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.8058143258094788,
+        "maximum_displacement_px": 7.009600639343262
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_135",
+      "batch": "batch5",
+      "candidate_id": "lumen_135_author-b_batch5",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_135/candidate.webm",
+      "candidate_sha256": "040eefbf98227fdf30eb7bf73775f34040ae2d99e997d1f95d7f9df6c3ff7cbb",
+      "bytes": 216275,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_135/recipe.json",
+      "recipe_sha256": "a19caa69b81ff4ce63fa5714a0d9ead4079b51ef2615b29b02f7bb87030b91df",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_135/proof.json",
+      "proof_sha256": "6ceabcc0d672e39c661e3f5b9f2bc1eecce2f91a7583559be1ccb3d70d8a2726",
+      "description_uk": "Затискає ніс і відсахується від смердючого фіолетового горщика. В іншій лапці міцно тримає прапорець із черепом, а клубочок фіолетового димку ледь погойдується над горщиком.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "45824f380d4b88a7701a8e0334711139a011c823b5beb6e1068ef01679294093",
+      "source_anchors": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch5/lumen_135/source-frames/000.png",
+          "sha256": "ee112bcb09c4606e93f992c1fde2d69afa1bf788db52780cdf2826088fb28b5d"
+        }
+      ],
+      "named_acting_parts": [
+        "nose_pinching_paw_and_disgusted_head_recoil",
+        "same_paw_flag_wrist_response",
+        "stink_smoke_held_waft",
+        "recoil_shoulders_small_followthrough"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.8179913759231567,
+        "maximum_displacement_px": 8.422712326049805
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    },
+    {
+      "id": "lumen_137",
+      "batch": "batch5",
+      "candidate_id": "lumen_137_author-b_batch5",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_137/candidate.webm",
+      "candidate_sha256": "f69248a180a6c97ba14d39b31350f16c4cc9092eef0a1551d91ff26d40cd7717",
+      "bytes": 222746,
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_137/recipe.json",
+      "recipe_sha256": "5de573e6eb7d1f6d54fc74f3c2d5154cbdfc09b75cc0b205821599ffc1d5019c",
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch5/lumen_137/proof.json",
+      "proof_sha256": "bd02713ef3d864676468f3ab0557cfdc6da8a847be25e98bc7f540431d71cfee",
+      "description_uk": "Веселий клоун із червоним носом і ковпачком розкланюється та махає вільною лапкою. Квіточка в іншій лапці злегка похитується, ніжка робить маленький танцювальний притуп.",
+      "source_kind": "derived_decoded_video",
+      "engine_mode": "shared_local_mesh_v1",
+      "source_video_sha256": "39eff396f41f8847d105cae816bc45fcd326cbd442ae1ffd3700e74deadb79f1",
+      "source_anchors": [
+        {
+          "index": 0,
+          "timestamp_seconds": 0.0,
+          "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch5/lumen_137/source-frames/000.png",
+          "sha256": "44c7e84ccdfd0dd1945997bd014ad65263c98c2107f6fdbf1b524eeac2ec57a6"
+        }
+      ],
+      "named_acting_parts": [
+        "clown_sheepish_head_hat_bow",
+        "free_paw_clown_wave",
+        "held_flower_wrist_sway",
+        "left_dance_foot_small_tap"
+      ],
+      "statistics": {
+        "minimum_jacobian": 0.7600699663162231,
+        "maximum_displacement_px": 9.747498512268066
+      },
+      "frames": 84,
+      "author_full_ordered_frames": 84,
+      "independent_review_status": "pending_exact_item_review",
+      "native_realtime_slow_device_human_acceptance": "unknown"
+    }
+  ],
+  "independent_report_snapshots": [
+    {
+      "path": "docs/qa-1-13/qa-animation-author-b-first3.json",
+      "sha256": "296a0ebfba915cccbf5e6113f03377b74e4cd03e02be90c9a2cef8e6e5065ee6",
+      "actual_agent_id": "/root/qa_stickers_b",
+      "status": "addressed_independent_frame_scene_review_with_one_candidate_return",
+      "matched_latest_candidate_ids": [
+        "lumen_96",
+        "lumen_104"
+      ]
+    },
+    {
+      "path": "docs/qa-1-13/qa-animation-author-b-batch2.json",
+      "sha256": "338db97ea0124601dd4c8709d80f5137efbc2d71bcd8ae470f8e9ade9cbe1b44",
+      "actual_agent_id": "/root/qa_stickers_b",
+      "status": "independent_per_item_frame_scene_review_complete",
+      "matched_latest_candidate_ids": [
+        "lumen_84",
+        "lumen_81",
+        "lumen_82",
+        "lumen_85",
+        "lumen_86",
+        "lumen_87",
+        "lumen_88",
+        "lumen_89"
+      ]
+    }
+  ],
+  "author_actual_followup_visual_coverage": {
+    "source_PNG_native512_reviewed_for_each_item": true,
+    "full_ordered_final_frames": 2688,
+    "full_frame_tile_px": 224,
+    "native512_after_phase_frames": 288,
+    "native_realtime_slower_or_device_human_perception_observed": false
+  },
+  "artifact_integrity": {
+    "listed_files_rechecked_now": 3556,
+    "new_followup_copied_final_guarded_MP4_files": 64,
+    "every_followup_decoded_PNG_count": 84,
+    "every_followup_normal_slow_MP4_count": 84,
+    "normal_seconds": 2.8,
+    "slow_seconds": 5.6,
+    "normal_fps": 30,
+    "slow_fps": 15
+  },
+  "addressed_repairs": [
+    {
+      "id": 84,
+      "reason": "Independent double brow/eyelid return at13/14/69. Replaced curated face interpolation by one native-inspected clean63 source with authored full double warm bow, paws/clasp and cape response. New independent batch2 report closes old finding only on this new SHA."
+    },
+    {
+      "id": 86,
+      "reason": "Author numerical self-return: nose bubble must share head attachment motion. Coherent controls fix attachment without flattening drowsy nod/pillow response."
+    },
+    {
+      "id": 89,
+      "reason": "Author numerical self-return: local ear followthrough5px to3px at close cheek controls. Kept coherent yawning jaw/head and candle response."
+    },
+    {
+      "id": 90,
+      "reason": "Author numerical self-return: tight elbow/shoulder field scaled0.82, retained distinct protective cough/mask/cape response."
+    },
+    {
+      "id": 98,
+      "reason": "Author numerical self-return: free paw lag halved at tight306,442 contact, retained head/cane balance action."
+    },
+    {
+      "id": 107,
+      "reason": "Author numerical self-return: increased coherent head tilt0.022 to0.05rad to follow cup/cheek contact; kept full8px opposed cup lifts. No cup/hand swap."
+    },
+    {
+      "id": 128,
+      "reason": "Author numerical self-return: removed false zero pin at339,467 transparent raised-foot landing space; retained full18px stamp and real supporting-foot pins."
+    },
+    {
+      "id": 97,
+      "reason": "Root supplied actual2imagegen corrected anchor; two front teeth/dark mouth and cold squint native-inspected. Generated source branch has named anchor with null original timestamp; no invented decoded source index. Authored shiver pins ice block/feet."
+    }
+  ],
+  "historical104review_addendum": {
+    "owned_by": "/root/specialist_animation",
+    "metadata_path": "sticker-lab/production-v5/approved-proofs/lumen_104-review-addendum.json",
+    "metadata_sha256": "ebf41b1109c92c3376908a7129fd6f7a07544545cea3f4a3cc19316acd5708e0",
+    "replacement_path": "sticker-lab/production-v5/frozen-author-b-104-review-addendum/review-2x-duration.mp4",
+    "replacement_sha256": "9e6f71cc644037533c0c9d81503a7b3b52e58b9b486fcd3f41d1ac044d4cda22",
+    "replacement_bytes": 324838,
+    "original_package_untouched": true,
+    "author_did_not_duplicate_addendum": true
+  },
+  "source_review_wording_clarification97": {
+    "frozen_proof_path": "sticker-lab/production-v5/author_b-frozen-batch3/lumen_97/proof.json",
+    "frozen_proof_sha256": "4be1bd53b11db17f4e12c8555a44dba2b421542248ba2b26858a8ba9d851f370",
+    "clarification": "The generic source_review sentence mentions source indices, but generated97 has none. Actual reviewed source is corrected_anchor only, SHA a029373ff7e11607710e1250b90b3a06dbeff2f9bae630abfec52aa34bccfff1, with original_video_timestamp=null. Structured source_kind/source_anchors/lineage are authoritative and honest. Old frozen proof bytes were not edited."
+  },
+  "occlusion_escalations": {
+    "ids": [
+      132,
+      138
+    ],
+    "authoring_owned_by": "primary",
+    "source_review_notes": "sticker-lab/production-v5/recipes-proposed/author_b/source-review/occlusion-escalations.json",
+    "note": "Actual frame-specific source review handed to primary for layered box/spring/cloth occlusion; not counted among34 supported authored scenes."
+  },
+  "reproduction": "Use each exact frozen final recipe and its pinned generator/source hashes. Preparation helpers record authored configurations; per-recipe documented self-return corrections are authoritative. No canonical/approved records/runtime/stage or remote writes were made by this author.",
+  "limitations": [
+    "Independent exact-item frame/scene verdicts are bounded still-image prototype evidence. No blanket renderer or120pack approval.",
+    "No native realtime/slowed/device human playback was observed by this author.",
+    "Original89 atlases remain unrecovered. Derived decoded video frames and generated corrected artwork are explicitly distinct.",
+    "Historical first3slow104 invalidity remains visible in the immutable old package; primary-owned separate addendum repairs only review artifact delivery.",
+    "No live Telegram or production publication performed by this author."
+  ]
+}

@@ -1,0 +1,1936 @@
+{
+  "schema_version": 1,
+  "review_id": "qa-animation-author-b-batch2",
+  "actual_agent_id": "/root/qa_stickers_b",
+  "role": "qa.animation_independent",
+  "reports_to": "/root",
+  "created_at": "2026-10-30T18:39:28.415176+00:00",
+  "status": "independent_per_item_frame_scene_review_complete",
+  "package": {
+    "path": "sticker-lab/production-v5/author_b-frozen-batch2/package.json",
+    "file_sha256": "4106d20397b12d8cc19ebd771803a1b4067dc624b28d1ebe375982bb8d10addc",
+    "files_digest_sha256": "f6fbd879bb378f2a7af0506f1f8f012a8eb07e8f42e0b52852a1416d0665bb4c",
+    "listed_files": 806,
+    "all_listed_sizes_hashes_match_start_and_end": true,
+    "author_final_path_guard": {
+      "path": "/workspace/scratch/342fb2c985cb/lumen/sticker-lab/production-v5/author_b-frozen-batch2/package.guard.json",
+      "sha256": "0ac1e9674a0c1b820f4fc2e43821a2c6e6ee790bb01b67e4da4f2cb096eab0fe",
+      "author_scope_only": "Not treated as quality proof; independent806file/source/decode and16MP4 checks executed separately."
+    }
+  },
+  "scope": "Eight exact Bbatch2 candidates [84repair,81,82,85,86,87,88,89], prepared local frame/scene prototypes. No source/canonical/core/runtime edits and no external writes.",
+  "procedure": [
+    "Read exact frozen manifest, per-item recipes, source anchor/frame SHA and addressed baseline triage/TL scene instructions. Verify every806listedfile start/end; also verify source PNGs against exact pinned baseline frame bytes and bundle/timestamps.",
+    "Independently decode eight exact candidateWEBMfiles with alpha to672freshPNGfiles; compare every decoded PNG SHA to frozen decoded assets; probe streams/count/timestamps/size/alpha.",
+    "Actually inspect every672after frame in sixteen ordered224px contact sheets. Use28critical before/source-anchor frames at native512 from the previously independently triaged baselines; do not falsely claim a repeat all672before visual pass.",
+    "Inspect72native512after phase images,48native512loop-boundary images and32native512black/white alpha composites. Independently compare old-returned84frames13/14/69 with new exact candidate at native512.",
+    "Probe and full-xerror-decode all16actual copied reviewMP4files; verify each has84frames and expected normal30fps/2.8s or slow15fps/5.6s. These are technical validations only, not perceptual playback."
+  ],
+  "actual_coverage": {
+    "after_ordered_frames": 672,
+    "after_full_frame_tile_px": 224,
+    "before_critical_native512_frames": 28,
+    "after_native512_phase_images": 72,
+    "after_native512_loop_images": 48,
+    "after_native512_black_white_composite_images": 32,
+    "old_new84_native_comparison_images": 6,
+    "additional89_mouth_diagnostic_3x_images": 1,
+    "all_before_frames_repeated": false,
+    "native_realtime_slower_device_perception": "not_observed"
+  },
+  "evidence": {
+    "technical_artifact": "docs/qa-1-13/qa-animation-author-b-batch2-evidence/technical.json",
+    "technical_sha256": "fd3ca85868bd190e0e56fee58c528b0574ed8f351d3c293843dfb9ef5786ca6e",
+    "preparation_script": "docs/qa-1-13/qa-animation-author-b-batch2-evidence/inspect.py",
+    "script_sha256": "0b70dea6475a57dcead091f67143e424de90cfdc123891795f231e2b59032e9a",
+    "source_baseline_triage": "docs/qa-1-13/sticker-triage-81-110.json",
+    "baseline_triage_sha256": "2b4e08e1a22c673ce941d7fe12528d9bcaefcf57060caa20fbf2ef14ea47261f",
+    "tl_scene_contract": "docs/qa-1-13/lead-stickers-integration.json",
+    "tl_scene_contract_sha256": "df633b275440cc27dd9c800ef0a1896c1c1c4f2d292e38db71afdba932f82212"
+  },
+  "items": [
+    {
+      "id": "lumen_84",
+      "review_id": "QAB2-84",
+      "actual_agent_id": "/root/qa_stickers_b",
+      "verdict": "accept",
+      "accepted_scope": "Exact candidate all84 decoded-frame scene/anatomy/prop/alpha and loop-boundary still-image prototype acceptance. No native real-time/slowed/device/human motionfeel or whole-pack/class acceptance.",
+      "candidate_id": "lumen_84_author-b_batch2",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_84/candidate.webm",
+      "output_sha256": "8ddc8458b66b232ea851fa308d1a2a28df9e13feee84f89ac89434144ae06bce",
+      "output_bytes": 248151,
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_84/proof.json",
+      "proof_sha256": "902f5606ffbb7e821d14e029a3e805744b246c34f96f0bbcfb67b7dd0b021d3e",
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_84/recipe.json",
+      "recipe_sha256": "9282a5413b1776d9b3c42212ee7c6f813918b32b47383de34c966cc8e9190e37",
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_video_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_84/baseline.webm",
+        "baseline_video_sha256": "840b0a271411402028f70cc117a7fe68ed6cca9b0a75b43056663206d4574011",
+        "frames": [
+          {
+            "index": 63,
+            "timestamp_seconds": 2.1,
+            "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_84/source-frames/063.png",
+            "sha256": "cc19fa2c8addd24a67cad50cd9565fa312f89c9abba1d67020ff068072b5fa21"
+          }
+        ],
+        "actual_frame_png_matches_pinned_baseline": true,
+        "derived_source_bundle_sha256": "a0215203173ff4fcc4850f29e3350714e04d566e63bf8b1b948973e134bcbac2",
+        "original_atlas": "unresolved; not claimed recovered"
+      },
+      "generator": {
+        "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "description_uk_reviewed": "Тепло усміхається із заплющеними очима й двічі виразно киває на знак згоди; лапки тримає разом біля медальйона, ніжки стоять на місці.",
+      "technical": {
+        "codec": "vp9",
+        "width": 512,
+        "height": 512,
+        "fps": "30/1",
+        "frames": 84,
+        "duration": "2.800000",
+        "audio_streams": 0,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "actual_fresh_decoded_pngs_match_frozen": true,
+        "pts_monotonic": true,
+        "alpha_bounds_diagnostics": {
+          "0": {
+            "union": [
+              57,
+              31,
+              470,
+              496
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "16": {
+            "union": [
+              60,
+              45,
+              467,
+              484
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "128": {
+            "union": [
+              61,
+              47,
+              466,
+              482
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          }
+        }
+      },
+      "actual_visual_coverage": {
+        "after_ordered_frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "full_frame_tile_px": 224,
+        "before_critical_native512_frames": [
+          5,
+          63
+        ],
+        "after_native512_unique_frames": [
+          0,
+          1,
+          2,
+          13,
+          14,
+          21,
+          42,
+          56,
+          69,
+          81,
+          82,
+          83
+        ],
+        "after_loop_native512_sequence": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "after_black_white_native512_frames": [
+          14,
+          21
+        ],
+        "boards_viewed": [
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_84-after-000-041.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_84-after-042-083.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_84-before-critical-native.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_84-after-native-phases.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_84-after-native-loop.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_84-alpha-black-white.jpg"
+        ]
+      },
+      "observations": [
+        "New output is a single clean63 source with authored local face/head, clasp/paw and cape responses; it no longer blends the incompatible source pairs that produced the first-candidate return.",
+        "Every0–83final frame was inspected; former13/14/69 defects are absent. Native512 old/new comparison shows single brow/closed-eyelid contours, coherent nose/mouth and stable face identity in all three addressed frames.",
+        "Two down-and-return head/face nods are visible through the ordered sequence. The paws stay together by the medallion, feet stay planted, and the cape has a separate small follow-through; it is not merely a translated whole image.",
+        "Warm closed-eye smile and affirmative scene remain readable. Full native phase and loop-boundary stills show no new duplicate body, limb, clasp or detached face.",
+        "Black/white native512 edge composites and all-frame alpha diagnostics show no visible rectangular matte or silhouette clipping; no alpha>16 pixel touches the canvas border.",
+        "81–83→0–2 native512 stills preserve pose/contact continuity without a visible discontinuous state swap. This is a frame-boundary finding, not a native playback claim."
+      ],
+      "strongest_objection": "The clean replacement is a shallower authored nod than the old multi-pose bow. Its two nods and local follow-through are visible in frames; perceived expressiveness at real speed is unobserved.",
+      "uncertainty": "Actual native real-time/slowed playback, Telegram/mobile rendering and human perception remain unobserved. Brief source-color/encoding softness may be perceived differently at playback.",
+      "reversal_condition": "Return this exact scope if a fresh decoded frame/native crop reveals a duplicate contour, detached limb/prop/contact or alpha clipping; reopen temporal/liveliness acceptance if real-time/slowed/device observation shows a visible hitch, unwanted warp or static-cutout feel.",
+      "confirmed_unresolved_findings": [],
+      "limitations": [
+        "Independent rawRGBA recipe rerender was not performed here; authored rerender proof was pinned by hash. QA independently redecoded exact encoded bytes and checked the actual source anchors.",
+        "This verdict is per item and does not approve the engine class, the remaining23 scenes, final pack publication or native playback quality."
+      ],
+      "addressed_return": {
+        "id": "QAB-84-TEMPORAL-01",
+        "prior_report": "docs/qa-1-13/qa-animation-author-b-first3.json",
+        "prior_report_sha256": "296a0ebfba915cccbf5e6113f03377b74e4cd03e02be90c9a2cef8e6e5065ee6",
+        "old_output_sha256": "fb34aff1848c3020197c3a0708c375a0c1fed8c4ce4c3fda5c38f8bc0f5f0c62",
+        "new_output_sha256": "8ddc8458b66b232ea851fa308d1a2a28df9e13feee84f89ac89434144ae06bce",
+        "confirmed_closed_frames": [
+          13,
+          14,
+          69
+        ],
+        "old_report_and_candidate_unchanged": true,
+        "comparison_artifact": "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_84-old-returned-vs-new-native.jpg",
+        "comparison_sha256": "217dd06a47205b8c6a8b9e1b413657ba63f4f9e9bc288a95d93afcee32fff9db",
+        "closure_scope": "New exact candidate has one coherent face through every inspected frame, with meaningful two-nod acting retained. Old rejected candidate remains rejected."
+      }
+    },
+    {
+      "id": "lumen_81",
+      "review_id": "QAB2-81",
+      "actual_agent_id": "/root/qa_stickers_b",
+      "verdict": "accept",
+      "accepted_scope": "Exact candidate all84 decoded-frame scene/anatomy/prop/alpha and loop-boundary still-image prototype acceptance. No native real-time/slowed/device/human motionfeel or whole-pack/class acceptance.",
+      "candidate_id": "lumen_81_author-b_batch2",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_81/candidate.webm",
+      "output_sha256": "0808e493f4ebd92970d6a61715ffca42aac45a0b29a30dcec4894d8383a897b9",
+      "output_bytes": 257697,
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_81/proof.json",
+      "proof_sha256": "811f2f2d37c60b953b41f92097806ccfbcf748bdf8e6b0d4c242cf7855b1a12e",
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_81/recipe.json",
+      "recipe_sha256": "1f420c86d909d731c17f444f9ebeb73c740bc4868dee9de1cd09eff6ec226a23",
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_video_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_81/baseline.webm",
+        "baseline_video_sha256": "5ea636d02f939bb485b8901ce5d116123f371a2c26a99a2c1f8a49f52d897330",
+        "frames": [
+          {
+            "index": 12,
+            "timestamp_seconds": 0.4,
+            "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_81/source-frames/012.png",
+            "sha256": "02073b4adef0f41ac325cdee75388a2ed0ec75bfb1647a85f2436784f3defaed"
+          }
+        ],
+        "actual_frame_png_matches_pinned_baseline": true,
+        "derived_source_bundle_sha256": "623127d1ce27fe28aad5be0cb206c4980c0669418e4f22e3e8150b6b7721e3ef",
+        "original_atlas": "unresolved; not claimed recovered"
+      },
+      "generator": {
+        "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "description_uk_reviewed": "Винувато зиркає вбік і трохи хилить голову; довгий дерев’яний носик кумедно погойдується, а схована за спиною банка печива й крихта лишаються на місці.",
+      "technical": {
+        "codec": "vp9",
+        "width": 512,
+        "height": 512,
+        "fps": "30/1",
+        "frames": 84,
+        "duration": "2.800000",
+        "audio_streams": 0,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "actual_fresh_decoded_pngs_match_frozen": true,
+        "pts_monotonic": true,
+        "alpha_bounds_diagnostics": {
+          "0": {
+            "union": [
+              57,
+              5,
+              479,
+              512
+            ],
+            "max_border_pixels": 32,
+            "frames_with_border_pixels": [
+              70,
+              71,
+              72,
+              73
+            ]
+          },
+          "16": {
+            "union": [
+              60,
+              25,
+              460,
+              487
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "128": {
+            "union": [
+              61,
+              27,
+              458,
+              486
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          }
+        }
+      },
+      "actual_visual_coverage": {
+        "after_ordered_frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "full_frame_tile_px": 224,
+        "before_critical_native512_frames": [
+          5,
+          12
+        ],
+        "after_native512_unique_frames": [
+          0,
+          1,
+          2,
+          10,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          81,
+          82,
+          83
+        ],
+        "after_loop_native512_sequence": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "after_black_white_native512_frames": [
+          21,
+          63
+        ],
+        "boards_viewed": [
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_81-after-000-041.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_81-after-042-083.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_81-before-critical-native.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_81-after-native-phases.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_81-after-native-loop.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_81-alpha-black-white.jpg"
+        ]
+      },
+      "observations": [
+        "Guilty sideways eyes, small wooden extension connected to the blue nose, hidden cookie jar and ground crumb remain coherent.",
+        "Head tilts and shoulder settle differ from the short repeated nose wiggle. Jar/crumb and planted feet do not follow a generic global bob.",
+        "All84frames and native phase stills retain one pair of eyes, one nose tip and one body; no original005-style double-eye/nose dissolve observed.",
+        "Black/white native512 edge composites and all-frame alpha diagnostics show no visible rectangular matte or silhouette clipping; no alpha>16 pixel touches the canvas border.",
+        "81–83→0–2 native512 stills preserve pose/contact continuity without a visible discontinuous state swap. This is a frame-boundary finding, not a native playback claim."
+      ],
+      "strongest_objection": "Sideways gaze is largely held while head/nose move; the restrained guilty acting may feel subtle at native size.",
+      "uncertainty": "Actual native real-time/slowed playback, Telegram/mobile rendering and human perception remain unobserved. Brief source-color/encoding softness may be perceived differently at playback.",
+      "reversal_condition": "Return this exact scope if a fresh decoded frame/native crop reveals a duplicate contour, detached limb/prop/contact or alpha clipping; reopen temporal/liveliness acceptance if real-time/slowed/device observation shows a visible hitch, unwanted warp or static-cutout feel.",
+      "confirmed_unresolved_findings": [],
+      "limitations": [
+        "Independent rawRGBA recipe rerender was not performed here; authored rerender proof was pinned by hash. QA independently redecoded exact encoded bytes and checked the actual source anchors.",
+        "This verdict is per item and does not approve the engine class, the remaining23 scenes, final pack publication or native playback quality."
+      ]
+    },
+    {
+      "id": "lumen_82",
+      "review_id": "QAB2-82",
+      "actual_agent_id": "/root/qa_stickers_b",
+      "verdict": "accept",
+      "accepted_scope": "Exact candidate all84 decoded-frame scene/anatomy/prop/alpha and loop-boundary still-image prototype acceptance. No native real-time/slowed/device/human motionfeel or whole-pack/class acceptance.",
+      "candidate_id": "lumen_82_author-b_batch2",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_82/candidate.webm",
+      "output_sha256": "064d4eae7c75ab3c0b4ac5f502ec3ed997ddbef822e826e78f31c24fc490f405",
+      "output_bytes": 221393,
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_82/proof.json",
+      "proof_sha256": "a0012357d72839ae985d429378ba781169f5bdc081674e6d248569605f8c3a8e",
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_82/recipe.json",
+      "recipe_sha256": "c94f636950c06dc5933395ae4d5c00c68d45715e7b150e6d3ee9ac4d98047ca9",
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_video_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_82/baseline.webm",
+        "baseline_video_sha256": "068e7f98ee597b5ce71f9b297511aa2dda5862548b4bd5a25928fb1a79880be3",
+        "frames": [
+          {
+            "index": 12,
+            "timestamp_seconds": 0.4,
+            "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_82/source-frames/012.png",
+            "sha256": "e4bf3be31beecee5bff8274c0efc588f3e5324eac5cbe96a604b8138f604470e"
+          }
+        ],
+        "actual_frame_png_matches_pinned_baseline": true,
+        "derived_source_bundle_sha256": "e4baea3486513f53f5ceb49a8f2c0b1717fda3e4471b55e9d79a03117c1b553f",
+        "original_atlas": "unresolved; not claimed recovered"
+      },
+      "generator": {
+        "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "description_uk_reviewed": "Від несподіванки широко розплющує очі й розкриває рот; дрібно тремтить плечима та розведеними лапками, довкола миготять бірюзові рисочки руху.",
+      "technical": {
+        "codec": "vp9",
+        "width": 512,
+        "height": 512,
+        "fps": "30/1",
+        "frames": 84,
+        "duration": "2.800000",
+        "audio_streams": 0,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "actual_fresh_decoded_pngs_match_frozen": true,
+        "pts_monotonic": true,
+        "alpha_bounds_diagnostics": {
+          "0": {
+            "union": [
+              44,
+              61,
+              484,
+              474
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "16": {
+            "union": [
+              53,
+              73,
+              478,
+              470
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "128": {
+            "union": [
+              54,
+              75,
+              477,
+              469
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          }
+        }
+      },
+      "actual_visual_coverage": {
+        "after_ordered_frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "full_frame_tile_px": 224,
+        "before_critical_native512_frames": [
+          5,
+          12,
+          47,
+          66
+        ],
+        "after_native512_unique_frames": [
+          0,
+          1,
+          2,
+          5,
+          10,
+          21,
+          31,
+          42,
+          47,
+          53,
+          63,
+          73,
+          81,
+          82,
+          83
+        ],
+        "after_loop_native512_sequence": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "after_black_white_native512_frames": [
+          5,
+          47
+        ],
+        "boards_viewed": [
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_82-after-000-041.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_82-after-042-083.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_82-before-critical-native.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_82-after-native-phases.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_82-after-native-loop.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_82-alpha-black-white.jpg"
+        ]
+      },
+      "observations": [
+        "Startled wide eyes/open mouth, spread paws and turquoise comic tremble marks preserve the intended shiver scene.",
+        "The ordered sequence shows repeated short shivers with a separate jaw/gasp response and paw tension; the two paws remain connected and single-contour.",
+        "Native checks at source-defect phases and the final sequence show no alternate ghost fingers, duplicated ears or the original047 gray tuft residual. Turquoise motion dashes are intentional source effects.",
+        "Black/white native512 edge composites and all-frame alpha diagnostics show no visible rectangular matte or silhouette clipping; no alpha>16 pixel touches the canvas border.",
+        "81–83→0–2 native512 stills preserve pose/contact continuity without a visible discontinuous state swap. This is a frame-boundary finding, not a native playback claim."
+      ],
+      "strongest_objection": "The repeated shiver is deliberately quick. Frame coherence does not establish whether its frequency feels pleasant or too busy during real-time playback.",
+      "uncertainty": "Actual native real-time/slowed playback, Telegram/mobile rendering and human perception remain unobserved. Brief source-color/encoding softness may be perceived differently at playback.",
+      "reversal_condition": "Return this exact scope if a fresh decoded frame/native crop reveals a duplicate contour, detached limb/prop/contact or alpha clipping; reopen temporal/liveliness acceptance if real-time/slowed/device observation shows a visible hitch, unwanted warp or static-cutout feel.",
+      "confirmed_unresolved_findings": [],
+      "limitations": [
+        "Independent rawRGBA recipe rerender was not performed here; authored rerender proof was pinned by hash. QA independently redecoded exact encoded bytes and checked the actual source anchors.",
+        "This verdict is per item and does not approve the engine class, the remaining23 scenes, final pack publication or native playback quality."
+      ]
+    },
+    {
+      "id": "lumen_85",
+      "review_id": "QAB2-85",
+      "actual_agent_id": "/root/qa_stickers_b",
+      "verdict": "accept",
+      "accepted_scope": "Exact candidate all84 decoded-frame scene/anatomy/prop/alpha and loop-boundary still-image prototype acceptance. No native real-time/slowed/device/human motionfeel or whole-pack/class acceptance.",
+      "candidate_id": "lumen_85_author-b_batch2",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_85/candidate.webm",
+      "output_sha256": "f564fc03f4b0d8c5a362748927101da8ae14caf36185219ce0db6eff06581333",
+      "output_bytes": 226698,
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_85/proof.json",
+      "proof_sha256": "6589ff7d2d9f5a8f0995a3bd32cfc35412fc1a6e6143fd9566f24c105477dda6",
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_85/recipe.json",
+      "recipe_sha256": "aa317539e78a2b085a7ded9dbef492dafc189ad5070afec9ac7ab830dfc18087",
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_video_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_85/baseline.webm",
+        "baseline_video_sha256": "ee08726184aaca7f3f0a2cdda6137afd1c7cc3a83c204b588127615dc4c6cf08",
+        "frames": [
+          {
+            "index": 63,
+            "timestamp_seconds": 2.1,
+            "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_85/source-frames/063.png",
+            "sha256": "4b1a3dc879238d342f92ef2c6667904e0ab2e9f86fbdd2d57b5bc264cd1eb9db"
+          }
+        ],
+        "actual_frame_png_matches_pinned_baseline": true,
+        "derived_source_bundle_sha256": "d2bb2c2a0437ec840c4593060576dadae4b6d956ca0d9d7e966e0a5a8e16566f",
+        "original_atlas": "unresolved; not claimed recovered"
+      },
+      "generator": {
+        "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "description_uk_reviewed": "Полегшено видихає й спокійно схиляє голівку з усмішкою та заплющеними очима. Сидить на синій подушці й обережно тримає теплу бірюзову чашку обома лапками.",
+      "technical": {
+        "codec": "vp9",
+        "width": 512,
+        "height": 512,
+        "fps": "30/1",
+        "frames": 84,
+        "duration": "2.800000",
+        "audio_streams": 0,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "actual_fresh_decoded_pngs_match_frozen": true,
+        "pts_monotonic": true,
+        "alpha_bounds_diagnostics": {
+          "0": {
+            "union": [
+              34,
+              23,
+              461,
+              478
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "16": {
+            "union": [
+              48,
+              29,
+              456,
+              472
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "128": {
+            "union": [
+              49,
+              31,
+              455,
+              471
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          }
+        }
+      },
+      "actual_visual_coverage": {
+        "after_ordered_frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "full_frame_tile_px": 224,
+        "before_critical_native512_frames": [
+          16,
+          37,
+          49,
+          63
+        ],
+        "after_native512_unique_frames": [
+          0,
+          1,
+          2,
+          10,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          81,
+          82,
+          83
+        ],
+        "after_loop_native512_sequence": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "after_black_white_native512_frames": [
+          21,
+          63
+        ],
+        "boards_viewed": [
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_85-after-000-041.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_85-after-042-083.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_85-before-critical-native.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_85-after-native-phases.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_85-after-native-loop.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_85-alpha-black-white.jpg"
+        ]
+      },
+      "observations": [
+        "Relieved closed-eye smile, peaceful head lean/exhale, navy cushion and turquoise cup remain distinct from the other sleepy scenes.",
+        "Both paws hold one cup consistently at the body; no stacked cup rims or two-height paw/cup dissolve observed in all84frames.",
+        "Small head/breath movement and a separate soft exhale puff remain visible while the cushion is stable. The reviewed description does not promise the removed optional full sip.",
+        "Source016/037/049 strong dissolves were inspected as before controls; final native phase/cup/face images retain clean topology.",
+        "Black/white native512 edge composites and all-frame alpha diagnostics show no visible rectangular matte or silhouette clipping; no alpha>16 pixel touches the canvas border.",
+        "81–83→0–2 native512 stills preserve pose/contact continuity without a visible discontinuous state swap. This is a frame-boundary finding, not a native playback claim."
+      ],
+      "strongest_objection": "The optional full sip was omitted to preserve clean contacts. The remaining relief/breath scene is supported, but this verdict does not restore that removed pose variety.",
+      "uncertainty": "Actual native real-time/slowed playback, Telegram/mobile rendering and human perception remain unobserved. Brief source-color/encoding softness may be perceived differently at playback.",
+      "reversal_condition": "Return this exact scope if a fresh decoded frame/native crop reveals a duplicate contour, detached limb/prop/contact or alpha clipping; reopen temporal/liveliness acceptance if real-time/slowed/device observation shows a visible hitch, unwanted warp or static-cutout feel.",
+      "confirmed_unresolved_findings": [],
+      "limitations": [
+        "Independent rawRGBA recipe rerender was not performed here; authored rerender proof was pinned by hash. QA independently redecoded exact encoded bytes and checked the actual source anchors.",
+        "This verdict is per item and does not approve the engine class, the remaining23 scenes, final pack publication or native playback quality."
+      ]
+    },
+    {
+      "id": "lumen_86",
+      "review_id": "QAB2-86",
+      "actual_agent_id": "/root/qa_stickers_b",
+      "verdict": "accept",
+      "accepted_scope": "Exact candidate all84 decoded-frame scene/anatomy/prop/alpha and loop-boundary still-image prototype acceptance. No native real-time/slowed/device/human motionfeel or whole-pack/class acceptance.",
+      "candidate_id": "lumen_86_author-b_batch2",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_86/candidate.webm",
+      "output_sha256": "dae862997f6abadf7e5fbe7f394b87f4eb50ecdc6a0274b8cd2e2468623df807",
+      "output_bytes": 243983,
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_86/proof.json",
+      "proof_sha256": "3e007e9a843fad561cef627781cfe405dd960dd6cfaa07c13af528d0556b435e",
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_86/recipe.json",
+      "recipe_sha256": "2b159654c2e27cd76501758eabeac45c38e4ac1feae0dca146d4c2a7552ae80f",
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_video_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_86/baseline.webm",
+        "baseline_video_sha256": "3876f179e2d3344680d8e1f97d88f53b669dd6a3137ba29baf2d592def231e6b",
+        "frames": [
+          {
+            "index": 0,
+            "timestamp_seconds": 0.0,
+            "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_86/source-frames/000.png",
+            "sha256": "4aa7b4e4b2e2047d4777927e16b18d83fe7547432f5c8283a0d674b4b8dabe98"
+          }
+        ],
+        "actual_frame_png_matches_pinned_baseline": true,
+        "derived_source_bundle_sha256": "367045273b020602fe1a3bfb07628dfa45627ef4a3a66b52b19a129cceb011b7",
+        "original_atlas": "unresolved; not claimed recovered"
+      },
+      "generator": {
+        "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "description_uk_reviewed": "Сонно хилить голову й опускає вушка, притискаючи зоряну подушку. Маленька бульбашка біля носа м’яко роздувається й спадає в такт повільному диханню.",
+      "technical": {
+        "codec": "vp9",
+        "width": 512,
+        "height": 512,
+        "fps": "30/1",
+        "frames": 84,
+        "duration": "2.800000",
+        "audio_streams": 0,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "actual_fresh_decoded_pngs_match_frozen": true,
+        "pts_monotonic": true,
+        "alpha_bounds_diagnostics": {
+          "0": {
+            "union": [
+              40,
+              22,
+              476,
+              512
+            ],
+            "max_border_pixels": 32,
+            "frames_with_border_pixels": [
+              78,
+              79
+            ]
+          },
+          "16": {
+            "union": [
+              45,
+              25,
+              472,
+              487
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "128": {
+            "union": [
+              46,
+              26,
+              470,
+              486
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          }
+        }
+      },
+      "actual_visual_coverage": {
+        "after_ordered_frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "full_frame_tile_px": 224,
+        "before_critical_native512_frames": [
+          0,
+          48
+        ],
+        "after_native512_unique_frames": [
+          0,
+          1,
+          2,
+          10,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          81,
+          82,
+          83
+        ],
+        "after_loop_native512_sequence": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "after_black_white_native512_frames": [
+          31,
+          63
+        ],
+        "boards_viewed": [
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_86-after-000-041.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_86-after-042-083.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_86-before-critical-native.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_86-after-native-phases.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_86-after-native-loop.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_86-alpha-black-white.jpg"
+        ]
+      },
+      "observations": [
+        "Drowsy half-shut eyes, drooping ears, star pillow held in one arm and attached small sleep bubble remain readable.",
+        "Slow head droop/recovery, pillow-arm settle and ear response are coherent and differ from the closed-eye sleeping curl88.",
+        "Small bubble grow/shrink remains attached at the nose without an alternate eye/cheek contour. No source048-style double-face/bubble transition observed in the final84frames.",
+        "Black/white native512 edge composites and all-frame alpha diagnostics show no visible rectangular matte or silhouette clipping; no alpha>16 pixel touches the canvas border.",
+        "81–83→0–2 native512 stills preserve pose/contact continuity without a visible discontinuous state swap. This is a frame-boundary finding, not a native playback claim."
+      ],
+      "strongest_objection": "The sleep-bubble breathing is modest and the eyes stay half shut rather than completing a full closing sequence; the scene remains drowsy rather than fully asleep.",
+      "uncertainty": "Actual native real-time/slowed playback, Telegram/mobile rendering and human perception remain unobserved. Brief source-color/encoding softness may be perceived differently at playback.",
+      "reversal_condition": "Return this exact scope if a fresh decoded frame/native crop reveals a duplicate contour, detached limb/prop/contact or alpha clipping; reopen temporal/liveliness acceptance if real-time/slowed/device observation shows a visible hitch, unwanted warp or static-cutout feel.",
+      "confirmed_unresolved_findings": [],
+      "limitations": [
+        "Independent rawRGBA recipe rerender was not performed here; authored rerender proof was pinned by hash. QA independently redecoded exact encoded bytes and checked the actual source anchors.",
+        "This verdict is per item and does not approve the engine class, the remaining23 scenes, final pack publication or native playback quality."
+      ]
+    },
+    {
+      "id": "lumen_87",
+      "review_id": "QAB2-87",
+      "actual_agent_id": "/root/qa_stickers_b",
+      "verdict": "accept",
+      "accepted_scope": "Exact candidate all84 decoded-frame scene/anatomy/prop/alpha and loop-boundary still-image prototype acceptance. No native real-time/slowed/device/human motionfeel or whole-pack/class acceptance.",
+      "candidate_id": "lumen_87_author-b_batch2",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_87/candidate.webm",
+      "output_sha256": "985d15350eba02d0b5c0c2499e2b1c84a5549fac9bac64fb8b558c29b149fda4",
+      "output_bytes": 246746,
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_87/proof.json",
+      "proof_sha256": "9ef69fa649289ff13c5e40b650a11047cccf490781eec5a88d4bba341ab3c07d",
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_87/recipe.json",
+      "recipe_sha256": "dd816fb23464cf0892bc9cde84b36054073997689b9b5644da11ba53a65e439e",
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_video_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_87/baseline.webm",
+        "baseline_video_sha256": "3ff1a0595132bf8a3481eff2eb9ffc441f776663b464e1b0980045cb2b9fad07",
+        "frames": [
+          {
+            "index": 35,
+            "timestamp_seconds": 1.1666666666666667,
+            "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_87/source-frames/035.png",
+            "sha256": "8f809f4c08b4c761e0f6a8466ba03b3e2cd7a384a42128ef667b8adc3ebe6bc3"
+          }
+        ],
+        "actual_frame_png_matches_pinned_baseline": true,
+        "derived_source_bundle_sha256": "b09631fdd73b1430b32bd596b58b1b1c835afc9c3275dd08ba888b067a3ede48",
+        "original_atlas": "unresolved; not claimed recovered"
+      },
+      "generator": {
+        "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "description_uk_reviewed": "Замріяно мружиться й нахиляється до булочки з корицею, ласо облизуючи глазур. Тарілочку міцно тримає обома лапками, щоб не перекинути смаколик.",
+      "technical": {
+        "codec": "vp9",
+        "width": 512,
+        "height": 512,
+        "fps": "30/1",
+        "frames": 84,
+        "duration": "2.800000",
+        "audio_streams": 0,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "actual_fresh_decoded_pngs_match_frozen": true,
+        "pts_monotonic": true,
+        "alpha_bounds_diagnostics": {
+          "0": {
+            "union": [
+              55,
+              25,
+              449,
+              488
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "16": {
+            "union": [
+              57,
+              30,
+              442,
+              483
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "128": {
+            "union": [
+              58,
+              31,
+              441,
+              482
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          }
+        }
+      },
+      "actual_visual_coverage": {
+        "after_ordered_frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "full_frame_tile_px": 224,
+        "before_critical_native512_frames": [
+          17,
+          35,
+          47
+        ],
+        "after_native512_unique_frames": [
+          0,
+          1,
+          2,
+          10,
+          17,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          81,
+          82,
+          83
+        ],
+        "after_loop_native512_sequence": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "after_black_white_native512_frames": [
+          17,
+          53
+        ],
+        "boards_viewed": [
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_87-after-000-041.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_87-after-042-083.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_87-before-critical-native.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_87-after-native-phases.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_87-after-native-loop.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_87-alpha-black-white.jpg"
+        ]
+      },
+      "observations": [
+        "Hungry closed-eye contentment, one tongue reaching toward cinnamon-bun icing, level plate and both supporting paws remain coherent.",
+        "Two small head/tongue approach-and-recovery gestures are visible, with a separate shoulder response. Bun/plate do not reverse or teleport.",
+        "No source017 smeared double lips or047 transparent tongue/mouth patch observed in final84frames/native phases. One coherent tongue stays connected to the mouth and readable at the icing contact.",
+        "Black/white native512 edge composites and all-frame alpha diagnostics show no visible rectangular matte or silhouette clipping; no alpha>16 pixel touches the canvas border.",
+        "81–83→0–2 native512 stills preserve pose/contact continuity without a visible discontinuous state swap. This is a frame-boundary finding, not a native playback claim."
+      ],
+      "strongest_objection": "The tongue remains visibly out and does not fully withdraw between small licking reaches. This is accepted as the described hungry lick/lean, not a full chewing sequence.",
+      "uncertainty": "Actual native real-time/slowed playback, Telegram/mobile rendering and human perception remain unobserved. Brief source-color/encoding softness may be perceived differently at playback.",
+      "reversal_condition": "Return this exact scope if a fresh decoded frame/native crop reveals a duplicate contour, detached limb/prop/contact or alpha clipping; reopen temporal/liveliness acceptance if real-time/slowed/device observation shows a visible hitch, unwanted warp or static-cutout feel.",
+      "confirmed_unresolved_findings": [],
+      "limitations": [
+        "Independent rawRGBA recipe rerender was not performed here; authored rerender proof was pinned by hash. QA independently redecoded exact encoded bytes and checked the actual source anchors.",
+        "This verdict is per item and does not approve the engine class, the remaining23 scenes, final pack publication or native playback quality."
+      ]
+    },
+    {
+      "id": "lumen_88",
+      "review_id": "QAB2-88",
+      "actual_agent_id": "/root/qa_stickers_b",
+      "verdict": "accept",
+      "accepted_scope": "Exact candidate all84 decoded-frame scene/anatomy/prop/alpha and loop-boundary still-image prototype acceptance. No native real-time/slowed/device/human motionfeel or whole-pack/class acceptance.",
+      "candidate_id": "lumen_88_author-b_batch2",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_88/candidate.webm",
+      "output_sha256": "3b1dcd52ea8cf657336c440b7fe06dc08e2754c52fe202adb9d7bb36f1afd8c3",
+      "output_bytes": 134866,
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_88/proof.json",
+      "proof_sha256": "8d13c4a2b2433ee672525ef2e53472ceb8105f9f496f26cd46359001f967726d",
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_88/recipe.json",
+      "recipe_sha256": "7aaf217174a5b994e4fc22cbe9642ae7f82109261b362ddd3e4850191775948c",
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_video_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_88/baseline.webm",
+        "baseline_video_sha256": "de3067af555a5a0f8515b6ba55acdb0f39fc459f40634a3b30dd5897c69ae44d",
+        "frames": [
+          {
+            "index": 56,
+            "timestamp_seconds": 1.8666666666666667,
+            "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_88/source-frames/056.png",
+            "sha256": "9114af3a8953dfe149f4a05100783c09a9caddee851fb40dc3bb770ed3dbf9b3"
+          }
+        ],
+        "actual_frame_png_matches_pinned_baseline": true,
+        "derived_source_bundle_sha256": "c40c74e16766c865b174f5dcfced0f5816d0327c8f95075048ee7ecd9122f61c",
+        "original_atlas": "unresolved; not claimed recovered"
+      },
+      "generator": {
+        "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "description_uk_reviewed": "Міцно спить, згорнувшись клубочком у темно-синьому плащі. Животик ледь підіймається від дихання, голівка сонно вмощується на лапках під двома золотими місяцями.",
+      "technical": {
+        "codec": "vp9",
+        "width": 512,
+        "height": 512,
+        "fps": "30/1",
+        "frames": 84,
+        "duration": "2.800000",
+        "audio_streams": 0,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "actual_fresh_decoded_pngs_match_frozen": true,
+        "pts_monotonic": true,
+        "alpha_bounds_diagnostics": {
+          "0": {
+            "union": [
+              32,
+              54,
+              482,
+              416
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "16": {
+            "union": [
+              45,
+              56,
+              477,
+              404
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "128": {
+            "union": [
+              46,
+              62,
+              476,
+              402
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          }
+        }
+      },
+      "actual_visual_coverage": {
+        "after_ordered_frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "full_frame_tile_px": 224,
+        "before_critical_native512_frames": [
+          16,
+          37,
+          49,
+          56
+        ],
+        "after_native512_unique_frames": [
+          0,
+          1,
+          2,
+          10,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          81,
+          82,
+          83
+        ],
+        "after_loop_native512_sequence": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "after_black_white_native512_frames": [
+          21,
+          63
+        ],
+        "boards_viewed": [
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_88-after-000-041.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_88-after-042-083.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_88-before-critical-native.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_88-after-native-phases.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_88-after-native-loop.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_88-alpha-black-white.jpg"
+        ]
+      },
+      "observations": [
+        "Deeply asleep curled posture, fully closed eyes, tucked ears, navy cape wrap and two gold moon shapes remain consistent.",
+        "Local belly breathing and a small head/paw nest settle occur while the moons float slightly; the quiet action is appropriate to deep sleep.",
+        "The visible hindbody/feet remain solidly in the same curl and do not materialize through opaque cape fabric. No duplicated clasp/paw or source016/037/049 limb-cloak dissolve observed in final84frames.",
+        "Black/white native512 edge composites and all-frame alpha diagnostics show no visible rectangular matte or silhouette clipping; no alpha>16 pixel touches the canvas border.",
+        "81–83→0–2 native512 stills preserve pose/contact continuity without a visible discontinuous state swap. This is a frame-boundary finding, not a native playback claim."
+      ],
+      "strongest_objection": "Deep-sleep breathing is intentionally slight and could be perceived as nearly static at normal chat size; actual perceived motionfeel needs native playback.",
+      "uncertainty": "Actual native real-time/slowed playback, Telegram/mobile rendering and human perception remain unobserved. Brief source-color/encoding softness may be perceived differently at playback.",
+      "reversal_condition": "Return this exact scope if a fresh decoded frame/native crop reveals a duplicate contour, detached limb/prop/contact or alpha clipping; reopen temporal/liveliness acceptance if real-time/slowed/device observation shows a visible hitch, unwanted warp or static-cutout feel.",
+      "confirmed_unresolved_findings": [],
+      "limitations": [
+        "Independent rawRGBA recipe rerender was not performed here; authored rerender proof was pinned by hash. QA independently redecoded exact encoded bytes and checked the actual source anchors.",
+        "This verdict is per item and does not approve the engine class, the remaining23 scenes, final pack publication or native playback quality."
+      ]
+    },
+    {
+      "id": "lumen_89",
+      "review_id": "QAB2-89",
+      "actual_agent_id": "/root/qa_stickers_b",
+      "verdict": "accept",
+      "accepted_scope": "Exact candidate all84 decoded-frame scene/anatomy/prop/alpha and loop-boundary still-image prototype acceptance. No native real-time/slowed/device/human motionfeel or whole-pack/class acceptance.",
+      "candidate_id": "lumen_89_author-b_batch2",
+      "candidate_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_89/candidate.webm",
+      "output_sha256": "3b4ea6c7f3087ebfa98ce4caf47068c9404bcbe67afb1836dd25d6eb1845aafc",
+      "output_bytes": 214841,
+      "proof_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_89/proof.json",
+      "proof_sha256": "8d22ef6b970379b1f6a1589ff2ee31d0463792f9c54a27b6bccc38542255f6ee",
+      "recipe_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_89/recipe.json",
+      "recipe_sha256": "825635653e0c912af761eb2ac84b27dd5622611f0667db7bfbeb891e5491157e",
+      "source": {
+        "kind": "derived_decoded_video",
+        "baseline_video_path": "sticker-lab/production-v5/author_b-frozen-batch2/lumen_89/baseline.webm",
+        "baseline_video_sha256": "5ca7bfc3b4304c6875f49aba662e2f2c41a689bb649d437eed1a46163de9e146",
+        "frames": [
+          {
+            "index": 21,
+            "timestamp_seconds": 0.7,
+            "path": "sticker-lab/production-v5/recipes-proposed/author_b/batch2/lumen_89/source-frames/021.png",
+            "sha256": "4b00fb2ea9bd02f56f4c2a275b762505f95ee5b73f97314353a5132bd7fb8baa"
+          }
+        ],
+        "actual_frame_png_matches_pinned_baseline": true,
+        "derived_source_bundle_sha256": "5a8bfe5edf81b272bb3ecc69000bfe19d6837def7f93e63993e86e079d5b2780",
+        "original_atlas": "unresolved; not claimed recovered"
+      },
+      "generator": {
+        "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+        "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+      },
+      "description_uk_reviewed": "Після довгої ночі широко позіхає, прикриваючи рот лапкою, й безсило опускає вушка. Біля нього стоять дві порожні чашки та майже догоріла свічка.",
+      "technical": {
+        "codec": "vp9",
+        "width": 512,
+        "height": 512,
+        "fps": "30/1",
+        "frames": 84,
+        "duration": "2.800000",
+        "audio_streams": 0,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "actual_fresh_decoded_pngs_match_frozen": true,
+        "pts_monotonic": true,
+        "alpha_bounds_diagnostics": {
+          "0": {
+            "union": [
+              32,
+              60,
+              449,
+              476
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "16": {
+            "union": [
+              39,
+              65,
+              442,
+              468
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          },
+          "128": {
+            "union": [
+              40,
+              66,
+              441,
+              467
+            ],
+            "max_border_pixels": 0,
+            "frames_with_border_pixels": []
+          }
+        }
+      },
+      "actual_visual_coverage": {
+        "after_ordered_frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "full_frame_tile_px": 224,
+        "before_critical_native512_frames": [
+          5,
+          16,
+          21,
+          26,
+          37,
+          47,
+          59
+        ],
+        "after_native512_unique_frames": [
+          0,
+          1,
+          2,
+          10,
+          21,
+          31,
+          42,
+          53,
+          63,
+          73,
+          81,
+          82,
+          83
+        ],
+        "after_loop_native512_sequence": [
+          81,
+          82,
+          83,
+          0,
+          1,
+          2
+        ],
+        "after_black_white_native512_frames": [
+          21,
+          42
+        ],
+        "boards_viewed": [
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_89-after-000-041.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_89-after-042-083.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_89-before-critical-native.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_89-after-native-phases.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_89-after-native-loop.jpg",
+          "docs/qa-1-13/qa-animation-author-b-batch2-evidence/lumen_89-alpha-black-white.jpg"
+        ]
+      },
+      "observations": [
+        "Long-night exhaustion is communicated by drooping ears, wide yawn, covering paw, two empty cups and a low candle.",
+        "A coherent slow head/jaw/yawn recovery and ear follow-through are separate from a small low-flame flicker; both mugs and candle base remain pinned.",
+        "All84frames retain one face, one covering paw and one clasp; no source005/016/026/037/047/059 eye, mouth, paw or clasp dissolve observed.",
+        "The replacement holds a wide-yawn pose through the cycle with smaller jaw variation, rather than replaying the old full open/closed-mouth transitions. The description matches that narrower action.",
+        "Black/white native512 edge composites and all-frame alpha diagnostics show no visible rectangular matte or silhouette clipping; no alpha>16 pixel touches the canvas border.",
+        "81–83→0–2 native512 stills preserve pose/contact continuity without a visible discontinuous state swap. This is a frame-boundary finding, not a native playback claim."
+      ],
+      "strongest_objection": "The mouth stays broadly open while the jaw/head recover. This narrower held-yawn action is cleaner but less varied than a complete open-close yawn cycle.",
+      "uncertainty": "Actual native real-time/slowed playback, Telegram/mobile rendering and human perception remain unobserved. Brief source-color/encoding softness may be perceived differently at playback.",
+      "reversal_condition": "Return this exact scope if a fresh decoded frame/native crop reveals a duplicate contour, detached limb/prop/contact or alpha clipping; reopen temporal/liveliness acceptance if real-time/slowed/device observation shows a visible hitch, unwanted warp or static-cutout feel.",
+      "confirmed_unresolved_findings": [],
+      "limitations": [
+        "Independent rawRGBA recipe rerender was not performed here; authored rerender proof was pinned by hash. QA independently redecoded exact encoded bytes and checked the actual source anchors.",
+        "This verdict is per item and does not approve the engine class, the remaining23 scenes, final pack publication or native playback quality."
+      ]
+    }
+  ],
+  "decision": {
+    "verdict": "accept_exact_eight_in_frame_scene_prototype_scope",
+    "accepted_item_ids": [
+      "lumen_84",
+      "lumen_81",
+      "lumen_82",
+      "lumen_85",
+      "lumen_86",
+      "lumen_87",
+      "lumen_88",
+      "lumen_89"
+    ],
+    "returned_item_ids": [],
+    "unknown_item_ids_in_this_frame_scope": [],
+    "addressed_old_return_closed_on_new_candidate_only": [
+      "QAB-84-TEMPORAL-01"
+    ],
+    "new_handoff_defects": [],
+    "all16copied_mp4_files_technically_valid": true,
+    "all_native_realtime_slow_device_human_acceptance": "unknown",
+    "blanket_engine_or_remaining23_approval": false,
+    "publication_or_Telegram_live_acceptance": "not_performed"
+  },
+  "earlier_report_immutable": {
+    "path": "docs/qa-1-13/qa-animation-author-b-first3.json",
+    "sha256": "296a0ebfba915cccbf5e6113f03377b74e4cd03e02be90c9a2cef8e6e5065ee6"
+  },
+  "limitations": [
+    "Frame/scene/edge observations and codec/count checks do not substitute for actual native real-time/slowed or device/human motionfeel acceptance.",
+    "All source anchors are decoded baseline video frames; original generated atlases are not claimed recovered.",
+    "No independent engine rerender or production/Telegram upload was performed in this QA task."
+  ],
+  "product_mutated": false,
+  "public_writes_or_deploy": false
+}

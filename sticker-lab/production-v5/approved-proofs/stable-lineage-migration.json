@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "at": "2026-10-30T16:53:36.420923+00:00",
+  "operation": "stable approved lineage paths, sources and rerender evidence; media bytes unchanged",
+  "ids": [
+    "lumen_94",
+    "lumen_113"
+  ],
+  "manifest_before_sha256": "2ffc0636b7a6734135b597de801e6c639c302f20f5854bef5c8c317e1cfadb24",
+  "manifest_after_sha256": "0c6ddfbad672444fa22c4b526717ef70506197b08e8275829a2fe857057f73ef",
+  "both_raw_and_decoded_84frame_matches": true,
+  "frozen_rig2_changed": false,
+  "external_publication": false
+}

@@ -1,0 +1,1402 @@
+{
+  "schema_version": 1,
+  "id": "lumen_58",
+  "candidate": "lumen_58_author-a_scene_v2",
+  "created_at": "2026-10-30T18:25:03.927086+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source.webm",
+  "source_video_sha256": "0fbd11c9832910298bb9479e3b7120eed2dff19b9389df73f30c4ddffef31034",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "1e1a001476dcf9b9ab611784b43b6536bfcce80b7d355a875a0f4136a549883a",
+  "derived_source_frames": [
+    {
+      "index": 61,
+      "seconds": 2.033333333333333,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/061.png",
+      "decoded_png_sha256": "2865bb28e60dc7d801ec4e9ff3b442c58bfd26e6845f5547c5f957610c898862"
+    },
+    {
+      "index": 62,
+      "seconds": 2.066666666666667,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/062.png",
+      "decoded_png_sha256": "966145e5ea034074f1108cb08cc647f9f68548e2b86d8f053f5298c53001d1eb"
+    },
+    {
+      "index": 63,
+      "seconds": 2.1,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/063.png",
+      "decoded_png_sha256": "3777dacf61c7bfa7f590668a069d1c29d00a882f7673f62cb34ea524d93deee0"
+    },
+    {
+      "index": 64,
+      "seconds": 2.1333333333333333,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/064.png",
+      "decoded_png_sha256": "c401a9599e049aaba1b2d2c2bf6b208c434b139228f80fcabbe939a4aacb10ea"
+    },
+    {
+      "index": 65,
+      "seconds": 2.1666666666666665,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/065.png",
+      "decoded_png_sha256": "4cf3a94136a8518cafddd34e83f328c56b09242033fb0bfdcaac0546fbd3ab25"
+    },
+    {
+      "index": 66,
+      "seconds": 2.2,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/066.png",
+      "decoded_png_sha256": "e22ea37b8d66f5c78aaf62a25b606643fa537c1b9c0f40090a81952c6afbcb4e"
+    },
+    {
+      "index": 67,
+      "seconds": 2.2333333333333334,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/067.png",
+      "decoded_png_sha256": "218501ccde90225effe3e1ba8c56c12a8a7351bc0bdab934e73a11c947b8ae9b"
+    },
+    {
+      "index": 68,
+      "seconds": 2.2666666666666666,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/068.png",
+      "decoded_png_sha256": "479e90de1b8f24ed9c24879fe58484980dc03b45839ffcad8f66ffdb0f549f1a"
+    },
+    {
+      "index": 69,
+      "seconds": 2.3,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/069.png",
+      "decoded_png_sha256": "eaca0328b1b5358fda4d0970f0f3148e006d9544edfc187b2a41adf31aeebd0f"
+    },
+    {
+      "index": 70,
+      "seconds": 2.3333333333333335,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/070.png",
+      "decoded_png_sha256": "a74ca10641d80ae98149419d563af6310c9688af2e7e2978d0f8612060871d42"
+    },
+    {
+      "index": 71,
+      "seconds": 2.3666666666666667,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/071.png",
+      "decoded_png_sha256": "973f59e1339638505d349196fdad4b72d8efe8d86ed47e3c65eedd4ca096508d"
+    },
+    {
+      "index": 72,
+      "seconds": 2.4,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/072.png",
+      "decoded_png_sha256": "5ea083ececb1b0e34846a2e3f296eb2b97978a08a9537f1a6dbd2a537218995d"
+    },
+    {
+      "index": 73,
+      "seconds": 2.433333333333333,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/073.png",
+      "decoded_png_sha256": "e3e52635092f0890fd4ce72a442336bce8f69c08444e981d9adbe207483785c0"
+    },
+    {
+      "index": 74,
+      "seconds": 2.466666666666667,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/074.png",
+      "decoded_png_sha256": "ba601f2d844b1b2033655b165d3d2f3e0e8c97046a0b17ed9246cf5401588522"
+    },
+    {
+      "index": 75,
+      "seconds": 2.5,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/075.png",
+      "decoded_png_sha256": "5f952f6b876b3e040d2890ff3bbf62cddf076296ea04aaa8ebdec9be5428e356"
+    },
+    {
+      "index": 76,
+      "seconds": 2.533333333333333,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/076.png",
+      "decoded_png_sha256": "acbff5e66876415ba6c0a38ac346784262fdd327e7b5911306aee7bad5a550b2"
+    },
+    {
+      "index": 77,
+      "seconds": 2.566666666666667,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/077.png",
+      "decoded_png_sha256": "23906ba9e057fcca154618257598349a9eaa29ff07078ee87b87d9f15b24f514"
+    },
+    {
+      "index": 78,
+      "seconds": 2.6,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/078.png",
+      "decoded_png_sha256": "ade16e5ba7967ad011921be3da59c1d72d1e456be36bbe0b01046b7bfcd7a780"
+    },
+    {
+      "index": 79,
+      "seconds": 2.6333333333333333,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/079.png",
+      "decoded_png_sha256": "85a0fee7194a4552b83cb2194dd4a8816b0593cc0ccc4426f1a27ca592d7ff09"
+    },
+    {
+      "index": 80,
+      "seconds": 2.6666666666666665,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/080.png",
+      "decoded_png_sha256": "b2a15d573621f107b6beecd8873706d5b59c9d0a26c213420da56528cf485ec4"
+    },
+    {
+      "index": 81,
+      "seconds": 2.7,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/081.png",
+      "decoded_png_sha256": "db9b532c5a49accfbeb6e17890a73ccc99a78857136114ef7a68601c658f8ca6"
+    },
+    {
+      "index": 82,
+      "seconds": 2.7333333333333334,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/082.png",
+      "decoded_png_sha256": "973e6530a241363295729e936befde6bc0bbbe0148418ea3c11c74ea1b24630f"
+    },
+    {
+      "index": 83,
+      "seconds": 2.7666666666666666,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_a/lumen_58/source-frames/083.png",
+      "decoded_png_sha256": "073793116d79d424c4a8b929380b78b38826ed198989e5954562716e54dbdc88"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "1cc2b91a8d474a1019cb38019357de61aacd5c007f94e2bd29687b585290ca7a",
+  "source_frame_count": 84,
+  "source_action_frames": [
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    82,
+    81,
+    80,
+    79,
+    78,
+    77,
+    76,
+    75,
+    74,
+    73,
+    72,
+    71,
+    70,
+    69,
+    68,
+    67,
+    66,
+    65,
+    64,
+    63,
+    62
+  ],
+  "method": "curated_shared_flow_v1",
+  "character_semantics": {
+    "core_scene": "Tender closed-eye puckered kiss with rosy cheeks, rounded seated cloak and two paws hugging chest. Actual small head yaw/lean, ears and clasped paws shift together; no heart.",
+    "omitted_optional_action": "Large incompatible head changes2–9/24–39 and author's additional uncertain ear/eyelid57–59 excluded. Clean61–83 gesture retains the tenderness and small kiss lean.",
+    "reversibility_or_contact": "Gentle seated kiss lean and cloak breathing are reversible; no heart, wink, falling item or emission added."
+  },
+  "semantic_tradeoff": "Large incompatible head changes2–9/24–39 and author's additional uncertain ear/eyelid57–59 excluded. Clean61–83 gesture retains the tenderness and small kiss lean.",
+  "not_recovered_original_art": true,
+  "not_rigid_global_transform": true,
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        61,
+        62
+      ],
+      "fraction": 0.0,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        61,
+        62
+      ],
+      "fraction": 0.020495336068749124,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        61,
+        62
+      ],
+      "fraction": 0.08128363070669865,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        61,
+        62
+      ],
+      "fraction": 0.18131831356140185,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        61,
+        62
+      ],
+      "fraction": 0.3195528142804119,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        61,
+        62
+      ],
+      "fraction": 0.49494056251128216,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        61,
+        62
+      ],
+      "fraction": 0.7064349879015656,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        61,
+        62
+      ],
+      "fraction": 0.9529895200988157,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        62,
+        63
+      ],
+      "fraction": 0.2335575887505854,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        62,
+        63
+      ],
+      "fraction": 0.5470926235044284,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        62,
+        63
+      ],
+      "fraction": 0.8925480540078983,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        63,
+        64
+      ],
+      "fraction": 0.2688773099085462,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        63,
+        64
+      ],
+      "fraction": 0.6750338208539288,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        64,
+        65
+      ],
+      "fraction": 0.10997101649159502,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        64,
+        65
+      ],
+      "fraction": 0.5726423264691025,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        65,
+        66
+      ],
+      "fraction": 0.06200118043400238,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        65,
+        66
+      ],
+      "fraction": 0.5770010080338475,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        66,
+        67
+      ],
+      "fraction": 0.11659523891619106,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        66,
+        67
+      ],
+      "fraction": 0.6797373027285873,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        67,
+        68
+      ],
+      "fraction": 0.2653806291185896,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        67,
+        68
+      ],
+      "fraction": 0.8724786477337494,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        68,
+        69
+      ],
+      "fraction": 0.49998478822161996,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        69,
+        70
+      ],
+      "fraction": 0.14685248022975728,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        69,
+        70
+      ],
+      "fraction": 0.8120351534057146,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        70,
+        71
+      ],
+      "fraction": 0.4944862373970409,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        71,
+        72
+      ],
+      "fraction": 0.19315916185129467,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        71,
+        72
+      ],
+      "fraction": 0.9070073564160221,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        72,
+        73
+      ],
+      "fraction": 0.6349842507387837,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        73,
+        74
+      ],
+      "fraction": 0.37604327446712915,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        74,
+        75
+      ],
+      "fraction": 0.12913785724861526,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        74,
+        75
+      ],
+      "fraction": 0.8932214287307918,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        75,
+        76
+      ],
+      "fraction": 0.6672474185612103,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        76,
+        77
+      ],
+      "fraction": 0.4501692563874258,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        77,
+        78
+      ],
+      "fraction": 0.24094037185699335,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        78,
+        79
+      ],
+      "fraction": 0.03851419461746275,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        78,
+        79
+      ],
+      "fraction": 0.8418441543163908,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        79,
+        80
+      ],
+      "fraction": 0.6498836806013308,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        80,
+        81
+      ],
+      "fraction": 0.46158620311983256,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        81,
+        82
+      ],
+      "fraction": 0.2759051515194564,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        82,
+        83
+      ],
+      "fraction": 0.09179395544774493,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        82,
+        83
+      ],
+      "fraction": 0.9082060445522551,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        83,
+        82
+      ],
+      "fraction": 0.7240948484805436,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        82,
+        81
+      ],
+      "fraction": 0.5384137968801639,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        81,
+        80
+      ],
+      "fraction": 0.35011631939866916,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        80,
+        79
+      ],
+      "fraction": 0.15815584568360208,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        80,
+        79
+      ],
+      "fraction": 0.9614858053825373,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        79,
+        78
+      ],
+      "fraction": 0.7590596281430031,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        78,
+        77
+      ],
+      "fraction": 0.5498307436125707,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        77,
+        76
+      ],
+      "fraction": 0.33275258143879327,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        76,
+        75
+      ],
+      "fraction": 0.10677857126920998,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        76,
+        75
+      ],
+      "fraction": 0.8708621427513883,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        75,
+        74
+      ],
+      "fraction": 0.6239567255328673,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        74,
+        73
+      ],
+      "fraction": 0.36501574926121094,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        73,
+        72
+      ],
+      "fraction": 0.09299264358397608,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        73,
+        72
+      ],
+      "fraction": 0.8068408381487089,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        72,
+        71
+      ],
+      "fraction": 0.5055137626029591,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        71,
+        70
+      ],
+      "fraction": 0.18796484659428359,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        71,
+        70
+      ],
+      "fraction": 0.8531475197702392,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        70,
+        69
+      ],
+      "fraction": 0.5000152117783827,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        69,
+        68
+      ],
+      "fraction": 0.12752135226624262,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        69,
+        68
+      ],
+      "fraction": 0.7346193708814184,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        68,
+        67
+      ],
+      "fraction": 0.32026269727141,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        68,
+        67
+      ],
+      "fraction": 0.8834047610838098,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        67,
+        66
+      ],
+      "fraction": 0.4229989919661534,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        67,
+        66
+      ],
+      "fraction": 0.9379988195659976,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        66,
+        65
+      ],
+      "fraction": 0.42735767353089926,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        66,
+        65
+      ],
+      "fraction": 0.8900289835084081,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        65,
+        64
+      ],
+      "fraction": 0.32496617914606674,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        65,
+        64
+      ],
+      "fraction": 0.7311226900914534,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        64,
+        63
+      ],
+      "fraction": 0.1074519459921035,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        64,
+        63
+      ],
+      "fraction": 0.4529073764955669,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        64,
+        63
+      ],
+      "fraction": 0.7664424112494146,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        63,
+        62
+      ],
+      "fraction": 0.04701047990118923,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        63,
+        62
+      ],
+      "fraction": 0.29356501209843344,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        63,
+        62
+      ],
+      "fraction": 0.5050594374887183,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        63,
+        62
+      ],
+      "fraction": 0.6804471857195864,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        63,
+        62
+      ],
+      "fraction": 0.8186816864386017,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        63,
+        62
+      ],
+      "fraction": 0.9187163692932998,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        63,
+        62
+      ],
+      "fraction": 0.9795046639312517,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        62,
+        62
+      ],
+      "fraction": 0.0,
+      "kind": "registered_shared_premult_rgba"
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        62,
+        61
+      ],
+      "fraction": 0.10400000000000002,
+      "kind": "registered_close_compatible_loop"
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        62,
+        61
+      ],
+      "fraction": 0.3520000000000001,
+      "kind": "registered_close_compatible_loop"
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        62,
+        61
+      ],
+      "fraction": 0.648,
+      "kind": "registered_close_compatible_loop"
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        62,
+        61
+      ],
+      "fraction": 0.8960000000000001,
+      "kind": "registered_close_compatible_loop"
+    }
+  ],
+  "candidate_sha256": "754f2c8314a88d0759f8f159868617dcdb73d817868758907547b3566114cdd7",
+  "poster_sha256": "071e16de507407cb2ff17d5b6595748eb88e46ff7de3e706111e614e51aaa4af",
+  "bytes": 151970,
+  "crf": 46,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "adjacent_composite_mae": [
+    0.1584523469209671,
+    0.4455273151397705,
+    0.714231014251709,
+    0.9968340396881104,
+    1.080172061920166,
+    1.5300363302230835,
+    1.6476682424545288,
+    1.4969382286071777,
+    1.165467619895935,
+    1.4303613901138306,
+    1.9997614622116089,
+    2.6654438972473145,
+    2.2346417903900146,
+    1.0282624959945679,
+    0.9941203594207764,
+    1.5111502408981323,
+    1.2401986122131348,
+    1.272607684135437,
+    1.4345431327819824,
+    1.811488151550293,
+    1.0206302404403687,
+    1.1526501178741455,
+    1.93842351436615,
+    1.7777352333068848,
+    1.4852627515792847,
+    1.8340636491775513,
+    1.0947915315628052,
+    1.4841564893722534,
+    1.5703226327896118,
+    0.7744372487068176,
+    1.3011406660079956,
+    1.4186455011367798,
+    1.284886360168457,
+    1.331790804862976,
+    1.5751851797103882,
+    1.4280394315719604,
+    1.316721796989441,
+    1.4551347494125366,
+    1.4312525987625122,
+    1.9659353494644165,
+    1.3386411666870117,
+    1.4643863439559937,
+    1.3643499612808228,
+    1.3954548835754395,
+    1.3278989791870117,
+    1.5923458337783813,
+    1.3320115804672241,
+    1.3696132898330688,
+    1.2917609214782715,
+    1.5009568929672241,
+    0.37982118129730225,
+    0.9587647914886475,
+    1.7063579559326172,
+    1.0075374841690063,
+    1.5096806287765503,
+    1.8076152801513672,
+    1.40268075466156,
+    1.7880706787109375,
+    1.6810468435287476,
+    1.2012006044387817,
+    1.2395429611206055,
+    1.6377753019332886,
+    1.2853474617004395,
+    1.3703995943069458,
+    1.1494194269180298,
+    1.184943437576294,
+    0.8391051292419434,
+    0.896597146987915,
+    1.04119074344635,
+    2.5327179431915283,
+    1.9874858856201172,
+    2.241224527359009,
+    0.9784860610961914,
+    0.874819278717041,
+    0.6880583763122559,
+    0.7768697738647461,
+    0.3446957767009735,
+    0.4413208067417145,
+    0.15538430213928223,
+    0.8250727653503418,
+    1.548698902130127,
+    2.3890304565429688,
+    1.7671304941177368
+  ],
+  "seam_composite_mae": 0.8144529461860657,
+  "decoded_png_sha256": [
+    "eafdb9e21f7f90c077857266e846d382edac43d8fc72c1808ee87aa3bfa406d0",
+    "598f0e9598514d4a6042ea4cd584bda1298fbfe613980cd3758e7c370e984559",
+    "cc87f98bf27b7d6f3ca2544ab0cccd143fc1650f23102508fc5a315db37eb01e",
+    "04806e1681f40f4b05f74d69194b2d3b9bf1c00ead5e3b9ad4d5ecd10bc48270",
+    "6bc109829338388a589e7eddc949043f01965d72887dcad365b3a0799ef2b063",
+    "541eb912a6c4ccfb6017a558dac8d896631d662aca99570ef8fca5e6868c6e5f",
+    "efeaee29d1fb53171626bfad7e71a4da3405a478fc88df40f16d134df3c64490",
+    "155aa7afc49b8aa786d3d73f82b0309214de9a56848be3e04355d2a43831761c",
+    "b783bdfae50b95a4d235f64004361f44f88a4e7f66e97259f71c1849f1f45c00",
+    "b247a3e86ba4342ab212293392658356f9263702d0ee21f50ab83168304b622b",
+    "7db5bce37849a20712f8d1f86881c3611a0a67e7834678c3ad07c4ce3254fade",
+    "579fe54a424029b6b1e28a1ec4d8fdbeac7f47f02fb173cf2cba1d1dbdbd35bc",
+    "8f491933b48cc1f6fb96fb009bb43d14f73d6566c1885f2bd4b26bc7e66fef6e",
+    "2d338da07e54e7c942c5bae1807d4b392a9bbc80f46550c772cda599bdc57aec",
+    "24bbcace0ab9b8ce347a49d5e3aa7294bef0104a0e8e36c46041ce9638396539",
+    "2839e6b9225975614b1fa53daf9719bf3b07f1246a9073b64c0fffdcd1994efa",
+    "52c21ba933e3fd3468513a18cc149c2d0c116f552024391d1c8f7361cc2dae5d",
+    "a0aadb4c17f240befa40df09c42c11e8690b382c9e076ea0ab9d2cb62f69d269",
+    "88a321f0ea69ad0fd69ed0667623a7f1c81dfd58a309ccb36877e4e801642845",
+    "707fa5679be2514dc7965ae167aa96cec9fe8769082d424b742f0d7cb7725a59",
+    "599035d06fde8b058d1c9556b8692b8fbee3d6f043b816799eb7f710216e1a20",
+    "c91e81231eb5ce17fab28e6cb46c52a36cd59763a7b64c1cd60f6066c3e0378e",
+    "fe149a1b21ba0944ba8635f9b4e4524b47ca20ffb6147cc5ffc7b6cc215503e1",
+    "87845e2a8d4d62bb2d52487f9b84b12e4f31045a6ab57c1ce5015a378f275641",
+    "1f2188efbb9bcf2ef4cd1817e930ae8d4d3d0f7a02e0a4a92cade247b5f69502",
+    "c6d8f18e04f4758dcee87b0c153414fcac89dda90e5316fb23ebfbcbe868dfba",
+    "56953934b3baf3b613f629f4599ad5b05b988e9ccf506478f6893927cbf85ba5",
+    "ce139cc26ddd4db6ac99209609a7d1aa39a917145a16b7af988cbf4dad0d9b68",
+    "74c40bd5179afe99b4da6edc0ec4270d17a119fed1bcd4550135e26ea66bbb03",
+    "4cb495261e44ca6a1acb5837fafb39fc3012186d13c554a188be65e86cfc2f13",
+    "162eb52b627f2074eaef1b4065c1ed73f23ed53986cbbec7253b8a381852f04d",
+    "9946c9caee554c686131e5c3c0e58b4c7fb998325187216c1d8a86d0653d9a07",
+    "48af20ba09c52a9087257e718711680d9dc61a3bd789da6bbe6d28b9085727d2",
+    "66a085ef5896e6266ef654b47a638671ebf48a45f2c1d3cfbc0a40e1854ca7fd",
+    "72adc9a35d9945188dbb0fd357c25fafc0910a462fc38112aa805d5f16619db4",
+    "79603c9ca7e839fb1376a4f46b5f0edfce953992ee36dfeb69ced6f473ae20a7",
+    "bb8e8be40bf7f9e3d0173dbb758c7cb0652e6ae6af60caf80c80a56a2e7ca661",
+    "2318c32980582b6c75452cacbaee41805eaded368f288b49d86e30dfed0c9bd7",
+    "1ec9eaad6392a33ea2ea614eda371ceed682f41722c157d5c20da27174fb089f",
+    "124f535fa026d6feef970b318276b28a1bbdd53bb3fd4ca028852cb3c03e8c45",
+    "20291237b201f749e029d2dc2d7eb2a3333ddc8943b0d83725cba8e2a6bfa51f",
+    "061d42362fc5e3efe67cd2c93f9abe6096d52f123bde94039633197bec9ee3a5",
+    "9296648c11c054b101dd1c2d779a6c88488265ded9f06fd0314bc7fbf9f00d7d",
+    "f91185789ec8e82c9373515d6e8f573a53e6a22988c88eac17aa9071e5971096",
+    "acfe2990cb12dcef02e495da6fa89dd62dba54e51043e57a7119a278d0ad3ae8",
+    "76a931bf374a675958c94cc4f7cafc4f7367475c260cf50ba836d05bbdd8b6ed",
+    "314919481e0fc8b842055b88abb7712bd2b62824a2158d380271b54f844be3a9",
+    "57ee5d173b050f78006d73d3021bc6f593738944f03af92800c47a5e85e3e547",
+    "b94ea9ff1c41e4125031c46f638be7c99fb7faa23e74e099a9d8f46c281201af",
+    "5a1b6876d7a717ed4ecb92f1b1808dbf37162722e8d699ba9c05a92d248e6b3a",
+    "f47e4e7844dfbb24adacd661294320149e7fe58e363e79314049f2e1e64eaef3",
+    "3b2a7b29774c4d483039c798c43073de4eec26f8efa8c7834dba33677ba01f65",
+    "5a642269adbdc317abc341bc569627938f47d88de149cce3d7a45d0597a21c44",
+    "3dca684c726d1929fddebb14883cb6bcf3d10486f2353733cdf5130862f9f078",
+    "eb41de19224ce02fbc939e8555893f2ede82d35217e842eec33ab45bbaea7504",
+    "9b2a0b5904b798e4687f9e1c8a3b3e3f0305330ecd9bcd5df9ee362984f106cf",
+    "512b2ab98ea8f28b90513141c93b4c66d8739e0b65c178e5c097dae4a30a7675",
+    "1bf6a78515ba491ca744fe9a79ae1d85563c6307a189222ceafb98111695638c",
+    "d0e76bcfdfd5beefcb08853eeed503fcac01c2e52f8e75fc0e9943f3cc9fd2cc",
+    "d7cf81abb780b4326a6d43a130541089ccd54a188f4268f3ef3b19560ba2e226",
+    "7fe7aafa0574190a5b2db991d15cc5c55dabdbf6e071feccf56879c443916eea",
+    "4e8b20a26361fd99e14367d05ae42e66333df645c0e41a0038b135bba0599219",
+    "1cf4eb8e3ce5ecb306eb5f2b12ab30bbcf44bb466f388edd5f9d9a41700b73d4",
+    "a1dce10c7f61edd9cafae14c18b9aad28888eaa649c79d2940401d3c03946d4d",
+    "cff3f463422c08043e65bf8dfd1416da023b1da0fdf071c2ce2f20f4f354675d",
+    "13bbf1622cd838b028d86776d3574d460ae322f38e00b245e5356eef3f67ce65",
+    "c2393563d11e951601364047397356914b2f0937903f277f0414be85cb5d804c",
+    "1e8199fe670bbda5371eea8bc2cd2859b489316a96b3f5e7682cb5d607c70e43",
+    "19c516adee89fa2e4449898cdeca87e1291f7ef8844e728bcc72ba420bb7c161",
+    "51cb4c165a038123370198f2519df4ffcaafe7d603f005ebdf31774c5b99227c",
+    "3babdde18576381a74f105818589376b88e2b8cff603c3e5d205f78430336d4d",
+    "04b69dc1797324c31a6811007a003a9b4b3ad6c47a0e6c48f5703d6b1d0f646c",
+    "55ef74f3c9e4341880ff1047a0ccbd1bb1ba0c0d8730054448bf21b0a8528c81",
+    "b887e3ebae7b6d4888a62f004b312ec97c3fce070de8fb91c3ea08ced1a9c8c6",
+    "f616f3283b22c288c11843964e0c70a15626846b593b937fdee911ee0a2a48fe",
+    "7c17d42a42b57ba462383b9a6863ebb2c58e75f08616644c62221d995054b045",
+    "d47ce04793292b24647f16467ae55a05b6deaab835797aa00b13f641b2f5567f",
+    "1b141b86949b517498ea71538cacf967ebde6b97ee716fd4e600c31dc32e4125",
+    "e2167e57afef638f87f9c95e765ce890eda792375a0169a763d92511848784a5",
+    "83ef1845c08f79c3c5edc29a34b45ec695c72d3f8612abe5e392f4fbac26c6b7",
+    "9f0b844c42dbba000bf7c5a7c014e7f6336c4e5057b5e08cf0eb137af792527f",
+    "604edb0204d324762c5402b20d0b77d9b4b6880624bcb05e6dc593026d5810fb",
+    "cca310b89cc811a5f1f4704749cc5a7d47b2fd4fb809f2ac7ca9bed4c4d8ae99",
+    "127afc5b8146f182088517c476792613687c672650396c25163a73a7a9b937a6"
+  ],
+  "decoded_pts_seconds": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "timestamps_monotonic": true,
+  "native_streams": [
+    {
+      "index": 0,
+      "codec_name": "vp9",
+      "codec_long_name": "Google VP9",
+      "profile": "Profile 0",
+      "codec_type": "video",
+      "codec_tag_string": "[0][0][0][0]",
+      "codec_tag": "0x0000",
+      "width": 512,
+      "height": 512,
+      "coded_width": 512,
+      "coded_height": 512,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 0,
+      "sample_aspect_ratio": "1:1",
+      "display_aspect_ratio": "1:1",
+      "pix_fmt": "yuv420p",
+      "level": -99,
+      "color_range": "tv",
+      "field_order": "progressive",
+      "refs": 1,
+      "r_frame_rate": "30/1",
+      "avg_frame_rate": "30/1",
+      "time_base": "1/1000",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "nb_read_frames": "84",
+      "disposition": {
+        "default": 0,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0
+      },
+      "tags": {
+        "alpha_mode": "1",
+        "ENCODER": "Lavc60.31.102 libvpx-vp9",
+        "DURATION": "00:00:02.800000000"
+      }
+    }
+  ],
+  "native_duration": "2.800000",
+  "source_review": {
+    "agent": "/root/artisan_stickers_a",
+    "every_selected_sourceframe_observed": true,
+    "selected_frame_view_scale_px": 256,
+    "native512_frame_indices": [
+      61,
+      70,
+      83
+    ],
+    "observation": "All23 selected61–83 poses observed in full board256; native61/70/83 checked for single ear/closed eyelid and paired chest paws. Original55–60 inspected and intentionally not used because ear/eyelid softness.",
+    "artifacts": [
+      "sticker-lab/production-v5/author_a-inspection/batch2/58_selected.jpg"
+    ]
+  },
+  "candidate_visual_review": {
+    "agent": "/root/artisan_stickers_a",
+    "observed_all84_afterframes": true,
+    "all_frame_view_scale_px": 256,
+    "native512_frames": [
+      0,
+      27,
+      41,
+      62
+    ],
+    "observation": "One puckered closed-eye tender face, both chest-hug paws, rounded cloak and two ears remain. Selected61–83 retains gentle head/ear/paw gesture without old right-ear ghost.",
+    "scope": "Author proposed individual prototype only; independent full-frame QA pending",
+    "perceptual_native_realtime": false,
+    "perceptual_slow_playback": false,
+    "device_playback": false
+  },
+  "baseline_independent_triage": {
+    "artifact": "docs/qa-1-13/sticker-triage-51-80.json",
+    "verdict": "repair_required",
+    "source_sha256": "0fbd11c9832910298bb9479e3b7120eed2dff19b9389df73f30c4ddffef31034",
+    "defects": [
+      {
+        "frames": [
+          2,
+          9
+        ],
+        "reason": "Початковий нахил голови зроблений dissolve: f4–8 містять два носи, кілька брів/повік, дубльоване праве вухо та темний matte над чубчиком."
+      },
+      {
+        "frames": [
+          24,
+          30
+        ],
+        "reason": "Зворотний нахил накладає різні обличчя й руки: f26–28 — прозора друга мордочка, зайві вуха, роздвоєні лапи/медальйон і темний верхній halo."
+      },
+      {
+        "frames": [
+          34,
+          39
+        ],
+        "reason": "Ще один локальний dissolve правої щоки/вуха й передніх лап; f37 має напівзникле праве око та привид старої голови."
+      }
+    ]
+  },
+  "recipe_path": "sticker-lab/production-v5/author_a-curated7-frozen/lumen_58/recipe.json",
+  "recipe_sha256": "64b15a9c8288ca8da1fe2bc22d26020f581b6e2f574140f3dc776bff4dec76f9",
+  "generator_snapshot": {
+    "engine_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/recipe_engine.py",
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_path": "sticker-lab/production-v5/recipes-proposed/author_a/generator-r1/repair.py",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "generator_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+  "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee",
+  "statistics": {
+    "flow_limit_px": 6,
+    "registered_pairs": 44
+  },
+  "proposed_description_uk": "Згорнувшись у плащику, ніжно схиляє голівку й посилає цьом із заплющеними очима та рожевими щічками. Лапки обіймають груди; він м’яко випрямляється.",
+  "independent_review": "pending",
+  "native_playback": "not_observed",
+  "device_playback": "not_observed",
+  "canonical_assets_changed": false,
+  "review_artifacts": [
+    {
+      "path": "sticker-lab/production-v5/author_a-curated7-frozen/lumen_58/review-normal.mp4",
+      "sha256": "a7cca96267c5296c28a7b01a0dc0faef3cd7403007844b5552d085780c5880cc",
+      "bytes": 309331,
+      "frames": 84,
+      "duration": 2.8,
+      "fps": 30,
+      "perceptually_watched": false
+    },
+    {
+      "path": "sticker-lab/production-v5/author_a-curated7-frozen/lumen_58/review-slow.mp4",
+      "sha256": "baa7bd79c6ba1c60cfed32c7f3f236933ff572f6cf6e6ccc0cf693bbe1849af6",
+      "bytes": 457125,
+      "frames": 84,
+      "duration": 5.6,
+      "fps": 15,
+      "perceptually_watched": false
+    }
+  ],
+  "reproducibility": {
+    "artifact": "sticker-lab/production-v5/author_a-curated7-frozen/lumen_58/reproducibility.json",
+    "sha256": "26032c6ad482077b7399c3b27124cb34c94751231276c0aa9cc022d3f298b93d",
+    "raw_rgba_exact_match": true,
+    "encoded_frame_exact_match": true,
+    "canonical_video_read": false,
+    "container_bytes_exact_match": false
+  },
+  "candidate_path": "sticker-lab/production-v5/author_a-curated7-frozen/lumen_58/candidate.webm",
+  "frozen_at": "2026-10-30T18:44:26.661222+00:00"
+}

@@ -1,0 +1,6069 @@
+{
+  "schema_version": 1,
+  "id": "lumen_138",
+  "actual_source_kind": "generated_layer_components",
+  "canonical_video_read": false,
+  "frames_rgba_png_sha256": [
+    "caef29059816517958e0f09d0523ce19ed2ae79e7061192852e84d8c1188bca1",
+    "c9fa80b953671e6d7655512f77cf4d3ddef909a469a1f8f2bab85c8cbb9507b8",
+    "560b97cdf0dd2e83738c9086ae461e8a8cd4f759350abc9ff8fee8e3c966f18c",
+    "3df6e86af80af118a20bc04bef78db70699a51fc034ce130d34deca789b38857",
+    "4ca15d5ac2b6bd9cc407c24a6685ef27ba181bbda7191d38745537ba22a94ae1",
+    "35e6ae0d8ac3a5133ce2371d1af06b4d183b5f5acbe061d7655fdaf05ad640fc",
+    "6d9481c2af45945b2391be3c5b2144a69c60b8714bc9086c7ee40eb002cb67dc",
+    "ecfa3e53a1c4238642797c26d5b76fcb9b366b65507df5f43a8ce1c42cae1aaf",
+    "f14dba10affdd2175328319d91c57957ee296db87d7f7dd57d3976ac5654f6f7",
+    "68722ea05f34911bbb595a623e874ea989bacb4b9aa2e1d1c70af042cc247641",
+    "9217a0acc2d7742bc79a92ed69ad1c357257b23d36968c53ecb5570756820d18",
+    "fc295b386472e6b6752a43c9e4d08848ab0a0048e3a64920ea4fa02c3caea93e",
+    "d3583c769a595a7936a1a289ff88fbb23ffda75f4a612aa815ce6a375ba1b132",
+    "8ab8e65cce162ebeafa3522671d6c743ca65beaae38ec55595912214205a045e",
+    "6a4a949eba6696d41b77553a79e6406b08db8bb46c3c33cb62757edf7e5e4b18",
+    "ef792c4e9543ff53e82c2443f44293a93cffbd3d8d7c9dcf0a3c6da398708cde",
+    "d190852f972e3b2399fa36e01e69c685d2a8c8ab22bb25df002d2ab70e78d287",
+    "16985fe5b438e484e681209b7af541f7263af07ddf48a21eef7237f597b7af15",
+    "878bdd007a8179a6cda8dd7eaa58ed1f44c2571a7eff56ddbdcfa3d229f7fde8",
+    "f69100506e3e8bffd3269b40fc63e5bdd8015077b0cf4a0e98a59de1a926564e",
+    "3f6fee8051ed0b69ef5313257a14ffdf8ae28b5e6b0406846677246025366c5c",
+    "3f6fee8051ed0b69ef5313257a14ffdf8ae28b5e6b0406846677246025366c5c",
+    "3f6fee8051ed0b69ef5313257a14ffdf8ae28b5e6b0406846677246025366c5c",
+    "3f6fee8051ed0b69ef5313257a14ffdf8ae28b5e6b0406846677246025366c5c",
+    "3f6fee8051ed0b69ef5313257a14ffdf8ae28b5e6b0406846677246025366c5c",
+    "3f6fee8051ed0b69ef5313257a14ffdf8ae28b5e6b0406846677246025366c5c",
+    "3f6fee8051ed0b69ef5313257a14ffdf8ae28b5e6b0406846677246025366c5c",
+    "3f6fee8051ed0b69ef5313257a14ffdf8ae28b5e6b0406846677246025366c5c",
+    "3f6fee8051ed0b69ef5313257a14ffdf8ae28b5e6b0406846677246025366c5c",
+    "3f6fee8051ed0b69ef5313257a14ffdf8ae28b5e6b0406846677246025366c5c",
+    "3f6fee8051ed0b69ef5313257a14ffdf8ae28b5e6b0406846677246025366c5c",
+    "58b6ce4ba05230656bd8db31c8dd7757460f72ccc2145622bc6ee327a66c663c",
+    "c360b4013e288067d18bfac67d9c04d388595a30fb4418447afa30d03cc48e6c",
+    "ef01fb753db69973913cb575bbf06ad05ab3fbed746c7a464ef64e3120789a4f",
+    "25bf1115ea998f7d8778a41f3ebec9354439a383444a690a67974bdeb3b3a354",
+    "8ad3208dadb0a85b837dd11891191575d898557afc766002085d5740d7c79cc5",
+    "77087bb6b8de022c8805c81f1d16915112f646d2f70a1969b9ba397bf3112bf0",
+    "07f18b059a7fbf04bd9b126881fab1c282abfc752bfc412d81120db95871d508",
+    "2b35d7b541545e3c401c97fd33da42140431d21723afa9ede36434f783177dfb",
+    "8794ade15904f83a1c9368a140527cf1f2767a550b1f59e7a4fb8c1bbe49e36a",
+    "813ec9365fdc346595c2a8d66f927a3f2a02f66877cf75e0be30fa558173bbc6",
+    "e7cbc62ab7df4164be791b8d79387c62d0644dda783d23242e756b20f0bb7e90",
+    "d0437ae0ecddae04d75ed0249f435a932e7fbdac47f7348487a0d435f751af6e",
+    "b414f28174fea1370819e4628813ce7e26753372203d0688fdb225358fb5f20e",
+    "8d6ff30ca44a13e9505ee4ca4c5f8f6a776f2609395438fc3b260e5daa54e078",
+    "f64ccf0c21ece49638cc395ee6b16501e90faffc1a6527028b482b5e47e5bb9c",
+    "f977d0f9f2e4ffe51a782453f94304b4a7ed9f0187ac6f6d7535ccab9b050433",
+    "e592ec8b3367d4ad1f5ba713af55ccb6db9349bbfdc6cbed22eda3dbf97449f2",
+    "e541c4ad10758a193f4501005e575404d174f2022aa7b9564349eb0ec1a5b964",
+    "6ad548f3eaffd3e80c1c5f50d313740224f3e6a9283781931bf1ac3d82994f8e",
+    "08251963a1921a9ec49fc492bbc38c7232199fd19e5b7a3c0bbf1c7b434de687",
+    "a1fc5752a1b03db93562b3d50ccf13d7f69e8eb6c999c09c5bb41cb0f0e9484f",
+    "0197bc99a84603eed46850bacc9cf18070fe4b78e5ca84746c3a1e7da96f93e9",
+    "dd44011a3a14f532f7d3c82d79b1efd92215d8f3bc2dd115a7809fe1cdb077d2",
+    "caef29059816517958e0f09d0523ce19ed2ae79e7061192852e84d8c1188bca1",
+    "caef29059816517958e0f09d0523ce19ed2ae79e7061192852e84d8c1188bca1",
+    "617d087584d755dcba8085c01373df61f5c2672e4cf922202991ce0a49a89f6f",
+    "1f1a7df3effbb5b8bb55244dc3481eb757d4728150d785df9d865aa91efc619b",
+    "dfbd1a0aafa29ab60d99192be7217420432353e662e19d468be9aaaeffa882c4",
+    "fd7a60cecc07e24da742758364ac66611dd160d463173ab252a088e56d973087",
+    "16aec274baa728bb7236213e54bac14cccc8c15b841f74e8fe9e6c7b27006f91",
+    "1786a48f98593438c07c72c7091f7976f55cfb2ac08241a0174bd2fe106eeb01",
+    "cb00c60600a1edb30bf6564dc277ce14d9b465cc6fe44dec5cb82104a06480f6",
+    "2e244e9f68d64d899973c80dcd5ab0f26d93c1a6b0744fcf94b56ba48b888212",
+    "f2f664052687986839680620cd7209aaaa127800a31b1a480834a58b517ba8d7",
+    "5963982c45597e643e64fd55a71bd7014ffa240c667b7ec07e074f9c73f5a4df",
+    "7675119b8a6d1b674da496fd5b9ab32701235a2059eb982cff23632dc32a13fd",
+    "8e41cbcd17e9368b3d8da491c6f699f1fa464c8854bde601056886fd2fd89437",
+    "cb186c9f3e3f869165bad64a5b6ad5fda67bce8b621c6c875e4bcd30d2663b9d",
+    "9c77fc3f1c435d1c90f2532de4ab0873e32fad7f4e3ee5177c0f0f632941563a",
+    "5c762a70c04348b281b29813d49483c36c530f379be24332b0bf9db9663507bc",
+    "5facbf05f9c74e94a7721eb986d9fc143f5ea72533402a331a4f71ad1fd0c359",
+    "b9d54ffeef279e1259c89cfe54f0cf4ec8f7de5c0cff29aaf0c2af9f3094166e",
+    "92d92a75100234c834b279ca7f64b5132872644ae0f3782ce2ef8659e047d665",
+    "9d0becf38a7667295fda457b6a1d95f8c7fd6d726609a4cf26422b3faab46e52",
+    "75d97ce07e959b5eb6672f2c5021512731f62b2addf9fb378d35d502b11bf596",
+    "bfe024ddcc0718a1811d0d863fdfc02efa69ad12008c89b5078466ff1a07ac32",
+    "deb019b8f4b085b5bbf0421900716cf89a4dc17ff1c6be1e37bf532327e7945e",
+    "90db350157af15ebe47f70da856a96b4eced3a1bf6538df908a9ffd6ff591c58",
+    "caef29059816517958e0f09d0523ce19ed2ae79e7061192852e84d8c1188bca1",
+    "caef29059816517958e0f09d0523ce19ed2ae79e7061192852e84d8c1188bca1",
+    "caef29059816517958e0f09d0523ce19ed2ae79e7061192852e84d8c1188bca1",
+    "caef29059816517958e0f09d0523ce19ed2ae79e7061192852e84d8c1188bca1",
+    "caef29059816517958e0f09d0523ce19ed2ae79e7061192852e84d8c1188bca1"
+  ],
+  "scene_states": [
+    {
+      "cover": 0.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0012812545529384824,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          379.07853845629995,
+          274.12803107027275
+        ],
+        "wrist": [
+          390.1702217296961,
+          226.90390671098402
+        ],
+        "hand": [
+          395.99871874544704,
+          202.08840656415276
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -89.88468709023553,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        395.4736424335122,
+        462.9838781823214
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50057,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.009442236460416255,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          380.2566508795366,
+          274.95949571592627
+        ],
+        "wrist": [
+          390.5706965237432,
+          227.55945540172266
+        ],
+        "hand": [
+          395.9905577635396,
+          202.6515143157687
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -89.15019871856254,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        392.12113442452886,
+        463.51881847446066
+      ],
+      "cloth_bbox": [
+        214,
+        189,
+        470,
+        497
+      ],
+      "cloth_nonzero_alpha_pixels": 50053,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.029261590722639983,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          382.73594020234964,
+          276.82591836730813
+        ],
+        "wrist": [
+          391.41174550642853,
+          229.09884259616314
+        ],
+        "hand": [
+          395.9707384092774,
+          204.01904975986216
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -87.3664568349624,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        383.98313692129324,
+        464.6395021932145
+      ],
+      "cloth_bbox": [
+        210,
+        191,
+        468,
+        499
+      ],
+      "cloth_nonzero_alpha_pixels": 50082,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0634690392546237,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          386.2149627205452,
+          279.73801085361345
+        ],
+        "wrist": [
+          392.58774090602174,
+          231.64922777961982
+        ],
+        "hand": [
+          395.93653096074536,
+          206.37936370856903
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -84.28778646708388,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        369.9690668501856,
+        465.97985219745226
+      ],
+      "cloth_bbox": [
+        203,
+        196,
+        466,
+        502
+      ],
+      "cloth_nonzero_alpha_pixels": 50048,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.11301286431767615,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          390.21669706869943,
+          283.58032328866426
+        ],
+        "wrist": [
+          393.93374147463874,
+          235.21373419843408
+        ],
+        "hand": [
+          395.8869871356823,
+          209.79788763791964
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -79.82884221140914,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        349.81554978029385,
+        466.59380948250134
+      ],
+      "cloth_bbox": [
+        193,
+        203,
+        462,
+        504
+      ],
+      "cloth_nonzero_alpha_pixels": 50050,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.17732739195088806,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          394.3384465866653,
+          288.22070390623514
+        ],
+        "wrist": [
+          395.3114010501518,
+          239.72125319851185
+        ],
+        "hand": [
+          395.8226726080491,
+          214.23559004461129
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -74.04053472442007,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        324.08743153089034,
+        465.0757343668507
+      ],
+      "cloth_bbox": [
+        182,
+        212,
+        457,
+        505
+      ],
+      "cloth_nonzero_alpha_pixels": 50074,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.2546004754026192,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          398.28401986682917,
+          293.52387543463
+        ],
+        "wrist": [
+          396.61987845070627,
+          245.04321957390502
+        ],
+        "hand": [
+          395.74539952459736,
+          219.56743280278073
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -67.08595721376427,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        294.1656164332508,
+        459.8761311120908
+      ],
+      "cloth_bbox": [
+        171,
+        219,
+        452,
+        503
+      ],
+      "cloth_nonzero_alpha_pixels": 50085,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.3420409785619863,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.842152424573,
+          299.3419676797997
+        ],
+        "wrist": [
+          397.7882290409672,
+          251.0024490171283
+        ],
+        "hand": [
+          395.657959021438,
+          225.60082752077705
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -59.216311929421245,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        262.1318295036503,
+        449.73805234521126
+      ],
+      "cloth_bbox": [
+        160,
+        211,
+        446,
+        494
+      ],
+      "cloth_nonzero_alpha_pixels": 50062,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.43614625939034946,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          404.86861868023396,
+          305.50677029491357
+        ],
+        "wrist": [
+          398.7690675005157,
+          257.3825681223591
+        ],
+        "hand": [
+          395.56385374060966,
+          232.0940918979341
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -50.74683665486855,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        230.48241002793904,
+        434.1209211997384
+      ],
+      "cloth_bbox": [
+        152,
+        195,
+        441,
+        480
+      ],
+      "cloth_nonzero_alpha_pixels": 50071,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.5329696533528001,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          407.2778696933189,
+          311.8262857666518
+        ],
+        "wrist": [
+          399.5355119295382,
+          263.93892568492953
+        ],
+        "hand": [
+          395.4670303466472,
+          238.7749060813432
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -42.032731198247994,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        201.6832776999085,
+        413.45913555311773
+      ],
+      "cloth_bbox": [
+        146,
+        177,
+        437,
+        464
+      ],
+      "cloth_nonzero_alpha_pixels": 50071,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.6283879568496482,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          116.69192647048348,
+          292.1171798133748
+        ],
+        "wrist": [
+          116.10102839032433,
+          244.77039648319402
+        ],
+        "hand": [
+          115.76846240535122,
+          218.12294210448013
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          409.04091446713403,
+          318.0853128098955
+        ],
+        "wrist": [
+          400.08027867814417,
+          270.41089235619756
+        ],
+        "hand": [
+          395.3716120431504,
+          245.35876902262572
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -33.44508388353166,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.012260829013893438,
+      "left_cloth_grip_target": [
+        177.67621907788032,
+        389.1483329613784
+      ],
+      "cloth_bbox": [
+        144,
+        158,
+        432,
+        444
+      ],
+      "cloth_nonzero_alpha_pixels": 50064,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.718368910647909,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          104.47702760761013,
+          349.71116838910694
+        ],
+        "wrist": [
+          124.03441047502929,
+          306.58836899443173
+        ],
+        "hand": [
+          135.0415883880933,
+          282.31823386110057
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.18552356575805,
+          324.05106670009036
+        ],
+        "wrist": [
+          400.4155771429603,
+          276.5358953730862
+        ],
+        "hand": [
+          395.2816310893521,
+          251.56745483470573
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -25.346798041688192,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.45036005602239293,
+      "left_cloth_grip_target": [
+        159.50125653927174,
+        363.2560298682507
+      ],
+      "cloth_bbox": [
+        140,
+        139,
+        428,
+        422
+      ],
+      "cloth_nonzero_alpha_pixels": 50073,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.7992386833127905,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          151.44036030218393,
+          404.44569690425624
+        ],
+        "wrist": [
+          147.46723071224588,
+          357.26221151458014
+        ],
+        "hand": [
+          145.23109592035803,
+          330.7066635783671
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.79426968027565,
+          329.4858579674849
+        ],
+        "wrist": [
+          400.5722594573163,
+          282.0658846825851
+        ],
+        "hand": [
+          395.2007613166872,
+          257.14746914858256
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -18.068518501848857,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.9397145165022653,
+      "left_cloth_grip_target": [
+        147.17051071306417,
+        338.0654374961873
+      ],
+      "cloth_bbox": [
+        125,
+        124,
+        423,
+        400
+      ],
+      "cloth_nonzero_alpha_pixels": 50071,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.8679493546391823,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          125.6013767411559,
+          388.2370315391027
+        ],
+        "wrist": [
+          134.70489105130275,
+          341.7699132783242
+        ],
+        "hand": [
+          139.82848055840603,
+          315.61754712222466
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.9953250890079,
+          334.168215789982
+        ],
+        "wrist": [
+          400.5964751476305,
+          286.7867080128374
+        ],
+        "hand": [
+          395.13205064536083,
+          261.8885054701036
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -11.88455808247359,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        139.82848055840603,
+        315.61754712222466
+      ],
+      "cloth_bbox": [
+        115,
+        112,
+        419,
+        381
+      ],
+      "cloth_nonzero_alpha_pixels": 50064,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.92234639908314,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          110.11849435951203,
+          366.6680312501642
+        ],
+        "wrist": [
+          126.75619650350951,
+          322.3368467450797
+        ],
+        "hand": [
+          136.1201358815452,
+          297.3866149961666
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.942315103974,
+          337.92130742384546
+        ],
+        "wrist": [
+          400.54255590374737,
+          290.5399992114691
+        ],
+        "hand": [
+          395.07765360091685,
+          265.64190153673667
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -6.988824082517402,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        136.1201358815452,
+        297.3866149961666
+      ],
+      "cloth_bbox": [
+        108,
+        103,
+        416,
+        366
+      ],
+      "cloth_nonzero_alpha_pixels": 50088,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.9614361691933745,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          104.96269517628343,
+          351.9300535656253
+        ],
+        "wrist": [
+          123.94024783290071,
+          308.5489569056567
+        ],
+        "hand": [
+          134.62108891792735,
+          284.1334483359708
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.78441487818935,
+          340.644477042493
+        ],
+        "wrist": [
+          400.4625394783354,
+          293.2461411268853
+        ],
+        "hand": [
+          395.03856383080665,
+          268.33909567434284
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -3.470744772596296,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.62108891792735,
+        284.1334483359708
+      ],
+      "cloth_bbox": [
+        105,
+        97,
+        413,
+        354
+      ],
+      "cloth_nonzero_alpha_pixels": 50074,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.9856533790427404,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.45657561635105,
+          343.2076019595561
+        ],
+        "wrist": [
+          123.11854926029952,
+          300.13239047219486
+        ],
+        "hand": [
+          134.18459237496683,
+          275.8890385013076
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.6348110836756,
+          342.34265596847683
+        ],
+        "wrist": [
+          400.3951303330549,
+          294.92649524806137
+        ],
+        "hand": [
+          395.01434662095727,
+          270.0100831539491
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -1.2911958861533623,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.18459237496683,
+        275.8890385013076
+      ],
+      "cloth_bbox": [
+        103,
+        93,
+        411,
+        347
+      ],
+      "cloth_nonzero_alpha_pixels": 50061,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.9971285876597183,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.11793876221158,
+          339.176245593315
+        ],
+        "wrist": [
+          122.94856306441271,
+          296.1784155080517
+        ],
+        "hand": [
+          134.10952520853948,
+          271.9786149093408
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.5497982505133,
+          343.15028694640836
+        ],
+        "wrist": [
+          400.3583236079952,
+          295.72374159520433
+        ],
+        "hand": [
+          395.00287141234026,
+          270.8018725485206
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -0.25842711062534884,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.10952520853948,
+        271.9786149093408
+      ],
+      "cloth_bbox": [
+        102,
+        91,
+        411,
+        345
+      ],
+      "cloth_nonzero_alpha_pixels": 50050,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.9999556824599082,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.0689029216106,
+          338.1926297602073
+        ],
+        "wrist": [
+          122.92739718715535,
+          295.2076642750339
+        ],
+        "hand": [
+          134.1040449497022,
+          271.01510405929906
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.52744396546757,
+          343.3495499223028
+        ],
+        "wrist": [
+          400.3487699790726,
+          295.9202556494846
+        ],
+        "hand": [
+          395.0000443175401,
+          270.9969420897337
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -0.003988578608263849,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.1040449497022,
+        271.01510405929906
+      ],
+      "cloth_bbox": [
+        102,
+        91,
+        410,
+        345
+      ],
+      "cloth_nonzero_alpha_pixels": 50051,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 1.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.06823994481312,
+          338.177240176989
+        ],
+        "wrist": [
+          122.92712966811077,
+          295.19245739035483
+        ],
+        "hand": [
+          134.10399999999998,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.5270890829211,
+          343.35267448139723
+        ],
+        "wrist": [
+          400.3486186811587,
+          295.9233365182826
+        ],
+        "hand": [
+          395.0,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -0.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.10399999999998,
+        271.0
+      ],
+      "cloth_bbox": [
+        102,
+        91,
+        410,
+        345
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 1.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.06823994481312,
+          338.177240176989
+        ],
+        "wrist": [
+          122.92712966811077,
+          295.19245739035483
+        ],
+        "hand": [
+          134.10399999999998,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.5270890829211,
+          343.35267448139723
+        ],
+        "wrist": [
+          400.3486186811587,
+          295.9233365182826
+        ],
+        "hand": [
+          395.0,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -0.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.10399999999998,
+        271.0
+      ],
+      "cloth_bbox": [
+        102,
+        91,
+        410,
+        345
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 1.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.06823994481312,
+          338.177240176989
+        ],
+        "wrist": [
+          122.92712966811077,
+          295.19245739035483
+        ],
+        "hand": [
+          134.10399999999998,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.5270890829211,
+          343.35267448139723
+        ],
+        "wrist": [
+          400.3486186811587,
+          295.9233365182826
+        ],
+        "hand": [
+          395.0,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -0.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.10399999999998,
+        271.0
+      ],
+      "cloth_bbox": [
+        102,
+        91,
+        410,
+        345
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 1.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.06823994481312,
+          338.177240176989
+        ],
+        "wrist": [
+          122.92712966811077,
+          295.19245739035483
+        ],
+        "hand": [
+          134.10399999999998,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.5270890829211,
+          343.35267448139723
+        ],
+        "wrist": [
+          400.3486186811587,
+          295.9233365182826
+        ],
+        "hand": [
+          395.0,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -0.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.10399999999998,
+        271.0
+      ],
+      "cloth_bbox": [
+        102,
+        91,
+        410,
+        345
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 1.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.06823994481312,
+          338.177240176989
+        ],
+        "wrist": [
+          122.92712966811077,
+          295.19245739035483
+        ],
+        "hand": [
+          134.10399999999998,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.5270890829211,
+          343.35267448139723
+        ],
+        "wrist": [
+          400.3486186811587,
+          295.9233365182826
+        ],
+        "hand": [
+          395.0,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -0.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.10399999999998,
+        271.0
+      ],
+      "cloth_bbox": [
+        102,
+        91,
+        410,
+        345
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 1.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.06823994481312,
+          338.177240176989
+        ],
+        "wrist": [
+          122.92712966811077,
+          295.19245739035483
+        ],
+        "hand": [
+          134.10399999999998,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.5270890829211,
+          343.35267448139723
+        ],
+        "wrist": [
+          400.3486186811587,
+          295.9233365182826
+        ],
+        "hand": [
+          395.0,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -0.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.10399999999998,
+        271.0
+      ],
+      "cloth_bbox": [
+        102,
+        91,
+        410,
+        345
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 1.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.06823994481312,
+          338.177240176989
+        ],
+        "wrist": [
+          122.92712966811077,
+          295.19245739035483
+        ],
+        "hand": [
+          134.10399999999998,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.5270890829211,
+          343.35267448139723
+        ],
+        "wrist": [
+          400.3486186811587,
+          295.9233365182826
+        ],
+        "hand": [
+          395.0,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -0.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.10399999999998,
+        271.0
+      ],
+      "cloth_bbox": [
+        102,
+        91,
+        410,
+        345
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 1.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.06823994481312,
+          338.177240176989
+        ],
+        "wrist": [
+          122.92712966811077,
+          295.19245739035483
+        ],
+        "hand": [
+          134.10399999999998,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.5270890829211,
+          343.35267448139723
+        ],
+        "wrist": [
+          400.3486186811587,
+          295.9233365182826
+        ],
+        "hand": [
+          395.0,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -0.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.10399999999998,
+        271.0
+      ],
+      "cloth_bbox": [
+        102,
+        91,
+        410,
+        345
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 1.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.06823994481312,
+          338.177240176989
+        ],
+        "wrist": [
+          122.92712966811077,
+          295.19245739035483
+        ],
+        "hand": [
+          134.10399999999998,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.5270890829211,
+          343.35267448139723
+        ],
+        "wrist": [
+          400.3486186811587,
+          295.9233365182826
+        ],
+        "hand": [
+          395.0,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -0.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.10399999999998,
+        271.0
+      ],
+      "cloth_bbox": [
+        102,
+        91,
+        410,
+        345
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 1.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.06823994481312,
+          338.177240176989
+        ],
+        "wrist": [
+          122.92712966811077,
+          295.19245739035483
+        ],
+        "hand": [
+          134.10399999999998,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.5270890829211,
+          343.35267448139723
+        ],
+        "wrist": [
+          400.3486186811587,
+          295.9233365182826
+        ],
+        "hand": [
+          395.0,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -0.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.10399999999998,
+        271.0
+      ],
+      "cloth_bbox": [
+        102,
+        91,
+        410,
+        345
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 1.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.06823994481312,
+          338.177240176989
+        ],
+        "wrist": [
+          122.92712966811077,
+          295.19245739035483
+        ],
+        "hand": [
+          134.10399999999998,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.5270890829211,
+          343.35267448139723
+        ],
+        "wrist": [
+          400.3486186811587,
+          295.9233365182826
+        ],
+        "hand": [
+          395.0,
+          271.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -0.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.10399999999998,
+        271.0
+      ],
+      "cloth_bbox": [
+        102,
+        91,
+        410,
+        345
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.9996787542216974,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.07311929089725,
+          338.28881568685307
+        ],
+        "wrist": [
+          122.92911367117291,
+          295.302695375447
+        ],
+        "hand": [
+          134.10435446213745,
+          271.1094852068075
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.5296584117841,
+          343.33002604115643
+        ],
+        "wrist": [
+          400.3497143244509,
+          295.9010043590928
+        ],
+        "hand": [
+          395.0003212457783,
+          270.9778340412971
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -0.028912120047235312,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.10435446213745,
+        271.1094852068075
+      ],
+      "cloth_bbox": [
+        102,
+        91,
+        410,
+        345
+      ],
+      "cloth_nonzero_alpha_pixels": 50051,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.9962661255200564,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.13555707237934,
+          339.4770605303335
+        ],
+        "wrist": [
+          122.95663306375579,
+          296.4748280440974
+        ],
+        "hand": [
+          134.1122212804645,
+          272.27254971045227
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.55650655414644,
+          343.0895206007409
+        ],
+        "wrist": [
+          400.3611997880219,
+          295.6637988952833
+        ],
+        "hand": [
+          395.00373387447996,
+          270.7423626608839
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -0.33604870319492,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.1122212804645,
+        272.27254971045227
+      ],
+      "cloth_bbox": [
+        102,
+        92,
+        411,
+        345
+      ],
+      "cloth_nonzero_alpha_pixels": 50047,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.9865517799935744,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          103.42179207222902,
+          342.88969696108165
+        ],
+        "wrist": [
+          123.10030539953603,
+          299.822038962495
+        ],
+        "hand": [
+          134.17565728719137,
+          275.58293820432726
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.6284854377269,
+          342.4058174529517
+        ],
+        "wrist": [
+          400.392362408214,
+          294.98888857028805
+        ],
+        "hand": [
+          395.0134482200064,
+          270.07207281955664
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -1.2103398005783084,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.17565728719137,
+        275.58293820432726
+      ],
+      "cloth_bbox": [
+        103,
+        93,
+        411,
+        347
+      ],
+      "cloth_nonzero_alpha_pixels": 50067,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.9683149316526927,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          104.41893725701345,
+          349.42183521950835
+        ],
+        "wrist": [
+          123.64055229057658,
+          306.14832637451497
+        ],
+        "hand": [
+          134.45875521093365,
+          281.79336978301234
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.7459996595718,
+          341.12597210330193
+        ],
+        "wrist": [
+          400.4447973481421,
+          293.7231389571925
+        ],
+        "hand": [
+          395.0316850683473,
+          268.8137302840358
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -2.85165615125766,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        134.45875521093365,
+        281.79336978301234
+      ],
+      "cloth_bbox": [
+        104,
+        96,
+        413,
+        352
+      ],
+      "cloth_nonzero_alpha_pixels": 50056,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.9402350969306035,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          107.2866593573398,
+          359.8203572988065
+        ],
+        "wrist": [
+          125.21964030487524,
+          315.99713004896165
+        ],
+        "hand": [
+          135.31258132562635,
+          291.3327839892819
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.8827089233676,
+          339.16477155975434
+        ],
+        "wrist": [
+          400.5102967784216,
+          291.7774691926193
+        ],
+        "hand": [
+          395.0597649030694,
+          266.8762216882117
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -5.378841276245687,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        135.31258132562635,
+        291.3327839892819
+      ],
+      "cloth_bbox": [
+        106,
+        100,
+        414,
+        360
+      ],
+      "cloth_nonzero_alpha_pixels": 50061,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.9017920610807215,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          114.57277864045534,
+          374.7346452523036
+        ],
+        "wrist": [
+          129.1155322456689,
+          329.67273928024923
+        ],
+        "hand": [
+          137.30040428931585,
+          304.31124692216576
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.98483151623896,
+          336.4982341318147
+        ],
+        "wrist": [
+          400.570675520731,
+          289.12008817568716
+        ],
+        "hand": [
+          395.0982079389193,
+          264.22365221456977
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -8.838714502735064,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        137.30040428931585,
+        304.31124692216576
+      ],
+      "cloth_bbox": [
+        110,
+        107,
+        417,
+        371
+      ],
+      "cloth_nonzero_alpha_pixels": 50057,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.8531658445741553,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          132.30786058658575,
+          393.97976495928026
+        ],
+        "wrist": [
+          137.97188211931453,
+          346.9692777002334
+        ],
+        "hand": [
+          141.15967534997384,
+          320.51109561380576
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.9770064946777,
+          333.1554105913755
+        ],
+        "wrist": [
+          400.599855970881,
+          285.7691456367986
+        ],
+        "hand": [
+          395.14683415542584,
+          260.8684432756167
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -13.215073988326019,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 1.0,
+      "left_cloth_grip_target": [
+        141.15967534997384,
+        320.51109561380576
+      ],
+      "cloth_bbox": [
+        117,
+        115,
+        420,
+        385
+      ],
+      "cloth_nonzero_alpha_pixels": 50051,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.795136669497181,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          150.452289709555,
+          404.07401159868016
+        ],
+        "wrist": [
+          147.14450850159238,
+          356.8392189587577
+        ],
+        "hand": [
+          145.28284140122648,
+          330.25479456011004
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.7730032775386,
+          329.20828286151
+        ],
+        "wrist": [
+          400.56762280891644,
+          281.7847278615992
+        ],
+        "hand": [
+          395.2048633305028,
+          256.8644301953055
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -18.437699745253713,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.9260482927699011,
+      "left_cloth_grip_target": [
+        147.70114705427244,
+        339.37887284297324
+      ],
+      "cloth_bbox": [
+        126,
+        124,
+        423,
+        401
+      ],
+      "cloth_nonzero_alpha_pixels": 50081,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.7289849259487133,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          107.28945791644426,
+          359.8282162552368
+        ],
+        "wrist": [
+          126.68728444150425,
+          316.63340894741447
+        ],
+        "hand": [
+          137.60466173761398,
+          292.3227467191989
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          410.2881066453706,
+          324.7602038918349
+        ],
+        "wrist": [
+          400.44395483668694,
+          277.26035089725724
+        ],
+        "hand": [
+          395.27101507405126,
+          252.29995989046122
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -24.3913566646158,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.5298667014551214,
+      "left_cloth_grip_target": [
+        157.66103470087285,
+        360.04140986704994
+      ],
+      "cloth_bbox": [
+        140,
+        137,
+        427,
+        419
+      ],
+      "cloth_nonzero_alpha_pixels": 50038,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.6563911384377786,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          110.47701774680135,
+          302.58560763888033
+        ],
+        "wrist": [
+          116.24489473943702,
+          255.587749738184
+        ],
+        "hand": [
+          119.4911393248705,
+          229.13667563727944
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          409.4500907900681,
+          319.9340003812928
+        ],
+        "wrist": [
+          400.20287078537154,
+          272.314337619744
+        ],
+        "hand": [
+          395.34360886156225,
+          247.29098855220673
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -30.924797540599926,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.07943869539529995,
+      "left_cloth_grip_target": [
+        171.53591492813237,
+        381.36872328918747
+      ],
+      "cloth_bbox": [
+        145,
+        152,
+        431,
+        437
+      ],
+      "cloth_nonzero_alpha_pixels": 50067,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.5793359322809858,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          408.20693061546217,
+          314.8611561323706
+        ],
+        "wrist": [
+          399.82515120335074,
+          267.08156704638526
+        ],
+        "hand": [
+          395.42066406771903,
+          241.97417932738801
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -37.859766094711276,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        189.43929340662794,
+        402.09412735566525
+      ],
+      "cloth_bbox": [
+        145,
+        168,
+        435,
+        455
+      ],
+      "cloth_nonzero_alpha_pixels": 50044,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.5,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          406.5309535484233,
+          309.67320591454586
+        ],
+        "wrist": [
+          399.29983420620596,
+          261.705985102855
+        ],
+        "hand": [
+          395.5,
+          236.5
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -45.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        211.01866921555447,
+        420.9813307844455
+      ],
+      "cloth_bbox": [
+        148,
+        183,
+        438,
+        469
+      ],
+      "cloth_nonzero_alpha_pixels": 50066,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.42066406771901466,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          404.42027692637544,
+          304.4957993192602
+        ],
+        "wrist": [
+          398.6247761888226,
+          256.33403512254574
+        ],
+        "hand": [
+          395.57933593228097,
+          231.025820672612
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -52.14023390528868,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        235.4593879040036,
+        437.00719133370296
+      ],
+      "cloth_bbox": [
+        153,
+        198,
+        442,
+        483
+      ],
+      "cloth_nonzero_alpha_pixels": 50060,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.34360886156222126,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          401.8988386443,
+          299.44524303808106
+        ],
+        "wrist": [
+          397.80672795738036,
+          251.10894208874385
+        ],
+        "hand": [
+          395.65639113843775,
+          225.70901144779327
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -59.075202459400096,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        261.57865640145707,
+        449.5167053812232
+      ],
+      "cloth_bbox": [
+        160,
+        210,
+        446,
+        494
+      ],
+      "cloth_nonzero_alpha_pixels": 50068,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.27101507405128655,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          399.0162874707024,
+          294.6269881189031
+        ],
+        "wrist": [
+          396.86136252149106,
+          246.16566686367764
+        ],
+        "hand": [
+          395.72898492594874,
+          220.70004010953878
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -65.60864333538422,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        287.98753494936005,
+        458.3100204827172
+      ],
+      "cloth_bbox": [
+        169,
+        218,
+        451,
+        501
+      ],
+      "cloth_nonzero_alpha_pixels": 50026,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.2048633305028188,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          395.8487991158875,
+          290.1355503475422
+        ],
+        "wrist": [
+          395.8136217803707,
+          241.626354086483
+        ],
+        "hand": [
+          395.7951366694972,
+          216.13556980469448
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -71.5623002547463,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        313.28069402182956,
+        463.6392860809249
+      ],
+      "cloth_bbox": [
+        178,
+        215,
+        455,
+        505
+      ],
+      "cloth_nonzero_alpha_pixels": 50084,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.14683415542584444,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          392.5017875020226,
+          286.0556276566924
+        ],
+        "wrist": [
+          394.69871604945325,
+          237.5961924113619
+        ],
+        "hand": [
+          395.85316584457416,
+          212.13155672438327
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -76.784926011674,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        336.21051350638515,
+        466.1187155298353
+      ],
+      "cloth_bbox": [
+        187,
+        207,
+        459,
+        505
+      ],
+      "cloth_nonzero_alpha_pixels": 50079,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.09820793891927859,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          389.1154752065464,
+          282.46451443075983
+        ],
+        "wrist": [
+          393.5641084868717,
+          234.15972148765653
+        ],
+        "hand": [
+          395.9017920610807,
+          208.77634778543023
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -81.16128549726493,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        355.8141973534846,
+        466.5741514350337
+      ],
+      "cloth_bbox": [
+        196,
+        201,
+        463,
+        504
+      ],
+      "cloth_nonzero_alpha_pixels": 50058,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0597649030693963,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          385.8735846466165,
+          279.4358683700536
+        ],
+        "wrist": [
+          392.47257452206674,
+          231.37760485624563
+        ],
+        "hand": [
+          395.9402350969306,
+          206.12377831178836
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -84.62115872375435,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        371.4836727958605,
+        465.87096188923135
+      ],
+      "cloth_bbox": [
+        203,
+        196,
+        466,
+        502
+      ],
+      "cloth_nonzero_alpha_pixels": 50059,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.031685068347307443,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          383.01069025023236,
+          277.0429781415818
+        ],
+        "wrist": [
+          391.50480003427765,
+          229.28323088182873
+        ],
+        "hand": [
+          395.9683149316527,
+          204.18626971596422
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -87.14834384874233,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        382.988675432676,
+        464.7591995733779
+      ],
+      "cloth_bbox": [
+        209,
+        192,
+        468,
+        499
+      ],
+      "cloth_nonzero_alpha_pixels": 50059,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.01344822000642587,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          380.79643389734406,
+          275.35209661793994
+        ],
+        "wrist": [
+          390.7540096182108,
+          227.8758915768659
+        ],
+        "hand": [
+          395.9865517799936,
+          202.9279271804434
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -88.78966019942168,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        390.47568639522285,
+        463.76571811325846
+      ],
+      "cloth_bbox": [
+        213,
+        189,
+        470,
+        497
+      ],
+      "cloth_nonzero_alpha_pixels": 50079,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0037338744799449985,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          379.4448406686741,
+          274.38287782638577
+        ],
+        "wrist": [
+          390.294794141588,
+          227.1026296356825
+        ],
+        "hand": [
+          395.99626612552004,
+          202.2576373391162
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -89.66395129680495,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        394.4660790759511,
+        463.14914993313164
+      ],
+      "cloth_bbox": [
+        215,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50029,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.00032124577830194845,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.93198429463877,
+          274.0269838935766
+        ],
+        "wrist": [
+          390.1203675102844,
+          226.82567628077038
+        ],
+        "hand": [
+          395.9996787542217,
+          202.02216595870283
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -89.97108787995282,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        395.86802758871147,
+        462.9181327423437
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50008,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.0008323394853611434,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.30907644788145,
+          289.9292168628126
+        ],
+        "wrist": [
+          116.20234545798036,
+          242.62563627114483
+        ],
+        "hand": [
+          115.01664678970722,
+          216.0024970184561
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.017322172292368015,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.25890077900009,
+          289.99463073911465
+        ],
+        "wrist": [
+          116.39530314517242,
+          242.6808477988824
+        ],
+        "hand": [
+          115.34644344584736,
+          216.05196651687712
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.07103910374106367,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.10675606906366,
+          290.1939086809479
+        ],
+        "wrist": [
+          117.02794982850531,
+          242.85572927624804
+        ],
+        "hand": [
+          116.42078207482128,
+          216.2131173112232
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.17059742272274486,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          117.86776402512092,
+          290.50979131751325
+        ],
+        "wrist": [
+          118.21597198110662,
+          243.16060121382083
+        ],
+        "hand": [
+          118.4119484544549,
+          216.51179226816822
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.3071771121979328,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          117.62245844517315,
+          290.83771338681834
+        ],
+        "wrist": [
+          119.87549863952421,
+          243.54087562636272
+        ],
+        "hand": [
+          121.14354224395865,
+          216.9215313365938
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.4556393439314444,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          117.45289286855844,
+          291.06661824675194
+        ],
+        "wrist": [
+          121.71436738955171,
+          243.90830098284673
+        ],
+        "hand": [
+          124.1127868786289,
+          217.36691803179434
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.5806162026470236,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          117.3812899156585,
+          291.1638344756383
+        ],
+        "wrist": [
+          123.28796301270229,
+          244.1832186305807
+        ],
+        "hand": [
+          126.61232405294047,
+          217.74184860794108
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.6459423045682169,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          117.36807615068851,
+          291.1818113333068
+        ],
+        "wrist": [
+          124.11921020943852,
+          244.31509349242316
+        ],
+        "hand": [
+          127.91884609136434,
+          217.93782691370464
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.6248296658341174,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          117.37058049886178,
+          291.17840338420706
+        ],
+        "wrist": [
+          123.84992469820546,
+          244.27333808201766
+        ],
+        "hand": [
+          127.49659331668235,
+          217.87448899750234
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.5079430492604877,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          117.41533885463357,
+          291.1175643771696
+        ],
+        "wrist": [
+          122.37019582567551,
+          244.02705105810776
+        ],
+        "hand": [
+          125.15886098520976,
+          217.52382914778147
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.30708174163461566,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          117.62259871499813,
+          290.837524790385
+        ],
+        "wrist": [
+          119.8743286571463,
+          243.54062463272294
+        ],
+        "hand": [
+          121.14163483269232,
+          216.92124522490386
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.05336492866050427,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.15494378201652,
+          290.1306412046889
+        ],
+        "wrist": [
+          116.81911969040937,
+          242.7990172493195
+        ],
+        "hand": [
+          116.06729857321008,
+          216.1600947859815
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": -0.20967811988034157,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.04585768975126,
+          290.2740667569369
+        ],
+        "wrist": [
+          113.41356110929607,
+          243.15072985634248
+        ],
+        "hand": [
+          110.80643760239317,
+          216.62903435964103
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": -0.43631220876965515,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          117.96611396259533,
+          290.379373611269
+        ],
+        "wrist": [
+          110.48451046860234,
+          243.62370377952675
+        ],
+        "hand": [
+          106.2737558246069,
+          217.30893662630896
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": -0.5893873181807543,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.05293243337547,
+          290.26474292802374
+        ],
+        "wrist": [
+          108.55680915093433,
+          243.87626704380332
+        ],
+        "hand": [
+          103.21225363638492,
+          217.76816195454225
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": -0.6488476255136236,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.12177382545444,
+          290.17417616441327
+        ],
+        "wrist": [
+          107.82066212661857,
+          243.95779216453366
+        ],
+        "hand": [
+          102.02304748972753,
+          217.94654287654086
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": -0.6157176518209682,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.08082757822412,
+          290.22800963623524
+        ],
+        "wrist": [
+          108.2298945399221,
+          243.91358239664706
+        ],
+        "hand": [
+          102.68564696358064,
+          217.84715295546292
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": -0.5105682562938837,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          117.99275987041767,
+          290.34414246384006
+        ],
+        "wrist": [
+          109.54382026888071,
+          243.75355895315846
+        ],
+        "hand": [
+          104.78863487412232,
+          217.53170476888164
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": -0.36697862371622864,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          117.96574816004002,
+          290.3798575787103
+        ],
+        "wrist": [
+          111.37167004894611,
+          243.49078437267417
+        ],
+        "hand": [
+          107.66042752567543,
+          217.1009358711487
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": -0.22187366131035838,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.03583025935335,
+          290.2872871903727
+        ],
+        "wrist": [
+          113.2538784230013,
+          243.178901642882
+        ],
+        "hand": [
+          110.56252677379283,
+          216.66562098393106
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": -0.10545158905227758,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.15635480839896,
+          290.12879073877133
+        ],
+        "wrist": [
+          114.78718545522781,
+          242.8983371084507
+        ],
+        "hand": [
+          112.89096821895444,
+          216.31635476715684
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": -0.03349364905389075,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.25771531681791,
+          289.99617804897025
+        ],
+        "wrist": [
+          115.74456459172748,
+          242.71244801749748
+        ],
+        "hand": [
+          114.33012701892218,
+          216.10048094716169
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": -0.0041479039537692265,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.30474413042475,
+          289.9348589439122
+        ],
+        "wrist": [
+          116.13705097664966,
+          242.63403274978216
+        ],
+        "hand": [
+          114.91704192092462,
+          216.0124437118613
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    },
+    {
+      "cover": 0.0,
+      "wave": 0.0,
+      "left_arm": {
+        "shoulder": [
+          177.0,
+          335.0
+        ],
+        "elbow": [
+          118.31165354707117,
+          289.9258611771562
+        ],
+        "wrist": [
+          116.19262174388314,
+          242.62283002191947
+        ],
+        "hand": [
+          115.0,
+          216.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "right_arm": {
+        "shoulder": [
+          337.0,
+          335.0
+        ],
+        "elbow": [
+          378.8825259342367,
+          273.9930002264659
+        ],
+        "wrist": [
+          390.1035411677327,
+          226.79943947429814
+        ],
+        "hand": [
+          396.0,
+          202.0
+        ],
+        "hand_scale": 0.3,
+        "raster_parts": "explicit generated cream upper-arm component plus existing forearm/paw split; paw rigid, no content cloning into underlying body"
+      },
+      "cloth_rigid_angle_degrees": -90.0,
+      "cloth_uniform_scale": 0.496,
+      "cloth_source_size": [
+        625,
+        515
+      ],
+      "cloth_source_grip": [
+        593,
+        365
+      ],
+      "right_hand_holds_declared_cloth_grip": true,
+      "left_hand_hold_amount": 0.0,
+      "left_cloth_grip_target": [
+        396.0,
+        462.896
+      ],
+      "cloth_bbox": [
+        216,
+        188,
+        470,
+        496
+      ],
+      "cloth_nonzero_alpha_pixels": 50052,
+      "cloth_nonuniform_scale": false,
+      "cloth_opacity_fade": false,
+      "cloth_motion": "rigid full-sheet side swing with held corner; face peeks around edge"
+    }
+  ],
+  "generator_path": "sticker-lab/production-v5/approved-generators/integration-layer138-r4-v1/lumen_138/layer_renderer_138_side_r4.py",
+  "generator_sha256": "804b592efa152a74003fc0eeb3f9cfd9d4ae7b9722d6abc04f3fbf3c4ad694bc",
+  "extraction_sha256": "0ca2993835e1ff6f1660a7815f62edb3a64b1248037e0ab625192af26a39c9c5",
+  "recipe_sha256": "c90606bcfe1e89523cfe9a52da0c0c36d7ca5c0facfa701264f5c0a6951d5dd7",
+  "native_realtime_slow_device_playback": "not_observed",
+  "output_sha256": "1bc5183efac87f27b9bf25e2ce68779302a36bcb94a249596a317d3031ca0b14",
+  "output_bytes": 258984,
+  "decoded_png_sha256": [
+    "8e54edf173e0e492794a708cceae98c54469dbf74061c18182435d24b28740e0",
+    "e026907728860de4d277da854fb6a0f5adfa371afa31e1998cb4ff5fac5bef6c",
+    "5064f9e657037d0afeddf4ce99624b91ac4e062f40fa548d14c1cc758419de02",
+    "3ca5f4e04a13ca7f355b80439ad6083cb5145092aaf51c11ded1ccd64daaee49",
+    "42e548d499618d9492edf0a716a269705efb161982465f45de833e026f5c6163",
+    "ca3d1011a6be6240fde3291e3312e965f43c91b66faaaf29a5ba75db60b49262",
+    "6dc72fd2d52c44c13001719cc1acb8b71f8598e42a534783d268e81a7640ebe1",
+    "009df21a19759ae8726866b06467b553dce2436ec199229615322b0322b985a5",
+    "e89d0fbc47b2de7a52148c11a8f4542752b53e3c04846456a20bbee99324f8bb",
+    "4509692142e436c438480a1f07e6a316047d084e31eeae4cf747f7f8b1baab69",
+    "63ab1765eb86263bbe2582b65d6ce86428a01060d849f8206cefe0aaaf330256",
+    "19b9920917494ec72496f93cfe82ffc346cf3ecff164157522f89c28de24ed31",
+    "8f45b4173d85e8efdade97c4c8673012b7430bf9699051590755c83274996774",
+    "a8928f4a4e1f47a646b85998c5adaa86003dc2c95c3ea1896a359775edd6eb82",
+    "72c0ebcadb08b6ca10993008f8a68e7b24fe471c50746d28061c2ec287fba695",
+    "a2eb6f159d75e82f913b35cad00a4636858463d5d85e8705a15d1469fbaec1d8",
+    "7e84dab70795d988a7cfbdb5592a2713f47d6d8a616606f004de7b367116211f",
+    "59f7040a81d5c124901c322828fe0d2f4300f6f4afd12f3d411f455e7579d6a3",
+    "09eb6b60045ac3e802b1000477877b865900c2c6f7e96c8aaad8db52e69ef4c9",
+    "63dcfe2ec04a1415de90d385984c53892f6e06ee2a9ac8617a9328d4ea553829",
+    "7c7036d24d4cfd72652653a4a6c6f35cde31d466dcba3904ee3b31caa7f9c32f",
+    "38a213f5e7cbd390122f9e82b587ae330c385816d46c2d51bb2686ffce856c27",
+    "38a213f5e7cbd390122f9e82b587ae330c385816d46c2d51bb2686ffce856c27",
+    "38a213f5e7cbd390122f9e82b587ae330c385816d46c2d51bb2686ffce856c27",
+    "7d5c00f74460bb28297e728b0dadad59d77070221792115f28d40f750292a0f5",
+    "7d5c00f74460bb28297e728b0dadad59d77070221792115f28d40f750292a0f5",
+    "7d5c00f74460bb28297e728b0dadad59d77070221792115f28d40f750292a0f5",
+    "7d5c00f74460bb28297e728b0dadad59d77070221792115f28d40f750292a0f5",
+    "7b6f6360f71e4e7aa438283af44eb1fa4368cee91103623ed87664e6b6675b1f",
+    "7b6f6360f71e4e7aa438283af44eb1fa4368cee91103623ed87664e6b6675b1f",
+    "f9059c6a74ed121d5ca1cea46866b3a8029deb9775a5d8e8929ec02e006bed30",
+    "6742c7774e4f60deb97ae4843fb733886ddb9321c7ec2521383b1f3c159013d1",
+    "2bfc783ff12fbec29e1537fa475e0393fdafb23072942f0ea9202af30dc19faf",
+    "cf6c16fb06a815388b23d31f8ef7476f967b9dfceaa3abc9c9b365643dca79a8",
+    "b1186439648dfdc0d5d5bd53258eb7974701be0e92e03fae42f89782014db3f3",
+    "722889191ec96a305baa50d8da87957375bb5b226799cd29ac847df4a8957209",
+    "947f2d3b1d56f6ece12fdff37a288fbc54d0c9e186ba74581da7bb747ab86da5",
+    "dc2a9f6d863f3103227839a925ad38a7b460fca2555d25e1fa047717c45f4fea",
+    "c7a8bbb13d1edc8f564516956e2ec4c09570e89fc1e627d53d4e053e838b7261",
+    "1f762977d7ee31d749d83d48d6795dfab24daa30359c79edbbee64378ceb33c1",
+    "7cb388ae19ac98a9bccf2fa3e17fa8c40a5d91a485aab119d13bcb6529ffa34a",
+    "106ffe3fb16787e94c00543a64bd5854a55fc7043420a4bf167f9f58df3b88c2",
+    "70c866b1c3e4db00513c8f81c1d430489c79f5cdc0f9602bfa2b3c462134e805",
+    "b7d3ca4cac96e828297c8ac51d9cfc580f768351592646a3ed946d6218b9ae27",
+    "89ec97dba9ed8917c19e144d622c88cd411705521a52c4a77d860b28336f21cb",
+    "0ffa46a4aa83a2dc6f88f5658e1ce6d96a5c4659f7d0d201fe4ec2b8314fc9ac",
+    "6d7bc6be4090088967941b4c91dc5dc8b410444f818f2a82313d2f558c1e6265",
+    "597e561e7bea8851a58d0286fd7e91a5a5ab4dd3858c3e1243b863b4c7bede28",
+    "32d255a1c46c07b17c9ab0f4185d6cd884fc27f5efb720ac5f01d085841e7ce0",
+    "e8847c3394672c7cb68158e1107a90409719e4f5b43ecb7e20b995cf0a6d6d2d",
+    "7fc16131fd679f13aaf926127ca220bea6983f4613ca920ec77dd08943810551",
+    "f234639793b39f97c6c30ccc860ac65968e6b8364acd58385c53ad677352c6f4",
+    "402b70570c34db31fdcd9431aa0cf2b3f2ca670a5289c0612f4403476ac128df",
+    "af48a49856e6a146c6e3149c9ac305daa3bfb6a4ce5389ba358abab751b20766",
+    "661177f31b455cb0517cd5731d25853f689bd6491e83799b749bc226f00f9c9b",
+    "e17ca93bda2fe8219d09615a760562058c713ace41319ea7d545dfcc081efe79",
+    "b9325d963a9865de07513d9da6e37dae10aa46d5bd00eb2b9a62d9ad80df06ac",
+    "6da3eac60067e7c10955a59db3d877c67b4405dc7ab07c1f7b79feb823adba5a",
+    "ad83bb0b6753173264700794fee61b2076118c92e4a7e3dfe9da87cfcd714098",
+    "b3db90bfab7bc645ab68d88a954b71f6f99c302a9e7da08ddd26bef846d5b3d7",
+    "1225ec983da489a28da3ba75419be8681e8535106eeec59001a07d3f2590863b",
+    "8129c014ee4e67fb4089e7c6270acb1f0c5f8c3af607190f95dd7edd6aab2f0d",
+    "cdedbc49d2910dafb837d651596d50dc4b4e6a51c1a0abcd776faa9043d2cf2f",
+    "2c3cead933a2b311b6e3d1d12b8ff9ab0229a7d09433c14c6274c4bc294d8d6f",
+    "8b4ab834877b18e62e936e5bb2f0a94b4b59113db8d31c8b34b806991b7d771f",
+    "17977620bd172747b3baf75cdfef4601473a7a4a6e97231a2c22e6416d59228c",
+    "2046893ec7b96c8c8e542be3a4a44d786f47d3ab37af481b1fda34e19bf7bff1",
+    "035df67922a35842a726638684386027c0283439eb813aa7def7a65d6c4f7e0d",
+    "9c8258671499014b3a813a4687159bf8e7cefeec353b29bfb27346a03490a8aa",
+    "d61781b0bb42ca9bbbf902ed23f755213c46c0cfbc54b16d38e3140e160acbdd",
+    "638a6988b67014baa55306212bb461364462404bcdfc3714d156d6aa5aa4d2d1",
+    "71c83c12272ac09f6364aa268f13a5dd99050eee3d6c03ee66d8ab9ab5f18228",
+    "792ac18876aa9bfeb0a13642af75452ece09f092f1fd35584264490df11809fc",
+    "dc1b91e9d0240e09abba15f40734cb994f407a38a7e69ebe32adb3284fc0dcd5",
+    "9b48c7749aaad4d72060e09d7c5c99a3481854036ee73683e5f0853b82804d92",
+    "f868df667d7c2f7da19447dbc82fd406ec998aaf1a9ad485cbba0c30ba507b04",
+    "4a3bbb5447784cae4f983b8370edbcda9c2f5eec4f5320aaaba2fdd499c8c316",
+    "c0adc162f31322ded1ea7d46dde2a25d52b1b7f108caa2d63d373eb539751721",
+    "19ff6e9ef94a516b9626a2876fed44b35b4c038452b96296845e068eb527eac9",
+    "491123688b5d014a6e7bbb0dd4fbe644818e842b17bdee36bc3774876554c1b9",
+    "259f44e3fb21137297a251bd4b24e9c08743d6edb41a6798cd1e6b5ad542b532",
+    "7793fc8c665adc9e067bc41e31750dd37278719cedb4fb041a51a3626e8fca0b",
+    "7793fc8c665adc9e067bc41e31750dd37278719cedb4fb041a51a3626e8fca0b",
+    "7793fc8c665adc9e067bc41e31750dd37278719cedb4fb041a51a3626e8fca0b"
+  ],
+  "raw_rgba_exact_match": true,
+  "encoded_frame_exact_match": true
+}

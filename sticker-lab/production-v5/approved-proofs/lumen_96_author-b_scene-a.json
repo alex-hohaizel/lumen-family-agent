@@ -1,0 +1,1453 @@
+{
+  "schema_version": 1,
+  "id": "lumen_96",
+  "candidate": "lumen_96_author-b_scene-a",
+  "created_at": "2026-10-30T17:37:18.656306+00:00",
+  "source_kind": "derived_decoded_video",
+  "source_video_sha256": "240a3927ce00c9095c050fdc4a9433fb2dc3148e68f3cdd6c835814dd8b00947",
+  "source_original_keyposes_status": "unresolved_original_not_recovered",
+  "ancestor_original_keyposes_sha256": "8208084a74c8e6ca219be69f8c8ca515a666a0d8a987fa5a9db3e3e8f9ea3b86",
+  "derived_source_frames": [
+    {
+      "index": 31,
+      "timestamp_seconds": 1.0333333333333334,
+      "path": "sticker-lab/production-v5/recipes-proposed/author_b/lumen_96/source-frames/031.png",
+      "sha256": "e95c4bab8c9e1c504d74665f14c4c0ca45c451c47494c884787bed7384034313"
+    }
+  ],
+  "derived_keyframes_bundle_sha256": "2e525adbcc60683dc534f3387eb893c25bcfa8f40feca4cb124db92ea55b43ad",
+  "recipe_path": "sticker-lab/production-v5/recipes-proposed/author_b/lumen_96/recipe.json",
+  "recipe_sha256": "c104e65ea83613a7482051ff5cd4d3507d847781ef88f26ef006e8cad7372412",
+  "generator": {
+    "engine_sha256": "9d741016c45712e81d2eada115dde03db6b87622d23ba3d04534ead9b282943c",
+    "support_sha256": "ec63d33d3d1d58fa0e4dd3d66c9fbf3ad623de0351965a8be302c2cffbc649ee"
+  },
+  "description_uk": "Розпашілий від спеки, з крапельками поту й висунутим язичком, обмахується зеленим листком у тій самій лапці; важко дихає й трохи опускає плечі.",
+  "semantics": {
+    "core_scene": "Overheated rosy face, sweat, tongue pant and coherent same-paw green-leaf fanning. Leaf grip, stem and frond move as one controlled arc.",
+    "removed_defects": "No leaf/hand mirroring or dissolves. Exact clean source31 is retained instead of broken swap transitions.",
+    "irreversible_motion_policy": "No falling sweat trajectory is replayed backward; beads remain on cheek. Painted breeze strokes belong to the fan accent."
+  },
+  "method": "shared_local_mesh_v1",
+  "statistics": {
+    "minimum_jacobian": 0.6240851283073425,
+    "maximum_displacement_px": 22.602386474609375
+  },
+  "lineage": [
+    {
+      "output_frame": 0,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.0,
+        "small_tongue_pant_shoulders": 0.0
+      }
+    },
+    {
+      "output_frame": 1,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.2225209339563144,
+        "small_tongue_pant_shoulders": 0.14904226617617444
+      }
+    },
+    {
+      "output_frame": 2,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.4338837391175581,
+        "small_tongue_pant_shoulders": 0.2947551744109042
+      }
+    },
+    {
+      "output_frame": 3,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.6234898018587335,
+        "small_tongue_pant_shoulders": 0.4338837391175581
+      }
+    },
+    {
+      "output_frame": 4,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.7818314824680298,
+        "small_tongue_pant_shoulders": 0.5633200580636221
+      }
+    },
+    {
+      "output_frame": 5,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.9009688679024191,
+        "small_tongue_pant_shoulders": 0.6801727377709194
+      }
+    },
+    {
+      "output_frame": 6,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.9749279121818236,
+        "small_tongue_pant_shoulders": 0.7818314824680298
+      }
+    },
+    {
+      "output_frame": 7,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 1.0,
+        "small_tongue_pant_shoulders": 0.8660254037844386
+      }
+    },
+    {
+      "output_frame": 8,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.9749279121818236,
+        "small_tongue_pant_shoulders": 0.9308737486442042
+      }
+    },
+    {
+      "output_frame": 9,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.9009688679024191,
+        "small_tongue_pant_shoulders": 0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 10,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.7818314824680299,
+        "small_tongue_pant_shoulders": 0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 11,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.6234898018587336,
+        "small_tongue_pant_shoulders": 0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 12,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.43388373911755823,
+        "small_tongue_pant_shoulders": 0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 13,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.2225209339563145,
+        "small_tongue_pant_shoulders": 0.9308737486442042
+      }
+    },
+    {
+      "output_frame": 14,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 1.2246467991473532e-16,
+        "small_tongue_pant_shoulders": 0.8660254037844387
+      }
+    },
+    {
+      "output_frame": 15,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.22252093395631428,
+        "small_tongue_pant_shoulders": 0.7818314824680299
+      }
+    },
+    {
+      "output_frame": 16,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.433883739117558,
+        "small_tongue_pant_shoulders": 0.6801727377709194
+      }
+    },
+    {
+      "output_frame": 17,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.6234898018587338,
+        "small_tongue_pant_shoulders": 0.5633200580636218
+      }
+    },
+    {
+      "output_frame": 18,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.7818314824680297,
+        "small_tongue_pant_shoulders": 0.43388373911755823
+      }
+    },
+    {
+      "output_frame": 19,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.900968867902419,
+        "small_tongue_pant_shoulders": 0.2947551744109046
+      }
+    },
+    {
+      "output_frame": 20,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.9749279121818236,
+        "small_tongue_pant_shoulders": 0.14904226617617472
+      }
+    },
+    {
+      "output_frame": 21,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -1.0,
+        "small_tongue_pant_shoulders": 1.2246467991473532e-16
+      }
+    },
+    {
+      "output_frame": 22,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.9749279121818236,
+        "small_tongue_pant_shoulders": -0.14904226617617403
+      }
+    },
+    {
+      "output_frame": 23,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.9009688679024193,
+        "small_tongue_pant_shoulders": -0.29475517441090393
+      }
+    },
+    {
+      "output_frame": 24,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.7818314824680299,
+        "small_tongue_pant_shoulders": -0.433883739117558
+      }
+    },
+    {
+      "output_frame": 25,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.6234898018587337,
+        "small_tongue_pant_shoulders": -0.5633200580636221
+      }
+    },
+    {
+      "output_frame": 26,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.43388373911755834,
+        "small_tongue_pant_shoulders": -0.6801727377709195
+      }
+    },
+    {
+      "output_frame": 27,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.22252093395631464,
+        "small_tongue_pant_shoulders": -0.7818314824680297
+      }
+    },
+    {
+      "output_frame": 28,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -2.4492935982947064e-16,
+        "small_tongue_pant_shoulders": -0.8660254037844384
+      }
+    },
+    {
+      "output_frame": 29,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.22252093395631417,
+        "small_tongue_pant_shoulders": -0.9308737486442044
+      }
+    },
+    {
+      "output_frame": 30,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.4338837391175579,
+        "small_tongue_pant_shoulders": -0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 31,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.6234898018587334,
+        "small_tongue_pant_shoulders": -0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 32,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.7818314824680296,
+        "small_tongue_pant_shoulders": -0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 33,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.900968867902419,
+        "small_tongue_pant_shoulders": -0.9749279121818236
+      }
+    },
+    {
+      "output_frame": 34,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.9749279121818237,
+        "small_tongue_pant_shoulders": -0.9308737486442041
+      }
+    },
+    {
+      "output_frame": 35,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 1.0,
+        "small_tongue_pant_shoulders": -0.866025403784439
+      }
+    },
+    {
+      "output_frame": 36,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.9749279121818237,
+        "small_tongue_pant_shoulders": -0.7818314824680299
+      }
+    },
+    {
+      "output_frame": 37,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.9009688679024185,
+        "small_tongue_pant_shoulders": -0.6801727377709191
+      }
+    },
+    {
+      "output_frame": 38,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.78183148246803,
+        "small_tongue_pant_shoulders": -0.5633200580636227
+      }
+    },
+    {
+      "output_frame": 39,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.6234898018587338,
+        "small_tongue_pant_shoulders": -0.43388373911755834
+      }
+    },
+    {
+      "output_frame": 40,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.43388373911755845,
+        "small_tongue_pant_shoulders": -0.2947551744109047
+      }
+    },
+    {
+      "output_frame": 41,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.22252093395631647,
+        "small_tongue_pant_shoulders": -0.14904226617617528
+      }
+    },
+    {
+      "output_frame": 42,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 3.6739403974420594e-16,
+        "small_tongue_pant_shoulders": -2.4492935982947064e-16
+      }
+    },
+    {
+      "output_frame": 43,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.22252093395631403,
+        "small_tongue_pant_shoulders": 0.14904226617617392
+      }
+    },
+    {
+      "output_frame": 44,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.4338837391175578,
+        "small_tongue_pant_shoulders": 0.29475517441090343
+      }
+    },
+    {
+      "output_frame": 45,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.6234898018587333,
+        "small_tongue_pant_shoulders": 0.4338837391175579
+      }
+    },
+    {
+      "output_frame": 46,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.7818314824680296,
+        "small_tongue_pant_shoulders": 0.5633200580636215
+      }
+    },
+    {
+      "output_frame": 47,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.9009688679024189,
+        "small_tongue_pant_shoulders": 0.6801727377709194
+      }
+    },
+    {
+      "output_frame": 48,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.9749279121818235,
+        "small_tongue_pant_shoulders": 0.7818314824680296
+      }
+    },
+    {
+      "output_frame": 49,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -1.0,
+        "small_tongue_pant_shoulders": 0.8660254037844384
+      }
+    },
+    {
+      "output_frame": 50,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.9749279121818237,
+        "small_tongue_pant_shoulders": 0.9308737486442042
+      }
+    },
+    {
+      "output_frame": 51,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.9009688679024194,
+        "small_tongue_pant_shoulders": 0.9749279121818235
+      }
+    },
+    {
+      "output_frame": 52,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.7818314824680301,
+        "small_tongue_pant_shoulders": 0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 53,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.6234898018587339,
+        "small_tongue_pant_shoulders": 0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 54,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.43388373911755856,
+        "small_tongue_pant_shoulders": 0.9749279121818237
+      }
+    },
+    {
+      "output_frame": 55,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.22252093395631314,
+        "small_tongue_pant_shoulders": 0.9308737486442041
+      }
+    },
+    {
+      "output_frame": 56,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -4.898587196589413e-16,
+        "small_tongue_pant_shoulders": 0.8660254037844392
+      }
+    },
+    {
+      "output_frame": 57,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.22252093395631392,
+        "small_tongue_pant_shoulders": 0.78183148246803
+      }
+    },
+    {
+      "output_frame": 58,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.4338837391175577,
+        "small_tongue_pant_shoulders": 0.6801727377709192
+      }
+    },
+    {
+      "output_frame": 59,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.6234898018587317,
+        "small_tongue_pant_shoulders": 0.5633200580636228
+      }
+    },
+    {
+      "output_frame": 60,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.7818314824680295,
+        "small_tongue_pant_shoulders": 0.43388373911755845
+      }
+    },
+    {
+      "output_frame": 61,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.9009688679024197,
+        "small_tongue_pant_shoulders": 0.294755174410904
+      }
+    },
+    {
+      "output_frame": 62,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.9749279121818235,
+        "small_tongue_pant_shoulders": 0.1490422661761754
+      }
+    },
+    {
+      "output_frame": 63,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 1.0,
+        "small_tongue_pant_shoulders": 3.6739403974420594e-16
+      }
+    },
+    {
+      "output_frame": 64,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.9749279121818237,
+        "small_tongue_pant_shoulders": -0.14904226617617466
+      }
+    },
+    {
+      "output_frame": 65,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.9009688679024201,
+        "small_tongue_pant_shoulders": -0.29475517441090326
+      }
+    },
+    {
+      "output_frame": 66,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.7818314824680301,
+        "small_tongue_pant_shoulders": -0.4338837391175578
+      }
+    },
+    {
+      "output_frame": 67,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.6234898018587326,
+        "small_tongue_pant_shoulders": -0.5633200580636222
+      }
+    },
+    {
+      "output_frame": 68,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.43388373911755707,
+        "small_tongue_pant_shoulders": -0.68017273777092
+      }
+    },
+    {
+      "output_frame": 69,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 0.222520933956315,
+        "small_tongue_pant_shoulders": -0.7818314824680296
+      }
+    },
+    {
+      "output_frame": 70,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": 2.388680238973927e-15,
+        "small_tongue_pant_shoulders": -0.8660254037844378
+      }
+    },
+    {
+      "output_frame": 71,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.22252093395631553,
+        "small_tongue_pant_shoulders": -0.9308737486442046
+      }
+    },
+    {
+      "output_frame": 72,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.43388373911755757,
+        "small_tongue_pant_shoulders": -0.9749279121818235
+      }
+    },
+    {
+      "output_frame": 73,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.6234898018587316,
+        "small_tongue_pant_shoulders": -0.99720379718118
+      }
+    },
+    {
+      "output_frame": 74,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.7818314824680316,
+        "small_tongue_pant_shoulders": -0.9972037971811801
+      }
+    },
+    {
+      "output_frame": 75,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.9009688679024196,
+        "small_tongue_pant_shoulders": -0.9749279121818237
+      }
+    },
+    {
+      "output_frame": 76,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.9749279121818235,
+        "small_tongue_pant_shoulders": -0.9308737486442048
+      }
+    },
+    {
+      "output_frame": 77,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -1.0,
+        "small_tongue_pant_shoulders": -0.8660254037844392
+      }
+    },
+    {
+      "output_frame": 78,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.9749279121818237,
+        "small_tongue_pant_shoulders": -0.7818314824680301
+      }
+    },
+    {
+      "output_frame": 79,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.9009688679024187,
+        "small_tongue_pant_shoulders": -0.6801727377709192
+      }
+    },
+    {
+      "output_frame": 80,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.7818314824680302,
+        "small_tongue_pant_shoulders": -0.563320058063623
+      }
+    },
+    {
+      "output_frame": 81,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.6234898018587355,
+        "small_tongue_pant_shoulders": -0.43388373911755856
+      }
+    },
+    {
+      "output_frame": 82,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.43388373911756195,
+        "small_tongue_pant_shoulders": -0.2947551744109058
+      }
+    },
+    {
+      "output_frame": 83,
+      "source_frames": [
+        31
+      ],
+      "kind": "shared_rgba_mesh",
+      "part_weights": {
+        "same_paw_leaf_fanning_arc": -0.2225209339563134,
+        "small_tongue_pant_shoulders": -0.14904226617617375
+      }
+    }
+  ],
+  "candidate_sha256": "351f6b0353121427b09010312dc1dc0b58d7815b42d901a9a01be139e5966116",
+  "poster_sha256": "d407f93165164c3f06b9ed3ce7997455ce8d9791a8405f75fdeb92c905cbdb94",
+  "bytes": 240514,
+  "frames": 84,
+  "fps": 30,
+  "duration": 2.8,
+  "output_pts": [
+    0.0,
+    0.033,
+    0.067,
+    0.1,
+    0.133,
+    0.167,
+    0.2,
+    0.233,
+    0.267,
+    0.3,
+    0.333,
+    0.367,
+    0.4,
+    0.433,
+    0.467,
+    0.5,
+    0.533,
+    0.567,
+    0.6,
+    0.633,
+    0.667,
+    0.7,
+    0.733,
+    0.767,
+    0.8,
+    0.833,
+    0.867,
+    0.9,
+    0.933,
+    0.967,
+    1.0,
+    1.033,
+    1.067,
+    1.1,
+    1.133,
+    1.167,
+    1.2,
+    1.233,
+    1.267,
+    1.3,
+    1.333,
+    1.367,
+    1.4,
+    1.433,
+    1.467,
+    1.5,
+    1.533,
+    1.567,
+    1.6,
+    1.633,
+    1.667,
+    1.7,
+    1.733,
+    1.767,
+    1.8,
+    1.833,
+    1.867,
+    1.9,
+    1.933,
+    1.967,
+    2.0,
+    2.033,
+    2.067,
+    2.1,
+    2.133,
+    2.167,
+    2.2,
+    2.233,
+    2.267,
+    2.3,
+    2.333,
+    2.367,
+    2.4,
+    2.433,
+    2.467,
+    2.5,
+    2.533,
+    2.567,
+    2.6,
+    2.633,
+    2.667,
+    2.7,
+    2.733,
+    2.767
+  ],
+  "decoded_png_sha256": [
+    "68e0819ec6d9613123cec2c958e9e3db9403af476d3467e92b828c00b79c1e5a",
+    "fb4a9a213dc840373d8ae00f67a7527d27eb371ae3df4cd64e9d4f97d83f11bc",
+    "303e9d7bd96ea1e108cc0f9a0b2503d2e9cc61a3402c6a7e67da9e12c8e410b8",
+    "1a27f074438498434441275d3ff7ac025c4d3960fb439834b1bacb6d78a0ca24",
+    "f27275cca3a8e9c646c958562a67820ea71af45d2bfcc359583366f21264d7fa",
+    "969858f0b266880a11e85c9c2f891dce29552976400a1decc23e774142e3aa10",
+    "ab1f26a15d78a28bbb1e206365850c08b8cf09eb618e91e04b03b8caa1e18b90",
+    "bbe42c2bdae70f8915006486623de7fb9beadf1081e9671b4b85400322411a98",
+    "85e2d2cc0bb4d513226f2b05fd6464854613d6c42113c014630642181bd1302e",
+    "7fe18ec7de255d316f6d3e8f3e4427b73e4102a51ff36748544967cefb4e47fc",
+    "162a0e3165466d55a4453096ef6522e710cfc1884d2b0c73bb9845344d6b23f0",
+    "732b06dbbaa72d0566cff367109e6afd7f0d5d8836f963526c93118dff3ee186",
+    "1bd4e4088dc8525a3558414f254139804a65db3a96f2bf0c35b89ad87dbb3ab6",
+    "649f45f04a58ebc3cae0e1d54954657e5787e0c1e1b2a17b8b971c75c12c160d",
+    "e59a2b207eab3454bdbea799f16ed7c52468c079bbf3e72dc7b9ab8ec946169d",
+    "01b28b3150f394399ff963c8dc3d12688ae1c6b09e3c70db0baccd3fdbcc4bc5",
+    "5247715e7562f9b2e86ab3d6fa6d94a6f765a8ab9cb4e232f0b76ec94e52d15b",
+    "3ed740a2fed83ef3c57b5eae342f2884fac5f94059b14442029a22eeb9a87065",
+    "a1209257e50be5fc5c9f7c6789fd4cd9242f1df077d77aba3f92133be44007f7",
+    "450770607c97a7f7ea090409b086e4c326e41f741d17400293e3a2c26f13ec0e",
+    "5c3d17a8f38f31b8bb319a2d6d110eb0f24d42e13985965519ae97317423fc1e",
+    "097fcf2476802e7c275b514437dc965d837779e56622c638a9dc7583c60dc80d",
+    "318e9560dd0e5549fca286cb9253b74d1efda936b6fc10cb4b6d9d9a177b126d",
+    "24fb37f6d8b82f3124fed2874bbf41fedc6feb319f5e2e09746521442d8009ec",
+    "2eda7f1664b694df91668c4870d272e8f9b48de701c94fe76856c26d85ff77f6",
+    "be476109f8fba66768282e0a943fdf38226ace4383a7fc2401bb291dd10a6dd3",
+    "ce79e1bcc22aa3955eabf0e4905dc8d63a73a862eb74d25e286ba641708dca0f",
+    "e326c882e9a686e099168a5ae571079c7e2c6c97ff6982c651280954e82224bf",
+    "0790eb5f5ed8ab15a08058f3fd45b545234335221ddefe04b065fc0e8abb4db9",
+    "64357072b660145eb3671bf3c9f9630aafc3d589c5e4a85d5cc0ee9b336ac83a",
+    "823a144b776f2ac00d1115ef193b25f79965a3f6108fa6ab4209062924519208",
+    "a7a0ffd901820f43a2893195e60ead30456042c91c65d2dab4431cc6e5f539da",
+    "a3882c7e76eb08a3abc688a230b7df91675e317101099ffb57446a62923f74da",
+    "e22552a8b7f3f87941c68f305ed80d0e43d17327e5a8128733c05868da55e96a",
+    "62cc0038c0cc5a0889b3a24cad48cc7f74a774f8f31415253250a51491d2ee65",
+    "2aead616a7e505622e52a9b93bf38b0d95b07ebcce2e58ed22528010fc77dd99",
+    "ae95eec1280982e41ea4c866f4b25e2d210efb502d852835a5c4d96e9be862dd",
+    "bc2552c9c81fa6ac06f0523cb9d40f62c65fe2d2524d8a4e19627c79a0e6bb29",
+    "9c0c4560f01da2eefd96e34cdc5c223ade3ad5bf47ef098d6dc80b86859240fd",
+    "bbcfeaee83ea560e7c9c9bf3dcf62730e4541af7b0bb6bf4645a34e7b9b38eab",
+    "9f483783930c671ca8d51505d9dd796c7cd205764d96152a9e74b52dbef119e7",
+    "c98918ec4943b7beb5b9b1638385b11ed450691376bb98d421b3e2bc531b041c",
+    "8c2a3c39a8e2dfae68b5915d5888f175df82e5b39e77529237da6d27af99dadd",
+    "b7b6d72a6f5a18ede2ba36a7095beda437d74644e06bee624f3d35160a0ddb39",
+    "c9e4891470344bd668b2e98c295d0bc08ae8ce9bc4eb5f992b354cdd85678a83",
+    "5ae840e48200cab9fec8d43909c251b3f0c524da3fad4d3798ef6e9cb81db650",
+    "5ea960f724f955c8ae837ca02316e4e1a541188aa554d86021cbc6d636885fb5",
+    "73930ae07b34fb720e667796dde6b7af5adcf67a89504cfb8907ccf30d27f808",
+    "b3276708494d01fb76f2ad9db33f8455ecafb311ec5df46be3b5a12d1fdf00e7",
+    "9861d2cece28222dd6d34c5d4330a5a36ffc9f24cbcc07612af2a5d44d91e07a",
+    "72076744706552d0efda5ad0a28829cb74a8d54f7d4d5519aae94c439338f091",
+    "5a2e1e4851c5485d40badbce7cb010fda68f0e7865e4fd6657a19fc62bc332ac",
+    "100a1ecceff14d2e0456cf50084714652ed5620fd61f81b5860d0aaa9d614c99",
+    "71fe8326246a919ae32c4e92dbd1a85d42f731c0729c9dc39c5602725947ac5a",
+    "1833e79463ef48b610265a02183e572ba91022af3ea32fe57707c1448e23839e",
+    "a46bedd8507cc8fa20265d6cea3ee40f9a35fabc55d626b44dadce68e2f79935",
+    "5a30e29582dcf6a770097dcf354a3660b335b296b4adb17fe3bcfc9b1b69f98e",
+    "1ec1694ffa4985056ba75938113ff24836aa5ade74beca2522cd777f958fe6bc",
+    "50aa5fc79a8131dee612d0a8f601f5a6482a3f4f4a2a5eb124b3566649ded270",
+    "aac0fb3fd7334fe8e32236191bf62872fabc59829436cd49107e9ec7308c0f7c",
+    "c8a4e8fb62a8fa1c3f514cca89fd52a2d01c059d20a9795c75b9407b19960e96",
+    "338e848792487c61ce71b54f3dcfb17d35ed51fb8b9ff55e251df18cab55d3dc",
+    "cf627358ba9fc4581bec80c04074463cccd634eb5592a003595f13d1acf6d4b7",
+    "32bb78435d13557dd5fc27a2b3972301b4715b6d20bfe11bce33c36958d97db4",
+    "47585d1681c0da57f7aeaab71e16665f1717505acc00cf0afffebeba23f56732",
+    "6cde92aba318f2df82b74e5f954cd8371f48594811133a4286270bff44618560",
+    "9dfe8bb36f958a3e8cc8927ffe8bfd5e1059ac3c13cb120223598faf1ccc553d",
+    "6fc58001e04824ae6fe1fd71381b1e18d995b6e47e8e94635a0e702c894d5276",
+    "21c713df23fbc6d9bddc0516abd2e73cf18f953e19853edc5b8173a51a152e09",
+    "b81a29f4b5096a279bef850983c9775c80f7c0bcf7c355fc0910e55b6390f16b",
+    "bb0bb2061d6fc6618ecb2f1bdd2cef6238fb36bf26dc147ab62f186696e859b3",
+    "75d73089583d8b13c622bb676da4600ecc2605c0d10a2ade0107ca5d38c081db",
+    "adc81b1685883601df356924b745b2e6c4002b08f604f73187fdc5013149d45e",
+    "2c27215edcdabe6f1bf1ebac75b288407c04dfa7e56b5db00d1d63612ac4709c",
+    "437dfa9d52ca68898ef353ca0f17ce01fee58bf34ea0e184df477a7b0f4c1fa6",
+    "d3aa7a1534dc7ff1c495899d6377af1c1ae582cbdb4aaa9b3486adb643f70d72",
+    "019681b8c71d5c2a32b485825a8c14f6add0d07aceeeb46538a86d592f494314",
+    "0b4f37b4af9188309153604d16e0c65a2f9f4c7419319fdc89d72588974c5c21",
+    "c7c3f1f99970c554648c349c9799ff8b2e4c86d12565c2adb829ecb8cdfb25e7",
+    "e160150ca442f31c10ce0587c6ba517b0a6673882ab76d676e7a1de62a105d71",
+    "e46f160256d75fd524f7bb3c27a81688d9a4fb1817ddee0b7f7ca62e132295ef",
+    "e1245cc4037f32f938219103f8db6ff3f31494cadddf99a2aa678f2c2781d4c5",
+    "838cdae7030dd9ca197f838c47d024fb6fa12df80f1c159c81224da0aac8aabc",
+    "a5dbe774bdfecdfbef3f1e49e20aaf8bbd82d802595913163149fb9ffcc946e6"
+  ],
+  "frames_rgba_png_sha256": [
+    "50acf24afe72064a9eff8ceab69eb493f95907a63b3da3ca12e958b98e59fa0b",
+    "8e2fc2731b5211280f09c8e7834b39ac9cf4485943e270b65fd1d88e76110e6f",
+    "f47e4448efd027b0356714584f8d2767b744859d7341dd12c66d32b2f6f6609b",
+    "277c26afb28fa0f4a01cdf01f497b3b1e0af562a93d69dd3f196b9935cbc1bc9",
+    "9fb80d9b66ca8938514dd60983af97e8950b320dfd94263abc2901901475daa5",
+    "09a7b523c5ee0aae03a9120d7a53a86d59b4b0b0bd03ebe1c65e6dcc272deb6d",
+    "72d0eebde5e43c6081b67b93b758b68c7fd4dc9475e58785d711fcc67af2390d",
+    "93263a1aa6ebd9014f0edcea12c9eb6cc5b1c62f5cedc8a64653916ed844ed05",
+    "4033c215ea9d8936b7c3120ee819a7965a91d2d6026f1e0b35afaf90217ea058",
+    "ba551b9ad1518fda3f2d82526bea2a187d8c4def25f9aa23d694c9bc0670dd7c",
+    "5a7cc19cbd5c175fb3023945cc74b1b3b67327e5a9a10dcea955ff6b612a5f01",
+    "8464389a723d1147517551a941f2f844061469103983c9b45d2e0ad19c4030f8",
+    "7047b4e7fa3037b5bd5c27518df7351673883e70722d32151e093601f45ce46f",
+    "c16463bb3c6590b34ee43c46fdb95c6cf464a90e2ca301fc83096a005569ecbc",
+    "7d30a9ccd6823c0210ee3e25c5fd4447953e4a6c5b2c6ef7f1b46c39aca70b7f",
+    "f53710e6846bb409ff2817b06fba5df89111d266e9cd179ec5be9a6756252fa6",
+    "4e4c2400615570271e55080fb27192a878b52b26e2e1259029d37170b0f41106",
+    "bbd92452bf828d3c7e57543751bf087d9966c796e03b7ada60795d02fa0b6f70",
+    "92565fb4780784e366accbc1832781ca61c3fbb0bba7b877a4cedb51f8f61da5",
+    "59f0966c8d177d03935c764759a65ac0b05916243faf6572e11e17a56381ff32",
+    "f427dc50f18650760dd01e7cb64473f78ea592ded07f62daf3686624a05aab0c",
+    "1e2274f1ee2cde935770ed8098f4082dde446ae23f83c27daf105a1abee376d8",
+    "3260f26e974f76c5860ab26ada10a542663985b6cb3e9d8a3e1bda01faf062aa",
+    "eb18efa03677e457ed1eaf41a6805ff6e82f726e80aed7866efd2fbcf086f477",
+    "a6f93021415f154455252d1aae55005bca600b8bbbbe7dae125360a869934106",
+    "7155e7b8ea9837bf7828d70cc4fb6a927e0c0a82cef7b262b43d95115975acc6",
+    "79de7e12dc67191193d59d3f1332fe09aface1a0ed59c848068fe6b1182c04bf",
+    "b64ebd46128b8850f150c42bc59dbe9876e12164ed924395f9ecec6fa9ae9434",
+    "ea6070df3efdcb6c679a3afe74db481931b76608fded29c36149227f3c0cfe65",
+    "646e174ab5beb15af1fdeb2481c5502ca824855e48b543426f8dddab3593e77a",
+    "5f8cc92bec0d9f719497d63c3a11db02c13d4af4781242cbe3de276f1ea1d91d",
+    "86b30a4cd1ede730ee9633bf5904c5ea37f91418aff05d08e6abcb30ea712db6",
+    "7bbc4e6218ed599d14e3d79d4d7db389807f7633b84c2e063386145a1e4d673a",
+    "bb32c761c17ca72b2ba56eaf5147b9bf2b8667fdf377086d1111e6be05b109d9",
+    "642c6b22c374a8d5cc4dd99bc77ea7dec3cfcd81c45d2fd02d58271a4ff26519",
+    "2fdcddaed795a82bbcd7e086beb0da5c4d6918fdbe082e2a2e3ba1824939b18d",
+    "b645df2d2490e7fa2e518cfcce420621f170e49737264f572cb5dad4100ba399",
+    "880a4a3448f58eb953430685797cd437da44bd8fccdd43d464a105d70538785a",
+    "fb5de05bee4be2927430da0da518d6cad0b0c7db0f82c5dbd2b5261afd8456f2",
+    "53468294c4dde88c9f2eff6caa0dbdb9770d05712597c83eb35e235abd3e2d24",
+    "02a52d0ad11300793afebf087372f652e83fd2411f786827c717e3c35a018b6b",
+    "c0d11494076a42c89f9e2afed1f47c0479a7b3738000a342c662bcc9c06e70f2",
+    "50acf24afe72064a9eff8ceab69eb493f95907a63b3da3ca12e958b98e59fa0b",
+    "e4677f0d8ebd68dc65f02f8ac1b002f45a14d5306f73302071badfc6a09b4e5f",
+    "8fc65638e9932d094a2c2ed9ea843f01d21bdce34ec441027be4ac85595c728c",
+    "488b68f915221e7568e953246c0d937c2233116e7a54b77d20801a3eef6a98b2",
+    "2b4b6883cc67762b167f81c29f9e0250e8970bacdc30c124ae3806e1d8ecbea3",
+    "8d05feee1921009a7d88021a5ebc76adadf3687a8ef59600651b897e976d00a0",
+    "8c563ee4f0a61ee5df61b0ca0a37ed9608b5e9e960088bc8b1ef38aa12c802fa",
+    "770f87adcbe775cab7a812995cce148fe01bbb189dc9e0545954bb2f216d99de",
+    "f7a72a9eb0c852ebbf9554cc2978ee11e9c278f694d0fd4adf59f81335d56b76",
+    "aca444beb87d58f6468630a921c4e5ccac198b8c188b96772eb1e9d99aa72d1f",
+    "d2de161f7b8cc5a1cf13b614f17e70861a3e35728bb52364c77142d170d08cf4",
+    "7de673728c87744a3c62c1b3248e58b761ce04254620a40240e99a94b347a4a7",
+    "0117786f1481bf957c3c255347ddb8a20a79f3f46ed38328d91957f6e894cb66",
+    "1f0f417998251677305b282799258056c10b3cb25b794bbc503e3fcdca0fa9a7",
+    "7d30a9ccd6823c0210ee3e25c5fd4447953e4a6c5b2c6ef7f1b46c39aca70b7f",
+    "e26d5a084e8a61328ce5b7ad74b6fbc277d201ef420323fa3ee6621ebba281a3",
+    "5d8fa34e59941693dcee0043cb7648b30b18b7cfb9edfbdee16f2f7ce4449c4e",
+    "5736b566e3b08f7f55ccbdb466fb8078a5d775c2805ac6190d2f8c59ceb69148",
+    "51a08c16a2f164e49a8264ba0170f919499fa70fb5055740abe176990cbe4f71",
+    "af4023a8b99f95100d206d774e84e93d22694543d9099388be73d90007fc2c18",
+    "0f70bfb8cf1ba773e36b73b08106bc977f96f1d509b4efe2b730b40a3278dc6a",
+    "121487d758a8d419b6d06f77676124e3b186db8dbbd173c82c4a76b9bd549285",
+    "f540b103f2ac6cb5d3ac32d1a7053ccd134e921365ccf2fffb29d02679d83563",
+    "59605e6c550589bf6fe9f40a44f20d90863e8f81e6c362027fa9cbcfa6470df6",
+    "2142ec42496ac5ffd906c6c3dfada9689d1cd342ae7a7a24864c6ed835058957",
+    "b6e59c00a7a5deff8ce51e21996c2ee21623f7e6bb9836eadd4664b2bfdc169b",
+    "59bc5ca0ecb54ee0e5066d96e7551eb1360d748291c6845b0b9f23bfa6668863",
+    "021f22fde4b271421006e2591bd07739e38ed7ab4f499b8feea2e2b89b2db713",
+    "ea6070df3efdcb6c679a3afe74db481931b76608fded29c36149227f3c0cfe65",
+    "8e110f64512d932596229ccb25c1b93be1547ed2ad56ce1386fc251e19167b03",
+    "337f5534c1ed76b24b96bff5aba298da616eaef2ad129eb2c7912037940a656c",
+    "3426f1e9cd5c79c10566118dfdca6e6815461a5caf623b908ad03d2f471a6dc3",
+    "ec4cef5f911e8279583d5028843d39625ce71261b7aabb028fc6024087e543d1",
+    "26f0554f46d8f879939a96ea2662a4cfa3118fff8dd2873199da05bec95adf30",
+    "eddb9fcf4de05df5c937a235fd1995a154641c29530efd97762383dfe4abefc1",
+    "22a4a6a555cacc9409459d1645562663ed7a8c87378992f64ce5f4b7a82cc23a",
+    "36a6021be6bbf7718f3eeb391f3c84078e936a13f79cfa5238babb27bf1596f5",
+    "d8a1e2197954e634bc4d3aec339227431c2e29a0bca43ca4cd81d06fe04d31ba",
+    "87707e10a4df8d92e50e0880d643176b3054f49648218cc8257568d23e1bedb4",
+    "dcb439ea07f3696c96d4668f9f7a899e4fde58a35cda2ce50e2c706881bdaf0f",
+    "c42ae8ef5851428d54cadebdd7a65454ea6df7cbfee0291aa3e8e0a24e28910d",
+    "9330c947cbf9cd22da13fd05c8faf82fcbe7f531d0c8ed58058907089b86aef3"
+  ],
+  "raw_rgba_rerender_exact_match": true,
+  "unique_decoded_frames": 84,
+  "alpha_range": [
+    0,
+    255
+  ],
+  "blank_frames": [],
+  "adjacent_composite_mae": [
+    1.0877844095230103,
+    1.1102348566055298,
+    0.9639632105827332,
+    0.9225244522094727,
+    0.6527693867683411,
+    0.5570644736289978,
+    0.28361889719963074,
+    0.4399662911891937,
+    0.3655356466770172,
+    0.549528181552887,
+    0.5890355706214905,
+    0.7472541928291321,
+    0.8759705424308777,
+    0.9829866290092468,
+    0.9840099215507507,
+    1.0871158838272095,
+    0.9047902226448059,
+    0.9529929161071777,
+    0.8116561770439148,
+    0.7819440960884094,
+    0.4296517074108124,
+    0.43851637840270996,
+    0.6561502814292908,
+    0.9088683128356934,
+    0.8889289498329163,
+    1.0758023262023926,
+    1.0438467264175415,
+    1.1047604084014893,
+    0.960669994354248,
+    1.0178965330123901,
+    0.7045474648475647,
+    0.6711915135383606,
+    0.4512975215911865,
+    0.39291200041770935,
+    0.23752088844776154,
+    0.31018561124801636,
+    0.5458440780639648,
+    0.7308047413825989,
+    0.9448756575584412,
+    1.1059156656265259,
+    1.155917763710022,
+    1.161889910697937,
+    1.1478595733642578,
+    1.178432822227478,
+    1.0332671403884888,
+    1.0030866861343384,
+    0.7382171750068665,
+    0.6985592246055603,
+    0.2592115104198456,
+    0.3266963064670563,
+    0.38584280014038086,
+    0.5547488331794739,
+    0.6316941380500793,
+    0.7912430167198181,
+    0.9453946948051453,
+    1.025971531867981,
+    0.9737045168876648,
+    1.060046672821045,
+    0.9497568011283875,
+    0.9956307411193848,
+    0.747133731842041,
+    0.6867784857749939,
+    0.47134336829185486,
+    0.4689151346683502,
+    0.5916778445243835,
+    0.7827362418174744,
+    0.9118433594703674,
+    0.9713339805603027,
+    0.9586677551269531,
+    1.111994743347168,
+    0.9074041247367859,
+    0.9716212153434753,
+    0.7397284507751465,
+    0.6526095271110535,
+    0.5137010216712952,
+    0.45781707763671875,
+    0.27635952830314636,
+    0.2878253757953644,
+    0.5402222871780396,
+    0.8183932900428772,
+    0.8556032776832581,
+    1.103772521018982,
+    1.2119466066360474
+  ],
+  "seam_composite_mae": 1.0983152389526367,
+  "review_video_validation": {
+    "normal": {
+      "sha256": "f2a3607cfb233ec62f4d86dc9e6d335eca7297739b51a6bb9cd95ccfef1cca59",
+      "bytes": 210479,
+      "duration": "2.800000",
+      "decoded_frames": "84",
+      "full_decode": "passed"
+    },
+    "slow": {
+      "sha256": "77390588fe1b4d7eac13bd671f4dc3ef88971991b95881dbc6fc575eaabee501",
+      "bytes": 334518,
+      "duration": "5.566667",
+      "decoded_frames": "167",
+      "full_decode": "passed"
+    }
+  },
+  "source_review": "Author inspected every selected source PNG at native512, complete21-frame segment63–83 for84; one clean anchor each96f31/104f12. Broader pinned84-frame before sequences available for independent QA.",
+  "candidate_visual_review": {
+    "actual_agent_id": "/root/artisan_stickers_b",
+    "full_ordered_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "full_frame_scale_px": 256,
+    "native512_phases": [
+      0,
+      7,
+      21,
+      35,
+      49,
+      63,
+      77,
+      83
+    ],
+    "observation": "Three same-paw leaf fan arcs plus small tongue/shoulder pant; coherent leaf/stem/grip, no hand swap.",
+    "author_disposition": "prepared_for_independent_frame_scene_QA",
+    "native_realtime_slow_device": "unknown; frame inference only"
+  },
+  "independent_review": "pending",
+  "native_playback": "unknown",
+  "device_playback": "unknown",
+  "canonical_assets_changed": false,
+  "limits_checked": {
+    "codec": "vp9",
+    "alpha": true,
+    "no_audio": true,
+    "side": 512,
+    "fps": 30,
+    "seconds": 2.8,
+    "max_bytes": 262144
+  },
+  "frozen_at": "2026-10-30T17:39:11.460229+00:00"
+}

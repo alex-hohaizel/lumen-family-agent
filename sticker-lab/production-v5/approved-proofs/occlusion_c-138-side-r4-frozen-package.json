@@ -1,0 +1,1430 @@
+{
+  "schema_version": 1,
+  "id": "occlusion-c-138-rigid-sheet-side-r4",
+  "actual_author": "/root/artisan_layers_resume",
+  "files": [
+    {
+      "path": "/workspace/scratch/342fb2c985cb/lumen/sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/package.guard.json",
+      "sha256": "212f60563ed82f232c126b7ea9c0fe0237057ef0dd9893f3e7a3ffe6d599787a",
+      "bytes": 6488
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/.gitignore",
+      "sha256": "cdbcae15105d6b781e620813c79c7e868740d4e9cc53ce6f5fcbbc12387adf4b",
+      "bytes": 2
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/author-review.json",
+      "sha256": "538f962733976a0af2a9a717a2581b31c0abb3239a2c303abd9d332815b3b821",
+      "bytes": 5988
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/generators/__pycache__/review_helpers_from_previous_author.cpython-312.pyc",
+      "sha256": "5bde544556e5b90b1af36724fb2be861a9f645a66da20bcd5f7e36c7624953a3",
+      "bytes": 26306
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/generators/build_138_side_r4.py",
+      "sha256": "e8935e829d5d9343943458cbcfcecbaada509627e06d49ec22e6b5b480242113",
+      "bytes": 11070
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/generators/layer_renderer_138_side_r4.py",
+      "sha256": "804b592efa152a74003fc0eeb3f9cfd9d4ae7b9722d6abc04f3fbf3c4ad694bc",
+      "bytes": 14812
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/generators/prepare_layers.py",
+      "sha256": "b8d3f36f66b1a5cc8bc9308d8e5ea9700ba423a2c262d05689cf9b1ef40873e6",
+      "bytes": 5035
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/generators/review_helpers_from_previous_author.py",
+      "sha256": "0a6e1d283680981a109c25f37d636b4656aa2ab99c14587daaaa500b423b411b",
+      "bytes": 14268
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/generators/seal_138_side_r4.py",
+      "sha256": "4e6d957bf0bccf588c421c490e9e5fea59b67295321aeeceb9dd01f13a314e15",
+      "bytes": 8144
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/generators/support_snapshot.py",
+      "sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8",
+      "bytes": 18025
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/candidate.webm",
+      "sha256": "7496eea65317d3fd949a5ca3d553c71b0e671e1023fba63b6671ef36342954db",
+      "bytes": 258984
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/000.png",
+      "sha256": "8e54edf173e0e492794a708cceae98c54469dbf74061c18182435d24b28740e0",
+      "bytes": 284077
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/001.png",
+      "sha256": "e026907728860de4d277da854fb6a0f5adfa371afa31e1998cb4ff5fac5bef6c",
+      "bytes": 282425
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/002.png",
+      "sha256": "5064f9e657037d0afeddf4ce99624b91ac4e062f40fa548d14c1cc758419de02",
+      "bytes": 281849
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/003.png",
+      "sha256": "3ca5f4e04a13ca7f355b80439ad6083cb5145092aaf51c11ded1ccd64daaee49",
+      "bytes": 279928
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/004.png",
+      "sha256": "42e548d499618d9492edf0a716a269705efb161982465f45de833e026f5c6163",
+      "bytes": 276704
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/005.png",
+      "sha256": "ca3d1011a6be6240fde3291e3312e965f43c91b66faaaf29a5ba75db60b49262",
+      "bytes": 272599
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/006.png",
+      "sha256": "6dc72fd2d52c44c13001719cc1acb8b71f8598e42a534783d268e81a7640ebe1",
+      "bytes": 268279
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/007.png",
+      "sha256": "009df21a19759ae8726866b06467b553dce2436ec199229615322b0322b985a5",
+      "bytes": 266770
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/008.png",
+      "sha256": "e89d0fbc47b2de7a52148c11a8f4542752b53e3c04846456a20bbee99324f8bb",
+      "bytes": 263006
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/009.png",
+      "sha256": "4509692142e436c438480a1f07e6a316047d084e31eeae4cf747f7f8b1baab69",
+      "bytes": 267561
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/010.png",
+      "sha256": "63ab1765eb86263bbe2582b65d6ce86428a01060d849f8206cefe0aaaf330256",
+      "bytes": 262191
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/011.png",
+      "sha256": "19b9920917494ec72496f93cfe82ffc346cf3ecff164157522f89c28de24ed31",
+      "bytes": 258989
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/012.png",
+      "sha256": "8f45b4173d85e8efdade97c4c8673012b7430bf9699051590755c83274996774",
+      "bytes": 252378
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/013.png",
+      "sha256": "a8928f4a4e1f47a646b85998c5adaa86003dc2c95c3ea1896a359775edd6eb82",
+      "bytes": 257379
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/014.png",
+      "sha256": "72c0ebcadb08b6ca10993008f8a68e7b24fe471c50746d28061c2ec287fba695",
+      "bytes": 263707
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/015.png",
+      "sha256": "a2eb6f159d75e82f913b35cad00a4636858463d5d85e8705a15d1469fbaec1d8",
+      "bytes": 269019
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/016.png",
+      "sha256": "7e84dab70795d988a7cfbdb5592a2713f47d6d8a616606f004de7b367116211f",
+      "bytes": 268516
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/017.png",
+      "sha256": "59f7040a81d5c124901c322828fe0d2f4300f6f4afd12f3d411f455e7579d6a3",
+      "bytes": 270411
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/018.png",
+      "sha256": "09eb6b60045ac3e802b1000477877b865900c2c6f7e96c8aaad8db52e69ef4c9",
+      "bytes": 270996
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/019.png",
+      "sha256": "63dcfe2ec04a1415de90d385984c53892f6e06ee2a9ac8617a9328d4ea553829",
+      "bytes": 271425
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/020.png",
+      "sha256": "7c7036d24d4cfd72652653a4a6c6f35cde31d466dcba3904ee3b31caa7f9c32f",
+      "bytes": 271755
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/021.png",
+      "sha256": "38a213f5e7cbd390122f9e82b587ae330c385816d46c2d51bb2686ffce856c27",
+      "bytes": 271754
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/022.png",
+      "sha256": "38a213f5e7cbd390122f9e82b587ae330c385816d46c2d51bb2686ffce856c27",
+      "bytes": 271754
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/023.png",
+      "sha256": "38a213f5e7cbd390122f9e82b587ae330c385816d46c2d51bb2686ffce856c27",
+      "bytes": 271754
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/024.png",
+      "sha256": "7d5c00f74460bb28297e728b0dadad59d77070221792115f28d40f750292a0f5",
+      "bytes": 272353
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/025.png",
+      "sha256": "7d5c00f74460bb28297e728b0dadad59d77070221792115f28d40f750292a0f5",
+      "bytes": 272353
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/026.png",
+      "sha256": "7d5c00f74460bb28297e728b0dadad59d77070221792115f28d40f750292a0f5",
+      "bytes": 272353
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/027.png",
+      "sha256": "7d5c00f74460bb28297e728b0dadad59d77070221792115f28d40f750292a0f5",
+      "bytes": 272353
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/028.png",
+      "sha256": "7b6f6360f71e4e7aa438283af44eb1fa4368cee91103623ed87664e6b6675b1f",
+      "bytes": 272349
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/029.png",
+      "sha256": "7b6f6360f71e4e7aa438283af44eb1fa4368cee91103623ed87664e6b6675b1f",
+      "bytes": 272349
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/030.png",
+      "sha256": "f9059c6a74ed121d5ca1cea46866b3a8029deb9775a5d8e8929ec02e006bed30",
+      "bytes": 272354
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/031.png",
+      "sha256": "6742c7774e4f60deb97ae4843fb733886ddb9321c7ec2521383b1f3c159013d1",
+      "bytes": 272346
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/032.png",
+      "sha256": "2bfc783ff12fbec29e1537fa475e0393fdafb23072942f0ea9202af30dc19faf",
+      "bytes": 271461
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/033.png",
+      "sha256": "cf6c16fb06a815388b23d31f8ef7476f967b9dfceaa3abc9c9b365643dca79a8",
+      "bytes": 270972
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/034.png",
+      "sha256": "b1186439648dfdc0d5d5bd53258eb7974701be0e92e03fae42f89782014db3f3",
+      "bytes": 269715
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/035.png",
+      "sha256": "722889191ec96a305baa50d8da87957375bb5b226799cd29ac847df4a8957209",
+      "bytes": 269959
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/036.png",
+      "sha256": "947f2d3b1d56f6ece12fdff37a288fbc54d0c9e186ba74581da7bb747ab86da5",
+      "bytes": 267354
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/037.png",
+      "sha256": "dc2a9f6d863f3103227839a925ad38a7b460fca2555d25e1fa047717c45f4fea",
+      "bytes": 263633
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/038.png",
+      "sha256": "c7a8bbb13d1edc8f564516956e2ec4c09570e89fc1e627d53d4e053e838b7261",
+      "bytes": 258955
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/039.png",
+      "sha256": "1f762977d7ee31d749d83d48d6795dfab24daa30359c79edbbee64378ceb33c1",
+      "bytes": 257326
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/040.png",
+      "sha256": "7cb388ae19ac98a9bccf2fa3e17fa8c40a5d91a485aab119d13bcb6529ffa34a",
+      "bytes": 254524
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/041.png",
+      "sha256": "106ffe3fb16787e94c00543a64bd5854a55fc7043420a4bf167f9f58df3b88c2",
+      "bytes": 262818
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/042.png",
+      "sha256": "70c866b1c3e4db00513c8f81c1d430489c79f5cdc0f9602bfa2b3c462134e805",
+      "bytes": 267268
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/043.png",
+      "sha256": "b7d3ca4cac96e828297c8ac51d9cfc580f768351592646a3ed946d6218b9ae27",
+      "bytes": 271280
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/044.png",
+      "sha256": "89ec97dba9ed8917c19e144d622c88cd411705521a52c4a77d860b28336f21cb",
+      "bytes": 266294
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/045.png",
+      "sha256": "0ffa46a4aa83a2dc6f88f5658e1ce6d96a5c4659f7d0d201fe4ec2b8314fc9ac",
+      "bytes": 266318
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/046.png",
+      "sha256": "6d7bc6be4090088967941b4c91dc5dc8b410444f818f2a82313d2f558c1e6265",
+      "bytes": 268755
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/047.png",
+      "sha256": "597e561e7bea8851a58d0286fd7e91a5a5ab4dd3858c3e1243b863b4c7bede28",
+      "bytes": 271583
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/048.png",
+      "sha256": "32d255a1c46c07b17c9ab0f4185d6cd884fc27f5efb720ac5f01d085841e7ce0",
+      "bytes": 271182
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/049.png",
+      "sha256": "e8847c3394672c7cb68158e1107a90409719e4f5b43ecb7e20b995cf0a6d6d2d",
+      "bytes": 276367
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/050.png",
+      "sha256": "7fc16131fd679f13aaf926127ca220bea6983f4613ca920ec77dd08943810551",
+      "bytes": 278898
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/051.png",
+      "sha256": "f234639793b39f97c6c30ccc860ac65968e6b8364acd58385c53ad677352c6f4",
+      "bytes": 281590
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/052.png",
+      "sha256": "402b70570c34db31fdcd9431aa0cf2b3f2ca670a5289c0612f4403476ac128df",
+      "bytes": 282691
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/053.png",
+      "sha256": "af48a49856e6a146c6e3149c9ac305daa3bfb6a4ce5389ba358abab751b20766",
+      "bytes": 282239
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/054.png",
+      "sha256": "661177f31b455cb0517cd5731d25853f689bd6491e83799b749bc226f00f9c9b",
+      "bytes": 283728
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/055.png",
+      "sha256": "e17ca93bda2fe8219d09615a760562058c713ace41319ea7d545dfcc081efe79",
+      "bytes": 283700
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/056.png",
+      "sha256": "b9325d963a9865de07513d9da6e37dae10aa46d5bd00eb2b9a62d9ad80df06ac",
+      "bytes": 283732
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/057.png",
+      "sha256": "6da3eac60067e7c10955a59db3d877c67b4405dc7ab07c1f7b79feb823adba5a",
+      "bytes": 283789
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/058.png",
+      "sha256": "ad83bb0b6753173264700794fee61b2076118c92e4a7e3dfe9da87cfcd714098",
+      "bytes": 283739
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/059.png",
+      "sha256": "b3db90bfab7bc645ab68d88a954b71f6f99c302a9e7da08ddd26bef846d5b3d7",
+      "bytes": 283854
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/060.png",
+      "sha256": "1225ec983da489a28da3ba75419be8681e8535106eeec59001a07d3f2590863b",
+      "bytes": 283322
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/061.png",
+      "sha256": "8129c014ee4e67fb4089e7c6270acb1f0c5f8c3af607190f95dd7edd6aab2f0d",
+      "bytes": 283093
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/062.png",
+      "sha256": "cdedbc49d2910dafb837d651596d50dc4b4e6a51c1a0abcd776faa9043d2cf2f",
+      "bytes": 283296
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/063.png",
+      "sha256": "2c3cead933a2b311b6e3d1d12b8ff9ab0229a7d09433c14c6274c4bc294d8d6f",
+      "bytes": 283374
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/064.png",
+      "sha256": "8b4ab834877b18e62e936e5bb2f0a94b4b59113db8d31c8b34b806991b7d771f",
+      "bytes": 283319
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/065.png",
+      "sha256": "17977620bd172747b3baf75cdfef4601473a7a4a6e97231a2c22e6416d59228c",
+      "bytes": 283531
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/066.png",
+      "sha256": "2046893ec7b96c8c8e542be3a4a44d786f47d3ab37af481b1fda34e19bf7bff1",
+      "bytes": 283313
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/067.png",
+      "sha256": "035df67922a35842a726638684386027c0283439eb813aa7def7a65d6c4f7e0d",
+      "bytes": 283724
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/068.png",
+      "sha256": "9c8258671499014b3a813a4687159bf8e7cefeec353b29bfb27346a03490a8aa",
+      "bytes": 284398
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/069.png",
+      "sha256": "d61781b0bb42ca9bbbf902ed23f755213c46c0cfbc54b16d38e3140e160acbdd",
+      "bytes": 284742
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/070.png",
+      "sha256": "638a6988b67014baa55306212bb461364462404bcdfc3714d156d6aa5aa4d2d1",
+      "bytes": 284806
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/071.png",
+      "sha256": "71c83c12272ac09f6364aa268f13a5dd99050eee3d6c03ee66d8ab9ab5f18228",
+      "bytes": 285055
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/072.png",
+      "sha256": "792ac18876aa9bfeb0a13642af75452ece09f092f1fd35584264490df11809fc",
+      "bytes": 284998
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/073.png",
+      "sha256": "dc1b91e9d0240e09abba15f40734cb994f407a38a7e69ebe32adb3284fc0dcd5",
+      "bytes": 284689
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/074.png",
+      "sha256": "9b48c7749aaad4d72060e09d7c5c99a3481854036ee73683e5f0853b82804d92",
+      "bytes": 284485
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/075.png",
+      "sha256": "f868df667d7c2f7da19447dbc82fd406ec998aaf1a9ad485cbba0c30ba507b04",
+      "bytes": 284204
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/076.png",
+      "sha256": "4a3bbb5447784cae4f983b8370edbcda9c2f5eec4f5320aaaba2fdd499c8c316",
+      "bytes": 284081
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/077.png",
+      "sha256": "c0adc162f31322ded1ea7d46dde2a25d52b1b7f108caa2d63d373eb539751721",
+      "bytes": 283869
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/078.png",
+      "sha256": "19ff6e9ef94a516b9626a2876fed44b35b4c038452b96296845e068eb527eac9",
+      "bytes": 283804
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/079.png",
+      "sha256": "491123688b5d014a6e7bbb0dd4fbe644818e842b17bdee36bc3774876554c1b9",
+      "bytes": 283742
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/080.png",
+      "sha256": "259f44e3fb21137297a251bd4b24e9c08743d6edb41a6798cd1e6b5ad542b532",
+      "bytes": 283781
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/081.png",
+      "sha256": "7793fc8c665adc9e067bc41e31750dd37278719cedb4fb041a51a3626e8fca0b",
+      "bytes": 283746
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/082.png",
+      "sha256": "7793fc8c665adc9e067bc41e31750dd37278719cedb4fb041a51a3626e8fca0b",
+      "bytes": 283746
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/decoded/083.png",
+      "sha256": "7793fc8c665adc9e067bc41e31750dd37278719cedb4fb041a51a3626e8fca0b",
+      "bytes": 283746
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/history/author-self-return-r3-render-result.json",
+      "sha256": "ed80260495e31705f03b2ddf54f3949ecd72db5571944dd45d1096c10cf34075",
+      "bytes": 158721
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/history/author-self-return-r3.json",
+      "sha256": "0e3ae0cd0f2c19ede10e8c825a1945437c81fba690b08168466ce3e6876daecf",
+      "bytes": 1206
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/history/generation-parent-verbatim.json",
+      "sha256": "dc1c2f98fd7f053da7a55aa682a3d70fe1124ac62c05dda832c2db5284d105da",
+      "bytes": 16007
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/history/generation-r2-verbatim.json",
+      "sha256": "a966f48b28068b26b0058dbf0006c68e44fc0f8dba65b05c6fdcfd94a954c784",
+      "bytes": 18613
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/history/independent-qa-return-r2.json",
+      "sha256": "a73a10d0d428c45c089151f260c208fe92a1579dd59422dd03a3ebeeb3e619c0",
+      "bytes": 39280
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/history/proof-returned-r2.json",
+      "sha256": "61250a3629efd662a1ac7676ff6d8dad589ed19138b4b18fb7fff38c7217cbbd",
+      "bytes": 34940
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/history/source-contract-returned-r2.json",
+      "sha256": "3b0d4049fbd0c6cbe9692bc93f4db389d82609c78a257726709c70c5a82b900f",
+      "bytes": 11848
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/inspection/all84-page-0.jpg",
+      "sha256": "697b92f02994a001baa0339f3399ba76ec1b14975b4fa78684aa227e0d2db1a7",
+      "bytes": 595603
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/inspection/all84-page-1.jpg",
+      "sha256": "0c1e1470e6fa81498421be15db5573323d03ffb76a56c961321536a58f00526e",
+      "bytes": 599052
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/inspection/all84-page-2.jpg",
+      "sha256": "dc7a58c441a4c68380b034d22aa859fda20ada5288f7339359da88bdf0dcd2b0",
+      "bytes": 628198
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/inspection/cap-return-critical-dark.jpg",
+      "sha256": "cc14dc50b308d958fe7b2e328d512e2e64fa9a58588095c0c80ab8cb712db6b3",
+      "bytes": 397854
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/inspection/cap-return-critical-white.jpg",
+      "sha256": "eb8c2c06751c52ca010da9302a33992b33cbd97569742ed1f32e0d4cf0a21be8",
+      "bytes": 391731
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/inspection/native-dark-0.jpg",
+      "sha256": "45ac46f097e3e4c0817ac14e3ea0d12581c2b5ab145e52e0b405c52439cb7d45",
+      "bytes": 397055
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/inspection/native-dark-1.jpg",
+      "sha256": "510eb4e7ed31ef89213ca5c5f9b83cfdbaa01a8bbf031c802179e9c89cf79bfe",
+      "bytes": 390437
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/inspection/native-dark-2.jpg",
+      "sha256": "14e02e9596521af3dd852ddb728babdede760b4c5cc77a7203bdb1ee4dd5a7fe",
+      "bytes": 421843
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/inspection/native-dark-3.jpg",
+      "sha256": "623734f30886db623d02905555f1e3b976decea2aeea100c6b4ea89ec6bb1dc8",
+      "bytes": 290370
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/inspection/native-white-0.jpg",
+      "sha256": "35987a6c1d7ddaec554c24fe45e4c730115f28fd23e53a8f6cc57dd2ce1d341f",
+      "bytes": 391856
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/inspection/native-white-1.jpg",
+      "sha256": "25bc43dec9b3d27ccfcb037b3971042179248bb94ec970689f8c13745573073f",
+      "bytes": 386780
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/inspection/native-white-2.jpg",
+      "sha256": "4e53dbb6f48fa7cf87f574e25154deabaa5eb9e02afda64126d72717faeb7ed0",
+      "bytes": 413034
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/inspection/native-white-3.jpg",
+      "sha256": "d172a639290cfe80659d1d0baca4639f0d4390e9b219d226e825489645eb2723",
+      "bytes": 284406
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/poster.png",
+      "sha256": "7d5c00f74460bb28297e728b0dadad59d77070221792115f28d40f750292a0f5",
+      "bytes": 272353
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/proof.json",
+      "sha256": "86f8c72769c9a5d4c59bf866d2d0091c843ea5aa226bf6db88d3ff4bb4da59a7",
+      "bytes": 34966
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/quality-selection.json",
+      "sha256": "4542dff23ee9a9d630a690a8a924ad4920b2d4d6158f748d1ea18dfd94c39e23",
+      "bytes": 2059
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/recipe-render-only.json",
+      "sha256": "f5fdfb876e3c59794454c3d80384c3652e2b14bb37b13a0649b74842c25d80ad",
+      "bytes": 1389
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/recipe.json",
+      "sha256": "dede04b94e4b647dd277a1e57bdf4f4c224bfebce23eb5d9434e163326b4d1d7",
+      "bytes": 14002
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/reproducibility.json",
+      "sha256": "cf9c88dab4a031c60b727bad840b99c78a1456e04d1c84810830580fe4669c4b",
+      "bytes": 164223
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/000.png",
+      "sha256": "1704df662d8e5c26a8a861bc610d9f1816aef4fba9e0f858f4870f80ef4aeca4",
+      "bytes": 180565
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/001.png",
+      "sha256": "efb39a52d6e96bf47f07cb3704f7aa5a148fb85b1403e5b94abd9c4856f59aa2",
+      "bytes": 179282
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/002.png",
+      "sha256": "29690fba97575d268a1d347f7d6598ce0f609baf2a3c93b371b08eab062816c7",
+      "bytes": 178213
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/003.png",
+      "sha256": "06b900950e3d2ba0cbac120d19189722a3b4e35854258bed9968ff5c74943658",
+      "bytes": 177181
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/004.png",
+      "sha256": "f411190874e1c1ab444527209f9e6112505878ec67fdfa88c53f2cd26a86d93b",
+      "bytes": 175007
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/005.png",
+      "sha256": "7b2e655ac3504742241d1a7428883ca311bf29cc42e927c2fc431ab251db7d84",
+      "bytes": 172265
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/006.png",
+      "sha256": "e6aac3a4f5887b4e4fdf530841811ea28b3f1e2bc8dd5b6d812195fe9bfb1a37",
+      "bytes": 169344
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/007.png",
+      "sha256": "ca3f861842a6cb32391020ce3c95aae78500f2ffe510900cf366c63e7189208f",
+      "bytes": 168174
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/008.png",
+      "sha256": "c8db475610b8dc34df7e63091e8cc1bc9b63007354b4be6a2e2896c3197e495e",
+      "bytes": 166245
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/009.png",
+      "sha256": "5613214cfc2765f0797f46bab3a75626691fc6c6af7fa5b04c0bbeb97588e635",
+      "bytes": 167624
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/010.png",
+      "sha256": "618c0caa8f806d9bc75ce5eb145ea4dfc361952b1a154ff2dfb0e93dd0d17e9a",
+      "bytes": 163890
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/011.png",
+      "sha256": "ebfd2947d80d4db1b890abefc7ec9cb841eb59081b971379a739bc5c1b9d4bbb",
+      "bytes": 160222
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/012.png",
+      "sha256": "d6b946c84de51b7402a22d7cbe8df8529b0c14c693b0f834dbebf242b8adcb19",
+      "bytes": 156422
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/013.png",
+      "sha256": "cd0362e57868fc3fa41a44ad9aad30e365009e04169d86e18faff102e6abd9f0",
+      "bytes": 157425
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/014.png",
+      "sha256": "d7602bc4e5a796c4db270e85274992e73793fd82683ae027b41d4dea9a3afd2d",
+      "bytes": 159716
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/015.png",
+      "sha256": "95409d4f9e167b2b17cb6cd890f3df5e544212d33d3c76939e387fefac327ed9",
+      "bytes": 163135
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/016.png",
+      "sha256": "1a324f83132b49c247cc852b61915deb43ee0d385601f838ce07bb5fb2a075cc",
+      "bytes": 163343
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/017.png",
+      "sha256": "bae797adf81b98cc45c8282c4204707715b48b4f9b29a12467c79341a0ddcecc",
+      "bytes": 164458
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/018.png",
+      "sha256": "f58bb3539b7b7f817dbaa5d2e70b10c3f3b07c6d4cef4690f6dac5055975684d",
+      "bytes": 164964
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/019.png",
+      "sha256": "ceb41d33c7130b76efd269d583325246d7864ba0a81db929d7937b839e3ed295",
+      "bytes": 165020
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/020.png",
+      "sha256": "25478ca62f4cdbf36348f97cac184070e9b02a65e342cb2bc68b3d33d0cb0862",
+      "bytes": 165336
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/021.png",
+      "sha256": "0ac320c5bf91735515f6c6b6dcd399b7d391273fabfe670226c8edf350b622ab",
+      "bytes": 165334
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/022.png",
+      "sha256": "0ac320c5bf91735515f6c6b6dcd399b7d391273fabfe670226c8edf350b622ab",
+      "bytes": 165334
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/023.png",
+      "sha256": "0ac320c5bf91735515f6c6b6dcd399b7d391273fabfe670226c8edf350b622ab",
+      "bytes": 165334
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/024.png",
+      "sha256": "fbd00fe541b9d0f86e6e2197e7fef00fcb3422228f07e15722e58467ba76c71f",
+      "bytes": 165734
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/025.png",
+      "sha256": "fbd00fe541b9d0f86e6e2197e7fef00fcb3422228f07e15722e58467ba76c71f",
+      "bytes": 165734
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/026.png",
+      "sha256": "fbd00fe541b9d0f86e6e2197e7fef00fcb3422228f07e15722e58467ba76c71f",
+      "bytes": 165734
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/027.png",
+      "sha256": "fbd00fe541b9d0f86e6e2197e7fef00fcb3422228f07e15722e58467ba76c71f",
+      "bytes": 165734
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/028.png",
+      "sha256": "da3bd708ea5df07c34d2e0984caa693a2131232bd4e84a1572c608fd7bedd168",
+      "bytes": 165703
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/029.png",
+      "sha256": "da3bd708ea5df07c34d2e0984caa693a2131232bd4e84a1572c608fd7bedd168",
+      "bytes": 165703
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/030.png",
+      "sha256": "1577601f534af504b9409860242fc82b14517e63ccf23877a2175ceb77ade214",
+      "bytes": 165726
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/031.png",
+      "sha256": "e4320ed069847f5009dac185b5e7f28fb0611e6423223485793c74ae2e89580a",
+      "bytes": 165761
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/032.png",
+      "sha256": "dc050cb4f72707e143bf05026825bb5b37a15673b6f8b62bafa3c083899e215d",
+      "bytes": 165335
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/033.png",
+      "sha256": "5d7be568ba7c87d693208e3cedf99bfa14737eaa5afcc94ac330aabb494ea167",
+      "bytes": 164914
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/034.png",
+      "sha256": "2bd16fac51515acd7ceb257708b9080abe7c2b4f032099a49b421b5f984953e1",
+      "bytes": 164121
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/035.png",
+      "sha256": "db1389532e7630cd51aa1d7ebf2a4b18a2d59b8599376f840e187f190ad85dc9",
+      "bytes": 163746
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/036.png",
+      "sha256": "b603ad031191b0c6951085e30fd744b29844d84c8011b2fdf22312ba96fa0ab7",
+      "bytes": 162434
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/037.png",
+      "sha256": "66d6096df5cd96e9d9e1d3c087208e519359b6aebf8f979cfa80f6e41b69072b",
+      "bytes": 159564
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/038.png",
+      "sha256": "09d8ac85b1de88db6521611785afe43e2c9adabed1aa9e9268fbbee720ce88f5",
+      "bytes": 158559
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/039.png",
+      "sha256": "445123ee6ad1f273b39bb766c1b9ee6590b205537597b8a7eee6b9102a9babb9",
+      "bytes": 157806
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/040.png",
+      "sha256": "6479bf7162d321cc1693e847eb3eca4661bf4f28104a9bcb79329687a2c30731",
+      "bytes": 158001
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/041.png",
+      "sha256": "4d3929d9dc90080fbe8dcc5409a14fa4d1dfed0993514489d825dee3017426e8",
+      "bytes": 162739
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/042.png",
+      "sha256": "073b802f0b41f95cfbd3580d59c73c3f313e3d99a2b16c81a9352d6096f3a6cc",
+      "bytes": 166385
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/043.png",
+      "sha256": "b8a7d39dc6426a15d8b59960d38b6cc7f9e9ec140f3b39e75d9288844a538cb2",
+      "bytes": 169124
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/044.png",
+      "sha256": "c7eaa264a711612dcfa5df62d99fe270ae41e25c24720fb81a5a1b54f2e8104f",
+      "bytes": 167409
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/045.png",
+      "sha256": "9bfc6c22b331f9b7c62d754ba61a5dc3fa526206ed4bcb7d14279d49d97e253e",
+      "bytes": 167443
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/046.png",
+      "sha256": "48a286eb5d83ad0a55a8b8b04d22521e8c6e35808eefb1059284853e5addef9c",
+      "bytes": 168826
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/047.png",
+      "sha256": "79b886e24ff84390dfa18a5a165b36e5d507fd3f9e46a7c9a18b101054ba301c",
+      "bytes": 171221
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/048.png",
+      "sha256": "9db6c454266b0ec68242e6f920a780540db655d6e396f149c83ad696bde93f77",
+      "bytes": 171159
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/049.png",
+      "sha256": "fe7e41a38f03751d98bd272ebcd4815b70e0a0a6262c04b4da8432f5b1438c79",
+      "bytes": 174443
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/050.png",
+      "sha256": "af2c64bdd7af0d4ef7e3cf8ae69a05b63f4d25759c03a04bc3827529728c3a17",
+      "bytes": 176762
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/051.png",
+      "sha256": "5033147b7c814f69b00ee4a68317a91975b2885d6f4cd2734b148c63c384fe05",
+      "bytes": 178696
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/052.png",
+      "sha256": "bcd8cf464cb1e30083d7755d8a47485f4d01e2bbd9c0f29da3a96f7811fad777",
+      "bytes": 179674
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/053.png",
+      "sha256": "cafac494bad2a96b8e769969a8db800ebaad33f3bdeac65c3867cb92bf61eeca",
+      "bytes": 178963
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/054.png",
+      "sha256": "f9e5375cd8d4d4358e462d2f47312980fb17717745e1557ce74626d7000465db",
+      "bytes": 180377
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/055.png",
+      "sha256": "7a030a4f9eeb898a8847ffbae644d1ca40c93df6d1cdcd4dcee2de2dad1c2982",
+      "bytes": 180382
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/056.png",
+      "sha256": "16297380b846b2639fdef2b3a30c15fd6962201663e2c8036844e9ce375a0b83",
+      "bytes": 180392
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/057.png",
+      "sha256": "8051513a31526683bbea53d42d99e791abcf95e1cd2a12d4c588b1b71edb080e",
+      "bytes": 180445
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/058.png",
+      "sha256": "e797f78f7457581fc116057b4a16356a3e4d77c94b2ef6de1c68a7bba5156ccb",
+      "bytes": 180391
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/059.png",
+      "sha256": "685b1a82d3bf0dfcda27b8ec8f0c525919646ac8d57814969690316ae9d5ab66",
+      "bytes": 180457
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/060.png",
+      "sha256": "9a064535fef476e938c83fc55a0ff5e7d2fa478b51a79e2afe574a72d1f69dab",
+      "bytes": 180165
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/061.png",
+      "sha256": "3c23e497163ea4fba40ad1c9f91ed5af07dc563a5c98b6cccc82989e130deb8b",
+      "bytes": 179899
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/062.png",
+      "sha256": "9977e75ad245b8023d475d347a7bc0d5f4b9d6028a36263b6f9fd6bea401287a",
+      "bytes": 180180
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/063.png",
+      "sha256": "526921f11245551ba4969f2a8c6d85915db3edb8a8205f94ebae7f4ee5ad8a77",
+      "bytes": 180202
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/064.png",
+      "sha256": "a591ef474769bfbc729c762070e982726a03c847fe8292b1cdb4bf1194aa3576",
+      "bytes": 180221
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/065.png",
+      "sha256": "43446c000c561201d677c2b8605da6fa09f1ca6facd9b93622e1f83566ab476c",
+      "bytes": 180323
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/066.png",
+      "sha256": "337f4dac381cbb23226210b89ebc3b4376da956d70769c0b610d5b5d79baf81e",
+      "bytes": 180156
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/067.png",
+      "sha256": "2ffb987d36388f0d3d976e54741f3f2c6aeca85fb9685c4032e6b66e018a92e1",
+      "bytes": 180473
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/068.png",
+      "sha256": "a71dd37ee05db97b848b3005119e34984db382f13291c3b2526f98fa5e2a3991",
+      "bytes": 180810
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/069.png",
+      "sha256": "eaa427d7ecd3404e167a9e61fc2b19b54851caab2b34622a3b94fd40a429edfd",
+      "bytes": 180934
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/070.png",
+      "sha256": "c6e5476aee8d2dad7191268fce9cb541da0e82d6867e54ddd90424783351291a",
+      "bytes": 180959
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/071.png",
+      "sha256": "49b2541033df314fcff37d6d4bb9d0e5ee1f7e79977484142f36967524cd91f7",
+      "bytes": 181084
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/072.png",
+      "sha256": "526d2617ef465581bdc2b0ce3e587fee8648260a09815e0ed715cf983e115de2",
+      "bytes": 180863
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/073.png",
+      "sha256": "6a977c8678f81a9783b6e5692a26027f9f923f77f3e749cb0ac6a6dc357d10ce",
+      "bytes": 180839
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/074.png",
+      "sha256": "b2935913b8892f3e133b0f103dc16751827b9105f8c2f9398e66b4a5d47ffbea",
+      "bytes": 180789
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/075.png",
+      "sha256": "f0ee1f3582770d430934c14a7d106f1ad286224b055dbf1993aebaba208811da",
+      "bytes": 180729
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/076.png",
+      "sha256": "9849377eedbe21abab78266abf2b7b17ebb38f85723208e25460017c012c819e",
+      "bytes": 180600
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/077.png",
+      "sha256": "ba6f39c142d21014b3b654291e3abb6cfe27e787a91ae18a96402b6d56733dee",
+      "bytes": 180499
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/078.png",
+      "sha256": "70cd4f1e4e2583433514ee0a6791bf68501baae8b6258c9edf995a09c53f4177",
+      "bytes": 180470
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/079.png",
+      "sha256": "ccb811830c79077cb2bbec9528835b94cf1d78ec577bddcecc1807b3c69cbed5",
+      "bytes": 180395
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/080.png",
+      "sha256": "53f03ddeb61c4dc6970edcee3d9ba9374073882f96126eb93abf68c03e6eaba4",
+      "bytes": 180422
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/081.png",
+      "sha256": "e097b85f43a46c32d7cb53614367577c9eeabda18dbd432bccb0785fe38fcabe",
+      "bytes": 180428
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/082.png",
+      "sha256": "e097b85f43a46c32d7cb53614367577c9eeabda18dbd432bccb0785fe38fcabe",
+      "bytes": 180428
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-frames/083.png",
+      "sha256": "e097b85f43a46c32d7cb53614367577c9eeabda18dbd432bccb0785fe38fcabe",
+      "bytes": 180428
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-normal.mp4",
+      "sha256": "f007c90ba23f48583d4b8b1bc2eb4db0ac0955bb971b30bcc5b71e32b2935fa9",
+      "bytes": 167573
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4",
+      "sha256": "95b74c92caab6768fe654b5f05d7d457300807eb9f99ae35c3e6bde78af6eef4",
+      "bytes": 214049
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/000.png",
+      "sha256": "30ccf59780625497c53b4b77a92f3936ba82fbc90f7c8b79749f1b3951d5e6b7",
+      "bytes": 240198
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/001.png",
+      "sha256": "8ec453faf4d7284fab0c6868db69bb896c289f76dddeaabe13f5b87df612a211",
+      "bytes": 241996
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/002.png",
+      "sha256": "c910870476f59ab6ed5b68f2d6840f4ec853f062fee16f36d252fcdf57c4e845",
+      "bytes": 242338
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/003.png",
+      "sha256": "31b65a598379e8d893a351539334f27f71e4689053c951c7b4d5e3746cc8eec6",
+      "bytes": 241872
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/004.png",
+      "sha256": "c578ce63d4342c37d7a977120a8e4abcaff5393dd16e4b6de9e6b447c4fe47ca",
+      "bytes": 239920
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/005.png",
+      "sha256": "76d0eccc180ea7906e4512d76e6fb4f6b63e924fabbee9c51c68a616ce57ab97",
+      "bytes": 237270
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/006.png",
+      "sha256": "ba582a32414c353b31f765d464220d1161b631dce2e68306d9dac46a50b3dba4",
+      "bytes": 234209
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/007.png",
+      "sha256": "2f1968df72ee21a393e16a297f03d6b328c2a207ece877914f4e201c766a7196",
+      "bytes": 232889
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/008.png",
+      "sha256": "f2777f82111b3d96e7a4eecf4f1c4113955f2c18bac5d6794dd057e36975f38f",
+      "bytes": 228284
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/009.png",
+      "sha256": "05507611d6c728f4e82b7e3f940e08bfdc345868a3667dd682f8684841beb2cb",
+      "bytes": 234188
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/010.png",
+      "sha256": "6a19f1d8bac16fe7e06e02767a498b9d97f911237d24a9a83c77d235e91e1614",
+      "bytes": 229952
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/011.png",
+      "sha256": "d570416e4ef332af866bab18d27c5f4621d230cb903c3394aec2bf1ba9e39db2",
+      "bytes": 227468
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/012.png",
+      "sha256": "b83ff9b596dfc00e365675ba558761f1b8801d2aaaa66a826f556b4db6445989",
+      "bytes": 216876
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/013.png",
+      "sha256": "96eaf89cbf21d9c8c5b296b1912a729c2d125285cb80e36d7ac652f8595b3c8c",
+      "bytes": 225292
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/014.png",
+      "sha256": "29c9463c0468e492e734c7a77fcc4548e9cf1d4aa23d37eb317ffb095a45cd34",
+      "bytes": 230661
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/015.png",
+      "sha256": "de31d37459de686e48cb5dd9c18e46e98e085781c47ca31895abb9e0418e1a9d",
+      "bytes": 234720
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/016.png",
+      "sha256": "f574fcee615e51fb92a0923a5ead0dcb1c05bf57e29fca6eeb4326a4f19d3914",
+      "bytes": 233308
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/017.png",
+      "sha256": "909bf87ed2ee84b1ee19076afa698acfb81443398e7f23a7c8ceb47bd23bd2d1",
+      "bytes": 236228
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/018.png",
+      "sha256": "0ab36342ef97f82ba4b236d49b8cc236502a8ce225079067538c20391202d8eb",
+      "bytes": 238637
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/019.png",
+      "sha256": "b829d3a917f3f9e7586396176ad09b70e2125292e0176c3137ce7b1c9e9eaec5",
+      "bytes": 239314
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/020.png",
+      "sha256": "eefe4e4bc7f3e9713c1c2a7b20dfd60b2a912970883420078f56a939afd8f4ec",
+      "bytes": 240431
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/021.png",
+      "sha256": "812f39b2dabd2ce47aca22fbffb59c65ded6b67d7257ffe781d7c1331857d561",
+      "bytes": 240258
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/022.png",
+      "sha256": "e010d9451c974e0b97471dcd4059c76bcde321177236f18aefe9c9ce99befd22",
+      "bytes": 240352
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/023.png",
+      "sha256": "267f40814ba6daff70a16eb935050846e61403ad77f3d0b16807245a127fe863",
+      "bytes": 240256
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/024.png",
+      "sha256": "82cecb83ef3c411a34c8230b1ba1df839dfc8d8164d3e260aa22baf83ce78062",
+      "bytes": 240218
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/025.png",
+      "sha256": "69cf41a7b4cd5d49576ec4720b2f1c86c77f6a1589cfd13404c99781fbff33a2",
+      "bytes": 240227
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/026.png",
+      "sha256": "3b9c51cc6dc4be5a658bf03d673556cd52f4317e637a4dd0dcff29053ded5f00",
+      "bytes": 240356
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/027.png",
+      "sha256": "e2dc00e2f0acdb161eec3ec0ecc268b2e551eae6a392e00b5b8fdcb165e5e447",
+      "bytes": 240334
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/028.png",
+      "sha256": "6fcad5d9b2a28a3848f9f4dd189b6cefcafa7585e20341505f9734d1a4a9d829",
+      "bytes": 240331
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/029.png",
+      "sha256": "47d2fe2dc402f7a4bba25d21abde24eeaf0b5c004cfaf0fe2787fdce89ef8b71",
+      "bytes": 240333
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/030.png",
+      "sha256": "80019eb93b24d18a95f8ce16ac90ef05eeb3ebfa318184c66eeaadf8e8a55230",
+      "bytes": 240413
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/031.png",
+      "sha256": "4cbdacc2dd84ff65eff2c0d7f4523ccdcdd3ebfbdc696cbb70a1032976e01076",
+      "bytes": 239958
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/032.png",
+      "sha256": "44180cf1b93d9972ed902ff01d547523ef9812d433032017a423e45264d83e60",
+      "bytes": 239806
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/033.png",
+      "sha256": "f1145e4b78bfddb6c82d259cb5c2ed594927cc2181e6bc6f54ea1e7491cd7282",
+      "bytes": 238250
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/034.png",
+      "sha256": "63308a972d7e0d911c9a0fa9901dbe1772dd71c908f3442d8b6ac63651a803c0",
+      "bytes": 238441
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/035.png",
+      "sha256": "68ac2fcd635dbff16558d46ad76f6cdcaf959a04390455c0fa4affb152b53b07",
+      "bytes": 236709
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/036.png",
+      "sha256": "5253a3ae021e54b60769b8dfd7d5a1be3107a3d3c58b17a4c393eaa56eba86c1",
+      "bytes": 234903
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/037.png",
+      "sha256": "3a04412ea949c2940db18b1294bc6727b3c53533b0b90be1f2a45d3e028ed922",
+      "bytes": 230468
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/038.png",
+      "sha256": "3769f60a36ecb68e18d6de09b729b95452b03fd11cbe5785d084d6f0912a9d20",
+      "bytes": 224589
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/039.png",
+      "sha256": "b264a5a2262c18f8994b1e4e637a672d1f3af7892e1a4b77bc6283dd3e41ffc7",
+      "bytes": 224939
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/040.png",
+      "sha256": "31a911f5f71c8781c9e5e4694aaca860af4fc4e9f661915251d5e863f716ff62",
+      "bytes": 225638
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/041.png",
+      "sha256": "731cdbc5d4133319d82998d730d5652a4b43dc4df3c12e61ad030e9574623253",
+      "bytes": 231300
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/042.png",
+      "sha256": "3333a12a0024f45e9d42637664069e62b2fb0e46c9f106844e28ab31dd055688",
+      "bytes": 230634
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/043.png",
+      "sha256": "a6ed8d2afd140b9e1b2a949e3a195aadba29e01722b5ccc726ca8a755ce76f7d",
+      "bytes": 236701
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/044.png",
+      "sha256": "06b502da6668d13d66957d8dd1aa74bf854a8910a985f13c7bec28291bff87db",
+      "bytes": 234655
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/045.png",
+      "sha256": "11ff19a7bc257184fdc71e343e8cc53d6fa02bbbaaf0bcc9030df6791eb7a743",
+      "bytes": 234047
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/046.png",
+      "sha256": "a75208f4a1011e3397a14781162528cf25101c0baea6f25c396e882e96dd1f94",
+      "bytes": 230806
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/047.png",
+      "sha256": "5f9a0a721e64f671be987969fe77c57074db3f7206afc03805d2d0d1d65bc5f4",
+      "bytes": 238083
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/048.png",
+      "sha256": "95ff41d657f0832d68d1834209677533ddf8b56d8c57e877b4ed72a776090b35",
+      "bytes": 240383
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/049.png",
+      "sha256": "c750838ea68342c9b7625fc506b7795f35a0d45108561a658cd5206667deb8d7",
+      "bytes": 242720
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/050.png",
+      "sha256": "e73aab5e08bfdff243e5fc739dea52ebbebb2db4577ce1e80c91f42466d66482",
+      "bytes": 245972
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/051.png",
+      "sha256": "4fe1ebe95db4695d5161089ca5cbcb975df0d34b9a82327c9932b7ad2e7a1a7f",
+      "bytes": 247473
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/052.png",
+      "sha256": "6f8da62a5b7adaa6edae4f952a19ba73bb1d9cd2e152bbd50e2d73c640f85add",
+      "bytes": 249749
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/053.png",
+      "sha256": "10d33a81c7886f3208da1d0ec75e71a0b8b2e5d4e81514c2f2dd1a955a4d216e",
+      "bytes": 250397
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/review-slow.mp4.decoded-rgb/054.png",
+      "sha256": "d670142a81ab00f5f448ef2de3797b93a05f08126319db7773cc0a549ab75a16",
+      "bytes": 250990
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/source-contract.json",
+      "sha256": "852ebfa8b6e9337ae48b7afa9840a779c6517b831b4500aa932265befb5001ad",
+      "bytes": 12812
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/arm_left.png",
+      "sha256": "9f3e97e9733ca1c0c65e9d0ed32aab3844cf1685736b1934b48f7337cbf572fc",
+      "bytes": 102295
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/arm_right.png",
+      "sha256": "5f054289232b62f50935458a89211ca132eae8a47e659aceb99e186ca3b5f2e3",
+      "bytes": 79948
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/baseline-source.webm",
+      "sha256": "c3459b3c2642cf4b43995a46af8d504f93cc7d6935ebb6d447f97f268fe460f8",
+      "bytes": 261777
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/body.png",
+      "sha256": "3cdaed7057dfb165e6dd6137894bda85ba04d2c89fc166e6f0d9572822156c9b",
+      "bytes": 439620
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/cloth.png",
+      "sha256": "1c256f7eac05619835438f4acf839861f2d482a508f0df083c41af53036a178c",
+      "bytes": 262781
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/extraction.json",
+      "sha256": "004a0af174e025b88cf0deddee8e4086287234a7a68c350e90557725993d0c5f",
+      "bytes": 9014
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/generated-blank-hood-atlas.png",
+      "sha256": "07104f9d4678602827479969d7c12498f9977d5b8ee4487af7bcd2108c538bf5",
+      "bytes": 1016258
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/generated-layer-atlas.png",
+      "sha256": "a194054d94068ef6485f3e3b9b4bed68a542b36df041711076e4623af0af28db",
+      "bytes": 1009126
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/generated-upper-arm.png",
+      "sha256": "83e896aa3bcd816d6ffe058ab6bfed0fab27b869d9074ffd0a6b2b7a12f16d8e",
+      "bytes": 1291619
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/generation-author-original.json",
+      "sha256": "47df7d496eecc2d0b0aadc920efca8ae896b3a450ccf8e9476ca0bf659991481",
+      "bytes": 15588
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/generation.json",
+      "sha256": "ab11979e8b12a4c047ec95f2b3f9d3be4f616f52fc0bae51d95bbdfa8809f644",
+      "bytes": 19544
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/input-identity.png",
+      "sha256": "f6d1c671b6653dda929fbaedab98b6e381991a72c0d6ff2d483d38763b22f21d",
+      "bytes": 259128
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/input-scene_covered.png",
+      "sha256": "dd29770fc05ecbdcfb5bf842b50d00ed1fc92e964425d84e51bb0f52a23eb9c3",
+      "bytes": 256057
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/input-scene_revealed.png",
+      "sha256": "925ed27bc4c91829d71e348b46e537ff8bf7563f152225a480d33f6d5022e3ab",
+      "bytes": 304013
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/input-upper-style-132.png",
+      "sha256": "81418caf3e15dad4849f1492135e0103239bc8684d7136bfbdc3a4417e7924d8",
+      "bytes": 1846506
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/input-upper-style-138.png",
+      "sha256": "07104f9d4678602827479969d7c12498f9977d5b8ee4487af7bcd2108c538bf5",
+      "bytes": 1016258
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/sources/upper_arm.png",
+      "sha256": "85b69eaa79f3ac6472f039598133fe3bf95f58852dc14631193d3c0e8966e066",
+      "bytes": 787197
+    },
+    {
+      "path": "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/technical-build.json",
+      "sha256": "3c15b0426f5d338747bd4394c6b73e5832f2e4c287b440f0596f226ebc523a41",
+      "bytes": 173244
+    }
+  ],
+  "review_proofs": [
+    "sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/lumen_138/proof.json"
+  ],
+  "status": "ready_for_independent_per_item_qa",
+  "fixed_independent_return": "QA-LAYER138-CLOTH-CAP-001",
+  "unresolved": [
+    "Independent source/scene/frame closure of QA-LAYER138-CLOTH-CAP-001",
+    "Native realtime/slowed/device perception"
+  ],
+  "canonical_assets_changed": false,
+  "public_writes": false,
+  "files_sha256": "a0e3bcb5226da99f771ef211e72a247c07d62a7633f490197dd71b1d5a7d6826",
+  "final_path_guard": {
+    "path": "/workspace/scratch/342fb2c985cb/lumen/sticker-lab/production-v5/occlusion_c-138-side-r4-frozen/package.guard.json",
+    "sha256": "212f60563ed82f232c126b7ea9c0fe0237057ef0dd9893f3e7a3ffe6d599787a",
+    "passed": true
+  },
+  "frozen_at": "2026-10-30T20:07:00.235457+00:00"
+}

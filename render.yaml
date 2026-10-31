@@ -30,6 +30,11 @@ services:
         generateValue: true
       - key: AUTH_MODE
         value: chatgpt
+      # Legacy/onboarding default only. For the 1.13 joint release, enable true
+      # only after its complete approved 120-asset commit is available remotely.
+      # Do not deploy the current preparation or activate a code-only release.
+      - key: LUMEN_REQUIRE_VERIFIED_STICKER_PACK
+        value: "false"
       - key: TIMEZONE
         value: Europe/Kyiv
       - key: OPENAI_MODEL
