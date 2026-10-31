@@ -1,4 +1,4 @@
-node_modules/
+/node_modules
 dist/
 .env
 runtime/*
@@ -8,3 +8,11 @@ backups/*
 *.log
 __pycache__/
 *.py[cod]
+
+# Authoring materials and generated diagnostics are stored outside releases.
+sticker-lab/
+.authoring/
+.qa/
+docs/qa-*/
+docs/test-results*.txt
+*.zip

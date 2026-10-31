@@ -8,16 +8,24 @@ import {stickerAssets,ensureStickerPack,STICKER_SET,STICKER_TITLE,STICKER_CHECKP
 import {Telegram,TelegramError} from '../src/telegram.js';
 
 describe('Палітра емоцій і стабільний порядок 1.10',()=>{
-  it('покриває обидві клавіатури й вибрані додаткові настрої, зберігаючи 31 затверджений оригінал',async()=>{
-    const plan=JSON.parse(await readFile(new URL('../../sticker-lab/production-v4/plan.json',import.meta.url),'utf8'));
-    const assets=await stickerAssets(),archive=JSON.parse(await readFile(new URL('../../assets/stickers/archive-50-v18.json',import.meta.url),'utf8'));
+  it('зберігає затверджені палітру, порядок і хеші оригіналів після адресного ремонту',async()=>{
+    const release=JSON.parse(await readFile(new URL('../../test/fixtures/sticker-release-1131.json',import.meta.url),'utf8'));
+    const plan=release.palette,assets=await stickerAssets(),archive=release.original50;
     assert.equal(plan.face_keyboard.length,104);assert.equal(plan.extra_emotions.length,11);assert.equal(plan.retained_gestures.length,5);
     assert.deepEqual(new Set(assets.map(x=>x.emoji)),new Set([...plan.face_keyboard,...plan.extra_emotions,...plan.retained_gestures]));
-    assert.deepEqual(assets.map(x=>x.id),plan.stickers.map((x:any)=>x.id));
+    assert.deepEqual(assets.map(x=>x.id),release.ordered_ids);
     const retained=assets.filter(x=>archive.some((a:any)=>a.id===x.id));assert.equal(retained.length,31);assert.equal(assets.length-retained.length,89);
-    for(const a of retained){const original=archive.find((x:any)=>x.id===a.id);assert.equal(a.sha256,original.sha256);assert.equal(a.file,original.file);const bytes=await readFile(new URL('../../assets/stickers/'+a.file,import.meta.url));assert.equal(createHash('sha256').update(bytes).digest('hex'),original.sha256);}
+    assert.equal(release.repairs.length,35);
+    for(const a of retained){
+      const original=archive.find((x:any)=>x.id===a.id);assert.equal(a.file,original.file);
+      if(a.sha256!==original.sha256){
+        assert.equal(a.motion_version,6);const accepted=release.repairs.find((row:any)=>row.id===a.id);assert.ok(accepted,a.id);
+        assert.equal(accepted.before_sha256,original.sha256);assert.equal(accepted.after_sha256,a.sha256);
+      }
+      const bytes=await readFile(new URL('../../assets/stickers/'+a.file,import.meta.url));assert.equal(createHash('sha256').update(bytes).digest('hex'),a.sha256);
+    }
     const first=assets.slice(0,20).map(x=>x.emoji);for(const emoji of ['😂','🥰','🤔','😤','🫠','😱','🙄','🥹','😭','😎','🤨','😴','😬'])assert.ok(first.includes(emoji),emoji);
-    assert.equal(new Set(plan.stickers.slice(0,20).map((x:any)=>x.category)).size>=10,true);
+    assert.ok(new Set(release.first20_categories).size>=10);
     for(const omitted of ['👹','👺','👽','👾','😺'])assert.ok(!assets.some(x=>x.emoji===omitted));
   });
   it('відновлює порядок відомих документів без повторного завантаження, навіть після втраченої відповіді Telegram',async()=>{

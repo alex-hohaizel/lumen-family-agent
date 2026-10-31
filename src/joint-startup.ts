@@ -4,8 +4,8 @@ import type {Telegram} from './telegram.js';
 
 // Approved 1.13 repertoire, in display order. A previous 120-item manifest
 // cannot satisfy the joint release merely by having the same item count.
-export const JOINT_STICKER_RELEASE='1.13.0';
-export const JOINT_STICKER_FINGERPRINT='589ce76b16ff3d4fa47ed71fab166dfaa8eb80e962a05ceb2e2aaeb91ce3181a';
+export const JOINT_STICKER_RELEASE='1.13.1';
+export const JOINT_STICKER_FINGERPRINT='0c30bf0ae640f49e30caa02b3d7dd7656e43ca330514e1bbfd2783ea8513afe9';
 export function stickerReleaseFingerprint(assets:ReadonlyArray<Pick<StickerAsset,'id'|'sha256'>>){
   return createHash('sha256').update(JSON.stringify(assets.map(asset=>[asset.id,asset.sha256]))).digest('hex');
 }

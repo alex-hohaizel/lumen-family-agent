@@ -1,8 +1,0 @@
-{
-  "type": "lumen.prompt_metrics",
-  "instructions_bytes": 57871,
-  "input_text_bytes": 70739,
-  "schema_tool_bytes": 21699,
-  "total_text_bytes": 150309,
-  "image_inputs": 0
-}

@@ -88,7 +88,7 @@ test('resume atomically strengthens the changed goal contract while retaining pr
 });
 
 test('legacy task audience backfill uses actual ingress, narrows private evidence and never treats default group progress as proof',async()=>{
- const sql=await readFile(new URL('../../docs/qa-1-13/runtime-schema-r2.sql',import.meta.url),'utf8'),groupSource=await source('Публічне доручення'),privateSource=await source('Приватне доручення'),unknownSource=await source('Невідоме старе доручення');
+ const sql=await readFile(new URL('../../test/fixtures/runtime-schema-r2.sql',import.meta.url),'utf8'),groupSource=await source('Публічне доручення'),privateSource=await source('Приватне доручення'),unknownSource=await source('Невідоме старе доручення');
  const insert=async(src:number)=>{const id=randomUUID();await db.query("INSERT INTO agent_tasks(id,dedup_key,actor_id,topic_id,title,goal,revision,source_message_id,audience) VALUES($1,$3,'11','7','Назва','Мета завдання',0,$2,NULL)",[id,src,'legacy:'+id]);return id;};
  const group=await insert(groupSource),privateTask=await insert(privateSource),unknown=await insert(unknownSource);
  await db.query("INSERT INTO inbox(update_id,payload,revision) VALUES($1,$2,0)",[++seq,JSON.stringify({sourceId:groupSource,message:{from:{id:11},chat:{id:-100,type:'supergroup'},message_thread_id:7}})]);

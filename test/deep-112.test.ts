@@ -1,7 +1,10 @@
 import {test,before,beforeEach,after} from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdir,writeFile,readFile} from 'node:fs/promises';
+import {mkdtemp,writeFile,readFile,rm} from 'node:fs/promises';
 import {spawnSync} from 'node:child_process';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {pathToFileURL} from 'node:url';
 import ffmpeg from 'ffmpeg-static';
 import sharp from 'sharp';
 import {PDFDocument} from 'pdf-lib';
@@ -23,8 +26,8 @@ import {packContext} from '../src/context-pack.js';
 import {monitorSnapshot} from '../src/web-monitors.js';
 import type {ToolContext} from '../src/agent-tools.js';
 let db:TestDB,h:ReturnType<typeof harness>,n=70000;const c=(extra:Partial<ToolContext>={}):ToolContext=>({actorId:'11',chatId:'-100',topicId:'0',revision:0,updateId:String(++n),requested:true,...extra});
-const qa=new URL('../../docs/qa-1-12/',import.meta.url);
-before(async()=>{db=new TestDB();await db.init();await mkdir(qa,{recursive:true});});after(async()=>{await browsers.close();await db.close();});
+let qa:URL;
+before(async()=>{db=new TestDB();await db.init();qa=pathToFileURL(await mkdtemp(join(tmpdir(),'lumen-deep-test-'))+'/');});after(async()=>{await browsers.close();await db.close();await rm(qa,{recursive:true,force:true});});
 beforeEach(async()=>{await db.reset();await db.query('DELETE FROM domain_commands');await db.query('DELETE FROM media_assets');h=harness(db);await paired(h);for(const id of ['22','33','44','55'])await db.query('INSERT INTO members(user_id,name,active) VALUES($1,$2,true) ON CONFLICT(user_id) DO UPDATE SET active=true',[id,'Автор '+id]);});
 const source=async(body:string)=>Number((await db.query("INSERT INTO messages(telegram_id,user_id,author,role,body) VALUES($1,'11','А','user',$2) RETURNING id",[++n,body])).rows[0]!.id);
 test('five authors contribute 50 items; actual 50-page Unicode PDF and independent caption provenance',async()=>{

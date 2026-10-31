@@ -1,8 +1,0 @@
-{
-  "scope": "45s observed local functional-test process tree; includes PGlite and test runner, not a production 512MiB certification",
-  "samples": 179,
-  "sample_interval_ms": 250,
-  "combined_peak_rss_bytes": 1253994496,
-  "maximum_descendants": 1,
-  "memory_limit_enforced": false
-}

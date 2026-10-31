@@ -10,7 +10,7 @@ describe('Публікація 120 стікерів і відновлення н
     const assets=await stickerAssets();assert.equal(assets.length,120);
     for(const key of ['id','emoji','sha256','file','scene'] as const)assert.equal(new Set(assets.map(a=>a[key])).size,120,key);
     for(const a of assets){
-      assert.ok(a.motion_version===3||a.motion_version===4||a.motion_version===5);assert.ok(a.description.length>20);assert.ok(a.preview);
+      assert.ok(a.motion_version===3||a.motion_version===4||a.motion_version===5||a.motion_version===6);assert.ok(a.description.length>20);assert.ok(a.preview);
       const bytes=await readFile(new URL('../../assets/stickers/'+a.file,import.meta.url));
       assert.equal(bytes.length,a.bytes);assert.ok(bytes.length<=262144);assert.equal(bytes.subarray(0,4).toString('hex'),'1a45dfa3');assert.equal(createHash('sha256').update(bytes).digest('hex'),a.sha256);
       const png=await readFile(new URL('../../assets/stickers/'+a.preview,import.meta.url));assert.equal(png.subarray(1,4).toString(),'PNG');assert.equal(png.readUInt32BE(16),512);assert.equal(png.readUInt32BE(20),512);assert.equal(png[25],6);
