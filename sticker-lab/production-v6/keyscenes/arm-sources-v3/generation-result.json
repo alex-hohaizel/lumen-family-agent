@@ -1,0 +1,18 @@
+{
+  "source_output_path": "/workspace/scratch/a084aa8b0b33/generated_images/exec-96ea7323-daef-41d7-bea9-427129754a2d.png",
+  "project_copy_path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/arm-atlas-native.png",
+  "source_sha256": "5ace0374ed8bf691a3a0282638ebd1a79a6a68ae57d52badf427587e90f8b8df",
+  "project_copy_sha256": "5ace0374ed8bf691a3a0282638ebd1a79a6a68ae57d52badf427587e90f8b8df",
+  "image_size": [
+    1254,
+    1254
+  ],
+  "image_mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "transparent_pixels": 1096732,
+  "opaque_pixels": 422,
+  "copy_bytes_equal": true
+}

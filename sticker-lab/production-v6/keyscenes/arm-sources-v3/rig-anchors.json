@@ -1,0 +1,208 @@
+{
+  "schema": "lumen.arm-source-anchors/1",
+  "coordinate_convention": "pixel centers; origin top-left; x right; y down; atlas and exact crop spaces both recorded",
+  "native_atlas_size_px": [
+    1254,
+    1254
+  ],
+  "parts": {
+    "upper_arm_left": {
+      "crop_box_atlas": [
+        0,
+        0,
+        627,
+        570
+      ],
+      "anchors_atlas": {
+        "shoulder": [
+          397,
+          130
+        ],
+        "elbow": [
+          355,
+          455
+        ]
+      },
+      "girth_y_atlas": 455,
+      "file_path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/upper_arm_left.png",
+      "sha256": "85ecc81701097c09e3a86eb97c6090b0246a2ac1ee8ea7d175c1aab7748d4c8c",
+      "size_px": [
+        627,
+        570
+      ],
+      "content_bbox_alpha_ge_128_crop": [
+        239,
+        41,
+        495,
+        548
+      ],
+      "anchors_crop": {
+        "shoulder": [
+          397,
+          130
+        ],
+        "elbow": [
+          355,
+          455
+        ]
+      },
+      "source_axis_length_px": 327.70260908329675,
+      "native_crop_pixel_identity": true,
+      "crop_resampling": "none; exact native integer crop",
+      "opaque_cross_section_at_joint_px": 208,
+      "cross_section_alpha_threshold": 200,
+      "interior_alpha_median": 253,
+      "top_opaque_color": "cream, both ends"
+    },
+    "upper_arm_right": {
+      "crop_box_atlas": [
+        627,
+        0,
+        1254,
+        570
+      ],
+      "anchors_atlas": {
+        "shoulder": [
+          857,
+          130
+        ],
+        "elbow": [
+          899,
+          455
+        ]
+      },
+      "girth_y_atlas": 455,
+      "file_path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/upper_arm_right.png",
+      "sha256": "41d571770ef5bdf8721f10420ef0b432c5d459cc873ca9717e1461320ef4f5cb",
+      "size_px": [
+        627,
+        570
+      ],
+      "content_bbox_alpha_ge_128_crop": [
+        133,
+        41,
+        389,
+        548
+      ],
+      "anchors_crop": {
+        "shoulder": [
+          230,
+          130
+        ],
+        "elbow": [
+          272,
+          455
+        ]
+      },
+      "source_axis_length_px": 327.70260908329675,
+      "native_crop_pixel_identity": true,
+      "crop_resampling": "none; exact native integer crop",
+      "opaque_cross_section_at_joint_px": 206,
+      "cross_section_alpha_threshold": 200,
+      "interior_alpha_median": 253,
+      "top_opaque_color": "cream, both ends"
+    },
+    "forearm_left": {
+      "crop_box_atlas": [
+        0,
+        570,
+        627,
+        1254
+      ],
+      "anchors_atlas": {
+        "elbow": [
+          398,
+          685
+        ],
+        "paw_middle": [
+          374,
+          1097
+        ]
+      },
+      "girth_y_atlas": 685,
+      "file_path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/forearm_left.png",
+      "sha256": "6ebbbb69f6e9648474dd217850f6bb9ccc7f7dfa29b6128ca0318f2b9a4b0dc7",
+      "size_px": [
+        627,
+        684
+      ],
+      "content_bbox_alpha_ge_128_crop": [
+        228,
+        16,
+        527,
+        640
+      ],
+      "anchors_crop": {
+        "elbow": [
+          398,
+          115
+        ],
+        "paw_middle": [
+          374,
+          527
+        ]
+      },
+      "source_axis_length_px": 412.6984371184364,
+      "native_crop_pixel_identity": true,
+      "crop_resampling": "none; exact native integer crop",
+      "opaque_cross_section_at_joint_px": 198,
+      "cross_section_alpha_threshold": 200,
+      "interior_alpha_median": 253,
+      "top_opaque_color": "cream"
+    },
+    "forearm_right": {
+      "crop_box_atlas": [
+        627,
+        570,
+        1254,
+        1254
+      ],
+      "anchors_atlas": {
+        "elbow": [
+          856,
+          685
+        ],
+        "paw_middle": [
+          880,
+          1097
+        ]
+      },
+      "girth_y_atlas": 685,
+      "file_path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/forearm_right.png",
+      "sha256": "a6b9ab5eed7337916a3335eef9eec85e6db9e64e5d9b1de67145252c4d40ce0f",
+      "size_px": [
+        627,
+        684
+      ],
+      "content_bbox_alpha_ge_128_crop": [
+        101,
+        15,
+        400,
+        640
+      ],
+      "anchors_crop": {
+        "elbow": [
+          229,
+          115
+        ],
+        "paw_middle": [
+          253,
+          527
+        ]
+      },
+      "source_axis_length_px": 412.6984371184364,
+      "native_crop_pixel_identity": true,
+      "crop_resampling": "none; exact native integer crop",
+      "opaque_cross_section_at_joint_px": 200,
+      "cross_section_alpha_threshold": 200,
+      "interior_alpha_median": 253,
+      "top_opaque_color": "cream"
+    }
+  },
+  "rigging_notes": [
+    "Both elbow caps are opaque cream and rounded; overlay around their interior anchors, not at the silhouette extremity.",
+    "Preserve transverse girth when fitting source axes. Uniform length-based scaling alone can make upper and forearm widths differ because their source axis lengths differ.",
+    "Recommended scene-space elbow shaft diameter is matched between upper and forearm; source cross sections are recorded to calibrate anisotropic fitting if needed.",
+    "No preexisting component has been overwritten. These are newly generated sources, not recovered original art."
+  ]
+}

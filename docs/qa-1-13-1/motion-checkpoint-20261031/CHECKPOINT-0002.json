@@ -1,0 +1,23 @@
+{
+  "schema": "lumen.source-checkpoint/1",
+  "sequence": 2,
+  "created_at_utc": "2026-10-31T15:17:01.211226+00:00",
+  "scope": "Exact lumen132 revision3c source art, native crops, generation prompt/provenance, frozen generator and recipe/proof metadata",
+  "publication_intent": "Private WIP source preservation; native/playback review pending, not release",
+  "parent_commit": "457f4b129bbda0ab5b84cf4a3f43a0697a9a72d5",
+  "source_inputs": "Raw exact generated arm atlas plus all4 native crop PNGs and rig anchors are included; required unchanged P5 dependencies remain in inherited tree.",
+  "pending_output_files": [
+    "132r3c/candidate.webm",
+    "132r3c/preview.png",
+    "132r3c/states.json",
+    "132r3c/all84.jpg",
+    "132r3c/phases.jpg",
+    "arm-source QA diagnostic images"
+  ],
+  "runtime_version": "1.13.0",
+  "main_modified": false,
+  "telegram_modified": false,
+  "render_modified": false,
+  "complete_authoring_package": false,
+  "native_timed_playback_observed": false
+}

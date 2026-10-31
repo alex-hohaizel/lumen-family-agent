@@ -1,0 +1,31 @@
+{
+  "schema": "lumen.generated-source-request/1",
+  "actual_author": "/root/arm_source_repair",
+  "reports_to": "/root",
+  "created_at_utc": "2026-10-31T12:49:10.206620+00:00",
+  "tool": "built-in image_gen.imagegen",
+  "tool_only": true,
+  "transparent_background": true,
+  "exact_prompt_path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/prompt.txt",
+  "prompt_sha256": "5e41e2bd376429778825d98e822998d6f9316ad4a479745113a5e001acda2ef9",
+  "references": [
+    {
+      "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v5/approved-sources/lumen_132/component-body.png",
+      "role": "reference image 1: exact character identity, color, short fur, material, exposure; not an edit target",
+      "sha256": "061a541f0fe37db964703bcc6ef23a9fe06ce6c5cd94214365dd438548f52bd2"
+    },
+    {
+      "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v5/approved-sources/lumen_132/component-arm_left.png",
+      "role": "reference image 2: existing left paw anatomy and color only; exclude proximal blue cap",
+      "sha256": "d5b959567a31330c55ef3e3de48e8e197e2fdda69559f2a517dfe6aad1edd274"
+    },
+    {
+      "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v5/approved-sources/lumen_132/component-arm_right.png",
+      "role": "reference image 3: existing right paw anatomy and color only; exclude proximal blue cap",
+      "sha256": "46df8e2b01b5b0a6c5e829c3d7c08561eaaec7708f604847b862ff5627b059c3"
+    }
+  ],
+  "requested_output": "one 2x2 transparent four-component sprite atlas",
+  "authorization": "Parent reports user preapproved built-in imagegen for full 1201.13.1 repair; no external publication or audio",
+  "status": "prepared_before_generation"
+}

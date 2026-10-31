@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "id": "lumen_132",
+  "revision": "3c",
+  "renderer": {
+    "path": "sticker-lab/production-v6/keyscenes/render_132_v3c.py",
+    "sha256": "9897b24fa220b66bdf93875d012a9aad169a78e6e51dcc37f51ab4902beeabf2"
+  },
+  "inputs": [
+    {
+      "path": "sticker-lab/production-v5/approved-recipes/lumen_132_explicit_layers_v1.json",
+      "sha256": "7718775e9e8b94303953939f3b55da52f43add78a4cd068a999cf9b3ef4591bc"
+    },
+    {
+      "path": "sticker-lab/production-v5/approved-proofs/lumen_132_explicit_layers_v1-extraction.json",
+      "sha256": "1c56cd1101539a8b466335bb8d33db11f74c9bced0b54d0d5b60b56ca64f5943"
+    },
+    {
+      "path": "sticker-lab/production-v5/approved-sources/lumen_132/generation-metadata.json",
+      "sha256": "07146f89efd636ad2e13845a715767261b09616cc81f5a47f675d112b51faee5"
+    },
+    {
+      "path": "sticker-lab/production-v5/approved-sources/lumen_132/component-arm_left.png",
+      "sha256": "d5b959567a31330c55ef3e3de48e8e197e2fdda69559f2a517dfe6aad1edd274"
+    },
+    {
+      "path": "sticker-lab/production-v5/approved-sources/lumen_132/component-arm_right.png",
+      "sha256": "46df8e2b01b5b0a6c5e829c3d7c08561eaaec7708f604847b862ff5627b059c3"
+    },
+    {
+      "path": "sticker-lab/production-v5/approved-sources/lumen_132/component-body.png",
+      "sha256": "061a541f0fe37db964703bcc6ef23a9fe06ce6c5cd94214365dd438548f52bd2"
+    },
+    {
+      "path": "sticker-lab/production-v5/approved-sources/lumen_132/component-bow.png",
+      "sha256": "c649505f921f825831a1619ceaed7df91f788961a443bdcc9274e03a461cc6ef"
+    },
+    {
+      "path": "sticker-lab/production-v5/approved-sources/lumen_132/component-box.png",
+      "sha256": "bf3d3023bf422075b7a6622cd41491fe165ed5701ca1e563bfd9b7aa31b47e62"
+    },
+    {
+      "path": "sticker-lab/production-v5/approved-sources/lumen_132/component-lid_inside.png",
+      "sha256": "436730a9e8e3db1017bf37005785b00d63ba364c03daffc4b9fe8d47f5ece9c5"
+    },
+    {
+      "path": "sticker-lab/production-v5/approved-sources/lumen_132/component-lid_outside.png",
+      "sha256": "bc3b74628180274264af5db6ee7e50a0612c6e3b81691630e26da18b584d4005"
+    },
+    {
+      "path": "sticker-lab/production-v5/approved-sources/lumen_132/component-spring.png",
+      "sha256": "e91c321ac548662c21e2aa7e7ca9ee243648e93913fac618cb6533e9ff98f66b"
+    },
+    {
+      "path": "sticker-lab/production-v5/approved-sources/lumen_132/component-star.png",
+      "sha256": "dc4f7ee3663ee853d24f89a8a8615a06086630767c46d0fd2a78eb8b599b3fa0"
+    },
+    {
+      "path": "sticker-lab/production-v5/approved-sources/lumen_132/component-upper_arm.png",
+      "sha256": "85b69eaa79f3ac6472f039598133fe3bf95f58852dc14631193d3c0e8966e066"
+    },
+    {
+      "path": "sticker-lab/production-v5/approved-generators/integration-layer132-r2-v1/lumen_132/layer_renderer_132_v1.py",
+      "sha256": "9e0cb2579bb3517b54488d811c34d46ca7f4b1e7a3299573693353803c8846b7"
+    },
+    {
+      "path": "sticker-lab/production-v5/approved-generators/integration-layer138-r4-v1/lumen_138/layer_renderer_138_side_r4.py",
+      "sha256": "804b592efa152a74003fc0eeb3f9cfd9d4ae7b9722d6abc04f3fbf3c4ad694bc"
+    },
+    {
+      "path": "sticker-lab/production-v5/approved-generators/integration-layer132-r2-v1/lumen_132/support_snapshot.py",
+      "sha256": "3ff75e2bd1eb35daf37503c7f46e3610b195e24e21a24dd3e3be8c8d5f3dc6b8"
+    },
+    {
+      "path": "sticker-lab/production-v6/keyscenes/arm-sources-v3/upper_arm_left.png",
+      "sha256": "85ecc81701097c09e3a86eb97c6090b0246a2ac1ee8ea7d175c1aab7748d4c8c",
+      "role": "new imagegen anatomical component"
+    },
+    {
+      "path": "sticker-lab/production-v6/keyscenes/arm-sources-v3/upper_arm_right.png",
+      "sha256": "41d571770ef5bdf8721f10420ef0b432c5d459cc873ca9717e1461320ef4f5cb",
+      "role": "new imagegen anatomical component"
+    },
+    {
+      "path": "sticker-lab/production-v6/keyscenes/arm-sources-v3/forearm_left.png",
+      "sha256": "6ebbbb69f6e9648474dd217850f6bb9ccc7f7dfa29b6128ca0318f2b9a4b0dc7",
+      "role": "new imagegen anatomical component"
+    },
+    {
+      "path": "sticker-lab/production-v6/keyscenes/arm-sources-v3/forearm_right.png",
+      "sha256": "a6b9ab5eed7337916a3335eef9eec85e6db9e64e5d9b1de67145252c4d40ce0f",
+      "role": "new imagegen anatomical component"
+    },
+    {
+      "path": "sticker-lab/production-v6/keyscenes/arm-sources-v3/rig-anchors.json",
+      "sha256": "295601e73a4bd1a4d7e9dcaf609cb76c8f44c0de1ad00b79af5fb8ce6557b1c5",
+      "role": "new source generation lineage"
+    },
+    {
+      "path": "sticker-lab/production-v6/keyscenes/arm-sources-v3/FINAL-source.json",
+      "sha256": "476d0feec74820cf52e540ffd5a30a05e97dff8072773efcebc14a294c3b1926",
+      "role": "new source generation lineage"
+    },
+    {
+      "path": "sticker-lab/production-v6/keyscenes/arm-sources-v3/pre-generation.json",
+      "sha256": "210c5f8f05e27b885831b2866046b1826d3e9a320039b4282be0774b4a3a4243",
+      "role": "new source generation lineage"
+    },
+    {
+      "path": "sticker-lab/production-v6/keyscenes/arm-sources-v3/generation-result.json",
+      "sha256": "9c5c7562b22676ef26d2a9019dbb5d8f4b71dae1579f2a5dc5d1bc356bab26cf",
+      "role": "new source generation lineage"
+    },
+    {
+      "path": "sticker-lab/production-v6/keyscenes/arm-sources-v3/prompt.txt",
+      "sha256": "5e41e2bd376429778825d98e822998d6f9316ad4a479745113a5e001acda2ef9",
+      "role": "new source generation lineage"
+    },
+    {
+      "path": "sticker-lab/production-v6/keyscenes/arm-sources-v3/arm-atlas-native.png",
+      "sha256": "5ace0374ed8bf691a3a0282638ebd1a79a6a68ae57d52badf427587e90f8b8df",
+      "role": "new source generation lineage"
+    }
+  ],
+  "output": {
+    "path": "sticker-lab/production-v6/keyscenes/lumen_132-r3c/candidate.webm",
+    "sha256": "26dba55cae54475dd124e1486a034dfc44be9ba7861eca5e2384cf72acab4821",
+    "bytes": 251590
+  },
+  "motion": "same star/box cycle; continuous 3D two-bone elbow projection, opaque rounded cream components; wrist reach avoids shoulder crossing",
+  "geometry": {
+    "upper_bone": 62,
+    "lower_bone": 72,
+    "min_reach": 10.5,
+    "max_reach": 133.5,
+    "wrist_arc_phase": [
+      0.42,
+      0.56
+    ],
+    "transverse_source_scale": 0.14
+  },
+  "provenance": "New components by /root/arm_source_repair, exact built-in imagegen prompt and input/output lineage included",
+  "reproduce": "python3 sticker-lab/production-v6/keyscenes/render_132_v3c.py lumen_132 --output /absolute/new/empty/revision",
+  "compositing": "upper+fore sharedepth infrontopenlid; nativefrontboxstilloccludesinsertedarm"
+}

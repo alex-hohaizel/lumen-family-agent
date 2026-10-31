@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "actual_actor_id": "/root",
+  "role": "author self-review only",
+  "id": "lumen_132",
+  "candidate_sha256": "26dba55cae54475dd124e1486a034dfc44be9ba7861eca5e2384cf72acab4821",
+  "renderer_sha256": "9897b24fa220b66bdf93875d012a9aad169a78e6e51dcc37f51ab4902beeabf2",
+  "viewed": [
+    "all84 finaldecoded chronological on all84.jpg originaldetail",
+    "native final f48 andf60 arm-lid and boxfront depth",
+    "previousfullgeometry/context/bone checks unchanged"
+  ],
+  "performed": [
+    "84PNG source frames generated",
+    "84finalRGBAdecoded",
+    "3D bone lengths62/72 constant within1e-8 across168arms",
+    "all168routedwristtargets reached exactly; no min/maxclamp used",
+    "same full body transform used by shoulders",
+    "new rounded cream joint sources; no proximal teal duplicate or source hard cut",
+    "full source generation lineage+native crops declared; no painted raster patches"
+  ],
+  "limits": [
+    "This is 2D source artwork on projected3D skeletal positions; not a newly modeled3D character.",
+    "All84frame spatialreview and numericaltimingdiagnostics do not establish human/device/native-motionfeel.",
+    "Left idle forearm can be partly hidden by cloak; verify joint continuity independently."
+  ],
+  "supersedes_rejected": [
+    "132r1 fixed bones but retained badsourcecap",
+    "132r2 hardproximalcut+wrongpole exposedflatends",
+    "132r3a fullgeometryguard caught shoulder-crossing minimumreach violation beforeFINAL"
+  ],
+  "strategy_change": "After2 failed source+IK revisions inspect real component topology/girth. New imagegen rounded sources plus fixed3Dbones; addressed negative wristreach diagnostic by smooth arc with identical contact endpoints.",
+  "independent_qa": "pending",
+  "created_at_utc": "2026-10-31T13:10:06.497164+00:00",
+  "revision": "3c",
+  "addressed_independent_negative": "3b right upperarm hidden behind openlid whileforearm infront. Bothupper+fore nowcompositedtogetherinfrontopenlid; boxfrontstillowns insertedpawocclusion."
+}
