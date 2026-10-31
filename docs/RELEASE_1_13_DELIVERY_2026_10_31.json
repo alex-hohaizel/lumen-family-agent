@@ -1,80 +1,245 @@
 {
   "release": "1.13.0",
-  "status": "not_deployed",
-  "checked_at": "2026-10-31T00:10:23.885154+00:00",
+  "status": "live_verified_joint_release",
+  "checked_at": "2026-10-31T02:57:19.100Z",
   "repository": "alex-hohaizel/lumen-family-agent",
-  "repository_visibility": "private",
-  "repository_visibility_changed": false,
-  "attempted_commit": "17d8e884c1b715b544e33c153cf7ec01f1c0785d",
+  "branch": "main",
+  "current_code_hash": "868cff70bdc68619d82efffc86e9512eae1388e4e29bf28275c7d775cd5e5bca",
   "render": {
     "service": "srv-dbfl0je7bikc73dvg0qg",
-    "deploy": "dep-dbiipt7b9u1s73dej050",
-    "status": "build_failed",
-    "finished_at": "2026-10-30T23:58:01.607062Z",
+    "workspace": "tea-dbf5jsfb9u1s73bn4d1g",
+    "deploy": "dep-dbil9q0ae00c73c0upi0",
+    "status": "live",
+    "started_at": "2026-10-31T02:39:36.141041Z",
+    "finished_at": "2026-10-31T02:52:50.508992Z",
+    "build_succeeded_at": "2026-10-31T02:52:16.579138516Z",
     "auto_deploy": "off"
   },
-  "server_tests": {
-    "tests": 1086,
-    "pass": 1085,
-    "fail": 1,
-    "skipped": 0,
-    "cancelled": 0,
-    "duration_ms": 505367.502695,
-    "failed_case": "worker refuses typed file claim with changed-bytes while preserving the actual sent receipt"
-  },
-  "cause": "Test appended AAAA after padded base64; decoded PDF could remain identical, so truthful delivery was accepted. Product unchanged.",
-  "repair": {
-    "scope": "test_only",
-    "physical_bytes_changed": true,
-    "original_receipt_preserved": true,
-    "module_author_tests": "53/53",
-    "independent_module_tests": "53/53",
-    "independent_actual_controls": "10/10",
-    "test_sha256": "19744ebb057ecb8d67f6f11a10c010f9ddb7a1d4d31165e8cc3acee9f8dda989"
-  },
-  "current_code_hash": "263d25ea9ca674a87abf6c81b96a51753c99a9f56e3f72e4dbc77739ad80a8f2",
-  "current_coverage": {
-    "unchanged_server_tests_passed": 1033,
-    "affected_current_module_passed": 53,
-    "total": 1086,
-    "single_new_clean_full_run": false
-  },
   "production": {
-    "version": "1.12.0",
-    "commit": "91c7970aada6bafc6d7205b8d0fa4ace6f1969af",
-    "deploy": "dep-dbiac4ou01pc73948ef0",
-    "status": "live"
+    "version": "1.13.0",
+    "commit": "38de3001dc87e36e5fc4531e9b3f2a72ba294483",
+    "started_at": "2026-10-31T02:53:52.444335977Z",
+    "model_probe": "gpt-6.1-sol"
   },
-  "joint_release_requirement": "Only activate code with the entire approved updated120 sticker pack; no further code-only deploy.",
-  "stickers": {
-    "expected_count": 120,
-    "prepared_individual_repairs": 71,
-    "new_binaries_published": false,
-    "telegram_pack_changed": false,
-    "publication_blocker": "Automatic review rejects opaque GitHub binary upload even after exact direct authorization and fresh private-owner verification."
+  "source": {
+    "tree": "dc022b2036e9710f9d54286831ac6e1a182eaad1",
+    "frozen_files": 1492,
+    "matched_physical_sha256": 1492,
+    "remote_tree_equals_tested_tree": true
   },
-  "access": {
-    "render_connector": "available",
-    "browser_auth": "not_completed; not needed for supported connector operations",
-    "github_permission_observed": "Allow low-risk actions; inherits default",
-    "proposed_specific_permission_mode": "ask_before_writes; pending explicit user choice; not applied"
+  "server_tests": {
+    "tests": 1099,
+    "suites": 47,
+    "pass": 1099,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "duration_ms": 694840.237908
   },
-  "limits": [
-    "No 1.13 production activation.",
-    "No new Telegram sticker delivery receipt.",
-    "New whole criterion council and human/native/mobile motion remain unclaimed."
-  ],
-  "current_prepared_code_hash": "868cff70bdc68619d82efffc86e9512eae1388e4e29bf28275c7d775cd5e5bca",
-  "startup_gate_prepared": {
-    "required_flag": "LUMEN_REQUIRE_VERIFIED_STICKER_PACK",
-    "existing_service_enabled": false,
+  "isolated_tests": {
+    "tests": 1099,
+    "pass": 1099,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "duration_ms": 685751.381786
+  },
+  "joint_gate": {
+    "flag": "LUMEN_REQUIRE_VERIFIED_STICKER_PACK",
+    "configured_value": "true",
+    "required_for_activation": true,
     "approved_ordered120_fingerprint": "589ce76b16ff3d4fa47ed71fab166dfaa8eb80e962a05ceb2e2aaeb91ce3181a",
-    "independent_tests": "36/36",
-    "independent_actual_controls": "14/14",
-    "full_new_suite": "pending",
-    "production": "not activated"
+    "all_checks_before_chat_start": true
   },
-  "actual_main_prepared_code": "8a8d2f86cb0551064f203806b0d2d21197abf4aa",
-  "unreferenced_startup_preparation_commit": "52238895455c2471da2961622854a141e463fe14",
-  "startup_preparation_main_update": "rejected by automatic review because code-only main advance conflicts with joint120 requirement"
+  "stickers": {
+    "name": "Lumen_120_Emotions_by_lumen_family_agent",
+    "title": "Люмен — 120 настроїв",
+    "url": "https://t.me/addstickers/Lumen_120_Emotions_by_lumen_family_agent",
+    "count": 120,
+    "matched_assets": 120,
+    "matched_memberships": 120,
+    "verified_at": "2026-10-31T02:53:52.408Z",
+    "verification_source": "production Telegram getStickerSet after build and real npm start; unit-test log events excluded",
+    "new_binaries_published": true,
+    "telegram_pack_changed": true,
+    "individual_animation_repairs_delivered": 71
+  },
+  "runtime_checks": {
+    "passed": 11,
+    "failed": 0,
+    "checked_at": "2026-10-31T02:56:35.112975444Z",
+    "checks": [
+      {
+        "name": "web_read",
+        "ok": true,
+        "timestamp": "2026-10-31T02:53:52.499085608Z",
+        "log_id": "1104fecc-13c2-47e9-87b2-f1be7f9c5f40"
+      },
+      {
+        "name": "public_search",
+        "ok": true,
+        "timestamp": "2026-10-31T02:53:52.708014433Z",
+        "log_id": "181fbfdf-14fb-474a-8004-073a9bec1805"
+      },
+      {
+        "name": "native_search",
+        "ok": true,
+        "timestamp": "2026-10-31T02:54:06.261900476Z",
+        "log_id": "26463cfd-e9db-433a-807f-32ca588b6751"
+      },
+      {
+        "name": "automatic_freshness_choice",
+        "ok": true,
+        "timestamp": "2026-10-31T02:54:22.84413798Z",
+        "log_id": "5ca2ca03-f23d-475e-a26e-026fd3bd0d3c"
+      },
+      {
+        "name": "browser",
+        "ok": true,
+        "timestamp": "2026-10-31T02:54:29.881301763Z",
+        "log_id": "9cdde4bd-9e1e-4da6-90e3-936df0340fcd"
+      },
+      {
+        "name": "compute",
+        "ok": true,
+        "timestamp": "2026-10-31T02:54:30.202692187Z",
+        "log_id": "65dbc7c3-1096-444d-9cc8-a829f52b3a54"
+      },
+      {
+        "name": "documents",
+        "ok": true,
+        "timestamp": "2026-10-31T02:54:35.143129737Z",
+        "log_id": "61763e77-845f-4738-ac60-d1de1669a25a"
+      },
+      {
+        "name": "interactions",
+        "ok": true,
+        "timestamp": "2026-10-31T02:55:00.908618824Z",
+        "log_id": "e81b6bce-eb48-4708-9abe-5924412ee1d0"
+      },
+      {
+        "name": "personalization_scheduling_190",
+        "ok": true,
+        "timestamp": "2026-10-31T02:55:34.002231084Z",
+        "log_id": "3caae6c4-d10a-4520-9ea5-36363fde1c58"
+      },
+      {
+        "name": "behavior_111_r2",
+        "ok": true,
+        "timestamp": "2026-10-31T02:56:12.207269631Z",
+        "log_id": "608bf638-5dea-4608-8896-562a8bb97f89"
+      },
+      {
+        "name": "companion_113",
+        "ok": true,
+        "timestamp": "2026-10-31T02:56:35.112975444Z",
+        "log_id": "ca6eb437-c93f-4eed-9263-f746954c3efa"
+      }
+    ]
+  },
+  "activation_order": [
+    {
+      "event": "sticker_pack_verified",
+      "timestamp": "2026-10-31T02:53:52.409249676Z",
+      "log_id": "7e3fb4f0-12fb-40aa-80bf-060d89795976"
+    },
+    {
+      "event": "sticker_pack_ready",
+      "timestamp": "2026-10-31T02:53:52.409290567Z",
+      "log_id": "60a34aac-62f0-44fd-8a17-4a183b22fda0"
+    },
+    {
+      "event": "lumen_started",
+      "timestamp": "2026-10-31T02:53:52.444335977Z",
+      "log_id": "9adb3f09-f4bd-4452-83ae-e2f1daf0065c"
+    }
+  ],
+  "new_voice_enabled": false,
+  "previous_attempts": [
+    {
+      "release": "1.13.0",
+      "status": "not_deployed",
+      "checked_at": "2026-10-31T00:10:23.885154+00:00",
+      "repository": "alex-hohaizel/lumen-family-agent",
+      "repository_visibility": "private",
+      "repository_visibility_changed": false,
+      "attempted_commit": "17d8e884c1b715b544e33c153cf7ec01f1c0785d",
+      "render": {
+        "service": "srv-dbfl0je7bikc73dvg0qg",
+        "deploy": "dep-dbiipt7b9u1s73dej050",
+        "status": "build_failed",
+        "finished_at": "2026-10-30T23:58:01.607062Z",
+        "auto_deploy": "off"
+      },
+      "server_tests": {
+        "tests": 1086,
+        "pass": 1085,
+        "fail": 1,
+        "skipped": 0,
+        "cancelled": 0,
+        "duration_ms": 505367.502695,
+        "failed_case": "worker refuses typed file claim with changed-bytes while preserving the actual sent receipt"
+      },
+      "cause": "Test appended AAAA after padded base64; decoded PDF could remain identical, so truthful delivery was accepted. Product unchanged.",
+      "repair": {
+        "scope": "test_only",
+        "physical_bytes_changed": true,
+        "original_receipt_preserved": true,
+        "module_author_tests": "53/53",
+        "independent_module_tests": "53/53",
+        "independent_actual_controls": "10/10",
+        "test_sha256": "19744ebb057ecb8d67f6f11a10c010f9ddb7a1d4d31165e8cc3acee9f8dda989"
+      },
+      "current_code_hash": "263d25ea9ca674a87abf6c81b96a51753c99a9f56e3f72e4dbc77739ad80a8f2",
+      "current_coverage": {
+        "unchanged_server_tests_passed": 1033,
+        "affected_current_module_passed": 53,
+        "total": 1086,
+        "single_new_clean_full_run": false
+      },
+      "production": {
+        "version": "1.12.0",
+        "commit": "91c7970aada6bafc6d7205b8d0fa4ace6f1969af",
+        "deploy": "dep-dbiac4ou01pc73948ef0",
+        "status": "live"
+      },
+      "joint_release_requirement": "Only activate code with the entire approved updated120 sticker pack; no further code-only deploy.",
+      "stickers": {
+        "expected_count": 120,
+        "prepared_individual_repairs": 71,
+        "new_binaries_published": false,
+        "telegram_pack_changed": false,
+        "publication_blocker": "Automatic review rejects opaque GitHub binary upload even after exact direct authorization and fresh private-owner verification."
+      },
+      "access": {
+        "render_connector": "available",
+        "browser_auth": "not_completed; not needed for supported connector operations",
+        "github_permission_observed": "Allow low-risk actions; inherits default",
+        "proposed_specific_permission_mode": "ask_before_writes; pending explicit user choice; not applied"
+      },
+      "limits": [
+        "No 1.13 production activation.",
+        "No new Telegram sticker delivery receipt.",
+        "New whole criterion council and human/native/mobile motion remain unclaimed."
+      ],
+      "current_prepared_code_hash": "868cff70bdc68619d82efffc86e9512eae1388e4e29bf28275c7d775cd5e5bca",
+      "startup_gate_prepared": {
+        "required_flag": "LUMEN_REQUIRE_VERIFIED_STICKER_PACK",
+        "existing_service_enabled": false,
+        "approved_ordered120_fingerprint": "589ce76b16ff3d4fa47ed71fab166dfaa8eb80e962a05ceb2e2aaeb91ce3181a",
+        "independent_tests": "36/36",
+        "independent_actual_controls": "14/14",
+        "full_new_suite": "pending",
+        "production": "not activated"
+      },
+      "actual_main_prepared_code": "8a8d2f86cb0551064f203806b0d2d21197abf4aa",
+      "unreferenced_startup_preparation_commit": "52238895455c2471da2961622854a141e463fe14",
+      "startup_preparation_main_update": "rejected by automatic review because code-only main advance conflicts with joint120 requirement"
+    }
+  ],
+  "limits": [
+    "Human perception of animation smoothness and a manual Android/iOS chat walkthrough are not established by automated checks.",
+    "The prior criterion council is historical; this release does not claim a new whole-council review."
+  ]
 }

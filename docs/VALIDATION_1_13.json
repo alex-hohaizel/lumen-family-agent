@@ -1,47 +1,172 @@
 {
   "version": "1.13.0",
-  "stage": "joint_candidate_not_deployed",
+  "stage": "live_verified_joint_release",
   "code_hash": "868cff70bdc68619d82efffc86e9512eae1388e4e29bf28275c7d775cd5e5bca",
-  "server_attempt": {
-    "tests": 1086,
-    "pass": 1085,
-    "fail": 1,
-    "skipped": 0,
+  "release_commit": "38de3001dc87e36e5fc4531e9b3f2a72ba294483",
+  "release_tree": "dc022b2036e9710f9d54286831ac6e1a182eaad1",
+  "frozen_files_verified": 1492,
+  "server_full_run": {
+    "tests": 1099,
+    "suites": 47,
+    "pass": 1099,
+    "fail": 0,
     "cancelled": 0,
-    "duration_ms": 505367.502695,
-    "failed_case": "worker refuses typed file claim with changed-bytes while preserving the actual sent receipt"
+    "skipped": 0,
+    "todo": 0,
+    "duration_ms": 694840.237908
   },
-  "test_only_repair": {
-    "scope": "test_only",
-    "physical_bytes_changed": true,
-    "original_receipt_preserved": true,
-    "module_author_tests": "53/53",
-    "independent_module_tests": "53/53",
-    "independent_actual_controls": "10/10",
-    "test_sha256": "19744ebb057ecb8d67f6f11a10c010f9ddb7a1d4d31165e8cc3acee9f8dda989"
+  "isolated_full_run": {
+    "tests": 1099,
+    "pass": 1099,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "duration_ms": 685751.381786
   },
-  "current_coverage": {
-    "unchanged_server_tests_passed": 1033,
-    "affected_current_module_passed": 53,
-    "total": 1086,
-    "single_new_clean_full_run": false,
-    "all_current_tests_covered": false,
-    "scope": "Historic server and fixture repair; additional startup config/main has only addressed verification."
-  },
-  "production_version": "1.12.0",
-  "required_stickers": 120,
-  "sticker_repairs_prepared_not_delivered": 71,
+  "production_version": "1.13.0",
   "joint_delivery_only": true,
-  "limits": [
-    "No 1.13 production activation.",
-    "No new Telegram sticker delivery receipt.",
-    "New whole criterion council and human/native/mobile motion remain unclaimed."
-  ],
   "startup_gate": {
-    "strict_flag": "LUMEN_REQUIRE_VERIFIED_STICKER_PACK",
-    "independent_tests": "36/36",
-    "independent_actual_controls": "14/14",
-    "fingerprint": "589ce76b16ff3d4fa47ed71fab166dfaa8eb80e962a05ceb2e2aaeb91ce3181a",
-    "full_new_suite": "pending"
-  }
+    "flag": "LUMEN_REQUIRE_VERIFIED_STICKER_PACK",
+    "configured_value": "true",
+    "required_for_activation": true,
+    "approved_ordered120_fingerprint": "589ce76b16ff3d4fa47ed71fab166dfaa8eb80e962a05ceb2e2aaeb91ce3181a",
+    "all_checks_before_chat_start": true
+  },
+  "stickers": {
+    "name": "Lumen_120_Emotions_by_lumen_family_agent",
+    "title": "Люмен — 120 настроїв",
+    "url": "https://t.me/addstickers/Lumen_120_Emotions_by_lumen_family_agent",
+    "count": 120,
+    "matched_assets": 120,
+    "matched_memberships": 120,
+    "verified_at": "2026-10-31T02:53:52.408Z",
+    "verification_source": "production Telegram getStickerSet after build and real npm start; unit-test log events excluded",
+    "new_binaries_published": true,
+    "telegram_pack_changed": true,
+    "individual_animation_repairs_delivered": 71
+  },
+  "runtime_checks": {
+    "passed": 11,
+    "failed": 0,
+    "checked_at": "2026-10-31T02:56:35.112975444Z",
+    "checks": [
+      {
+        "name": "web_read",
+        "ok": true,
+        "timestamp": "2026-10-31T02:53:52.499085608Z",
+        "log_id": "1104fecc-13c2-47e9-87b2-f1be7f9c5f40"
+      },
+      {
+        "name": "public_search",
+        "ok": true,
+        "timestamp": "2026-10-31T02:53:52.708014433Z",
+        "log_id": "181fbfdf-14fb-474a-8004-073a9bec1805"
+      },
+      {
+        "name": "native_search",
+        "ok": true,
+        "timestamp": "2026-10-31T02:54:06.261900476Z",
+        "log_id": "26463cfd-e9db-433a-807f-32ca588b6751"
+      },
+      {
+        "name": "automatic_freshness_choice",
+        "ok": true,
+        "timestamp": "2026-10-31T02:54:22.84413798Z",
+        "log_id": "5ca2ca03-f23d-475e-a26e-026fd3bd0d3c"
+      },
+      {
+        "name": "browser",
+        "ok": true,
+        "timestamp": "2026-10-31T02:54:29.881301763Z",
+        "log_id": "9cdde4bd-9e1e-4da6-90e3-936df0340fcd"
+      },
+      {
+        "name": "compute",
+        "ok": true,
+        "timestamp": "2026-10-31T02:54:30.202692187Z",
+        "log_id": "65dbc7c3-1096-444d-9cc8-a829f52b3a54"
+      },
+      {
+        "name": "documents",
+        "ok": true,
+        "timestamp": "2026-10-31T02:54:35.143129737Z",
+        "log_id": "61763e77-845f-4738-ac60-d1de1669a25a"
+      },
+      {
+        "name": "interactions",
+        "ok": true,
+        "timestamp": "2026-10-31T02:55:00.908618824Z",
+        "log_id": "e81b6bce-eb48-4708-9abe-5924412ee1d0"
+      },
+      {
+        "name": "personalization_scheduling_190",
+        "ok": true,
+        "timestamp": "2026-10-31T02:55:34.002231084Z",
+        "log_id": "3caae6c4-d10a-4520-9ea5-36363fde1c58"
+      },
+      {
+        "name": "behavior_111_r2",
+        "ok": true,
+        "timestamp": "2026-10-31T02:56:12.207269631Z",
+        "log_id": "608bf638-5dea-4608-8896-562a8bb97f89"
+      },
+      {
+        "name": "companion_113",
+        "ok": true,
+        "timestamp": "2026-10-31T02:56:35.112975444Z",
+        "log_id": "ca6eb437-c93f-4eed-9263-f746954c3efa"
+      }
+    ]
+  },
+  "historical_candidate_validation": {
+    "version": "1.13.0",
+    "stage": "joint_candidate_not_deployed",
+    "code_hash": "868cff70bdc68619d82efffc86e9512eae1388e4e29bf28275c7d775cd5e5bca",
+    "server_attempt": {
+      "tests": 1086,
+      "pass": 1085,
+      "fail": 1,
+      "skipped": 0,
+      "cancelled": 0,
+      "duration_ms": 505367.502695,
+      "failed_case": "worker refuses typed file claim with changed-bytes while preserving the actual sent receipt"
+    },
+    "test_only_repair": {
+      "scope": "test_only",
+      "physical_bytes_changed": true,
+      "original_receipt_preserved": true,
+      "module_author_tests": "53/53",
+      "independent_module_tests": "53/53",
+      "independent_actual_controls": "10/10",
+      "test_sha256": "19744ebb057ecb8d67f6f11a10c010f9ddb7a1d4d31165e8cc3acee9f8dda989"
+    },
+    "current_coverage": {
+      "unchanged_server_tests_passed": 1033,
+      "affected_current_module_passed": 53,
+      "total": 1086,
+      "single_new_clean_full_run": false,
+      "all_current_tests_covered": false,
+      "scope": "Historic server and fixture repair; additional startup config/main has only addressed verification."
+    },
+    "production_version": "1.12.0",
+    "required_stickers": 120,
+    "sticker_repairs_prepared_not_delivered": 71,
+    "joint_delivery_only": true,
+    "limits": [
+      "No 1.13 production activation.",
+      "No new Telegram sticker delivery receipt.",
+      "New whole criterion council and human/native/mobile motion remain unclaimed."
+    ],
+    "startup_gate": {
+      "strict_flag": "LUMEN_REQUIRE_VERIFIED_STICKER_PACK",
+      "independent_tests": "36/36",
+      "independent_actual_controls": "14/14",
+      "fingerprint": "589ce76b16ff3d4fa47ed71fab166dfaa8eb80e962a05ceb2e2aaeb91ce3181a",
+      "full_new_suite": "pending"
+    }
+  },
+  "limits": [
+    "Human perception of animation smoothness and a manual Android/iOS chat walkthrough are not established by automated checks.",
+    "The prior criterion council is historical; this release does not claim a new whole-council review."
+  ]
 }
