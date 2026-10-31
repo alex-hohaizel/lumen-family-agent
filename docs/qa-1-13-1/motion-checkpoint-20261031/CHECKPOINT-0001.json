@@ -1,0 +1,47 @@
+{
+  "schema": "lumen.reachable-wip-checkpoint/1",
+  "sequence": 1,
+  "created_at_utc": "2026-10-31T14:01:31.178465+00:00",
+  "actual_actor": "/root/persist_repair_checkpoint",
+  "repository": "alex-hohaizel/lumen-family-agent",
+  "visibility": "private",
+  "branch": "codex/lumen-1.13.1-motion-checkpoint-20261031",
+  "parent_commit": "2f3f4f6db32ae01f6a5db5bcc2a9fcc39fd2db13",
+  "purpose": "WIP source checkpoint: native/playback review pending, not release",
+  "scope": "First durable source metadata checkpoint only; source archive and generated pixels not yet published",
+  "verified_remote_blobs": [
+    {
+      "git_blob_sha": "6cb998f01ed5b290c0f4ac095b4ae6612e6fca5e",
+      "sha256": "9897b24fa220b66bdf93875d012a9aad169a78e6e51dcc37f51ab4902beeabf2",
+      "bytes": 17485,
+      "path": "sticker-lab/production-v6/keyscenes/render_132_v3c.py",
+      "status": "uploaded_prior_owner_verified"
+    },
+    {
+      "git_blob_sha": "82cd0ec24461e9d9bebca3bc0eb8388316db1470",
+      "status": "uploaded_sha_verified",
+      "sha256": "476d0feec74820cf52e540ffd5a30a05e97dff8072773efcebc14a294c3b1926",
+      "bytes": 11324,
+      "path": "sticker-lab/production-v6/keyscenes/arm-sources-v3/FINAL-source.json",
+      "written_at_utc": "2026-10-31T13:40:18.207797+00:00"
+    }
+  ],
+  "unverified_side_effects": "A stopped four-blob upload batch may have left dangling immutable blobs; none is claimed saved until receipt/readback.",
+  "remaining": "Full generated-source PNGs, prompts, crop components, recipes, candidates, proof/review records and the new minimal grounding dependency packet will be appended. This first commit is not a self-contained authoring package.",
+  "runtime_version_preserved": "1.13.0",
+  "canonical_assets_preserved": true,
+  "main_modified": false,
+  "telegram_modified": false,
+  "render_modified": false,
+  "native_timed_playback_observed": false,
+  "deployed": false,
+  "current_user_authorization": {
+    "user_direction_after_publication_block": "Скільки ще залишилось? Продовжуй і задеплой все",
+    "authorized_destination": "alex-hohaizel/lumen-family-agent",
+    "destination_visibility": "private",
+    "authorized_material": "Lumen repair source code, sticker artwork/assets, technical files and required source checkpoints in the already identified user-owned repository.",
+    "scope_of_this_mutation": "Create a small immutable blob for the first private WIP source checkpoint. The resulting WIP branch preserves sources; it does not activate the production release.",
+    "authorization_context": "User explicitly continued the work and requested full deployment after being told that this identified GitHub destination had been blocked. Earlier explicit authorization names this repository for code, technical files and all Lumen stickers.",
+    "root_received_at_utc": "2026-10-31T15:06:08.693190+00:00"
+  }
+}

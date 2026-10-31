@@ -1,0 +1,326 @@
+{
+  "schema_version": "lumen.generated-arm-source/1",
+  "actual_author": "/root/arm_source_repair",
+  "reports_to": "/root",
+  "finished_at_utc": "2026-10-31T12:52:28.784045+00:00",
+  "scope": "new anatomy-ready sources for lumen_132 only",
+  "status": "locally_verified",
+  "independent_review": "pending root-directed independent review after rig integration",
+  "generated_source": true,
+  "recovered_original": false,
+  "generation": {
+    "tool": "built-in image_gen.imagegen",
+    "tool_output_filename": "exec-96ea7323-daef-41d7-bea9-427129754a2d.png",
+    "source_output_path": "/workspace/scratch/a084aa8b0b33/generated_images/exec-96ea7323-daef-41d7-bea9-427129754a2d.png",
+    "project_copy_path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/arm-atlas-native.png",
+    "source_sha256": "5ace0374ed8bf691a3a0282638ebd1a79a6a68ae57d52badf427587e90f8b8df",
+    "project_copy_sha256": "5ace0374ed8bf691a3a0282638ebd1a79a6a68ae57d52badf427587e90f8b8df",
+    "source_to_copy_byte_identity": true,
+    "transparent_background": true,
+    "prompt_path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/prompt.txt",
+    "prompt_sha256": "5e41e2bd376429778825d98e822998d6f9316ad4a479745113a5e001acda2ef9",
+    "references": [
+      {
+        "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v5/approved-sources/lumen_132/component-body.png",
+        "role": "reference image 1: exact character identity, color, short fur, material, exposure; not an edit target",
+        "sha256": "061a541f0fe37db964703bcc6ef23a9fe06ce6c5cd94214365dd438548f52bd2"
+      },
+      {
+        "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v5/approved-sources/lumen_132/component-arm_left.png",
+        "role": "reference image 2: existing left paw anatomy and color only; exclude proximal blue cap",
+        "sha256": "d5b959567a31330c55ef3e3de48e8e197e2fdda69559f2a517dfe6aad1edd274"
+      },
+      {
+        "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v5/approved-sources/lumen_132/component-arm_right.png",
+        "role": "reference image 3: existing right paw anatomy and color only; exclude proximal blue cap",
+        "sha256": "46df8e2b01b5b0a6c5e829c3d7c08561eaaec7708f604847b862ff5627b059c3"
+      }
+    ],
+    "cli_or_external_api_used": false
+  },
+  "outputs": {
+    "arm-atlas-native.png": {
+      "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/arm-atlas-native.png",
+      "sha256": "5ace0374ed8bf691a3a0282638ebd1a79a6a68ae57d52badf427587e90f8b8df",
+      "bytes": 820024
+    },
+    "upper_arm_left.png": {
+      "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/upper_arm_left.png",
+      "sha256": "85ecc81701097c09e3a86eb97c6090b0246a2ac1ee8ea7d175c1aab7748d4c8c",
+      "bytes": 162760
+    },
+    "upper_arm_right.png": {
+      "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/upper_arm_right.png",
+      "sha256": "41d571770ef5bdf8721f10420ef0b432c5d459cc873ca9717e1461320ef4f5cb",
+      "bytes": 164028
+    },
+    "forearm_left.png": {
+      "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/forearm_left.png",
+      "sha256": "6ebbbb69f6e9648474dd217850f6bb9ccc7f7dfa29b6128ca0318f2b9a4b0dc7",
+      "bytes": 218961
+    },
+    "forearm_right.png": {
+      "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/forearm_right.png",
+      "sha256": "a6b9ab5eed7337916a3335eef9eec85e6db9e64e5d9b1de67145252c4d40ce0f",
+      "bytes": 220312
+    },
+    "prompt.txt": {
+      "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/prompt.txt",
+      "sha256": "5e41e2bd376429778825d98e822998d6f9316ad4a479745113a5e001acda2ef9",
+      "bytes": 3351
+    },
+    "pre-generation.json": {
+      "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/pre-generation.json",
+      "sha256": "210c5f8f05e27b885831b2866046b1826d3e9a320039b4282be0774b4a3a4243",
+      "bytes": 1761
+    },
+    "generation-result.json": {
+      "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/generation-result.json",
+      "sha256": "9c5c7562b22676ef26d2a9019dbb5d8f4b71dae1579f2a5dc5d1bc356bab26cf",
+      "bytes": 632
+    },
+    "rig-anchors.json": {
+      "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/rig-anchors.json",
+      "sha256": "295601e73a4bd1a4d7e9dcaf609cb76c8f44c0de1ad00b79af5fb8ce6557b1c5",
+      "bytes": 5405
+    },
+    "qa-native-on-white-and-charcoal.png": {
+      "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/qa-native-on-white-and-charcoal.png",
+      "sha256": "6f0b82ed28ad33f480e8891b5c5fc054b3ec880d19d8258dc82a1036b88179e1",
+      "bytes": 893702
+    },
+    "qa-anchor-overlay.png": {
+      "path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/qa-anchor-overlay.png",
+      "sha256": "9d3cd99151f41c77253ffc658f5963feb00654f029173817e430e66067e58562",
+      "bytes": 630419
+    }
+  },
+  "native_size_px": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha": {
+    "min": 0,
+    "max": 255,
+    "fully_transparent_px": 1096732,
+    "foreground_alpha_median": 253,
+    "note": "Generated near-opaque fur interiors retain original tool alpha, median 253/255; no threshold, cleanup, recolor, matte replacement or source resampling performed."
+  },
+  "parts": {
+    "upper_arm_left": {
+      "crop_box_atlas": [
+        0,
+        0,
+        627,
+        570
+      ],
+      "anchors_atlas": {
+        "shoulder": [
+          397,
+          130
+        ],
+        "elbow": [
+          355,
+          455
+        ]
+      },
+      "girth_y_atlas": 455,
+      "file_path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/upper_arm_left.png",
+      "sha256": "85ecc81701097c09e3a86eb97c6090b0246a2ac1ee8ea7d175c1aab7748d4c8c",
+      "size_px": [
+        627,
+        570
+      ],
+      "content_bbox_alpha_ge_128_crop": [
+        239,
+        41,
+        495,
+        548
+      ],
+      "anchors_crop": {
+        "shoulder": [
+          397,
+          130
+        ],
+        "elbow": [
+          355,
+          455
+        ]
+      },
+      "source_axis_length_px": 327.70260908329675,
+      "native_crop_pixel_identity": true,
+      "crop_resampling": "none; exact native integer crop",
+      "opaque_cross_section_at_joint_px": 208,
+      "cross_section_alpha_threshold": 200,
+      "interior_alpha_median": 253,
+      "top_opaque_color": "cream, both ends"
+    },
+    "upper_arm_right": {
+      "crop_box_atlas": [
+        627,
+        0,
+        1254,
+        570
+      ],
+      "anchors_atlas": {
+        "shoulder": [
+          857,
+          130
+        ],
+        "elbow": [
+          899,
+          455
+        ]
+      },
+      "girth_y_atlas": 455,
+      "file_path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/upper_arm_right.png",
+      "sha256": "41d571770ef5bdf8721f10420ef0b432c5d459cc873ca9717e1461320ef4f5cb",
+      "size_px": [
+        627,
+        570
+      ],
+      "content_bbox_alpha_ge_128_crop": [
+        133,
+        41,
+        389,
+        548
+      ],
+      "anchors_crop": {
+        "shoulder": [
+          230,
+          130
+        ],
+        "elbow": [
+          272,
+          455
+        ]
+      },
+      "source_axis_length_px": 327.70260908329675,
+      "native_crop_pixel_identity": true,
+      "crop_resampling": "none; exact native integer crop",
+      "opaque_cross_section_at_joint_px": 206,
+      "cross_section_alpha_threshold": 200,
+      "interior_alpha_median": 253,
+      "top_opaque_color": "cream, both ends"
+    },
+    "forearm_left": {
+      "crop_box_atlas": [
+        0,
+        570,
+        627,
+        1254
+      ],
+      "anchors_atlas": {
+        "elbow": [
+          398,
+          685
+        ],
+        "paw_middle": [
+          374,
+          1097
+        ]
+      },
+      "girth_y_atlas": 685,
+      "file_path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/forearm_left.png",
+      "sha256": "6ebbbb69f6e9648474dd217850f6bb9ccc7f7dfa29b6128ca0318f2b9a4b0dc7",
+      "size_px": [
+        627,
+        684
+      ],
+      "content_bbox_alpha_ge_128_crop": [
+        228,
+        16,
+        527,
+        640
+      ],
+      "anchors_crop": {
+        "elbow": [
+          398,
+          115
+        ],
+        "paw_middle": [
+          374,
+          527
+        ]
+      },
+      "source_axis_length_px": 412.6984371184364,
+      "native_crop_pixel_identity": true,
+      "crop_resampling": "none; exact native integer crop",
+      "opaque_cross_section_at_joint_px": 198,
+      "cross_section_alpha_threshold": 200,
+      "interior_alpha_median": 253,
+      "top_opaque_color": "cream"
+    },
+    "forearm_right": {
+      "crop_box_atlas": [
+        627,
+        570,
+        1254,
+        1254
+      ],
+      "anchors_atlas": {
+        "elbow": [
+          856,
+          685
+        ],
+        "paw_middle": [
+          880,
+          1097
+        ]
+      },
+      "girth_y_atlas": 685,
+      "file_path": "/workspace/scratch/a084aa8b0b33/lumen/sticker-lab/production-v6/keyscenes/arm-sources-v3/forearm_right.png",
+      "sha256": "a6b9ab5eed7337916a3335eef9eec85e6db9e64e5d9b1de67145252c4d40ce0f",
+      "size_px": [
+        627,
+        684
+      ],
+      "content_bbox_alpha_ge_128_crop": [
+        101,
+        15,
+        400,
+        640
+      ],
+      "anchors_crop": {
+        "elbow": [
+          229,
+          115
+        ],
+        "paw_middle": [
+          253,
+          527
+        ]
+      },
+      "source_axis_length_px": 412.6984371184364,
+      "native_crop_pixel_identity": true,
+      "crop_resampling": "none; exact native integer crop",
+      "opaque_cross_section_at_joint_px": 200,
+      "cross_section_alpha_threshold": 200,
+      "interior_alpha_median": 253,
+      "top_opaque_color": "cream"
+    }
+  },
+  "author_self_QA": {
+    "inspected_native_atlas": true,
+    "inspected_light_and_charcoal_composites": true,
+    "exact_crop_pixel_identity_all": true,
+    "four_isolated_components": true,
+    "no_proximal_blue_cap": true,
+    "rounded_cream_joint_ends": true,
+    "upper_and_forearm_material_match": "warm ivory short fur, matching cyan paw material and soft 3D source styling",
+    "three_round_blue_digit_lobes_each_paw": true,
+    "no_body_props_labels": true,
+    "no_visible_background_halo_on_test_composites": true,
+    "limitations": [
+      "These sources are not animation acceptance. Joint coverage, pawn-to-box contact, acting and native final animation remain root rig and independent QA scope.",
+      "Full-alpha bounding box includes very low-alpha generated edge speckles; content bounds use alpha >=128. Retained original alpha without hand cleanup."
+    ]
+  },
+  "constraints": {
+    "baseline_unchanged": true,
+    "body_unchanged": true,
+    "external_publication": false,
+    "audio": false
+  }
+}
