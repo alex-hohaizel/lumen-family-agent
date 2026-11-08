@@ -20,6 +20,7 @@ import { ensureAvatar,ensureTextProfile } from './profile.js';
 import {activateWithStickerPack} from './joint-startup.js';
 import {RELEASE} from './release.js';
 import {browsers} from './browser.js';
+import {startWorkerTelemetry} from './work-slots.js';
 import {publicRuntimeProbes,runtimeChecks,runtimeDiagnosticsRequested,unrunRuntimeChecks} from './runtime-checks.js';
 import {cancelOperations,runOperation} from './operations.js';
 
@@ -54,6 +55,7 @@ async function main(){
     const router=new ChatRouter(registry,config,telegram,bot);if(pack)router.setStickerPack(pack);await router.init();return router;
   });
   const ingress=new TransportQueue(db,config.runtimeDir,update=>router.receive(update),(update,sql)=>router.ingressScopes(update,sql));await ingress.init();
+  const stopMemoryTelemetry=startWorkerTelemetry();
   let running=true;let lastPoll=Date.now();let checks=unrunRuntimeChecks();
   const health=createServer(async (req,res)=>{
     const ok=running&&!leaseLost&&Date.now()-lastPoll<180000;
@@ -61,7 +63,7 @@ async function main(){
     if(req.url!=='/health'){res.writeHead(404).end();return;}
     res.writeHead(ok?200:503,{'Content-Type':'application/json','Cache-Control':'no-store'}).end(JSON.stringify({status:ok?'ok':'unavailable'}));
   }).listen(config.healthPort,'0.0.0.0');
-  const shutdown=()=>{running=false;cancelOperations(db,'runtime_diagnostics');void router.cancelAll();health.close();};process.once('SIGTERM',shutdown);process.once('SIGINT',shutdown);
+  const shutdown=()=>{stopMemoryTelemetry();running=false;cancelOperations(db,'runtime_diagnostics');void router.cancelAll();health.close();};process.once('SIGTERM',shutdown);process.once('SIGINT',shutdown);
   const poll=async()=>{
     while(running&&!leaseLost){
       try{
@@ -97,7 +99,7 @@ async function main(){
   const automationWork=async()=>{const busy=new Set<string>(),jobs=new Set<Promise<void>>();let cursor=0;while(running&&!leaseLost){const active=await router.ready('automation',Math.max(0,2-jobs.size),busy),order=active.slice(cursor).concat(active.slice(0,cursor));for(const r of order){if(busy.has(r.chat.chat_id)||jobs.size>=2)continue;busy.add(r.chat.chat_id);cursor=(active.indexOf(r)+1)%active.length;let job:Promise<void>;job=router.operate(r,'automation',async()=>{await r.engine.syncCalendar();if(!await new ConnectionChecks(r.db,config.runtimeDir).next()&&!await new OAuthDevices(r.db,config.runtimeDir).tick()&&!await r.agent.next())await r.monitors.next();}).then(()=>{}).catch(e=>console.error(JSON.stringify({event:'agent_error',code:errorCode(e)}))).finally(()=>{busy.delete(r.chat.chat_id);jobs.delete(job);});jobs.add(job);}await delay(900);}await Promise.allSettled(jobs);};
   const routeWork=async()=>{while(running&&!leaseLost){const received=await ingress.next();await delay(received?10:400);}};
   const check=runOperation(db,'runtime_diagnostics',()=>runtimeChecks(config.runtimeDir,runtimeDiagnosticsRequested(process.argv.slice(2)),()=>publicRuntimeProbes(()=>router.probeNativeSearch(),()=>router.probeFreshnessChoice(),{documents:()=>router.probeDocuments(),interactions:()=>router.probeInteractions(),personalization_scheduling_190:()=>router.probePersonalizationScheduling(),behavior_111_r2:()=>router.probeBehavior111(),companion_113:()=>router.probeCompanion113()}),report=>{checks=report;})).catch(()=>{checks={...checks,status:'failed',code:'diagnostic_report_failed'};console.error(JSON.stringify({event:'runtime_checks_failed'}));});
-  await Promise.all([poll(),work(),send(),compact(),mediaWork(),automationWork(),routeWork(),routeWork(),check]);await router.drainAll();await browsers.close();health.close();lease.release();await db.close();
+  await Promise.all([poll(),work(),send(),compact(),mediaWork(),automationWork(),routeWork(),routeWork(),check]);stopMemoryTelemetry();await router.drainAll();await browsers.close();health.close();lease.release();await db.close();
   if(leaseLost)process.exitCode=1;
 }
 main().catch(e=>{console.error(JSON.stringify({event:'startup_failed',stage:startupStage,native_code:/^[A-Za-z0-9_]{1,60}$/.test(e.code||'')?e.code:undefined,frames:typeof e.stack==='string'?e.stack.split('\n').slice(1,4):undefined,code:/^[a-z_]+$/.test(e.message)?e.message:errorCode(e)}));process.exit(1);});

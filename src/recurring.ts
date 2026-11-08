@@ -1,14 +1,17 @@
 import {Temporal} from '@js-temporal/polyfill';
 import {z} from 'zod';
-import {one,state,type Database} from './db.js';
+import {one,state,type Database,type SQL} from './db.js';
 import {command,digest,requireVersion,sourceIds} from './evolution-core.js';
 import {recordProvenance,transferProvenance} from './provenance.js';
 import {stableId} from './operations.js';
 import {ToolError} from './safe-http.js';
 import type {ToolContext} from './agent-tools.js';
 import {catchUp,missedNotice,settleScheduledCatchUp,type RecurringSeries} from './recurrence-policy.js';
+import {reminderMetadata,reminderRequestSource,canManageReminder,stopSeries,type ReminderContext} from './reminder-control.js';
+import {provesCommand} from './personalization.js';
+import {requestAuthorityView} from './outcomes.js';
 export const SeriesRule=z.object({title:z.string().min(2).max(160),instruction:z.string().min(3).max(4000),mode:z.enum(['reminder','task']).default('reminder'),timezone:z.string().min(3).max(80),start_date:z.string().regex(/^\d{4}-\d{2}-\d{2}$/),time:z.string().regex(/^(?:[01]\d|2[0-3]):[0-5]\d$/),frequency:z.enum(['daily','weekly','monthly']),interval:z.number().int().min(1).max(12).default(1),weekdays:z.array(z.number().int().min(1).max(7)).min(1).max(7).optional(),until:z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),count:z.number().int().min(1).max(3660).optional(),dst:z.enum(['reject','earlier','later','skip']).default('reject'),catch_up:z.enum(['latest','ask','skip']).optional()});
-export const SeriesCommand=z.object({operation:z.enum(['preview','confirm','list','read','skip','move','revise','end']),id:z.string().uuid().optional(),version:z.number().int().positive().optional(),rule:SeriesRule.optional(),occurrence_key:z.string().max(80).optional(),move_to:z.string().datetime({offset:true}).optional()});
+export const SeriesCommand=z.object({operation:z.enum(['create','preview','confirm','list','read','skip','move','revise','end']),id:z.string().uuid().optional(),version:z.number().int().positive().optional(),rule:SeriesRule.optional(),occurrence_key:z.string().max(80).optional(),move_to:z.string().datetime({offset:true}).optional(),quote:z.string().min(2).max(2500).optional(),shared:z.boolean().optional()});
 type Rule=z.infer<typeof SeriesRule>;
 function* occurrenceStream(rule:Rule,after:string){
  const start=Temporal.PlainDate.from(rule.start_date),cut=Date.parse(after);let date=start,n=0;
@@ -22,24 +25,51 @@ function* occurrenceStream(rule:Rule,after:string){
  }
 }
 export function occurrences(rule:Rule,after:string,count=3){const result=[];for(const item of occurrenceStream(rule,after)){result.push(item);if(result.length>=count)break;}return result;}
+export function nextUnreservedOccurrence(rule:Rule,after:string,reserved:ReadonlySet<string>){for(const item of occurrenceStream(rule,after))if(!reserved.has(item.key))return item;}
 function window(rule:Rule,after:string,now:number,count:number){const future=[],missed=[];for(const item of occurrenceStream(rule,after)){if(Date.parse(item.due)<now-3600000)missed.push(item);else{future.push(item);if(future.length>=count)break;}}return [...(missed.length?[{...missed.at(-1)!,coalesced_count:missed.length}]:[]),...future.map(x=>({...x,coalesced_count:1}))];}
+/** SQL-native entry for a clear requested reminder; caller owns the transaction. */
+export async function createReminderSeries(sql:SQL,input:Rule,c:ToolContext,options:{quote:string;shared?:boolean}){
+ const rule=SeriesRule.parse(input);if(rule.mode!=='reminder')throw new ToolError('series_task_requires_confirmation');
+ const live=await state(sql,true);if(live.paused||live.memory_revision!==c.revision)throw new ToolError('task_cancelled');
+ const source=await reminderRequestSource(sql,c),text=source?.body||'';
+ const authored=requestAuthorityView(text,source?.entities||[])?.commandText||'';
+ if(!source||!provesCommand(text,options.quote)||!/(?:нагад|напом(?:н|ин)|remind)/iu.test(authored)||/(?<![\p{L}\p{N}])(?:не|don't|do\s+not)\s+(?:нагад|напом(?:н|ин)|remind)/iu.test(authored))throw new ToolError('series_request_unconfirmed');
+ const repeat=rule.frequency==='daily'?/щодн|щоден|кожн[\p{L}]*\s+(?:\d+\s+)?дн|ежеднев|кажд[\p{L}]*\s+(?:\d+\s+)?д[её]н|every\s+(?:\d+\s+)?day|daily/iu:rule.frequency==='weekly'?/щотиж|кожн[\p{L}]*\s+(?:\d+\s+)?тиж|еженедел|кажд[\p{L}]*\s+(?:\d+\s+)?недел|every\s+(?:\d+\s+)?week|weekly/iu:/щоміс|кожн[\p{L}]*\s+(?:\d+\s+)?міс|ежемесяч|кажд[\p{L}]*\s+(?:\d+\s+)?месяц|every\s+(?:\d+\s+)?month|monthly/iu;
+ if(!repeat.test(authored))throw new ToolError('series_repeat_request_required');
+ const metadata=await reminderMetadata(sql,c,options),dates=occurrences(rule,new Date(Date.now()-1).toISOString(),3);
+ if(!dates.length)throw new ToolError('series_no_future_occurrences');
+ // A model may revisit the same operation under a different tool-step key.
+ // The original request/interaction owns the reminder, not that transport step.
+ const origin=c.interactionId?`interaction:${c.interactionId}:${c.interactionVersion||1}`:`source:${c.actorId}:${c.sourceId}`;
+ const key=`reminder-series:${origin}:${digest(rule)}`;
+ const id=stableId(key),previous=await one(sql,'SELECT * FROM recurring_series WHERE id=$1 FOR UPDATE',[id]);
+ if(previous){
+  if(previous.actor_id!==c.actorId||previous.topic_id!==c.topicId||previous.revision!==c.revision||digest(previous.rule)!==digest(rule)||previous.audience!==metadata.audience||previous.shared!==metadata.shared||digest(previous.manager_ids)!==digest(metadata.manager_ids))throw new ToolError('operation_key_conflict');
+  return {id,version:previous.version,status:previous.status,shared:previous.shared,manager_ids:previous.manager_ids,next_three:dates};
+ }
+ await sql.query("INSERT INTO recurring_series(id,actor_id,topic_id,rule,revision,source_message_id,audience,shared,manager_ids,status,confirmed_at) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,'active',now())",[id,c.actorId,c.topicId,JSON.stringify(rule),c.revision,c.sourceId,metadata.audience,metadata.shared,JSON.stringify(metadata.manager_ids)]);
+ await recordProvenance(sql,'series',id,sourceIds(c));
+ return {id,version:1,status:'active',shared:metadata.shared,manager_ids:metadata.manager_ids,next_three:dates};
+}
 export class Recurring {
  private nextAt=0;constructor(private db:Database){}
  async run(a:z.infer<typeof SeriesCommand>,c:ToolContext):Promise<any>{
-  if(a.operation==='list')return (await this.db.query('SELECT id,version,rule,status FROM recurring_series WHERE actor_id=$1 AND topic_id=$2 ORDER BY created_at DESC LIMIT 20',[c.actorId,c.topicId])).rows;
+  if(a.operation==='list'||a.operation==='read'){const live=await state(this.db);if(live.paused||live.memory_revision!==c.revision)throw new ToolError('task_cancelled');}
+  if(a.operation==='list')return (await this.db.query("SELECT * FROM recurring_series WHERE topic_id=$1 AND revision=$2 AND (actor_id=$3 OR (shared=true AND audience='group' AND rule->>'mode'='reminder' AND (manager_ids ? $3 OR $4::boolean))) ORDER BY created_at DESC LIMIT 20",[c.topicId,c.revision,c.actorId,Boolean((c as ReminderContext).administrator)])).rows.filter(row=>canManageReminder(row,c));
+  if(a.operation==='create'){if(!a.rule||!a.quote)throw new ToolError('series_rule_and_quote_required');return command(this.db,c,'series_create',a,sql=>createReminderSeries(sql,a.rule!,c,{quote:a.quote!,shared:a.shared}));}
   if(a.operation==='preview'){if(!a.rule)throw new ToolError('series_rule_required');const dates=occurrences(a.rule,new Date(Date.now()-1).toISOString(),3);if(!dates.length)throw new ToolError('series_no_future_occurrences');return command(this.db,c,'series_preview',a,async(sql,id)=>{await sql.query('INSERT INTO recurring_series(id,actor_id,topic_id,rule,revision,source_message_id,audience) VALUES($1,$2,$3,$4,$5,$6,$7)',[id,c.actorId,c.topicId,JSON.stringify(a.rule),c.revision,c.sourceId||null,c.audience||'group']);await recordProvenance(sql,'series',id,sourceIds(c));return {id,version:1,status:'draft',next_three:dates,catch_up:catchUp(a.rule!),notice:'Перевір місцеві дати й години, правило завершення та поведінку під час зміни часу. confirm активує саме цю редакцію.'};});}
-  if(a.operation==='read'){const row=await one(this.db,'SELECT id,version,rule,status FROM recurring_series WHERE id=$1 AND actor_id=$2 AND topic_id=$3',[a.id,c.actorId,c.topicId]);if(!row)throw new ToolError('own_series_required');return {...row,next_three:occurrences(row.rule,new Date().toISOString(),3),occurrences:(await this.db.query('SELECT occurrence_key,due_at,status,schedule_id FROM recurring_occurrences WHERE series_id=$1 ORDER BY due_at DESC LIMIT 12',[row.id])).rows};}
-  return command(this.db,c,'series_change',a,async sql=>{const row=await one(sql,'SELECT * FROM recurring_series WHERE id=$1 AND actor_id=$2 AND topic_id=$3 FOR UPDATE',[a.id,c.actorId,c.topicId]);if(!row)throw new ToolError('own_series_required');requireVersion(row.version,a.version);
+  if(a.operation==='read'){const row=await one(this.db,'SELECT * FROM recurring_series WHERE id=$1 AND topic_id=$2 AND revision=$3',[a.id,c.topicId,c.revision]);if(!row||!canManageReminder(row,c))throw new ToolError('own_series_required');return {...row,next_three:occurrences(row.rule,new Date().toISOString(),3),occurrences:(await this.db.query('SELECT occurrence_key,due_at,status,schedule_id FROM recurring_occurrences WHERE series_id=$1 ORDER BY due_at DESC LIMIT 12',[row.id])).rows};}
+  return command(this.db,c,'series_change',a,async sql=>{const row=await one(sql,'SELECT * FROM recurring_series WHERE id=$1 AND topic_id=$2 AND revision=$3 FOR UPDATE',[a.id,c.topicId,c.revision]);if(!row||!canManageReminder(row,c)||a.operation!=='end'&&row.actor_id!==c.actorId)throw new ToolError('own_series_required');requireVersion(row.version,a.version);
    if(a.operation==='confirm'){if(row.status!=='draft')throw new ToolError('series_draft_required');occurrences(row.rule,new Date().toISOString(),3);await sql.query("UPDATE recurring_series SET status='active',version=version+1 WHERE id=$1",[row.id]);}
    if(a.operation==='revise'||a.operation==='end'){
     if(a.operation==='revise'&&!a.rule)throw new ToolError('series_rule_required');if(a.rule)occurrences(a.rule,new Date().toISOString(),3);
-    const ids=(await sql.query("UPDATE scheduled_actions SET status='cancelled' WHERE id IN (SELECT schedule_id FROM recurring_occurrences WHERE series_id=$1 AND status IN ('pending','scheduled')) AND status IN ('pending','awaiting_confirmation','queued') RETURNING id",[row.id])).rows.map(x=>x.id);if(ids.length)await sql.query("UPDATE outbox SET status='cleared' WHERE status='pending' AND split_part(dedup_key,':',2)=ANY($1::text[])",[ids]);
-    await sql.query("UPDATE recurring_occurrences SET status='cancelled' WHERE series_id=$1 AND status IN ('pending','scheduled')",[row.id]);if(a.operation==='revise')await sql.query("DELETE FROM recurring_occurrences WHERE series_id=$1 AND status='cancelled' AND due_at>now()",[row.id]);await sql.query('UPDATE recurring_series SET rule=$2,status=$3,version=version+1,confirmed_at=NULL,last_materialized=NULL WHERE id=$1',[row.id,JSON.stringify(a.rule||row.rule),a.operation==='end'?'ended':'draft']);
+    const stopped=await stopSeries(sql,row);if(a.operation==='end'&&stopped.inFlight)row.in_flight=stopped.inFlight;
+    if(a.operation==='revise')await sql.query("DELETE FROM recurring_occurrences WHERE series_id=$1 AND status='cancelled' AND due_at>now()",[row.id]);await sql.query('UPDATE recurring_series SET rule=$2,status=$3,version=version+1,confirmed_at=NULL,last_materialized=NULL WHERE id=$1',[row.id,JSON.stringify(a.rule||row.rule),a.operation==='end'?'ended':'draft']);
    }
    if(a.operation==='skip'||a.operation==='move'){
     const occurrence=await one(sql,'SELECT * FROM recurring_occurrences WHERE series_id=$1 AND occurrence_key=$2 FOR UPDATE',[row.id,a.occurrence_key]);if(!occurrence||!['pending','scheduled','needs_input'].includes(occurrence.status))throw new ToolError('future_occurrence_required');if(occurrence.schedule_id){const old=await one(sql,'SELECT status FROM scheduled_actions WHERE id=$1',[occurrence.schedule_id]);if(!old||!['pending','awaiting_confirmation','queued','needs_input'].includes(old.status))throw new ToolError('occurrence_already_dispatched');await sql.query("UPDATE scheduled_actions SET status='cancelled' WHERE id=$1",[occurrence.schedule_id]);await sql.query("UPDATE outbox SET status='cleared' WHERE status='pending' AND dedup_key LIKE $1",['scheduled:'+occurrence.schedule_id+':%']);}
     if(a.operation==='move'&&(!a.move_to||Date.parse(a.move_to)<Date.now()+5000))throw new ToolError('future_move_time_required');await sql.query('UPDATE recurring_occurrences SET status=$3,due_at=COALESCE($4::timestamptz,due_at),schedule_id=NULL,version=version+1 WHERE series_id=$1 AND occurrence_key=$2',[row.id,a.occurrence_key,a.operation==='skip'?'skipped':'pending',a.move_to||null]);await sql.query('UPDATE recurring_series SET version=version+1 WHERE id=$1',[row.id]);
-   }return {id:row.id,version:row.version+1,status:a.operation==='revise'?'draft':a.operation==='end'?'ended':a.operation==='confirm'?'active':row.status};
+   }return {id:row.id,version:row.version+1,status:a.operation==='revise'?'draft':a.operation==='end'?'ended':a.operation==='confirm'?'active':row.status,...(row.in_flight?{in_flight:row.in_flight,notice:'Майбутні повтори зупинено; один із запусків уже розпочато або його доставку ще не підтверджено.'}:{})};
   });
  }
  async tick(now=Date.now()){

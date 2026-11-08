@@ -1,0 +1,2489 @@
+{
+  "schema": "lumen.migration.coverage/1",
+  "scope": "applied_documentation_preservation_only",
+  "active_skill_dependency": null,
+  "source_preservation_evidence": "external portable package evidence/former-orchestrator-inventory.json and evidence/former-orchestrator-originals.zip; hashes retained here; not runtime dependency",
+  "counts": {
+    "H": 26,
+    "Q": 4,
+    "J": 12,
+    "companion24": 24,
+    "E": 20
+  },
+  "note": "Source rules are preserved in canonical project documents; product applicability/implementation/delivery/human acceptance require separate evidence. Current method is a reference, not copied project framework.",
+  "coverage": [
+    {
+      "id": "H01",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "privacy-security",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H02",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "privacy-security",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H03",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "interaction-engineer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H04",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "interaction-engineer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H05",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "reliability-engineer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H06",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "backend-engineer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H07",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "backend-engineer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H08",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "reliability-engineer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H09",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "architecture-lead",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H10",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "backend-engineer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H11",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "evidence-judge",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H12",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "interaction-engineer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H13",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "conversation-designer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H14",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "conversation-designer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H15",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "conversation-designer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H16",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "knowledge-engineer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H17",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "knowledge-engineer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H18",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "privacy-security",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H19",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "privacy-security",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H20",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "backend-engineer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H21",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "interaction-engineer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H22",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "privacy-security",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H23",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "media-specialist",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H24",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "reliability-engineer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H25",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "evidence-judge",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "H26",
+      "family": "H",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "Q01",
+      "family": "Q",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "conversation-designer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "Q02",
+      "family": "Q",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "product-lead",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "Q03",
+      "family": "Q",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "conversation-designer",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "Q04",
+      "family": "Q",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "6a13a5a2d8fecaca1813f9673ead2121cd818f8439353dbc6ec35e4040fadf3b"
+      },
+      "destination": "docs/codex/INVARIANTS.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "cost-auditor",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/INVARIANTS.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "J01",
+      "family": "J",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "df8363a961c711539cf8ad4b6e0a6d55c5a291869dbd97117ef98775c3c413ed"
+      },
+      "destination": "docs/codex/QUALITY_MATRIX.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/QUALITY_MATRIX.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "J02",
+      "family": "J",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "df8363a961c711539cf8ad4b6e0a6d55c5a291869dbd97117ef98775c3c413ed"
+      },
+      "destination": "docs/codex/QUALITY_MATRIX.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/QUALITY_MATRIX.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "J03",
+      "family": "J",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "df8363a961c711539cf8ad4b6e0a6d55c5a291869dbd97117ef98775c3c413ed"
+      },
+      "destination": "docs/codex/QUALITY_MATRIX.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/QUALITY_MATRIX.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "J04",
+      "family": "J",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "df8363a961c711539cf8ad4b6e0a6d55c5a291869dbd97117ef98775c3c413ed"
+      },
+      "destination": "docs/codex/QUALITY_MATRIX.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/QUALITY_MATRIX.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "J05",
+      "family": "J",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "df8363a961c711539cf8ad4b6e0a6d55c5a291869dbd97117ef98775c3c413ed"
+      },
+      "destination": "docs/codex/QUALITY_MATRIX.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/QUALITY_MATRIX.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "J06",
+      "family": "J",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "df8363a961c711539cf8ad4b6e0a6d55c5a291869dbd97117ef98775c3c413ed"
+      },
+      "destination": "docs/codex/QUALITY_MATRIX.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/QUALITY_MATRIX.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "J07",
+      "family": "J",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "df8363a961c711539cf8ad4b6e0a6d55c5a291869dbd97117ef98775c3c413ed"
+      },
+      "destination": "docs/codex/QUALITY_MATRIX.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/QUALITY_MATRIX.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "J08",
+      "family": "J",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "df8363a961c711539cf8ad4b6e0a6d55c5a291869dbd97117ef98775c3c413ed"
+      },
+      "destination": "docs/codex/QUALITY_MATRIX.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/QUALITY_MATRIX.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "J09",
+      "family": "J",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "df8363a961c711539cf8ad4b6e0a6d55c5a291869dbd97117ef98775c3c413ed"
+      },
+      "destination": "docs/codex/QUALITY_MATRIX.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/QUALITY_MATRIX.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "J10",
+      "family": "J",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "df8363a961c711539cf8ad4b6e0a6d55c5a291869dbd97117ef98775c3c413ed"
+      },
+      "destination": "docs/codex/QUALITY_MATRIX.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/QUALITY_MATRIX.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "J11",
+      "family": "J",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "df8363a961c711539cf8ad4b6e0a6d55c5a291869dbd97117ef98775c3c413ed"
+      },
+      "destination": "docs/codex/QUALITY_MATRIX.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/QUALITY_MATRIX.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "J12",
+      "family": "J",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "df8363a961c711539cf8ad4b6e0a6d55c5a291869dbd97117ef98775c3c413ed"
+      },
+      "destination": "docs/codex/QUALITY_MATRIX.md",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/codex/QUALITY_MATRIX.md",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "human_value",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "natural_voice",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "context_relevance",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "proportional_depth",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "simple_first",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "practical_completion",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "multiuser_fairness",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "scheduling_fidelity",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "capability_truth",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "execution_truth",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "recovery_empathy",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "interaction_continuity",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "character_semantics",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "temporal_quality",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "audiovisual_fidelity",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "media_delivery",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "audience_privacy",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "consent_authority",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "source_grounding",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "forgetting_integrity",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "bounded_resources",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "lifecycle_reliability",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "provider_constraints",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "version_continuity",
+      "family": "companion24",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "9397b795c713ecb8a57adb55a6b4b40966b7a2ceffb08e885fb00ebe3699b6bd"
+      },
+      "destination": "docs/lumen/requirements/companion-24.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "project-integrator plus impacted-domain-specialist; independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/requirements/companion-24.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E01",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E02",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E03",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E04",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E05",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E06",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E07",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E08",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E09",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E10",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E11",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E12",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E13",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E14",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E15",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E16",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E17",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E18",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E19",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    },
+    {
+      "id": "E20",
+      "family": "acceptance_scenario",
+      "source": {
+        "snapshot": "migration ZIP evidence/former-orchestrator-originals.zip; historical provenance, not execution path",
+        "sha256": "ce6e869e68b0a046221e3d4f05ea4994a7b20484724c42f98cfe500004215059"
+      },
+      "destination": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "preservation_status": "full_text_applied_independently_reviewed",
+      "actual_owner": "/root (documentation only)",
+      "owner_role_proposed": "independent-qa",
+      "implementation_status": "unknown",
+      "acceptance_status": "not_run",
+      "evidence_ids": [
+        "DOCS-CONTENT-REVIEW"
+      ],
+      "preservation_owner_actor": "/root",
+      "original_meaning_location": "docs/lumen/quality/acceptance-scenarios-E01-E20.json",
+      "project_authority": "current-scope.md + AGENTS + accepted decisions",
+      "documentation_impact": "active_preservation",
+      "product_impact": "unknown_pending_change_specific_analysis"
+    }
+  ],
+  "evidence_registry": [
+    {
+      "id": "DOCS-CONTENT-REVIEW",
+      "actor": "/root/preservation_audit",
+      "verdict": "pass_content_only",
+      "report": "/private/tmp/lumen-context-apply-20261103/final-preservation-review.json",
+      "sha256": "e84640921b974818f28153d3d81c38302ed95c57bb3cff0f1fec4973efd23837"
+    },
+    {
+      "id": "DOCS-STRUCTURAL",
+      "report": "/private/tmp/lumen-context-apply-20261103/structural-validation.json",
+      "scope": "documentation only; out-of-scope bytes and links/IDs"
+    }
+  ],
+  "development_records": [
+    {
+      "id": "DEV-01",
+      "original_ids": [
+        "S01"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/0",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-02",
+      "original_ids": [
+        "S02"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/1",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-03",
+      "original_ids": [
+        "S03"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/2",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-04",
+      "original_ids": [
+        "S04"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/3",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-05",
+      "original_ids": [
+        "P01",
+        "P04"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/4",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-06",
+      "original_ids": [
+        "P02",
+        "P03",
+        "P06",
+        "P08",
+        "P13"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/5",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-07",
+      "original_ids": [
+        "P05",
+        "P07",
+        "P09",
+        "P12"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/6",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-08",
+      "original_ids": [
+        "P10",
+        "P11",
+        "P14"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/7",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-09",
+      "original_ids": [
+        "B01"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/8",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-10",
+      "original_ids": [
+        "B02"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/9",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-11",
+      "original_ids": [
+        "B03"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/10",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-12",
+      "original_ids": [
+        "B04"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/11",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-13",
+      "original_ids": [
+        "C02",
+        "C03"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/12",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-14",
+      "original_ids": [
+        "U1"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/13",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-15",
+      "original_ids": [
+        "U2"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/14",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-16",
+      "original_ids": [
+        "U3"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/15",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-17",
+      "original_ids": [
+        "U4"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/16",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-18",
+      "original_ids": [
+        "U5"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/17",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-19",
+      "original_ids": [
+        "U6"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/18",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-20",
+      "original_ids": [
+        "U7"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/19",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-21",
+      "original_ids": [
+        "U8"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/20",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-22",
+      "original_ids": [
+        "U9"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/21",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-23",
+      "original_ids": [
+        "U10"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/22",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-24",
+      "original_ids": [
+        "F1"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/23",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-25",
+      "original_ids": [
+        "F2"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/24",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-26",
+      "original_ids": [
+        "F3"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/25",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-27",
+      "original_ids": [
+        "F4"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/26",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-28",
+      "original_ids": [
+        "F5"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/27",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-29",
+      "original_ids": [
+        "R3.1-6"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/28",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-30",
+      "original_ids": [
+        "R3.1-7"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/29",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-31",
+      "original_ids": [
+        "R3.1-8"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/30",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-32",
+      "original_ids": [
+        "R3.1-9"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/31",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-33",
+      "original_ids": [
+        "R3.1-10"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/32",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-34",
+      "original_ids": [
+        "R3.1-11",
+        "M01",
+        "M02"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/33",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-35",
+      "original_ids": [
+        "R3.1-12"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/34",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-36",
+      "original_ids": [
+        "B05"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/35",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-37",
+      "original_ids": [
+        "B06"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/36",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-38",
+      "original_ids": [
+        "B07"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/37",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-39",
+      "original_ids": [
+        "B08"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/38",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-40",
+      "original_ids": [
+        "B09"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/39",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-41",
+      "original_ids": [
+        "B10"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/40",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-42",
+      "original_ids": [
+        "B11"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/41",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    },
+    {
+      "id": "DEV-43",
+      "original_ids": [
+        "B12"
+      ],
+      "destination": "docs/lumen/requirements/accepted-development-scope.json",
+      "json_pointer": "/records/42",
+      "owner": "ChatBot Atelier specification/build; documentation root",
+      "preservation_status": "exact_original_record",
+      "current_implementation": "unknown_scope_specific_reconciliation",
+      "acceptance": "historical_record_not_current_pass"
+    }
+  ],
+  "policy_clause_index": "docs/lumen/migration/transformation-register.json#/policy_paragraphs",
+  "policy_paragraph_count": 221,
+  "supporting_contracts_count": 14,
+  "independent_review": {
+    "actor": "/root/preservation_audit",
+    "verdict": "pass_content_only",
+    "report": "/private/tmp/lumen-context-apply-20261103/final-preservation-review.json",
+    "sha256": "e84640921b974818f28153d3d81c38302ed95c57bb3cff0f1fec4973efd23837"
+  },
+  "cold_intake": {
+    "actor": "/root/cold_receiver",
+    "report": "/private/tmp/lumen-context-apply-20261103/cold-intake.json",
+    "sha256": "d702386fa67564b9b85d72f909417ea92f5257cf48f0fc8763dc235846e1f5b6",
+    "verdict": "sufficient_for_chatbot_atelier_continuation",
+    "input_manifest_sha256": "dca6d1f9214a954ae21795de62d21b920e4fcafc97aa03c9509525042e0c10d5",
+    "scope": "independent new-context read-only continuation from isolated file view; no old skill used; no product runtime or human proof",
+    "metadata_delta": "Final checkpoint/coverage/transform receipt fields updated after frozen input review; rule text and preserved source/WIP remain unchanged.",
+    "targeted_documentary_retest": {
+      "manifest": "/private/tmp/lumen-context-apply-20261103/cold-retest-input/DELTA_MANIFEST.json",
+      "sha256": "5d7fc2bb25a479bc4a1109f53f4bd0b6611c4c144ddbaa7a6296bce19b0c3d88",
+      "scope": "one surplus newline removed from persona fence; unchanged canonical source; independently retested after initial frozen intake"
+    }
+  },
+  "post_migration_skill_setting": {
+    "status": "disabled_by_exact_name_supported_manager",
+    "name": "lumen-orchestrator",
+    "physical_files_deleted": false,
+    "old_available": 0,
+    "director_available": 1,
+    "backup": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-retirement-2026-11-03/lumen-orchestrator-full-backup-2026-11-03.zip",
+    "backup_sha256": "d7ad85d2afeeb13c356e681d4d38afa313d6bfe63f8c52a694063913cb53abb3",
+    "skill_files_backed_up": 108,
+    "report": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-retirement-2026-11-03/retirement-completion.json",
+    "report_sha256": "f8389ef395cda5b1bc1b16a75f88ea44524a82845434551ad3a4974224c38e2a",
+    "method": "skills/config/write {name:lumen-orchestrator,enabled:false}; fresh skills/list forceReload"
+  }
+}

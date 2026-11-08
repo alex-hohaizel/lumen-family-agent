@@ -1,4 +1,5 @@
 import {forgetGameResultSource,purgeGameResultPhrase} from './game-results.js';
+import {transportThread} from './topic-scope.js';
 import {forgetCalendarProposal} from './calendar-groups.js';
 import {forgetLearningSource} from './learning.js';
 import {forgetMediaSource,purgeMediaPhrase} from './media-assets.js';
@@ -35,9 +36,9 @@ export class Postgres implements Database {
 }
 export async function applySchema(sql: SQL) {
   const exists=await one(sql,"SELECT to_regclass('schema_version') AS existing");if(exists?.existing){
-    const row=await one(sql,'SELECT count(*) AS n FROM schema_version WHERE version BETWEEN 1 AND 20');
-    if(Number(row?.n)===20){
-      const shape=await one(sql,"SELECT count(*)=8 AS complete FROM information_schema.columns WHERE table_schema=current_schema() AND (table_name,column_name) IN (('agent_tasks','audience'),('media_jobs','verification'),('media_jobs','task_id'),('media_jobs','goal_version'),('media_jobs','action_id'),('simple_list_events','revision'),('studio_soundtracks','asset_id'),('messages','request_context'))");
+    const row=await one(sql,'SELECT count(*) AS n FROM schema_version WHERE version BETWEEN 1 AND 21');
+    if(Number(row?.n)===21){
+      const shape=await one(sql,"SELECT count(*)=26 AS complete FROM information_schema.columns WHERE table_schema=current_schema() AND (table_name,column_name) IN (('agent_tasks','audience'),('media_jobs','verification'),('media_jobs','task_id'),('media_jobs','goal_version'),('media_jobs','action_id'),('simple_list_events','revision'),('studio_soundtracks','asset_id'),('messages','request_context'),('recurring_series','shared'),('recurring_series','manager_ids'),('scheduled_actions','shared'),('scheduled_actions','manager_ids'),('scheduled_actions','audience'),('reminders','shared'),('reminders','manager_ids'),('reminders','audience'),('topic_attention','silenced_source_id'),('topic_attention','silenced_revision'),('topic_attention','silenced_body_sha256'),('reminder_clarifications','actor_id'),('reminder_clarifications','topic_id'),('reminder_clarifications','revision'),('reminder_clarifications','source_message_id'),('reminder_clarifications','candidates'),('reminder_clarifications','purpose'),('reminder_clarifications','expires_at'))");
       if(shape?.complete===true)return;
     }
   }
@@ -51,6 +52,7 @@ export async function state(sql: SQL, lock = false) {
   return (await one(sql, `SELECT * FROM app_state WHERE id=1${lock ? ' FOR UPDATE' : ''}`))!;
 }
 export async function queueText(sql: SQL, text: string, revision: number, key: string, service = false, options: TextOptions = {}) {
+  options={...options,threadId:transportThread(options.threadId)};
   // Split by Unicode code point; do not cut a surrogate pair or exceed Telegram's limit.
   const chunks:string[]=[];let chunk='';
   for(const {segment:ch} of new Intl.Segmenter(undefined,{granularity:'grapheme'}).segment(text)){if(ch.length>3500)throw new Error('text_grapheme_too_large');if(chunk.length+ch.length>3500){chunks.push(chunk);chunk='';}chunk+=ch;}
@@ -76,6 +78,7 @@ export async function pauseMemory(sql:SQL){
   await sql.query("UPDATE commitments SET phase='cancelled',state_version=state_version+1 WHERE phase NOT IN ('completed','cancelled','expired','failed')");
   await sql.query("UPDATE action_work SET status='cancelled',payload='{}',plan=NULL WHERE status IN ('pending','running','repair')");
   await sql.query("DELETE FROM conversation_goals");
+  await sql.query("DELETE FROM reminder_clarifications");
   await sql.query("DELETE FROM style_episodes");
   await sql.query("UPDATE app_state SET paused=true,consent='[]',memory_revision=memory_revision+1 WHERE id=1");
   await sql.query("UPDATE reminders SET status='pending' WHERE status='queued'");

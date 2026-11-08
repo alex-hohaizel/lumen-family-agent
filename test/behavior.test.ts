@@ -25,8 +25,8 @@ describe('Темп і доречність самостійної участі',
     assert.equal(seriousConversation(recent), true); assert.equal(decide(recent), false);
   });
   it('відмова від самостійної репліки теж дає паузу', () => {
-    assert.equal(decide(lines(16), new Date(now - 60000)), false);
-    assert.equal(decide(lines(16), new Date(now - 21 * 60000)), true);
+    assert.equal(decide(lines(16), new Date(now - 30000)), false);
+    assert.equal(decide(lines(16), new Date(now - 46000)), true);
   });
   it('не відповідає на стару репліку з накопиченої черги', () => {
     const recent = lines(16);

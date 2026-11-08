@@ -116,7 +116,7 @@ function explicitResume(source:ValidatedOriginalRequest,id:string,boundReview:bo
 export async function prepareRecurringSchedule(sql:SQL,schedule:any,revision:number){
  const series=await seriesForSchedule(sql,schedule.id);
  if(!series){
-  if(!String(schedule.dedup_key).startsWith('series:'))return {allowed:true,audience:undefined};
+  if(!String(schedule.dedup_key).startsWith('series:'))return {allowed:true,audience:schedule.audience==='private'?'private' as const:'group' as const};
   await cancelUnstartedSchedule(sql,schedule.id);return {allowed:false,audience:undefined};
  }
  if(!currentSeries(series,schedule,revision)||series.occurrence_status!=='scheduled'){

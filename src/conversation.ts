@@ -1,6 +1,7 @@
 import {one,state,type SQL} from './db.js';
 import type {Message} from './telegram.js';
 import type {Plan} from './model.js';
+import {relatedDiscussions} from './attention.js';
 
 export async function continuation(sql:SQL,m:Message,revision:number){
   if(!m.from||m.reply_to_message&&!m.reply_to_message.from?.is_bot)return;
@@ -8,17 +9,22 @@ export async function continuation(sql:SQL,m:Message,revision:number){
   const topic=String(m.message_thread_id || 0),uid=String(m.from.id),s=await state(sql);
   const scheduled=await one(sql,"SELECT id,instruction,due_at,timezone FROM scheduled_actions WHERE author_id=$1 AND topic_id=$2 AND revision=$3 AND status='awaiting_confirmation' AND expires_at>now() ORDER BY created_at DESC LIMIT 1",[uid,topic,revision]);
   if(scheduled)return {question:`Підтвердження дії ${scheduled.id}: ${scheduled.instruction}, ${new Date(scheduled.due_at).toISOString()}, ${scheduled.timezone}`,allowed:['schedule_decision'],audience:'personal',kind:'question',user_id:uid,origin:'scheduled_confirmation'};
-  if(s.conversation_style==='addressed')return;
   const candidates=(await sql.query("SELECT * FROM conversation_goals WHERE topic_id=$1 AND revision=$2 AND expires_at>now() AND status='waiting' AND (actor_id=$3 OR audience='group') ORDER BY updated_at DESC LIMIT 8",[topic,revision,uid])).rows;
   const bound=m.reply_to_message?candidates.filter(d=>Number(d.question_message_id)===m.reply_to_message!.message_id):candidates;
   if(bound.length===1){const d=bound[0]!;return {question:d.question,allowed:d.allowed,goal_id:d.id,reference_id:d.id,audience:d.audience,kind:'question',user_id:d.actor_id,origin:'clarification',source_message_id:d.source_message_id};}
   if(bound.length>1)return {origin:'ambiguous',kind:'question',audience:'personal',allowed:[],question:'Кілька чинних питань: уточни, яке продовжується.',candidates:bound.map(x=>({id:x.id,question:x.question}))};
   const d=await one(sql,"SELECT * FROM dialogues WHERE topic_id=$1 AND revision=$2 AND expires_at>now() AND user_id=$3 ORDER BY created_at DESC LIMIT 1",[topic,revision,uid]);
   if(d)return {...d,origin:'explicit_dialogue',reference_id:String(d.source_message_id)};
+  if(s.conversation_style==='addressed'||s.proactive_mode==='off')return;
   // A recent turn is a social candidate, never authority to run actions.
   const previous=await one(sql,"SELECT id,telegram_id,body FROM messages WHERE role='assistant' AND topic_id=$1 AND created_at>now()-interval '3 minutes' ORDER BY id DESC LIMIT 1",[topic]);
   if(previous)return {origin:'social_candidate',question:previous.body,allowed:[],audience:'group',kind:'reaction',message_id:previous.telegram_id};
-
+  const current=await one(sql,"SELECT id FROM messages WHERE telegram_id=$1 AND role='user' AND user_id=$2 AND topic_id=$3",[m.message_id,uid,topic]);
+  if(current){
+    const related=await relatedDiscussions(sql,m.text||m.caption||'',Number(current.id));
+    const bot=related.find(row=>row.role==='assistant');
+    if(bot)return {origin:'social_candidate',question:bot.body,allowed:[],audience:'group',kind:'reaction',message_id:bot.message_id};
+  }
 }
 export async function saveDialogue(sql:SQL,plan:Plan,m:Message,sourceId:number,revision:number,allowed:string[]){
   const explicit=plan.dialogue;const question=plan.behavior?.clarification?.question || explicit?.expecting || plan.reply;

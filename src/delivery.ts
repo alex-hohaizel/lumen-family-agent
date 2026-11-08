@@ -8,11 +8,12 @@ import {reserveEffect,claimEffect,observeEffect} from './commitments.js';
 import {PrivateResults} from './private-results.js';
 import {transferProvenance} from './provenance.js';
 import { state, one, queueText, type Database, type SQL } from './db.js';
-import { Telegram, TelegramError } from './telegram.js';
+import { Telegram, TelegramError,telegramRepairHint } from './telegram.js';
+import {transportThread} from './topic-scope.js';
 import { Media } from './media.js';
 import type { Config } from './config.js';
 import { errorCode } from './engine.js';
-import {ambientStillRelevant} from './attention.js';
+import {ambientStillRelevant,recordDeliveredContribution,unsolicitedBudgetAvailable} from './attention.js';
 import {activityFor} from './activity-status.js';
 import {resolveTaskAudience} from './task-journal.js';
 import { readFile } from 'node:fs/promises';
@@ -120,10 +121,12 @@ export class Delivery {
         if(!source||!await ambientStillRelevant(sql,{message_id:Number(source.telegram_id),date:Math.floor(new Date(source.created_at).getTime()/1000),from:{id:Number(source.user_id),first_name:source.author},chat:{id:Number(s.chat_id),type:'supergroup'},message_thread_id:source.topic_id==='0'?undefined:Number(source.topic_id)},Number(row.source_message_id),s,this.config.timezone,true)){
           await sql.query("DELETE FROM outbox WHERE source_message_id=$1 AND body->>'ambient'='true' AND status='pending'",[row.source_message_id]);return null;
         }
+        if(!await unsolicitedBudgetAvailable(sql,Number(row.source_message_id))){await sql.query("UPDATE outbox SET status='cleared',error_code='ambient_budget_exhausted' WHERE id=$1",[row.id]);return null;}
       }
       if(row.audience==='private'&&!/^\d+$/.test(row.actor_id||'')){await sql.query("UPDATE outbox SET status='failed',error_code='private_recipient_required' WHERE id=$1",[row.id]);return null;}
       const sourceScope=row.audience==='private'&&row.body.scopeTopicId===undefined&&row.body.threadId===undefined&&row.source_message_id?await one(sql,'SELECT topic_id FROM messages WHERE id=$1',[row.source_message_id]):undefined;
-      row.scopeTopicId=String(row.body.scopeTopicId??row.body.threadId??sourceScope?.topic_id??0);
+      try{row.scopeTopicId=String(transportThread(row.body.scopeTopicId??row.body.threadId??sourceScope?.topic_id??0)??0);}
+      catch{await sql.query("UPDATE outbox SET status='failed',error_code='telegram_topic_invalid' WHERE id=$1",[row.id]);return null;}
       row.body.scopeTopicId=row.scopeTopicId;
       if(row.audience==='private')delete row.body.threadId;
       // Reject a mismatched job owner before an outbox effect can claim or alter
@@ -233,6 +236,7 @@ export class Delivery {
         const receipt={provider:'telegram',message_id:sent.message_id,message_ids:sent.message_ids||[sent.message_id],destination_chat_id:row.chatId,operation_id:row.operation_id,...causalScope,...(deliveredOutput?{output:deliveredOutput}:{})};
         if(!await observeEffect(sql,row.operation_id,{...receipt,kind:row.kind},row.revision,Boolean(row.service)))return;
         await sql.query("UPDATE outbox SET status='sent',telegram_id=$1,body=$2 WHERE id=$3",[sent.message_id,JSON.stringify({...row.body,...(row.kind==='panel'?{}:{text:deliveredText}),sentAt:new Date().toISOString(),deliveryReceipt:receipt}),row.id]);
+        await recordDeliveredContribution(sql,row);
         if(row.kind==='media_asset')await sql.query("UPDATE media_publications SET status='delivered',receipts=$2 WHERE id=$1 AND status='queued'",[row.body.publicationId,JSON.stringify([{...receipt,chat_id:row.chatId,verified_at:new Date().toISOString()}])]);
         if(row.body.goalId)await sql.query('UPDATE conversation_goals SET question_message_id=$1 WHERE id=$2',[sent.message_id,row.body.goalId]);
         if(row.kind==='text'&&row.source_message_id)await sql.query("UPDATE scheduled_actions SET confirmation_message_id=$1 WHERE source_message_id=$2 AND status='awaiting_confirmation'",[sent.message_id,row.source_message_id]);
@@ -264,6 +268,8 @@ export class Delivery {
     }catch(e){
       const tg=e instanceof TelegramError?e:null;
       const code=tg?.code||(e instanceof ToolError?e.code:errorCode(e));
+      const repairHint=telegramRepairHint(code);
+      if(repairHint)await this.db.query("UPDATE outbox SET body=body||jsonb_build_object('repairHint',$2::text) WHERE id=$1",[row.id,repairHint]);
       const retry=tg?.retryAfter || 0;
       // Ambiguous deliveries are not retried automatically: Telegram has no sendMessage idempotency key.
       const localized=(e as any)?.code==='localization_unavailable',cancelled=['outbound_cancelled','task_cancelled','action_unavailable'].includes((e as any)?.code);

@@ -605,4 +605,31 @@ WHERE t.audience='private' AND o.body->>'taskId'=t.id::text
 
 INSERT INTO schema_version VALUES(20) ON CONFLICT DO NOTHING;
 
+-- Explicit shared management is separate from a group delivery destination.
+-- Historical rows keep their original owner; never infer a grant from a title.
+ALTER TABLE recurring_series ADD COLUMN IF NOT EXISTS shared boolean NOT NULL DEFAULT false;
+ALTER TABLE recurring_series ADD COLUMN IF NOT EXISTS manager_ids jsonb NOT NULL DEFAULT '[]';
+ALTER TABLE scheduled_actions ADD COLUMN IF NOT EXISTS shared boolean NOT NULL DEFAULT false;
+ALTER TABLE scheduled_actions ADD COLUMN IF NOT EXISTS manager_ids jsonb NOT NULL DEFAULT '[]';
+ALTER TABLE scheduled_actions ADD COLUMN IF NOT EXISTS audience text NOT NULL DEFAULT 'group' CHECK(audience IN ('group','private'));
+ALTER TABLE reminders ADD COLUMN IF NOT EXISTS shared boolean NOT NULL DEFAULT false;
+ALTER TABLE reminders ADD COLUMN IF NOT EXISTS manager_ids jsonb NOT NULL DEFAULT '[]';
+ALTER TABLE reminders ADD COLUMN IF NOT EXISTS audience text NOT NULL DEFAULT 'group' CHECK(audience IN ('group','private'));
+CREATE TABLE IF NOT EXISTS reminder_clarifications (
+  actor_id text NOT NULL,
+  topic_id text NOT NULL,
+  revision integer NOT NULL,
+  source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,
+  candidates jsonb NOT NULL,
+  purpose text NOT NULL CHECK(purpose IN ('series_scope','which_root','private_series_scope','private_roots')),
+  expires_at timestamptz NOT NULL,
+  PRIMARY KEY(actor_id,topic_id)
+);
+INSERT INTO schema_version VALUES(21) ON CONFLICT DO NOTHING;
+
+-- Source-bound conversational interruption; no permanent personality setting.
+ALTER TABLE topic_attention ADD COLUMN IF NOT EXISTS silenced_source_id bigint REFERENCES messages(id) ON DELETE SET NULL;
+ALTER TABLE topic_attention ADD COLUMN IF NOT EXISTS silenced_revision integer;
+ALTER TABLE topic_attention ADD COLUMN IF NOT EXISTS silenced_body_sha256 text;
+
 COMMIT;

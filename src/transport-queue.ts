@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import { one, type Database,type SQL } from './db.js';
 import {bindIngress,validIngressScopes} from './ingress-context.js';
 import type { Update } from './telegram.js';
+import {topicKey} from './topic-scope.js';
 export function ingressFailureKind(error:any){return error?.name==='ZodError'||error instanceof SyntaxError||['ingress_payload_invalid','ingress_ciphertext_invalid','ingress_scope_requires_review'].includes(error?.code)?'validation':'infrastructure';}
 // Ingress can contain a credential submitted in DM. Persist ciphertext only.
 export class TransportQueue {
@@ -57,7 +58,7 @@ export class TransportQueue {
         const value = Buffer.concat([iv, cipher.getAuthTag(), encrypted]).toString('base64');
         const m = update.message || update.edited_message || update.callback_query?.message;
         const actor = update.callback_query?.from || m?.from;
-        const lane = createHash('sha256').update(String(m?.chat.id || update.my_chat_member?.chat.id || update.poll_answer?.poll_id || 'transport') + ':' + String(actor?.id || 'service') + ':' + String(m?.message_thread_id || 0)).digest('hex');
+        const lane = createHash('sha256').update(String(m?.chat.id || update.my_chat_member?.chat.id || update.poll_answer?.poll_id || 'transport') + ':' + String(actor?.id || 'service') + ':' + topicKey(m||{})).digest('hex');
         await this.db.tx(async (sql) => { await one(sql,'SELECT id FROM public.lumen_transport_state WHERE id=1 FOR UPDATE');const pressure=await one(sql,"SELECT count(*) AS n,COALESCE(sum(octet_length(ciphertext)),0) AS bytes FROM public.lumen_ingress WHERE ciphertext IS NOT NULL");if(Number(pressure!.n)>=5000||Number(pressure!.bytes)>32*1024*1024)throw new Error('ingress_backpressure_recovery_required');await sql.query('INSERT INTO public.lumen_ingress(update_id,ciphertext,lane,created_at,context_version) VALUES($1,$2,$3,$4,1) ON CONFLICT DO NOTHING', [update.update_id, value, lane,context.enqueuedAt]); await sql.query('UPDATE public.lumen_transport_state SET poll_offset=GREATEST(poll_offset,$1),last_poll_at=now() WHERE id=1', [update.update_id + 1]); });
     }
     async next() {

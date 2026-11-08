@@ -1,0 +1,156 @@
+{
+  "source_sha": "a1fd79dc1e369f0f6d50579523524cd196f11d72",
+  "bounds": [
+    {
+      "path": "src/config.ts",
+      "statement": "agentSteps min 2 max 12 default 8; quietStart 23 quietEnd 9; dailyTurnLimit default 0; timezone Europe/Kyiv; speechVoice default alloy. These are schema defaults, not observed runtime settings.",
+      "status": "source_observed",
+      "source_files_sha256": {
+        "src/config.ts": "40d59b626eb3cee3ad67462728032fd7e33ccf70bd82b1f1f121a323df18855d"
+      },
+      "runtime_status": "unknown"
+    },
+    {
+      "path": "src/attention.ts",
+      "statement": "Ambient source age <=90 s; checked gap 45 s; debounce now+2 s capped created+8 s; related search 12 terms before expansion, 24 after, 8 historical rows, body 1000 chars. Actual preferences can further restrict.",
+      "status": "source_observed",
+      "source_files_sha256": {
+        "src/attention.ts": "de0b775f4cecf0aa15095d247fcc41627deff18f6c01528698ed51ab7a511a33"
+      },
+      "runtime_status": "unknown"
+    },
+    {
+      "path": "src/interactions.ts",
+      "statement": "InteractionSpec participant_ids/roles max30, options max12, choices max2; roster >8 defaults to published opt-in list. These are operation/working-set bounds, not a declared group-size limit.",
+      "status": "source_observed",
+      "source_files_sha256": {
+        "src/interactions.ts": "e568d45da3efeb669a578f0fa7be6565b4d10ab23876b968d98a3b6645203ac5"
+      },
+      "runtime_status": "unknown"
+    },
+    {
+      "path": "src/agent-tasks.ts; src/agent-tools.ts",
+      "statement": "Task executes max2 tool actions per model turn; recent tool results limit12, feedback5; resume extra steps2..16, max_steps cap64 and fresh 30-minute deadline. Need current task fields for actual remaining budget.",
+      "status": "source_observed",
+      "source_files_sha256": {
+        "src/agent-tasks.ts": "88065f1e85463360db2b42fae93be4b000e0ed3ff2bf65233399e6312b795268",
+        "src/agent-tools.ts": "9dc3f1712def90499d591330983a54fd6111afe1c4c1236e99f1bdee028cea31"
+      },
+      "runtime_status": "unknown"
+    },
+    {
+      "path": "src/recurring.ts",
+      "statement": "Series interval1..12, weekdays1..7, count1..3660; daily/weekly/monthly; DST reject/earlier/later/skip; catch_up latest/ask/skip. Source policy tasks default ask; no inferred automatic execution of missed effects.",
+      "status": "source_observed",
+      "source_files_sha256": {
+        "src/recurring.ts": "897106d7474da016e30f163805ae0d42e58eaa3309f523a6fab4b7bfa935d2c6"
+      },
+      "runtime_status": "unknown"
+    },
+    {
+      "path": "src/request-context.ts; src/recurrence-policy.ts",
+      "statement": "Original request max16 KiB /128 native entities; task resume history64. Truncation/unknown cannot revive old approval.",
+      "status": "source_observed",
+      "source_files_sha256": {
+        "src/request-context.ts": "100a812023c3d78eeb33f0eae16c07db17f58a0223032adb032db986ca7436ea",
+        "src/recurrence-policy.ts": "b03dd47d93afbbff8cb72a5af566a50b3973ffc3da0ca17a91fe6a4739fa85b7"
+      },
+      "runtime_status": "unknown"
+    },
+    {
+      "path": "src/transport-queue.ts",
+      "statement": "AES-256-GCM; key32 bytes, IV12 bytes; ingress pressure rejects at count>=5000 or bytes>32MiB; retry interval5 s then repair for validation or stored attempts>=4; terminal done/discarded older7d pruned.",
+      "status": "source_observed",
+      "source_files_sha256": {
+        "src/transport-queue.ts": "c440204f8e67ac1fecb8a754d54cf9dd5b86347c2c93568ec179fc02585548ba"
+      },
+      "runtime_status": "unknown"
+    },
+    {
+      "path": "src/storage-lifecycle.ts",
+      "statement": "Terminal inbox duplicate payload compaction after1 day, batches100; sent duplicate text batches100; expired UI/cache rows batches500; originals_removed=0; receipts/dedup retained. Declared reproducible cache24h or48MiB LRU.",
+      "status": "source_observed",
+      "source_files_sha256": {
+        "src/storage-lifecycle.ts": "6a39a5e346eaf8aa7a64d473fbb2afcc0f482e5e984e13a94fb1433a560fe80e"
+      },
+      "runtime_status": "unknown"
+    },
+    {
+      "path": "src/main.ts",
+      "statement": "Source loops delivery<=3 concurrent tenants, media<=2, automation<=2. Separately observed Render service metadata: one worker instance, checksPass, pinned SHA live. This does not establish active lease/Auth or real runtime resource usage.",
+      "status": "source_observed",
+      "source_files_sha256": {
+        "src/main.ts": "38f0ef0f53efb3d9121ac6a4bbb078f433c84c351e765d54a222b15d6e45f947"
+      },
+      "runtime_status": "unknown"
+    },
+    {
+      "path": "src/media-workshop.ts",
+      "statement": "Render deadline180000ms; collection position0..49 (working format bound, not overall accepted asset count).",
+      "status": "source_observed",
+      "source_files_sha256": {
+        "src/media-workshop.ts": "359ac1abb87aa27293c8afc5e6d0437bfd3f7be1a0d4803f00e6c8e33d4318ec"
+      },
+      "runtime_status": "unknown"
+    },
+    {
+      "path": "src/sticker-pack.ts",
+      "statement": "WEBM max256*1024 bytes, source count120, unique ID/emoji/telegram_emoji/sha256 checks; provider set/membership/order verified by publisher code. This intake did not run publisher.",
+      "status": "source_observed",
+      "source_files_sha256": {
+        "src/sticker-pack.ts": "363651fd70d8a318611f860255eeb4d30c6dabd16a238bd9b9d3e078ea0a58b4"
+      },
+      "runtime_status": "unknown"
+    },
+    {
+      "path": "src/work-slots.ts",
+      "status": "local_wip_source_observed",
+      "statement": "Один heavy callback; до 8 очікувачів/30 s; browser queue до 4 включно з активною операцією. При відомому ліміті current+reserve <=0.9*limit; reserve192 MiB browser/PDF/DOCX preview,128 MiB інші. Один safe reclaim/recheck; невідомий limit не вигадується. Admission не є allocation cap або гарантією від OOM.",
+      "runtime_status": "not_accepted_or_deployed",
+      "source_files_sha256": {
+        "src/work-slots.ts": "2de3bce1882ac322331cb967b7b5ea2dc2f815899b32000a287ea39eec159801"
+      }
+    },
+    {
+      "path": "src/resource-memory.ts",
+      "status": "local_wip_source_observed",
+      "statement": "Telemetry default30s, heavy sampling1s; /proc traversal max256 processes, cgroup ancestor traversal max16, read text max65536 chars. source=node_process_only and limit=null when cgroup unavailable; unlimited=null. arrayBuffers already included in external; child count unknown=null. No content/identifiers in log. Sampled peak can miss brief spikes.",
+      "runtime_status": "not_accepted_or_deployed",
+      "source_files_sha256": {
+        "src/resource-memory.ts": "b8fda2f444374ed050ff810033bf97d05a61008fe006ab12be1d6ba7bd9b5212"
+      }
+    },
+    {
+      "path": "src/browser.ts",
+      "status": "local_wip_source_observed",
+      "statement": "At most4 pending including active; serialized browser operations/idle cleanup; idleMs default60000. Last browser context closes browser immediately. Safe pressure reclaim never closes active operation or existing sessions.",
+      "runtime_status": "not_accepted_or_deployed",
+      "source_files_sha256": {
+        "src/browser.ts": "c2e8543c4ddc377d486993e924799e448ab377aaedf8290ca28ae2b6f486bb16"
+      }
+    },
+    {
+      "path": "src/visual.ts; src/agent-tasks.ts; src/outcomes.ts; src/media-workshop.ts",
+      "status": "local_wip_source_observed",
+      "statement": "Task resource denial → needs_input без автоматичного model-step; claimed effect лишається uncertain і потребує reconcile; media зберігає repair/materials; visual повертається в pending без decode-attempt та із cooldown30 s; cancel/forget/revision fences зберігаються.",
+      "runtime_status": "not_accepted_or_deployed",
+      "source_files_sha256": {
+        "src/visual.ts": "b8bd25ca0d2a930b3c4337bd2fb93358ef801508b180c6342cdb2c5c14fbfa6e",
+        "src/agent-tasks.ts": "88065f1e85463360db2b42fae93be4b000e0ed3ff2bf65233399e6312b795268",
+        "src/outcomes.ts": "ec9a851b068e98c81f918b0bccea58051109930403e218b5bae3925433046c0a",
+        "src/media-workshop.ts": "359ac1abb87aa27293c8afc5e6d0437bfd3f7be1a0d4803f00e6c8e33d4318ec"
+      }
+    },
+    {
+      "path": "docs/RESOURCE_MEMORY.md",
+      "status": "local_only_untracked_wip_reference",
+      "statement": "Full local design and limits; a clean clone does not carry this file. Hand off unchanged bytes plus hash. No memory guarantee from local macOS pilot; sampled process RSS is not cgroup usage.",
+      "runtime_status": "not_accepted_or_deployed",
+      "source_files_sha256": {
+        "docs/RESOURCE_MEMORY.md": "d006857293a12000438c37a65d9ce9a9c52c72bab6af0306f8e6d2c5f7619c87"
+      }
+    }
+  ],
+  "observed_at": "2026-11-03T19:25:59.902817+00:00",
+  "source_scope": "Pinned HEAD plus current local resource WIP. Source defaults/limits are not measured runtime config."
+}

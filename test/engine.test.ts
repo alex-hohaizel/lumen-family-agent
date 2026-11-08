@@ -110,7 +110,8 @@ describe('Реальна PostgreSQL-логіка приватної групи',
     await h.lumen.receive(message('/consent'));await h.lumen.receive(message('/consent',22));await h.lumen.scheduleDue();assert.equal((await db.query("SELECT * FROM outbox WHERE dedup_key LIKE 'reminder:%'")).rows.length,1);
   });
   it('скасування нагадування прибирає вже підготовлену доставку',async()=>{
-    await paired(h);await db.query("INSERT INTO reminders(title,due_at,author_id) VALUES ('чай',now()-interval '1 minute','11')");await h.lumen.scheduleDue();await h.lumen.receive(message('/cancel 1'));assert.equal((await one(db,'SELECT status FROM reminders'))!.status,'cancelled');assert.equal((await db.query("SELECT * FROM outbox WHERE dedup_key LIKE 'reminder:%'")).rows.length,0);
+    await paired(h);await db.query("INSERT INTO reminders(title,due_at,author_id) VALUES ('чай',now()-interval '1 minute','11')");await h.lumen.scheduleDue();await h.lumen.receive(message('/cancel 1'));assert.equal((await one(db,'SELECT status FROM reminders'))!.status,'cancelled');const receipt=await one(db,"SELECT status FROM outbox WHERE dedup_key LIKE 'reminder:%'");assert.equal(receipt!.status,'cleared');
+    const delivery=new Delivery(db,h.tg as unknown as Telegram,h.config);while(await delivery.next()){}assert.ok(h.tg.sent.every(x=>!x.text.includes('Нагадування: чай')));
   });
   it('невизначена доставка не породжує автоматичних дублів',async()=>{
     await paired(h);await queueText(db,'Тест',0,'test');h.tg.failure=new TelegramError('telegram_network',0,true);const delivery=new Delivery(db,h.tg as unknown as Telegram,h.config);await delivery.next();assert.equal((await one(db,'SELECT status FROM outbox'))!.status,'uncertain');h.tg.failure=undefined;assert.equal(await delivery.next(),false);assert.equal(h.tg.sent.length,0);

@@ -17,5 +17,5 @@ export async function compute(code:string,input:unknown){
     worker.once('error',()=>finish('compute_failed'));
     worker.once('exit',()=>{if(!settled)finish('compute_failed');});
   });
-  });
+  },'compute');
 }

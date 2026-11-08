@@ -129,8 +129,8 @@ describe('Постійна персоналізація й відкладені 
  });
  it('звичайний учасник не скасовує чуже нагадування',async()=>{
    const row=(await one(db,"INSERT INTO reminders(title,due_at,author_id) VALUES('Вода',now()+interval '1 hour','11') RETURNING id"))!;
-   await turn('Люмен, скасуй нагадування',[{kind:'cancel_reminder',id:Number(row.id)}],22);assert.equal((await one(db,'SELECT status FROM reminders'))!.status,'pending');
-   assert.match((await one(db,"SELECT body FROM outbox WHERE dedup_key LIKE 'answer:%'"))!.body.text,/чужих не змінював/);await h.lumen.receive(message('/cancel '+row.id,22));assert.equal((await one(db,'SELECT status FROM reminders'))!.status,'pending');
+   const request=message('Люмен, скасуй нагадування',22);await h.lumen.receive(request);assert.equal((await one(db,'SELECT status FROM reminders'))!.status,'pending');assert.equal(h.brain.calls.length,0);
+   assert.match((await one(db,"SELECT body FROM outbox WHERE dedup_key LIKE $1",['control:'+request.update_id+':%']))!.body.text,/яким ти можеш керувати.*не знайшов/);await h.lumen.receive(message('/cancel '+row.id,22));assert.equal((await one(db,'SELECT status FROM reminders'))!.status,'pending');
  });
 });
 

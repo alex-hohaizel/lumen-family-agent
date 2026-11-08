@@ -66,7 +66,7 @@ export async function scannedPages(bytes: Uint8Array) {
             }
         });
     });
-    });
+    },'document_read');
 }
 export async function analyzeDocument(bytes: Uint8Array, name: string, brain: Brain, db: Database, config: Config) {
     const text = await documentText(bytes, name);

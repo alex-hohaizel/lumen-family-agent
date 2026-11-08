@@ -14,6 +14,7 @@ import {one,forgetPhrase} from '../src/db.js';
 import {verifyTask} from '../src/result-verifier.js';
 import {saveSchedule,ScheduleSchema,dispatchSchedules} from '../src/scheduling.js';
 import {ToolError} from '../src/safe-http.js';
+import {captureOriginalRequestContext} from '../src/request-context.js';
 
 let db:TestDB,h:ReturnType<typeof harness>,seq=1000;
 beforeEach(async()=>{db=new TestDB();await db.init();h=harness(db);await db.query("UPDATE app_state SET chat_id='-100',owner_id='11',participants='[{\"id\":\"11\"},{\"id\":\"22\"}]',consent='[\"11\",\"22\"]' WHERE id=1");await db.query("INSERT INTO members(user_id,name) VALUES('11','А'),('22','Б')");});
@@ -70,7 +71,8 @@ test('research, recommendations and document/image descriptions about video keep
 });
 
 test('deferred media work receives its expected criterion at conversion before execution',async()=>{
- const text='Завтра створи відео з фото',src=await source(text),m=message(text).message!;m.message_thread_id=7;
+ const text='Завтра створи відео з фото',src=await source(text),m=message(text).message!;m.message_thread_id=7;m.message_id=Number((await one(db,'SELECT telegram_id FROM messages WHERE id=$1',[src]))!.telegram_id);
+ await captureOriginalRequestContext(db,src,m,{namespaceChatId:'-100',sourceTopicId:'7'});
  await db.tx(sql=>saveSchedule(sql,ScheduleSchema.parse({kind:'schedule',title:'Відео',instruction:'Створи відео з фото',mode:'task',due_at:new Date(Date.now()+3600000).toISOString(),timezone:'UTC',authorization:'explicit',quote:text}),m,src,++seq,0));
  await db.query("UPDATE scheduled_actions SET due_at=now()-interval '1 second'");assert.equal(await dispatchSchedules(db),1);
  const task=(await one(db,'SELECT * FROM agent_tasks'))!;assert.ok(task.criteria.includes('media'));assert.equal(task.audience,'group');assert.equal((await db.query('SELECT id FROM media_jobs')).rows.length,0);

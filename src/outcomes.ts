@@ -49,6 +49,7 @@ export function outcomeMessage(facts:OutcomeFact[]) {
   const failed=first('failed')||first('needs_input');
   if(failed){
     const album=failed.mediaKind==='album';
+    if(/^(worker_memory_busy|worker_queue_busy|worker_queue_timeout|browser_busy)$/.test(failed.detail||''))return 'Зараз бракує вільних ресурсів для цієї обробки. Можеш попросити повторити її пізніше; автоматично нову спробу не запускаю.';
     if(failed.capability==='lists.manage'&&failed.status==='needs_input'&&failed.detail&&failed.detail!=='needs_input')return failed.detail;
     if(failed.capability==='lists.manage'&&/list_target_unconfirmed/.test(failed.detail||''))return 'Список не змінив: цей пункт не збігається з твоїм проханням. Уточни, що додати або прибрати.';
     if(/original_audio_required/.test(failed.detail||''))return 'Щоб зберегти оригінальний звук, потрібне відео зі звуком. Надішли таке відео або обери трек.';

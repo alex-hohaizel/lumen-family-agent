@@ -101,7 +101,7 @@ const resumeSpecs:ResumeSpec[]=[
  {id:'malformed-quote-range',permit:false,input:id=>({body:command(id),entities:[{type:'blockquote',offset:0,length:command(id).length+1}]})},
  // Queue copies are not original-source proof. The captured live source, its
  // body hash, actor, topic and current task/review remain the V4 authority.
- {id:'durable-original-survives-altered-inbox-copy',permit:true,input:id=>({body:command(id),mismatch:true})}
+ {id:'durable-original-survives-altered-inbox-copy',permit:true,input:id=>({body:'Люмен, '+command(id),mismatch:true})}
 ];
 for(const spec of resumeSpecs)test(`R2 resume actual authored target: ${spec.id}`,async t=>{
  const f=await reviewedLegacyTask(),input=spec.input(f.id),s=await source(input.body,input.entities,{caption:input.caption,review:input.review?f.review:undefined});

@@ -18,5 +18,5 @@ export async function documentText(bytes:Uint8Array,name:string){
     worker.once('error',()=>{signal?.removeEventListener('abort',abort);clearTimeout(timer);reject(new ToolError('document_parse_failed'));});
     worker.once('exit',()=>{signal?.removeEventListener('abort',abort);clearTimeout(timer);if(!received)reject(new ToolError('document_parse_failed'));});
   });
-  });
+  },'document_read');
 }

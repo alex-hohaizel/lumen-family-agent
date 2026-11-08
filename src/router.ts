@@ -1,4 +1,5 @@
 import {setCalendarOwnerResolver} from './calendar-groups.js';
+import {topicKey} from './topic-scope.js';
 import {setCalendarChangeListener} from './calendar-sync.js';
 import {PrivacyFenceDatabase} from './privacy-fence.js';
 import {recoverDispatches} from './commitments.js';
@@ -388,7 +389,7 @@ export class ChatRouter {
       if(approval&&cb.message&&cb.message.from?.id===this.bot.id&&!cb.from.is_bot){
         const registered=await this.registry.find(String(cb.message.chat.id));if(!registered?.enabled)return;
         const runtime=await this.runtime(registered);await runtime.db.tx(async sql=>{const s=await state(sql,true);if(s.paused)return;
-          const row=await one(sql,"UPDATE tool_approvals SET status=$1 WHERE id=$2 AND actor_id=$3 AND revision=$4 AND topic_id=$5 AND status='pending' AND expires_at>now() RETURNING task_id",[approval[1]==='approve'?'approved':'cancelled',approval[2],String(cb.from.id),s.memory_revision,String(cb.message!.message_thread_id || 0)]);
+          const row=await one(sql,"UPDATE tool_approvals SET status=$1 WHERE id=$2 AND actor_id=$3 AND revision=$4 AND topic_id=$5 AND status='pending' AND expires_at>now() RETURNING task_id",[approval[1]==='approve'?'approved':'cancelled',approval[2],String(cb.from.id),s.memory_revision,topicKey(cb.message!)]);
           if(row?.task_id&&approval[1]==='reject')await sql.query("UPDATE agent_tasks SET status='needs_input',error_code='action_rejected',updated_at=now() WHERE id=$1 AND status='waiting'",[row.task_id]);
         });return;
       }
@@ -398,7 +399,7 @@ export class ChatRouter {
         if(cb.message.chat.type==='private'&&String(cb.message.chat.id)!==String(cb.from.id))return;
         const chat=await this.registry.find(String(cb.message.chat.id));if(!chat?.enabled)return;const runtime=await this.runtime(chat);
         if(interactive){await runtime.engine.receive(routedUpdate(update,{update_id:update.update_id,message:{message_id:-update.update_id,date:Math.floor(Date.now()/1000),from:cb.from,chat:cb.message.chat,message_thread_id:cb.message.message_thread_id,text:'[Вибір у поточному кроці]',lumen_interaction_event:{id:interactive[1]!,version:Number(interactive[2]),action:interactive[3]!}}}));return;}
-        await runtime.db.tx(sql=>queueResultView(sql,{panelId:panel![1]!,index:Number(panel![2]),actorId:String(cb.from.id),topicId:String(cb.message!.message_thread_id||0),callbackId:cb.id,updateId:update.update_id}));return;
+        await runtime.db.tx(sql=>queueResultView(sql,{panelId:panel![1]!,index:Number(panel![2]),actorId:String(cb.from.id),topicId:topicKey(cb.message!),callbackId:cb.id,updateId:update.update_id}));return;
       }
       const command=cb.data&&callbackCommand(cb.data);
       const choiceId=/^lumen:choice:([0-9a-f-]{36})$/.exec(cb.data || '')?.[1];
@@ -407,7 +408,7 @@ export class ChatRouter {
       const runtime=await this.runtime(registered);
       if(choiceId){
         const choice=await one(runtime.db,"SELECT * FROM choices WHERE id=$1 AND created_at>now()-interval '1 day'",[choiceId]);const s=await state(runtime.db);
-        if(!choice||s.paused||choice.revision!==s.memory_revision||choice.topic_id!==String(cb.message.message_thread_id || 0))return;
+        if(!choice||s.paused||choice.revision!==s.memory_revision||choice.topic_id!==topicKey(cb.message))return;
         if(choice.audience==='personal'&&choice.target_user_id!==String(cb.from.id))return;
         if(await one(runtime.db,'SELECT update_id FROM receipts WHERE update_id=$1',[update.update_id]))return;
         const menu=choice.menu_id || choice.id;
@@ -434,7 +435,7 @@ export class ChatRouter {
       if(['member','administrator'].includes(status)&&await this.owner(String(member.from.id)))await this.attach(member.chat,String(member.from.id),update.update_id);
       return;
     }
-    const m=update.message || update.edited_message;if(!m?.from||m.from.is_bot)return;
+    const m=update.message || update.edited_message;if(!m?.from||m.from.is_bot||m.sender_chat)return;
     const uid=String(m.from.id),chatId=String(m.chat.id),text=m.text || '';
     // New private Telegram event shapes must never enter ordinary group memory.
     if(m.receiver_user||m.ephemeral_message_id!==undefined)return;

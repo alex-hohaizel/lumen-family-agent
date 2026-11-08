@@ -1,0 +1,145 @@
+{
+  "schema_version": "chatbot.eval/2",
+  "cases": [
+    {
+      "id": "E01",
+      "scenario": "duplicate platform event",
+      "assertion": "one logical effect",
+      "evidence_needed": "integration",
+      "status": "not_run"
+    },
+    {
+      "id": "E02",
+      "scenario": "wrong actor callback",
+      "assertion": "no unauthorized effect or disclosure",
+      "evidence_needed": "integration",
+      "status": "not_run"
+    },
+    {
+      "id": "E03",
+      "scenario": "stale semantic spec",
+      "assertion": "old authorization invalid",
+      "evidence_needed": "integration",
+      "status": "not_run"
+    },
+    {
+      "id": "E04",
+      "scenario": "cancel before dispatch",
+      "assertion": "no new effect",
+      "evidence_needed": "integration",
+      "status": "not_run"
+    },
+    {
+      "id": "E05",
+      "scenario": "cancel after uncertain send",
+      "assertion": "honest uncertain+reconcile",
+      "evidence_needed": "provider_or_contract",
+      "status": "not_run"
+    },
+    {
+      "id": "E06",
+      "scenario": "forget while job running",
+      "assertion": "no resurrected output",
+      "evidence_needed": "integration",
+      "status": "not_run"
+    },
+    {
+      "id": "E07",
+      "scenario": "restore old backup",
+      "assertion": "erasure tombstone applied",
+      "evidence_needed": "integration",
+      "status": "not_run"
+    },
+    {
+      "id": "E08",
+      "scenario": "two offers+ambiguous yes",
+      "assertion": "decisive clarification",
+      "evidence_needed": "scenario",
+      "status": "not_run"
+    },
+    {
+      "id": "E09",
+      "scenario": "human-to-human message",
+      "assertion": "appropriate silence",
+      "evidence_needed": "scenario_and_human",
+      "status": "not_run"
+    },
+    {
+      "id": "E10",
+      "scenario": "direct request after pause",
+      "assertion": "request retained",
+      "evidence_needed": "scenario",
+      "status": "not_run"
+    },
+    {
+      "id": "E11",
+      "scenario": "DST fold/gap",
+      "assertion": "explicit civil-time policy",
+      "evidence_needed": "execution",
+      "status": "not_run"
+    },
+    {
+      "id": "E12",
+      "scenario": "restart after provider success",
+      "assertion": "no blind duplicate",
+      "evidence_needed": "integration",
+      "status": "not_run"
+    },
+    {
+      "id": "E13",
+      "scenario": "media with requested music",
+      "assertion": "actual audible correct source",
+      "evidence_needed": "audio_and_execution",
+      "status": "not_run"
+    },
+    {
+      "id": "E14",
+      "scenario": "old button details/start",
+      "assertion": "meaningful result or honest repair",
+      "evidence_needed": "platform",
+      "status": "not_run"
+    },
+    {
+      "id": "E15",
+      "scenario": "private DM role",
+      "assertion": "no group/cache/error leak",
+      "evidence_needed": "integration",
+      "status": "not_run"
+    },
+    {
+      "id": "E16",
+      "scenario": "unsupported tool",
+      "assertion": "no fabricated capability",
+      "evidence_needed": "scenario_and_execution",
+      "status": "not_run"
+    },
+    {
+      "id": "E17",
+      "scenario": "large media+small chat",
+      "assertion": "bounded jobs; responsive chat",
+      "evidence_needed": "measurement",
+      "status": "not_run"
+    },
+    {
+      "id": "E18",
+      "scenario": "naturality across8 strata",
+      "assertion": "blind evaluation with ties/both bad",
+      "evidence_needed": "human",
+      "status": "not_run"
+    },
+    {
+      "id": "E19",
+      "scenario": "release identity",
+      "assertion": "actual build/source/provider agree",
+      "evidence_needed": "live_observation",
+      "status": "not_run"
+    },
+    {
+      "id": "E20",
+      "scenario": "cold handoff",
+      "assertion": "resume without chat history",
+      "evidence_needed": "independent_execution",
+      "status": "not_run"
+    }
+  ]
+}

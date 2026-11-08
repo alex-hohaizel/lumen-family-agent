@@ -1,4 +1,5 @@
 import {createHash} from 'node:crypto';
+import {topicKey} from './topic-scope.js';
 import {one,type SQL,type Row} from './db.js';
 
 export const ORIGINAL_REQUEST_MAX_BYTES=16*1024;
@@ -128,8 +129,8 @@ export async function captureOriginalRequestContext(sql:SQL,sourceId:number,actu
   ||String(actor.id)!==row.user_id||!isRecord(chat)||!integer(chat.id,Number.MIN_SAFE_INTEGER)||chat.id===0
   ||!transportMatches(scope.namespaceChatId,String(actor.id),String(chat.id),chat.type)
   ||!integer(message.message_id)||String(message.message_id)!==String(row.telegram_id)
-  ||message.message_thread_id!==undefined&&!integer(message.message_thread_id)
-  ||String(message.message_thread_id??0)!==scope.sourceTopicId
+  ||message.message_thread_id!==undefined&&!integer(message.message_thread_id,0)
+  ||topicKey(message)!==scope.sourceTopicId
   ||message.lumen_event!==undefined||message.lumen_interaction_event!==undefined||message.lumen_choice!==undefined)return null;
  if(message.text!==undefined&&typeof message.text!=='string'||message.caption!==undefined&&typeof message.caption!=='string'
   ||message.text&&message.caption||message.lumen_interaction!==undefined)return null;

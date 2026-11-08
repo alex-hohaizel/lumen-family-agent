@@ -13,6 +13,11 @@ import {ToolError} from './safe-http.js';
 import {allowRecurringTaskClaim,taskResumeHistory,actualTaskResumeContext,TASK_RESUME_HISTORY_LIMIT} from './recurrence-policy.js';
 import {loadOriginalRequestContext} from './request-context.js';
 
+const resourceRefusals=new Set(['worker_memory_busy','worker_queue_busy','worker_queue_timeout','browser_busy']);
+function taskStepEvent(phase:'started'|'resource_blocked',step:number){
+  try{console.log(JSON.stringify({event:'background_task_step',phase,step:Number.isSafeInteger(step)&&step>=0?step:0}));}catch{}
+}
+
 export class AgentTasks {
   readonly tools:AgentTools;
   constructor(private db:Database,private config:Config,private brain:Brain){this.tools=new AgentTools(db,config,brain);}
@@ -40,6 +45,7 @@ export class AgentTasks {
       if(!await allowRecurringTaskClaim(sql,task,s.memory_revision))return;
       await sql.query("UPDATE agent_tasks SET status='running',updated_at=now() WHERE id=$1",[task.id]);return {...task,chatId:s.chat_id};
     });if(!job)return false;
+    taskStepEvent('started',job.step);
     return runOperation(this.db,'task:'+job.id,async()=>{
     await new TaskJournal(this.db).event(job.id,'running');
     const provenance=(await this.db.query("SELECT source_message_id FROM provenance_edges WHERE derived_kind='task' AND derived_key=$1",[job.id])).rows.map(r=>Number(r.source_message_id));
@@ -59,7 +65,15 @@ export class AgentTasks {
         const current=await one(this.db,'SELECT status,goal_version FROM agent_tasks WHERE id=$1',[job.id]);if((current?.status!=='running'||current?.goal_version!==job.goal_version))return true;
         let args;try{args=JSON.parse(action.arguments);}catch{throw new ToolError('invalid_tool_arguments');}
         try{const result=await this.tools.execute(action.name,args,context);if(result?.needs_approval){waiting=true;break;}}
-        catch(e){if(!(e instanceof ToolError))throw e;await this.db.query('UPDATE agent_tasks SET error_code=$1 WHERE id=$2',[e.code,job.id]);}
+        catch(e){
+          if(!(e instanceof ToolError))throw e;
+          if(resourceRefusals.has(e.code)){
+            taskStepEvent('resource_blocked',job.step);
+            await this.finish(job,'needs_input','Призупинив завдання через брак вільних ресурсів. Збережений стан залишився; автоматично не повторюватиму крок. Можеш попросити продовжити пізніше.',e.code);
+            return true;
+          }
+          await this.db.query('UPDATE agent_tasks SET error_code=$1 WHERE id=$2',[e.code,job.id]);
+        }
       }
       await this.db.query("UPDATE agent_tasks SET status=$1,step=step+1,available_at=now()+interval '1 second',updated_at=now() WHERE id=$2 AND status='running'",[waiting?'waiting':'pending',job.id]);
     }catch(e){await this.finish(job,'failed',outcomeMessage([toolOutcome('task.execute',{error:e instanceof ToolError?e.code:'task_failed'})]));}
@@ -88,7 +102,7 @@ export class AgentTasks {
     const source=job.source_message_id?await loadOriginalRequestContext(this.db,{sourceId:Number(job.source_message_id),actorId:job.actor_id,topicId:job.topic_id,namespaceChatId:String(job.chatId),audience:job.audience,revision:job.revision}):undefined;
     return Boolean(source&&!source.forwarded&&!source.viaBot&&diagnosticRequestIntent(source.body,source.entities)==='allow');
   }
-  private async finish(job:any,status:string,text:string){
+  private async finish(job:any,status:string,text:string,errorCode?:string){
     job={...job,audience:await resolveTaskAudience(this.db,job,job.chatId)};
     let proof:Awaited<ReturnType<typeof verifyTask>>|undefined;
     if(status==='completed'){
@@ -122,11 +136,13 @@ export class AgentTasks {
       else if(facts.some(f=>['failed','uncertain','needs_input','needs_consent','cancelled','queued'].includes(f.status))){status='needs_input';text=checked.blocked?checked.plan.reply:text.trim()||outcomeMessage(facts);}
       else if(checked.blocked){status='needs_input';text=checked.plan.reply;}
     }
-    await this.db.tx(async sql=>{const s=await state(sql,true);const current=await one(sql,"SELECT status,goal_version FROM agent_tasks WHERE id=$1 FOR UPDATE",[job.id]);if(!current||['cancelled','paused'].includes(current.status)||current.goal_version!==job.goal_version||s.paused||s.memory_revision!==job.revision)return;
-      await sql.query("UPDATE agent_tasks SET status=$1,result=$2,verified_at=CASE WHEN $1='delivering' THEN now() ELSE verified_at END,updated_at=now() WHERE id=$3",[status==='completed'?'delivering':status,text.slice(0,10000),job.id]);
+    const finished=await this.db.tx(async sql=>{const s=await state(sql,true);const current=await one(sql,"SELECT status,goal_version FROM agent_tasks WHERE id=$1 FOR UPDATE",[job.id]);if(!current||['cancelled','paused'].includes(current.status)||current.goal_version!==job.goal_version||s.paused||s.memory_revision!==job.revision)return false;
+      await sql.query("UPDATE agent_tasks SET status=$1,result=$2,error_code=COALESCE($4,error_code),verified_at=CASE WHEN $1='delivering' THEN now() ELSE verified_at END,updated_at=now() WHERE id=$3",[status==='completed'?'delivering':status,text.slice(0,10000),job.id,errorCode||null]);
       const card=await layoutMessage(sql,`${job.title}\n\n${text}`,undefined,{actorId:job.actor_id,topicId:job.topic_id,revision:job.revision,sourceId:job.source_message_id?Number(job.source_message_id):undefined,key:`task-result:${job.id}:${job.step}`,audience:job.audience});
       await queueText(sql,card.text,job.revision,`task-result:${job.id}:${job.step}:${status}`,false,{replyMarkup:card.replyMarkup,entities:card.entities,audience:job.audience,threadId:job.topic_id==='0'?undefined:Number(job.topic_id),sourceMessageId:job.source_message_id?Number(job.source_message_id):undefined,actorId:job.actor_id,taskId:job.id,goalVersion:job.goal_version,sourceIds:(await sql.query("SELECT source_message_id FROM provenance_edges WHERE derived_kind='task' AND derived_key=$1",[job.id])).rows.map(r=>Number(r.source_message_id))});
+      return true;
     });
+    if(!finished)return;
     await new TaskJournal(this.db).event(job.id,status,proof||{});await new TaskJournal(this.db).publish(job.id,true);
   }
   private async approval(){

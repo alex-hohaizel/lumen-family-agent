@@ -1,0 +1,487 @@
+{
+  "record_kind": "documentation-transfer-checkpoint",
+  "revision": "LM-CONTEXT-2026-11-03-r2-applied",
+  "observed_at": "2026-11-03T19:29:27.318361+00:00",
+  "authority": "current-scope.md; direct owner instruction to execute local docs plan",
+  "source": {
+    "repository": "alex-hohaizel/lumen-family-agent",
+    "branch": "chore/codex-migration-2026-10-31",
+    "head_sha": "a1fd79dc1e369f0f6d50579523524cd196f11d72",
+    "tree_sha": "ab005dcd853233648d13f83842385106af8fb47d",
+    "code_version": "1.13.2",
+    "source_scope": "HEAD plus preserved local WIP and applied docs",
+    "preexisting_tracked_dirty_files": 17,
+    "git_cli_auth": "gh auth status reported invalid token; not needed for local stage",
+    "before_snapshot": "/private/tmp/lumen-context-apply-20261103/before.json",
+    "before_snapshot_sha256": "8362cacf20c89a53bfadde8766069cbaabc1f7f127240281af247068fd0c65f1",
+    "preimages_archive": "/private/tmp/lumen-context-apply-20261103/preimages.zip",
+    "preimages_sha256": "6f7fe4b6318fee298d334b37947ef158ccef67e9a57b4d674fce5b5f41ec4e2a"
+  },
+  "accepted": {
+    "companion_criteria": 86,
+    "development_records": 43,
+    "original_requirement_ids": 56,
+    "capability_ids": 25,
+    "code_version": "1.13.2",
+    "sticker_release": "1.13.1",
+    "sticker_count": 120,
+    "local_asset_hashes_verified": 240,
+    "ordered_fingerprint": "0c30bf0ae640f49e30caa02b3d7dd7656e43ca330514e1bbfd2783ea8513afe9"
+  },
+  "ci": {
+    "name": "verify",
+    "head_sha": "a1fd79dc1e369f0f6d50579523524cd196f11d72",
+    "conclusion": "success",
+    "url": "https://github.com/alex-hohaizel/lumen-family-agent/actions/runs/41241290498/job/124655554650",
+    "scope": "committed SHA, not local WIP or this uncommitted docs delta",
+    "local_product_suite": "not_run_docs_only"
+  },
+  "provider_observation": {
+    "observed_at": "2026-11-03 19:26:00 UTC",
+    "service_id": "srv-dbfl0je7bikc73dvg0qg",
+    "deploy_id": "dep-dbj6j67b9u1s73d6aeb0",
+    "status": "live",
+    "commit": "a1fd79dc1e369f0f6d50579523524cd196f11d72",
+    "auto_deploy_trigger": "checksPass",
+    "build_start_match_AGENTS": true,
+    "scope": "read_only_metadata",
+    "runtime_health": "unknown",
+    "lease_auth": "unknown",
+    "actual_model_voice_config": "unknown",
+    "group_runtime_started": "unknown",
+    "current_telegram_readback": "not_run",
+    "receipt": "/private/tmp/lumen-context-apply-20261103/remote-readback.json"
+  },
+  "local_wip": {
+    "state": "preserved_uncommitted_not_accepted_or_deployed",
+    "files": [
+      {
+        "path": "docs/RESOURCE_MEMORY.md",
+        "sha256": "d006857293a12000438c37a65d9ce9a9c52c72bab6af0306f8e6d2c5f7619c87"
+      },
+      {
+        "path": "src/agent-tasks.ts",
+        "sha256": "88065f1e85463360db2b42fae93be4b000e0ed3ff2bf65233399e6312b795268"
+      },
+      {
+        "path": "src/browser.ts",
+        "sha256": "c2e8543c4ddc377d486993e924799e448ab377aaedf8290ca28ae2b6f486bb16"
+      },
+      {
+        "path": "src/compute.ts",
+        "sha256": "01f25161515c3e53f7134bf50aafe0faecb3a3b6f9e82b5f457c03edae4bbbd8"
+      },
+      {
+        "path": "src/document-workshop.ts",
+        "sha256": "bdf76cdbf65e2d99343c52b25f2198784636f61c880e12481001ef98c4994f4c"
+      },
+      {
+        "path": "src/documents.ts",
+        "sha256": "0d9ee5cb58c88acfd0dd97b2e89c599de2ca4536ec84cdfea340926d87a094a6"
+      },
+      {
+        "path": "src/evolution-tools.ts",
+        "sha256": "639a49bea948602fb34ddc9d56588ca1cfa0fe6374e5bfbc50bdaebb7beeff90"
+      },
+      {
+        "path": "src/image-design.ts",
+        "sha256": "e1ab6e756acbaae65d50bd5991a8e5d38a6067aa6b8a389628ee2137c7593066"
+      },
+      {
+        "path": "src/main.ts",
+        "sha256": "38f0ef0f53efb3d9121ac6a4bbb078f433c84c351e765d54a222b15d6e45f947"
+      },
+      {
+        "path": "src/media-addressed.ts",
+        "sha256": "4f932bcfa058d0ee7bb05783362238b49261b3daf4f540989118f354c1ba6a9f"
+      },
+      {
+        "path": "src/media-workshop.ts",
+        "sha256": "359ac1abb87aa27293c8afc5e6d0437bfd3f7be1a0d4803f00e6c8e33d4318ec"
+      },
+      {
+        "path": "src/office-tools.ts",
+        "sha256": "d39ca7af7e6f54302f2325e6281e5a81bc9fb32155ca689b0f7ae0e2583d0e4f"
+      },
+      {
+        "path": "src/outcomes.ts",
+        "sha256": "ec9a851b068e98c81f918b0bccea58051109930403e218b5bae3925433046c0a"
+      },
+      {
+        "path": "src/resource-memory.ts",
+        "sha256": "b8fda2f444374ed050ff810033bf97d05a61008fe006ab12be1d6ba7bd9b5212"
+      },
+      {
+        "path": "src/scheduling.ts",
+        "sha256": "2e42e614fac8b790ba98b6b39f5ac6282b64b1ef5d57a51b45f9d61b35d37c3c"
+      },
+      {
+        "path": "src/visual.ts",
+        "sha256": "b8bd25ca0d2a930b3c4337bd2fb93358ef801508b180c6342cdb2c5c14fbfa6e"
+      },
+      {
+        "path": "src/work-slots.ts",
+        "sha256": "2de3bce1882ac322331cb967b7b5ea2dc2f815899b32000a287ea39eec159801"
+      },
+      {
+        "path": "test/browser-memory.test.ts",
+        "sha256": "793b6105b0742cd476a2b916529e6a6a123f2e710ddb56245d1ba0592a7e61c9"
+      },
+      {
+        "path": "test/resource-memory.test.ts",
+        "sha256": "67dd2c3e5fd511844e11022d8b267d7b82007f13683699cb577fcc543dfaa2d6"
+      },
+      {
+        "path": "test/resource-recovery.test.ts",
+        "sha256": "7f1a5df1b352d2311866ed2409fb5fe24fae50afb0b2ea898cc84f0a3679d5ec"
+      },
+      {
+        "path": "test/scheduling-memory.test.ts",
+        "sha256": "c6bf6b74895c8b6c1738ee6f42dd55e22dc282ab3c72a16d603a88f982fa8999"
+      },
+      {
+        "path": "test/visual-resource.test.ts",
+        "sha256": "d6851a49a1b0da8e40a8fa0c9b39b963f5b66fd4731f4edcea18f18416ae7a82"
+      },
+      {
+        "path": "test/work-slots-memory.test.ts",
+        "sha256": "e79c58873c93464d7fe94fd55d44350fc3c977cf2548512b27df1b4d8d8812df"
+      },
+      {
+        "path": "tools/diagnostics/resource-pilot.mjs",
+        "sha256": "82e38a118a8a2057d4b5299be9fdc33246524316716598e0d6b8854e7d93a718"
+      },
+      {
+        "path": "tools/diagnostics/resource-pilot.py",
+        "sha256": "a34571caad9ce6872f948628a44e6885f1d980dd0d6afd1d5516417dcd412532"
+      }
+    ],
+    "resource_document": "docs/RESOURCE_MEMORY.md",
+    "portability": "local-only; cold snapshot contains bytes. Clean clone requires separate WIP package.",
+    "hashes_role": "Original pre-repair bytes; current four scoped deltas and complete handoff are recorded in current_work."
+  },
+  "jobs": {
+    "current_jobs": "unknown",
+    "remote_ids": "unknown",
+    "dispatch_authorized": false,
+    "rule": "reconcile actual provider outcome before resubmit; preserve cancel/expiry/privacy fences"
+  },
+  "states": {
+    "documentation_applied": true,
+    "structural_preservation": "pass_19_checks",
+    "independent_preservation_review": "pass_content_only",
+    "applied_cold_intake": "pass_independent_continuation",
+    "old_skills": "physically_removed_8_names_9_directories_after_verified_full_family_backup",
+    "production_mutation": false
+  },
+  "rights": {
+    "allowed": [
+      "exact_old_skill_family_physical_removal",
+      "full_backup_verification",
+      "read_only_skill_loader_check",
+      "context_receipt_update"
+    ],
+    "excluded": [
+      "unrelated_skill_changes",
+      "product_code_data_assets_changes",
+      "production",
+      "deploy",
+      "secrets",
+      "commit_push"
+    ]
+  },
+  "unresolved": [
+    "current runtime/jobs/Telegram evidence",
+    "human naturalness/mobile/motion/long resource session",
+    "current implementation acceptance for43 recovered records",
+    "master archive availability for future asset repair",
+    "new product goal; audio remains deferred"
+  ],
+  "next_receiver": "ChatBot Atelier director in current source/WIP checkout",
+  "next_action": "Continue current Lumen through available chatbot-atelier-director and project-owned docs. Select concrete next product goal in BRIEF; no production action authorized.",
+  "return_validation": "all86 criteria and43/56 scope, all unique clauses, unchanged out-of-scope bytes, correct cold source/WIP/live/rights reconstruction",
+  "evidence_directory": "/private/tmp/lumen-context-apply-20261103",
+  "method": {
+    "name": "chatbot-atelier-director",
+    "version": "2.2.0",
+    "entrypoint_sha256": "8c4bf58703f0535e086d383a1808e2ae1c8c81597961784cda50d6a4ef62abd0"
+  },
+  "archive": {
+    "migration_zip": "/Users/admin/Downloads/Lumen_ChatBot_Atelier_Migration_2026-11-03.zip",
+    "sha256": "99f116274ddc9ab3fe17a1ab313d3951f3dce363a735d7250ea1ad12db8b35c8",
+    "durability": "temporary execution archives must be retained with project materials; not runtime dependencies"
+  },
+  "independent_preservation_review": {
+    "actor": "/root/preservation_audit",
+    "verdict": "pass_content_only",
+    "report": "/private/tmp/lumen-context-apply-20261103/final-preservation-review.json",
+    "sha256": "e84640921b974818f28153d3d81c38302ed95c57bb3cff0f1fec4973efd23837"
+  },
+  "status_update_limit": "Review judged rule text, mappings and source dependencies; subsequent status/receipt fields do not change those contracts.",
+  "cold_intake": {
+    "actor": "/root/cold_receiver",
+    "report": "/private/tmp/lumen-context-apply-20261103/cold-intake.json",
+    "sha256": "d702386fa67564b9b85d72f909417ea92f5257cf48f0fc8763dc235846e1f5b6",
+    "verdict": "sufficient_for_chatbot_atelier_continuation",
+    "input_manifest_sha256": "dca6d1f9214a954ae21795de62d21b920e4fcafc97aa03c9509525042e0c10d5",
+    "scope": "independent new-context read-only continuation from isolated file view; no old skill used; no product runtime or human proof",
+    "metadata_delta": "Final checkpoint/coverage/transform receipt fields updated after frozen input review; rule text and preserved source/WIP remain unchanged.",
+    "targeted_documentary_retest": {
+      "manifest": "/private/tmp/lumen-context-apply-20261103/cold-retest-input/DELTA_MANIFEST.json",
+      "sha256": "5d7fc2bb25a479bc4a1109f53f4bd0b6611c4c144ddbaa7a6296bce19b0c3d88",
+      "scope": "one surplus newline removed from persona fence; unchanged canonical source; independently retested after initial frozen intake"
+    }
+  },
+  "completion_scope": "local_documentation_applied_locally_verified_independently_reviewed",
+  "skill_retirement": {
+    "status": "physically_removed",
+    "names": [
+      "lumen-architecture",
+      "lumen-conversation",
+      "lumen-cost-audit",
+      "lumen-feature",
+      "lumen-orchestrator",
+      "lumen-qa",
+      "lumen-release",
+      "lumen-stickers"
+    ],
+    "removed_directories": [
+      "/Users/admin/.agents/skills/lumen-orchestrator",
+      "/Users/admin/Developer/lumen-family-agent/.agents/skills/lumen-architecture",
+      "/Users/admin/Developer/lumen-family-agent/.agents/skills/lumen-conversation",
+      "/Users/admin/Developer/lumen-family-agent/.agents/skills/lumen-cost-audit",
+      "/Users/admin/Developer/lumen-family-agent/.agents/skills/lumen-feature",
+      "/Users/admin/Developer/lumen-family-agent/.agents/skills/lumen-orchestrator",
+      "/Users/admin/Developer/lumen-family-agent/.agents/skills/lumen-qa",
+      "/Users/admin/Developer/lumen-family-agent/.agents/skills/lumen-release",
+      "/Users/admin/Developer/lumen-family-agent/.agents/skills/lumen-stickers"
+    ],
+    "backup": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-family-removal-2026-11-03/lumen-skill-family-full-backup-2026-11-03.zip",
+    "backup_sha256": "732031a34b628f060d168f765a61443619b8a089837c87affddf525b446bf2e8",
+    "backed_up_files": 115,
+    "old_family_loader_entries": 0,
+    "chatbot_atelier_director_available": true,
+    "receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-family-removal-2026-11-03/physical-removal-verification.json",
+    "receipt_sha256": "ed1fbf036a3ee8e8f28cbccc278f7eca3b55489fa3e9705a5430096dffdbe640",
+    "other_skills_code_data_assets_production": "unchanged"
+  },
+  "rights_of_documentation_stage": {
+    "allowed": [
+      "local_documentation",
+      "read_only_intake",
+      "independent_verification"
+    ],
+    "excluded": [
+      "commit",
+      "push",
+      "PR",
+      "deploy",
+      "production",
+      "DB",
+      "secrets",
+      "code_assets_tests_config_changes",
+      "skill_retirement"
+    ]
+  },
+  "previous_exact_orchestrator_disable_receipt": {
+    "status": "disabled_by_exact_name_supported_manager",
+    "name": "lumen-orchestrator",
+    "physical_files_deleted": false,
+    "old_available": 0,
+    "director_available": 1,
+    "backup": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-retirement-2026-11-03/lumen-orchestrator-full-backup-2026-11-03.zip",
+    "backup_sha256": "d7ad85d2afeeb13c356e681d4d38afa313d6bfe63f8c52a694063913cb53abb3",
+    "skill_files_backed_up": 108,
+    "report": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-retirement-2026-11-03/retirement-completion.json",
+    "report_sha256": "f8389ef395cda5b1bc1b16a75f88ea44524a82845434551ad3a4974224c38e2a",
+    "method": "skills/config/write {name:lumen-orchestrator,enabled:false}; fresh skills/list forceReload"
+  },
+  "current_work": {
+    "id": "LM-RELEASE-1.13.3-2026-11-09",
+    "updated_at": "2026-11-08T22:17:12.988261+00:00",
+    "kind": "finish_current_work_and_release",
+    "status": "prepublication; actual CI/deploy completion is recorded in external release_receipt",
+    "user_approval": "Заверши всі роботи поточні і доведи версію до готовності у продакшену і задеплой",
+    "approval_source": "Direct owner request in current Codex chat; no platform message ID supplied",
+    "scope": "Current r1 reminder/topic/attention repair + resourceWIP + MP4 soundtrack blocker + current project-context CI; excludes future feature backlog/newvoice/providers.",
+    "version": "1.13.3",
+    "method": "ChatBot Atelier5.0.0 director/build/media/qa/release, no retired skill",
+    "source": {
+      "baseline_head": "a1fd79dc1e369f0f6d50579523524cd196f11d72",
+      "working_source_hash": "b1f14b89fe1d31f2f84a50f3b4f3be28f76d764e520a80dda3ddbb6b8b19db6d",
+      "source_files": 238,
+      "git_publication": "normal Git commit and one push to origin/main after independentQA; exactSHA captured in release_receipt"
+    },
+    "target": {
+      "service_id": "srv-dbfl0je7bikc73dvg0qg",
+      "workspace_id": "tea-dbf5jsfb9u1s73bn4d1g",
+      "baseline_live_deploy": "dep-dbj6j67b9u1s73d6aeb0",
+      "baseline_live_sha": "a1fd79dc1e369f0f6d50579523524cd196f11d72",
+      "branch": "main",
+      "actual_auto_deploy_trigger": "checksPass",
+      "actual_build_start": "matches AGENTS; read-only provider metadata checked before publication",
+      "resources": "existing0.5CPU/512MiB singleworker/disk unchanged"
+    },
+    "rights": {
+      "allowed": [
+        "finish causal current repairs/WIP",
+        "local synthetic checks and independentQA",
+        "commit/push through Git",
+        "exactSHA GitHub verify",
+        "one automatic existingworker deploy after checks",
+        "normal additive schema21 via app startup",
+        "bounded non-secret runtime/Telegram120/order readback"
+      ],
+      "excluded": [
+        "model/voice/secrets/repo visibility changes",
+        "new paidresource/provider",
+        "manual historicalreminder/chatdata cleanup",
+        "secondworker/Authmanager or duplicate deploy",
+        "broad live diagnostics"
+      ]
+    },
+    "readiness_at_source_freeze": {
+      "specification": "authorized_current_release",
+      "code": "83/83 targeted +11/11 releasecontrols +standalonepackage smoke; independent18scenarios/238source/240assets PASS",
+      "integration": "local synthetic physicalmedia/resource; actualLinuxconstrained smoke pending exactCI",
+      "device": "not_assessed",
+      "human": "not_assessed",
+      "deployed": "baseline1.13.2 observed; newdeploy not yet run"
+    },
+    "preservation": "All25CAP/143toolnames/persona/voice/model/120acceptedWEBM+120PNG/order and existingjobs/data/contracts retained; prior exactWIPpreimages and r1package retained externally.",
+    "rollback": "Before newingress olda1fd79 can be considered only after actualcompatibilitycheck. After newprivate schedules it is unsafe: requires audience-compatible forwardfix; see docs/RELEASING.md and independentnegativeprobe. No blindrestore over forget.",
+    "evidence_root": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09",
+    "release_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09/delivery.json",
+    "receipt_authority": "Exact commit/tree/CI/deploy/sticker/runtime status evolves only in this short external receipt; a locator is not a PASS. Re-read provider/HEAD on continuation.",
+    "next_action": "Finish independentQA, publish verifiedcandidate via Git, await requiredverify including constrainedpackage smoke, observe exactlyone Renderdeploy and120sticker/order/groupstartup. Keep currentproof limits separate.",
+    "independent_qa": {
+      "actor": "/root/release_independent_qa",
+      "verdict": "GO_frozen_candidate_to_mandatory_CI; actualproduction_completion_requires_CI_and_live_receipts",
+      "report": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09/evidence/independent-qa/REPORT.md",
+      "report_sha256": "7ae2cd0c6e432d4b8e175ee8ad21e4232364ac11cafa2b763ae58ce7ed6dcc25",
+      "receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09/evidence/independent-qa/receipt.json",
+      "receipt_sha256": "bba30608c8995cb0692dc7b9947edb870594b411e4beb83ecf6bc69a23632026",
+      "own_scenarios_pass": 18,
+      "source_hashes": 238,
+      "asset_hashes": 240
+    }
+  },
+  "active_record_pointer": "current_work",
+  "work_history": [
+    {
+      "id": "LM-REPAIR-2026-11-03-r1",
+      "updated_at": "2026-11-08T21:33:08.392346+00:00",
+      "kind": "local_product_repair",
+      "status": "complete_local_scope_with_known_baseline_failure",
+      "approved_scope": [
+        "S0",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "user_approval": "Погоджую r1. Виконай усі три виправлення локально, проведи тести й незалежну перевірку. Збережи всі можливості та незавершену роботу. Без push, deploy і змін production.",
+      "approval_source": "Пряме повідомлення власника у цьому Codex-чаті 2026-11-08; platform message ID не наданий.",
+      "toolkit": "ChatBot Atelier5.0.0; installed audit complete, no native-state schema reset",
+      "scope_hash": "698bb97bd19c7581308f4b1531b79f46236a7cdfa4614a5eeb99bf043e35f76f",
+      "script_sha256": "9674844cf56aa1853d3d508ad8d1f68786e39147ff459e34f9d9bb638fe86876",
+      "evidence_root": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-repair-2026-11-08",
+      "rights_stop": [
+        "no push",
+        "no deploy",
+        "no production mutation"
+      ],
+      "readiness": {
+        "specification": "approved_r1",
+        "code": "pass_scoped_local_checks",
+        "integration": "pass_synthetic_scoped; full_repository_verify_has_known_baseline_failure",
+        "device": "not_tested",
+        "human": "not_assessed",
+        "deployed": "unchanged_by_this_work_not_reobserved"
+      },
+      "next_action": "Review the local diff/result and preserved handoff. Local r1 work ends here. Keep no-push/no-deploy/no-production boundary; any future media repair or release requires its own concrete authorized scope.",
+      "candidate": {
+        "head_sha": "a1fd79dc1e369f0f6d50579523524cd196f11d72",
+        "working_source_hash": "248ed6e90fa8f4369cbe7d384c9598d3ffb409e44003b8c290d209132c58633d",
+        "manifest": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-repair-2026-11-08/candidate2-source-manifest.json",
+        "manifest_sha256": "34be45403e8cc8e119a29fb23d9c66713cf511979cbdf1941fed04e69540e1ab",
+        "source_files": 234,
+        "git_state": "dirty_preserved_no_new_commit"
+      },
+      "checks": {
+        "targeted_causal": {
+          "tests": 130,
+          "pass": 130,
+          "fail": 0
+        },
+        "full_repository_verify": {
+          "exit_code": 1,
+          "tests": 1237,
+          "pass": 1236,
+          "fail": 1,
+          "failure": "V3 supplied-music phrasing keeps selected MP4 soundtrack trim/loop semantics: render_cancelled_or_timeout",
+          "baseline": "Same failure reproduced on exact before source; media implementation/fixture unchanged."
+        },
+        "release_tools": {
+          "tests": 11,
+          "pass": 11,
+          "fail": 0,
+          "environment": "TMPDIR=/private/tmp; canonical path avoids macOS /var alias refusal, no guard/code change"
+        },
+        "runtime_package": "pass_standalone_imports_dependencies_assets_PDF_PNG_FFmpeg",
+        "comparable_tasks": {
+          "count": 5,
+          "before_fake_model_calls": 4,
+          "after_fake_model_calls": 3,
+          "deliveries_both": 5,
+          "quality_assertions": "pass",
+          "limits": "synthetic single observations; no production capacity/cost/model quality claim"
+        }
+      },
+      "independent_qa": {
+        "actor": "/root/independent_repair_qa",
+        "verdict": "GO_scoped_local_repair; NO_GO_full_verify_or_production_claim",
+        "report": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-repair-2026-11-08/evidence/independent-qa/independent-qa-candidate2.json",
+        "sha256": "1b82bbab283d619bac69cb7a8b561bbe3b2b323f519004c71d6468eaeb6db3ee",
+        "fresh_checks": "39 adversarial groups;13 addressed failures;3 hint authority controls;v20→21 migration;8 callbacks/cross-chat;4 wire;visual boundary"
+      },
+      "cold_continuation": {
+        "actor": "/root/cold_receiver_r1_final",
+        "verdict": "GO_bounded_local_continuation",
+        "report": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-repair-2026-11-08/evidence/cold-receiver/receipt.json",
+        "sha256": "45c2691150ee1390e3630acfa57e9038412ed579350c184821a754f70fc58f11",
+        "own_cases": 10,
+        "own_assertions": 74,
+        "additional_targeted_tests": 122,
+        "old_lumen_skill_used": false
+      },
+      "preservation": {
+        "wip_files": 25,
+        "byte_identical": 21,
+        "scoped_changes_with_exact_preimages": [
+          "src/scheduling.ts",
+          "src/evolution-tools.ts",
+          "src/visual.ts",
+          "test/scheduling-memory.test.ts"
+        ],
+        "missing": 0,
+        "accepted_asset_hashes": 240,
+        "accepted_asset_mismatches": 0,
+        "source_tool_names": 143,
+        "capability_ids": 25,
+        "persona_model_voice_config_dependencies": "unchanged from before; no production config read/mutation"
+      },
+      "completion": {
+        "stage": "independently_reviewed",
+        "scope": "local r1 S0–S4 with reported preexisting repository failure",
+        "owner_acceptance": "not_claimed",
+        "production": "not_authorized_not_changed"
+      },
+      "remaining_limits": [
+        "Preexisting MP4 soundtrack loop timeout leaves whole-repository verify red. Repair of that media path is outside r1.",
+        "No live incident DB rows/actual Telegram native forum delivery or human naturalness/mobile assessment; original production reminders were not deleted.",
+        "No current provider runtime/jobs/auth/health observation; Nov3 metadata remains historical."
+      ]
+    }
+  ]
+}

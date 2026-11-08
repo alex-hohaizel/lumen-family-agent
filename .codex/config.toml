@@ -1,0 +1,9 @@
+# Lumen project-scoped Codex defaults. Loaded only when project is trusted.
+# Do not put credentials or API keys here.
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 3
+# Leave model selection to the user's Codex UI/account; don't pin an unavailable model.

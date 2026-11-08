@@ -1,4 +1,4 @@
-import {withWorkerSlot} from './work-slots.js';
+import {withWorkerSlot,setIdleMemoryReclaimer,type HeavyWorkKind} from './work-slots.js';
 import {readFile} from 'node:fs/promises';
 import {unzipFiles} from './office.js';
 import sharp from 'sharp';
@@ -11,16 +11,44 @@ import {chromiumRuntime} from './chromium-runtime.js';
 interface Session {context:BrowserContext;page:Page;last:number;writeOrigin?:string;blockedWrites:number;writes:number;lastWriteStatus?:number;}
 export class BrowserTools {
   private browser?:Browser;private sessions=new Map<string,Session>();private tail:Promise<unknown>=Promise.resolve();private idle?:ReturnType<typeof setTimeout>;
-  constructor(private request:HTTPRequest=safeRequest){}
+  private pending=0;private activeOperation=false;private generation=0;
+  constructor(private request:HTTPRequest=safeRequest,private idleMs=60000,private heavy:typeof withWorkerSlot=withWorkerSlot){}
+  private enqueue<T>(kind:HeavyWorkKind,fn:()=>Promise<T>,heavy=true){
+    if(this.pending>=4)return Promise.reject<T>(new ToolError('browser_busy'));
+    this.pending++;
+    const execute=async()=>{
+      clearTimeout(this.idle);this.generation++;this.activeOperation=true;
+      try{return await fn();}
+      finally{
+        this.activeOperation=false;
+        if(!this.sessions.size)await this.close().catch(()=>{});
+        else{
+          const generation=this.generation;
+          this.idle=setTimeout(()=>{
+            const cleanup=this.tail.catch(()=>{}).then(async()=>{if(!this.activeOperation&&generation===this.generation)await this.close();});
+            this.tail=cleanup;void cleanup.catch(()=>{});
+          },this.idleMs);this.idle.unref();
+        }
+      }
+    };
+    const task=this.tail.catch(()=>{}).then(()=>heavy?this.heavy(execute,kind):execute());this.tail=task;
+    return task.finally(()=>{this.pending--;});
+  }
+  // Called while another heavy callback owns the global slot: never wait on browser.tail.
+  async releaseIdleMemory(){if(!this.activeOperation&&!this.sessions.size)await this.close();}
   async available(){try{await import('playwright-core');await import('@sparticuz/chromium');return true;}catch{return false;}}
   async run(scope:string,operation:string,args:Record<string,any>,approvedOrigin?:string){
-    const task=this.tail.catch(()=>{}).then(()=>withWorkerSlot(()=>this.perform(scope,operation,args,approvedOrigin)));this.tail=task;return task;
+    return this.enqueue('browser',()=>this.perform(scope,operation,args,approvedOrigin),operation!=='close');
   }
   private async start(){
     if(this.browser?.isConnected())return this.browser;
-    const {chromium:driver}=await import('playwright-core');const {default:binary}=await import('@sparticuz/chromium');
-    const runtime=await chromiumRuntime();const executable=process.env.LUMEN_CHROMIUM_PATH || runtime.executablePath;
-    const launch=()=>driver.launch({executablePath:executable,args:[...binary.args.filter(a=>!a.startsWith('--single-process')),'--disable-background-networking','--disable-extensions','--disable-sync','--disable-breakpad','--disable-component-update'],headless:true,timeout:30000,env:{PATH:process.env.PATH || '/usr/bin:/bin',HOME:'/tmp',LANG:'uk_UA.UTF-8',FONTCONFIG_PATH:runtime.directory+'/fonts',LD_LIBRARY_PATH:runtime.directory+':/usr/lib:/lib/x86_64-linux-gnu'}});
+    const {chromium:driver}=await import('playwright-core');
+    const common=['--disable-background-networking','--disable-extensions','--disable-sync','--disable-breakpad','--disable-component-update','--no-first-run'];
+    // Explicit local executable supports synthetic macOS checks; production keeps its packaged Linux runtime.
+    const local=process.platform!=='linux'?process.env.LUMEN_CHROMIUM_PATH:undefined;
+    const runtime=local?undefined:await chromiumRuntime();
+    const args=local?common:[...(await import('@sparticuz/chromium')).default.args.filter(a=>!a.startsWith('--single-process')),...common];
+    const launch=()=>driver.launch({executablePath:local||process.env.LUMEN_CHROMIUM_PATH||runtime!.executablePath,args,headless:true,timeout:30000,env:{PATH:process.env.PATH || '/usr/bin:/bin',HOME:'/tmp',LANG:'uk_UA.UTF-8',...(runtime?{FONTCONFIG_PATH:runtime.directory+'/fonts',LD_LIBRARY_PATH:runtime.directory+':/usr/lib:/lib/x86_64-linux-gnu'}:{})}});
     try{this.browser=await launch();}catch(error){if(!String(error).includes('SIGSEGV'))throw error;checkOperation();await new Promise(resolve=>setTimeout(resolve,150));this.browser=await launch();}
     return this.browser;
   }
@@ -80,13 +108,13 @@ export class BrowserTools {
       });
       return {...snapshot,fingerprint:createHash('sha256').update(JSON.stringify(snapshot)).digest('hex'),blocked_write_requests:s.blockedWrites,submitted_requests:s.writes,last_write_status:s.lastWriteStatus,content_is_untrusted:true,retrieved_at:new Date().toISOString()};
     }catch(e){if(e instanceof ToolError)throw e;throw new ToolError('browser_operation_failed');}
-    finally{signal?.removeEventListener('abort',abort);clearTimeout(timer);s.writeOrigin=undefined;s.last=Date.now();if(!s.context.pages().length)this.sessions.delete(scope);this.idle=setTimeout(()=>void this.close().catch(()=>{}),120000);this.idle.unref();}
+    finally{signal?.removeEventListener('abort',abort);clearTimeout(timer);s.writeOrigin=undefined;s.last=Date.now();if(!s.context.pages().length)this.sessions.delete(scope);}
   }
   async pdf(html:string){
-    const task=this.tail.catch(()=>{}).then(()=>withWorkerSlot(async()=>{checkOperation();const browser=await this.start(),context=await browser.newContext({serviceWorkers:'block',javaScriptEnabled:false});await context.route('**/*',r=>r.abort());const signal=operationSignal();const abort=()=>{void context.close().catch(()=>{});};signal?.addEventListener('abort',abort,{once:true});const timer=setTimeout(abort,25000);timer.unref();try{const page=await context.newPage();await page.setContent(html,{waitUntil:'domcontentloaded',timeout:15000});return await page.pdf({format:'A4',margin:{top:'18mm',right:'18mm',bottom:'18mm',left:'18mm'},printBackground:true});}finally{clearTimeout(timer);signal?.removeEventListener('abort',abort);await context.close().catch(()=>{});if(!this.sessions.size)await this.close().catch(()=>{});}}));this.tail=task;return task;
+    return this.enqueue('document_pdf',async()=>{checkOperation();const browser=await this.start(),context=await browser.newContext({serviceWorkers:'block',javaScriptEnabled:false});await context.route('**/*',r=>r.abort());const signal=operationSignal();const abort=()=>{void context.close().catch(()=>{});};signal?.addEventListener('abort',abort,{once:true});const timer=setTimeout(abort,25000);timer.unref();try{const page=await context.newPage();await page.setContent(html,{waitUntil:'domcontentloaded',timeout:15000});return await page.pdf({format:'A4',margin:{top:'18mm',right:'18mm',bottom:'18mm',left:'18mm'},printBackground:true});}finally{clearTimeout(timer);signal?.removeEventListener('abort',abort);await context.close().catch(()=>{});if(!this.sessions.size)await this.close().catch(()=>{});}});
   }
   async docxPDF(bytes:Uint8Array){
-    const task=this.tail.catch(()=>{}).then(()=>withWorkerSlot(async()=>{
+    return this.enqueue('document_preview',async()=>{
       checkOperation();const parts=unzipFiles(bytes);if(Object.keys(parts).some(p=>/\.(?:html?|js|exe|bin)$/i.test(p))||/altChunk|OLEObject/i.test(parts['word/document.xml']?.toString()||''))throw new ToolError('docx_active_content_not_previewable');
       const images=Object.entries(parts).filter(([p])=>p.startsWith('word/media/'));if(images.length>30)throw new ToolError('docx_image_count_limit');for(const [,b] of images){const meta=await sharp(b,{limitInputPixels:20000000}).metadata();if((meta.width||0)*(meta.height||0)>20000000)throw new ToolError('docx_image_pixel_limit');}
       const [zip,docx,font]=await Promise.all([readFile(new URL('../../node_modules/jszip/dist/jszip.min.js',import.meta.url),'utf8'),readFile(new URL('../../node_modules/docx-preview/dist/docx-preview.min.js',import.meta.url),'utf8'),readFile(new URL('../../assets/fonts/DejaVuSans.ttf',import.meta.url))]);
@@ -94,10 +122,12 @@ export class BrowserTools {
       try{const page=await context.newPage();await page.setContent('<!doctype html><meta charset="utf-8"><style>@font-face{font-family:Lumen;src:url(data:font/ttf;base64,'+font.toString('base64')+')}body{margin:0;font-family:Lumen} .docx-wrapper{padding:0!important;background:white!important}.docx{box-shadow:none!important;margin:0!important;break-after:page}</style><main id="document"></main>');await page.addScriptTag({content:zip});await page.addScriptTag({content:docx});
       await page.evaluate(async data=>{const binary=Uint8Array.from(atob(data),c=>c.charCodeAt(0));await (window as any).docx.renderAsync(binary,document.getElementById('document'),undefined,{inWrapper:true,ignoreLastRenderedPageBreak:false,renderHeaders:true,renderFooters:true,renderFootnotes:true,renderEndnotes:true,experimental:false});await document.fonts.ready;},Buffer.from(bytes).toString('base64'));checkOperation();return await page.pdf({format:'A4',printBackground:true,preferCSSPageSize:true,margin:{top:'0',right:'0',bottom:'0',left:'0'}});
       }finally{clearTimeout(timer);signal?.removeEventListener('abort',abort);await context.close().catch(()=>{});if(!this.sessions.size)await this.close().catch(()=>{});}
-    }));this.tail=task;return task;
+    });
   }
   async trim(){const task=this.tail.catch(()=>{}).then(async()=>{if(!this.sessions.size)await this.close();});this.tail=task;return task;}
-  async closeScope(prefix:string){for(const [key,s] of this.sessions)if(key===prefix||key.startsWith(prefix+':')){await s.context.close().catch(()=>{});this.sessions.delete(key);}}
+  async closeScope(prefix:string){for(const [key,s] of this.sessions)if(key===prefix||key.startsWith(prefix+':')){await s.context.close().catch(()=>{});this.sessions.delete(key);}await this.releaseIdleMemory();}
   async close(){clearTimeout(this.idle);await this.browser?.close();this.sessions.clear();this.browser=undefined;}
 }
 export const browsers=new BrowserTools();
+
+setIdleMemoryReclaimer(()=>browsers.releaseIdleMemory());

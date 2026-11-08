@@ -1,0 +1,1767 @@
+{
+  "document_type": "lumen-accepted-development-scope",
+  "revision": "2026-11-03-project-context-applied-r2",
+  "purpose": "Full project-owned preservation of the R2 + R3.1 development scope referenced by the owner; not a runtime schema or current implementation certification.",
+  "authority": {
+    "available_owner_source": "docs/lumen/requirements/accepted-decisions.md#owner-excerpts",
+    "exact_available_owner_quote": "Давай зроби абсолютно все з цього раунду і попередніх збережень. Окрім аудіо, це ше під питанням якості, це відкладемо на потім, а зараз все роби з попередніх узгодження щодо 5 великих і 10 додаткових, плюс ці, але поки без аудіо",
+    "scope": "All previously agreed five major features, ten improvements and added R3.1 scope; new audio/TTS/STT deferred.",
+    "approval_limits": "Aggregate acceptance is visible in available owner excerpt. Original platform message ID and full surrounding conversation are not available. Historical source proposal and implementation plan are preserved, not silently expanded into new permission.",
+    "current_authorized_action": "Local documentation migration and independent continuation validation under LM-CONTEXT-2026-11-03-r2; no product/production/skill mutation, commit, push or deployment."
+  },
+  "source_binding": {
+    "authoring_archive_library_file_id": "libfile_eacd327e079c8191ac88bc43375e458a",
+    "authoring_archive_sha256": "ab2edc9a8765c9f85988c1581c1cced6ad1f67d8da16569b2ddb9d71af8597fa",
+    "archive_plan_path": "docs/IMPLEMENTATION_1_12_PLAN.json",
+    "plan_bytes": 129665,
+    "plan_sha256": "120d8fa07d6da943d63ed78d75f520715b44cd04294d3bbc9f8f93f0e46d86fc",
+    "source_original_full_audit_library_file_id": "libfile_efffc1960cd48191a3ca7df62a556c17",
+    "source_original_media_extension_library_file_id": "libfile_53a9ce494cb8819194bd57a08d427724"
+  },
+  "historical_execution_metadata": {
+    "release": "1.12.0",
+    "scope": "All R2 + R3.1 requirements; new audio deferred",
+    "excluded": [
+      "New TTS/STT/audio integration"
+    ],
+    "upstream": "37c101a957795d54c9710811337d6c44e9677f04",
+    "production_version": "1.12.0",
+    "publication_blocker": null,
+    "brief_ref": "Lumen-1.12-no-audio / 2026-10-30-R3.1",
+    "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+    "qualification": "unqualified",
+    "qualification_reason": "All 575 server tests and 10 runtime probes passed; reproduced local blockers were independently retested. Whole-brief acceptance remains unqualified for the remaining human/device/user-calendar/full-load checks.",
+    "base_source_commit": "69cc6fcb9edb911f6df8de36b93e3f96ca0ead30",
+    "active_requirement_ids": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10",
+      "P11",
+      "P12",
+      "P13",
+      "P14",
+      "B01",
+      "B02",
+      "B03",
+      "B04",
+      "B05",
+      "B06",
+      "B07",
+      "B08",
+      "B09",
+      "B10",
+      "B11",
+      "B12",
+      "C02",
+      "C03",
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5",
+      "U1",
+      "U2",
+      "U3",
+      "U4",
+      "U5",
+      "U6",
+      "U7",
+      "U8",
+      "U9",
+      "U10",
+      "M01",
+      "M02",
+      "R3.1-6",
+      "R3.1-7",
+      "R3.1-8",
+      "R3.1-9",
+      "R3.1-10",
+      "R3.1-11",
+      "R3.1-12"
+    ],
+    "unverified_external_checks": [
+      "Human conversation/style and full user workflows",
+      "Telegram Android/iOS presentation and MP4 playback",
+      "Real user calendar account/permission UX",
+      "Full simultaneous media/conversation workload under production CPU and memory limits",
+      "U5 final model answer false attribution and production cost"
+    ],
+    "audio_decision": {
+      "status": "deferred",
+      "source": "Latest user instruction: implement everything except audio",
+      "baseline_delivery_defect": "Existing voice outbox non-null history fix retained; no new voice renderer or audio feature enabled",
+      "deferred": [
+        "Voice profile selection and listening qualification",
+        "New audio generation, duration/profile metadata and media UX",
+        "Local TTS runtime and resource qualification"
+      ]
+    },
+    "verification_report": "docs/QA_1_12.json",
+    "local_verification": {
+      "build": "passed",
+      "selected_functional_tests": {
+        "passed": 563,
+        "failed": 0,
+        "unavailable": 12
+      },
+      "independent_review": "docs/qa-1-12/independent-review.json",
+      "code_blockers_reported_by_review": "Repaired and retested locally; no claim about untested external gates"
+    },
+    "deployed_code_commit": "91c7970aada6bafc6d7205b8d0fa4ace6f1969af",
+    "source_revision_scope": "Local frozen product revision used by independent and functional checks; deployed_code_commit is the corresponding remote code revision.",
+    "publication": {
+      "status": "live",
+      "code_commit": "91c7970aada6bafc6d7205b8d0fa4ace6f1969af",
+      "deploy": "dep-dbiac4ou01pc73948ef0",
+      "owner_authorization_confirmed": true,
+      "record": "docs/RELEASE_1_12_DELIVERY_2026_10_30.json"
+    },
+    "server_verification": {
+      "tests": 575,
+      "passed": 575,
+      "failed": 0,
+      "skipped": 0,
+      "runtime_probes_passed": 10,
+      "record": "docs/RELEASE_1_12_DELIVERY_2026_10_30.json"
+    }
+  },
+  "records": [
+    {
+      "source_section": "4 Стиль і зміст розмови",
+      "kind": "findings",
+      "requirement": {
+        "id": "S01",
+        "title": "Пряме звернення скасовує коректне слухання",
+        "status": "Підтверджена програмна гілка та ізольоване відтворення",
+        "source": "src/behavior-engine.ts:63; src/engine.ts:47; test/behavior-111.test.ts:36",
+        "text": "Якщо людина пише «Люмен, не відповідай, я допишу», коректний план listen нормалізатор замінює готовим уточненням «Не зовсім зрозумів...». Причина в тому, що direct прирівняний до обовʼязку відповісти. Потрібно розрізняти загублене доручення та виконане прохання помовчати.",
+        "acceptance": "Явне прохання тиші не створює тексту, стікера, уточнення чи дії. Наступне явне звернення поновлює бесіду. Помилковий listen на справжнє доручення окремо виявляється й не губить його."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/behavior-engine.ts",
+        "test/core-112.test.ts"
+      ],
+      "requirement_ids": [
+        "S01"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior.",
+        "Human style and Telegram client presentation acceptance remains open."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "4 Стиль і зміст розмови",
+      "kind": "findings",
+      "requirement": {
+        "id": "S02",
+        "title": "Збережена пауза між ініціативами не застосовується",
+        "status": "Підтверджено кодом і eligibility probe",
+        "source": "src/engine.ts:561; src/attention.ts:30; src/attention.ts:45",
+        "text": "gap_minutes записується як proactive_gap_minutes та ambient_gap_seconds, але нова attention-гілка використовує фіксовані 45 і 25 секунд. У перевірці за налаштованих 90 хвилин новий ambient-кандидат допускається через 46 секунд. Це ще не доводить, що бот фактично заговорить: далі модель може обрати мовчання.",
+        "acceptance": "Пауза рахується від фактично доставленого самостійного внеску. До її завершення нова непрохана репліка не надсилається; прямі запити та потрібні ходи чинної справи працюють. Після паузи зʼявляється право оцінити доречність, а не обовʼязок заговорити."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/attention.ts",
+        "test/behavior-111.test.ts"
+      ],
+      "requirement_ids": [
+        "S02"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior.",
+        "Human style and Telegram client presentation acceptance remains open."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "4 Стиль і зміст розмови",
+      "kind": "findings",
+      "requirement": {
+        "id": "S03",
+        "title": "Разове побажання можна записати як постійне",
+        "status": "Відтворено приймання семантично хибного але допустимого за схемою плану",
+        "source": "src/personalization.ts:9; src/personalization.ts:16; src/personalization.ts:30; src/engine.ts:71",
+        "text": "Для «тільки сьогодні без жартів» сервер приймає personalize humor=off і пише participant_preferences. Окремі style_episodes уже існують, але alternative path покладається на правильний вибір моделі. Частоту таких помилок у живій роботі не встановлено.",
+        "acceptance": "Тимчасові межі перевіряються до довготривалого запису. «Називай мене Оля, а сьогодні без жартів» зберігає імʼя і лише тимчасово змінює гумор. Ясне постійне прохання не потребує спеціального слова «завжди»."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/personalization.ts",
+        "src/behavior-engine.ts",
+        "test/core-112.test.ts",
+        "test/revision-112.test.ts"
+      ],
+      "requirement_ids": [
+        "S03"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior.",
+        "Human style and Telegram client presentation acceptance remains open."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "4 Стиль і зміст розмови",
+      "kind": "findings",
+      "requirement": {
+        "id": "S04",
+        "title": "Політики стікерів і розбору цитат неузгоджені",
+        "status": "Підтверджені локальні неузгодженості",
+        "source": "src/model.ts:157; src/model.ts:174; src/presentation.ts:53; src/presentation.ts:58; src/behavior-engine.ts:99",
+        "text": "Одна інструкція дозволяє самостійний стікер, інша забороняє, а sender вимагає власного тексту. Водночас currentStyleCue по-різному трактує ту саму цитату в різних лапках. Це не причина збільшувати частоту стікерів або додавати випадкові жарти.",
+        "acceptance": "Одна канонічна політика тексту, реакції, стікера й тиші. Цитати, переклад і приклади не змінюють стиль. Власне пряме побажання змінює його з правильним строком дії."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/model.ts",
+        "src/presentation.ts",
+        "test/core-112.test.ts"
+      ],
+      "requirement_ids": [
+        "S04"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior.",
+        "Human style and Telegram client presentation acceptance remains open."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "6 Аудит візуальної подачі",
+      "kind": "findings",
+      "requirement": {
+        "id": "P01 і P04",
+        "title": "Коротка форма може приховати потрібні факти",
+        "status": "Механічно відтворено на layoutMessage",
+        "source": "src/message-layout.ts:57; src/message-layout.ts:58; src/message-layout.ts:66; src/message-layout.ts:71; src/message-layout.ts:76; src/engine.ts:479; src/engine.ts:497",
+        "text": "За наявності presentation.card вхідний текст замінюється полями картки. Якщо підтверджений результат нагадування містив ID й точний час, а картка їх не повторила, вони зникають без автоматичного створення деталей. Довгий fallback може винести ціну, час чи іншу істотну умову всередину Докладніше, лишивши питання «обираємо?» зовні.",
+        "acceptance": "Домен передає visible_required facts. Renderer мусить зберегти час, ціну, склад, строк або іншу умову, без якої неможливо прийняти рішення. Підтверджені результати додаються структурно, а не відновлюються здогадкою з тексту."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/text-document.ts",
+        "src/message-layout.ts",
+        "src/localization.ts",
+        "test/core-112.test.ts",
+        "test/presentation.test.ts"
+      ],
+      "requirement_ids": [
+        "P01",
+        "P04"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior.",
+        "Human style and Telegram client presentation acceptance remains open."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "6 Аудит візуальної подачі",
+      "kind": "findings",
+      "requirement": {
+        "id": "P02 P03 P06 P08 P13",
+        "title": "Форматування губиться або суперечить правилам API",
+        "status": "Відтворено програмні виходи; зовнішній 400 не спостерігався",
+        "source": "src/message-layout.ts:75; src/message-layout.ts:90; src/localization.ts; src/result-views.ts; src/compositions.ts",
+        "text": "Auto-bold заголовка може накластися на code entity. Markdown у summary очищається без збереження виділення; сторінки деталей зберігаються як сирі рядки; переклад зміненого тексту прибирає entities; composition result може показати raw Markdown і JSON. Поточні перевірки форматування не охоплюють усі кінцеві способи подачі.",
+        "acceptance": "Один типізований документ із блоками й stable span IDs проходить локалізацію, валідацію, поділ і доставку. Результат будь-якого шляху відповідає правилам API, а невдала багата форма деградує до повного читабельного тексту зі збереженим змістом."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/text-document.ts",
+        "src/message-layout.ts",
+        "src/localization.ts",
+        "test/core-112.test.ts",
+        "test/presentation.test.ts"
+      ],
+      "requirement_ids": [
+        "P02",
+        "P03",
+        "P06",
+        "P08",
+        "P13"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior.",
+        "Human style and Telegram client presentation acceptance remains open."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "6 Аудит візуальної подачі",
+      "kind": "findings",
+      "requirement": {
+        "id": "P05 P07 P09 P12",
+        "title": "Кнопки і фрагменти можуть втратити звʼязок зі змістом",
+        "status": "Механічні відтворення та окреме UX-судження",
+        "source": "src/db.ts:40; src/presentation.ts; src/interactions.ts",
+        "text": "Клавіатура розміщується на першому chunk, тоді як повні варіанти можуть лишитися в останньому. Anchor за текстом вибирає перше однакове входження. Довгі варіанти стають кнопками «Варіант 1». Поділ зберігає surrogate pairs, але може розділити складний emoji між повідомленнями. Довгий перелік очікуваних учасників також перевантажує просту картку.",
+        "acceptance": "Кнопка привʼязана до версії конкретного рішення і лежить поруч із повним питанням та умовами. Довгі варіанти мають змістовні короткі назви. Поділ іде за grapheme clusters та блоками. Список статусів компактний, докладний roster доступний окремо."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/text-document.ts",
+        "src/message-layout.ts",
+        "src/localization.ts",
+        "test/core-112.test.ts",
+        "test/presentation.test.ts"
+      ],
+      "requirement_ids": [
+        "P05",
+        "P07",
+        "P09",
+        "P12"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior.",
+        "Human style and Telegram client presentation acceptance remains open."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "6 Аудит візуальної подачі",
+      "kind": "findings",
+      "requirement": {
+        "id": "P10 P11 P14",
+        "title": "Декорації й службові репліки не мають єдиної політики",
+        "status": "P10 і P14 відтворені; P11 є межею серверного enforcement",
+        "source": "src/presentation.ts:53; src/presentation.ts:58; src/activity-status.ts:29; src/message-layout.ts",
+        "text": "Непроханий самостійний стікер відкидається попри дозвіл у частині промпта. Статус затримки обирається з трьох фраз за update ID, а не за фактичним етапом. Разовий emoji=off не є параметром renderer; це не доводить непослух живої моделі, але лишає побажання залежним від генерації.",
+        "acceptance": "Звичайна репліка може бути без оформлення; підтримка без декорацій; гра з прихованими спойлерами; дослідження зі структурою. Службовий статус називає реальний етап. Явне вимкнення декору діє на всі форми, включно з кнопками й реакціями."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/text-document.ts",
+        "src/message-layout.ts",
+        "src/localization.ts",
+        "test/core-112.test.ts",
+        "test/presentation.test.ts"
+      ],
+      "requirement_ids": [
+        "P10",
+        "P11",
+        "P14"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior.",
+        "Human style and Telegram client presentation acceptance remains open."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "8 Серверна частина і правильність памʼяті",
+      "kind": "findings",
+      "requirement": {
+        "id": "B01",
+        "title": "Контекст читається через багато взаємно заблокованих транзакцій",
+        "status": "Структура доведена кодом; виграш у мілісекундах ще не виміряний",
+        "source": "src/privacy-fence.ts:29; src/privacy-fence.ts:42; src/registry.ts:15; src/engine.ts:352; src/personalization.ts:33",
+        "text": "PrivacyFenceDatabase кожний query перетворює на транзакцію з app_state FOR UPDATE. Паралельні SELECT одного чату знову змагаються за один рядок. Персоналізація додає запити на кожного автора та повторно обчислюється у wrapper моделі. Це збільшує SQL round trips і час утримання пулу, навіть якщо самі вибірки швидкі.",
+        "acceptance": "Спочатку один короткий fenced snapshot із пакетним завантаженням людей та повторним використанням результату. Модель, HTTP і важкі обчислення виконуються поза транзакцією. Перед записом і доставкою знову перевіряються актуальні epoch, джерела, права й версії. Відокремлений read-only шлях допустимий лише після тестів гонок із forget, edit, pause та restore."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/engine.ts",
+        "src/privacy-fence.ts",
+        "test/runtime-lifecycle-112.test.ts"
+      ],
+      "requirement_ids": [
+        "B01"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "8 Серверна частина і правильність памʼяті",
+      "kind": "findings",
+      "requirement": {
+        "id": "B02",
+        "title": "Recovery повторно переписує завершені дії",
+        "status": "Точний SQL-предикат і реляційна модель",
+        "source": "src/commitments.ts:114; src/commitments.ts:118; src/engine.ts:297; src/main.ts:75",
+        "text": "Кожний processNext викликає recovery ще до пошуку роботи. UPDATE повторно охоплює terminal rows, а done може стати cancelled. Перший і другий однакові проходи моделі зачепили той самий рядок. Це зайві записи та зміна історичного статусу; без вимірювань не встановлюється обсяг WAL або фактична ціна CPU.",
+        "acceptance": "Статус завершеної роботи зберігається. Перехід mutable rows і очищення приватних payload/plan розділяються. Другий незмінений recovery змінює нуль рядків. Due maintenance не проходить всю завершену історію кожний idle tick; uncertain effects не повторюються."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/router.ts",
+        "src/commitments.ts",
+        "test/state-111.test.ts"
+      ],
+      "requirement_ids": [
+        "B02"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "8 Серверна частина і правильність памʼяті",
+      "kind": "findings",
+      "requirement": {
+        "id": "B03",
+        "title": "Похідні дані не завжди успадковують усі джерела",
+        "status": "Пропущені звʼязки доведено кодом і вузьким відтворенням колектора",
+        "source": "src/engine.ts:365; src/engine.ts:369; src/engine.ts:383; src/scheduling.ts:55; src/image-jobs.ts:25; src/personalization.ts:30",
+        "text": "До моделі потрапляють related discussions, факти й окремі персональні зразки, джерела яких не повністю входять у sourceIds. Частина переходів schedule→task/outbox та image→assistant message не переносить повний набір походження. Merge кількох preference-полів лишає лише один source_message_id. Це створює законні сценарії, де після забування первинної репліки похідний переказ або поле може зберегтися.",
+        "acceptance": "Кожний фрагмент context packer повертає data разом із точними source IDs і versions. Єдиний transfer contract діє на кожний похідний запис. Preference має походження на рівні поля. Forget проходить усі залежності, черги, індекси, кеші й результати; нові джерела не вгадуються з відсутніх legacy edges."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/provenance.ts",
+        "src/db.ts",
+        "test/deep-112.test.ts",
+        "test/revision-112.test.ts",
+        "src/agent-tools.ts",
+        "src/learning-sources.ts",
+        "test/tool-snapshot-112.test.ts",
+        "docs/qa-1-12/independent-review.json"
+      ],
+      "requirement_ids": [
+        "B03"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      },
+      "independent_verdict": "fixed / validated_in_scope on the reproduced B03 mechanisms; not whole-brief validation"
+    },
+    {
+      "source_section": "8 Серверна частина і правильність памʼяті",
+      "kind": "findings",
+      "requirement": {
+        "id": "B04",
+        "title": "Прострочене меню може залишити осиротілі голоси",
+        "status": "Код і реляційна модель; повний PostgreSQL replay є наступним gate",
+        "source": "src/presentation.ts:32; src/schema.sql:117; src/db.ts:95; src/engine.ts:364",
+        "text": "Choices видаляються за строком, але choice_votes не мають відповідного FK або спільного очищення. Forget шукає їх через уже видалені choices, а recent_choices читає raw останні голоси. У синтетичній моделі джерело видалено, але label лишився доступним для контексту.",
+        "acceptance": "Негайно виключити orphan/expired/private-ineligible votes з group context. Expiry видаляє повʼязані записи атомарно; для потрібної історії створюється стабільний menu owner із походженням. Старі orphan rows очищуються після dry run. Перевіряються два меню з однаковим label і різними джерелами."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/db.ts",
+        "test/interactions-170.test.ts"
+      ],
+      "requirement_ids": [
+        "B04"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "8 Серверна частина і правильність памʼяті",
+      "kind": "findings",
+      "requirement": {
+        "id": "C02 і C03",
+        "title": "Заява про виконання може обійти guard",
+        "status": "Незалежне детерміноване відтворення точного gateOutcome",
+        "source": "src/outcomes.ts:32; src/outcomes.ts:34; src/engine.ts:423; src/engine.ts:497",
+        "text": "План «Документ надіслано» без доказу та без дій блокується. Та сама заява з неповʼязаною законною personalize action проходить. Заголовок і facts картки взагалі не входять у claimText. Це прогалина guard, а не встановлена частота неправдивих заяв живої моделі.",
+        "acceptance": "Перевірка не залежить від наявності будь-якої сторонньої дії. Кожна заява про кожну операцію має відповідний completion/delivery proof. Контроль охоплює всі видимі блоки, підписи, деталі, приватні результати й повідомлення worker. Інструментальна квитанція одного файла не підтверджує інший файл."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/outcomes.ts",
+        "test/revision-112.test.ts"
+      ],
+      "requirement_ids": [
+        "C02",
+        "C03"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "11 Десять суттєвих покращень чинних можливостей",
+      "kind": "upgrades",
+      "requirement": {
+        "id": "U1",
+        "title": "Приватні внески без технічних форм",
+        "text": "Замість JSON або числового коду людина пише «мені до 600 гривень, у пʼятницю після шостої». Бот формує typed draft, показує зрозуміле тлумачення, приймає виправлення та питає лише відсутню істотну умову. Ranking і неприйнятні варіанти задаються кнопками. Ephemeral input може доповнити чинний DM-канал після перевірки API й клієнтів.",
+        "gate": "12 звичайних неоднозначних і помилкових відповідей; бюджет валюта дата й групова справа не підмінюються; відмова приватної доставки не відкриває відповідь у групі.",
+        "source": "src/group-work.ts:122; src/agent-services.ts:76; src/router.ts:255"
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/private-drafts.ts",
+        "src/private-inbox.ts",
+        "test/upgrade-112.test.ts"
+      ],
+      "requirement_ids": [
+        "U1"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "11 Десять суттєвих покращень чинних можливостей",
+      "kind": "upgrades",
+      "requirement": {
+        "id": "U2",
+        "title": "Справді різні сценарії ігор",
+        "text": "Готові activity шаблони отримують versioned scenario packs із різними підказками, допустимими діями, рішеннями й наслідками. У bounded typed schema перевіряються заявлені clue/solution constraints. Для довільної вільної прози математична гарантія цілісності не заявляється.",
+        "gate": "Три різні справи або квести змінюють законні рішення, мають коректний reveal і не зводяться до тих самих констант. Некоректний generated case не стартує; доступний перевірений stored scenario.",
+        "source": "src/session-engine.ts:106; src/session-engine.ts:204; src/session-engine.ts:226; src/games.ts:6"
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/scenario-packs.ts",
+        "src/session-engine.ts",
+        "test/upgrade-112.test.ts"
+      ],
+      "requirement_ids": [
+        "U2"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "11 Десять суттєвих покращень чинних можливостей",
+      "kind": "upgrades",
+      "requirement": {
+        "id": "U3",
+        "title": "Темп гри під життя компанії",
+        "text": "Погоджена політика синхронної чи вечірньої асинхронної партії, пас, пауза, повернення, передача ведення та приєднання з наступного раунду. Відсутність людини не стає автоматичною поразкою або згодою. Recovery уже існує; нове тут соціальне правило темпу.",
+        "gate": "Учасник зник інший запізнився ведучий пішов. Партія або законно триває або ясно стоїть. Повернення дає коротку орієнтацію та конкретний доступний хід; тиха година не спричиняє несподіваний reveal.",
+        "source": "src/games.ts:93; src/games.ts:120; src/session-engine.ts:92"
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/session-engine.ts",
+        "test/upgrade-112.test.ts"
+      ],
+      "requirement_ids": [
+        "U3"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "11 Десять суттєвих покращень чинних можливостей",
+      "kind": "upgrades",
+      "requirement": {
+        "id": "U4",
+        "title": "Дослідження з перевіркою кожного важливого висновку",
+        "text": "Claim records повʼязують твердження, часову область, точний excerpt/locator, дату джерела, позначку висновку й суперечності. Посилання на сторінку саме по собі не підтверджує число або рекомендацію. Людська відповідь лишається читабельною, докази відкриваються адресно.",
+        "gate": "Змінена ціна суперечливі дати нерелевантне джерело й dead URL не стають verified висновком. Збій джерела дає частковий результат із чіткою межею. Кеш показує давність.",
+        "source": "src/agent-services.ts:45; src/result-verifier.ts:16; src/extended-tools.ts:150"
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/agent-services.ts",
+        "src/result-verifier.ts",
+        "src/extended-tools.ts",
+        "test/revision-112.test.ts"
+      ],
+      "requirement_ids": [
+        "U4"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "11 Десять суттєвих покращень чинних можливостей",
+      "kind": "upgrades",
+      "requirement": {
+        "id": "U5",
+        "title": "Пригадування за змістом із перевіркою оригіналу",
+        "text": "Пошук враховує парафразу, українські форми слів, час, автора, тему й статус факту. Кандидати перечитуються у джерелі. Виправлений факт, жарт і припущення не подаються як чинна домовленість. Потреба vector index визначається порівнянням якості, ціни й стирання.",
+        "gate": "Зафіксований набір із 30 запитів включає парафрази та негативні приклади. Вимірюються recall false attribution і вартість. При сумніві бот показує два релевантні кандидати або уточнює; забуті джерела не повертаються.",
+        "source": "src/agent-tools.ts:125; src/attention.ts:50; src/memory.ts:12"
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/recall.ts",
+        "test/upgrade-112.test.ts",
+        "docs/qa-1-12/recall-evaluation.json",
+        "scripts/recall-controls.mjs",
+        "docs/qa-1-12/recall-controls.json"
+      ],
+      "requirement_ids": [
+        "U5"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior.",
+        "30 positives plus 30 time-filter and 30 denied-author controls; 0 false source/author metadata. Final model false attribution and production cost not measured."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "11 Десять суттєвих покращень чинних можливостей",
+      "kind": "upgrades",
+      "requirement": {
+        "id": "U6",
+        "title": "Редагування готових документів зі збереженням структури",
+        "text": "Підтримувані зміни абзацу, таблиці або діапазону клітинок зберігають незачеплені частини, мають original/output/diff і перевірку вмісту та render. Формули потребують реального recalculation engine. Це великий окремий upgrade із залежностями, а не обовʼязкова частина найближчого релізу.",
+        "gate": "Типовий 8-сторінковий DOCX і 3-sheet XLSX після правки зберігають потрібні зображення структуру та значення. Непідтриманий елемент пояснений до втрати даних. Вихід відкривається на телефоні й desktop.",
+        "source": "src/document-workshop.ts:102; src/office.ts:91; src/office.ts:98"
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/office-edit.ts",
+        "src/office-tools.ts",
+        "test/deep-112.test.ts",
+        "test/upgrade-112.test.ts"
+      ],
+      "requirement_ids": [
+        "U6"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "11 Десять суттєвих покращень чинних можливостей",
+      "kind": "upgrades",
+      "requirement": {
+        "id": "U7",
+        "title": "Моніторинг потрібної зміни",
+        "text": "Умова watch привʼязана до сутності, дати, кількості, одиниць і перевіреного поля. Повідомлення показує старе й нове значення. Зміна footer або слово «місця» у фразі «місць немає» не стають успіхом.",
+        "gate": "Позитивне підтвердження потрібної дати створює один alert. Нерелевантна зміна дає тишу; outage і відновлення не множать сповіщення. Неоднозначний extraction ставить конкретне питання.",
+        "source": "src/web-monitors.ts:26; src/web-monitors.ts:29"
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/web-monitors.ts",
+        "test/deep-112.test.ts"
+      ],
+      "requirement_ids": [
+        "U7"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "11 Десять суттєвих покращень чинних можливостей",
+      "kind": "upgrades",
+      "requirement": {
+        "id": "U8",
+        "title": "Адресний аналіз довгих документів і відео",
+        "text": "Coverage map зберігає реально оглянуті сторінки, діапазони й таймкоди, пропущені частини та помилки. Людина може попросити сторінку 18 або 00:43–00:48, і бот продовжить від потрібного фрагмента без повторної обробки всього файла.",
+        "gate": "Відповідь із пізнього фрагмента має точний locator і реальний аналіз. Перші сторінки не видаються за весь документ. Restart і corrupt page не підміняють source. Більший файл обробляється порціями з квотами.",
+        "source": "src/documents.ts:7; src/document-workshop.ts:70; src/visual.ts:21"
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/media-addressed.ts",
+        "src/media-inspections.ts",
+        "test/media-coverage-112.test.ts",
+        "test/upgrade-112.test.ts"
+      ],
+      "requirement_ids": [
+        "U8"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "11 Десять суттєвих покращень чинних можливостей",
+      "kind": "upgrades",
+      "requirement": {
+        "id": "U9",
+        "title": "Повторювані доручення як керовані серії",
+        "text": "Серія має локальний час і timezone, окремий occurrence ID, пропуск одного виконання, перенесення, зміну всієї серії та кінцеву умову. Reminder і виконувана task отримують різну політику пропущених запусків.",
+        "gate": "Дві ночі переходу часу restart після трьох пропусків cancel one/all та одночасний snooze не створюють дублі або лавину повідомлень. Попередній перегляд показує найближчі три дати.",
+        "source": "src/scheduling.ts:8; src/scheduling.ts:47; src/agent-services.ts:139"
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/recurring.ts",
+        "test/revision-112.test.ts",
+        "test/upgrade-112.test.ts"
+      ],
+      "requirement_ids": [
+        "U9"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "11 Десять суттєвих покращень чинних можливостей",
+      "kind": "upgrades",
+      "requirement": {
+        "id": "U10",
+        "title": "Проєкти з перевірним результатом",
+        "text": "Критерій задачі може вимагати конкретний файл, перевірку власника або provider proof. Зміна вимог повертає результат на review. Перепризначення враховує нову згоду, а залежні задачі показують зрозумілий blocker.",
+        "gate": "Слово done не закриває задачу з обовʼязковим відсутнім файлом. Decline reassignment або видалення залежності не лишає невидимий deadlock. Власник бачить наслідки зміни без щоденного допиту учасників.",
+        "source": "src/group-work.ts:61; src/group-work.ts:88"
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/project-evidence.ts",
+        "test/upgrade-112.test.ts"
+      ],
+      "requirement_ids": [
+        "U10"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "13 F1 Спільні запаси й покупки",
+      "kind": "major",
+      "requirement": {
+        "title": "13 F1 Спільні запаси й покупки",
+        "paragraphs": [
+          "Обіцянка: люди можуть природними фразами вести потреби, покупки й залишки; одночасні дії двох учасників не гублять кількості. Люмен розбирає мову, а арифметику, одиниці та конкурентні зміни контролює сервер. Це новий предметний модуль поверх наявних задач і фактів.",
+          "Проектний сценарій: Оля додає потребу у двох літрах молока й повідомляє про літр удома. Марко бере покупку, а Оля одночасно зменшує потребу. Марко каже, що є пляшки по 900 мл, і сам обирає кількість. Після «купив дві» бот записує фактичний рух, показує залишок потреби та пізніше враховує використання. Фото чека може допомогти розібрати дані, але розпізнана цифра сама не доводить покупку.",
+          "Новизна: поточний project може містити «купити молоко», а knowledge fact — «молоко вдома». Вони не забезпечують атомарні резерви, перерахунок одиниць, незалежні потребу й запас та правильне undo. Якщо цей модуль не дає кращого результату за простий закріплений список, його слід відкласти.",
+          "Проектні дані: household_lists; canonical items з unit та aliases; окремі need quantities; StockObservation із фактичним залишком і часом; inventory_movements; reservations із власником і TTL; receipt drafts. Операції add, adjust, reserve, release, purchase, consume, recount і reverse мають operation ID, expected resource version та джерела. Невідомий залишок відрізняється від нуля. Перетворення ml↔l можливе за явним точним правилом; «дві пачки» не перетворюється на вагу навмання.",
+          "Права й відновлення: список належить одному чату; тема є способом його показати. Ясне доручення виконується без повторної церемонії; уточнення потрібне для невизначеної позиції чи одиниці. Учасник змінює дозволений спільний список і власний резерв. TTL, вихід автора, cancel, часткова покупка та конфлікт версій мають явні переходи. Restart після commit повертає той самий результат, а повтор update не додає ще один movement. Інтеграція магазину, оплата й доставка для основної можливості не потрібні.",
+          "Уточнений контракт Design R2: ledger є append-only для звичайних змін, але forget є винятком. Забуті джерела та їхні залежні movements, receipts і snapshots видаляються або перебудовуються. Баланс, який більше не доводиться рештою незалежних дозволених джерел, стає unknown; залежні резерви стають needs_reconcile. Бот не лишає стару цифру як підтверджену й не обнуляє її мовчки. Новий фізичний перерахунок є окремим джерелом, яке не відновлює забутий текст. UI повідомляє тільки «залишок потребує уточнення», без забутої причини чи суми. Автоматична покупка або поновлення недоведеного резерву не запускається. Цей контракт перевірено незалежною роллю на рівні правил, реалізації ще немає.",
+          "Залежності та масштаб: поточні PostgreSQL, Telegram і модель достатні для ядра; потрібні новий доменний модуль та індекси. Ledger читається адресно й сторінками, до моделі передається компактний актуальний стан. Обмеження кількості позицій, bytes і batch imports задаються за вимірюваннями чинного сервера."
+        ],
+        "checks": [
+          "20 конкурентних reserve/adjust не перевищують потребу та не створюють відʼємний відомий запас.",
+          "Один update, повторений десять разів, дає один рух; crash між commit і відповіддю не подвоює його.",
+          "Часткова покупка, неправильний чек, неоднозначні одиниці, TTL і reversal проходять наскрізно.",
+          "P(+2) потім C(-1) і forget P дають unknown. Незалежний пізніший recount O(4) дає known 4 без повторного застосування старого C.",
+          "Інший чат не читає список; після restore з актуальним fence забуте не відновлюється.",
+          "Пʼять добровільних реальних закупів порівнюються із простим списком за кількістю виправлень і повторних перепитувань."
+        ],
+        "decision": "Перший кандидат за найменшою зовнішньою залежністю. Вайб створює тихе полегшення від коректної координації. Умова зупинки: обслуговування списку вимагає більше зусиль, ніж дає користі, або порушено інваріант кількостей чи забування."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/household.ts",
+        "test/stock-shopping-112.test.ts",
+        "test/evolution-112.test.ts"
+      ],
+      "requirement_ids": [
+        "F1"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior.",
+        "Full user workflow acceptance by people remains open."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "14 F2 Керований сімейний архів",
+      "kind": "major",
+      "requirement": {
+        "title": "14 F2 Керований сімейний архів",
+        "paragraphs": [
+          "Обіцянка: родина створює власні колекції подій, фотографій, рецептів або історій, керує добором і підписами та отримує перевірний альбом із реальних джерел. Люмен допомагає впорядкувати матеріал, а авторство й рішення про включення лишаються людям.",
+          "Проектний сценарій: «Зберімо нашу поїздку, ці фото не включай». Люди добровільно додають знімки й підписи. Для двох суперечливих дат бот показує невизначеність. Далі формує перегляд колекції та реальний PDF із погодженими фото. Після вилучення матеріалу випускає нову редакцію з оновленим manifest.",
+          "Новизна: attachment file IDs, описи фотографій, підсумки розмови й текстові композиції вже є. Новий домен — колекція, membership, авторський відбір, редакційна версія, дозволене використання й життєвий цикл публікації. Звичайний дайджест не рахується цим апгрейдом.",
+          "Проектні дані: collections; collection_items; asset_registry із Telegram file IDs, checksum і доступністю; captions та source claims зі статусом fact/joke/uncertain; allowed-use bindings; selection_revision; publication manifest; ingest і render jobs. Для збереження незалежної копії потрібне кероване сховище bytes з квотами й purge. Найбільший Telegram photo може бути вже стисненою версією, тому його не слід називати камерним оригіналом без відповідного файла.",
+          "Права та редакції: ясне прохання зберегти наданий матеріал виконується в межах цієї мети. Curator змінює порядок і підписи, але не розширює доступ до приватного внеску. Task-only відповідь не стає цитатою. Відсутній файл має видимий стан unavailable, а суперечлива дата — unresolved. Схожість картинки не означає тотожність версій; reconnect та повтор альбому не дублюють item.",
+          "Відкликання до render прибирає asset; під час render робить поточний output stale; після delivery оновлює доступні серверні копії й наступну редакцію. Уже завантажені або переслані людьми копії технічно не можна гарантовано відкликати. Forget не зберігає приховану копію під виглядом редакційного snapshot. Чинні jobs і cache перевіряють актуальну версію доступу перед записом і доставкою.",
+          "Залежності та масштаб: базовий архів не потребує генеративного відео або voice API. Потрібні перевірені storage policy, доступний обсяг, backup/restore і renderer для реального альбому. Обробка порціями й thumbnails знижують навантаження; весь медіаархів не додається до prompt. Не кожне фото в групі автоматично стає архівним внеском."
+        ],
+        "checks": [
+          "50 внесків пʼяти авторів мають точне джерело версію й дозволену аудиторію.",
+          "Task-only або приватний внесок не потрапляє до спільної добірки.",
+          "Відкликання до під час і після render дає визначений стан; стара черга не доставляє revoked asset.",
+          "Duplicate album, restart та недоступний файл не створюють дублів або вигаданих замін.",
+          "Багатосторінковий PDF візуально перевірений і справді містить обрані фото й підписи.",
+          "Люди самі описують, чи впізнають у колекції власну історію і що хочуть прибрати."
+        ],
+        "decision": "Кандидат на перший творчий напрям. Спільна asset-база придатна для F5, але архів і монтаж не слід будувати одночасно як два великі продукти. Умова зупинки: добір і підтримка матеріалів не дають людям переваги над звичайним альбомом."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/media-workshop.ts",
+        "test/evolution-112.test.ts",
+        "test/deep-112.test.ts",
+        "test/revision-112.test.ts"
+      ],
+      "requirement_ids": [
+        "F2"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior.",
+        "Full user workflow acceptance by people remains open."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "15 F3 Календар із двобічною синхронізацією",
+      "kind": "major",
+      "requirement": {
+        "title": "15 F3 Календар із двобічною синхронізацією",
+        "paragraphs": [
+          "Обіцянка: знайти реальний спільний час і підтримувати погоджену подію при змінах у підключених календарях. Людина може дати лише доступ до зайнятих інтервалів; назви особистих зустрічей не потрібні групі. Непідключений учасник може відповісти вручну, його стан лишається непідтвердженим до відповіді.",
+          "Проектний сценарій: на запит про вечерю Люмен знаходить два вікна й називає, чию доступність перевірено. Люди обирають 19:00. Подія створюється у дозволеному календарі з provider receipt. Оля переносить її в календарі на 19:30. Бот бачить зміну, перевіряє конфлікти й пропонує узгодження; чужий календар не переписується автоматично проти власника.",
+          "Новизна: наявні event planning, coordinator та ICS залишаються. Нові частини — calendar mirrors, provider IDs, актуальність free/busy, двобічні зміни, повторювані події та conflict resolution. Generic MCP є транспортом, а не готовою календарною інтеграцією.",
+          "Проектні дані: calendar_connections окремо на власника; selected calendars і scopes; event_mirrors із provider ID, etag/version та owned fields; recurring parent/occurrence; sync cursor; availability cache із строком; pending changes та reconciliation jobs. Команди: availability, propose, create, modify, cancel, reconcile. Перший adapter підтримує одного конкретного провайдера та обмежену область часу; scope розширюється лише після доказу роботи.",
+          "Права та відмови: читання free/busy, запис події, редагування й запрошення людей є різними дозволами. Revoked OAuth або збій означає unknown, а не free. Втрата notification не втрачає зміни завдяки reconciliation. Конфлікт версії вимагає refetch і нового конкретного рішення. Невизначений create спочатку звіряється за operation/provider ID; сліпе повторення не дозволене. Згода на запис події не є доказом згоди кожного запрошеного.",
+          "Залежність: потрібна нова перевірена інтеграція саме Telegram runtime. Підключений у цьому ChatGPT застосунок не підключає бота. Для провайдера перевіряються допустимий OAuth flow, scopes, реєстрація client, redirect infrastructure та read/write API. Наприклад, офіційна Google Calendar API має freeBusy та incremental sync; прострочений sync token може вимагати нового повного sync. Конкретний adapter і його доступи ще не реалізовані.",
+          "Cancel до dispatch блокує запис; після dispatch потрібне коректне скасування за чинними правами та receipt. Resume перечитує актуальні календарі, не відновлює старий слот навмання. Синхронізація працює з пагінацією, backoff і квотами; заголовки приватних подій не стають груповим cache."
+        ],
+        "checks": [
+          "Реальний provider sandbox або дозволені тестові календарі проходять read create update cancel і revoke.",
+          "Recurrence виняток однієї події часовий пояс і перехід часу відображаються однаково в боті й календарі.",
+          "Одночасна зміна ботом і власником не губить правку; crash після create не робить дубль.",
+          "Втрата push та недійсний sync cursor приводять до визначеного reconciliation.",
+          "У групі видно лише погоджені дані; непідключений або недоступний календар не вважається вільним.",
+          "Подія в черзі не оголошується створеною; invited не оголошується accepted."
+        ],
+        "decision": "Утримати до перевірки інтеграції. Це корисний новий контур, але найбільша зовнішня залежність серед пʼяти. Готовий ICS лишається доступною чинною можливістю та не видається за sync."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/calendar-sync.ts",
+        "src/calendar-groups.ts",
+        "test/calendar-revision-112.test.ts",
+        "docs/CALENDAR_SANDBOX_1_12.json"
+      ],
+      "requirement_ids": [
+        "F3"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior.",
+        "Actual owned Radicale sandbox passed; user calendar credentials/permissions UX remains unverified."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "16 F4 Добровільні навчальні траєкторії",
+      "kind": "major",
+      "requirement": {
+        "title": "16 F4 Добровільні навчальні траєкторії",
+        "paragraphs": [
+          "Обіцянка: Люмен продовжує навчання від конкретних попередніх спроб людини, памʼятає тип помилки й повертає відповідну вправу, коли людина готова. Це може бути мова або обрана навичка. Прогрес приватний за замовчуванням; спільна гра й приватна траєкторія не змішуються.",
+          "Проектний сценарій: Оля просить коротку практику, виконує вправу та отримує конкретне пояснення помилки. Через кілька днів обирає продовжити; бот дає іншу вправу на ту саму навичку, а не повторює загальний урок. Оля заперечує оцінку, і спроба переходить на review. Марко має власні приклади, темп і строк наступної практики. Пауза не створює боргу перед ботом.",
+          "Новизна: quiz, scores і activity sessions уже є. Нові сутності — цілі, skill map, attempts, звʼязок вправи з помилкою, рубрика оцінки, приватний стан прогресу та кероване повторення. Накопичені правильні відповіді не є доказом володіння навичкою поза перевіреними вправами.",
+          "Проектні дані: learning_goals; skill_nodes та залежності; exercise versions; attempts із відповіддю, критеріями, feedback і source; observations of performance; review state; practice schedule. Виправлення ключа або оцінки перебудовує залежний стан і наступний строк. Вибір вправи враховує дозволені дані цього учасника; його історія не стає груповою характеристикою.",
+          "Оцінювання: детерміновані відповіді перевіряє правило чи calculation; відкрита відповідь оцінюється за явною рубрикою із позначеною невизначеністю. Повторена та сама відповідь не рахується новим доказом. Людина може побачити підставу оцінки, оскаржити її або зупинити траєкторію. Навчальні поради й фактичні матеріали мають перевірні джерела там, де це потрібно.",
+          "Залежності та відновлення: текстове ядро можливе на чинному backend. Аудіопрактика потребує реально доступних speech/transcription capabilities; OAuth-план текстової моделі сам не гарантує цей API. Старий незавершений attempt не перетворюється на неправильну відповідь після timeout. Скасування поточної вправи припиняє її очікування й відкладену доставку та позначає незавершену спробу cancelled; завершені attempts і попередній прогрес зберігаються. Forget окремо стирає джерело та залежні scores, prompts, review queue і cache. Повтор dispatch не створює другої спроби. Графік добровільний, без streak pressure та публічного порівняння."
+        ],
+        "checks": [
+          "Два учасники з різними помилками отримують різні релевантні наступні вправи.",
+          "Виправлена оцінка або ключ змінює лише відповідні залежні результати; старий score не вважається чинним.",
+          "Restart timeout cancel і duplicate response не подвоюють attempt та не зараховують мовчання як помилку.",
+          "Приватна навчальна історія не потрапляє у спільну гру або prompt іншого автора.",
+          "Після forget або restore не повертаються забуті помилки й профіль.",
+          "Людський тест перевіряє корисність feedback і перенесення на новий приклад; довготривалий освітній ефект не заявляється наперед."
+        ],
+        "decision": "Окремий добровільний освітній напрям після перевірки потреби. Умова зупинки: нестабільні оцінки або потреба часто виправляти бота роблять навчання обтяжливішим за звичайну практику."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/learning.ts",
+        "test/upgrade-112.test.ts",
+        "test/revision-112.test.ts"
+      ],
+      "requirement_ids": [
+        "F4"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior.",
+        "Full user workflow acceptance by people remains open."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "17 F5 Спільна студія сімейних історій",
+      "kind": "major",
+      "requirement": {
+        "title": "17 F5 Спільна студія сімейних історій",
+        "paragraphs": [
+          "Обіцянка: із власних фото, коротких кліпів, підписів і записаних голосів створюється реальний короткий відеоепізод. Учасники бачать preview, змінюють окрему сцену й отримують playable MP4. Авторство характерних фраз і внесків зберігається людям.",
+          "Проектний сценарій: «Зробімо хвилинну історію про наші вихідні». Кожний охочий додає матеріал. Люмен пропонує порядок сцен і збирає rough preview. «Другу сцену скороти, цю фразу залиш як я сказав, музику тихіше». Нова редакція змінює саме обрані місця. Після перегляду готовий експорт доставляється з підтвердженням, а не лише посиланням на майбутню роботу.",
+          "Новизна: композиції text/JSON, генерація файлів, voice interface та FFmpeg для вибірки кадрів уже є. Немає scene timeline, керованого монтажу, render manifest і versioned preview/export. Власні надані аудіо можна використати без синтетичного озвучення; відсутність imagegen або TTS не повинна маскуватися під недоступність усього монтажу.",
+          "Проектні дані: studio_projects; assets із походженням і дозволеним використанням; scene revisions із asset refs, in/out, тривалістю, framing, captions і audio tracks; timeline revision; render profiles; render_jobs із manifest hash; previews і delivered exports. Commands add asset, propose scenes, reorder, trim, replace, adjust caption/audio, preview, export і cancel. Зміни мають expected scene/project version; двоє авторів не переписують правки один одного.",
+          "Життєвий цикл: ingest→draft timeline→preview queued→preview ready→revision або export queued→rendered→delivered. Це доменний стан медіа; обіцяний результат і дозвіл лишаються під єдиним existing commitment owner. Застарілий preview показується як попередня редакція. Повтор render за тим самим manifest може reuse готовий output; нові права або revoked asset роблять його недоступним.",
+          "Залежності та масштаб: FFmpeg і Sharp уже є в залежностях, але повноцінного render executor немає. Потрібні asset storage, окрема керована черга важкої роботи, process memory/CPU/time bounds, progress за фактичним етапом, cleanup та перевірка playable output. Основний чат не має чекати на CPU-bound монтаж. Додаткові генеративні моделі та музичний сервіс не є умовою core; їхня наявність не припускається.",
+          "Скасування зупиняє queued job; running процес отримує контрольований abort і прибирає temp files. Crash, disk-full, decode fail або OOM переводять конкретний render у repair, не перезапускають усі сцени без контролю. Відкликання asset до чи під час render інвалідує output і наступну доставку. Після доставки діє та сама реальна межа зовнішніх копій, що й у F2. Голос не клонують і не видають синтетичний текст за запис учасника."
+        ],
+        "checks": [
+          "Матеріали трьох авторів проходять до реального MP4, який відкривається на Android та iOS.",
+          "Точкова правка сцени зберігає незачеплені частини й відповідає поточній revision; captions audio/video sync гучність і aspect ratios перевірені.",
+          "Відтворений manifest дає еквівалентний зміст і таймінги; byte identity вимагається лише за детермінованого renderer.",
+          "Timeout restart disk-full та decode fail не зупиняють чат і не лишають нескінченні jobs чи temp files.",
+          "Revoked або foreign-chat asset не потрапляє в preview cache export чи відкладену доставку.",
+          "Повтор команди не дублює сцени або exports; delivered має квитанцію.",
+          "Після реального preview учасники самі обирають внести ще одну правку чи матеріал; це сигнал співавторства, а не доказ retention."
+        ],
+        "decision": "Найвиразніший кандидат на нове спільне переживання. Першим творчим циклом обирати або F2-архів, або повну F5-студію з потрібною спільною asset-базою. Умова зупинки: монтаж у чаті потребує надмірного листування, не вкладається в узгоджені ресурси або забирає авторство людей."
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/media-workshop.ts",
+        "test/evolution-112.test.ts",
+        "test/revision-112.test.ts"
+      ],
+      "requirement_ids": [
+        "F5"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior.",
+        "Full user workflow acceptance by people remains open."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "6 Зображення та інші форми відповіді",
+      "kind": "media",
+      "requirement": {
+        "title": "6 Зображення та інші форми відповіді",
+        "paragraphs": [
+          "Картинка доречна для спільної історії, ігрової сцени, власної листівки або пояснення, яке виграє від зображення. Люмен пропонує конкретний результат із наявними матеріалами. Звичайна відповідь не отримує постійного заклику «згенерувати картинку».",
+          "У нинішньому коді image backend вимагає окремого ключа. Доступ інструмента imagegen у цьому сеансі ChatGPT не є підключенням бота. Підписка на бесіду сама не доводить наявності безплатного runtime image API. Для нової інтеграції треба окремо встановити реальний спосіб запуску."
+        ],
+        "table": {
+          "headers": [
+            "Існуючий варіант",
+            "Сильна сторона для сценарію",
+            "Практична межа"
+          ],
+          "widths": [
+            41,
+            66,
+            63
+          ],
+          "rows": [
+            [
+              "FLUX 2 klein 4B",
+              "Генерація, редагування та кілька reference images; ваги Apache 2.0.",
+              "Перший open-weight кандидат на наявному GPU. Автор вказує близько 8 GB VRAM; не поточний CPU worker."
+            ],
+            [
+              "Qwen Image Edit 2511",
+              "Опубліковане редагування за кількома зображеннями, контроль узгодженості персонажів; Apache 2.0.",
+              "20B модель. Окрема важка проба, не безумовний легкий backend і не перевірений тут переможець."
+            ],
+            [
+              "Z Image Turbo",
+              "Опублікований 6B text-to-image, короткий distilled inference; Apache 2.0.",
+              "Кандидат для нових ілюстрацій. Не плутати з анонсованим Edit; українські точні підписи не перевірені."
+            ],
+            [
+              "Локальна композиція",
+              "Справжня листівка, колаж, таблиця результатів, timeline або простий ролик із власних assets.",
+              "Потрібен renderer і QA. Це не нейронне малювання; точний текст і статистику наносити детерміновано."
+            ]
+          ]
+        },
+        "after": [
+          "Ці нейронні image-моделі в цьому аудиті не запускалися: доступного GPU для такого порівняння немає. Вони є конкретними опублікованими кандидатами, а не обіцянкою роботи на 512 MiB. Вага без API-плати все одно потребує власного відповідного обладнання; новий платний сервіс у ході аудиту не підключався.",
+          "Для впізнаваної мишки потрібні погоджені visual references: зовнішність, пропорції, палітра й допустимі варіанти емоцій. Edit створює нову версію, оригінал доступний. Поле з датою події, підсумковий рахунок чи підпис українською накладає renderer з перевірних даних, щоб модель не перемалювала факти.",
+          "Контракт доставки: preview -> конкретна правка -> готова edition -> дозволена аудиторія. Повторно надіслати й створити інший варіант - різні дії. Вибір картинки для події не змінює саму подію; зміна її часу робить стару листівку застарілою та пропонує оновлення."
+        ],
+        "reference_ids": [
+          18,
+          19,
+          20
+        ]
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/image-design.ts",
+        "test/deep-112.test.ts"
+      ],
+      "requirement_ids": [
+        "R3.1-6"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "7 Навігатор матеріалів подій та результатів",
+      "kind": "media",
+      "requirement": {
+        "title": "7 Навігатор матеріалів подій та результатів",
+        "paragraphs": [
+          "Вхід у менеджер має працювати природним проханням «покажи наші матеріали», reply на конкретне повідомлення або однією доступною кнопкою. Початкові розділи - матеріали, події та ігри; статистика відкривається в доречному розділі. Пошук і фільтри не вимагають команд, ID або знання внутрішніх таблиць.",
+          "Медіа: превʼю, зрозуміла назва, тип і тривалість чи розмір, автор або джерело, версія, колекція та доступ. Дії залежать від обʼєкта: відкрити, прослухати, знайти текст, додати до події, створити нову версію, завантажити або прибрати. Передбачені порожній список, недоступне джерело, застарілий callback, обробка та помилка.",
+          "Подія: найближчий час із часовим поясом, поточний статус, узгоджені учасники й матеріали. «Що готово до суботи?» відкриває цю подію, листівку, правила гри та потрібні дії. Список не створює другої копії події й не оголошує ICS двобічною синхронізацією.",
+          "Ігри: активні й завершені партії, механіка, учасники, раунди, підтверджений результат і повʼязані картинки чи історії. Можна повернутися до партії або знайти старий підсумок. Виправлений рахунок має нову версію з поясненням; історія не переписується непомітно."
+        ],
+        "table": {
+          "headers": [
+            "Запит людини",
+            "Зручний наскрізний результат"
+          ],
+          "widths": [
+            60,
+            110
+          ],
+          "rows": [
+            [
+              "Збережи ці фото до суботньої зустрічі",
+              "Погоджені фото потрапляють у колекцію події. Видно, що саме збережено; зайві фото можна прибрати."
+            ],
+            [
+              "Знайди ту казку з місяцем",
+              "Знайдений текст, його озвучення й ілюстрація відкриваються як повʼязані editions, із джерелом."
+            ],
+            [
+              "Покажи наші ігри за жовтень",
+              "Партії обох engines з визначеним періодом, підсумками та поясненням неповних старих даних."
+            ],
+            [
+              "Зроби листівку й озвуч останній абзац",
+              "Одна справа з двома перевірними outputs і окремим статусом кожного; повідомлення не дублюються після restart."
+            ],
+            [
+              "Прибери це фото та похідні матеріали",
+              "Охоплення видалення зрозуміле; thumbnail, preview, transcript чи похідна картинка не воскресають із кешу."
+            ]
+          ]
+        },
+        "after": [
+          "Не кожне вкладення автоматично стає сімейним архівним внеском. Для надійного архіву потрібні власні durable bytes і перевірне відновлення, або чесна позначка, що збережено лише посилання на файл. Telegram file_id зручний для повторної доставки; його самого недостатньо для нової обіцянки незалежного резервного архіву.",
+          "Окремі приватні внески не зʼявляються у груповому пошуку, thumbnail, лічильнику чи голосовому підсумку. Простий браузинг є read-only і не запускає моделі повторно. Точні джерела читаються адресно; каталог не вставляється цілком у контекст розмови."
+        ]
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/media-browser.ts",
+        "test/browser-stats-revision-112.test.ts",
+        "test/revision-112.test.ts"
+      ],
+      "requirement_ids": [
+        "R3.1-7"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "8 Статистика якій можна довіряти",
+      "kind": "media",
+      "requirement": {
+        "title": "8 Статистика якій можна довіряти",
+        "paragraphs": [
+          "Статистику треба рахувати з підтверджених переходів і результатів, а не просити LLM приблизно підсумувати історію. Канонічними залишаються записи подій та ігор. Похідні views обʼєднують різні engines, мають унікальні ключі джерел і перебудовуються після виправлення чи забування.",
+          "Кожний показник має означення, період, часовий пояс і покриття даних. Завершена партія, скасована партія та незакінчена спроба - різні стани. Перемоги порівнюються в межах сумісної механіки; різні типи балів не складаються в довільний загальний рейтинг. Особистий рейтинг потребує погодженого правила й можливості відмовитися.",
+          "Приклад майбутнього контрактного тесту: дві завершені гри, одна скасована й дубль повідомлення про завершення дають рівно дві завершені гри. Виправлення score змінює поточний результат без третьої гри. Старі дані без точного outcome показуються як неповне покриття, а не як нуль. Це план тесту нової реалізації, не виконаний тест наявної статистики.",
+          "Надіслане аудіо не означає прослухане. Згода на подію не означає відвідування. Кількість реплік не вимірює користь, настрій або стосунки. Корисні добровільні показники - завершені активності, історія власного прогресу, знайдені й використані матеріали та узгоджені підсумки з явним джерелом."
+        ]
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/media-browser.ts",
+        "test/browser-stats-revision-112.test.ts"
+      ],
+      "requirement_ids": [
+        "R3.1-8"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "9 Спільна модель та серверні межі",
+      "kind": "media",
+      "requirement": {
+        "title": "9 Спільна модель та серверні межі",
+        "paragraphs": [
+          "Потрібен спільний індекс над наявними обʼєктами, а не паралельні таблиці з другим рахунком чи часом події. ResourceRef посилається на канонічну подію, гру, документ або колекцію. MediaAsset та AssetVersion описують bytes, checksum, mime, тривалість, джерела, власника й доступ. ResourceLink привʼязує конкретну версію матеріалу до події або раунду та не розширює її ACL.",
+          "MediaJob фіксує незмінний input manifest, версії тексту й прав, engine, cost policy, ресурси, скасування, результат і помилку. Він використовує існуючі commitments, offers та workers через adapters. Publication зберігає точну edition, адресата й receipts кожного фактичного повідомлення. ViewState містить лише запит, фільтри й cursor; інтерфейс не стає джерелом даних.",
+          "VoiceProfile та OutputPreference керують характером і доречністю. OutcomeEvent зі стабільним ключем канонічного джерела живить відтворювані StatisticsView. У prompt передаються потрібні поля та адреси джерел; великі bytes, base64, повні списки голосів або історії партій туди не потрапляють.",
+          "Для аудіо server-side cost gate блокує платні voice backend до мережевого звернення, незалежно від наявності ключа для інших задач. Автоматичний вибір інструмента, retry або збережений workflow не може обійти цю політику. Коли локальний renderer недоступний, відповідь лишається текстовою.",
+          "Медіаобробка працює окремим обмеженим процесом з admission за памʼяттю, CPU, місцем і довжиною черги. На нинішньому worker не можна без вимірювання тримати Supertonic warm поруч із Node та паралельно запускати OCR, браузер або decoder. Відомі приблизно 130 MiB Node стосуються старту; максимальний RSS бота під навантаженням невідомий. Перший пілот має виміряти сумарний peak та затримку звичайної бесіди.",
+          "Кеш аудіо включає hash текстової edition, voice profile, model config, чат, аудиторію та privacy epoch. Кеш не обʼєднує приватні outputs різних чатів. Моделі, оригінали, previews і тимчасові render-файли мають окремі квоти й політики. Відтворювані копії можна прибирати; явно збережені оригінали не видаляються через LRU оптимізацію. Забування джерела інвалідує похідні bytes, індекс, stats і previews за контрактом R2.",
+          "Міграція йде малими ідемпотентними batch: додати індекс і links -> backfill лише видимих валідних джерел -> звірити counts/checksums -> тіньове читання -> переключити навігатор. Існуючі game/event/artifact IDs та права збережені. Старі файли без повного provenance не отримують вигадане авторство або час."
+        ]
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/evolution-core.ts",
+        "src/media-assets.ts",
+        "src/work-slots.ts",
+        "test/media-coverage-112.test.ts"
+      ],
+      "requirement_ids": [
+        "R3.1-9"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      },
+      "scope_override": "New audio parts of the original requirement are deferred by the latest user instruction; preserved original text is not a completion claim."
+    },
+    {
+      "source_section": "10 Канали та інтерфейс Telegram",
+      "kind": "media",
+      "requirement": {
+        "title": "10 Канали та інтерфейс Telegram",
+        "paragraphs": [
+          "Форма - це текст, голосове, audio player, фото, документ, альбом або ролик. Маршрут - поточна тема, особиста відповідь чи окремо дозволений канал. Зміна форми сама не змінює аудиторію. Контекстна реакція або короткий стікер лишаються способом участі, а не обовʼязковою рамкою для кожного результату.",
+          "У поточному Telegram API є Rich Messages з таблицями, details, slideshow та media blocks, а також ephemeral messages. Це може зробити перегляд результатів компактнішим. У Люмена поки немає повного rich renderer, а ephemeral input навмисно відсікається. Розширення потребує typed renderer, перевірки supported клієнта та рівноцінного звичайного тексту. Приватний результат не має переходити в групу через невдалий ephemeral виклик.",
+          "Mini App доцільний для великої галереї, календаря й історії сезонів, якщо native карток справді недостатньо. Перші корисні сценарії мають працювати в чаті. Mini App використовує ті самі API й ACL, перевіряє підписаний initData та актуальне членство; chat_id із URL або initDataUnsafe не дають доступу самі по собі.",
+          "Окремий Telegram-канал додається як Destination: явний target, власник, scope матеріалів і перевірені права бота. Перед публікацією видно точний preview і аудиторію; права перевіряються знову перед dispatch. Скасований або змінений manifest не публікується. Канал не стає автоматичним джерелом памʼяті групи; ingestion його дописів є окремою opt-in функцією.",
+          "Вхідні voice і вихідний TTS - різні можливості. Локальний STT на кшталт multilingual whisper.cpp є реальним окремим шляхом без speech API; тут він не запускався й на нинішніх ресурсах не атестований. Асинхронні голосові в Telegram не означають готової живої телефонної бесіди або участі у групових voice calls."
+        ],
+        "reference_ids": [
+          21,
+          22,
+          23
+        ]
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/telegram.ts",
+        "src/media-browser.ts",
+        "src/delivery.ts",
+        "test/deep-112.test.ts"
+      ],
+      "requirement_ids": [
+        "R3.1-10"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "11 Нові зауваження та перевірки",
+      "kind": "media",
+      "requirement": {
+        "title": "11 Нові зауваження та перевірки",
+        "findings": [
+          {
+            "id": "M01",
+            "title": "Голосове не має повного обліку доставки",
+            "status": "Матеріальний latent дефект baseline відтворений у вузькому probe",
+            "text": "binaryArtifact для voice формує outbox body без text. У deliveredText немає voice-гілки, тому exact production expression повертає undefined. Групова history insertion передає це в обовʼязкове messages.body. Голос міг би бути вже відправлений, а транзакція обліку не завершитися. PostgreSQL і Telegram у probe не запускалися; SQLite NOT NULL був лише окремим surrogate control.",
+            "acceptance": "Voice зберігає transcript або не-null посилання на edition, asset ID, duration і profile. Після send фіксуються receipts і sent. DB failure після зовнішнього send дає uncertain та reconciliation, без сліпого resend.",
+            "sources": [
+              [
+                "Створення voice outbox",
+                "src/document-workshop.ts:95"
+              ],
+              [
+                "Вибір deliveredText",
+                "src/delivery.ts:123"
+              ],
+              [
+                "Запис history",
+                "src/delivery.ts:134"
+              ],
+              [
+                "Обовʼязковий body",
+                "src/schema.sql:29"
+              ]
+            ]
+          },
+          {
+            "id": "M02",
+            "title": "Скасування треба перевіряти до запису нового медіа",
+            "status": "Вузький counterexample helper без доведеного production витоку",
+            "text": "При вже aborted scope, незмінній memory_revision і відсутніх actionId/taskId helper binaryArtifact може записати artifact/outbox до зовнішньої checkOperation. Це не доведений stop race у бойовій системі. Натомість probes зі зміною revision і скасованим actionId правильно заблокували пізній запис - ці захисні гілки збережено.",
+            "acceptance": "MediaJob атомарно звіряє cancel/current edition/actor права до asset/outbox commit та повторно перед dispatch. Перевіряються вікна до render, під час render, після asset commit і після queue. Уже dispatch-нута невідома доставка лишається uncertain.",
+            "sources": [
+              [
+                "Revision та owner checks",
+                "src/document-workshop.ts:89"
+              ],
+              [
+                "Доставка",
+                "src/delivery.ts:38"
+              ],
+              [
+                "Перевірка після tool",
+                "src/agent-tools.ts:90"
+              ]
+            ]
+          }
+        ],
+        "after": [
+          "Технічний пакет містить exact-function probe, його hashes, чотири основні кейси, явні fake SQL/provider та обмеження. Це докази конкретних гілок 1.11, а не повний наскрізний тест чи виконаний ремонт. Окремо збережено предметний voice review та UX/domain review."
+        ]
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/outcomes.ts",
+        "src/media-workshop.ts",
+        "test/revision-112.test.ts"
+      ],
+      "requirement_ids": [
+        "R3.1-11",
+        "M01",
+        "M02"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      },
+      "scope_override": "M01 baseline delivery/history defect repaired; new transcript/profile/duration/audio UX requirements deferred. M02 cancellation checks retained and tested."
+    },
+    {
+      "source_section": "12 Черговість повної реалізації",
+      "kind": "media",
+      "requirement": {
+        "title": "12 Черговість повної реалізації",
+        "paragraphs": [
+          "Перший пакет - виправлення R2 та M01, єдина семантика статусів і provenance, індекс матеріалів над чинними records. Користувацький результат: знайти старий матеріал, відкрити правильну версію, привʼязати її до події або партії, виправити чи прибрати без втрати звʼязків. Пошук, counts і callbacks поважають доступ.",
+          "Другий пакет - локальний голос мишки як завершена опційна можливість: затверджений за прослуховуванням profile, український frontend, bounded job, transcript, cancel, доставка, повторне використання та текстовий fallback. Заборона платних voice requests перевіряється сервером. До випуску потрібен staging-профіль навантаження на відповідному 0.5 CPU / 512 MiB: кілька чатів, довгі історії, одночасні документи й медіа, RSS/OOM, затримки бесіди та restart/uncertain.",
+          "Третій пакет - повʼязані illustrations/листівки, історія подій і партій, відтворювана статистика та за потреби Mini App. Нейронний image backend вводиться тільки після окремої практичної проби на фактично доступному обладнанні. Це поглиблення архіву F2 та студії F5; інші великі напрямки R2 не скасовані й не оголошені реалізованими.",
+          "Перший вирішальний тест уже має матеріал: реальні зразки голосу. Далі слухове порівняння на різних контекстах і вузький ресурсний пілот. Умова зупинки кандидата: пропуски змісту, неприємний або несталий тембр, недостатня українська вимова чи погіршення роботи основного бота. Після цього переходити до іншої моделі або окремого власного runtime; не компенсувати провал платним прихованим fallback."
+        ],
+        "checks": [
+          "Бесіда лишається живою; явні прохання тиші й text-only виконуються у правильному scope.",
+          "Готовий файл має точний transcript/input manifest, перевірний codec, bytes та джерело; створення й доставка мають різні статуси.",
+          "Дубль callback, retry і restart не множать завершені outcomes чи повторно не генерують уже готовий asset.",
+          "Source forget охоплює variants, thumbnails, transcript, пошук, cache та персональні stats. Відновлення backup не воскресає забуте за збереження найновішого privacy fence і tombstones; одночасний rollback БД та цього fence лишається операторською межею R2.",
+          "Навігатор працює з великим каталогом через bounded query/cursor, без повного медіаархіву у prompt.",
+          "Статистика має період, timezone, означення, coverage і перерахунок після виправлення; невідоме не видається нулем.",
+          "Новий канал не розширює доступ непомітно; private fallback ніколи не стає public delivery.",
+          "Локальний TTS не використовує платні API й непотрібну телеметрію; фактичний shared resource peak перевірений до ввімкнення."
+        ],
+        "sources": [
+          [
+            "Межа відновлення privacy fence",
+            "src/privacy-fence.ts:6"
+          ]
+        ]
+      },
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "docs/IMPLEMENTATION_1_12_PLAN.json"
+      ],
+      "requirement_ids": [
+        "R3.1-12"
+      ],
+      "verification_limits": [
+        "Automated or code evidence only; no claim of observed human or production behavior."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      },
+      "scope_override": "New audio parts of the original requirement are deferred by the latest user instruction; preserved original text is not a completion claim."
+    },
+    {
+      "source_section": "9 Backend optimization contract",
+      "kind": "requirement",
+      "requirement": {
+        "id": "B05",
+        "title": "B05 Сумарний prompt",
+        "mechanism": "Один context packer із бюджетом за класом задачі; обовʼязкові дані мають пріоритет; повні джерела доступні адресно",
+        "acceptance": "Історії 100 1000 10000 повідомлень плюс документ poll і tools; правильні автори виправлення згода й час не губляться"
+      },
+      "requirement_ids": [
+        "B05"
+      ],
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/context-pack.ts",
+        "src/model.ts",
+        "src/evolution-tools.ts",
+        "test/backend-growth-112.test.ts",
+        "docs/qa-1-12/prompt-footprint.json"
+      ],
+      "verification_limits": [
+        "Local PGlite evidence; production PostgreSQL latency and 512MiB resource limit not certified."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "9 Backend optimization contract",
+      "kind": "requirement",
+      "requirement": {
+        "id": "B06",
+        "title": "B06 Ріст збережених копій",
+        "mechanism": "Lifecycle для sent outbox tool results UI panels caches та provenance; originals лишаються доступними",
+        "acceptance": "Cleanup двічі; доступ до старих файлів retry dedup і forget після cleanup та restore"
+      },
+      "requirement_ids": [
+        "B06"
+      ],
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/storage-lifecycle.ts",
+        "test/backend-growth-112.test.ts"
+      ],
+      "verification_limits": [
+        "Local PGlite evidence; production PostgreSQL latency and 512MiB resource limit not certified."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "9 Backend optimization contract",
+      "kind": "requirement",
+      "requirement": {
+        "id": "B07",
+        "title": "B07 Не всі model calls обліковані",
+        "mechanism": "Один provider gateway рахує plan retries localization vision summaries і background; метадані без текстів",
+        "acceptance": "Фізичні dispatch дорівнюють обліку; quota не блокує локальні pause forget cancel"
+      },
+      "requirement_ids": [
+        "B07"
+      ],
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/model-budget.ts",
+        "src/model.ts",
+        "src/media.ts",
+        "test/deep-112.test.ts"
+      ],
+      "verification_limits": [
+        "Local PGlite evidence; production PostgreSQL latency and 512MiB resource limit not certified."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "9 Backend optimization contract",
+      "kind": "requirement",
+      "requirement": {
+        "id": "B08",
+        "title": "B08 Сумарне навантаження медіа",
+        "mechanism": "Спільний admission важких decode/render; reuse перевірених frames/thumbnail із byte cap та інвалідацією",
+        "acceptance": "Фото відео PDF browser й foreground разом; peak RSS queue age скасування та forget race"
+      },
+      "requirement_ids": [
+        "B08"
+      ],
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/work-slots.ts",
+        "src/media-inspections.ts",
+        "test/media-coverage-112.test.ts"
+      ],
+      "verification_limits": [
+        "Local PGlite evidence; production PostgreSQL latency and 512MiB resource limit not certified."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "9 Backend optimization contract",
+      "kind": "requirement",
+      "requirement": {
+        "id": "B09",
+        "title": "B09 Довга гра переписує всю історію",
+        "mechanism": "Append-only game_turns і нормалізовані source edges; компактний current state",
+        "acceptance": "1 20 1000 10000 ходів з тим самим сюжетом чергою й рахунком; запис нового ходу не переписує всю історію; потрібний контекст сюжету перевіряється окремо"
+      },
+      "requirement_ids": [
+        "B09"
+      ],
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/games.ts",
+        "src/session-engine.ts",
+        "test/backend-growth-112.test.ts",
+        "docs/qa-1-12/game-growth.json"
+      ],
+      "verification_limits": [
+        "Local PGlite evidence; production PostgreSQL latency and 512MiB resource limit not certified."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "9 Backend optimization contract",
+      "kind": "requirement",
+      "requirement": {
+        "id": "B10",
+        "title": "B10 Вхідний update втрачає payload після 4 помилок",
+        "mechanism": "Розрізняти validation failure і repairable infrastructure error; зашифрована обмежена repair lane",
+        "acceptance": "4 відмови потім repair; запис рівно один раз; poison update не блокує інші; forget до route не воскресає старе"
+      },
+      "requirement_ids": [
+        "B10"
+      ],
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/transport-queue.ts",
+        "src/transport-repair.ts",
+        "src/engine.ts",
+        "test/backend-growth-112.test.ts"
+      ],
+      "verification_limits": [
+        "Local PGlite evidence; production PostgreSQL latency and 512MiB resource limit not certified."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "9 Backend optimization contract",
+      "kind": "requirement",
+      "requirement": {
+        "id": "B11",
+        "title": "B11 Індекси й плани",
+        "mechanism": "Адресні індекси лише за фактичними plans; GIN messages_search уже є",
+        "acceptance": "Пошук фрагмента апострофа кирилиці % і _ зберігає семантику; врахувати ціну запису й bytes"
+      },
+      "requirement_ids": [
+        "B11"
+      ],
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/schema.sql",
+        "test/backend-growth-112.test.ts",
+        "docs/qa-1-12/search-plan.json"
+      ],
+      "verification_limits": [
+        "Local PGlite evidence; production PostgreSQL latency and 512MiB resource limit not certified."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    },
+    {
+      "source_section": "9 Backend optimization contract",
+      "kind": "requirement",
+      "requirement": {
+        "id": "B12",
+        "title": "B12 Idle робота й eager runtimes",
+        "mechanism": "Один migration owner versioned migrations lazy runtime eviction після drain due wakeups і safety poll",
+        "acceptance": "1 10 100 чатів включно disabled; збереження справедливості черг одного poller і всіх даних після re-enable"
+      },
+      "requirement_ids": [
+        "B12"
+      ],
+      "status": "implemented_in_deployed_code",
+      "evidence": [
+        "src/registry.ts",
+        "src/router.ts",
+        "src/main.ts",
+        "src/operations.ts",
+        "test/runtime-lifecycle-112.test.ts"
+      ],
+      "verification_limits": [
+        "Local PGlite evidence; production PostgreSQL latency and 512MiB resource limit not certified."
+      ],
+      "local_verification": {
+        "source_revision": "5c0a9c18a234b22547fd76ef932b83aa2882790a",
+        "regression": "563 selected tests passed; 12 original-asset tests unavailable",
+        "report": "docs/QA_1_12.json",
+        "acceptance_scope": "Code and controlled tests only"
+      }
+    }
+  ],
+  "record_count": 43,
+  "stable_original_requirement_ids": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08",
+    "P09",
+    "P10",
+    "P11",
+    "P12",
+    "P13",
+    "P14",
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B09",
+    "B10",
+    "B11",
+    "B12",
+    "C02",
+    "C03",
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "U1",
+    "U2",
+    "U3",
+    "U4",
+    "U5",
+    "U6",
+    "U7",
+    "U8",
+    "U9",
+    "U10",
+    "M01",
+    "M02",
+    "R3.1-6",
+    "R3.1-7",
+    "R3.1-8",
+    "R3.1-9",
+    "R3.1-10",
+    "R3.1-11",
+    "R3.1-12"
+  ],
+  "current_product_verification": {
+    "status": "unknown_not_reverified_by_preservation",
+    "source_intake_commit": "a1fd79dc1e369f0f6d50579523524cd196f11d72",
+    "required_followup": "Bind each requirement to current source and exact carried/invalidated evidence before new dependent work. Historical implemented_in_deployed_code labels retained inside records are 1.12 claims only.",
+    "open_acceptance_carried_from_1_12": [
+      "Human conversation/style and full user workflows",
+      "Telegram Android/iOS presentation and MP4 playback",
+      "Real user calendar account/permission UX",
+      "Full simultaneous media/conversation workload under production CPU and memory limits",
+      "U5 final model answer false attribution and production cost"
+    ],
+    "not_closed_by_1_13_2_maintenance": "A01–A14 release cleanup and CI success do not certify full human/device/user-calendar/simultaneous-load/U5 final-answer acceptance.",
+    "local_source_binding": {
+      "head_sha": "a1fd79dc1e369f0f6d50579523524cd196f11d72",
+      "branch": "chore/codex-migration-2026-10-31",
+      "dirty_work": "17 tracked source/diagnostic modifications plus untracked resource-memory and Codex overlay work; preserved separately in checkpoint",
+      "exact_sha_ci": "verify success for committed HEAD only; local WIP not certified by that run",
+      "render_metadata": "Same committed SHA is live in dep-dbj6j67b9u1s73d6aeb0; this does not certify current runtime jobs, model or Telegram delivery",
+      "checkpoint": "docs/lumen/migration/checkpoint.json"
+    }
+  },
+  "owner": "chatbot-atelier-director as project integration owner; domain modules own implementation evidence",
+  "preservation_note": "All 43 original item objects and every original plan metadata field preserved. No field renamed inside original records; no original accepted feature removed by the migration. Applied documentation envelope does not modify any original item object or historical execution metadata. Audio-specific owner deferral is preserved; other paid providers require their own specific authorization, not a fabricated permanent deferral.",
+  "historical_reference_resolution": {
+    "rule": "References inside original records/metadata are exact historical source references, not promises that each path exists in this checkout or commands to execute.",
+    "migration_archive": "Lumen_ChatBot_Atelier_Migration_2026-11-03.zip",
+    "migration_archive_sha256": "99f116274ddc9ab3fe17a1ab313d3951f3dce363a735d7250ea1ad12db8b35c8",
+    "selected_plan": "evidence/authoring-selection/docs/IMPLEMENTATION_1_12_PLAN.json",
+    "selected_qa": "evidence/authoring-selection/docs/QA_1_12.json",
+    "selected_delivery": "evidence/authoring-selection/docs/RELEASE_1_12_DELIVERY_2026_10_30.json",
+    "selected_independent_review": "evidence/authoring-selection/docs/qa-1-12/independent-review.json",
+    "raw_originals": "evidence/original-requirements/",
+    "current_commands": "package.json and docs/codex/TEST_MAP.md"
+  }
+}

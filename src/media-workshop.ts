@@ -22,6 +22,7 @@ export const StudioCommand=z.object({operation:z.enum(['create','read','add_scen
 const fontPath=new URL('../../assets/fonts/DejaVuSans.ttf',import.meta.url);
 const active=new WeakMap<object,Promise<void>>(),recovered=new WeakSet<object>();
 export function mediaFailureNotice(code:string,kind='story'){
+ if(['worker_memory_busy','worker_queue_busy','worker_queue_timeout'].includes(code))return 'Зараз бракує вільних ресурсів для обробки. Матеріали збережено; можеш попросити продовжити пізніше. Автоматично повторювати роботу не буду.';
  if(kind==='album')return code==='worker_interrupted'?'Підготовка альбому перервалася після перезапуску. Матеріали збережено; можеш попросити зібрати його ще раз.':'Не вдалося створити альбом. Матеріали збережено; можемо перевірити їх і спробувати ще раз.';
  if(code==='soundtrack_shorter_than_story')return 'Музика закінчується раніше за відео. Можемо повторити цей трек або взяти довший; фото й порядок сцен збережено.';
  if(code==='soundtrack_silent')return 'У наданому треку не вдалося почути звук. Надішли інший аудіофайл; фото й порядок сцен збережено.';
@@ -135,7 +136,7 @@ export class MediaWorkshop extends MediaAssets {
   const s=await state(this.db),c:ToolContext={actorId:job.actor_id,chatId:s.chat_id,topicId:job.topic_id,revision:job.revision,sourceId:job.source_message_id,updateId:job.id,requested:true,audience:job.audience,operationKey:'render:'+job.id,taskId:job.task_id||undefined,goalVersion:job.goal_version||undefined,actionId:job.action_id||undefined};
   try{
    temp=join(await this.directory(),'render-'+job.id);await mkdir(temp,{recursive:true,mode:0o700});
-   const bytes=await withWorkerSlot(async()=>{await this.check(job);await this.db.query("UPDATE media_jobs SET stage='rendering' WHERE id=$1 AND status='running'",[job.id]);return job.kind==='album'?this.album(job,c):this.movie(job,c,temp);});await this.check(job);
+   const bytes=await withWorkerSlot(async()=>{await this.check(job);await this.db.query("UPDATE media_jobs SET stage='rendering' WHERE id=$1 AND status='running'",[job.id]);return job.kind==='album'?this.album(job,c):this.movie(job,c,temp);},'media_render');await this.check(job);
    const ids=(await this.db.query("SELECT source_message_id FROM provenance_edges WHERE derived_kind='media_job' AND derived_key=$1",[job.id])).rows.map(r=>Number(r.source_message_id));const output=await this.store(bytes,job.kind==='album'?'application/pdf':'video/mp4',job.manifest.title+(job.manifest.preview?' — перегляд':''),{...c,sourceIds:ids},stableId('render-output:'+job.id));outputId=output.id;
    await this.db.tx(async sql=>{await state(sql,true);try{await this.check(job,sql);}catch(e){if(!(e instanceof ToolError))throw e;await invalidateAsset(sql,output.id);await sql.query("UPDATE media_jobs SET status='stale',manifest='{}',stage='stopped' WHERE id=$1 AND status='running'",[job.id]);return;}await transferProvenance(sql,'media_job',job.id,'media_asset',output.id);for(const input of (await sql.query('SELECT asset_id,asset_version FROM media_job_inputs WHERE job_id=$1',[job.id])).rows)await sql.query('INSERT INTO media_derivations(input_id,output_id,input_version) VALUES($1,$2,$3) ON CONFLICT DO NOTHING',[input.asset_id,output.id,input.asset_version]);await sql.query("UPDATE media_jobs SET status='ready',stage='verified',output_id=$2,finished_at=now() WHERE id=$1",[job.id,output.id]);
     {
@@ -178,8 +179,11 @@ export class MediaWorkshop extends MediaAssets {
    catch(e){if(e instanceof ToolError&&['media_decode_or_render_failed','self_contained_audio_required','self_contained_media_required'].includes(e.code))throw new ToolError('soundtrack_has_no_usable_audio');throw e;}
    const sampleLog=await this.process(['-v','info','-xerror','-nostdin','-threads','1','-i',trimmed,'-map','0:a:0','-vn','-af','volumedetect','-progress','pipe:2','-f','null','-'],job,30000),sampleDuration=decodedDuration(sampleLog);
    if(!sampleDuration)throw new ToolError('soundtrack_has_no_usable_audio');if(!track.loop&&sampleDuration<expected-.08)throw new ToolError('soundtrack_shorter_than_story');
+   // Bound the input producer too: an infinite WAV loop can finish the mux
+   // but leave FFmpeg waiting for its demux thread during shutdown.
+   const repeats=track.loop?Math.max(0,Math.ceil(expected/sampleDuration)-1):0;
    const fadeIn=Math.min(Number(track.fade_in),expected/2),fadeOut=Math.min(Number(track.fade_out),expected/2),filters=[`volume=${Number(track.volume)}`,...(fadeIn?[`afade=t=in:st=0:d=${fadeIn}`]:[]),...(fadeOut?[`afade=t=out:st=${expected-fadeOut}:d=${fadeOut}`]:[])];
-   await this.process(['-v','error','-xerror','-nostdin','-threads','1','-i',silent,...(track.loop?['-stream_loop','-1']:[]),'-i',trimmed,'-map','0:v:0','-map','1:a:0','-t',String(expected),'-c:v','copy','-c:a','aac','-b:a','128k','-ar','48000','-ac','2','-af',filters.join(','),'-fs','33554432','-movflags','+faststart','-y',out],job,30000);
+   await this.process(['-v','error','-xerror','-nostdin','-threads','1','-i',silent,...(repeats?['-stream_loop',String(repeats)]:[]),'-i',trimmed,'-map','0:v:0','-map','1:a:0','-t',String(expected),'-c:v','copy','-c:a','aac','-b:a','128k','-ar','48000','-ac','2','-af',filters.join(','),'-fs','33554432','-movflags','+faststart','-y',out],job,30000);
    await this.verifyVideo(out,expected,job);const log=await this.process(['-v','info','-xerror','-nostdin','-threads','1','-i',out,'-map','0:a:0','-vn','-af','volumedetect','-progress','pipe:2','-f','null','-'],job,30000),duration=decodedDuration(log),max=log.match(/max_volume:\s*(-?[\d.]+|-inf) dB/),mean=log.match(/mean_volume:\s*(-?[\d.]+|-inf) dB/),maxDb=Number(max?.[1]),meanDb=Number(mean?.[1]);
    if(!/Audio: aac\b/.test(log)||!duration||Math.abs(duration-expected)>.15)throw new ToolError('soundtrack_duration_mismatch');
    if(!max||!mean||!Number.isFinite(maxDb)||!Number.isFinite(meanDb)||maxDb<-60||meanDb<-70)throw new ToolError('soundtrack_silent');

@@ -1,0 +1,22 @@
+name: Project context
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'AGENTS.md'
+      - 'docs/**'
+      - 'scripts/codex/verify_pack.py'
+      - '.codex/**'
+      - '.github/workflows/codex-verify.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  project-context:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Check project-owned continuation context
+        run: python3 -B scripts/codex/verify_pack.py
+# Functional acceptance belongs to the single mandatory Verify Lumen job.

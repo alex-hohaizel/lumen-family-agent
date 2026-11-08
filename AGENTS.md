@@ -13,3 +13,9 @@
 - Широку живу діагностику вмикати лише явно через `npm run diagnostics` / `--diagnostics` у єдиному worker з чинними lease та Auth. Звичайний запуск залишає її `not_run`; не запускати для asset-only випуску. Ручні інструменти — у `tools/diagnostics`, результати — поза кодом, тимчасові каталоги — з очищенням.
 - Не змінювати приватність репозиторію, модель GPT-6.1-Sol, конфігурацію голосу, існуючі секрети, дані чатів або ресурси Render без окремого доручення.
 - Деплоїти чинний worker `srv-dbfl0je7bikc73dvg0qg` після успішних перевірок. Завершення: потрібний commit live, усі 120 стікерів звірено з Telegram, порядок підтверджено, груповий runtime запущено.
+
+## Контекст подальшого розвитку
+
+- Продовження чинного Люмена веде `chatbot-atelier-director` з потрібними модулями ChatBot Atelier. Почати з [контексту продукту](docs/lumen/README.md), [поточного стану](docs/lumen/current-context.md), [checkpoint](docs/lumen/migration/checkpoint.json), [рішень](docs/lumen/requirements/accepted-decisions.md) і зачеплених повних критеріїв у `docs/codex`. Встановлення чи читання старої Lumen-навички/custom agents не потрібне.
+- Поточне доручення й чинні проєктні правила визначають права; історичні цитати не дозволяють нові дії. Звіряти actual HEAD/dirty/runtime. Збережене правило, source inspection, локальний тест, CI, deployed, delivery й human acceptance — окремі докази; unknown не є pass.
+- Зберігати persona, усі capabilities/дані/jobs/accepted assets і незавершений WIP. Невідомий provider effect спочатку reconcile. Local-only WIP передавати bytes+hashes; чистий clone без нього не є повним handoff. Нове аудіо відкладене, чинний voice config зберігається.

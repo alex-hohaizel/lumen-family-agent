@@ -1,4 +1,17 @@
 import {operationSignal} from './operations.js';
+import {transportThread} from './topic-scope.js';
+
+export function telegramErrorCode(code:number,description:unknown){
+  const text=typeof description==='string'?description:'';
+  if(code===400&&/message is not modified/i.test(text))return 'telegram_message_not_modified';
+  if(code===400&&/(?:message thread not found|topic[_ ]id[_ ]invalid|message[_ ]thread[_ ]invalid)/i.test(text))return 'telegram_thread_not_found';
+  if(code===400&&/(?:topic[_ ]closed|forum[_ ]closed)/i.test(text))return 'telegram_topic_closed';
+  if((code===400||code===403)&&/(?:not enough rights|have no rights|bot was kicked|not a member|forbidden|chat_write_forbidden)/i.test(text))return 'telegram_permission_denied';
+  return `telegram_${code}`;
+}
+export function telegramRepairHint(code:string){
+  return ({telegram_thread_not_found:'Цю тему Telegram не знайшов. Перевір, чи вона існує; для General окремий ідентифікатор теми не потрібен.',telegram_topic_closed:'Ця тема закрита для повідомлень. Її може відкрити адміністратор.',telegram_permission_denied:'Telegram не дозволив надіслати відповідь у цей чат. Адміністратор може перевірити права бота.',telegram_topic_invalid:'Не вдалося визначити тему повідомлення. Повтори звернення в потрібній темі.'} as Record<string,string>)[code];
+}
 export interface TGUser { id: number; first_name: string; last_name?: string; username?: string; is_bot?: boolean; }
 export interface TGChat { id: number; type: string; title?: string; is_forum?: boolean; }
 export interface InlineKeyboard { inline_keyboard: { text: string; callback_data?: string; url?: string }[][]; }
@@ -6,6 +19,7 @@ export interface TextEntity {type:string;offset:number;length:number;url?:string
 export interface TGSticker {file_id:string;file_unique_id:string;type?:string;emoji?:string;set_name?:string;is_animated?:boolean;is_video?:boolean;thumbnail?:{file_id:string;file_unique_id?:string};}
 export interface TextOptions {actionId?:string;compositionId?:string;optionalContribution?:boolean;outputLanguage?:string;sourceIds?:number[];taskId?:string;goalVersion?:number; replyMarkup?: InlineKeyboard; replyToMessageId?: number; targetChatId?: string; threadId?: number; entities?:TextEntity[]; sourceMessageId?:number;actorId?:string;audience?:'personal'|'group'|'private'; }
 export interface Message {
+  sender_chat?:TGChat;
   receiver_user?:TGUser;ephemeral_message_id?:number;
   message_id: number; date: number; edit_date?: number; from?: TGUser; chat: TGChat;
   text?: string; caption?: string; reply_to_message?: Partial<Message> & {message_id:number};
@@ -43,6 +57,7 @@ export class Telegram {
   async call<T = any>(method: string, body: Record<string, unknown> = {}, timeout = 20000): Promise<T> {
     if(this.outbound)body=await this.outbound(method,body);
     body={...body};delete body._lumen_actor_id;delete body._lumen_output_language;
+    if('message_thread_id' in body){const thread=transportThread(body.message_thread_id);if(thread===undefined)delete body.message_thread_id;else body.message_thread_id=thread;}
     let response: Response;
     try {
       response = await this.fetcher(`https://api.telegram.org/bot${this.token}/${method}`, {
@@ -51,7 +66,7 @@ export class Telegram {
     } catch { throw new TelegramError('telegram_network', 0, /^(send|edit)/.test(method)); }
     let json: any;
     try { json = await response.json(); } catch { throw new TelegramError('telegram_bad_response', 0, /^(send|edit)/.test(method)); }
-    if (!json.ok) throw new TelegramError(json.error_code===400&&/message is not modified/i.test(String(json.description))?'telegram_message_not_modified':`telegram_${json.error_code || response.status}`, Number(json.parameters?.retry_after || 0), response.status >= 500 && /^(send|edit)/.test(method));
+    if (!json.ok) throw new TelegramError(telegramErrorCode(Number(json.error_code||response.status),json.description), Number(json.parameters?.retry_after || 0), response.status >= 500 && /^(send|edit)/.test(method));
     return json.result as T;
   }
   async updates(offset: number) {

@@ -18,9 +18,10 @@ import {z} from 'zod';
 
 describe('Живі продовження, спільні рішення та медіа',()=>{
   let db:TestDB,h:ReturnType<typeof harness>;let sequence=800000;
-  beforeEach(async()=>{db=new TestDB();await db.init();h=harness(db);await paired(h);await db.query("UPDATE app_state SET open_group=true,mention_only=true,mode='quiet' WHERE id=1");await db.query("INSERT INTO members(user_id,name) VALUES('11','Гравець А'),('22','Олена')");});
+  beforeEach(async()=>{db=new TestDB();await db.init();h=harness(db);await paired(h);await db.query("UPDATE app_state SET open_group=true,mention_only=true,mode='quiet',quiet_start=0,quiet_end=0 WHERE id=1");await db.query("INSERT INTO members(user_id,name) VALUES('11','Гравець А'),('22','Олена')");});
   afterEach(async()=>{await db.close();});
   const ask=async(u:Update)=>{await h.lumen.receive(u);await h.lumen.processNext();};
+  const considerBackground=async()=>{const candidate=await one(db,"SELECT update_id,payload FROM inbox WHERE status='pending' AND payload->'engagement'->>'reason'='ambient'");assert.ok(candidate);await db.query("UPDATE inbox SET available_at=now()-interval '1 second' WHERE update_id=$1",[candidate!.update_id]);await h.lumen.processNext();return candidate!;};
   const visual=()=>new VisualMemory(db,h.tg as unknown as Telegram,h.brain);
   const router=async()=>{const registry=new ChatRegistry(db);const r=new ChatRouter(registry,h.config,h.tg as unknown as Telegram,{id:999,username:'lumen_test_bot'},()=>h.brain);await r.init();await r.runtime((await registry.find('-100'))!);return r;};
   const callback=(data:string,user=22,name='Олена'):Update=>({update_id:sequence++,callback_query:{id:'choice'+sequence,from:{id:user,first_name:name},data,message:{message_id:9999,date:Math.floor(Date.now()/1000),chat:{id:-100,type:'supergroup'},from:{id:999,first_name:'Люмен',is_bot:true},text:'Яку гру обираємо?'}}});
@@ -32,7 +33,7 @@ describe('Живі продовження, спільні рішення та м
   });
   it('розуміє очевидне уточнення до своєї відповіді, яка не містила питання',async()=>{
     h.brain.replies.push({reply:'Північне сяйво виникає через взаємодію заряджених частинок з атмосферою.',actions:[]});await ask(message('Люмен, що таке північне сяйво'));const delivery=new Delivery(db,h.tg as unknown as Telegram,h.config);await delivery.next();
-    h.brain.replies.push({reply:'Кисень і азот світяться різними кольорами.',actions:[]});await ask(message('А чому воно різнокольорове?'));assert.equal(h.brain.calls.length,2);assert.equal(JSON.parse(h.brain.calls[1]!.context).engagement_context.reason,'continuation');
+    h.brain.replies.push({reply:'Кисень і азот світяться різними кольорами.',actions:[],behavior:{move:'answer',recipient:'bot',relation:'reply',reason:'Автор уточнює попередню відповідь про сяйво',contribution:{key:'Колір сяйва залежить від газу',summary:'Пояснив роль кисню й азоту'}},engagement:{respond:true,reason:'continuation'}});await ask(message('А чому воно різнокольорове?'));assert.equal(h.brain.calls.length,1);const candidate=await considerBackground();assert.equal(candidate.payload.engagement.dialogue.origin,'social_candidate');assert.deepEqual(candidate.payload.engagement.dialogue.allowed,[]);assert.equal(h.brain.calls.length,2);const context=JSON.parse(h.brain.calls[1]!.context);assert.equal(context.engagement_context.reason,'ambient');assert.match(context.active_dialogue.question,/заряджених частинок/);await delivery.next();assert.equal(h.tg.sent.length,2);assert.match(h.tg.sent[1]!.text,/Кисень і азот/);assert.equal((await db.query('SELECT id FROM memories')).rows.length,0);assert.equal((await db.query('SELECT id FROM reminders')).rows.length,0);
   });
   it('особисте уточнення не приймає чужу відповідь і відповідь з іншої теми',async()=>{
     h.brain.replies.push({behavior:{move:'clarify',recipient:'bot',relation:'new_request',reason:'Потрібен час нагадування',clarification:{question:'О котрій годині?',missing_slot:'time',why:'Щоб поставити нагадування у потрібний час'}},reply:'О котрій годині?',actions:[]});await ask(message('Люмен, нагадай завтра про квитки'));await h.lumen.receive(message('О восьмій',22));const other=message('О восьмій');other.message!.message_thread_id=202;await h.lumen.receive(other);
@@ -40,8 +41,8 @@ describe('Живі продовження, спільні рішення та м
   });
   it('не втручається, якщо модель визначила кандидат продовження як чужу розмову',async()=>{
     h.brain.replies.push({reply:'Який колір обереш?',actions:[]});await ask(message('Люмен, допоможи обрати колір'));await db.query('DELETE FROM outbox');
-    h.brain.replies.push({reply:'',actions:[{kind:'remember',content:'Не можна зберігати'}],engagement:{respond:false,reason:'skip'}});await ask(message('Петре, ти вже вдома?'));
-    assert.equal((await db.query('SELECT * FROM outbox')).rows.length,0);assert.equal((await db.query('SELECT * FROM memories')).rows.length,0);
+    h.brain.replies.push({reply:'',actions:[{kind:'remember',content:'Не можна зберігати'}],engagement:{respond:false,reason:'skip'}});await ask(message('Петре, ти вже вдома?'));await considerBackground();
+    assert.equal(h.brain.calls.length,2);assert.equal((await db.query('SELECT * FROM outbox')).rows.length,0);assert.equal((await db.query('SELECT * FROM memories')).rows.length,0);
   });
   it('зберігає спільні вибори під справжніми іменами й оновлює повторний вибір',async()=>{
     h.brain.replies.push({reply:'Яку гру обираємо?',actions:[],presentation:{choices:['Детектив','Вікторина'],audience:'group'}});await ask(message('Люмен, запропонуй нам гру'));

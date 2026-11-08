@@ -4,12 +4,26 @@ import type {ToolContext} from './agent-tools.js';
 import {one,type SQL} from './db.js';
 import {ToolError} from './safe-http.js';
 import {recordProvenance} from './provenance.js';
+import {requestAuthorityView} from './outcomes.js';
+import type {OriginalNativeEntity} from './request-context.js';
 
 const independentOfferKinds=new Set(['personalize','set_preference','remember','remind','cancel_reminder','schedule','schedule_decision']);
 /** A proposed action cannot become executable by also appearing in actions.
  * Apply this before tool execution and action authorization, including every replan.
  */
-export function prepareOfferPlan(plan:Plan):Plan {
+export function prepareOfferPlan(plan:Plan,request?:{text:string;explicit:boolean;entities?:readonly OriginalNativeEntity[]}):Plan {
+  // A direct ordinary reminder does not enroll people in an activity. Keep
+  // activity consent unchanged; the scheduling domain still verifies the actual
+  // original source, quote, time, audience and idempotency before writing.
+  const action=plan.offer?.action;
+  if(request?.explicit&&action?.kind==='tool'&&action.name==='schedule.series'){
+    let args:any;try{args=JSON.parse(action.arguments);}catch{}
+    const plain=requestAuthorityView(request.text,request.entities||[])?.commandText||'';
+    if(args?.rule?.mode==='reminder'&&['create','preview'].includes(args.operation)&&/(?:нагадай|нагадуй|нагадуйте|напомни|напоминай|remind)/iu.test(plain)&&!/[?？]|якщо|если|\bif\b|не\s+(?:нагад|напомин|remind)/iu.test(plain)){
+      const independent=plan.actions.filter(a=>independentOfferKinds.has(a.kind));
+      return {...plan,offer:undefined,interaction:undefined,actions:independent.some(a=>a.kind==='schedule'&&a.mode==='reminder')?independent:[...independent,{...action,arguments:JSON.stringify({...args,operation:'create',quote:request.text,shared:args.shared??true})}]};
+    }
+  }
   return plan.offer?{...plan,actions:plan.actions.filter(a=>independentOfferKinds.has(a.kind))}:plan;
 }
 

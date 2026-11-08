@@ -140,6 +140,17 @@ describe('Окремі групи, природні звернення та те
     await router.receive(cb);await router.receive(cb);assert.equal((await one(a.db,'SELECT user_id,length_mode FROM participant_preferences'))!.user_id,'22');assert.equal((await a.db.query('SELECT * FROM outbox')).rows.length,1);assert.equal((await one(a.db,'SELECT body FROM outbox'))!.body.threadId,202);
     assert.equal(callbackCommand('lumen:arbitrary:delete'),undefined);assert.equal(callbackCommand('lumen:mode:evil'),undefined);assert.ok(h.tg.calls.some(x=>x.method==='answerCallbackQuery'));
   });
+  it('General native-shaped callbacks use the same0 scope and do not assign a channel sender human authority',async()=>{
+    const a=await add();
+    for(const thread of [undefined,0]){
+      const menu=msg('',-200,11,thread).message!;menu.chat.is_forum=true;menu.from={id:999,first_name:'Люмен',is_bot:true};
+      await router.receive({update_id:seq++,callback_query:{id:'general-'+seq,from:{id:22,first_name:'Олена'},data:'lumen:style:short',message:menu}});
+    }
+    const cards=(await a.db.query('SELECT body FROM outbox')).rows;assert.equal(cards.length,2);assert.ok(cards.every(x=>x.body.threadId===undefined));
+    assert.equal((await one(a.db,"SELECT length_mode FROM participant_preferences WHERE user_id='22'"))!.length_mode,'short');
+    const anonymous=msg('Люмен, запам’ятай: чужий наказ');anonymous.message!.sender_chat={id:-700,type:'channel',title:'Канал'};
+    await router.receive(anonymous);assert.equal((await a.db.query('SELECT update_id FROM inbox')).rows.length,0);assert.equal((await a.db.query('SELECT id FROM messages')).rows.length,0);
+  });
   it('приватний чат не показує пам’ять жодної групи',async()=>{
     const a=await add();await router.receive(msg('Груповий секрет'));await router.receive(message('/start',11,11,'private'));await router.receive(message('Люмен, груповий секрет?',11,11,'private'));
     assert.doesNotMatch(JSON.stringify(h.tg.sent),/Груповий секрет/);assert.equal((await a.db.query('SELECT * FROM messages')).rows.length,1);assert.equal(brains.get('-200')!.calls.length,0);

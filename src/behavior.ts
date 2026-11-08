@@ -21,9 +21,9 @@ export function socialDecision(options: {
   if (new Set(recent.map(x => x.user_id)).size < 2 || seriousConversation(recent)) return false;
   const slow = now - new Date(recent[0]!.created_at).getTime() >= 2 * 60000;
   const minimumMessages = slow ? 10 : 16;
-  const minimumGap = Math.max(options.gapMinutes??0,slow?30:20)*60000;
-  const lastAttempt = Math.max(...[options.lastBotAt, options.lastSocialAt].map(x => x ? new Date(x).getTime() : 0));
-  return options.sinceBot >= minimumMessages && recent.length >= minimumMessages && now - lastAttempt >= minimumGap;
+  const minimumGap = Math.max(0,options.gapMinutes??2)*60000;
+  const lastBot=options.lastBotAt?new Date(options.lastBotAt).getTime():0,lastAttempt=options.lastSocialAt?new Date(options.lastSocialAt).getTime():0;
+  return options.sinceBot >= minimumMessages && recent.length >= minimumMessages && now-lastBot>=minimumGap && now-lastAttempt>=45000;
 }
 
 export function responseGuidance(preferences: Preferences, serious: boolean) {

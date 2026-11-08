@@ -82,7 +82,7 @@ export async function selectedPages(bytes: Uint8Array, pages: number[]): Promise
     worker.on('message', r => r.error ? finish(r.error) : finish(undefined, r));
     worker.on('error', () => finish('document_parse_failed'));
     worker.on('exit', () => {if (!done) finish('document_worker_exited');});
-  }));
+  }),'document_pages');
 }
 
 export async function selectedVideo(bytes: Uint8Array, start: number, end: number): Promise<SelectedVideoResult> {
@@ -111,7 +111,7 @@ export async function selectedVideo(bytes: Uint8Array, start: number, end: numbe
     } finally {
       await rm(dir, {recursive: true, force: true});
     }
-  });
+  },'document_pages');
 }
 
 const sampleTime = (time: number) => Math.round(time * 1000000) / 1000000;
