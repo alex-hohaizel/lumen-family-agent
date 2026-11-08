@@ -298,7 +298,7 @@
   },
   "current_work": {
     "id": "LM-RELEASE-1.13.3-2026-11-09",
-    "updated_at": "2026-11-08T22:17:12.988261+00:00",
+    "updated_at": "2026-11-08T22:41:26.088577+00:00",
     "kind": "finish_current_work_and_release",
     "status": "prepublication; actual CI/deploy completion is recorded in external release_receipt",
     "user_approval": "Заверши всі роботи поточні і доведи версію до готовності у продакшену і задеплой",
@@ -308,9 +308,10 @@
     "method": "ChatBot Atelier5.0.0 director/build/media/qa/release, no retired skill",
     "source": {
       "baseline_head": "a1fd79dc1e369f0f6d50579523524cd196f11d72",
-      "working_source_hash": "b1f14b89fe1d31f2f84a50f3b4f3be28f76d764e520a80dda3ddbb6b8b19db6d",
+      "working_source_hash": "3b8bb0ad5db8ab2c0c33756d0c8dd08ff48f74fed2034241cfb1ccfdfec63896",
       "source_files": 238,
-      "git_publication": "normal Git commit and one push to origin/main after independentQA; exactSHA captured in release_receipt"
+      "git_publication": "normal Git commit and one push to origin/main after independentQA; exactSHA captured in release_receipt",
+      "previous_subject": "b1f14b89fe1d31f2f84a50f3b4f3be28f76d764e520a80dda3ddbb6b8b19db6d"
     },
     "target": {
       "service_id": "srv-dbfl0je7bikc73dvg0qg",
@@ -342,7 +343,7 @@
     },
     "readiness_at_source_freeze": {
       "specification": "authorized_current_release",
-      "code": "83/83 targeted +11/11 releasecontrols +standalonepackage smoke; independent18scenarios/238source/240assets PASS",
+      "code": "83/83 targeted +11/11 releasecontrols +standalonepackage smoke; independent18scenarios/238source/240assets PASS;53/53 addressed midnightfixture cases PASS; runtime unchanged after firstCI;corrective CIcontrols12/12 andindependent36/36PASS",
       "integration": "local synthetic physicalmedia/resource; actualLinuxconstrained smoke pending exactCI",
       "device": "not_assessed",
       "human": "not_assessed",
@@ -363,8 +364,24 @@
       "receipt_sha256": "bba30608c8995cb0692dc7b9947edb870594b411e4beb83ecf6bc69a23632026",
       "own_scenarios_pass": 18,
       "source_hashes": 238,
-      "asset_hashes": 240
-    }
+      "asset_hashes": 240,
+      "supplemental_reviews": [
+        {
+          "scope": "deterministic midnight fixture and24h horizon",
+          "report": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09/evidence/independent-qa/ci-fixture/REPORT.md",
+          "sha256": "b808359596c2097f3d6fa3bf30cdcbfb4bd391c6ef37594b60798cdd753e9c60",
+          "result": "own5/5 journeys+literal00:30SQLclock PASS"
+        },
+        {
+          "scope": "exact-parent CI container skip guard, candidate3",
+          "report": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09/evidence/independent-qa/ci-gate/REPORT.md",
+          "sha256": "20bd805c2fd1095565766779a5252413748135e6f54bb323ba3caf594df406dc",
+          "result": "own36/36 selectors/CLI and238sourcehashesPASS; runtime unchanged"
+        }
+      ]
+    },
+    "ci_observation_before_corrective_commit": "FirstCI1240/1241, isolated after-midnight test horizon assumption; production blocked. Full correctedSHA CI required; see externalreceipt.",
+    "ci_gate_recovery": "Container skip requires successful verify of exact parent; failed/pending/missing/foreign gate keeps container check. No inherited PASS from failed attempt."
   },
   "active_record_pointer": "current_work",
   "work_history": [

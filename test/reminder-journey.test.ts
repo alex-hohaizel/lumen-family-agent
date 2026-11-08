@@ -11,8 +11,7 @@ import type {Media} from '../src/media.js';
 
 async function setup(){const db=new TestDB();await db.init();const h=harness(db);await paired(h);await db.query('UPDATE app_state SET open_group=true,mention_only=true,quiet_start=0,quiet_end=0');await h.lumen.receive(message('Я теж тут',22));return {db,h,delivery:new Delivery(db,h.tg as unknown as Telegram,h.config)};}
 function rule(){return {title:'Картопля',instruction:'картоплю',mode:'reminder' as const,timezone:'Europe/Kyiv',start_date:Temporal.Now.plainDateISO('Europe/Kyiv').add({days:1}).toString(),time:'04:00',frequency:'daily' as const,interval:1,dst:'reject' as const};}
-async function create(h:ReturnType<typeof harness>){
-  const text='Люмен, нагадуй нам обом щодня о 04:00 про картоплю.',r=rule();
+async function create(h:ReturnType<typeof harness>,r=rule(),text='Люмен, нагадуй нам обом щодня о 04:00 про картоплю.'){
   h.brain.replies.push({reply:'',actions:[{kind:'schedule',title:r.title,instruction:r.instruction,mode:'reminder',timezone:r.timezone,due_at:occurrences(r,new Date().toISOString(),1)[0]!.due,authorization:'explicit',quote:text,recurrence:r,shared:true}]});
   const update=message(text);update.message!.chat.is_forum=true;await h.lumen.receive(update);await h.lumen.processNext();return update;
 }
@@ -20,8 +19,16 @@ it('one daily04 shared series → one group delivery → named participant stops
   const {db,h,delivery}=await setup();try{
     await create(h);let rows=(await db.query('SELECT * FROM recurring_series')).rows;assert.equal(rows.length,1);assert.equal(rows[0]!.status,'active');assert.equal(rows[0]!.shared,true);assert.deepEqual(rows[0]!.manager_ids,['22']);assert.equal((await db.query('SELECT id FROM interactions')).rows.length,0);
     await delivery.next();h.tg.sent.length=0;
-    await new Recurring(db).tick();assert.equal((await db.query('SELECT id FROM scheduled_actions')).rows.length,1);
-    await db.query("UPDATE scheduled_actions SET due_at=now()-interval '1 minute'");assert.equal(await dispatchSchedules(db),1);await delivery.next();assert.equal(h.tg.sent.length,1);assert.match(h.tg.sent[0]!.text,/Нагадування: картоплю/);assert.equal(h.tg.options.at(-1)!.threadId,undefined);
+    await new Recurring(db).tick();
+    const first=(await db.query('SELECT * FROM recurring_occurrences WHERE series_id=$1 ORDER BY due_at LIMIT 1',[rows[0]!.id])).rows[0]!;
+    assert.ok(first);assert.equal(first.occurrence_key,rows[0]!.rule.start_date+'T04:00');
+    assert.equal(Temporal.Instant.from(new Date(first.due_at).toISOString()).toZonedDateTimeISO('Europe/Kyiv').hour,4);
+    // Advance this fixture into the dispatch window. Local tomorrow04 can be
+    // more than24h away after midnight; it must not materialize prematurely.
+    await db.query("UPDATE recurring_occurrences SET due_at=now()-interval '1 minute' WHERE series_id=$1 AND occurrence_key=$2",[rows[0]!.id,first.occurrence_key]);
+    if(first.schedule_id)await db.query("UPDATE scheduled_actions SET due_at=now()-interval '1 minute' WHERE id=$1",[first.schedule_id]);
+    await new Recurring(db).tick();await new Recurring(db).tick();assert.equal((await db.query('SELECT id FROM scheduled_actions')).rows.length,1);
+    assert.equal(await dispatchSchedules(db),1);await delivery.next();assert.equal(h.tg.sent.length,1);assert.match(h.tg.sent[0]!.text,/Нагадування: картоплю/);assert.equal(h.tg.options.at(-1)!.threadId,undefined);
     const inspect=message('/reminders',22);await h.lumen.receive(inspect);const list=(await db.query("SELECT body FROM outbox WHERE dedup_key LIKE $1",['control:'+inspect.update_id+':%'])).rows;
     assert.equal(list.length,1);assert.equal(list[0]!.body.text.split('\n').filter((x:string)=>/Картопля|картоплю/.test(x)).length,1);
     const cancel=message('Люмен, видали ці нагадування про картоплю нарешті🙃 Для обох, і для мене і для Гравця А.',22);
@@ -61,5 +68,22 @@ it('an addressed voice request keeps the existing scheduling path with a grounde
     await lumen.receive(update);await lumen.processNext();
     const series=(await db.query('SELECT status,shared,manager_ids FROM recurring_series')).rows;assert.equal(series.length,1);assert.equal(series[0]!.status,'active');assert.equal(series[0]!.shared,true);assert.deepEqual(series[0]!.manager_ids,['22']);
     const attachment=(await db.query("SELECT metadata FROM attachments WHERE file_id='actual-synthetic-voice'")).rows[0]!;assert.equal(attachment.metadata.reminder_transcription.modality,'voice_transcription');assert.equal(attachment.metadata.reminder_transcription.authored,true);
+  }finally{await db.close();}
+});
+
+
+it('daily04 beyond the24h materialization horizon remains undelivered until its occurrence becomes due',async()=>{
+  const {db,h,delivery}=await setup();try{
+    const r={...rule(),start_date:Temporal.Now.plainDateISO('Europe/Kyiv').add({days:2}).toString()};
+    await create(h,r,`Люмен, починаючи з ${r.start_date}, нагадуй нам обом щодня о 04:00 про картоплю.`);
+    const series=(await db.query('SELECT id FROM recurring_series')).rows[0]!;await delivery.next();h.tg.sent.length=0;
+    await new Recurring(db).tick();const first=(await db.query('SELECT * FROM recurring_occurrences WHERE series_id=$1 ORDER BY due_at LIMIT 1',[series.id])).rows[0]!;
+    assert.equal(first.occurrence_key,r.start_date+'T04:00');assert.equal(Temporal.Instant.from(new Date(first.due_at).toISOString()).toZonedDateTimeISO(r.timezone).hour,4);
+    assert.equal((await db.query("SELECT due_at>now()+interval '1 day' AS outside FROM recurring_occurrences WHERE series_id=$1 AND occurrence_key=$2",[series.id,first.occurrence_key])).rows[0]!.outside,true);
+    assert.equal((await db.query('SELECT id FROM scheduled_actions')).rows.length,0);assert.equal(await dispatchSchedules(db),0);assert.equal(await delivery.next(),false);assert.equal(h.tg.sent.length,0);
+    await db.query("UPDATE recurring_occurrences SET due_at=now()-interval '1 second' WHERE series_id=$1 AND occurrence_key=$2",[series.id,first.occurrence_key]);
+    await new Recurring(db).tick();await new Recurring(db).tick();assert.equal((await db.query('SELECT id FROM scheduled_actions')).rows.length,1);
+    assert.equal(await dispatchSchedules(db),1);assert.equal(await dispatchSchedules(db),0);assert.equal(await delivery.next(),true);assert.equal(await delivery.next(),false);
+    assert.equal(h.tg.sent.length,1);assert.equal(h.tg.sent[0]!.text,'Нагадування: картоплю');assert.equal(h.tg.sent[0]!.chatId,'-100');
   }finally{await db.close();}
 });

@@ -56,7 +56,14 @@ export async function detectRuntimeImage() {
       after: await githubJSON(`/repos/${repository}/contents/${file}?ref=${after}`, true),
     };
   }
-  return needsRuntimeImage(files, packages);
+  if (needsRuntimeImage(files, packages)) return true;
+  // A fixture-only follow-up can sit on an unverified runtime change. Skip
+  // container checks only when the exact parent has a successful required gate.
+  const checks = await githubJSON(`/repos/${repository}/commits/${before}/check-runs?check_name=verify&filter=latest&per_page=100`);
+  const latest = Array.isArray(checks.check_runs) ? checks.check_runs
+    .filter(run => run.name === 'verify' && run.app?.slug === 'github-actions' && run.head_sha === before && Number.isSafeInteger(run.id))
+    .sort((left, right) => right.id - left.id)[0] : undefined;
+  return latest?.status !== 'completed' || latest.conclusion !== 'success';
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

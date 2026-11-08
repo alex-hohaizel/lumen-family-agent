@@ -6,7 +6,7 @@ import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import {cleanOutput} from './clean.mjs';
 import {packageRelease, requiredModules, runtimeAssets, verifyInventory} from './package.mjs';
-import {needsRuntimeImage} from './image-changes.mjs';
+import {needsRuntimeImage, detectRuntimeImage} from './image-changes.mjs';
 import {finalizeRender, renderPrunePaths} from './finalize-render.mjs';
 
 async function fixture(t) {
@@ -179,4 +179,30 @@ test('Render finalization preserves protected data reached through runtime/backu
     assert.equal(await readFile(join(state.root, 'src/schema.sql'), 'utf8'), 'SELECT 1;\n');
     assert.equal(await readFile(join(state.root, 'assets/setup.html'), 'utf8'), 'setup.html');
   }
+});
+
+
+test('a fixture-only follow-up retains container checks until its exact parent verify succeeded', async t => {
+  const directory = await mkdtemp(join(tmpdir(), 'lumen-image-gate-'));
+  t.after(() => rm(directory, {recursive: true, force: true}));
+  const before = 'a'.repeat(40), after = 'b'.repeat(40), path = join(directory, 'event.json');
+  await writeFile(path, JSON.stringify({before, after}));
+  const values = {GITHUB_EVENT_NAME:'push', GITHUB_EVENT_PATH:path, GITHUB_REPOSITORY:'fixture/lumen', GITHUB_API_URL:'https://github.invalid.test', GITHUB_TOKEN:'synthetic-only'};
+  const original = Object.fromEntries(Object.keys(values).map(key => [key, process.env[key]]));
+  Object.assign(process.env, values);
+  t.after(() => { for (const key of Object.keys(values)) { if (original[key] === undefined) delete process.env[key]; else process.env[key] = original[key]; } });
+  const success = {id:2,name:'verify',app:{slug:'github-actions'},head_sha:before,status:'completed',conclusion:'success'};
+  let checkRuns = [];
+  const requests = [];
+  t.mock.method(globalThis, 'fetch', async url => {
+    requests.push(String(url));
+    if (String(url).includes('/compare/')) return new Response(JSON.stringify({files:[{filename:'test/reminder-journey.test.ts'}]}));
+    assert.ok(String(url).includes('/commits/'+before+'/check-runs?check_name=verify&filter=latest'));
+    return new Response(JSON.stringify({check_runs:checkRuns}));
+  });
+  for (const runs of [[], [{...success,conclusion:'failure'}], [{...success,status:'in_progress',conclusion:null}], [{...success,head_sha:after}], [{...success,app:{slug:'other'}}], [success,{...success,id:3,conclusion:'failure'}]]) {
+    checkRuns = runs;assert.equal(await detectRuntimeImage(), true, 'unverified latest exact-parent gate cannot inherit a container PASS');
+  }
+  checkRuns = [success];assert.equal(await detectRuntimeImage(), false, 'verified parent permits a fixture-only container skip');
+  assert.equal(requests.length,14);
 });
