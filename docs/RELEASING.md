@@ -32,3 +32,7 @@ Schema21 additive; повторне застосування й перехід �
 Старий artifact придатний для rollback лише до приймання нових1.13.3 доручень і за підтвердженої відсутності нових приватних schedules/effects. Після такого ingress потрібен privacy-compatible forward fix, що зберігає audience/source/cancel/forget fences; blind rollback наa1fd79 заборонений. За аварії зупинити залежний dispatch, reconcile claimed/uncertain effects і відновити сумісний код. Не стирати jobs/дані для підгонки сумісності й не відновлювати старий snapshot поверх пізнішого forget. Backup source/активів і попередній deploy ID не означають готового rollback усієї БД.
 
 Поточний CI додатково запускає bounded standalone DOCX/PDF/PNG smoke під Linux cgroup512MiB без swap і0.5CPU, з перевіркою реальних limit/quota/peak/OOM. Це перевірка конкретного package, не атестація всіх можливих production навантажень. Тариф, інстанції й ресурси Render не змінюються.
+
+### Сумісність1.13.4 і pending погоджень
+
+Нової міграції немає: схема21 і privacy epochs збережені. Перед новим r2 ingress попередній26112af/1.13.3 є сумісним за схемою й audience, але повертає дефект скасування. Після створення нових reminder_cancel proposals/vote receipts старий interaction runtime не розуміє їхнього launch та перевірки голосів. Тому schema compatibility не означає безпечного сліпого replay старим кодом: потрібен сумісний forward fix або окрема перевірена процедура зупинки/ізоляції таких pending operations. Не стирати картки, jobs чи дані для підгонки rollback.

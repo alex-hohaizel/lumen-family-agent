@@ -297,91 +297,49 @@
     "method": "skills/config/write {name:lumen-orchestrator,enabled:false}; fresh skills/list forceReload"
   },
   "current_work": {
-    "id": "LM-RELEASE-1.13.3-2026-11-09",
-    "updated_at": "2026-11-08T22:41:26.088577+00:00",
-    "kind": "finish_current_work_and_release",
-    "status": "prepublication; actual CI/deploy completion is recorded in external release_receipt",
-    "user_approval": "Заверши всі роботи поточні і доведи версію до готовності у продакшену і задеплой",
-    "approval_source": "Direct owner request in current Codex chat; no platform message ID supplied",
-    "scope": "Current r1 reminder/topic/attention repair + resourceWIP + MP4 soundtrack blocker + current project-context CI; excludes future feature backlog/newvoice/providers.",
-    "version": "1.13.3",
-    "method": "ChatBot Atelier5.0.0 director/build/media/qa/release, no retired skill",
+    "id": "LM-RELEASE-1.13.4-2026-11-09",
+    "updated_at": "2026-11-09T00:51:27.597001+00:00",
+    "kind": "authorized_current_repair_release",
+    "status": "prepublication; actualCI/deploy/startup in external release_receipt",
+    "user_approval": "Задеплой це все",
+    "approval_source": "Direct owner request after verified local r2 report in current Codex chat",
+    "scope": "Publish and deploy completed natural cancellation/owner approval r2 plus version and concise release context; preserve all capabilities/assets/WIP",
+    "version": "1.13.4",
     "source": {
-      "baseline_head": "a1fd79dc1e369f0f6d50579523524cd196f11d72",
-      "working_source_hash": "3b8bb0ad5db8ab2c0c33756d0c8dd08ff48f74fed2034241cfb1ccfdfec63896",
-      "source_files": 238,
-      "git_publication": "normal Git commit and one push to origin/main after independentQA; exactSHA captured in release_receipt",
-      "previous_subject": "b1f14b89fe1d31f2f84a50f3b4f3be28f76d764e520a80dda3ddbb6b8b19db6d"
+      "baseline_head": "26112aff333772cbea9a68e90f04f1794c66f20e",
+      "baseline_local_r2_hash": "159c06cc00d88ba6de145403f4944a0bfbb40015800c9b5f092d0d26a4c5503d",
+      "baseline_local_r2_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-cancel-repair-r2-2026-11-09/completion.json"
     },
     "target": {
-      "service_id": "srv-dbfl0je7bikc73dvg0qg",
       "workspace_id": "tea-dbf5jsfb9u1s73bn4d1g",
-      "baseline_live_deploy": "dep-dbj6j67b9u1s73d6aeb0",
-      "baseline_live_sha": "a1fd79dc1e369f0f6d50579523524cd196f11d72",
-      "branch": "main",
+      "service_id": "srv-dbfl0je7bikc73dvg0qg",
+      "baseline_deploy": "dep-dbofuu942hec73dd59gg",
       "actual_auto_deploy_trigger": "checksPass",
-      "actual_build_start": "matches AGENTS; read-only provider metadata checked before publication",
-      "resources": "existing0.5CPU/512MiB singleworker/disk unchanged"
+      "build_start": "verified matches AGENTS",
+      "resources": "existing singleworker0.5CPU/512MiB/disk unchanged"
     },
     "rights": {
       "allowed": [
-        "finish causal current repairs/WIP",
-        "local synthetic checks and independentQA",
-        "commit/push through Git",
-        "exactSHA GitHub verify",
-        "one automatic existingworker deploy after checks",
-        "normal additive schema21 via app startup",
-        "bounded non-secret runtime/Telegram120/order readback"
+        "release metadata/current context",
+        "local addressed checks and independent delta review",
+        "normalGit commit and onepush",
+        "exactSHA mandatory GitHubverify",
+        "one automatic existingworker deploy afterCI",
+        "bounded startup/version/Telegram120/order readback"
       ],
       "excluded": [
-        "model/voice/secrets/repo visibility changes",
-        "new paidresource/provider",
-        "manual historicalreminder/chatdata cleanup",
-        "secondworker/Authmanager or duplicate deploy",
-        "broad live diagnostics"
+        "new model/voice/assets/secrets/resources",
+        "manual production job/data cleanup",
+        "secondworker/Authmanager",
+        "broad diagnostics",
+        "duplicate deploy"
       ]
     },
-    "readiness_at_source_freeze": {
-      "specification": "authorized_current_release",
-      "code": "83/83 targeted +11/11 releasecontrols +standalonepackage smoke; independent18scenarios/238source/240assets PASS;53/53 addressed midnightfixture cases PASS; runtime unchanged after firstCI;corrective CIcontrols12/12 andindependent36/36PASS",
-      "integration": "local synthetic physicalmedia/resource; actualLinuxconstrained smoke pending exactCI",
-      "device": "not_assessed",
-      "human": "not_assessed",
-      "deployed": "baseline1.13.2 observed; newdeploy not yet run"
-    },
-    "preservation": "All25CAP/143toolnames/persona/voice/model/120acceptedWEBM+120PNG/order and existingjobs/data/contracts retained; prior exactWIPpreimages and r1package retained externally.",
-    "rollback": "Before newingress olda1fd79 can be considered only after actualcompatibilitycheck. After newprivate schedules it is unsafe: requires audience-compatible forwardfix; see docs/RELEASING.md and independentnegativeprobe. No blindrestore over forget.",
-    "evidence_root": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09",
-    "release_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09/delivery.json",
-    "receipt_authority": "Exact commit/tree/CI/deploy/sticker/runtime status evolves only in this short external receipt; a locator is not a PASS. Re-read provider/HEAD on continuation.",
-    "next_action": "Finish independentQA, publish verifiedcandidate via Git, await requiredverify including constrainedpackage smoke, observe exactlyone Renderdeploy and120sticker/order/groupstartup. Keep currentproof limits separate.",
-    "independent_qa": {
-      "actor": "/root/release_independent_qa",
-      "verdict": "GO_frozen_candidate_to_mandatory_CI; actualproduction_completion_requires_CI_and_live_receipts",
-      "report": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09/evidence/independent-qa/REPORT.md",
-      "report_sha256": "7ae2cd0c6e432d4b8e175ee8ad21e4232364ac11cafa2b763ae58ce7ed6dcc25",
-      "receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09/evidence/independent-qa/receipt.json",
-      "receipt_sha256": "bba30608c8995cb0692dc7b9947edb870594b411e4beb83ecf6bc69a23632026",
-      "own_scenarios_pass": 18,
-      "source_hashes": 238,
-      "asset_hashes": 240,
-      "supplemental_reviews": [
-        {
-          "scope": "deterministic midnight fixture and24h horizon",
-          "report": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09/evidence/independent-qa/ci-fixture/REPORT.md",
-          "sha256": "b808359596c2097f3d6fa3bf30cdcbfb4bd391c6ef37594b60798cdd753e9c60",
-          "result": "own5/5 journeys+literal00:30SQLclock PASS"
-        },
-        {
-          "scope": "exact-parent CI container skip guard, candidate3",
-          "report": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09/evidence/independent-qa/ci-gate/REPORT.md",
-          "sha256": "20bd805c2fd1095565766779a5252413748135e6f54bb323ba3caf594df406dc",
-          "result": "own36/36 selectors/CLI and238sourcehashesPASS; runtime unchanged"
-        }
-      ]
-    },
-    "ci_observation_before_corrective_commit": "FirstCI1240/1241, isolated after-midnight test horizon assumption; production blocked. Full correctedSHA CI required; see externalreceipt.",
-    "ci_gate_recovery": "Container skip requires successful verify of exact parent; failed/pending/missing/foreign gate keeps container check. No inherited PASS from failed attempt."
+    "preservation": "Completedr2backup577files and prior release archives retained; capabilities/model/voice/assets/schema21 unchanged",
+    "release_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.4-2026-11-09/delivery.json",
+    "receipt_authority": "Exact source/commit/CI/deploy/health/delivery facts live only in external receipt; locator is not PASS",
+    "rollback": "Before newr2 ingress26112af remains schema21/privacy compatible but restores cancellation defect. After r2 proposals/votes, old callbacks do not understand reminder_cancel: use compatibleforwardfix or explicit safe drain/quarantine, never blindreplay. See RELEASING.",
+    "next_action": "Finish independent exactcandidate delta review, publish via Git, await one mandatory exactSHA verify and one automatic Render deploy, observe120Telegram/order and groupstart. No manual reminder mutation."
   },
   "active_record_pointer": "current_work",
   "work_history": [
@@ -499,6 +457,137 @@
         "No live incident DB rows/actual Telegram native forum delivery or human naturalness/mobile assessment; original production reminders were not deleted.",
         "No current provider runtime/jobs/auth/health observation; Nov3 metadata remains historical."
       ]
+    },
+    {
+      "id": "LM-RELEASE-1.13.3-2026-11-09",
+      "updated_at": "2026-11-08T22:41:26.088577+00:00",
+      "kind": "finish_current_work_and_release",
+      "status": "completed exact26112aff333772cbea9a68e90f04f1794c66f20e; actualCI/deploy/Telegram completion recorded in immutable external release_receipt",
+      "user_approval": "Заверши всі роботи поточні і доведи версію до готовності у продакшену і задеплой",
+      "approval_source": "Direct owner request in current Codex chat; no platform message ID supplied",
+      "scope": "Current r1 reminder/topic/attention repair + resourceWIP + MP4 soundtrack blocker + current project-context CI; excludes future feature backlog/newvoice/providers.",
+      "version": "1.13.3",
+      "method": "ChatBot Atelier5.0.0 director/build/media/qa/release, no retired skill",
+      "source": {
+        "baseline_head": "a1fd79dc1e369f0f6d50579523524cd196f11d72",
+        "working_source_hash": "3b8bb0ad5db8ab2c0c33756d0c8dd08ff48f74fed2034241cfb1ccfdfec63896",
+        "source_files": 238,
+        "git_publication": "normal Git commit and one push to origin/main after independentQA; exactSHA captured in release_receipt",
+        "previous_subject": "b1f14b89fe1d31f2f84a50f3b4f3be28f76d764e520a80dda3ddbb6b8b19db6d"
+      },
+      "target": {
+        "service_id": "srv-dbfl0je7bikc73dvg0qg",
+        "workspace_id": "tea-dbf5jsfb9u1s73bn4d1g",
+        "baseline_live_deploy": "dep-dbj6j67b9u1s73d6aeb0",
+        "baseline_live_sha": "a1fd79dc1e369f0f6d50579523524cd196f11d72",
+        "branch": "main",
+        "actual_auto_deploy_trigger": "checksPass",
+        "actual_build_start": "matches AGENTS; read-only provider metadata checked before publication",
+        "resources": "existing0.5CPU/512MiB singleworker/disk unchanged"
+      },
+      "rights": {
+        "allowed": [
+          "finish causal current repairs/WIP",
+          "local synthetic checks and independentQA",
+          "commit/push through Git",
+          "exactSHA GitHub verify",
+          "one automatic existingworker deploy after checks",
+          "normal additive schema21 via app startup",
+          "bounded non-secret runtime/Telegram120/order readback"
+        ],
+        "excluded": [
+          "model/voice/secrets/repo visibility changes",
+          "new paidresource/provider",
+          "manual historicalreminder/chatdata cleanup",
+          "secondworker/Authmanager or duplicate deploy",
+          "broad live diagnostics"
+        ]
+      },
+      "readiness_at_source_freeze": {
+        "specification": "authorized_current_release",
+        "code": "83/83 targeted +11/11 releasecontrols +standalonepackage smoke; independent18scenarios/238source/240assets PASS;53/53 addressed midnightfixture cases PASS; runtime unchanged after firstCI;corrective CIcontrols12/12 andindependent36/36PASS",
+        "integration": "local synthetic physicalmedia/resource; actualLinuxconstrained smoke pending exactCI",
+        "device": "not_assessed",
+        "human": "not_assessed",
+        "deployed": "baseline1.13.2 observed; newdeploy not yet run"
+      },
+      "preservation": "All25CAP/143toolnames/persona/voice/model/120acceptedWEBM+120PNG/order and existingjobs/data/contracts retained; prior exactWIPpreimages and r1package retained externally.",
+      "rollback": "Before newingress olda1fd79 can be considered only after actualcompatibilitycheck. After newprivate schedules it is unsafe: requires audience-compatible forwardfix; see docs/RELEASING.md and independentnegativeprobe. No blindrestore over forget.",
+      "evidence_root": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09",
+      "release_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09/delivery.json",
+      "receipt_authority": "Exact commit/tree/CI/deploy/sticker/runtime status evolves only in this short external receipt; a locator is not a PASS. Re-read provider/HEAD on continuation.",
+      "next_action": "Prior release complete. Re-read actual HEAD/Render for future separately authorized work; source-freeze readiness below remains historical.",
+      "independent_qa": {
+        "actor": "/root/release_independent_qa",
+        "verdict": "GO_frozen_candidate_to_mandatory_CI; actualproduction_completion_requires_CI_and_live_receipts",
+        "report": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09/evidence/independent-qa/REPORT.md",
+        "report_sha256": "7ae2cd0c6e432d4b8e175ee8ad21e4232364ac11cafa2b763ae58ce7ed6dcc25",
+        "receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09/evidence/independent-qa/receipt.json",
+        "receipt_sha256": "bba30608c8995cb0692dc7b9947edb870594b411e4beb83ecf6bc69a23632026",
+        "own_scenarios_pass": 18,
+        "source_hashes": 238,
+        "asset_hashes": 240,
+        "supplemental_reviews": [
+          {
+            "scope": "deterministic midnight fixture and24h horizon",
+            "report": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09/evidence/independent-qa/ci-fixture/REPORT.md",
+            "sha256": "b808359596c2097f3d6fa3bf30cdcbfb4bd391c6ef37594b60798cdd753e9c60",
+            "result": "own5/5 journeys+literal00:30SQLclock PASS"
+          },
+          {
+            "scope": "exact-parent CI container skip guard, candidate3",
+            "report": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.3-2026-11-09/evidence/independent-qa/ci-gate/REPORT.md",
+            "sha256": "20bd805c2fd1095565766779a5252413748135e6f54bb323ba3caf594df406dc",
+            "result": "own36/36 selectors/CLI and238sourcehashesPASS; runtime unchanged"
+          }
+        ]
+      },
+      "ci_observation_before_corrective_commit": "FirstCI1240/1241, isolated after-midnight test horizon assumption; production blocked. Full correctedSHA CI required; see externalreceipt.",
+      "ci_gate_recovery": "Container skip requires successful verify of exact parent; failed/pending/missing/foreign gate keeps container check. No inherited PASS from failed attempt."
+    },
+    {
+      "id": "LM-CANCEL-NATURAL-r2-2026-11-09",
+      "kind": "post_release_causal_repair",
+      "status": "local_checks_complete; independent final receipt and verified full-source backup in repair_receipt; not_published_not_deployed",
+      "method": "ChatBot Atelier5.0.0 director/operations/build/QA; no retired skill",
+      "scope": "Natural source-bound cancellation, canonical recurring task/reminder resolution, precise permission feedback and requiredownerapproval; preserve allcapabilities/WIP",
+      "source": {
+        "baseline_head": "26112aff333772cbea9a68e90f04f1794c66f20e",
+        "worktree": "local r2 WIP, uncommitted",
+        "version": "1.13.3 +localr2patch",
+        "working_source_hash": "159c06cc00d88ba6de145403f4944a0bfbb40015800c9b5f092d0d26a4c5503d",
+        "source_files": 243,
+        "git_cli_read_check": "Authenticated git ls-remote origin HEAD matched baseline at start; no push performed"
+      },
+      "live_diagnosis": "One active daily04 taskseries, owner!=requester, oldplanningcardtwoanswers afterseriescreation/launchnull; valid request envelope; own task/watch toolreads empty. Full private evidence outsideGit. Exact caughtcannederror notpersisted.",
+      "rights": {
+        "allowed": [
+          "bounded read-only specific group diagnosis",
+          "explicitly approved Google sign-in to existing Render for diagnosis",
+          "local source/tests/docs repair",
+          "independent QA",
+          "verified source/WIP backup"
+        ],
+        "excluded": [
+          "new push/deploy",
+          "production job/data/config mutation",
+          "model/voice/secrets/network changes",
+          "unrelated features/assets/skills"
+        ]
+      },
+      "contract": "docs/lumen/operations/reminder-cancellation.md",
+      "repair_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-cancel-repair-r2-2026-11-09/completion.json",
+      "scope_artifact": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-cancel-repair-r2-2026-11-09/scope.json",
+      "next_action": "Local repair complete after final external receipt/backup verification. New release is not part of this continuation; on a future authorized release start from actualHEAD/Render and current release gates. No manual production reminder mutation.",
+      "updated_at": "2026-11-09T00:36:58.485544+00:00",
+      "verification": {
+        "functional": "1350/1350 PASS, no skips; full exact frozen source",
+        "release_controls": "12/12 PASS after process-only canonical TMPDIR recovery; original npm test exit1 from 5 Darwin symlink-path fixtures retained, not relabeled exit0",
+        "independent": "30 new/replayed PASS +20 carried after impact review; six findings closed; final qualified local verdict in repair_receipt",
+        "production": "not changed by repair; new patch not published/deployed",
+        "live_model_device_human": "not assessed by synthetic tests"
+      },
+      "preservation": "All tracked baseline source/config/assets and new local r2 files in verified full-source archive; all240WEBM/PNG hashes and120order slots unchanged; all priorWIP/history/backups retained."
     }
   ]
 }

@@ -1534,3 +1534,11 @@ Readiness code/integration/device/human і actual deployed/observed показу
 Пряме доручення: «Заверши всі роботи поточні і доведи версію до готовності у продакшену і задеплой». Дозвіл охоплює causal currentrepair/resource/media, normalGitpublication, exactCI й existingRenderworker; попередня no-production межа тепер історична для цього випуску. Розширення futurefeaturebacklog, новий голос/модель/тариф, secrets або ручне очищення чатів не доручені.
 
 Версія1.13.3 зберігає shared/private/source/actor/topic права. Сумісність rollback оцінюється за фактичними jobs/audience: additive schema не робить olda1fd79 безпечним для newprivate schedules. Після newingress — compatibleforwardfix. Нові source/test/CI/native/human докази не приписуються історичним records; exactexternaldeliveryreceipt містить фактичне завершення.
+
+## 2026-11-09 — post-release скасування за змістом, r2
+
+Власник прямо вимагає розуміти довільні власні фрази про припинення нагадування, а не набір спеціальних команд. Якщо фактичне правило доступу потребує погодження, бот має пояснити саме його й надати інтерфейс потрібним людям. Згадка про дві згоди при створенні перевіряється за actual operation/lineage; не перетворюється на нову універсальну вимогу двох голосів для простого shared reminder.
+
+Причинна діагностика read-only підтвердила recurring task з іншим owner і окрему planning картку без launch, яка не надавала root management rights. Ремонт не переписує історичні grants. Власне semantic cancellation проходить source/actor/topic/revision/quote/target version fences; public visibility не дорівнює stop right. Неавтор може запросити підтвердження actual owner для публічно доставленої роботи. Автоматично враховується тільки власне перевірене прохання requester; решта голосують за себе в version-bound картці. Private/quoted/forwarded/expired/uncertain/replay лишаються окремими станами. Повний контракт — operations/reminder-cancellation.md.
+
+Поточне виконання — локальний causal repair/tests/QA з окремо дозволеним входом у Render для читання потрібних рядків. Production/CI/deploy/human приймання нового patch не заявляється. Current_work і зовнішній repair_receipt зберігають exact subject, фактичні перевірки, невідоме та весь priorWIP.

@@ -7,7 +7,7 @@ import {stableId} from './operations.js';
 import {ToolError} from './safe-http.js';
 import type {ToolContext} from './agent-tools.js';
 import {catchUp,missedNotice,settleScheduledCatchUp,type RecurringSeries} from './recurrence-policy.js';
-import {reminderMetadata,reminderRequestSource,canManageReminder,stopSeries,type ReminderContext} from './reminder-control.js';
+import {reminderMetadata,reminderRequestSource,canManageReminder,stopSeries,cancelReminderRequest,type ReminderContext} from './reminder-control.js';
 import {provesCommand} from './personalization.js';
 import {requestAuthorityView} from './outcomes.js';
 export const SeriesRule=z.object({title:z.string().min(2).max(160),instruction:z.string().min(3).max(4000),mode:z.enum(['reminder','task']).default('reminder'),timezone:z.string().min(3).max(80),start_date:z.string().regex(/^\d{4}-\d{2}-\d{2}$/),time:z.string().regex(/^(?:[01]\d|2[0-3]):[0-5]\d$/),frequency:z.enum(['daily','weekly','monthly']),interval:z.number().int().min(1).max(12).default(1),weekdays:z.array(z.number().int().min(1).max(7)).min(1).max(7).optional(),until:z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),count:z.number().int().min(1).max(3660).optional(),dst:z.enum(['reject','earlier','later','skip']).default('reject'),catch_up:z.enum(['latest','ask','skip']).optional()});
@@ -59,6 +59,18 @@ export class Recurring {
   if(a.operation==='create'){if(!a.rule||!a.quote)throw new ToolError('series_rule_and_quote_required');return command(this.db,c,'series_create',a,sql=>createReminderSeries(sql,a.rule!,c,{quote:a.quote!,shared:a.shared}));}
   if(a.operation==='preview'){if(!a.rule)throw new ToolError('series_rule_required');const dates=occurrences(a.rule,new Date(Date.now()-1).toISOString(),3);if(!dates.length)throw new ToolError('series_no_future_occurrences');return command(this.db,c,'series_preview',a,async(sql,id)=>{await sql.query('INSERT INTO recurring_series(id,actor_id,topic_id,rule,revision,source_message_id,audience) VALUES($1,$2,$3,$4,$5,$6,$7)',[id,c.actorId,c.topicId,JSON.stringify(a.rule),c.revision,c.sourceId||null,c.audience||'group']);await recordProvenance(sql,'series',id,sourceIds(c));return {id,version:1,status:'draft',next_three:dates,catch_up:catchUp(a.rule!),notice:'Перевір місцеві дати й години, правило завершення та поведінку під час зміни часу. confirm активує саме цю редакцію.'};});}
   if(a.operation==='read'){const row=await one(this.db,'SELECT * FROM recurring_series WHERE id=$1 AND topic_id=$2 AND revision=$3',[a.id,c.topicId,c.revision]);if(!row||!canManageReminder(row,c))throw new ToolError('own_series_required');return {...row,next_three:occurrences(row.rule,new Date().toISOString(),3),occurrences:(await this.db.query('SELECT occurrence_key,due_at,status,schedule_id FROM recurring_occurrences WHERE series_id=$1 ORDER BY due_at DESC LIMIT 12',[row.id])).rows};}
+  if(a.operation==='end')return command(this.db,c,'series_change',a,async sql=>{
+   const row=await one(sql,'SELECT * FROM recurring_series WHERE id=$1 AND topic_id=$2 AND revision=$3 FOR UPDATE',[a.id,c.topicId,c.revision]);
+   const ownPrivateId=Boolean(a.id&&c.requestText?.toLowerCase().includes(a.id.toLowerCase()));
+   const manageable=row&&canManageReminder(row,c,ownPrivateId);
+   const visible=row&&!manageable&&row.audience==='group'?await (await import('./reminder-consent.js')).visibleConsentReminderCandidates(sql,c,{id:a.id}):[];
+   // Do not expose another person's private existence/version as an oracle.
+   if(!row||!manageable&&!visible.some(item=>item.ref==='series:'+row.id))return {id:a.id,status:'not_found',notice:'Доступної тобі серії в цій темі не знайшов.'};
+   requireVersion(row.version,a.version);
+   const result=await cancelReminderRequest(sql,{text:c.requestText||'',id:a.id,scope:'series'},c);
+   const ended=result.status==='cancelled'||result.status==='stopped_with_in_flight';
+   return {...result,id:a.id,...(ended?{status:'ended',version:a.version!+1}:{}),...(result.inFlight?{in_flight:result.inFlight}:{}),notice:result.message||'Не маю підтвердженого прохання зупинити цю серію.'};
+  });
   return command(this.db,c,'series_change',a,async sql=>{const row=await one(sql,'SELECT * FROM recurring_series WHERE id=$1 AND topic_id=$2 AND revision=$3 FOR UPDATE',[a.id,c.topicId,c.revision]);if(!row||!canManageReminder(row,c)||a.operation!=='end'&&row.actor_id!==c.actorId)throw new ToolError('own_series_required');requireVersion(row.version,a.version);
    if(a.operation==='confirm'){if(row.status!=='draft')throw new ToolError('series_draft_required');occurrences(row.rule,new Date().toISOString(),3);await sql.query("UPDATE recurring_series SET status='active',version=version+1 WHERE id=$1",[row.id]);}
    if(a.operation==='revise'||a.operation==='end'){

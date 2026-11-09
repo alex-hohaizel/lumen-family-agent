@@ -130,7 +130,8 @@ for(const closure of ['cancelled','ended','forgotten'] as const)test(`R2 denial 
  const f=await reviewedLegacyTask(),body=command(f.id),bad=await source(body,[span(body,body)]);await runner.tools.execute('tasks.resume',{id:f.id},c(bad.id));await runner.next();
  if(closure==='cancelled')await runner.tools.execute('tasks.cancel',{id:f.id},c(bad.id));
  if(closure==='ended'){
-  const series=(await one(db,'SELECT id,version FROM recurring_series'))!;await new Recurring(db).run(SeriesCommand.parse({operation:'end',id:series.id,version:series.version}),c(bad.id));
+  const series=(await one(db,'SELECT id,version FROM recurring_series'))!,endText=`Скасуй усю серію ${series.id}.`,endSource=await source(endText);
+  await new Recurring(db).run(SeriesCommand.parse({operation:'end',id:series.id,version:series.version,quote:endText}),{...c(endSource.id),requestText:endText});
  }
  if(closure==='forgotten')await db.tx(sql=>forgetPhrase(sql,'Щодня привітай учасників'));
  const good=await source('Продовжуй цю задачу',[],{review:f.review}),revision=Number((await one(db,'SELECT memory_revision FROM app_state WHERE id=1'))!.memory_revision);await runner.tools.execute('tasks.resume',{id:f.id},{...c(good.id),revision});assert.equal(await runner.next(),false);assert.equal(h.brain.calls.length,0);

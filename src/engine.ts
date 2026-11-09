@@ -3,7 +3,7 @@ import {removeEmoji} from './text-document.js';
 import {prepareOfferPlan,publishOffer} from './offers.js';
 import {behaviorContext,behaviorAdmission,normalizeBehaviorPlan,explicitOtherRecipient,repeatedContribution,rememberContribution,saveClarification,completeFocusedGoal,currentStyleCue,saveStyleCue,retireBehavior,BEHAVIOR_INSTRUCTIONS} from './behavior-engine.js';
 import {claimActionWork,finishActionWork,failActionWork,recoverActionWork} from './commitments.js';
-import {gateOutcome,toolOutcome,currentOutcomes,outcomeMessage,decisionFactsText,withoutUnconfirmedExecutionClaims,explicitDiagnosticRequest,requestAuthorityView,type OutcomeFact} from './outcomes.js';
+import {gateOutcome,toolOutcome,currentOutcomes,outcomeMessage,decisionFactsText,withoutUnconfirmedExecutionClaims,explicitDiagnosticRequest,requestAuthorityView,type OutcomeFact,type RequestNativeEntity} from './outcomes.js';
 import {closeOpenRoster,currentInteraction,interactionView,openInteraction,answerInteraction,toggleInteraction,parseInteractionText,queueInteraction,enqueueInteraction,responseHash,launchConsent,isPersonalRequest,isGroupRequest} from './interactions.js';
 import {layoutMessage} from './message-layout.js';
 import {STICKER_SET,STICKER_COUNT} from './sticker-set.js';
@@ -19,6 +19,7 @@ import type { Config } from './config.js';
 import { type Telegram, type Update, type Message, type InlineKeyboard, usernameMatches,telegramRepairHint } from './telegram.js';
 import {topicKey} from './topic-scope.js';
 import {resolveReminders,cancelReminderRequest,recordReminderTranscription,privateReminderCue} from './reminder-control.js';
+import {isAuthoredCancellationQuote,hasUnconditionalCancellationQuote} from './reminder-intent.js';
 import { type Brain, type Plan, type Action, PlanSchema } from './model.js';
 import { ChatGPTAuth, ModelError, models, secureEqual } from './auth.js';
 import { HELP, WELCOME } from './personality.js';
@@ -74,6 +75,11 @@ export function addressed(m:Message,bot:BotIdentity,clearOnly=false){
 }
 
 interface VerifiedListReply {message:string;operation?:string;category?:string;added?:string[];already_present?:string[];}
+type ObservedReminderTarget={ref:string;version:number|string};
+function reportReminderFailure(code:string,chatId:string,updateId:string|number){
+  if(!/^(?:reminder|series)_[a-z0-9_]{1,100}$/.test(code))return;
+  try{console.error(JSON.stringify({event:'reminder_control_failed',code,request_tag:createHash('sha256').update(chatId+'\n'+String(updateId)).digest('hex').slice(0,16)}));}catch{/* Diagnostics do not change the action outcome. */}
+}
 function listAcknowledgementRelation(reply:string,result:VerifiedListReply):'same'|'numeric_conflict'|undefined{
   if(result.operation!=='add'||!Array.isArray(result.added)||!result.added.length||result.already_present?.length)return;
   // Quantities, identifiers and units retain punctuation and case: 2.5, 2/5,
@@ -119,10 +125,10 @@ const ACTION_INTENT:Partial<Record<Action['kind'],RegExp>>={
     ,telegram:/закріп|відкріп|редаг|виправ|онов|заміни|надішли|скинь|покажи|збери|зупини.*(?:опит|голос)|локаці|альбом|файл|анімаці/iu
 };
 function unquotedIntent(text:string){return text.replace(/```[\s\S]*?```|«[^»]*»|"[^"\n]*"|`[^`\n]*`/g,'');}
-export function authorizeAction(action:Action,text:string,canAct:boolean,config:Config,inherited:string[]=[],semantic?:{quote:string;actions:string[]}){
+export function authorizeAction(action:Action,text:string,canAct:boolean,config:Config,inherited:string[]=[],semantic?:{quote:string;actions:string[]},nativeEntities:ReadonlyArray<RequestNativeEntity>=[]){
   if(!canAct && action.kind!=='history')throw new ModelError('action_not_requested');
   if(['set_mode','set_proactivity'].includes(action.kind)&&/процитуй|переклади|що означає|що значить|це цитата/iu.test(unquotedIntent(text)))throw new ModelError('action_not_explicit');
-  const semanticRequest=semantic&&provesCommand(text,semantic.quote)&&semantic.actions.includes(action.kind)&&['remember','remind','cancel_reminder','start_game','stop_game','learn_game','learn_skill','image','cancel_image','set_preference'].includes(action.kind);
+  const semanticRequest=semantic&&semantic.actions.includes(action.kind)&&(action.kind==='cancel_reminder'?isAuthoredCancellationQuote(text,nativeEntities,semantic.quote):provesCommand(text,semantic.quote))&&['remember','remind','cancel_reminder','start_game','stop_game','learn_game','learn_skill','image','cancel_image','set_preference'].includes(action.kind);
   if(ACTION_INTENT[action.kind] && !ACTION_INTENT[action.kind]!.test(unquotedIntent(text))&&!inherited.includes(action.kind)&&!semanticRequest)throw new ModelError('action_not_explicit');
   if(action.kind==='image' && (!config.apiKey || !config.imageModel))throw new ModelError('image_not_configured');
 }
@@ -132,7 +138,7 @@ function reminderDependencySource(clause:string,targetWords:string[]){
   // Keep a condition bound when its discussion concerns the reminder's own target.
   return clause.replace(/,\s*(?:а|але)\s+якщо[^,;.!?]+,\s*((?:(?:потім|пізніше|згодом)\s+)?(?:ми\s+)?(?:розберемо(?:ся)?|обговоримо|переглянемо|з’ясуємо|з'ясуємо)\s+[^,;.!?]+),\s*(?=(?:і|й|та|також|а також)\s+[^,;.!?]{0,80}(?:нагадай|нагадати|напомни|remind))/giu,(whole,discussion:string)=>targetWords.some(word=>discussion.toLocaleLowerCase().includes(word))?whole:', ');
 }
-export function independentAction(action:Action,intent:string){
+export function independentAction(action:Action,intent:string,semantic?:{quote:string;actions:string[]},nativeEntities:ReadonlyArray<RequestNativeEntity>=[]){
   // Bind a dependency to the action's own source clause, never to an unrelated sentence.
   const clauses=unquotedIntent(intent).split(/[.!?;\n]+/u).map(x=>x.trim()).filter(Boolean);
   const words=(content:string,reminder=false)=>(content.toLocaleLowerCase().match(/[\p{L}\p{N}]{3,}/gu)||[]).filter(word=>!reminder||!/^(?:купити|придбати|зайти|сходити|відвідати|взяти|зробити|перевірити|нагадати|потрібно|мені|про)$/u.test(word));
@@ -142,7 +148,10 @@ export function independentAction(action:Action,intent:string){
   if(action.kind==='schedule_decision'||action.kind==='personalize')return provesCommand(intent,action.quote)&&clauses.some(clause=>quoted(action.quote,clause)&&!dependentClause.test(clause));
   if(action.kind==='remember')return clauses.some(clause=>grounded(action.content,false,clause)&&!dependentClause.test(clause));
   if(action.kind==='remind')return clauses.some(clause=>/нагад|напомн|remind/iu.test(clause)&&grounded(action.title,true,clause)&&!dependentClause.test(reminderDependencySource(clause,words(action.title,true))));
-  if(action.kind==='cancel_reminder')return clauses.some(clause=>/скасу|видали|прибери|cancel/iu.test(clause)&&!dependentClause.test(clause));
+  if(action.kind==='cancel_reminder'){
+    if(semantic?.actions.includes(action.kind)&&isAuthoredCancellationQuote(intent,nativeEntities,semantic.quote))return hasUnconditionalCancellationQuote(intent,nativeEntities,semantic.quote);
+    return clauses.some(clause=>/скасу|видали|прибери|cancel/iu.test(clause)&&!dependentClause.test(clause));
+  }
   if(action.kind==='set_preference')return clauses.some(clause=>/відтепер|надалі|завжди|постійно|запам.?ятай|стил/iu.test(clause)&&!dependentClause.test(clause));
   return false;
 }
@@ -165,11 +174,24 @@ function scheduleResponse(plan:Plan):Plan{
 async function reminderSnapshot(sql:SQL,actor:string,topic:string,revision:number,query='',administrator=false){
   const current=await state(sql);
   const roots=await resolveReminders(sql,{actorId:actor,topicId:topic,revision,administrator,audience:Number(current.chat_id)>0?'private':'group'},{query});
-  return {legacy:roots.filter(x=>x.kind==='legacy'),scheduled:roots.filter(x=>x.kind==='schedule'),recurring:roots.filter(x=>x.kind==='series'),truncated:Boolean(roots.truncated)};
+  // A sent public task may be visible without granting mutation rights. Expose
+  // only its public title and stop policy, never another person's task goal.
+  const approval_required:{id:string;ref:string;version:number|string;title:string;mode:string;time:string;owner_id:string;owner_name:string;created_at:string;requires_approval:true}[]=[];
+  let truncated=Boolean(roots.truncated);
+  if(Number(current.chat_id)<0){
+    try{
+      const visible=await (await import('./reminder-consent.js')).visibleConsentReminderCandidates(sql,{actorId:actor,chatId:String(current.chat_id),topicId:topic,revision,audience:'group'},{query});
+      for(const item of visible.filter(item=>!roots.some(own=>own.ref===item.ref))){
+        const owner=await one(sql,'SELECT name FROM members WHERE user_id=$1',[item.actor_id]);
+        approval_required.push({id:item.id,ref:item.ref,version:item.version,title:item.title,mode:'task',time:String(item.rule?.time||''),owner_id:item.actor_id,owner_name:String(owner?.name||item.actor_id),created_at:new Date(item.created_at).toISOString(),requires_approval:true});
+      }
+    }catch(error){if(error instanceof ToolError&&error.code==='reminder_candidates_overflow')truncated=true;else throw error;}
+  }
+  return {legacy:roots.filter(x=>x.kind==='legacy'),scheduled:roots.filter(x=>x.kind==='schedule'),recurring:roots.filter(x=>x.kind==='series'),approval_required,truncated};
 }
 function reminderText(snapshot:Awaited<ReturnType<typeof reminderSnapshot>>,timezone:string){
   const statuses:Record<string,string>={pending:'заплановано',queued:'надсилаю',awaiting_confirmation:'чекає твого погодження',dispatched:'виконується',needs_input:'потрібне уточнення'};
-  const lines=[...snapshot.legacy.map(x=>`${x.title} — ${new Date(x.due_at).toLocaleString('uk-UA',{timeZone:timezone})}`),...snapshot.scheduled.map(x=>`${x.mode==='task'?'Виконати: ':''}${x.instruction} — ${new Date(x.due_at).toLocaleString('uk-UA',{timeZone:x.timezone})} (${x.timezone}; ${statuses[x.status]||'потрібна перевірка'})`),...snapshot.recurring.map(x=>`${x.rule.title}: ${x.rule.instruction} — ${({daily:'щодня',weekly:'щотижня',monthly:'щомісяця'} as Record<string,string>)[x.rule.frequency]||'повторюється'} о ${x.rule.time} (${x.rule.timezone})${x.status==='draft'?', чекає погодження':x.status==='needs_input'?', потрібне уточнення':''}`)];
+  const lines=[...snapshot.legacy.map(x=>`${x.title} — ${new Date(x.due_at).toLocaleString('uk-UA',{timeZone:timezone})}`),...snapshot.scheduled.map(x=>`${x.mode==='task'?'Виконати: ':''}${x.instruction} — ${new Date(x.due_at).toLocaleString('uk-UA',{timeZone:x.timezone})} (${x.timezone}; ${statuses[x.status]||'потрібна перевірка'})`),...snapshot.recurring.map(x=>`${x.rule.title}: ${x.rule.instruction} — ${({daily:'щодня',weekly:'щотижня',monthly:'щомісяця'} as Record<string,string>)[x.rule.frequency]||'повторюється'} о ${x.rule.time} (${x.rule.timezone})${x.status==='draft'?', чекає погодження':x.status==='needs_input'?', потрібне уточнення':''}`),...snapshot.approval_required.map(item=>`${item.title}${item.time?' — о '+item.time:''}. Власник: ${item.owner_name}; для зупинки потрібне підтвердження в картці.`)];
   return lines.length?lines.join('\n')+(snapshot.truncated?'\nПоказано лише частину. Уточни назву, час або ідентифікатор для повного пошуку.':'')+'\n\nЩоб скасувати, напиши, яке нагадування чи повторювану серію прибрати.':snapshot.truncated?'Пошук ще не повний. Уточни назву або ідентифікатор; не роблю висновку, що нагадування немає.':'Немає твоїх активних нагадувань у цій темі.';
 }
 export class Lumen {
@@ -401,7 +423,7 @@ export class Lumen {
       }
       const natural=(['collecting','ready'].includes(interactive?.phase||'')||interactive?.phase==='active'&&/^(?:я )?виходжу[.!]?$/iu.test(text.trim()))&&!m.lumen_interaction_event&&!(m as any).forward_origin&&(!m.reply_to_message||m.reply_to_message.from?.id===this.bot.id)?parseInteractionText(interactive,text,uid):undefined;
       if(m.lumen_interaction_event||natural){
-        try{const v=m.lumen_interaction_event?await toggleInteraction(sql,m.lumen_interaction_event.id,m.lumen_interaction_event.version,m.lumen_interaction_event.action,ic):await answerInteraction(sql,natural,ic);await queueInteraction(sql,v.id);await enqueueInteraction(sql,v,ic);}catch(e){if(!(e instanceof ToolError))throw e;await queueText(sql,(e as any)?.code==='interaction_step_closed'?'Цей крок уже закритий. Використай актуальну картку.':(e as any)?.code==='interaction_other_role'?'Це вибір для іншого учасника. Обери дію у своєму завданні.':(e as any)?.code==='interaction_choice_out_of_range'?'Для цього кроку можна обрати лише дозволену кількість дій.':'Не зарахував відповідь. Перевір поточний крок і свій вибір.',s.memory_revision,'interaction-input:'+update.update_id,false,{...options,actorId:uid});}
+        try{const v=m.lumen_interaction_event?await toggleInteraction(sql,m.lumen_interaction_event.id,m.lumen_interaction_event.version,m.lumen_interaction_event.action,ic):await answerInteraction(sql,natural,ic);await queueInteraction(sql,v.id);await enqueueInteraction(sql,v,ic);}catch(e){if(!(e instanceof ToolError))throw e;const code=String(e.code||'');reportReminderFailure(code,String(s.chat_id),update.update_id);await queueText(sql,code.startsWith('reminder_vote_')?this.friendlyError(code):(e as any)?.code==='interaction_step_closed'?'Цей крок уже закритий. Використай актуальну картку.':(e as any)?.code==='interaction_other_role'?'Це вибір для іншого учасника. Обери дію у своєму завданні.':(e as any)?.code==='interaction_choice_out_of_range'?'Для цього кроку можна обрати лише дозволену кількість дій.':'Не зарахував відповідь. Перевір поточний крок і свій вибір.',s.memory_revision,'interaction-input:'+update.update_id,false,{...options,actorId:uid});}
         return;
       }
       if(m.sticker)await rememberSticker(sql,m.sticker,Number(inserted.rows[0]!.id));
@@ -441,10 +463,11 @@ export class Lumen {
     });
     if(!job)return compositionProgress;
     return runOperation(this.db,'source:'+job.payload.sourceId,async()=>{
-    const m=job.payload.message as Message;const uid=String(m.from!.id);const topicId=topicOf(m);const sourceIds=new Set<number>([Number(job.payload.sourceId)]);const options={sourceIds:[] as number[],threadId:m.message_thread_id,replyToMessageId:m.message_id>0?m.message_id:m.reply_to_message?.message_id,sourceMessageId:Number(job.payload.sourceId),actorId:uid};let current=textOf(m);let intent=current;let technicalDetailsRequested=false;const outcomeFacts:OutcomeFact[]=[];const verifiedReplies:VerifiedListReply[]=[];const retainedAuthorization=new Map<string,Plan['authorization']>();let behaviorData:Awaited<ReturnType<typeof behaviorContext>>|undefined;let activity:Awaited<ReturnType<ReturnType<typeof activityFor>['begin']>>|undefined;
+    const m=job.payload.message as Message;const uid=String(m.from!.id);const topicId=topicOf(m);const sourceIds=new Set<number>([Number(job.payload.sourceId)]);const options={sourceIds:[] as number[],threadId:m.message_thread_id,replyToMessageId:m.message_id>0?m.message_id:m.reply_to_message?.message_id,sourceMessageId:Number(job.payload.sourceId),actorId:uid};let current=textOf(m);let intent=current;let technicalDetailsRequested=false;const outcomeFacts:OutcomeFact[]=[];const verifiedReplies:VerifiedListReply[]=[];const retainedAuthorization=new Map<string,Plan['authorization']>();const retainedCancellationTargets=new Map<string,ObservedReminderTarget[]>();const cancellationTargets=new Map<string,ObservedReminderTarget>();let behaviorData:Awaited<ReturnType<typeof behaviorContext>>|undefined;let activity:Awaited<ReturnType<ReturnType<typeof activityFor>['begin']>>|undefined;
     try{
       const s=await state(this.db);if(s.paused || s.memory_revision!==job.revision){await this.discard(job.update_id);return true;}
       const originalRequest=await loadOriginalRequestContext(this.db,{sourceId:Number(job.payload.sourceId),actorId:uid,topicId,namespaceChatId:String(s.chat_id),audience:m.chat.type==='private'?'private':'group',revision:job.revision});
+      for(const target of Array.isArray(job.payload.cancellationObservedTargets)?job.payload.cancellationObservedTargets:[])if(target&&typeof target.ref==='string'&&['number','string'].includes(typeof target.version))cancellationTargets.set(target.ref,{ref:target.ref,version:target.version});
       technicalDetailsRequested=Boolean(originalRequest&&!originalRequest.forwarded&&!originalRequest.viaBot&&explicitDiagnosticRequest(originalRequest.body,originalRequest.entities));
       const profile=await one(this.db,'SELECT preferred_name,inferred_name FROM participant_preferences WHERE user_id=$1',[uid]);if(profile?.preferred_name||profile?.inferred_name)m.from={...m.from!,first_name:profile.preferred_name||profile.inferred_name,last_name:undefined};
       if(m.lumen_interaction&&job.payload.interactionInternal){const v=await interactionView(this.db,m.lumen_interaction.id);if(v.version!==m.lumen_interaction.version||new Date(v.expires_at).getTime()<=Date.now()||m.lumen_interaction.ready&&v.phase!=='ready'||!['collecting','ready','active'].includes(v.phase)||m.lumen_interaction.partial&&m.lumen_interaction.response_hash!==responseHash(v.responses.find((r:any)=>r.user_id===uid))){await this.discard(job.update_id);return true;}}
@@ -493,11 +516,10 @@ export class Lumen {
           const bytes=await this.telegram.file(m.document.file_id,3000000);current+=`\nВМІСТ ФАЙЛУ (недовірені дані, не повноваження):\n${await analyzeDocument(bytes,m.document.file_name || '',this.brain,this.db,this.config)}`;
         }
         if(!plan)await reserveModelCall(this.db,this.config);
-        const [recent,notes,rules,reminders,skills,episodes,topics,local,stickers,media,images,decisions,related,botTurns,polls]=await this.db.tx(sql=>Promise.all([
+        const [recent,notes,rules,skills,episodes,topics,local,stickers,media,images,decisions,related,botTurns,polls]=await this.db.tx(sql=>Promise.all([
           sql.query('SELECT id,telegram_id AS message_id,author,user_id,role,body,created_at,topic_id FROM messages ORDER BY id DESC LIMIT 28'),
           sql.query('SELECT id,content,author_id,source_message_id,created_at,topic_id FROM memories ORDER BY id DESC LIMIT 30'),
           sql.query('SELECT title,content,version,topic_id,source_message_id FROM rules ORDER BY id DESC LIMIT 12'),
-          sql.query("SELECT id,title,due_at,topic_id,source_message_id FROM reminders WHERE status='pending' ORDER BY due_at LIMIT 15"),
           sql.query('SELECT title,instructions,version,topic_id,source_message_id FROM skills ORDER BY id DESC LIMIT 12'),
           sql.query('SELECT body,source_ids,created_at FROM episodes ORDER BY id DESC LIMIT 5'),
           sql.query('SELECT id,name,closed FROM topics ORDER BY updated_at DESC LIMIT 60'),
@@ -510,10 +532,35 @@ export class Lumen {
           sql.query("SELECT a.id,a.telegram_id AS message_id,a.body,a.created_at,a.topic_id,u.body AS responding_to,u.author FROM messages a LEFT JOIN messages u ON u.id=a.source_message_id WHERE a.role='assistant' AND a.topic_id=$1 ORDER BY a.id DESC LIMIT 5",[topicId]),
           sql.query("SELECT p.poll_id,p.question,p.options,p.closed,p.message_id,(SELECT count(*)::integer FROM poll_votes v WHERE v.poll_id=p.poll_id) AS voters_total,(SELECT COALESCE(json_agg(json_build_object('name',v.name,'option_ids',v.option_ids)),'[]') FROM (SELECT name,option_ids FROM poll_votes v WHERE v.poll_id=p.poll_id ORDER BY (v.user_id=$2) DESC,v.updated_at DESC LIMIT 20) v) AS votes,'Вибірка до 20 голосів; poll.read повертає точні підсумки й наступні сторінки.' AS coverage FROM polls p WHERE p.topic_id=$1 ORDER BY p.created_at DESC LIMIT 3",[topicId,uid])
         ]));
-        for(const row of [...recent.rows,...local.rows,...botTurns.rows,...(related as Record<string,any>[])])if(row.id)sourceIds.add(Number(row.id));for(const row of [...notes.rows,...reminders.rows,...skills.rows,...rules.rows,...media.rows,...decisions.rows])if(row.source_message_id)sourceIds.add(Number(row.source_message_id));for(const episode of episodes.rows)for(const id of episode.source_ids||[])sourceIds.add(Number(id));options.sourceIds=[...sourceIds];
+        const reminderRoots=await this.db.tx(sql=>reminderSnapshot(sql,uid,topicId,job.revision));
+        const observeReminderTargets=async(snapshot:Partial<Awaited<ReturnType<typeof reminderSnapshot>>>|undefined)=>{
+          // Only this server-produced scoped view can mint model-selected IDs.
+          // Arguments and generic tool results never populate this authority.
+          for(const row of Object.values(snapshot||{}).filter(Array.isArray).flat()){
+            if(typeof row.ref!=='string'||!['number','string'].includes(typeof row.version))continue;
+            // A delayed/retried request cannot acquire a replacement created
+            // after its native receipt, or silently adopt a changed version.
+            const created=Date.parse(String(row.created_at||'')),received=originalRequest?.receivedAt.getTime()??new Date(job.created_at).getTime();
+            if(!Number.isFinite(created)||created>received)continue;
+            if(!cancellationTargets.has(row.ref))cancellationTargets.set(row.ref,{ref:row.ref,version:row.version});
+            if(row.source_message_id)sourceIds.add(Number(row.source_message_id));
+          }
+          await this.db.query("UPDATE inbox SET payload=payload||$1::jsonb WHERE update_id=$2 AND revision=$3 AND status='processing'",[JSON.stringify({cancellationObservedTargets:[...cancellationTargets.values()]}),job.update_id,job.revision]);
+        };
+        if(originalRequest&&!originalRequest.forwarded&&!originalRequest.viaBot){
+          // Explicit private IDs permit content-free owner control in a group.
+          // Pin their versions privately before planning/retry; their goals do
+          // not enter the group planner snapshot merely because an ID is known.
+          const literalIds=[...new Set(originalRequest.body.match(/[a-f\d]{8}-[a-f\d]{4}-[a-f\d]{4}-[a-f\d]{4}-[a-f\d]{12}/giu)||[])].slice(0,20);
+          for(const literalId of literalIds){
+            const pinned=await resolveReminders(this.db,{actorId:uid,chatId:String(s.chat_id),topicId,revision:job.revision,audience:m.chat.type==='private'?'private':'group'},{id:literalId,scope:'series',privateOwnerControl:true});
+            for(const target of pinned)if(!cancellationTargets.has(target.ref))cancellationTargets.set(target.ref,{ref:target.ref,version:target.version});
+          }
+        }
+        for(const row of [...recent.rows,...local.rows,...botTurns.rows,...(related as Record<string,any>[])])if(row.id)sourceIds.add(Number(row.id));for(const row of [...notes.rows,...reminderRoots.legacy,...skills.rows,...rules.rows,...media.rows,...decisions.rows])if(row.source_message_id)sourceIds.add(Number(row.source_message_id));for(const episode of episodes.rows)for(const id of episode.source_ids||[])sourceIds.add(Number(id));options.sourceIds=[...sourceIds];
         const recentLines=Array.from(new Map([...recent.rows,...local.rows].map(x=>[String(x.id),x])).values()).sort((a,b)=>Number(a.id)-Number(b.id));
         // Each memory tier has a separate budget, so recent chatter cannot truncate every older note.
-        const context=JSON.stringify({now:new Date().toISOString(),local_time:new Date().toLocaleString('uk-UA',{timeZone:this.config.timezone}),timezone:this.config.timezone,group_title:s.chat_title,current_author:{id:uid,name:userName(m)},engagement_context:{reason,conversation_style:s.conversation_style},related_discussions:related,recent_bot_turns:botTurns.rows.map(x=>({...x,body:String(x.body).slice(0,1000),responding_to:String(x.responding_to || '').slice(0,650)})),recent_polls:polls.rows,event:m.lumen_event,conversation_pulse:{recent_authors:[...new Set(local.rows.map(x=>x.user_id))],recent_messages:local.rows.length},active_dialogue:job.payload.engagement?.dialogue,choice_event:m.lumen_choice,media_context:mediaItems,attachments:media.rows,image_jobs:images.rows,recent_choices:decisions.rows,current_topic:{id:topicId,name:topics.rows.find(x=>x.id===topicId)?.name || (topicId==='0'?'Загальна розмова':`Тема ${topicId}`)},topics:topics.rows,participants:s.participants,mode:s.open_group?(s.conversation_style==='addressed'?'addressed':'adaptive'):s.mode,clarification_of_current_author:inherited.length?{request:(pending?.request_text || job.payload.engagement?.dialogue?.question || intent),allowed_actions:inherited}:undefined,replying_to:m.reply_to_message?{author:m.reply_to_message.from?.first_name,message_id:m.reply_to_message.message_id,text:textOf(m.reply_to_message).slice(0,2500)}:undefined,recent:recentLines.map(x=>({...x,body:x.body.slice(0,650)})),notes:notes.rows.slice(0,20).map(x=>({...x,content:x.content.slice(0,550)})),rules:rules.rows.slice(0,8).map(x=>({...x,content:x.content.slice(0,650)})),skills:skills.rows.slice(0,8).map(x=>({...x,instructions:x.instructions.slice(0,650)})),episodes_generated_not_verified:episodes.rows.slice(0,4).map(x=>({...x,body:x.body.slice(0,900)})),reminders:reminders.rows,game:publicGame(game,uid),facilitator_private_state:game?.state.director_state,available_stickers:stickers.rows,capabilities:{vision:true,avatars:true,media_memory:true,animated_stickers:true,telegram_actions:['edit_message','pin_message','unpin_message','stop_poll','send_album','send_file','send_animation','send_sticker','send_location'],freeform_activities:true,native_polls:true,native_quiz:true,contextual_buttons:true,text_formatting:true,reactions:true,stickers:stickers.rows.length>0,forum_topics:true,can_change_character_or_model:uid===s.owner_id,web_search:true,native_web_search:this.config.webSearch,web_read:true,browser:this.config.browserEnabled,durable_tasks:true,workflows:true,monitors:true,artifacts:true,images:Boolean(this.config.apiKey&&this.config.imageModel),voice:Boolean(this.config.apiKey&&this.config.transcribeModel)}});
+        const context=JSON.stringify({now:new Date().toISOString(),local_time:new Date().toLocaleString('uk-UA',{timeZone:this.config.timezone}),timezone:this.config.timezone,group_title:s.chat_title,current_author:{id:uid,name:userName(m)},engagement_context:{reason,conversation_style:s.conversation_style},related_discussions:related,recent_bot_turns:botTurns.rows.map(x=>({...x,body:String(x.body).slice(0,1000),responding_to:String(x.responding_to || '').slice(0,650)})),recent_polls:polls.rows,event:m.lumen_event,conversation_pulse:{recent_authors:[...new Set(local.rows.map(x=>x.user_id))],recent_messages:local.rows.length},active_dialogue:job.payload.engagement?.dialogue,choice_event:m.lumen_choice,media_context:mediaItems,attachments:media.rows,image_jobs:images.rows,recent_choices:decisions.rows,current_topic:{id:topicId,name:topics.rows.find(x=>x.id===topicId)?.name || (topicId==='0'?'Загальна розмова':`Тема ${topicId}`)},topics:topics.rows,participants:s.participants,mode:s.open_group?(s.conversation_style==='addressed'?'addressed':'adaptive'):s.mode,clarification_of_current_author:inherited.length?{request:(pending?.request_text || job.payload.engagement?.dialogue?.question || intent),allowed_actions:inherited}:undefined,replying_to:m.reply_to_message?{author:m.reply_to_message.from?.first_name,message_id:m.reply_to_message.message_id,text:textOf(m.reply_to_message).slice(0,2500)}:undefined,recent:recentLines.map(x=>({...x,body:x.body.slice(0,650)})),notes:notes.rows.slice(0,20).map(x=>({...x,content:x.content.slice(0,550)})),rules:rules.rows.slice(0,8).map(x=>({...x,content:x.content.slice(0,650)})),skills:skills.rows.slice(0,8).map(x=>({...x,instructions:x.instructions.slice(0,650)})),episodes_generated_not_verified:episodes.rows.slice(0,4).map(x=>({...x,body:x.body.slice(0,900)})),reminders:reminderRoots.legacy,reminder_roots:reminderRoots,game:publicGame(game,uid),facilitator_private_state:game?.state.director_state,available_stickers:stickers.rows,capabilities:{vision:true,avatars:true,media_memory:true,animated_stickers:true,telegram_actions:['edit_message','pin_message','unpin_message','stop_poll','send_album','send_file','send_animation','send_sticker','send_location'],freeform_activities:true,native_polls:true,native_quiz:true,contextual_buttons:true,text_formatting:true,reactions:true,stickers:stickers.rows.length>0,forum_topics:true,can_change_character_or_model:uid===s.owner_id,web_search:true,native_web_search:this.config.webSearch,web_read:true,browser:this.config.browserEnabled,durable_tasks:true,workflows:true,monitors:true,artifacts:true,images:Boolean(this.config.apiKey&&this.config.imageModel),voice:Boolean(this.config.apiKey&&this.config.transcribeModel)}});
         this.config.model=s.model || this.config.model;
         const savedPreference=await one(this.db,'SELECT length_mode,humor_mode FROM participant_preferences WHERE user_id=$1',[uid]);
         const personalization=await this.db.tx(sql=>personalizationContext(sql,uid,topicId));const scheduled=await scheduleContext(this.db,uid,topicId,job.revision);
@@ -532,6 +579,7 @@ export class Lumen {
         const interaction=await currentInteraction(this.db,topicId,uid);
         const feedback=(await this.db.query('SELECT content,source_message_id FROM agent_feedback WHERE actor_id=$1 ORDER BY id DESC LIMIT 5',[uid])).rows;for(const row of [...collaboration.facts,...collaboration.projects,...collaboration.sessions,...collaboration.decisions,...feedback])if(row.source_message_id)sourceIds.add(Number(row.source_message_id));options.sourceIds=[...sourceIds];
         const augmentedContext=packContext({...JSON.parse(context),behavior_context:behaviorData,personalization,scheduled_actions:scheduled,interaction,interaction_event:m.lumen_interaction,collaboration,pending_independent_actions:job.payload.pendingIndependent?.map((x:any)=>x.action),available_tools:this.tools.discovery(),feedback,workflows:(await this.db.query('SELECT id,title,status,version FROM agent_workflows WHERE actor_id=$1 ORDER BY created_at DESC LIMIT 10',[uid])).rows});
+        await observeReminderTargets(JSON.parse(augmentedContext).reminder_roots);
         if(!plan)plan=await this.brain.plan({context:augmentedContext,current,image,images:mediaImages,instructions,search:!proactive&&this.config.webSearch});
         plan=prepareOfferPlan(normalizeBehaviorPlan(plan,direct,behaviorData?.references,current,forceDirect),{text:intent,explicit:direct&&m.chat.type!=='private'&&Boolean(originalRequest&&!originalRequest.forwarded&&!originalRequest.viaBot),entities:originalRequest?.entities});
         const admission=behaviorAdmission(plan.behavior,{direct,otherRecipient:explicitOtherRecipient(m,this.bot.id),references:behaviorData?.references,optional:followup||proactive,reply:plan.reply});
@@ -542,10 +590,10 @@ export class Lumen {
         if((followup||proactive)&&plan.engagement?.respond===false){await this.discard(job.update_id);return true;}
         if(m.lumen_interaction)plan.interaction_response=undefined;
         if(plan.interaction_response)plan.actions=[];
-        const sources:unknown[]=[];const carried=new Map<string,{action:Action;authorization:Plan['authorization']}>();const foregroundDeadline=Date.now()+45000;
+        const sources:unknown[]=[];const carried=new Map<string,{action:Action;authorization:Plan['authorization'];cancellationTargets?:ObservedReminderTarget[]}>();const foregroundDeadline=Date.now()+45000;
         const actionIdentity=(a:Action)=>a.kind==='schedule'?a.kind+':'+a.mode+':'+a.instruction.toLocaleLowerCase():a.kind==='remind'?a.kind+':'+a.title.toLocaleLowerCase():a.kind==='remember'?a.kind+':'+a.content.toLocaleLowerCase():a.kind==='personalize'?a.kind+':'+a.scope+':'+String(a.target_id||''):JSON.stringify(a);
-        const carryIndependent=async(candidate:Plan)=>{if(proactive||!direct||m.lumen_interaction)return;for(const action of candidate.actions){if(!independentAction(action,intent))continue;try{authorizeAction(action,intent,true,this.config,inherited,candidate.authorization);}catch{continue;}carried.set(actionIdentity(action),{action,authorization:candidate.authorization});}if(carried.size)await this.db.tx(async sql=>{const live=await state(sql,true);if(live.paused||live.memory_revision!==job.revision)throw new ModelError('action_cancelled');await sql.query("UPDATE inbox SET payload=payload||$1::jsonb WHERE update_id=$2 AND status='processing' AND revision=$3",[JSON.stringify({pendingIndependent:[...carried.values()]}),job.update_id,job.revision]);});};
-        for(const item of job.payload.pendingIndependent||[]){const restored=PlanSchema.safeParse({reply:'',actions:[item.action],authorization:item.authorization});if(restored.success)await carryIndependent(restored.data);}
+        const carryIndependent=async(candidate:Plan,observedTargets?:ObservedReminderTarget[])=>{if(proactive||!direct||m.lumen_interaction)return;for(const action of candidate.actions){if(!independentAction(action,intent,candidate.authorization,originalRequest?.entities))continue;try{authorizeAction(action,intent,true,this.config,inherited,candidate.authorization,originalRequest?.entities);}catch{continue;}carried.set(actionIdentity(action),{action,authorization:candidate.authorization,...(action.kind==='cancel_reminder'?{cancellationTargets:observedTargets??[...cancellationTargets.values()]}:{})});}if(carried.size)await this.db.tx(async sql=>{const live=await state(sql,true);if(live.paused||live.memory_revision!==job.revision)throw new ModelError('action_cancelled');await sql.query("UPDATE inbox SET payload=payload||$1::jsonb WHERE update_id=$2 AND status='processing' AND revision=$3",[JSON.stringify({pendingIndependent:[...carried.values()]}),job.update_id,job.revision]);});};
+        for(const item of job.payload.pendingIndependent||[]){const restored=PlanSchema.safeParse({reply:'',actions:[item.action],authorization:item.authorization});if(restored.success)await carryIndependent(restored.data,Array.isArray(item.cancellationTargets)?item.cancellationTargets.filter((target:any)=>target&&typeof target.ref==='string'&&['string','number'].includes(typeof target.version)):[]);}
         for(let step=0;step<this.config.agentSteps&&plan.actions.some(x=>['history','inspect','view_media','view_avatar','tool'].includes(x.kind));step++){
           const before=await state(this.db);if(before.paused||before.memory_revision!==job.revision){await this.discard(job.update_id);return true;}
           await carryIndependent(plan);
@@ -553,7 +601,7 @@ export class Lumen {
             let result:any;
             if(action.kind==='tool'){
               if(proactive||!direct)result={error:'tool_not_requested'};
-              else{try{const args=JSON.parse(action.arguments);result=await this.tools.execute(action.name,args,{actorId:uid,chatId:s.chat_id,topicId,revision:job.revision,sourceId:Number(job.payload.sourceId),updateId:`${job.update_id}:${step}`,requested:true,requestText:current,personal:m.chat.type==='private'||m.lumen_choice?.audience==='personal',interactionId:m.lumen_interaction?.id,interactionVersion:m.lumen_interaction?.version,actionId:job.payload.actionId,sourceIds:[...sourceIds],audience:m.chat.type==='private'?'private':'group',administrator:action.name==='schedule.series'?await this.reminderAdministrator(m,s):false});}catch(e){result={error:e instanceof ToolError?e.code:'tool_failed'};}}
+              else{try{const args=JSON.parse(action.arguments);result=await this.tools.execute(action.name,args,{actorId:uid,chatId:s.chat_id,topicId,revision:job.revision,sourceId:Number(job.payload.sourceId),updateId:`${job.update_id}:${step}`,requested:true,requestText:current,personal:m.chat.type==='private'||m.lumen_choice?.audience==='personal',interactionId:m.lumen_interaction?.id,interactionVersion:m.lumen_interaction?.version,actionId:job.payload.actionId,sourceIds:[...sourceIds],audience:m.chat.type==='private'?'private':'group',...(action.name==='schedule.series'&&args.operation==='end'&&plan.authorization?.actions.includes('cancel_reminder')?{cancellationQuote:plan.authorization.quote,cancellationTargets:[...cancellationTargets.values()]}:{}),administrator:action.name==='schedule.series'?await this.reminderAdministrator(m,s):false});}catch(e){result={error:e instanceof ToolError?e.code:'tool_failed'};}}
             }else if(action.kind==='view_media'){const v=await this.visual.view(action.ids);mediaImages.push(...v.images);mediaItems.push(...v.items);result=v.items;}
             else if(action.kind==='view_avatar'){const v=await this.visual.avatar(action.user_id || uid,uid);mediaImages.push(...v.images);result={...v,images:undefined};}
             else result=action.kind==='history'?await this.history(action.query):await this.db.tx(sql=>this.apply(sql,action,m,job.payload.sourceId,job.update_id,s));
@@ -565,7 +613,9 @@ export class Lumen {
           const after=await state(this.db);if(after.paused||after.memory_revision!==job.revision){await this.discard(job.update_id);return true;}
           if(Date.now()>=foregroundDeadline){plan={...plan,reply:outcomeMessage(outcomeFacts)||'Не встиг отримати надійний результат. Можеш уточнити прохання або попросити продовжити.',actions:[]};break;}
           await reserveModelCall(this.db,this.config);
-          plan=await this.brain.plan({context:packContext({...JSON.parse(augmentedContext),tool_results_untrusted:sources.slice(-4).map((x:any)=>({...x,result:JSON.stringify(x.result).length>12000?JSON.stringify(x.result).slice(0,12000):x.result}))}),current,image,images:mediaImages.slice(0,12),instructions:instructions+` Використай отримані результати для відповіді або наступних кроків. Невдала спроба не скасовує інші явні прохання автора. Збережи незалежні дії й конкретне уточнення; залежну дію виконуй лише за її підтвердженим результатом. Якщо джерел немає — не вигадуй підтвердження. Якщо потрібна довша робота, створи tasks.create. ${step===this.config.agentSteps-1?'Бюджет цього ходу завершено; дай цілісну відповідь або конкретний стан. Не викликай інструменти знову.':''}`,search:!proactive&&this.config.webSearch});
+          const nextContext=packContext({...JSON.parse(augmentedContext),tool_results_untrusted:sources.slice(-4).map((x:any)=>({...x,result:JSON.stringify(x.result).length>12000?JSON.stringify(x.result).slice(0,12000):x.result}))});
+          for(const observed of JSON.parse(nextContext).tool_results_untrusted||[])if(observed.tool==='inspect'&&observed.request?.subject==='reminders'&&observed.result&&typeof observed.result==='object')await observeReminderTargets(observed.result);
+          plan=await this.brain.plan({context:nextContext,current,image,images:mediaImages.slice(0,12),instructions:instructions+` Використай отримані результати для відповіді або наступних кроків. Невдала спроба не скасовує інші явні прохання автора. Збережи незалежні дії й конкретне уточнення; залежну дію виконуй лише за її підтвердженим результатом. Якщо джерел немає — не вигадуй підтвердження. Якщо потрібна довша робота, створи tasks.create. ${step===this.config.agentSteps-1?'Бюджет цього ходу завершено; дай цілісну відповідь або конкретний стан. Не викликай інструменти знову.':''}`,search:!proactive&&this.config.webSearch});
           plan=prepareOfferPlan(normalizeBehaviorPlan(plan,direct,behaviorData?.references,current,forceDirect),{text:intent,explicit:direct&&m.chat.type!=='private'&&Boolean(originalRequest&&!originalRequest.forwarded&&!originalRequest.viaBot),entities:originalRequest?.entities});
           const updatedAdmission=behaviorAdmission(plan.behavior,{direct,otherRecipient:explicitOtherRecipient(m,this.bot.id),references:behaviorData?.references,optional:followup||proactive,reply:plan.reply});
           if(!updatedAdmission.respond){await this.discard(job.update_id);return true;}
@@ -573,11 +623,19 @@ export class Lumen {
         if(m.lumen_interaction)plan.interaction_response=undefined;
         if(plan.interaction_response)plan.actions=[];
         if(plan.actions.some(x=>['history','inspect','view_media','view_avatar','tool'].includes(x.kind))){plan={...plan,reply:outcomeMessage(outcomeFacts)||'Поки не отримав достатньо даних для надійної відповіді. Уточни, з чого продовжити.',actions:plan.actions.filter(x=>!['history','inspect','view_media','view_avatar','tool'].includes(x.kind)),presentation:undefined};}
-        for(const {action,authorization} of carried.values()){if(plan.actions.length>=5)break;if(!plan.actions.some(a=>actionIdentity(a)===actionIdentity(action))){authorizeAction(action,intent,direct,this.config,inherited,authorization);plan.actions.push(action);retainedAuthorization.set(JSON.stringify(action),authorization);}}
+        for(const {action,authorization,cancellationTargets:observedTargets} of carried.values()){
+          const existing=plan.actions.find(a=>actionIdentity(a)===actionIdentity(action));
+          if(existing){
+            if(existing.kind==='cancel_reminder'){authorizeAction(existing,intent,direct,this.config,inherited,authorization,originalRequest?.entities);retainedAuthorization.set(JSON.stringify(existing),authorization);retainedCancellationTargets.set(JSON.stringify(existing),observedTargets||[]);}
+            continue;
+          }
+          if(plan.actions.length>=5)break;
+          authorizeAction(action,intent,direct,this.config,inherited,authorization,originalRequest?.entities);plan.actions.push(action);retainedAuthorization.set(JSON.stringify(action),authorization);if(action.kind==='cancel_reminder')retainedCancellationTargets.set(JSON.stringify(action),observedTargets||[]);
+        }
       }
       checkOperation();
       plan=scheduleResponse(plan!);
-      const independent=plan!.actions.filter(a=>{if(!independentAction(a,intent))return false;try{authorizeAction(a,intent,direct||Boolean(game),this.config,inherited,retainedAuthorization.get(JSON.stringify(a))||plan!.authorization);return true;}catch{return false;}});
+      const independent=plan!.actions.filter(a=>{if(!independentAction(a,intent,retainedAuthorization.get(JSON.stringify(a))||plan!.authorization,originalRequest?.entities))return false;try{authorizeAction(a,intent,direct||Boolean(game),this.config,inherited,retainedAuthorization.get(JSON.stringify(a))||plan!.authorization,originalRequest?.entities);return true;}catch{return false;}});
       plan=gateOutcome(plan!,outcomeFacts,true,independent,{technicalDetailsRequested}).plan;
       if(proactive){
         plan.actions=[];plan.interaction=undefined;plan.interaction_response=undefined;if(plan.presentation){delete plan.presentation.choices;plan.presentation.audience='group';}
@@ -586,7 +644,7 @@ export class Lumen {
       if((followup||proactive)&&plan.engagement?.respond===false){await this.discard(job.update_id);return true;}
       if(plan.actions.filter(a=>a.kind==='poll'||a.kind==='quiz').length>1)throw new ModelError('one_poll_per_turn');
       if(plan.language_exception&&provesCurrentRequest(intent,plan.language_exception.quote))(options as import('./telegram.js').TextOptions).outputLanguage=languageCode(plan.language_exception.language);
-      for(const action of plan.actions)authorizeAction(action,intent,direct||Boolean(game),this.config,inherited,retainedAuthorization.get(JSON.stringify(action))||plan.authorization);
+      for(const action of plan.actions)authorizeAction(action,intent,direct||Boolean(game),this.config,inherited,retainedAuthorization.get(JSON.stringify(action))||plan.authorization,originalRequest?.entities);
       await this.db.tx(async sql=>{
         const live=await state(sql,true);const existing=await one(sql,"SELECT * FROM inbox WHERE update_id=$1 AND status='processing' FOR UPDATE",[job.update_id]);
         if(!existing || live.paused || live.memory_revision!==job.revision)return;
@@ -618,7 +676,7 @@ export class Lumen {
           const independent=['personalize','set_preference','remember','remind','cancel_reminder','schedule','schedule_decision'];
           if(plan!.actions.some(a=>!independent.includes(a.kind)))throw new ModelError('offer_mixed_action_requires_separate_step');
           const facts:string[]=[];
-          for(const a of plan!.actions){try{const result=await this.apply(sql,a,m,job.payload.sourceId,job.update_id,live,[...sourceIds],intent);if(result)facts.push(String(result));}catch(e){if(!(e instanceof ModelError))throw e;facts.push(this.friendlyError(errorCode(e)));}}
+          for(const a of plan!.actions){try{const result=await this.apply(sql,a,m,job.payload.sourceId,job.update_id,live,[...sourceIds],intent,retainedAuthorization.get(JSON.stringify(a))||plan!.authorization,retainedCancellationTargets.get(JSON.stringify(a))||[...cancellationTargets.values()]);if(result)facts.push(String(result));}catch(e){if(!(e instanceof ModelError))throw e;reportReminderFailure(errorCode(e),String(live.chat_id),job.update_id);facts.push(this.friendlyError(errorCode(e)));}}
           let v;
           try{v=await publishOffer(sql,plan!.offer,{...ic,actionId:job.payload.actionId},(name,args)=>this.tools.preflight(name,args),{images:Boolean(this.config.apiKey&&this.config.imageModel)});}
           catch(e){if(!(e instanceof ToolError))throw e;facts.push('Цю пропозицію поки не підготував: потрібна можливість або її параметри зараз недоступні. Уже виконані незалежні прохання збережені.');}
@@ -630,7 +688,7 @@ export class Lumen {
           }
           await sql.query("UPDATE inbox SET status='done',plan=NULL,payload='{}' WHERE update_id=$1",[job.update_id]);return;
         }
-        if(plan!.interaction_response){const v=await answerInteraction(sql,plan!.interaction_response,ic);await queueInteraction(sql,v.id);await enqueueInteraction(sql,v,ic);await sql.query("UPDATE inbox SET status='done',plan=NULL,payload='{}' WHERE update_id=$1",[job.update_id]);return;}
+        if(plan!.interaction_response){try{const v=await answerInteraction(sql,plan!.interaction_response,ic);await queueInteraction(sql,v.id);await enqueueInteraction(sql,v,ic);}catch(e){if(e instanceof ToolError&&e.code.startsWith('reminder_'))throw new ModelError(e.code);throw e;}await sql.query("UPDATE inbox SET status='done',plan=NULL,payload='{}' WHERE update_id=$1",[job.update_id]);return;}
         if(game&&m.lumen_interaction?.ready&&job.payload.interactionInternal){const approved=await interactionView(sql,m.lumen_interaction.id);if(approved.launch?.resume_game_id===game.id){game.state={...game.state,players:approved.participants,scores:{...Object.fromEntries(approved.participants.map(p=>[p.id,0])),...(game.state.scores||{})},interaction_id:approved.id};await sql.query("UPDATE games SET state=$1 WHERE id=$2 AND status='active'",[JSON.stringify(game.state),game.id]);await sql.query("UPDATE interactions SET phase='active' WHERE id=$1",[approved.id]);await queueInteraction(sql,approved.id);}}
         if(game&&!game.state.interaction_id&&!game.state.consent_version&&(plan!.actions.some(a=>a.kind==='activity_turn'||a.kind==='game_turn')||plan!.interaction?.kind==='round')){const original=game.source_ids?.length?await one(sql,'SELECT body FROM messages WHERE id=$1',[game.source_ids[0]]):undefined;const personal=Number(live.chat_id)>0||isPersonalRequest(original?.body||'');const v=await openInteraction(sql,{title:game.state.title||'Продовження гри',kind:'activity',scope:personal?'personal':'invited',question:'Продовжуємо цю пригоду з погодженим складом?',goal:'Сюжет і зроблені ходи зберігаються.'},ic,{launch:{resume_game_id:game.id},autoAccept:true});await sql.query('UPDATE interactions SET spec=spec||$1::jsonb WHERE id=$2',[JSON.stringify({resume_plan:{reply:plan!.reply,actions:plan!.actions.filter(a=>['activity_turn','game_turn'].includes(a.kind)),presentation:plan!.presentation,interaction:plan!.interaction}}),v.id]);if(v.participants.length===1){const ready=await answerInteraction(sql,{id:v.id,version:v.version,decision:'agree'},ic);await enqueueInteraction(sql,{...ready,spec:{...ready.spec,resume_plan:{reply:plan!.reply,actions:plan!.actions,presentation:plan!.presentation,interaction:plan!.interaction}}},ic);}await queueInteraction(sql,v.id);await sql.query("UPDATE inbox SET status='done',plan=NULL,payload='{}' WHERE update_id=$1",[job.update_id]);return;}
 
@@ -640,7 +698,7 @@ export class Lumen {
         if(starting){const approval=await launchConsent(sql,starting,ic,starting.kind==='start_activity'?starting.title:'Спільна гра');if(!approval.allowed){await sql.query("UPDATE interactions SET spec=spec||$1::jsonb WHERE id=$2",[JSON.stringify({launch_reply:plan!.reply,launch_actions:plan!.actions.filter(a=>['start_activity','start_game','stop_game'].includes(a.kind)),launch_presentation:plan!.presentation,launch_step:plan!.interaction}),approval.interaction!.id]);await sql.query("UPDATE inbox SET status='done',plan=NULL,payload='{}' WHERE update_id=$1",[job.update_id]);return;}if(approval.interaction){m.lumen_interaction={id:approval.interaction.id,version:approval.interaction.version,ready:true};await sql.query("UPDATE commitments SET phase='executing',state_version=state_version+1 WHERE id=$1 AND phase IN ('waiting_acceptance','runnable')",[approval.interaction.id]);}}
         if(m.lumen_interaction?.partial){const stage=await interactionView(sql,m.lumen_interaction.id);if(stage.version!==m.lumen_interaction.version||!['collecting','ready'].includes(stage.phase)||m.lumen_interaction.response_hash!==responseHash(stage.responses.find((r:any)=>r.user_id===uid))){await sql.query("UPDATE inbox SET status='done',plan=NULL,payload='{}' WHERE update_id=$1",[job.update_id]);return;}plan!.actions=plan!.actions.filter(a=>a.kind!=='start_activity'&&a.kind!=='start_game');}
         const replies:string[]=[];
-        for(const action of plan!.actions){let result;try{result=await this.apply(sql,action,m,job.payload.sourceId,job.update_id,live,[...sourceIds],intent);}catch(e){const code=errorCode(e);if(!(e instanceof ModelError)||code==='reminder_time_invalid'||!/^(profile_|schedule_|reminder_|series_|conversation_admin_required)/.test(code))throw e;outcomeFacts.push({capability:action.kind,status:'failed',detail:code});result=this.friendlyError(code);if(/^(schedule_|reminder_|series_)/.test(code)){plan=scheduleResponse(plan!);if(plan.presentation?.card)plan.presentation.card.question='';}else{plan!.reply='';plan!.presentation=undefined;}plan!.interaction=undefined;plan!.dialogue=undefined;}if(result)replies.push(result);if(action.kind==='image')for(const row of (await sql.query('SELECT id FROM image_jobs WHERE source_message_id=$1',[job.payload.sourceId])).rows)await recordProvenance(sql,'image',row.id,[...sourceIds]);if(['start_activity','activity_turn','start_game','game_turn'].includes(action.kind)){const game=await one(sql,"SELECT id FROM games WHERE topic_id=$1 ORDER BY id DESC LIMIT 1",[topicId]);if(game)await recordProvenance(sql,'game',game.id,[...sourceIds]);}}
+        for(const action of plan!.actions){let result;try{result=await this.apply(sql,action,m,job.payload.sourceId,job.update_id,live,[...sourceIds],intent,retainedAuthorization.get(JSON.stringify(action))||plan!.authorization,retainedCancellationTargets.get(JSON.stringify(action))||[...cancellationTargets.values()]);}catch(e){const code=errorCode(e);if(!(e instanceof ModelError)||code==='reminder_time_invalid'||!/^(profile_|schedule_|reminder_|series_|conversation_admin_required)/.test(code))throw e;reportReminderFailure(code,String(live.chat_id),job.update_id);outcomeFacts.push({capability:action.kind,status:'failed',detail:code});result=this.friendlyError(code);if(/^(schedule_|reminder_|series_)/.test(code)){plan=scheduleResponse(plan!);if(plan.presentation?.card)plan.presentation.card.question='';}else{plan!.reply='';plan!.presentation=undefined;}plan!.interaction=undefined;plan!.dialogue=undefined;}if(result)replies.push(result);if(action.kind==='image')for(const row of (await sql.query('SELECT id FROM image_jobs WHERE source_message_id=$1',[job.payload.sourceId])).rows)await recordProvenance(sql,'image',row.id,[...sourceIds]);if(['start_activity','activity_turn','start_game','game_turn'].includes(action.kind)){const game=await one(sql,"SELECT id FROM games WHERE topic_id=$1 ORDER BY id DESC LIMIT 1",[topicId]);if(game)await recordProvenance(sql,'game',game.id,[...sourceIds]);}}
         if(game&&plan!.actions.some(a=>a.kind==='activity_turn'||a.kind==='game_turn')){const finished=await one(sql,"SELECT state FROM games WHERE id=$1 AND status='completed'",[game.id]);if(finished?.state.interaction_id){await sql.query("UPDATE interactions SET phase='resolved',result=$1,updated_at=now() WHERE id=$2 AND phase IN ('active','ready')",[(finished.state.summary||'Гру завершено.').slice(0,2000),finished.state.interaction_id]);await queueInteraction(sql,finished.state.interaction_id);await sql.query("UPDATE commitments SET phase='completed',result=$1,state_version=state_version+1 WHERE id=$2 AND phase NOT IN ('cancelled','expired','failed')",[JSON.stringify({proof:'game_completed',game_id:game.id}),finished.state.interaction_id]);await sql.query("UPDATE conversation_goals SET status='completed' WHERE id=$1",[finished.state.interaction_id]);}}
         for(const observation of plan!.observations || [])if(mediaItems.some(x=>Number(x.id)===observation.attachment_id))await sql.query("UPDATE attachments SET description=$1,status='ready' WHERE id=$2 AND revision=$3",[observation.description,observation.attachment_id,live.memory_revision]);
         const plannedReply=plan!.reply.trim()||plan!.presentation?.card?.summary||'';let safeReply=plannedReply;
@@ -686,7 +744,7 @@ export class Lumen {
       });
     }catch(e){
       if(operationSignal()?.aborted){await this.discard(job.update_id);return true;}
-      const code=errorCode(e);
+      const code=errorCode(e);reportReminderFailure(code,String(m.chat.id),job.update_id);
       await this.db.tx(async sql=>{
         const s=await state(sql,true);const live=await one(sql,'SELECT * FROM inbox WHERE update_id=$1',[job.update_id]);if(!live)return;
         const retry=['model_network','model_stream_interrupted','model_http_503','oauth_refresh_unavailable'].includes(code) && job.attempts<2;
@@ -708,7 +766,14 @@ export class Lumen {
     if(code==='document_type_not_supported')return 'Підтримую TXT, MD, CSV, JSON, ICS, PDF, DOCX і XLSX до 3 MB. Для сканованого PDF доступне розпізнавання перших трьох сторінок.';
     const transportHint=telegramRepairHint(code);if(transportHint)return transportHint;
     if(code==='schedule_time_invalid'||code==='reminder_time_invalid')return 'Цей час уже минув або дата некоректна. На яку дату й годину запланувати дію?';
-    if(/^(reminder_|series_)/.test(code))return 'Нагадування не змінив. Потрібне твоє власне однозначне прохання в цій темі; цитата або пересланий текст не є дорученням.';
+    if(code==='reminder_request_unbound'||code==='reminder_transcription_unbound')return 'Нагадування не змінив: не вдалося перевірити прив’язку цього повідомлення до чинного запиту. Надішли прохання ще раз у цій темі.';
+    if(code==='reminder_target_unbound')return 'Нагадування не змінив: не вдалося однозначно пов’язати вибраний запис із твоїм проханням. Уточни назву, час або відповідай на саме нагадування.';
+    if(code==='reminder_vote_explicit_required'||code==='reminder_vote_unbound')return 'Цю відповідь не зарахував як згоду саме на дію з картки. Можеш натиснути потрібну кнопку; якщо хочеш інший обсяг або час зупинки, уточни його. Серію поки не змінював.';
+    if(code==='reminder_vote_changed')return 'Відповідь змінилася після перевірки. Серію поки не змінював; підтвердь актуальну дію в картці ще раз.';
+    if(['reminder_request_changed','reminder_target_changed','series_target_changed'].includes(code))return 'Запит або нагадування змінилося після перевірки. Перевірмо актуальний запис; поки нічого не змінював.';
+    if(code==='series_dst_choice_required')return 'Цей місцевий час потрапляє на перехід годинника. Уточни, який із повторених часів обрати або чи пропустити цей день.';
+    if(code==='series_no_future_occurrences')return 'У цьому правилі вже немає майбутніх повторів. Уточни першу дату або правило завершення.';
+    if(/^(reminder_|series_)/.test(code))return 'Не вдалося змінити нагадування. Потрібно перевірити актуальний запис і правило повтору; скасування не підтверджено.';
     if(code==='schedule_timezone_mismatch')return 'Місцевий час не збігається з часовим поясом. Уточни дату й годину в потрібному місті.';
     if(code==='schedule_timezone_invalid')return 'Уточни місто або часовий пояс, у якому потрібно виконати дію.';
     if(code==='schedule_confirmation_expired')return 'Час погодження цієї пропозиції минув. Підтвердь актуальний зміст і майбутній час ще раз.';
@@ -724,7 +789,7 @@ export class Lumen {
     if(m.chat.type==='private'||!m.from)return false;
     try{return ['creator','administrator'].includes((await this.telegram.call<{status:string}>('getChatMember',{chat_id:s.chat_id,user_id:m.from.id})).status);}catch{return false;}
   }
-  private async apply(sql:SQL,action:Action,m:Message,sourceId:number,updateId:number,s:any,sourceIds:number[]=[],requestText=textOf(m)):Promise<string>{
+  private async apply(sql:SQL,action:Action,m:Message,sourceId:number,updateId:number,s:any,sourceIds:number[]=[],requestText=textOf(m),authorization?:Plan['authorization'],cancellationTargets:ObservedReminderTarget[]=[]):Promise<string>{
     const uid=String(m.from!.id);const topicId=topicOf(m);
     if(['personalize','schedule','schedule_decision'].includes(action.kind)){
       try{
@@ -805,8 +870,8 @@ export class Lumen {
       await recordProvenance(sql,'reminder',r!.id,[sourceId,...sourceIds]);return `Нагадаю: ${action.title} — ${new Date(due).toLocaleString('uk-UA',{timeZone:this.config.timezone})} (${this.config.timezone}).`;
     }
     if(action.kind==='cancel_reminder'){
-      try{const literal=action.id!==undefined&&requestText.includes(String(action.id));
-        const result=await cancelReminderRequest(sql,{text:requestText,...(literal?{id:action.id}:{}),...(action.query&&requestText.toLocaleLowerCase().includes(action.query.toLocaleLowerCase())?{query:action.query}:{}),scope:action.scope,all:action.all},{actorId:uid,topicId,revision:s.memory_revision,chatId:String(s.chat_id),sourceId,requestText,administrator:await this.reminderAdministrator(m,s),audience:m.chat.type==='private'?'private':'group'});
+      try{const literal=action.id!==undefined&&requestText.includes(String(action.id)),semantic=authorization?.actions.includes('cancel_reminder')===true;
+        const result=await cancelReminderRequest(sql,{text:requestText,...(literal||semantic&&action.id!==undefined?{id:action.id}:{}),...(action.query&&requestText.toLocaleLowerCase().includes(action.query.toLocaleLowerCase())?{query:action.query}:{}),scope:action.scope,all:action.all},{actorId:uid,topicId,revision:s.memory_revision,chatId:String(s.chat_id),sourceId,requestText,...(authorization?.actions.includes('cancel_reminder')?{cancellationQuote:authorization.quote,cancellationTargets}:{}),administrator:await this.reminderAdministrator(m,s),audience:m.chat.type==='private'?'private':'group'});
         return result.handled?result.message:'Уточни, яке нагадування скасувати.';
       }catch(e){if(e instanceof ToolError&&e.code.startsWith('reminder_'))throw new ModelError(e.code);throw e;}
     }

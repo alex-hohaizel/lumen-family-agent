@@ -218,7 +218,9 @@ test('ending and revising a series prevent its materialized action from dispatch
  for(const operation of ['end','revise'] as const){
   const f=await fixture();await shift(f.scheduleId,'20 minutes');
   const rule=(await one(db,'SELECT rule FROM recurring_series WHERE id=$1',[f.id]))!.rule;
-  await new Recurring(db).run(SeriesCommand.parse({operation,id:f.id,version:2,...(operation==='revise'?{rule:{...rule,title:'Нова редакція'}}:{})}),c(f.sourceId));
+  const endText=`Скасуй усю серію ${f.id}.`,endSource=operation==='end'?await source(endText):undefined;
+  const context=endSource?{...c(endSource),requestText:endText}:c(f.sourceId);
+  await new Recurring(db).run(SeriesCommand.parse({operation,id:f.id,version:2,...(operation==='revise'?{rule:{...rule,title:'Нова редакція'}}:{quote:endText})}),context);
   assert.equal(await dispatchSchedules(db),0);assert.equal((await one(db,'SELECT status FROM scheduled_actions WHERE id=$1',[f.scheduleId]))!.status,'cancelled');
  }
  assert.equal((await db.query('SELECT id FROM agent_tasks')).rows.length,0);

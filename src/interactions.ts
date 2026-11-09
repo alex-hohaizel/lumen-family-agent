@@ -102,7 +102,7 @@ export async function openInteraction(sql: SQL, input: unknown, c: ToolContext, 
     return interactionView(sql, id);
 }
 export function choicesFor(view: any, userId: string): string[] { return view.spec.roles.find((r: any) => r.user_id === userId)?.options?.length ? view.spec.roles.find((r: any) => r.user_id === userId).options : view.spec.options; }
-export async function answerInteraction(sql: SQL, input: unknown, c: ToolContext) {
+export async function answerInteraction(sql: SQL, input: unknown, c: ToolContext, callback?:{id:string;version:number;action:string}) {
     const a = InteractionAnswer.parse(input), s = await state(sql, true);
     const r = await one(sql, "SELECT * FROM interactions WHERE id=$1 FOR UPDATE", [a.id]);
     if (!r || new Date(r.expires_at).getTime() <= Date.now() || r.topic_id !== c.topicId || r.revision !== c.revision || s.paused || s.memory_revision !== c.revision)
@@ -127,6 +127,7 @@ export async function answerInteraction(sql: SQL, input: unknown, c: ToolContext
         throw new ToolError('interaction_explicit_consent_required');
     if (a.submit && a.decision === 'answer' && !a.content && selected.length < r.spec.min_choices)
         throw new ToolError('interaction_answer_required');
+    if(r.spec.reminder_cancel||r.launch?.kind==='reminder_cancel')await (await import('./reminder-consent.js')).validateReminderStopVote(sql,r,a,c,callback);
     await sql.query('INSERT INTO interaction_responses(interaction_id,version,user_id,choices,content,decision,submitted,source_message_id) VALUES($1,$2,$3,$4,$5,$6,$7,$8) ON CONFLICT(interaction_id,version,user_id) DO UPDATE SET choices=excluded.choices,content=excluded.content,decision=excluded.decision,submitted=excluded.submitted,source_message_id=excluded.source_message_id,result=NULL,updated_at=now()', [r.id, r.version, c.actorId, JSON.stringify(selected), a.content, a.decision, a.submit, c.sourceId || null]);
     if(r.action_id){
         await recordConsentGrant(sql,r.action_id,c,a.submit?a.decision:'draft');
@@ -248,6 +249,7 @@ export function interactionKeys(v: any): InlineKeyboard {
     if (v.phase !== 'collecting')
         return { inline_keyboard: [] };
     const b = (text: string, action: string) => ({ text, callback_data: `li:${v.id}:${v.version}:${action}` });
+    if(v.spec.reminder_cancel&&v.launch?.kind==='reminder_cancel')return {inline_keyboard:[[b(v.launch.scope==='occurrence'?'Скасувати повтор':'Зупинити серію','yes')],[b('Поки не вирішив','wait'),b('Залишити як є','no')]]};
     const rows: any[] = [];
     if (v.spec.roles.some((r: any) => r.options.length))
         for (const role of v.spec.roles) {
@@ -345,11 +347,11 @@ export async function toggleInteraction(sql: SQL, id: string, version: number, a
         return closeOpenRoster(sql, id, c);
     const prior = v.responses.find((x: any) => x.user_id === c.actorId), base = { id, version, choices: prior?.choices || [], content: prior?.content || '', decision: 'answer', submit: true };
     if (action === 'yes')
-        return answerInteraction(sql, { ...base, decision: 'agree' }, c);
+        return answerInteraction(sql, { ...base, decision: 'agree' }, c, {id,version,action});
     if (action === 'no')
-        return answerInteraction(sql, { ...base, choices: [], content: '', decision: 'decline' }, c);
+        return answerInteraction(sql, { ...base, choices: [], content: '', decision: 'decline' }, c, {id,version,action});
     if (action === 'wait')
-        return answerInteraction(sql, { ...base, decision: 'not_ready' }, c);
+        return answerInteraction(sql, { ...base, decision: 'not_ready' }, c, {id,version,action});
     if (action === 'submit')
         return answerInteraction(sql, base, c);
     const role = /^r(\d+)_(\d+)$/.exec(action);
@@ -385,6 +387,12 @@ export async function launchConsent(sql: SQL, action: any, c: ToolContext, name:
     return { allowed: false, participants: v.participants, interaction: v };
 }
 export async function enqueueInteraction(sql: SQL, v: any, c: ToolContext) {
+    if(v.spec.reminder_cancel||v.launch?.kind==='reminder_cancel'){
+        const {finishReminderStopApproval}=await import('./reminder-consent.js');
+        const {cancelApprovedReminderRoots}=await import('./reminder-control.js');
+        await finishReminderStopApproval(sql,v,c,cancelApprovedReminderRoots);
+        return;
+    }
     if ((!v.transition && !v.partial)||v.spec.continuation_owner==='composition')
         return;
     const actor = v.partial ? c.actorId : v.actor_id, source = v.partial ? c.sourceId : v.source_message_id;

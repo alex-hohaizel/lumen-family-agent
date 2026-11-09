@@ -7,11 +7,14 @@ import {loadOriginalRequestContext,type ValidatedOriginalRequest} from './reques
 import type {Message} from './telegram.js';
 import {topicKey} from './topic-scope.js';
 import {stableId} from './operations.js';
+import {isAuthoredCancellationQuote,hasUnconditionalCancellationQuote} from './reminder-intent.js';
 
 /** The caller supplies transport-verified identity; model arguments never set administrator. */
 export interface ReminderContext {
  actorId:string;topicId:string;revision:number;chatId?:string;sourceId?:number;
  requestText?:string;administrator?:boolean;audience?:'group'|'private';updateId?:string;
+ cancellationQuote?:string;
+ cancellationTargets?:ReadonlyArray<{ref:string;version:number|string}>;
 }
 export interface ReminderRoot extends Row {
  kind:'series'|'schedule'|'legacy'|'occurrence';ref:string;id:string;title:string;
@@ -272,6 +275,25 @@ async function cancelRoot(sql:SQL,r:ReminderRoot,scope:'series'|'occurrence'):Pr
  return result;
 }
 
+/** Internal executor used only after the immutable consent proposal has been
+ * validated by finishReminderStopApproval. Lock and validate the whole binding
+ * set before changing any root; the model never supplies this authority. */
+export async function cancelApprovedReminderRoots(sql:SQL,bindings:ReadonlyArray<{ref:string;version:number|string;ownerId:string;sourceId:number;topicId:string;revision:number;ruleHash:string}>,c:ReminderContext,scope:'series'|'occurrence'):Promise<ReminderResult>{
+ await context(sql,c);
+ if(!bindings.length||new Set(bindings.map(item=>item.ref)).size!==bindings.length)return {handled:true,status:'stale',message:'Не вдалося звірити серію для цього погодження. Потрібен новий запит.'};
+ const roots:ReminderRoot[]=[];
+ for(const binding of bindings){
+  if(!binding.ref.startsWith('series:')||binding.topicId!==c.topicId||binding.revision!==c.revision)return {handled:true,status:'stale',message:'Запит на зупинку вже не відповідає поточній серії. Перевірмо її заново.'};
+  const row=await one(sql,'SELECT * FROM recurring_series WHERE id=$1 AND topic_id=$2 AND revision=$3 FOR UPDATE',[binding.ref.slice(7),c.topicId,c.revision]);
+  if(!row||!seriesStatuses.includes(row.status)||row.audience!=='group'||row.rule?.mode!=='task'||String(row.actor_id)!==binding.ownerId||Number(row.source_message_id)!==binding.sourceId||row.version!==binding.version||digest(row.rule)!==binding.ruleHash)return {handled:true,status:'stale',message:'Серія змінилася після запиту на зупинку. Потрібне нове погодження.'};
+  roots.push(root('series',row));
+ }
+ let cancelled=0,inFlight=0;
+ for(const item of roots){const progress=await cancelRoot(sql,item,scope);cancelled+=progress.cancelled;inFlight+=progress.inFlight;}
+ const message=scope==='series'?'Майбутні повтори зупинив.':cancelled?'Найближчий повтор скасував; серія залишається.':'Майбутнього повтору для скасування вже немає; серію залишив.';
+ return {handled:true,status:inFlight?'stopped_with_in_flight':'cancelled',message:message+(inFlight?' Один із запусків уже розпочато або його доставку ще не підтверджено; не видаю його за скасований.':''),roots:roots.map(item=>item.ref),inFlight};
+}
+
 const cancellation=/^(?:(?:скасуй|скасувати|видали|видалити|прибери|припини|зупини|удали|удалить|отмени|отменить|убери|прекрати|cancel|delete|remove|\/cancel)(?:[\s,!:.]|$)|не\s+(?:нагадуй|напоминай)(?:[\s,!:.]|$))/iu;
 const allScope=/(?:усю|всю|цілу|целую|whole)\s+(?:(?:приватн[\p{L}]*|личн[\p{L}]*|private|personal)\s+)?(?:сері|сери|series)|всі\s+повтор|усі\s+повтор|(?:всі|усі|все|all)\s+(?:(?:мої|мои|my|own|(?:не\s+)?приватн[\p{L}]*|(?:не\s+)?личн[\p{L}]*|(?:not\s+|non-)?private|personal)\s+)*(?:нагад|напомин|reminder)|ці\s+нагад|эти\s+напомин|для\s+обох|для\s+обоих|обом|all\s+(?:reminders|repeats)/iu;
 const occurrenceScope=/найближч|ближайш|лише\s+(?:цей|це|один|одне)|тільки\s+(?:цей|це|один|одне)|только\s+(?:это|этот|один|одно)|цей\s+повтор|next\s+(?:one|occurrence)|only\s+(?:one|this)/iu;
@@ -296,11 +318,11 @@ function cancellationAnswer(text:string){
  if(/^[1-9]\d?$/.test(answer))return Number(answer)-1;
 }
 
-async function clarification(sql:SQL,c:ReminderContext,roots:ReminderRoot[],purpose:string){
+async function clarification(sql:SQL,c:ReminderContext,roots:ReminderRoot[],purpose:string,requestedScope?:'series'){
  const hiddenPrivate=c.audience!=='private'&&roots.some(r=>r.audience==='private');
  if(hiddenPrivate)purpose=purpose==='series_scope'?'private_series_scope':'private_roots';
  // A question with no saved source cannot authorize an implicit follow-up.
- if(c.sourceId)await sql.query("INSERT INTO reminder_clarifications(actor_id,topic_id,revision,source_message_id,candidates,purpose,expires_at) VALUES($1,$2,$3,$4,$5,$6,now()+interval '10 minutes') ON CONFLICT(actor_id,topic_id) DO UPDATE SET revision=excluded.revision,source_message_id=excluded.source_message_id,candidates=excluded.candidates,purpose=excluded.purpose,expires_at=excluded.expires_at",[c.actorId,c.topicId,c.revision,c.sourceId,JSON.stringify(roots.map(r=>({ref:r.ref,version:r.version}))),purpose]);
+ if(c.sourceId)await sql.query("INSERT INTO reminder_clarifications(actor_id,topic_id,revision,source_message_id,candidates,purpose,expires_at) VALUES($1,$2,$3,$4,$5,$6,now()+interval '10 minutes') ON CONFLICT(actor_id,topic_id) DO UPDATE SET revision=excluded.revision,source_message_id=excluded.source_message_id,candidates=excluded.candidates,purpose=excluded.purpose,expires_at=excluded.expires_at",[c.actorId,c.topicId,c.revision,c.sourceId,JSON.stringify(roots.map(r=>({ref:r.ref,version:r.version,...(requestedScope?{requested_scope:requestedScope}:{})}))),purpose]);
  const message=purpose==='series_scope'||purpose==='private_series_scope'?'Скасувати найближчий повтор чи всю серію?':hiddenPrivate?'Уточни ідентифікатор приватного нагадування або напиши «усі», якщо треба зупинити всі за цим запитом.':`Знайшов кілька нагадувань. Уточни номер або назву:\n${roots.map((r,i)=>`${i+1}. ${r.title}${r.rule?.time?' — '+r.rule.time:r.due_at?' — '+new Date(r.due_at).toISOString():''}`).join('\n')}`;
  return {handled:true,status:'needs_input',message,roots:roots.map(r=>r.ref)};
 }
@@ -313,7 +335,9 @@ export async function cancelReminderRequest(sql:SQL,request:ReminderRequest,c:Re
  const plain=requestAuthorityView(request.text,source?.entities||[])?.commandText||'';
  const audienceCue=privateReminderCue(plain);
  const negated=/(?<![\p{L}\p{N}])(?:не|don't|do\s+not|not)\s+(?:видал|скас|приб|зупин|удал|отмен|убер|cancel|delete|remove)/iu.test(plain);
- const freshCancel=cancellationIntent(plain,request.text)&&!negated&&!/(?:якщо|если|\bif\b|переклади|процитуй|переведи|процитируй|translate|quote)/iu.test(plain);
+ const semanticCancel=Boolean(source&&c.cancellationQuote&&isAuthoredCancellationQuote(source.body,source.entities,c.cancellationQuote));
+ if(c.cancellationQuote&&!semanticCancel)throw new ToolError('reminder_request_unbound');
+ const freshCancel=semanticCancel?hasUnconditionalCancellationQuote(source!.body,source!.entities,c.cancellationQuote):cancellationIntent(plain,request.text)&&!negated&&!/(?:якщо|если|\bif\b|переклади|процитуй|переведи|процитируй|translate|quote)/iu.test(plain);
  let scope:'series'|'occurrence'=occurrenceScope.test(plain)||request.scope==='occurrence'?'occurrence':'series',roots:ReminderRoot[]=[];
  const pending=await one(sql,'SELECT * FROM reminder_clarifications WHERE actor_id=$1 AND topic_id=$2',[c.actorId,c.topicId]);
  if(!freshCancel){
@@ -331,36 +355,61 @@ export async function cancelReminderRequest(sql:SQL,request:ReminderRequest,c:Re
   if(pending.purpose==='private_roots'&&answer!=='all')return {handled:true,status:'needs_input',message:'Уточни ідентифікатор приватного нагадування або напиши «усі» для цього запиту.'};
   const candidates=Array.isArray(pending.candidates)?pending.candidates:[];
   const chosen=number===undefined?candidates:candidates[number]?[candidates[number]]:[];
-  for(const candidate of chosen){const found=await resolveReminders(sql,c,{id:candidate.ref,scope:occurrence?'occurrence':'series',privateOwnerControl:privatePending&&Boolean(source)});if(found.length!==1||found[0]!.version!==candidate.version){await sql.query('DELETE FROM reminder_clarifications WHERE actor_id=$1 AND topic_id=$2',[c.actorId,c.topicId]);return {handled:true,status:'stale',message:'Нагадування змінилося після запитання. Перевірмо його заново.'};}roots.push(found[0]!);}
+  for(const candidate of chosen){
+   let found=await resolveReminders(sql,c,{id:candidate.ref,scope:occurrence?'occurrence':'series',privateOwnerControl:privatePending&&Boolean(source)});
+   if(!found.length&&source&&c.audience!=='private'&&!privatePending)found=await (await import('./reminder-consent.js')).visibleConsentReminderCandidates(sql,c,{id:candidate.ref});
+   if(found.length!==1||found[0]!.version!==candidate.version){
+    await sql.query('DELETE FROM reminder_clarifications WHERE actor_id=$1 AND topic_id=$2',[c.actorId,c.topicId]);
+    return {handled:true,status:'stale',message:'Нагадування змінилося після запитання. Перевірмо його заново.'};
+   }
+   roots.push(found[0]!);
+  }
   if(!roots.length)return {handled:true,status:'needs_input',message:'Такого номера тут немає. Укажи номер із мого останнього списку.'};
   if(pending.purpose==='which_root'&&number===undefined&&!all)return clarification(sql,c,roots,'which_root');
-  if(pending.purpose==='which_root'&&roots.length===1&&roots[0]!.kind==='series'&&!all&&!occurrence)return clarification(sql,c,roots,'series_scope');
+  if(pending.purpose==='which_root'&&roots.length===1&&roots[0]!.kind==='series'&&!all&&!occurrence&&!chosen.every(candidate=>candidate.requested_scope==='series'))return clarification(sql,c,roots,'series_scope');
   scope=occurrence?'occurrence':'series';
  }else{
   if(audienceCue.ambiguous)return {handled:true,status:'needs_input',message:'Уточни: зупинити приватне нагадування чи нагадування в групі? Поки нічого не змінював.'};
-  if(request.id===undefined&&request.query===undefined&&!/нагад|напом|remind|^\/cancel/iu.test(plain))return {handled:false,status:'unrelated',message:''};
+  if(!semanticCancel&&request.id===undefined&&request.query===undefined&&!/нагад|напом|remind|^\/cancel/iu.test(plain))return {handled:false,status:'unrelated',message:''};
   const query=request.query??searchText(request.text.replace(/^\/cancel(?:@\w+)?\s*/iu,''));
   if(request.query&&reminderSearchTokens(request.query).some(w=>!reminderSearchTokens(request.text).some(a=>a===w||a.length>=4&&w.length>=4&&(a.startsWith(w)||w.startsWith(a)))))throw new ToolError('reminder_target_unbound');
   const supplied=request.id===undefined?'':String(request.id).replace(/^(?:series|schedule|legacy|occurrence):/iu,'');
   const literalId=Boolean(supplied&&request.text.toLowerCase().includes(supplied.toLowerCase())),privateView=audienceCue.private;
-  const found=await resolveReminders(sql,c,{id:request.id,query,scope:allScope.test(plain)?'series':scope==='occurrence'?'occurrence':'auto',privateOwnerControl:Boolean(source)&&(literalId||privateView),privateOnly:privateView});
+  let found=await resolveReminders(sql,c,{id:request.id,query,scope:allScope.test(plain)||semanticCancel&&request.scope==='series'&&!occurrenceScope.test(plain)?'series':scope==='occurrence'?'occurrence':'auto',privateOwnerControl:Boolean(source)&&(literalId||privateView),privateOnly:privateView});
+  if(source&&c.audience!=='private'&&!privateView){
+   const visible=await (await import('./reminder-consent.js')).visibleConsentReminderCandidates(sql,c,{id:request.id,...(request.id===undefined?{query}:{})});
+   found=searchResult([...found,...visible.filter(item=>!found.some(own=>own.ref===item.ref))],Boolean(found.truncated));
+  }
   if(found.truncated)return {handled:true,status:'needs_input',message:'За цим запитом надто багато кандидатів для однієї безпечної зміни. Уточни назву або ідентифікатор; поки жодного нагадування не скасував.'};
   roots=found;
   if(privateView)roots=roots.filter(r=>r.audience==='private');
   if(!source)roots=roots.filter(r=>!r.shared&&r.actor_id===c.actorId);
   if(roots.some(r=>r.kind==='occurrence'))scope='occurrence';
   const suppliedId=request.id===undefined?'':String(request.id).replace(/^(?:series|schedule|legacy|occurrence):/iu,'').toLowerCase();
-  if(suppliedId&&!request.text.toLowerCase().includes(suppliedId)&&(!reminderSearchTokens(query).length||roots.some(r=>!matches(r,query))))return {handled:true,status:'needs_input',message:'Уточни назву або номер нагадування, яке треба скасувати.'};
-  if(/для\s+обох|для\s+обоих|for\s+both/iu.test(plain)&&roots.length>1)roots=roots.filter(r=>r.shared);
+  if(semanticCancel&&roots.some(item=>c.cancellationTargets?.some(target=>target.ref===item.ref&&target.version!==item.version)))return {handled:true,status:'stale',message:'Серія змінилася під час перевірки. Потрібно звірити її заново.'};
+  if(semanticCancel&&!literalId&&c.cancellationTargets!==undefined&&roots.some(item=>!c.cancellationTargets!.some(target=>target.ref===item.ref&&target.version===item.version)))return {handled:true,status:'needs_input',message:'Потрібно звірити актуальну серію перед зупинкою. Поки нічого не змінював.'};
+  const observedTarget=semanticCancel&&roots.length===1&&c.cancellationTargets?.some(target=>target.ref===roots[0]!.ref&&target.version===roots[0]!.version);
+  if(suppliedId&&!request.text.toLowerCase().includes(suppliedId)&&!observedTarget)return {handled:true,status:'needs_input',message:'Уточни назву або номер нагадування, яке треба скасувати.'};
+  if(/для\s+обох|для\s+обоих|for\s+both/iu.test(plain)&&roots.length>1)roots=roots.filter(r=>r.shared||r.approval_visibility);
   if(!roots.length)return {handled:true,status:'not_found',message:'Активного нагадування, яким ти можеш керувати в цій темі, не знайшов. Уточни назву або час.'};
   const all=allScope.test(plain);
   if(roots.length>1&&all&&!reminderSearchTokens(query).length&&!/всі\s+нагад|усі\s+нагад|все\s+напомин|all\s+reminders/iu.test(plain))return clarification(sql,c,roots,'which_root');
-  if(roots.length>1&&!all)return clarification(sql,c,roots,'which_root');
-  if(roots.length===1&&roots[0]!.kind==='series'&&request.id===undefined&&!all&&!occurrenceScope.test(plain))return clarification(sql,c,roots,'series_scope');
+  if(roots.length>1&&!all)return clarification(sql,c,roots,'which_root',semanticCancel&&request.scope==='series'?'series':undefined);
+  if(roots.length===1&&roots[0]!.kind==='series'&&request.id===undefined&&!all&&!occurrenceScope.test(plain)&&!(semanticCancel&&request.scope==='series'))return clarification(sql,c,roots,'series_scope');
  }
  const refs=roots.map(r=>r.ref).sort(),args={refs,scope,text:request.text};
  const receiptId=c.sourceId?stableId(`reminder-cancel:${c.actorId}:${c.sourceId}:${digest({refs,scope})}`):undefined;
  if(receiptId){const previous=await one(sql,'SELECT arguments_hash,result FROM domain_commands WHERE id=$1',[receiptId]);if(previous){if(previous.arguments_hash!==digest(args))throw new ToolError('reminder_request_changed');return previous.result as ReminderResult;}}
+ const approvalRoots=roots.filter(item=>!manageable(item,c,true));
+ if(approvalRoots.length){
+  const approval=await (await import('./reminder-consent.js')).requestReminderStopApproval(sql,approvalRoots,c,scope);
+  let direct=0,inFlight=0;
+  for(const item of roots.filter(item=>manageable(item,c,true))){const stopped=await cancelRoot(sql,item,scope);direct++;inFlight+=stopped.inFlight;}
+  await sql.query('DELETE FROM reminder_clarifications WHERE actor_id=$1 AND topic_id=$2',[c.actorId,c.topicId]);
+  const result={...approval,message:(direct?'Доступні тобі повтори зупинив. ':'')+approval.message+(inFlight?' Один із запусків уже розпочато або його доставку ще не підтверджено.':''),inFlight};
+  if(receiptId)await sql.query("INSERT INTO domain_commands(id,domain,actor_id,arguments_hash,result,source_message_id,source_ids) VALUES($1,'reminder_cancel',$2,$3,$4,$5,$6) ON CONFLICT DO NOTHING",[receiptId,c.actorId,digest(args),JSON.stringify(result),c.sourceId,JSON.stringify([c.sourceId])]);
+  return result;
+ }
  let inFlight=0,cancelled=0,invalid=false;
  for(const r of roots){const result=await cancelRoot(sql,r,scope);inFlight+=result.inFlight;cancelled+=result.cancelled;invalid||=result.reason==='invalid_rule';}
  await sql.query('DELETE FROM reminder_clarifications WHERE actor_id=$1 AND topic_id=$2',[c.actorId,c.topicId]);

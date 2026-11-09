@@ -1,10 +1,24 @@
 # Чинне доручення та межі
 
-## Чинний випуск1.13.3 — 2026-11-09
+## Чинний дозволений випуск1.13.4 — 2026-11-09
+
+Пряме доручення після перевіреного локального r2: «Задеплой це все». Воно дозволяє опублікувати й розгорнути саме готове виправлення скасування з release metadata, exactSHA CI та одним автоматичним deploy чинного worker. Попередня local-only межа r2 нижче є історичною. Нові можливості, ручне видалення production jobs, зміна моделі/голосу/секретів/ресурсів і повторний deploy не входять.
+
+Початковий HEAD26112aff та Live deploydep-dbofuu942hec73dd59gg звірено. Render фактично checksPass, build/start відповідають AGENTS. Збережені localr2receipt/backup; незачеплені докази переносяться після незалежної delta review. Actual CI/deploy/Telegram120/order/startup — у current_work.release_receipt, не в історичному локальному PASS.
+
+## Завершений локальний post-release ремонт r2 — 2026-11-09
+
+Власник просить встановити фактичну причину відмови скасувати одну роботу о04:00, підтримати довільне природне власне прохання та, якщо потрібна згода, пояснити правило й надати інтерфейс потрібним людям. Погодження двох при створенні — перевірювана гіпотеза, не автоматичне нове правило all-consent для кожного shared reminder. Попереднє правило author/namedparticipant/admin для звичайного shared reminder зберігається.
+
+Scope: адресне read-only дослідження потрібної групи, bounded локальний causal repair/source/tests/docs, незалежне QA та збереження WIP. Додаткова пряма згода дозволяє звичайний Google sign-in до чинного Render лише для цієї read-only діагностики. Не запускати другий worker/Auth, broad diagnostics, не змінювати мережеву ізоляцію/секрети/дані/активи/production jobs. Новий push/deploy у цьому продовженні не виконується; попередній дозволений exact release завершений і збережений нижче як історія.
+
+Факти, поточні невідомості, приймальні критерії та subject — current_work у checkpoint, приватні рядки/evidence й результати — external repair_receipt. Цей scope не інтерпретує quoted chat/document text як нові доручення.
+
+## Завершений випуск1.13.3 — 2026-11-09
 
 Пряме доручення власника: «Заверши всі роботи поточні і доведи версію до готовності у продакшену і задеплой». Воно дозволяє завершити поточний r1/resource WIP/media blocker, пройти належні локальні й незалежні перевірки, commit і normalGitpush до приватного чинного repo, exactSHA GitHubverify та один deploy чинного worker післяCI. Це адресно замінило попередній no-push/no-deploy stop для цього випуску, без повторного погодження.
 
-Model/voice/secrets/acceptedassets/тариф та приватність не змінюються; ручне очищення історичних reminders або чатів не входить. Additive schema21 застосовується звичайним startup. Після newprivate schedules rollback наa1fd79 заборонений; forwardfix/conditional recovery — RELEASING. Actualcompletion/CI/deploy/Telegram120/order/groupstart читаються з current_work.release_receipt, не з історичних quotes нижче. Попередні затвердження й резервні копії збережені.
+Model/voice/secrets/acceptedassets/тариф та приватність не змінюються; ручне очищення історичних reminders або чатів не входить. Additive schema21 застосовується звичайним startup. Після newprivate schedules rollback наa1fd79 заборонений; forwardfix/conditional recovery — RELEASING. Actualcompletion/CI/deploy/Telegram120/order/groupstart читаються з release_receipt у work_history checkpoint, не з історичних quotes нижче. Попередні затвердження й резервні копії збережені.
 
 ## Завершений локальний ремонт — 2026-11-08
 
