@@ -1,6 +1,9 @@
 # Поточний контекст Люмена
 
-Чинне доручення — **LM-RELEASE-1.13.4-2026-11-09**: «Задеплой це все». До випуску входить завершений локальний r2 нижче, release metadata та короткий поточний контекст. Дозволені normalGit publication, exactSHA mandatoryCI та один автоматичний deploy чинного worker; ручна зміна production jobs не входить. Exact commit/CI/deploy/Telegram120/order/startup — у current_work.release_receipt. Попередній local-only repair_receipt зберігає історичний результат, а не поточні release права.
+Чинне продовження — **LM-RELEASE-1.13.5-2026-11-09**: завершення того самого дозволеного виправлення й випуску після нової живої відмови власниці на1.13.4. Оригінальне повідомлення чинне; точний model quote не збережений. Незалежно відтворено локальне отруєння правильного запиту неправильним quote. Новий guard перевіряє модельний proof до effects і в межах чинних двох спроб дозволяє автоматично виправити план або прибрати помилкову дію. Права й server fences не послаблюються. ActualCI/deploy/start/120/health — у current_work.release_receipt; ручна зміна production jobs не входить.
+
+
+Попередній дозволений випуск — **LM-RELEASE-1.13.4-2026-11-09**: «Задеплой це все». До випуску входить завершений локальний r2 нижче, release metadata та короткий поточний контекст. Дозволені normalGit publication, exactSHA mandatoryCI та один автоматичний deploy чинного worker; ручна зміна production jobs не входить. Exact commit/CI/deploy/Telegram120/order/startup — у current_work.release_receipt. Попередній local-only repair_receipt зберігає історичний результат, а не поточні release права.
 
 
 Завершений локальний ремонт — **LM-CANCEL-NATURAL-r2-2026-11-09**: причинно дослідити відмову скасувати нічну роботу, підтримати природне власне прохання без набору обов’язкових слів і показувати конкретні права/погодження. Локальний ремонт і перевірки завершено; точний результат та перевірена повна копія source/WIP — у зовнішньому repair_receipt. Push/deploy та ручна зміна production jobs у цьому продовженні не виконуються. Метод — ChatBot Atelier5.0.0, старі Lumen skills не є залежністю.

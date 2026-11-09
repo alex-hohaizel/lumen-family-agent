@@ -297,27 +297,18 @@
     "method": "skills/config/write {name:lumen-orchestrator,enabled:false}; fresh skills/list forceReload"
   },
   "current_work": {
-    "id": "LM-RELEASE-1.13.4-2026-11-09",
-    "updated_at": "2026-11-09T00:51:27.597001+00:00",
-    "kind": "authorized_current_repair_release",
-    "status": "prepublication; actualCI/deploy/startup in external release_receipt",
-    "user_approval": "Задеплой це все",
-    "approval_source": "Direct owner request after verified local r2 report in current Codex chat",
-    "scope": "Publish and deploy completed natural cancellation/owner approval r2 plus version and concise release context; preserve all capabilities/assets/WIP",
-    "version": "1.13.4",
+    "id": "LM-RELEASE-1.13.5-2026-11-09",
+    "updated_at": "2026-11-09T01:33:12.864996+00:00",
+    "kind": "same_scope_postrelease_metadata_repair_and_release",
+    "status": "local addressed verification; exactCI/deploy pending in externalreceipt",
+    "version": "1.13.5",
+    "user_authorization": "Задеплой це все; continuous completion of the same natural cancellation repair after observed live refusal, no new permissions/features",
     "source": {
-      "baseline_head": "26112aff333772cbea9a68e90f04f1794c66f20e",
-      "baseline_local_r2_hash": "159c06cc00d88ba6de145403f4944a0bfbb40015800c9b5f092d0d26a4c5503d",
-      "baseline_local_r2_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-cancel-repair-r2-2026-11-09/completion.json"
+      "baseline_head": "f6581724da02b377f05bd778703233b37f65a3ee",
+      "baseline_deploy": "dep-dbohqanavr4c73bfp5n0"
     },
-    "target": {
-      "workspace_id": "tea-dbf5jsfb9u1s73bn4d1g",
-      "service_id": "srv-dbfl0je7bikc73dvg0qg",
-      "baseline_deploy": "dep-dbofuu942hec73dd59gg",
-      "actual_auto_deploy_trigger": "checksPass",
-      "build_start": "verified matches AGENTS",
-      "resources": "existing singleworker0.5CPU/512MiB/disk unchanged"
-    },
+    "scope": "Validate/repair model cancellation proof before effects within existing2plan attempts; preserve server-native/owner/quote/target/version gates and all existing capabilities",
+    "live_fact": "Valid original owner request rejected on1.13.4; exactmodelquote purged/unknown. Pure deployedsource verifier accepts original; independentlocalmetadata-poison reproduced. Polling independently recovered; no invented nativepollcause. Private rows outsideGit.",
     "rights": {
       "allowed": [
         "release metadata/current context",
@@ -335,11 +326,18 @@
         "duplicate deploy"
       ]
     },
-    "preservation": "Completedr2backup577files and prior release archives retained; capabilities/model/voice/assets/schema21 unchanged",
-    "release_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.4-2026-11-09/delivery.json",
-    "receipt_authority": "Exact source/commit/CI/deploy/health/delivery facts live only in external receipt; locator is not PASS",
+    "target": {
+      "workspace_id": "tea-dbf5jsfb9u1s73bn4d1g",
+      "service_id": "srv-dbfl0je7bikc73dvg0qg",
+      "baseline_deploy": "dep-dbohqanavr4c73bfp5n0",
+      "actual_auto_deploy_trigger": "checksPass",
+      "build_start": "verified matches AGENTS",
+      "resources": "existing singleworker0.5CPU/512MiB/disk unchanged"
+    },
+    "release_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.5-2026-11-09/delivery.json",
+    "prior_release_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.4-2026-11-09/delivery.json",
     "rollback": "Before newr2 ingress26112af remains schema21/privacy compatible but restores cancellation defect. After r2 proposals/votes, old callbacks do not understand reminder_cancel: use compatibleforwardfix or explicit safe drain/quarantine, never blindreplay. See RELEASING.",
-    "next_action": "Finish independent exactcandidate delta review, publish via Git, await one mandatory exactSHA verify and one automatic Render deploy, observe120Telegram/order and groupstart. No manual reminder mutation."
+    "next_action": "Independent frozen repair review, normalGit publication, exactmandatoryCI then oneautomaticdeploy of this newcommit; fresh120/order/start/health evidence; no manual production job mutation."
   },
   "active_record_pointer": "current_work",
   "work_history": [
@@ -588,6 +586,51 @@
         "live_model_device_human": "not assessed by synthetic tests"
       },
       "preservation": "All tracked baseline source/config/assets and new local r2 files in verified full-source archive; all240WEBM/PNG hashes and120order slots unchanged; all priorWIP/history/backups retained."
+    },
+    {
+      "id": "LM-RELEASE-1.13.4-2026-11-09",
+      "updated_at": "2026-11-09T00:51:27.597001+00:00",
+      "kind": "authorized_current_repair_release",
+      "status": "deployed f658172 Live; subsequent native owner refusal opened narrow same-scope follow-up; see release_receipt",
+      "user_approval": "Задеплой це все",
+      "approval_source": "Direct owner request after verified local r2 report in current Codex chat",
+      "scope": "Publish and deploy completed natural cancellation/owner approval r2 plus version and concise release context; preserve all capabilities/assets/WIP",
+      "version": "1.13.4",
+      "source": {
+        "baseline_head": "26112aff333772cbea9a68e90f04f1794c66f20e",
+        "baseline_local_r2_hash": "159c06cc00d88ba6de145403f4944a0bfbb40015800c9b5f092d0d26a4c5503d",
+        "baseline_local_r2_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-cancel-repair-r2-2026-11-09/completion.json"
+      },
+      "target": {
+        "workspace_id": "tea-dbf5jsfb9u1s73bn4d1g",
+        "service_id": "srv-dbfl0je7bikc73dvg0qg",
+        "baseline_deploy": "dep-dbofuu942hec73dd59gg",
+        "actual_auto_deploy_trigger": "checksPass",
+        "build_start": "verified matches AGENTS",
+        "resources": "existing singleworker0.5CPU/512MiB/disk unchanged"
+      },
+      "rights": {
+        "allowed": [
+          "release metadata/current context",
+          "local addressed checks and independent delta review",
+          "normalGit commit and onepush",
+          "exactSHA mandatory GitHubverify",
+          "one automatic existingworker deploy afterCI",
+          "bounded startup/version/Telegram120/order readback"
+        ],
+        "excluded": [
+          "new model/voice/assets/secrets/resources",
+          "manual production job/data cleanup",
+          "secondworker/Authmanager",
+          "broad diagnostics",
+          "duplicate deploy"
+        ]
+      },
+      "preservation": "Completedr2backup577files and prior release archives retained; capabilities/model/voice/assets/schema21 unchanged",
+      "release_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.4-2026-11-09/delivery.json",
+      "receipt_authority": "Exact source/commit/CI/deploy/health/delivery facts live only in external receipt; locator is not PASS",
+      "rollback": "Before newr2 ingress26112af remains schema21/privacy compatible but restores cancellation defect. After r2 proposals/votes, old callbacks do not understand reminder_cancel: use compatibleforwardfix or explicit safe drain/quarantine, never blindreplay. See RELEASING.",
+      "next_action": "Finish independent exactcandidate delta review, publish via Git, await one mandatory exactSHA verify and one automatic Render deploy, observe120Telegram/order and groupstart. No manual reminder mutation."
     }
   ]
 }

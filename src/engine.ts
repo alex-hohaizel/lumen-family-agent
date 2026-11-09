@@ -77,7 +77,7 @@ export function addressed(m:Message,bot:BotIdentity,clearOnly=false){
 interface VerifiedListReply {message:string;operation?:string;category?:string;added?:string[];already_present?:string[];}
 type ObservedReminderTarget={ref:string;version:number|string};
 function reportReminderFailure(code:string,chatId:string,updateId:string|number){
-  if(!/^(?:reminder|series)_[a-z0-9_]{1,100}$/.test(code))return;
+  if(!/^(?:reminder|series)_[a-z0-9_]{1,100}$/.test(code)&&code!=='model_cancellation_proof_invalid')return;
   try{console.error(JSON.stringify({event:'reminder_control_failed',code,request_tag:createHash('sha256').update(chatId+'\n'+String(updateId)).digest('hex').slice(0,16)}));}catch{/* Diagnostics do not change the action outcome. */}
 }
 function listAcknowledgementRelation(reply:string,result:VerifiedListReply):'same'|'numeric_conflict'|undefined{
@@ -463,10 +463,20 @@ export class Lumen {
     });
     if(!job)return compositionProgress;
     return runOperation(this.db,'source:'+job.payload.sourceId,async()=>{
-    const m=job.payload.message as Message;const uid=String(m.from!.id);const topicId=topicOf(m);const sourceIds=new Set<number>([Number(job.payload.sourceId)]);const options={sourceIds:[] as number[],threadId:m.message_thread_id,replyToMessageId:m.message_id>0?m.message_id:m.reply_to_message?.message_id,sourceMessageId:Number(job.payload.sourceId),actorId:uid};let current=textOf(m);let intent=current;let technicalDetailsRequested=false;const outcomeFacts:OutcomeFact[]=[];const verifiedReplies:VerifiedListReply[]=[];const retainedAuthorization=new Map<string,Plan['authorization']>();const retainedCancellationTargets=new Map<string,ObservedReminderTarget[]>();const cancellationTargets=new Map<string,ObservedReminderTarget>();let behaviorData:Awaited<ReturnType<typeof behaviorContext>>|undefined;let activity:Awaited<ReturnType<ReturnType<typeof activityFor>['begin']>>|undefined;
+    const m=job.payload.message as Message;const uid=String(m.from!.id);const topicId=topicOf(m);const sourceIds=new Set<number>([Number(job.payload.sourceId)]);const options={sourceIds:[] as number[],threadId:m.message_thread_id,replyToMessageId:m.message_id>0?m.message_id:m.reply_to_message?.message_id,sourceMessageId:Number(job.payload.sourceId),actorId:uid};let current=textOf(m);let intent=current;let technicalDetailsRequested=false;const outcomeFacts:OutcomeFact[]=[];const verifiedReplies:VerifiedListReply[]=[];const modelProofRepairCandidates:Plan[]=[];const retainedAuthorization=new Map<string,Plan['authorization']>();const retainedCancellationTargets=new Map<string,ObservedReminderTarget[]>();const cancellationTargets=new Map<string,ObservedReminderTarget>();let behaviorData:Awaited<ReturnType<typeof behaviorContext>>|undefined;let activity:Awaited<ReturnType<ReturnType<typeof activityFor>['begin']>>|undefined;
     try{
       const s=await state(this.db);if(s.paused || s.memory_revision!==job.revision){await this.discard(job.update_id);return true;}
       const originalRequest=await loadOriginalRequestContext(this.db,{sourceId:Number(job.payload.sourceId),actorId:uid,topicId,namespaceChatId:String(s.chat_id),audience:m.chat.type==='private'?'private':'group',revision:job.revision});
+      const requestAuthority=originalRequest?{body:originalRequest.body,entities:originalRequest.entities,forwarded:originalRequest.forwarded,viaBot:originalRequest.viaBot}:undefined;
+      const planWithProofRepair=async(input:Parameters<Brain['plan']>[0]):Promise<Plan>=>{
+        const first=modelProofRepairCandidates.length;
+        try{return await this.brain.plan({...input,onCancellationProofRepair:candidate=>{modelProofRepairCandidates.push({...candidate,actions:candidate.actions.filter(a=>a.kind!=='cancel_reminder')});}});}
+        catch(e){
+          if(!(e instanceof ModelError)||e.code!=='model_cancellation_proof_invalid'||!modelProofRepairCandidates.slice(first).some(p=>p.actions.length))throw e;
+          reportReminderFailure(e.code,String(m.chat.id),job.update_id);outcomeFacts.push({capability:'cancel_reminder',status:'failed',detail:e.code});
+          return {reply:this.friendlyError(e.code),actions:[]};
+        }
+      };
       for(const target of Array.isArray(job.payload.cancellationObservedTargets)?job.payload.cancellationObservedTargets:[])if(target&&typeof target.ref==='string'&&['number','string'].includes(typeof target.version))cancellationTargets.set(target.ref,{ref:target.ref,version:target.version});
       technicalDetailsRequested=Boolean(originalRequest&&!originalRequest.forwarded&&!originalRequest.viaBot&&explicitDiagnosticRequest(originalRequest.body,originalRequest.entities));
       const profile=await one(this.db,'SELECT preferred_name,inferred_name FROM participant_preferences WHERE user_id=$1',[uid]);if(profile?.preferred_name||profile?.inferred_name)m.from={...m.from!,first_name:profile.preferred_name||profile.inferred_name,last_name:undefined};
@@ -580,7 +590,7 @@ export class Lumen {
         const feedback=(await this.db.query('SELECT content,source_message_id FROM agent_feedback WHERE actor_id=$1 ORDER BY id DESC LIMIT 5',[uid])).rows;for(const row of [...collaboration.facts,...collaboration.projects,...collaboration.sessions,...collaboration.decisions,...feedback])if(row.source_message_id)sourceIds.add(Number(row.source_message_id));options.sourceIds=[...sourceIds];
         const augmentedContext=packContext({...JSON.parse(context),behavior_context:behaviorData,personalization,scheduled_actions:scheduled,interaction,interaction_event:m.lumen_interaction,collaboration,pending_independent_actions:job.payload.pendingIndependent?.map((x:any)=>x.action),available_tools:this.tools.discovery(),feedback,workflows:(await this.db.query('SELECT id,title,status,version FROM agent_workflows WHERE actor_id=$1 ORDER BY created_at DESC LIMIT 10',[uid])).rows});
         await observeReminderTargets(JSON.parse(augmentedContext).reminder_roots);
-        if(!plan)plan=await this.brain.plan({context:augmentedContext,current,image,images:mediaImages,instructions,search:!proactive&&this.config.webSearch});
+        if(!plan)plan=await planWithProofRepair({context:augmentedContext,current,requestAuthority,image,images:mediaImages,instructions,search:!proactive&&this.config.webSearch});
         plan=prepareOfferPlan(normalizeBehaviorPlan(plan,direct,behaviorData?.references,current,forceDirect),{text:intent,explicit:direct&&m.chat.type!=='private'&&Boolean(originalRequest&&!originalRequest.forwarded&&!originalRequest.viaBot),entities:originalRequest?.entities});
         const admission=behaviorAdmission(plan.behavior,{direct,otherRecipient:explicitOtherRecipient(m,this.bot.id),references:behaviorData?.references,optional:followup||proactive,reply:plan.reply});
         if(!admission.respond){await this.discard(job.update_id);return true;}
@@ -593,6 +603,17 @@ export class Lumen {
         const sources:unknown[]=[];const carried=new Map<string,{action:Action;authorization:Plan['authorization'];cancellationTargets?:ObservedReminderTarget[]}>();const foregroundDeadline=Date.now()+45000;
         const actionIdentity=(a:Action)=>a.kind==='schedule'?a.kind+':'+a.mode+':'+a.instruction.toLocaleLowerCase():a.kind==='remind'?a.kind+':'+a.title.toLocaleLowerCase():a.kind==='remember'?a.kind+':'+a.content.toLocaleLowerCase():a.kind==='personalize'?a.kind+':'+a.scope+':'+String(a.target_id||''):JSON.stringify(a);
         const carryIndependent=async(candidate:Plan,observedTargets?:ObservedReminderTarget[])=>{if(proactive||!direct||m.lumen_interaction)return;for(const action of candidate.actions){if(!independentAction(action,intent,candidate.authorization,originalRequest?.entities))continue;try{authorizeAction(action,intent,true,this.config,inherited,candidate.authorization,originalRequest?.entities);}catch{continue;}carried.set(actionIdentity(action),{action,authorization:candidate.authorization,...(action.kind==='cancel_reminder'?{cancellationTargets:observedTargets??[...cancellationTargets.values()]}:{})});}if(carried.size)await this.db.tx(async sql=>{const live=await state(sql,true);if(live.paused||live.memory_revision!==job.revision)throw new ModelError('action_cancelled');await sql.query("UPDATE inbox SET payload=payload||$1::jsonb WHERE update_id=$2 AND status='processing' AND revision=$3",[JSON.stringify({pendingIndependent:[...carried.values()]}),job.update_id,job.revision]);});};
+        const carryProofRepair=async()=>{
+          if(!modelProofRepairCandidates.length)return;
+          const fresh=originalRequest&&!originalRequest.forwarded&&!originalRequest.viaBot?await loadOriginalRequestContext(this.db,{sourceId:Number(job.payload.sourceId),actorId:uid,topicId,namespaceChatId:String(s.chat_id),audience:m.chat.type==='private'?'private':'group',revision:job.revision}):undefined;
+          if(!fresh||fresh.forwarded||fresh.viaBot||fresh.body!==originalRequest!.body||fresh.receivedAt.getTime()!==originalRequest!.receivedAt.getTime()||JSON.stringify(fresh.entities)!==JSON.stringify(originalRequest!.entities)){modelProofRepairCandidates.length=0;return;}
+          const authored=requestAuthorityView(intent,originalRequest?.entities||[])?.commandText;
+          for(const candidate of modelProofRepairCandidates.splice(0)){
+            const actions=candidate.actions.filter(action=>{if(action.kind==='cancel_reminder'||authored===undefined)return false;try{authorizeAction(action,authored,true,this.config,[],candidate.authorization);return true;}catch{return false;}});
+            await carryIndependent({...candidate,actions});
+          }
+        };
+        await carryProofRepair();
         for(const item of job.payload.pendingIndependent||[]){const restored=PlanSchema.safeParse({reply:'',actions:[item.action],authorization:item.authorization});if(restored.success)await carryIndependent(restored.data,Array.isArray(item.cancellationTargets)?item.cancellationTargets.filter((target:any)=>target&&typeof target.ref==='string'&&['string','number'].includes(typeof target.version)):[]);}
         for(let step=0;step<this.config.agentSteps&&plan.actions.some(x=>['history','inspect','view_media','view_avatar','tool'].includes(x.kind));step++){
           const before=await state(this.db);if(before.paused||before.memory_revision!==job.revision){await this.discard(job.update_id);return true;}
@@ -615,7 +636,8 @@ export class Lumen {
           await reserveModelCall(this.db,this.config);
           const nextContext=packContext({...JSON.parse(augmentedContext),tool_results_untrusted:sources.slice(-4).map((x:any)=>({...x,result:JSON.stringify(x.result).length>12000?JSON.stringify(x.result).slice(0,12000):x.result}))});
           for(const observed of JSON.parse(nextContext).tool_results_untrusted||[])if(observed.tool==='inspect'&&observed.request?.subject==='reminders'&&observed.result&&typeof observed.result==='object')await observeReminderTargets(observed.result);
-          plan=await this.brain.plan({context:nextContext,current,image,images:mediaImages.slice(0,12),instructions:instructions+` Використай отримані результати для відповіді або наступних кроків. Невдала спроба не скасовує інші явні прохання автора. Збережи незалежні дії й конкретне уточнення; залежну дію виконуй лише за її підтвердженим результатом. Якщо джерел немає — не вигадуй підтвердження. Якщо потрібна довша робота, створи tasks.create. ${step===this.config.agentSteps-1?'Бюджет цього ходу завершено; дай цілісну відповідь або конкретний стан. Не викликай інструменти знову.':''}`,search:!proactive&&this.config.webSearch});
+          plan=await planWithProofRepair({context:nextContext,current,requestAuthority,image,images:mediaImages.slice(0,12),instructions:instructions+` Використай отримані результати для відповіді або наступних кроків. Невдала спроба не скасовує інші явні прохання автора. Збережи незалежні дії й конкретне уточнення; залежну дію виконуй лише за її підтвердженим результатом. Якщо джерел немає — не вигадуй підтвердження. Якщо потрібна довша робота, створи tasks.create. ${step===this.config.agentSteps-1?'Бюджет цього ходу завершено; дай цілісну відповідь або конкретний стан. Не викликай інструменти знову.':''}`,search:!proactive&&this.config.webSearch});
+          await carryProofRepair();
           plan=prepareOfferPlan(normalizeBehaviorPlan(plan,direct,behaviorData?.references,current,forceDirect),{text:intent,explicit:direct&&m.chat.type!=='private'&&Boolean(originalRequest&&!originalRequest.forwarded&&!originalRequest.viaBot),entities:originalRequest?.entities});
           const updatedAdmission=behaviorAdmission(plan.behavior,{direct,otherRecipient:explicitOtherRecipient(m,this.bot.id),references:behaviorData?.references,optional:followup||proactive,reply:plan.reply});
           if(!updatedAdmission.respond){await this.discard(job.update_id);return true;}
@@ -766,6 +788,7 @@ export class Lumen {
     if(code==='document_type_not_supported')return 'Підтримую TXT, MD, CSV, JSON, ICS, PDF, DOCX і XLSX до 3 MB. Для сканованого PDF доступне розпізнавання перших трьох сторінок.';
     const transportHint=telegramRepairHint(code);if(transportHint)return transportHint;
     if(code==='schedule_time_invalid'||code==='reminder_time_invalid')return 'Цей час уже минув або дата некоректна. На яку дату й годину запланувати дію?';
+    if(code==='model_cancellation_proof_invalid')return 'Не зміг коректно підготувати скасування. Серію ще не змінював.';
     if(code==='reminder_request_unbound'||code==='reminder_transcription_unbound')return 'Нагадування не змінив: не вдалося перевірити прив’язку цього повідомлення до чинного запиту. Надішли прохання ще раз у цій темі.';
     if(code==='reminder_target_unbound')return 'Нагадування не змінив: не вдалося однозначно пов’язати вибраний запис із твоїм проханням. Уточни назву, час або відповідай на саме нагадування.';
     if(code==='reminder_vote_explicit_required'||code==='reminder_vote_unbound')return 'Цю відповідь не зарахував як згоду саме на дію з картки. Можеш натиснути потрібну кнопку; якщо хочеш інший обсяг або час зупинки, уточни його. Серію поки не змінював.';
