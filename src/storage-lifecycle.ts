@@ -1,6 +1,7 @@
 import {createHash} from 'node:crypto';
 import {one,state,type Database,type SQL} from './db.js';
 import {pruneMediaInspectionPayloads} from './media-inspections.js';
+import {cleanupIncidents} from './incidents.js';
 const sha=(text:string)=>createHash('sha256').update(text).digest('hex');
 // Terminal duplicate transport text may reference an original; receipts and dedup survive.
 export async function deliveredPayload(sql:SQL,row:any){
@@ -21,6 +22,7 @@ export class StorageLifecycle {
   let textBytes=0;for(const row of rows){await sql.query("UPDATE outbox SET body=(body-'text')||jsonb_build_object('text_sha256',$2::text),canonical_message_id=$3 WHERE id=$1",[row.id,sha(row.original),row.message_id]);textBytes+=Buffer.byteLength(row.original);}
   const expired:Record<string,number>={};for(const table of ['resource_views','message_panels','research_cache','style_episodes','behavior_contributions']){const key=table==='research_cache'?'cache_key':'id';expired[table]=(await sql.query(`DELETE FROM ${table} WHERE ${key} IN (SELECT ${key} FROM ${table} WHERE expires_at<now() ORDER BY expires_at LIMIT 500) RETURNING 1`)).rows.length;}
   await pruneMediaInspectionPayloads(sql);
+  expired.diagnostic_incidents=await cleanupIncidents(sql);
   const orphans=await sql.query("DELETE FROM provenance_edges e WHERE (derived_kind='outbox' AND NOT EXISTS(SELECT 1 FROM outbox o WHERE o.id::text=e.derived_key)) OR (derived_kind='panel' AND NOT EXISTS(SELECT 1 FROM message_panels p WHERE p.id::text=e.derived_key)) OR (derived_kind='tool_run' AND NOT EXISTS(SELECT 1 FROM tool_runs r WHERE r.id::text=e.derived_key)) OR (derived_kind='media_inspection' AND NOT EXISTS(SELECT 1 FROM media_inspections i WHERE i.id::text=e.derived_key)) RETURNING 1");
   return {terminal_inbox_compacted:compacted.rows.length,sent_text_referenced:rows.length,duplicate_text_bytes:textBytes,expired,orphan_edges:orphans.rows.length,originals_removed:0,receipts_and_dedup_retained:true};
  });}

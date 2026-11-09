@@ -40,11 +40,11 @@ describe('1.13 iteration4 addendum actual future and failed execution',()=>{
   it('invalid time retains the independent answer and one real question without generic completion',async()=>{
     h.brain.replies.push({reply:'Тримай воду поруч із робочим місцем. Я вже виконав дію!',actions:[schedule(new Date(Date.now()-60000).toISOString())]});
     await h.lumen.receive(message('Люмен, поясни як пам’ятати про воду, і через годину нагадай воду'));await h.lumen.processNext();
-    assert.equal((await db.query('SELECT id FROM scheduled_actions')).rows.length,0);const text=await answer();assert.match(text,/Тримай воду поруч із робочим місцем/u);assert.doesNotMatch(text,/вже виконав|Запланував/u);assert.match(text,/час уже минув/u);assert.equal((text.match(/\?/g)||[]).length,1);
+    assert.equal((await db.query('SELECT id FROM scheduled_actions')).rows.length,0);const text=await answer();assert.match(text,/Тримай воду поруч із робочим місцем/u);assert.doesNotMatch(text,/вже виконав|Запланував/u);assert.match(text,/час минув|коректною датою/u);assert.match(text,/LM-[0-9A-Z]{26}/u);assert.equal((text.match(/\?/g)||[]).length,1);
   });
   it('an actual failed studio cannot be rewritten as a generic executed action',async()=>{
     h.brain.replies=[{reply:'',actions:[{kind:'tool',name:'studio.manage',arguments:JSON.stringify({operation:'invalid'})}]},{reply:'Я вже виконав дію! Корисно визначити порядок фото.',actions:[]}];
     await h.lumen.receive(message('Люмен, зроби ролик із фото'));await h.lumen.processNext();
-    assert.equal((await db.query('SELECT id FROM media_jobs')).rows.length,0);assert.ok((await db.query("SELECT id FROM tool_runs WHERE status='failed'")).rows.length);const text=await answer();assert.doesNotMatch(text,/вже виконав/u);assert.match(text,/Корисно визначити порядок фото/u);assert.match(text,/поки не вийшло/u);
+    assert.equal((await db.query('SELECT id FROM media_jobs')).rows.length,0);assert.ok((await db.query("SELECT id FROM tool_runs WHERE status='failed'")).rows.length);const text=await answer();assert.doesNotMatch(text,/вже виконав/u);assert.match(text,/Корисно визначити порядок фото/u);assert.match(text,/Параметри вибраного інструмента не відповідають його контракту/u);assert.match(text,/LM-[0-9A-Z]{26}/u);
   });
 });

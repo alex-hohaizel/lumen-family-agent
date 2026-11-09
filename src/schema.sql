@@ -632,4 +632,27 @@ ALTER TABLE topic_attention ADD COLUMN IF NOT EXISTS silenced_source_id bigint R
 ALTER TABLE topic_attention ADD COLUMN IF NOT EXISTS silenced_revision integer;
 ALTER TABLE topic_attention ADD COLUMN IF NOT EXISTS silenced_body_sha256 text;
 
+-- Operational evidence is isolated in the same chat namespace. No transcript,
+-- prompt, tool arguments, exception text or provider payload is stored here.
+CREATE TABLE IF NOT EXISTS diagnostic_incidents (
+  code text PRIMARY KEY CHECK(code ~ '^LM-[0-9A-HJKMNP-TV-Z]{26}$'),
+  dedup_key text NOT NULL UNIQUE CHECK(length(dedup_key)=64),
+  operation text NOT NULL, stage text NOT NULL,
+  reason_code text NOT NULL, reason_detail text,
+  actor_id text, topic_id text NOT NULL DEFAULT '0',
+  audience text NOT NULL CHECK(audience IN ('group','private')),
+  source_message_id bigint REFERENCES messages(id) ON DELETE CASCADE,
+  revision integer NOT NULL,
+  action_id uuid, task_id uuid, tool_run_id bigint, outbox_id bigint,
+  effect_state text CHECK(effect_state IN ('not_started','unchanged','confirmed','partial','uncertain')),
+  facts jsonb NOT NULL DEFAULT '{}' CHECK(octet_length(facts::text)<=8192),
+  app_version text NOT NULL,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  last_seen_at timestamptz NOT NULL DEFAULT now(),
+  occurrences integer NOT NULL DEFAULT 1 CHECK(occurrences>0)
+);
+CREATE INDEX IF NOT EXISTS diagnostic_incidents_source ON diagnostic_incidents(source_message_id);
+CREATE INDEX IF NOT EXISTS diagnostic_incidents_created ON diagnostic_incidents(created_at);
+INSERT INTO schema_version VALUES(22) ON CONFLICT DO NOTHING;
+
 COMMIT;

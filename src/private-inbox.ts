@@ -5,6 +5,7 @@ import { randomBytes } from 'node:crypto';
 import { one, state, queueText, type Database } from './db.js';
 import { ConnectorVault } from './connector-vault.js';
 import { ToolError } from './safe-http.js';
+import {captureIncident} from './incidents.js';
 import type { Telegram, Message, CallbackQuery } from './telegram.js';
 import type { ToolContext } from './agent-tools.js';
 export type Sharing = 'task' | 'anonymous' | 'quote' | 'reveal';
@@ -65,8 +66,9 @@ export class PrivateInbox {
                 if (!['member', 'administrator', 'creator', 'restricted'].includes(member.status) || member.status === 'restricted' && member.is_member === false)
                     return false;
             }
-            catch {
-                return false;
+            catch(error) {
+                const incident=await captureIncident(this.db,{operation:'private_answer',stage:'membership',attemptKey:'private-open:'+r.id+':'+r.revision,chatId:String(s.chat_id),actorId:user,topicId:r.topic_id,audience:'private',revision:r.revision,effectState:'unchanged',facts:{resource_id:r.id,resource_kind:'private_request'}},error);
+                await telegram.text(user,incident.message);return true;
             }
         }
         if(await this.showStoryHint(r,user,telegram))return true;
@@ -100,7 +102,7 @@ export class PrivateInbox {
         await telegram.text(user, `Обрано: ${match[2] === 'task' ? 'використання лише для цієї задачі' : match[2] === 'anonymous' ? 'узагальнення без імені' : match[2] === 'quote' ? 'можна цитувати' : 'розкриття після раунду'}.\n\n${r.question}\n\nНадішли відповідь одним повідомленням. /cancel — відмовитися.`);
         return true;
     }
-    async pending(user: string) { return one(this.db, "SELECT id,token,sharing,purpose,payload,session_id,revision FROM private_requests WHERE recipient_id=$1 AND status='answering' AND expires_at>now() ORDER BY created_at DESC LIMIT 1", [user]); }
+    async pending(user: string) { return one(this.db, "SELECT id,token,sharing,purpose,payload,session_id,revision,topic_id FROM private_requests WHERE recipient_id=$1 AND status='answering' AND expires_at>now() ORDER BY created_at DESC LIMIT 1", [user]); }
     async answer(r: any, m: Message, sink: (request: any, text: string, answerRef: string) => Promise<void>) {
         const user = String(m.from!.id), text = m.text || '';
         if (!text || text.length > 6000)
@@ -120,7 +122,8 @@ export class PrivateInbox {
             throw new ToolError('private_answer_or_cancel_required');
         const draftKey='private_draft_'+live.id.replaceAll('-','');let normalized=text;
         if(live.payload.coordinator_key||live.payload.decision_id){
-            let prior:any={};try{prior=JSON.parse(await this.vault.get(user,draftKey));}catch{}
+            let prior:any={};const draft=await one(this.db,'SELECT name FROM tool_credentials WHERE owner_id=$1 AND name=$2',[user,draftKey]);
+            if(draft){let value:string;try{value=await this.vault.get(user,draftKey);}catch{throw new ToolError('private_draft_unreadable');}try{prior=JSON.parse(value);if(!prior||typeof prior!=='object'||Array.isArray(prior))throw Error('invalid_draft_shape');}catch{throw new ToolError('private_draft_invalid');}}
             if(/^(?:так|да|підтверджую|подтверждаю|зберегти|сохранить|confirm|yes)[.!\s]*$/iu.test(text)&&prior.value)normalized=JSON.stringify(prior.value);
             else{
                 let parsed:any;

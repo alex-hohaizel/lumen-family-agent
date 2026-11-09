@@ -23,6 +23,9 @@ import {publicURL,ToolError} from './safe-http.js';
 import {browsers} from './browser.js';
 import {MCPClient} from './mcp-client.js';
 import {ConnectorVault} from './connector-vault.js';
+import {recordIncident,logIncident,attachIncident,incidentForError,attachResultIncident,incidentForResult,safeErrorCode,type IncidentContext} from './incidents.js';
+import {storedSourceId} from './request-context.js';
+import {toolOutcome} from './outcomes.js';
 
 export interface ToolContext {cancellationQuote?:string;cancellationTargets?:ReadonlyArray<{ref:string;version:number|string}>;administrator?:boolean;actionId?:string;personal?:boolean;requestText?:string;interactionId?:string;interactionVersion?:number;audience?:'group'|'private';goalVersion?:number;operationKey?:string;sourceIds?:number[];actorId:string;chatId:string;topicId:string;revision:number;sourceId?:number;updateId:string;requested:boolean;taskId?:string;background?:boolean;approvalId?:string;}
 export async function boundArtifactDelivery(sql:SQL,c:Pick<ToolContext,'actionId'|'actorId'|'topicId'|'revision'|'sourceId'|'audience'>){
@@ -37,6 +40,8 @@ const cleanCell=(v:unknown)=>{const s=String(v??'');return /^[=+\-@\t\r]/.test(s
 const mutableLocalReads=new Set(['tools.list','workflow.list','tasks.list','tasks.status','tasks.evidence','watch.list','memory.search','memory.original','memory.facts','private.summary','project.list','project.status','decision.result','activity.status','event.list','artifact.list','artifact.read','artifact.delivery','access.list','connector.list','connector.discover','capabilities.status','diagnostics.status','result.verify','poll.read','storage.status','library.delivery','library.related','library.browse','library.jobs','game.history','interaction.status','composition.status','document.inspect','document.pages','media.segment','media.coverage','browser.inspect']);
 const localReadOperations:Record<string,string[]>={'studio.manage':['read'],'archive.manage':['read'],'library.asset':['read'],'image.design':['read'],'game.result':['read'],'schedule.series':['list','read'],'stock.manage':['list'],'lists.manage':['list'],'learn.manage':['goals','read'],'calendar.read':['connections','availability','events'],'calendar.group':['read']};
 const mutableLocalRead=(name:string,args:any)=>mutableLocalReads.has(name)||Boolean(localReadOperations[name]?.includes(args?.operation));
+const incidentRequestId=(updateId:string)=>/^\d+(?=:|$)/.exec(updateId)?.[0]||updateId;
+const incidentOperationKey=(name:string,args:unknown)=>{try{return argumentHash(name,args);}catch{return createHash('sha256').update(name+'\n'+typeof args).digest('hex');}};
 const approvalLabels:Record<string,string>={connection:'Підключення',connection_id:'Підключення',tool:'Дія сервісу',arguments:'Параметри',url:'Сторінка',fields:'Поля',expires_at:'Дозвіл діє до',daily_limit:'Звернень на добу',share_to_group:'Дані можна показати групі',share_result:'Дані можна показати групі',share_fields:'Дозволені дані для групи',chat_id:'Канал',operation:'Зміна',title:'Назва',summary:'Опис',description:'Подробиці',scope:'Обсяг зміни',event_id:'Подія',recurrence_id:'Повтор події',start:'Початок',start_at:'Початок',end:'Кінець',end_at:'Кінець',timezone:'Часовий пояс',id:'Ідентифікатор',version:'Редакція',expected_fingerprint:'Відбиток перевіреної сторінки',caption:'Підпис',destination_id:'Канал призначення'};
 export function approvalSummary(name:string,args:any,description:string){
   const titles:Record<string,string>={'browser.commit':'Підтвердити дію на сторінці','access.grant_read':'Дозволити читання власного підключення','connector.call':'Виконати дію у твоєму підключенні','library.destination':'Дозволити погоджені публікації в каналі','library.publish':'Надіслати вибраний файл','calendar.write':'Змінити подію в особистому календарі'};
@@ -58,6 +63,7 @@ export function approvalSummary(name:string,args:any,description:string){
 export class AgentTools {
   private definitions=new Map<string,Definition>();
   private schemas=new Map<string,unknown>();
+  private resultRunIds=new WeakMap<object,number|string>();
   private vault:ConnectorVault;
   private compositions:CompositionWorker;
   readonly evolution:Evolution;
@@ -83,6 +89,34 @@ export class AgentTools {
     return parsed.data;
   }
   async execute(name:string,args:unknown,c:ToolContext):Promise<any>{
+    const receivedSourceIdType=typeof c.sourceId;
+    try{
+      if(c.sourceId!==undefined){const sourceId=storedSourceId(c.sourceId);if(sourceId===undefined)throw new ToolError('request_source_invalid');c={...c,sourceId};}
+      const result=await this.executeAttempt(name,args,c);
+      return await this.resultFailures(name,result,args,c);
+    }
+    catch(error){
+      const context:IncidentContext={operation:name,stage:'tool',attemptKey:`tool:${c.actorId}:${c.updateId}:${name}`,operationKey:incidentOperationKey(name,args),requestId:incidentRequestId(c.updateId),chatId:c.chatId,actorId:c.actorId,topicId:c.topicId,audience:c.audience||'group',sourceId:c.sourceId,revision:c.revision,actionId:c.actionId,taskId:c.taskId,toolRunId:(error as any)?.toolRunId,effectState:(error as any)?.uncertain?'uncertain':undefined,facts:{received_source_id_type:receivedSourceIdType,source_id_type:typeof c.sourceId}};
+      if(incidentForError(error,context))throw error;
+      let incident;try{incident=await this.db.tx(sql=>recordIncident(sql,context,error));}catch{incident=logIncident(context,error);}
+      const failure=error instanceof Error?error:new ToolError('tool_failed');
+      attachIncident(failure,incident);throw failure;
+    }
+  }
+  private async resultFailures(name:string,result:any,args:unknown,c:ToolContext){
+    // Listing failed historical jobs is a successful read. Arrays and arbitrary
+    // computed values carry data, not an aggregate outcome for this attempt.
+    if(!result||typeof result!=='object'||Array.isArray(result)||mutableLocalRead(name,args)||name==='code.run')return result;
+    if(name!=='connector.call'&&incidentForResult(result))return result;
+    const runId=result&&typeof result==='object'?this.resultRunIds.get(result):undefined;
+    const fact=toolOutcome(name,result,args);if(!['failed','uncertain'].includes(fact.status))return result;
+    const reason=name==='connector.call'?'external_tool_returned_failure':safeErrorCode(fact.detail||'tool_returned_failure');
+    const context:IncidentContext={operation:name,stage:'tool',attemptKey:`tool-result:${c.actorId}:${c.updateId}:${name}`,operationKey:incidentOperationKey(name,args),requestId:incidentRequestId(c.updateId),chatId:c.chatId,actorId:c.actorId,topicId:c.topicId,audience:c.audience||'group',sourceId:c.sourceId,revision:c.revision,actionId:c.actionId,taskId:c.taskId,toolRunId:runId,effectState:fact.status==='uncertain'?'uncertain':undefined,facts:{resource_id:fact.reference,resource_kind:result.kind}};
+    let incident;try{incident=await this.db.tx(sql=>recordIncident(sql,context,reason));}catch{incident=logIncident(context,reason);}
+    // Never attach request metadata to a provider-owned singleton object.
+    const fresh=withResultSources(JSON.parse(JSON.stringify(result)),resultSources(name,result));attachResultIncident(fresh,incident);return fresh;
+  }
+  private async executeAttempt(name:string,args:unknown,c:ToolContext):Promise<any>{
     let d:Definition;
     try{
       checkOperation();const found=this.definitions.get(name);if(!found)throw new ToolError('unknown_tool');d=found;
@@ -97,7 +131,7 @@ export class AgentTools {
     const readScope=freshRead?':scope:'+createHash('sha256').update(JSON.stringify([c.chatId,c.topicId,c.audience==='private'||Number(c.chatId)>0?'private':'group'])).digest('hex'):'';
     const dedup=`tool:${c.actorId}:${c.taskId || c.updateId}:${c.updateId}:${name}:${argumentHash(name,args)}${readScope}`;
     const prior=await one(this.db,'SELECT id,status,result,revision,provenance_version,effectful FROM tool_runs WHERE dedup_key=$1',[dedup]);
-    if(!freshExecution&&prior?.status==='succeeded'&&(prior.provenance_version>0||prior.revision===c.revision||d.effect)){const cached=await this.db.tx(async sql=>{const live=await state(sql,true);if(live.paused||live.memory_revision!==c.revision)throw new ToolError('task_cancelled');const current=await one(sql,"SELECT result FROM tool_runs WHERE id=$1 AND status='succeeded'",[prior.id]);if(!current)throw new ToolError('tool_result_invalidated');const edges=(await sql.query("SELECT source_message_id FROM provenance_edges WHERE derived_kind='tool_run' AND derived_key=$1",[String(prior.id)])).rows;return withResultSources(current.result,edges.map(x=>Number(x.source_message_id)));});return cached;}
+    if(!freshExecution&&prior?.status==='succeeded'&&(prior.provenance_version>0||prior.revision===c.revision||d.effect)){const cached=await this.db.tx(async sql=>{const live=await state(sql,true);if(live.paused||live.memory_revision!==c.revision)throw new ToolError('task_cancelled');const current=await one(sql,"SELECT result FROM tool_runs WHERE id=$1 AND status='succeeded'",[prior.id]);if(!current)throw new ToolError('tool_result_invalidated');const edges=(await sql.query("SELECT source_message_id FROM provenance_edges WHERE derived_kind='tool_run' AND derived_key=$1",[String(prior.id)])).rows;return withResultSources(current.result,edges.map(x=>Number(x.source_message_id)));});if(cached&&typeof cached==='object')this.resultRunIds.set(cached,prior.id);return cached;}
     if(prior&&d.effect)throw new ToolError(prior.status==='invalidated'?'previous_tool_result_erased':'previous_tool_result_uncertain');
     if(prior&&!freshExecution)await this.db.query("DELETE FROM tool_runs WHERE id=$1 AND (status IN ('failed','uncertain','invalidated') OR provenance_version=0 AND revision<>$2)",[prior.id,c.revision]);
     const standingRead=name==='connector.call'&&!c.approvalId&&await this.useReadGrant(args as any,c);
@@ -144,8 +178,8 @@ export class AgentTools {
       await sql.query("UPDATE tool_runs SET status='succeeded',result=$1,finished_at=now(),provenance_version=$3 WHERE id=$2",[json,inserted.id,provenanceVersion]);
       if(c.approvalId)await sql.query("UPDATE tool_approvals SET status='executed' WHERE id=$1",[c.approvalId]);
       });
-      return result;
-    }catch(e){if(effectId)await this.db.query("UPDATE effect_operations SET phase='uncertain',error_code='tool_result_unconfirmed' WHERE id=$1 AND phase='dispatch_started'",[effectId]);const code=e instanceof ToolError?e.code:/^[a-z_0-9]{1,80}$/.test((e as any)?.code || '')?(e as any).code:'tool_failed';await this.db.query("UPDATE tool_runs SET status=$1,error_code=$2,finished_at=now() WHERE id=$3",[d.effect?'uncertain':'failed',code,inserted.id]);if(c.approvalId)await this.db.query("UPDATE tool_approvals SET status='uncertain' WHERE id=$1",[c.approvalId]);throw new ToolError(code);}
+      if(result&&typeof result==='object')this.resultRunIds.set(result,inserted.id);return result;
+    }catch(e){if(effectId)await this.db.query("UPDATE effect_operations SET phase='uncertain',error_code='tool_result_unconfirmed' WHERE id=$1 AND phase='dispatch_started'",[effectId]);const code=safeErrorCode(e);await this.db.query("UPDATE tool_runs SET status=$1,error_code=$2,finished_at=now() WHERE id=$3",[d.effect?'uncertain':'failed',code,inserted.id]);if(c.approvalId)await this.db.query("UPDATE tool_approvals SET status='uncertain' WHERE id=$1",[c.approvalId]);if(incidentForError(e,{operation:name,stage:'tool',attemptKey:`tool:${c.actorId}:${c.updateId}:${name}`,operationKey:incidentOperationKey(name,args),requestId:incidentRequestId(c.updateId),chatId:c.chatId,actorId:c.actorId,topicId:c.topicId,audience:c.audience||'group',sourceId:c.sourceId,revision:c.revision,taskId:c.taskId}))throw e;throw Object.assign(new ToolError(code),{cause:e,uncertain:Boolean(d.effect),toolRunId:inserted.id});}
   }
   private async authorizeLocalRead(sql:SQL,name:string,args:any,c:ToolContext,result?:any){
     const live=await state(sql);if(live.paused||live.memory_revision!==c.revision)throw new ToolError('task_cancelled');

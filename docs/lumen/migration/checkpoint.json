@@ -297,47 +297,31 @@
     "method": "skills/config/write {name:lumen-orchestrator,enabled:false}; fresh skills/list forceReload"
   },
   "current_work": {
-    "id": "LM-RELEASE-1.13.5-2026-11-09",
-    "updated_at": "2026-11-09T01:33:12.864996+00:00",
-    "kind": "same_scope_postrelease_metadata_repair_and_release",
-    "status": "local addressed verification; exactCI/deploy pending in externalreceipt",
-    "version": "1.13.5",
-    "user_authorization": "Задеплой це все; continuous completion of the same natural cancellation repair after observed live refusal, no new permissions/features",
-    "source": {
-      "baseline_head": "f6581724da02b377f05bd778703233b37f65a3ee",
-      "baseline_deploy": "dep-dbohqanavr4c73bfp5n0"
-    },
-    "scope": "Validate/repair model cancellation proof before effects within existing2plan attempts; preserve server-native/owner/quote/target/version gates and all existing capabilities",
-    "live_fact": "Valid original owner request rejected on1.13.4; exactmodelquote purged/unknown. Pure deployedsource verifier accepts original; independentlocalmetadata-poison reproduced. Polling independently recovered; no invented nativepollcause. Private rows outsideGit.",
-    "rights": {
-      "allowed": [
-        "release metadata/current context",
-        "local addressed checks and independent delta review",
-        "normalGit commit and onepush",
-        "exactSHA mandatory GitHubverify",
-        "one automatic existingworker deploy afterCI",
-        "bounded startup/version/Telegram120/order readback"
-      ],
-      "excluded": [
-        "new model/voice/assets/secrets/resources",
-        "manual production job/data cleanup",
-        "secondworker/Authmanager",
-        "broad diagnostics",
-        "duplicate deploy"
-      ]
-    },
+    "id": "LM-RELEASE-1.13.6-2026-11-09",
+    "updated_at": "2026-11-09T02:27:44.365727+00:00",
+    "version": "1.13.6",
+    "status": "implementation_and_independent_verification; actual release in external receipt",
+    "user_authorization": "Зроби це все і задеплой нову версію у прод",
+    "baseline_head": "4cec1c490aa68cb44f1638393415c34cbf9bcd55",
+    "baseline_deploy": "dep-dboihnks728c73a8obdg",
+    "scope": [
+      "natural cancellation through pg BIGSERIAL boundaries and old pending jobs",
+      "explicit whole series vs nearest-only",
+      "aggregate legacy data contract audit",
+      "truthful specific error causes and unique private traceable codes across runtime/tool/background/media/delivery",
+      "additive schema22 preserving capabilities and privacy",
+      "independent QA, normal Git onepush, exactSHA verify, one automatic existing worker deploy and bounded readback"
+    ],
+    "release_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.6-2026-11-09/delivery.json",
+    "production_audit": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.6-2026-11-09/production-causal-readback.json",
     "target": {
-      "workspace_id": "tea-dbf5jsfb9u1s73bn4d1g",
       "service_id": "srv-dbfl0je7bikc73dvg0qg",
-      "baseline_deploy": "dep-dbohqanavr4c73bfp5n0",
-      "actual_auto_deploy_trigger": "checksPass",
-      "build_start": "verified matches AGENTS",
-      "resources": "existing singleworker0.5CPU/512MiB/disk unchanged"
+      "workspace_id": "tea-dbf5jsfb9u1s73bn4d1g",
+      "auto_deploy": "checksPass"
     },
-    "release_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.5-2026-11-09/delivery.json",
-    "prior_release_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.4-2026-11-09/delivery.json",
-    "rollback": "Before newr2 ingress26112af remains schema21/privacy compatible but restores cancellation defect. After r2 proposals/votes, old callbacks do not understand reminder_cancel: use compatibleforwardfix or explicit safe drain/quarantine, never blindreplay. See RELEASING.",
-    "next_action": "Independent frozen repair review, normalGit publication, exactmandatoryCI then oneautomaticdeploy of this newcommit; fresh120/order/start/health evidence; no manual production job mutation."
+    "preservation": "all25CAP,120WEBM/PNG/order,persona,model,voice,secrets,resources and existing work retained; no manual production job cleanup",
+    "next_action": "finish independent QA then exactSHA CI, automatic deploy and bounded native readback; update external receipt only",
+    "rollback": "Prefer privacy-compatibleforwardfix; oldschema21code lacks schema22source-less incidentpause/erase/TTL hooks. See docs/RELEASING.md. Sourcearchive excludesDB/secrets andneverresurrectseraseddata."
   },
   "active_record_pointer": "current_work",
   "work_history": [
@@ -631,6 +615,49 @@
       "receipt_authority": "Exact source/commit/CI/deploy/health/delivery facts live only in external receipt; locator is not PASS",
       "rollback": "Before newr2 ingress26112af remains schema21/privacy compatible but restores cancellation defect. After r2 proposals/votes, old callbacks do not understand reminder_cancel: use compatibleforwardfix or explicit safe drain/quarantine, never blindreplay. See RELEASING.",
       "next_action": "Finish independent exactcandidate delta review, publish via Git, await one mandatory exactSHA verify and one automatic Render deploy, observe120Telegram/order and groupstart. No manual reminder mutation."
+    },
+    {
+      "id": "LM-RELEASE-1.13.5-2026-11-09",
+      "updated_at": "2026-11-09T01:33:12.864996+00:00",
+      "kind": "same_scope_postrelease_metadata_repair_and_release",
+      "status": "local addressed verification; exactCI/deploy pending in externalreceipt",
+      "version": "1.13.5",
+      "user_authorization": "Задеплой це все; continuous completion of the same natural cancellation repair after observed live refusal, no new permissions/features",
+      "source": {
+        "baseline_head": "f6581724da02b377f05bd778703233b37f65a3ee",
+        "baseline_deploy": "dep-dbohqanavr4c73bfp5n0"
+      },
+      "scope": "Validate/repair model cancellation proof before effects within existing2plan attempts; preserve server-native/owner/quote/target/version gates and all existing capabilities",
+      "live_fact": "Valid original owner request rejected on1.13.4; exactmodelquote purged/unknown. Pure deployedsource verifier accepts original; independentlocalmetadata-poison reproduced. Polling independently recovered; no invented nativepollcause. Private rows outsideGit.",
+      "rights": {
+        "allowed": [
+          "release metadata/current context",
+          "local addressed checks and independent delta review",
+          "normalGit commit and onepush",
+          "exactSHA mandatory GitHubverify",
+          "one automatic existingworker deploy afterCI",
+          "bounded startup/version/Telegram120/order readback"
+        ],
+        "excluded": [
+          "new model/voice/assets/secrets/resources",
+          "manual production job/data cleanup",
+          "secondworker/Authmanager",
+          "broad diagnostics",
+          "duplicate deploy"
+        ]
+      },
+      "target": {
+        "workspace_id": "tea-dbf5jsfb9u1s73bn4d1g",
+        "service_id": "srv-dbfl0je7bikc73dvg0qg",
+        "baseline_deploy": "dep-dbohqanavr4c73bfp5n0",
+        "actual_auto_deploy_trigger": "checksPass",
+        "build_start": "verified matches AGENTS",
+        "resources": "existing singleworker0.5CPU/512MiB/disk unchanged"
+      },
+      "release_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.5-2026-11-09/delivery.json",
+      "prior_release_receipt": "/Users/admin/.codex/visualizations/2026/11/03/01a1a284-fe1c-7742-9e41-0d88648d3188/lumen-release-1.13.4-2026-11-09/delivery.json",
+      "rollback": "Before newr2 ingress26112af remains schema21/privacy compatible but restores cancellation defect. After r2 proposals/votes, old callbacks do not understand reminder_cancel: use compatibleforwardfix or explicit safe drain/quarantine, never blindreplay. See RELEASING.",
+      "next_action": "Independent frozen repair review, normalGit publication, exactmandatoryCI then oneautomaticdeploy of this newcommit; fresh120/order/start/health evidence; no manual production job mutation."
     }
   ]
 }

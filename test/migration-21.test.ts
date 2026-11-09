@@ -20,7 +20,7 @@ it('a version20 namespace receives the full21 migration, keeps old ownership/unc
       ALTER TABLE topic_attention DROP COLUMN silenced_source_id,DROP COLUMN silenced_revision,DROP COLUMN silenced_body_sha256;
       DELETE FROM schema_version WHERE version=21;`);
     await migrate(db);
-    assert.equal((await one(db,'SELECT max(version) AS n FROM schema_version'))!.n,21);
+    assert.equal((await one(db,'SELECT max(version) AS n FROM schema_version'))!.n,22);
     assert.ok((await one(db,"SELECT to_regclass('reminder_clarifications') AS name"))!.name);
     const old=(await one(db,'SELECT actor_id,shared,manager_ids FROM recurring_series WHERE id=$1',[series]))!;assert.equal(old.actor_id,'11');assert.equal(old.shared,false);assert.deepEqual(old.manager_ids,[]);
     assert.equal((await one(db,"SELECT status FROM outbox WHERE dedup_key='old-uncertain'"))!.status,'uncertain');

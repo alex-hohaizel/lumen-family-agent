@@ -23,7 +23,7 @@ describe('Постійна персоналізація й відкладені 
  });
  it('некоректний час не відкочує окреме коректне налаштування мови',async()=>{
    await turn('Люмен, пиши в чаті російською і зроби це о дев’ятій',[{kind:'personalize',scope:'chat',language:'ru',quote:'пиши в чаті російською'},{kind:'schedule',title:'Жарт',instruction:'Надіслати жарт',mode:'task',due_at:new Date(Date.now()-60000).toISOString(),timezone:'Europe/Kyiv',authorization:'explicit',quote:'зроби це о дев’ятій'}]);
-   assert.equal((await one(db,'SELECT language FROM chat_preferences'))!.language,'ru');assert.equal((await db.query('SELECT * FROM scheduled_actions')).rows.length,0);assert.match((await one(db,"SELECT body FROM outbox WHERE dedup_key LIKE 'answer:%'"))!.body.text,/час уже минув/);
+   assert.equal((await one(db,'SELECT language FROM chat_preferences'))!.language,'ru');assert.equal((await db.query('SELECT * FROM scheduled_actions')).rows.length,0);assert.match((await one(db,"SELECT body FROM outbox WHERE dedup_key LIKE 'answer:%'"))!.body.text,/час минув/);
  });
  it('особисте ім’я й стиль належать лише автору та переживають новий екземпляр рушія',async()=>{
    await turn('Люмен, называй меня Саня и отвечай мне подробно',[{kind:'personalize',scope:'self',preferred_name:'Саня',length:'detailed',quote:'называй меня Саня и отвечай мне подробно'}]);
@@ -70,7 +70,7 @@ describe('Постійна персоналізація й відкладені 
    h.brain.replies.push({reply:'',actions:[{kind:'personalize',scope:'self',preferred_name:'Олександр',quote:'називай мене Олександр'}],offer:{...offer,action:{kind:'tool',name:'missing.capability',arguments:'{}'}}});
    await h.lumen.receive(message('Люмен, називай мене Олександр і запропонуй нову активність'));await h.lumen.processNext();
    assert.equal((await one(db,"SELECT preferred_name FROM participant_preferences WHERE user_id='11'"))!.preferred_name,'Олександр');assert.equal((await db.query('SELECT id FROM interactions')).rows.length,1);
-   const visible=JSON.stringify((await db.query("SELECT body FROM outbox WHERE dedup_key LIKE 'answer-independent:%'")).rows);assert.match(visible,/Олександр/);assert.match(visible,/поки не підготував/);assert.equal((await db.query('SELECT id FROM games')).rows.length,0);
+   const visible=JSON.stringify((await db.query("SELECT body FROM outbox WHERE dedup_key LIKE 'answer-independent:%'")).rows);assert.match(visible,/Олександр/);assert.match(visible,/інструмент, якого немає в поточному каталозі/);assert.equal((await db.query('SELECT id FROM games')).rows.length,0);
  });
  it('дубль запропонованого інструмента не виконується до згоди й не губить ім’я',async()=>{
    const proposed:Plan['actions'][number]={kind:'tool',name:'artifact.create',arguments:JSON.stringify({name:'Proposal.txt',content:'Ще не погоджений файл'})};
@@ -121,7 +121,7 @@ describe('Постійна персоналізація й відкладені 
  });
  it('помилковий UTC offset не підміняє вказаний місцевий час',async()=>{
    await turn('Люмен, о дев’ятій нагадай воду',[{kind:'schedule',title:'Вода',instruction:'Випити воду',mode:'reminder',due_at:future(),local_time:'2099-01-01T09:00',timezone:'Europe/Kyiv',authorization:'explicit',quote:'о дев’ятій нагадай воду'}]);
-   assert.equal((await db.query('SELECT * FROM scheduled_actions')).rows.length,0);assert.match((await one(db,"SELECT body FROM outbox WHERE dedup_key LIKE 'answer:%'"))!.body.text,/Місцевий час не збігається/);
+   assert.equal((await db.query('SELECT * FROM scheduled_actions')).rows.length,0);assert.match((await one(db,"SELECT body FROM outbox WHERE dedup_key LIKE 'answer:%'"))!.body.text,/Місцевий час не відповідає/);
  });
  it('майбутній запис не дозволяє тексту моделі оголосити дію вже виконаною',async()=>{
    const text='Люмен, через годину нагадай воду';h.brain.replies.push({reply:'Я вже виконав дію!',actions:[{kind:'schedule',title:'Вода',instruction:'Випити воду',mode:'reminder',due_at:future(),timezone:'Europe/Kyiv',authorization:'explicit',quote:'через годину нагадай воду'}]});await h.lumen.receive(message(text));await h.lumen.processNext();
@@ -141,6 +141,21 @@ describe('Єдина мова всіх вихідних повідомлень',
    const localizer=new OutboundLocalizer(db,translator((t)=>({'Привіт':'Привет','Так':'Да','Ні':'Нет','Додати':'Добавить'}[t]||t)));
    const body=await localizer.transform('sendMessage',{chat_id:'-100',text:'Привіт',reply_markup:{inline_keyboard:[[{text:'Додати',callback_data:'lumen:42',url:'https://t.me/lumen_family_agent'}]]},entities:[{offset:0,length:6,type:'bold'}]});assert.equal(body.text,'Привет');assert.equal(body.reply_markup.inline_keyboard[0][0].text,'Добавить');assert.equal(body.reply_markup.inline_keyboard[0][0].callback_data,'lumen:42');assert.equal(body.reply_markup.inline_keyboard[0][0].url,'https://t.me/lumen_family_agent');assert.equal(body.entities,undefined);
    const poll=await localizer.transform('sendPoll',{question:'Привіт',options:[{text:'Так'},{text:'Ні'}]});assert.deepEqual(poll.options,[{text:'Да'},{text:'Нет'}]);assert.equal(poll.question,'Привет');
+ });
+ it('перекладає пояснення помилки, зберігаючи весь регістрозалежний LM-код і кеш без додаткового виклику моделі',async()=>{
+   const code='LM-01JBA123450123456789ABCDEF',text='Помилка. Код для розробників: '+code+'.';let calls=0;
+   const brain:Brain={plan:async()=>({reply:'',actions:[]}),text:async input=>{calls++;const data=JSON.parse(input[0].content);assert.ok(data.preserve[0].includes(code));return JSON.stringify({texts:['Error. Developer reference: '+code+'.']});}};
+   const localizer=new OutboundLocalizer(db,brain),request={chat_id:'-100',text,_lumen_output_language:'en'};
+   assert.equal((await localizer.transform('sendMessage',request)).text,'Error. Developer reference: '+code+'.');
+   assert.equal((await localizer.transform('editMessageText',{...request,message_id:1})).text,'Error. Developer reference: '+code+'.');assert.equal(calls,1);
+   assert.equal((await one(db,'SELECT language FROM chat_preferences'))!.language,'ru');
+ });
+ it('відхиляє зміну літери, регістру або вилучення LM-коду навіть зі збереженими числовими фрагментами',async()=>{
+   const code='LM-01JBA123450123456789ABCDEF',text='Помилка. Код для розробників: '+code+'.';
+   for(const translated of ['Error. Developer reference: '+code.slice(0,-1)+'G.','Error. Developer reference: '+code.toLowerCase()+'.','Error. Reference parts: 01 and 123450123456789.']){
+    let calls=0;const brain=translator(()=>{calls++;return translated;}),localizer=new OutboundLocalizer(db,brain);
+    await assert.rejects(localizer.transform('sendMessage',{chat_id:'-100',text}),/localization_unavailable/);assert.equal(calls,1);
+   }
  });
  it('перевіряє реальний транспорт send/edit та multipart-підписи, а не лише підказку моделі',async()=>{
    const sent:any[]=[];const tg=new Telegram('test',async(_url,options)=>{const body=options!.body instanceof FormData?Object.fromEntries(options!.body.entries()):JSON.parse(String(options!.body));sent.push(body);return new Response(JSON.stringify({ok:true,result:{message_id:1,text:body.text,caption:body.caption}}),{status:200,headers:{'Content-Type':'application/json'}});});const localizer=new OutboundLocalizer(db,translator(t=>t==='Нагадування'?'Напоминание':t));tg.setOutboundTransform((m,b)=>localizer.transform(m,b));await tg.text('-100','Нагадування',{actorId:'11'});await tg.call('editMessageText',{chat_id:'-100',message_id:1,text:'Нагадування'});await tg.upload('sendPhoto','-100',Buffer.from('image'),'Нагадування','image/png');assert.equal(sent.length,3);assert.equal(sent[0].text,'Напоминание');assert.equal(sent[1].text,'Напоминание');assert.equal(sent[2].caption,'Напоминание');assert.equal(sent[0]._lumen_actor_id,undefined);

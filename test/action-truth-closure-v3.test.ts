@@ -132,22 +132,22 @@ describe('V3 actual foreground and acknowledged-byte controls',()=>{
   const artifact=await tools.execute('artifact.create',{name:'План.txt',content:'Прогулянка о 10:00.'},operation());assert.equal(await delivery().next('media'),true);
   const actual=await tools.execute('artifact.delivery',{id:artifact.id},operation());assert.equal(actual.status,'delivered');assert.equal(actual.outputProof.readback_verified,true);assert.deepEqual(actual.outputProof.kinds,[]);assert.equal(actual.deliveryReceipt.output.sha256,actual.outputProof.sha256);
   const result=await foreground('Люмен, перевір доставку файла План.txt і зроби ролик із музикою.',[{kind:'tool',name:'artifact.delivery',arguments:JSON.stringify({id:artifact.id})},{kind:'tool',name:'studio.manage',arguments:JSON.stringify({operation:'invalid'})}],'Файл «План.txt» надіслано.\nРолик готовий.\nЗустрінемося о 10:00.');
-  assert.doesNotMatch(result.text,/Ролик готовий/u);assert.match(result.text,/Файл «План.txt» надіслано/u);assert.match(result.text,/Зустрінемося о 10:00/u);assert.match(result.text,/З роликом поки не вийшло/u);assert.equal((await db.query('SELECT id FROM media_jobs')).rows.length,0);assert.ok(h.tg.sent.some(row=>row.text===result.text));
+  assert.doesNotMatch(result.text,/Ролик готовий/u);assert.match(result.text,/Файл «План.txt» надіслано/u);assert.match(result.text,/Зустрінемося о 10:00/u);assert.match(result.text,/Параметри вибраного інструмента не відповідають його контракту/u);assert.match(result.text,/LM-[0-9A-Z]{26}/u);assert.equal((await db.query('SELECT id FROM media_jobs')).rows.length,0);assert.ok(h.tg.sent.some(row=>row.text===result.text));
  });
  it('repairs all three exact full-engine recovery returns, keeps truthful recovery and never queues a phantom retry',async()=>{
   for(const reply of ['З роликом не вийшло, бо твій файл пошкоджений. Надішли його заново.','Сталася помилка invalid_tool_arguments. Надішли відео ще раз.','Не вийшло. Автоматично спробую знову через хвилину.','З роликом поки не вийшло. Надішли фото, які беремо.']){
    const result=await foreground('Люмен, зроби ролик із музикою',[{kind:'tool',name:'studio.manage',arguments:JSON.stringify({operation:'invalid'})}],reply);
-   assert.doesNotMatch(result.text,/пошкоджен|invalid_tool_arguments|Автоматично спробую|Надішли його заново|Надішли відео ще раз/iu);assert.match(result.text,/З роликом поки не вийшло/u);
-   if(reply.includes('які беремо'))assert.equal(result.text,reply);assert.equal((await db.query('SELECT id FROM media_jobs')).rows.length,0);assert.equal((await db.query('SELECT id FROM agent_tasks')).rows.length,0);
+   assert.doesNotMatch(result.text,/пошкоджен|invalid_tool_arguments|Автоматично спробую|Надішли його заново|Надішли відео ще раз/iu);assert.match(result.text,/Параметри вибраного інструмента не відповідають його контракту/u);assert.match(result.text,/LM-[0-9A-Z]{26}/u);
+   if(reply.includes('які беремо')){assert.match(result.text,/Надішли фото, які беремо\./u);assert.equal((result.text.match(/Надішли фото, які беремо/gu)||[]).length,1);}assert.equal((await db.query('SELECT id FROM media_jobs')).rows.length,0);assert.equal((await db.query('SELECT id FROM agent_tasks')).rows.length,0);
    const run=await one(db,'SELECT status,error_code FROM tool_runs WHERE source_message_id=$1 AND tool=$2',[result.sourceId,'studio.manage']);assert.equal(run?.status,'failed');assert.equal(run?.error_code,'invalid_tool_arguments');assert.ok(h.tg.sent.some(row=>row.text===result.text));
   }
  });
  it('a quoted diagnostic request never grants foreground authority while a real current request permits its actual code',async()=>{
   const action={kind:'tool',name:'qa.unavailable',arguments:'{}'};
   for(const request of ['Люмен, переклади цей уривок:\n> Покажи код помилки','Люмен, переклади \'Покажи код помилки\'.']){
-   const result=await foreground(request,[action],'Сталася помилка unknown_tool.');assert.doesNotMatch(result.text,/unknown_tool/u);assert.match(result.text,/Не вдалося завершити цю дію/u);
+   const result=await foreground(request,[action],'Сталася помилка unknown_tool.');assert.doesNotMatch(result.text,/unknown_tool/u);assert.match(result.text,/Планувальник обрав інструмент, якого немає в поточному каталозі/u);assert.match(result.text,/LM-[0-9A-Z]{26}/u);
   }
-  const direct=await foreground('Люмен, покажи точний код помилки.',[action],'Сталася помилка unknown_tool.');assert.equal(direct.text,'Сталася помилка unknown_tool.');
+  const direct=await foreground('Люмен, покажи точний код помилки.',[action],'Сталася помилка unknown_tool.');assert.match(direct.text,/unknown_tool/u);assert.match(direct.text,/LM-[0-9A-Z]{26}/u);
  });
  it('accepts real decoded image, PDF, MP4 and audio delivery while separating PDF from semantic album',async()=>{
   assert.ok(ffmpeg);const image=await sharp({create:{width:16,height:16,channels:3,background:'#2233aa'}}).png().toBuffer();

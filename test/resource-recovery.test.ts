@@ -35,7 +35,8 @@ describe('Durable task handling after bounded resource refusal',()=>{
       assert.equal(await worker.next(),true);
       const saved=(await one(db,'SELECT * FROM agent_tasks WHERE id=$1',[job.id]))!;
       assert.equal(saved.status,'needs_input');assert.equal(saved.error_code,code);assert.equal(saved.step,0);
-      assert.match(saved.result,/Призупинив завдання.*брак вільних ресурсів/u);assert.match(saved.result,/автоматично не повторюватиму/u);
+      const causes:Record<string,RegExp>={worker_memory_busy:/недостатньо вільної пам’яті/u,worker_queue_busy:/Черга обробки заповнена/u,worker_queue_timeout:/не отримало місце в черзі/u,browser_busy:/сеанси браузера зараз зайняті/u};
+      assert.match(saved.result,causes[code]!);assert.match(saved.result,/LM-[0-9A-Z]{26}/u);assert.match(saved.result,/Автоматично не повторюватиму/u);
       assert.equal(refused,1);assert.equal(following,0);assert.equal(h.brain.calls.length,1);
       assert.equal(await worker.next(),false);assert.equal(h.brain.calls.length,1);assert.equal(refused,1);
       const runs=(await db.query('SELECT status,error_code FROM tool_runs WHERE task_id=$1',[job.id])).rows;

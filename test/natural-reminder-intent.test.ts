@@ -125,7 +125,7 @@ describe('natural cancellation traverses ingress, model plan, fresh source and a
   };
   const logs:string[]=[],original=console.error;console.error=(line:unknown)=>logs.push(String(line));
   try{await turn();}finally{console.error=original;}
-  assert.equal(await status(),'active');assert.match(await output(),/прив’язку/u);assert.doesNotMatch(await output(),/цитата або пересланий/u);
+  assert.equal(await status(),'active');assert.match(await output(),/немає перевіреного опису транспортного контексту/u);assert.match(await output(),/LM-[0-9A-HJKMNP-TV-Z]{26}/u);assert.doesNotMatch(await output(),/цитата або пересланий/u);
   const failures=logs.map(line=>JSON.parse(line)).filter(row=>row.event==='reminder_control_failed');assert.equal(failures.length,1);assert.equal(failures[0].code,'reminder_request_unbound');assert.match(failures[0].request_tag,/^[a-f0-9]{16}$/u);assert.deepEqual(Object.keys(failures[0]).sort(),['code','event','request_tag']);assert.doesNotMatch(JSON.stringify(failures),/Нічна|картоп|-100|sourceId|actorId/u);
  });
  it('a failed unrelated tool and empty replan preserve the independent semantic cancellation',async()=>{

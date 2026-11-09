@@ -5,6 +5,7 @@ import { outsideOperation } from './operations.js';
 import { safeRequest, publicURL, ToolError, type HTTPRequest } from './safe-http.js';
 import type { ToolContext } from './agent-tools.js';
 import type { Telegram } from './telegram.js';
+import {recordIncident} from './incidents.js';
 const json = (body: Buffer) => {
     try {
         return JSON.parse(body.toString());
@@ -121,10 +122,10 @@ export class OAuthDevices {
                 await queueText(sql, `Авторизацію «${r.name}» отримано. Перевіряю інструменти сервісу у фоновій черзі; результат надійде сюди. Пароль у бота не зберігається.`, latest.memory_revision, 'oauth-ready:' + r.id, false, { actorId: r.actor_id, audience: 'private' });
             });
         }
-        catch {
+        catch(error) {
             await this.db.query("UPDATE oauth_setups SET status='failed' WHERE id=$1", [r.id]);
             await this.vault.remove(r.actor_id, r.device_credential);
-            await queueText(this.db, `Не завершив авторизацію «${r.name}». Перевір підтримку device flow, client ID та права на сайті сервісу; пароль боту не надсилай.`, s.memory_revision, 'oauth-failed:' + r.id, false, { actorId: r.actor_id, audience: 'private' });
+            await this.db.tx(async sql=>{const live=await state(sql,true);if(live.paused||live.memory_revision!==r.revision)return;const incident=await recordIncident(sql,{operation:'oauth',stage:'token',attemptKey:'oauth-token:'+r.id,actorId:r.actor_id,topicId:r.topic_id,audience:'private',revision:r.revision,effectState:'uncertain',taskId:r.task_id,facts:{resource_id:r.id,resource_kind:'oauth'}},error);await queueText(sql,incident.message,live.memory_revision,'oauth-failed:'+r.id,false,{actorId:r.actor_id,audience:'private'});});
         }
         return true;
     }

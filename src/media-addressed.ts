@@ -10,6 +10,7 @@ import {z} from 'zod';
 import {withWorkerSlot} from './work-slots.js';
 import {operationSignal, checkOperation} from './operations.js';
 import {ToolError} from './safe-http.js';
+import {safeErrorCode} from './incidents.js';
 import {inputBinary} from './office-tools.js';
 import {reserveModelCall} from './model-budget.js';
 import {one, state, type Database} from './db.js';
@@ -135,7 +136,7 @@ function missingWindows(times: number[], end: number) {
 }
 
 function errorCode(error: unknown) {
-  return error instanceof ToolError ? error.code : 'media_inspection_failed';
+  return safeErrorCode(error);
 }
 
 function requestSpec(kind: 'pdf_request' | 'video_request', c: ToolContext, requested: Record<string, unknown>, decoderVersion: string, modelVersion: string, promptVersion: string): InspectionSpec {

@@ -38,7 +38,7 @@ it('two invalid model proofs preserve the root and expose a specific planner fai
  const bad:Plan={reply:'Скасував.',actions:[action],authorization:{quote:'Не з цього повідомлення',actions:['cancel_reminder']}};
  const requests=connect([bad,bad]),logs:string[]=[],saved=console.error;console.error=(x:unknown)=>logs.push(String(x));
  try{await h.lumen.receive(message('Люмен, я створив серію. Прошу припинити її.'));await h.lumen.processNext();}finally{console.error=saved;}
- assert.equal(requests.length,2);assert.equal(await status(),'active');assert.match(await output(),/Не зміг коректно підготувати скасування/u);
+ assert.equal(requests.length,2);assert.equal(await status(),'active');assert.match(await output(),/Планувальник двічі не надав коректного доказу/u);
  assert.doesNotMatch(await output(),/прив’язку|Скасував\./u);
  const failure=logs.map(x=>JSON.parse(x)).find(x=>x.event==='reminder_control_failed');assert.equal(failure?.code,'model_cancellation_proof_invalid');
  assert.deepEqual(Object.keys(failure).sort(),['code','event','request_tag']);

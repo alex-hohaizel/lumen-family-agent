@@ -10,6 +10,7 @@ import {ACTIVITY_TEMPLATES} from './session-engine.js';
 import {GameResults,gameResultSources} from './game-results.js';
 import type {ToolContext} from './agent-tools.js';
 import type {CallbackQuery,Telegram} from './telegram.js';
+import {recordIncident,logIncident,type IncidentContext} from './incidents.js';
 const labels={materials:'Матеріали',collections:'Альбоми',studio:'Історії',events:'Події',games:'Ігри',statistics:'Статистика'};
 const terminal=(status:string)=>status==='completed'||status==='cancelled';
 const statuses:Record<string,string>={available:'Доступно',active:'Триває',lobby:'Приєднання учасників',collect:'Збір відповідей',between_rounds:'Між раундами',completed:'Завершено',cancelled:'Скасовано',planning:'Планування',agreed:'Погоджено',saved:'Збережено'};
@@ -18,6 +19,10 @@ export const RelatedQuery=z.object({resource_kind:z.enum(['event','game','sessio
 type Related=z.infer<typeof RelatedQuery>;
 type ReadRef={kind:'asset'|'artifact'|'attachment'|'collection'|'studio'|'event'|'project'|'game'|'session';id:string};
 export class MediaBrowser {
+ private async callbackFailure(error:unknown,c:ToolContext){
+  const context:IncidentContext={operation:'library.browse',stage:'validation',attemptKey:'library-callback:'+c.updateId,actorId:c.actorId,topicId:c.topicId,audience:'private',revision:c.revision,sourceId:c.sourceId};
+  try{return await this.db.tx(sql=>recordIncident(sql,context,error));}catch{return logIncident(context,error);}
+ }
  constructor(private db:Database,private media:MediaWorkshop){}
  private async snapshot(sql:SQL,c:ToolContext){const live=await state(sql,true);if(live.paused||live.memory_revision!==c.revision)throw new ToolError('context_changed');}
  private async access(c:ToolContext,telegram?:Telegram){
@@ -108,7 +113,7 @@ export class MediaBrowser {
  private buttons(id:string,r:any){return {inline_keyboard:[...r.items.map((x:any,i:number)=>[{text:'Відкрити '+String(i+1)+': '+x.title.slice(0,40),callback_data:`lm:${id}:${i}`}]),...(r.next?[[{text:'Наступні результати',callback_data:`lm:${id}:next`}]]:[]),[{text:'Оновити',callback_data:`lm:${id}:refresh`}]]};}
  async callback(cb:CallbackQuery,telegram:Telegram){const match=/^lm:([a-f0-9-]{36}):(\d+|send_\d+|next|refresh)$/.exec(cb.data||'');if(!match)return false;const v=await one(this.db,'SELECT * FROM resource_views WHERE id=$1',[match[1]]);if(!v)return false;const s=await state(this.db),actor=String(cb.from.id),privateScope=v.audience==='private';if(privateScope&&v.actor_id!==actor||!privateScope&&v.topic_id!==String(cb.message?.message_thread_id||0)||String(cb.message?.chat.id)!==(privateScope?actor:String(s.chat_id)))return false;const recipient=privateScope?actor:String(s.chat_id);if(s.paused||s.memory_revision!==v.revision||new Date(v.expires_at).getTime()<=Date.now()){await telegram.text(actor,'Цей перегляд застарів. Попроси відкрити актуальний розділ.');return true;}
   const c:ToolContext={actorId:actor,chatId:String(s.chat_id),topicId:v.topic_id,revision:s.memory_revision,updateId:cb.id,requested:true,audience:v.audience};const q=BrowseQuery.parse(v.query);
-  try{await this.access(c,telegram);}catch{await telegram.text(actor,'Цей перегляд більше недоступний.');return true;}
+  try{await this.access(c,telegram);}catch(error){const incident=await this.callbackFailure(error,c);await telegram.text(actor,incident.message);return true;}
   if(match[2]==='refresh'||match[2]==='next'){if(v.query.related_query){if(match[2]==='next'&&!v.query.next_asset_id)return true;return Boolean(await this.related(RelatedQuery.parse({...v.query.related_query,after_asset_id:match[2]==='next'?v.query.next_asset_id:undefined}),c));}if(match[2]==='next'&&!v.query.next_cursor)return true;return Boolean(await this.open(BrowseQuery.parse({...q,cursor:match[2]==='next'?v.query.next_cursor:undefined}),c));}
   const send=match[2]!.startsWith('send_'),index=Number(send?match[2]!.slice(5):match[2]);const ref=v.refs[index];if(!ref)return true;let data:any;
   try{if(q.section==='materials'){const linkSources=ref.link?await this.verifyLink(ref,c):[];data=await this.material(ref,{...c,sourceIds:[...(c.sourceIds||[]),...linkSources]},send,cb.id);if(send)return true;data.source_ids=[...new Set([...(data.source_ids||[]),...linkSources])];}
@@ -116,7 +121,7 @@ export class MediaBrowser {
   else if(q.section==='games')data=await this.game(ref,c);
   else if(q.section==='events')data=await this.event(ref,c);
   else throw new ToolError('view_stale');
-  }catch{await telegram.text(actor,'Матеріал змінився або став недоступним. Онови перелік.');return true;}
+  }catch(error){const incident=await this.callbackFailure(error,c);await telegram.text(actor,incident.message);return true;}
   let linkedButtons:any;const kind=q.section==='events'?'event':q.section==='collections'?'collection':q.section==='games'?ref.type==='game'?'game':'session':undefined;
   if(kind){const relatedQuery=RelatedQuery.parse({resource_kind:kind,resource_id:kind==='game'?ref.id.slice(5):kind==='session'?ref.id.slice(8):ref.id}),linked=await this.relatedData(relatedQuery,c);data.linked_materials=linked.items;data.source_ids=[...new Set([...(data.source_ids||[]),...linked.source_ids])];if(linked.items.length)linkedButtons=this.buttons(await this.relatedView(relatedQuery,linked,c),linked);}
   const text=this.detail(data);if(q.section==='materials'){await telegram.call('sendMessage',{chat_id:recipient,text,reply_markup:{inline_keyboard:[[{text:'Отримати файл особисто',callback_data:`lm:${v.id}:send_${index}`}]]},...(Number(recipient)<0?{ephemeral_message_parameters:{receiver_user_id:Number(actor),callback_query_id:cb.id}}:{})});return true;}try{await telegram.call('sendRichMessage',{chat_id:recipient,_lumen_actor_id:actor,...(Number(recipient)<0?{ephemeral_message_parameters:{receiver_user_id:Number(actor),callback_query_id:cb.id}}:{}),rich_message:{html:`<h3>${escape(data.title||'Матеріал')}</h3><details open><summary>Подробиці</summary><p>${escape(text).replace(/\n/g,'<br>')}</p></details>`},...(linkedButtons?{reply_markup:linkedButtons}:{}),...(v.topic_id!=='0'&&!privateScope?{message_thread_id:Number(v.topic_id)}:{})});}catch(e:any){if(e?.uncertain||!['telegram_400','telegram_404'].includes(e?.code))throw e;await telegram.text(actor,text,{replyMarkup:linkedButtons});}return true;

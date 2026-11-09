@@ -36,10 +36,11 @@ export class Postgres implements Database {
 }
 export async function applySchema(sql: SQL) {
   const exists=await one(sql,"SELECT to_regclass('schema_version') AS existing");if(exists?.existing){
-    const row=await one(sql,'SELECT count(*) AS n FROM schema_version WHERE version BETWEEN 1 AND 21');
-    if(Number(row?.n)===21){
+    const row=await one(sql,'SELECT count(*) AS n FROM schema_version WHERE version BETWEEN 1 AND 22');
+    if(Number(row?.n)===22){
       const shape=await one(sql,"SELECT count(*)=26 AS complete FROM information_schema.columns WHERE table_schema=current_schema() AND (table_name,column_name) IN (('agent_tasks','audience'),('media_jobs','verification'),('media_jobs','task_id'),('media_jobs','goal_version'),('media_jobs','action_id'),('simple_list_events','revision'),('studio_soundtracks','asset_id'),('messages','request_context'),('recurring_series','shared'),('recurring_series','manager_ids'),('scheduled_actions','shared'),('scheduled_actions','manager_ids'),('scheduled_actions','audience'),('reminders','shared'),('reminders','manager_ids'),('reminders','audience'),('topic_attention','silenced_source_id'),('topic_attention','silenced_revision'),('topic_attention','silenced_body_sha256'),('reminder_clarifications','actor_id'),('reminder_clarifications','topic_id'),('reminder_clarifications','revision'),('reminder_clarifications','source_message_id'),('reminder_clarifications','candidates'),('reminder_clarifications','purpose'),('reminder_clarifications','expires_at'))");
-      if(shape?.complete===true)return;
+      const incidents=await one(sql,"SELECT count(*)=21 AS complete FROM information_schema.columns WHERE table_schema=current_schema() AND table_name='diagnostic_incidents' AND column_name IN ('code','dedup_key','operation','stage','reason_code','reason_detail','actor_id','topic_id','audience','source_message_id','revision','action_id','task_id','tool_run_id','outbox_id','effect_state','facts','app_version','created_at','last_seen_at','occurrences')");
+      if(shape?.complete===true&&incidents?.complete===true)return;
     }
   }
   const schema = await readFile(new URL('../../src/schema.sql', import.meta.url), 'utf8');
@@ -79,6 +80,7 @@ export async function pauseMemory(sql:SQL){
   await sql.query("UPDATE action_work SET status='cancelled',payload='{}',plan=NULL WHERE status IN ('pending','running','repair')");
   await sql.query("DELETE FROM conversation_goals");
   await sql.query("DELETE FROM reminder_clarifications");
+  await sql.query('DELETE FROM diagnostic_incidents');
   await sql.query("DELETE FROM style_episodes");
   await sql.query("UPDATE app_state SET paused=true,consent='[]',memory_revision=memory_revision+1 WHERE id=1");
   await sql.query("UPDATE reminders SET status='pending' WHERE status='queued'");
@@ -95,6 +97,7 @@ export async function pauseMemory(sql:SQL){
 export async function eraseAll(sql: SQL) {
   await sql.query('UPDATE app_state SET ingress_after=clock_timestamp() WHERE id=1');
   await forgetCalendarProposal(sql);
+  await sql.query('DELETE FROM diagnostic_incidents');
   // Remove all derived data, generated drafts, pending deliveries and attachment IDs too.
   for (const table of ['media_inspections','image_designs','media_derivations','statistics_preferences','canonical_outcomes','recurring_occurrences','recurring_series','calendar_shares','calendar_proposals','calendar_operations','calendar_occurrences','calendar_mirrors','calendar_connections','calendar_setups','learning_progress','learning_attempts','learning_exercises','learning_goals','resource_views','asset_destination_grants','media_publications','media_job_inputs','media_jobs','resource_links','archive_items','archive_collections','studio_scenes','studio_projects','media_assets','media_destinations','stock_needs','stock_receipts','stock_reservations','stock_movements','stock_aliases','stock_items','simple_list_events','domain_commands','composition_runs','action_work','effect_operations','consent_grants','commitments','style_episodes','behavior_contributions','conversation_goals','alias_observations','chat_preferences','scheduled_actions','interaction_responses','interactions','message_panels','result_receipts','signals','proactivity_preferences','skill_versions','research_cache','activity_moves','activity_players','activity_sessions','decision_ballots','decisions','project_tasks','projects','knowledge_facts','private_requests','task_events','task_stages','capability_health','private_results','provenance_edges','coordination_offers','oauth_setups',...AGENT_TABLES,'topic_attention','image_jobs','poll_votes','polls','avatars','attachments','dialogues','choice_votes','participant_preferences','memories','rules','games','reminders','skills','episodes','stickers','choices','pending_intents','messages','outbox','inbox','topics','members']) await sql.query(`DELETE FROM ${table}`);
   await sql.query(`UPDATE app_state SET memory_revision=memory_revision+1, character='', mode=CASE WHEN mention_only THEN 'quiet' ELSE 'social' END, since_bot=0,last_social_at=NULL,participants=CASE WHEN open_group THEN '[]'::jsonb ELSE participants END WHERE id=1`);
@@ -102,6 +105,7 @@ export async function eraseAll(sql: SQL) {
 }
 const SOURCE_TABLES=['media_inspections','image_designs','recurring_series','composition_runs','conversation_goals','style_episodes','behavior_contributions','effect_operations','commitments','scheduled_actions','tool_grants','tool_runs','tool_approvals','agent_tasks','web_monitors','agent_workflows','agent_artifacts','group_events','agent_feedback','memory_terms','private_requests','knowledge_facts','projects','decisions','activity_sessions','signals','result_receipts','coordination_offers','interactions','message_panels'];
 async function invalidateSource(sql:SQL,sourceId:number){
+  await sql.query('DELETE FROM diagnostic_incidents WHERE source_message_id=$1',[sourceId]);
   await forgetGameResultSource(sql,sourceId);
   await forgetCalendarProposal(sql,sourceId);
   await forgetStockSource(sql,sourceId);

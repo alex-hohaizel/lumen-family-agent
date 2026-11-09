@@ -91,7 +91,7 @@ describe('natural stop of an older public task through the real owner approval r
   const view=await interactionView(db,proposal.id);assert.notEqual(view.responses.find((r:any)=>r.user_id==='11')?.submitted,true);assert.deepEqual(view.pending,['11']);
   const result=(await one(db,"SELECT body->>'text' AS text FROM outbox WHERE dedup_key LIKE $1",[response==='так'?'interaction-input:'+update.update_id+':%':'error:'+update.update_id+':%']))!;
   assert.ok(result,JSON.stringify({outbox:(await db.query('SELECT dedup_key,body FROM outbox ORDER BY id DESC LIMIT 3')).rows,inbox:(await db.query('SELECT update_id,status,error_code FROM inbox')).rows,calls:h.brain.calls.length}));
-  assert.match(result.text,/не зарахував.*дію з картки/u);assert.doesNotMatch(result.text,/Скасував|цитата/u);
+  assert.match(result.text,/немає явного погодження саме дії з поточної картки/u);assert.match(result.text,/LM-[0-9A-Z]{26}/u);assert.doesNotMatch(result.text,/Скасував|цитата/u);
  });
  it('a quoted instruction cannot create an owner-approval proposal even when the public target is visible',async()=>{
   const text=`@lumen_test_bot\n${quote}`,u=message(text,22);

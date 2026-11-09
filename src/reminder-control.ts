@@ -1,3 +1,4 @@
+import {recordIncident,attachResultIncident} from './incidents.js';
 import {one,state,type SQL,type Row} from './db.js';
 import {digest} from './evolution-core.js';
 import {bareIntent,provesCommand} from './personalization.js';
@@ -24,7 +25,7 @@ export interface ReminderRoot extends Row {
 export interface ReminderRequest {
  text:string;id?:string|number;query?:string;scope?:'auto'|'series'|'occurrence';all?:boolean;
 }
-export interface ReminderResult {handled:boolean;status:string;message:string;roots?:string[];inFlight?:number;}
+export interface ReminderResult {handled:boolean;status:string;message:string;roots?:string[];inFlight?:number;failureReason?:string;}
 const uuid=/^[a-f\d]{8}-[a-f\d]{4}-[a-f\d]{4}-[a-f\d]{4}-[a-f\d]{12}$/iu;
 const liveStatuses=['pending','awaiting_confirmation','queued','needs_input','dispatched','paused'];
 const seriesStatuses=['active','draft','needs_input','paused'];
@@ -52,6 +53,7 @@ async function context(sql:SQL,c:ReminderContext,allowPaused=true){
 }
 
 type ReminderSource=Pick<ValidatedOriginalRequest,'body'|'entities'|'forwarded'|'viaBot'|'replyRef'>&{modality:'native_text'|'voice_transcription'};
+function unboundSource(failureDetail:string):never{throw Object.assign(new ToolError('reminder_request_unbound'),{failureDetail});}
 
 /** Internal server call after a successful transcription. Not a model tool.
  * The receipt pins the actual received voice and stored transcript without
@@ -69,15 +71,29 @@ export async function recordReminderTranscription(sql:SQL,m:Message,sourceId:num
 }
 
 export async function reminderRequestSource(sql:SQL,c:ReminderContext):Promise<ReminderSource|undefined>{
- if(!c.sourceId)return;
+ if(c.sourceId===undefined)return;
+ if(!Number.isSafeInteger(c.sourceId)||c.sourceId<=0)unboundSource('source_id_invalid');
  const s=await state(sql),source=await loadOriginalRequestContext(sql,{sourceId:c.sourceId,actorId:c.actorId,topicId:c.topicId,namespaceChatId:String(s.chat_id),audience:c.audience||'group',revision:c.revision});
- if(source){if(source.forwarded||source.viaBot||c.requestText!==undefined&&c.requestText!==source.body)throw new ToolError('reminder_request_unbound');return {...source,modality:'native_text'};}
+ if(source){
+  if(source.forwarded)unboundSource('source_forwarded');if(source.viaBot)unboundSource('source_via_bot');
+  if(c.requestText!==undefined&&c.requestText!==source.body)unboundSource('source_body_mismatch');return {...source,modality:'native_text'};
+ }
  const row=await one(sql,'SELECT * FROM messages WHERE id=$1',[c.sourceId]);
- if(!row||row.role!=='user'||row.user_id!==c.actorId||row.topic_id!==c.topicId||typeof row.body!=='string'||!row.body.startsWith('[голосове] ')||s.paused||s.memory_revision!==c.revision)throw new ToolError('reminder_request_unbound');
+ if(!row)unboundSource('source_missing');
+ if(row.role!=='user'||row.user_id!==c.actorId)unboundSource('source_actor_mismatch');
+ if(row.topic_id!==c.topicId)unboundSource('source_topic_mismatch');
+ if(s.paused||s.memory_revision!==c.revision)unboundSource('source_revision_mismatch');
+ if(typeof row.body!=='string')unboundSource('source_body_mismatch');
+ if(!row.body.startsWith('[голосове] ')){
+  if(row.edited_at)unboundSource('source_edited');
+  if(row.request_context?.body_sha256&&row.request_context.body_sha256!==digest(row.body))unboundSource('source_body_mismatch');
+  unboundSource('source_context_missing');
+ }
  const body=row.body.slice('[голосове] '.length),attachments=(await sql.query("SELECT file_id,metadata FROM attachments WHERE source_message_id=$1 AND topic_id=$2 AND kind='audio' AND revision=$3 AND metadata->>'original_kind'='voice'",[c.sourceId,c.topicId,c.revision])).rows;
  const proof=attachments.map(a=>({a,p:a.metadata?.reminder_transcription})).find(({a,p})=>p?.modality==='voice_transcription'&&p.authored===true&&p.source_id===c.sourceId&&p.namespace_chat_id===String(s.chat_id)&&p.actor_id===c.actorId&&p.topic_id===c.topicId&&p.telegram_message_id===Number(row.telegram_id)&&p.file_id===a.file_id&&p.revision===c.revision&&p.transcript_sha256===digest(body)&&p.source_edited_at===(row.edited_at?new Date(row.edited_at).toISOString():null))?.p;
- if(!proof||c.requestText!==undefined&&c.requestText!==body)throw new ToolError('reminder_request_unbound');
- const reply=proof.reply_ref;if(reply&&(!Number.isSafeInteger(reply.message_id)||reply.message_id<=0||reply.chat_id!==String(s.chat_id)||typeof reply.from_is_bot!=='boolean'))throw new ToolError('reminder_request_unbound');
+ if(!proof)unboundSource('source_context_missing');
+ if(c.requestText!==undefined&&c.requestText!==body)unboundSource('source_body_mismatch');
+ const reply=proof.reply_ref;if(reply&&(!Number.isSafeInteger(reply.message_id)||reply.message_id<=0||reply.chat_id!==String(s.chat_id)||typeof reply.from_is_bot!=='boolean'))unboundSource('source_context_missing');
  return {body,entities:[],forwarded:false,viaBot:false,modality:'voice_transcription',...(reply?{replyRef:reply}:{})};
 }
 
@@ -278,7 +294,7 @@ async function cancelRoot(sql:SQL,r:ReminderRoot,scope:'series'|'occurrence'):Pr
 /** Internal executor used only after the immutable consent proposal has been
  * validated by finishReminderStopApproval. Lock and validate the whole binding
  * set before changing any root; the model never supplies this authority. */
-export async function cancelApprovedReminderRoots(sql:SQL,bindings:ReadonlyArray<{ref:string;version:number|string;ownerId:string;sourceId:number;topicId:string;revision:number;ruleHash:string}>,c:ReminderContext,scope:'series'|'occurrence'):Promise<ReminderResult>{
+async function cancelApprovedReminderAttempt(sql:SQL,bindings:ReadonlyArray<{ref:string;version:number|string;ownerId:string;sourceId:number;topicId:string;revision:number;ruleHash:string}>,c:ReminderContext,scope:'series'|'occurrence'):Promise<ReminderResult>{
  await context(sql,c);
  if(!bindings.length||new Set(bindings.map(item=>item.ref)).size!==bindings.length)return {handled:true,status:'stale',message:'Не вдалося звірити серію для цього погодження. Потрібен новий запит.'};
  const roots:ReminderRoot[]=[];
@@ -295,8 +311,18 @@ export async function cancelApprovedReminderRoots(sql:SQL,bindings:ReadonlyArray
 }
 
 const cancellation=/^(?:(?:скасуй|скасувати|видали|видалити|прибери|припини|зупини|удали|удалить|отмени|отменить|убери|прекрати|cancel|delete|remove|\/cancel)(?:[\s,!:.]|$)|не\s+(?:нагадуй|напоминай)(?:[\s,!:.]|$))/iu;
-const allScope=/(?:усю|всю|цілу|целую|whole)\s+(?:(?:приватн[\p{L}]*|личн[\p{L}]*|private|personal)\s+)?(?:сері|сери|series)|всі\s+повтор|усі\s+повтор|(?:всі|усі|все|all)\s+(?:(?:мої|мои|my|own|(?:не\s+)?приватн[\p{L}]*|(?:не\s+)?личн[\p{L}]*|(?:not\s+|non-)?private|personal)\s+)*(?:нагад|напомин|reminder)|ці\s+нагад|эти\s+напомин|для\s+обох|для\s+обоих|обом|all\s+(?:reminders|repeats)/iu;
+const allScope=/(?:усю|всю|цілу|целую|whole)\s+(?:(?:приватн[\p{L}]*|личн[\p{L}]*|private|personal)\s+)?(?:(?:повторювану|регулярну|recurring)\s+)?(?:сері|сери|series)|всі\s+повтор|усі\s+повтор|(?:всі|усі|все|all)\s+(?:(?:мої|мои|my|own|(?:не\s+)?приватн[\p{L}]*|(?:не\s+)?личн[\p{L}]*|(?:not\s+|non-)?private|personal)\s+)*(?:нагад|напомин|reminder)|ці\s+нагад|эти\s+напомин|для\s+обох|для\s+обоих|обом|all\s+(?:reminders|repeats)/iu;
 const occurrenceScope=/найближч|ближайш|лише\s+(?:цей|це|один|одне)|тільки\s+(?:цей|це|один|одне)|только\s+(?:это|этот|один|одно)|цей\s+повтор|next\s+(?:one|occurrence)|only\s+(?:one|this)/iu;
+function occurrenceRequested(text:string){
+ // "the whole series, not only the next run" does not request a single run.
+ return [...text.matchAll(new RegExp(occurrenceScope.source,'giu'))].some(match=>!/(?<![\p{L}\p{N}])(?:не|not)\s+(?:(?:лише|тільки|только|just|only)\s+)?$/iu.test(text.slice(0,match.index)));
+}
+function wholeSeriesRequested(text:string){
+ // A mention of the whole series can explicitly forbid changing it. Only an
+ // affirmative cancellation clause overrides a contradictory planner scope.
+ const pattern=/(?:скасуй|скасувати|видали|видалити|прибери|припини|зупини|отмени|удали|cancel|stop|remove|end)\s+(?:(?:будь\s+ласка|please)[,\s]+)?(?:(?:усю|всю|цілу|whole|entire)\s+(?:(?:повторювану|регулярну|recurring)\s+)?(?:сері[\p{L}]*|сери[\p{L}]*|series)|(?:всі|усі|all)\s+(?:(?:майбутні|future)\s+)?(?:повтор[\p{L}]*|repeats))/giu;
+ return [...text.matchAll(pattern)].some(match=>!/(?<![\p{L}\p{N}])(?:не|not|don't|do\s+not)\s*$/iu.test(text.slice(0,match.index)));
+}
 function requestStart(text:string){
  let value=text.trim();
  for(let i=0;i<2;i++)value=value.replace(/^(?:будь ласка|пожалуйста|please|прошу|давай)[,!:\s]+/iu,'').replace(/^(?:люмене?|lumen|@\w+)[,!:\s]+/iu,'');
@@ -329,16 +355,17 @@ async function clarification(sql:SQL,c:ReminderContext,roots:ReminderRoot[],purp
 
 /** One authority/resolver/cancellation route for text, command and model actions.
  * Call from the caller's SQL transaction, after recording the real user source. */
-export async function cancelReminderRequest(sql:SQL,request:ReminderRequest,c:ReminderContext):Promise<ReminderResult>{
+async function cancelReminderAttempt(sql:SQL,request:ReminderRequest,c:ReminderContext):Promise<ReminderResult>{
  await context(sql,c);
- const source=await reminderRequestSource(sql,c),actual=source?.body||c.requestText||'';if(actual&&actual!==request.text)throw new ToolError('reminder_request_unbound');
+ const source=await reminderRequestSource(sql,c),actual=source?.body||c.requestText||'';if(actual&&actual!==request.text)unboundSource('source_body_mismatch');
  const plain=requestAuthorityView(request.text,source?.entities||[])?.commandText||'';
  const audienceCue=privateReminderCue(plain);
  const negated=/(?<![\p{L}\p{N}])(?:не|don't|do\s+not|not)\s+(?:видал|скас|приб|зупин|удал|отмен|убер|cancel|delete|remove)/iu.test(plain);
  const semanticCancel=Boolean(source&&c.cancellationQuote&&isAuthoredCancellationQuote(source.body,source.entities,c.cancellationQuote));
- if(c.cancellationQuote&&!semanticCancel)throw new ToolError('reminder_request_unbound');
+ if(c.cancellationQuote&&!semanticCancel)unboundSource('cancellation_quote_invalid');
  const freshCancel=semanticCancel?hasUnconditionalCancellationQuote(source!.body,source!.entities,c.cancellationQuote):cancellationIntent(plain,request.text)&&!negated&&!/(?:якщо|если|\bif\b|переклади|процитуй|переведи|процитируй|translate|quote)/iu.test(plain);
- let scope:'series'|'occurrence'=occurrenceScope.test(plain)||request.scope==='occurrence'?'occurrence':'series',roots:ReminderRoot[]=[];
+ const explicitWholeSeries=wholeSeriesRequested(plain);
+ let scope:'series'|'occurrence'=occurrenceRequested(plain)?'occurrence':explicitWholeSeries?'series':request.scope==='occurrence'?'occurrence':'series',roots:ReminderRoot[]=[];
  const pending=await one(sql,'SELECT * FROM reminder_clarifications WHERE actor_id=$1 AND topic_id=$2',[c.actorId,c.topicId]);
  if(!freshCancel){
   if(!pending)return {handled:false,status:'unrelated',message:''};
@@ -375,7 +402,7 @@ export async function cancelReminderRequest(sql:SQL,request:ReminderRequest,c:Re
   if(request.query&&reminderSearchTokens(request.query).some(w=>!reminderSearchTokens(request.text).some(a=>a===w||a.length>=4&&w.length>=4&&(a.startsWith(w)||w.startsWith(a)))))throw new ToolError('reminder_target_unbound');
   const supplied=request.id===undefined?'':String(request.id).replace(/^(?:series|schedule|legacy|occurrence):/iu,'');
   const literalId=Boolean(supplied&&request.text.toLowerCase().includes(supplied.toLowerCase())),privateView=audienceCue.private;
-  let found=await resolveReminders(sql,c,{id:request.id,query,scope:allScope.test(plain)||semanticCancel&&request.scope==='series'&&!occurrenceScope.test(plain)?'series':scope==='occurrence'?'occurrence':'auto',privateOwnerControl:Boolean(source)&&(literalId||privateView),privateOnly:privateView});
+  let found=await resolveReminders(sql,c,{id:request.id,query,scope:allScope.test(plain)||semanticCancel&&request.scope==='series'&&!occurrenceRequested(plain)?'series':scope==='occurrence'?'occurrence':'auto',privateOwnerControl:Boolean(source)&&(literalId||privateView),privateOnly:privateView});
   if(source&&c.audience!=='private'&&!privateView){
    const visible=await (await import('./reminder-consent.js')).visibleConsentReminderCandidates(sql,c,{id:request.id,...(request.id===undefined?{query}:{})});
    found=searchResult([...found,...visible.filter(item=>!found.some(own=>own.ref===item.ref))],Boolean(found.truncated));
@@ -387,15 +414,15 @@ export async function cancelReminderRequest(sql:SQL,request:ReminderRequest,c:Re
   if(roots.some(r=>r.kind==='occurrence'))scope='occurrence';
   const suppliedId=request.id===undefined?'':String(request.id).replace(/^(?:series|schedule|legacy|occurrence):/iu,'').toLowerCase();
   if(semanticCancel&&roots.some(item=>c.cancellationTargets?.some(target=>target.ref===item.ref&&target.version!==item.version)))return {handled:true,status:'stale',message:'Серія змінилася під час перевірки. Потрібно звірити її заново.'};
-  if(semanticCancel&&!literalId&&c.cancellationTargets!==undefined&&roots.some(item=>!c.cancellationTargets!.some(target=>target.ref===item.ref&&target.version===item.version)))return {handled:true,status:'needs_input',message:'Потрібно звірити актуальну серію перед зупинкою. Поки нічого не змінював.'};
+  if(semanticCancel&&!literalId&&c.cancellationTargets!==undefined&&roots.some(item=>!c.cancellationTargets!.some(target=>target.ref===item.ref&&target.version===item.version)))return {handled:true,status:'needs_input',failureReason:'reminder_target_unbound',message:'Потрібно звірити актуальну серію перед зупинкою. Поки нічого не змінював.'};
   const observedTarget=semanticCancel&&roots.length===1&&c.cancellationTargets?.some(target=>target.ref===roots[0]!.ref&&target.version===roots[0]!.version);
-  if(suppliedId&&!request.text.toLowerCase().includes(suppliedId)&&!observedTarget)return {handled:true,status:'needs_input',message:'Уточни назву або номер нагадування, яке треба скасувати.'};
+  if(suppliedId&&!request.text.toLowerCase().includes(suppliedId)&&!observedTarget)return {handled:true,status:'needs_input',failureReason:'reminder_target_unbound',message:'Уточни назву або номер нагадування, яке треба скасувати.'};
   if(/для\s+обох|для\s+обоих|for\s+both/iu.test(plain)&&roots.length>1)roots=roots.filter(r=>r.shared||r.approval_visibility);
   if(!roots.length)return {handled:true,status:'not_found',message:'Активного нагадування, яким ти можеш керувати в цій темі, не знайшов. Уточни назву або час.'};
   const all=allScope.test(plain);
   if(roots.length>1&&all&&!reminderSearchTokens(query).length&&!/всі\s+нагад|усі\s+нагад|все\s+напомин|all\s+reminders/iu.test(plain))return clarification(sql,c,roots,'which_root');
   if(roots.length>1&&!all)return clarification(sql,c,roots,'which_root',semanticCancel&&request.scope==='series'?'series':undefined);
-  if(roots.length===1&&roots[0]!.kind==='series'&&request.id===undefined&&!all&&!occurrenceScope.test(plain)&&!(semanticCancel&&request.scope==='series'))return clarification(sql,c,roots,'series_scope');
+  if(roots.length===1&&roots[0]!.kind==='series'&&request.id===undefined&&!all&&!occurrenceRequested(plain)&&!(semanticCancel&&request.scope==='series'))return clarification(sql,c,roots,'series_scope');
  }
  const refs=roots.map(r=>r.ref).sort(),args={refs,scope,text:request.text};
  const receiptId=c.sourceId?stableId(`reminder-cancel:${c.actorId}:${c.sourceId}:${digest({refs,scope})}`):undefined;
@@ -420,3 +447,14 @@ export async function cancelReminderRequest(sql:SQL,request:ReminderRequest,c:Re
  if(receiptId)await sql.query("INSERT INTO domain_commands(id,domain,actor_id,arguments_hash,result,source_message_id,source_ids) VALUES($1,'reminder_cancel',$2,$3,$4,$5,$6) ON CONFLICT DO NOTHING",[receiptId,c.actorId,digest(args),JSON.stringify(result),c.sourceId,JSON.stringify([c.sourceId])]);
  return result;
 }
+
+/** Returned domain failures use the same durable diagnostic contract as throws.
+ * A normal target/scope clarification remains a question, not an incident. */
+async function recordReminderResult(sql:SQL,result:ReminderResult,c:ReminderContext,scope='auto'):Promise<ReminderResult>{
+ const reason=result.failureReason||(result.status==='not_found'?'reminder_not_found':result.status==='stale'?'reminder_target_changed':undefined);
+ if(!reason)return result;
+ const live=await state(sql),receipt=await recordIncident(sql,{operation:'cancel_reminder',stage:'validation',attemptKey:'reminder-result:'+c.actorId+':'+(c.updateId||c.sourceId)+':'+scope,requestId:c.updateId,chatId:String(live.chat_id),actorId:c.actorId,topicId:c.topicId,audience:c.audience||'group',sourceId:c.sourceId,revision:c.revision,...(['not_found','stale'].includes(result.status)?{effectState:'unchanged' as const}:{}),facts:{requested_scope:scope,target_refs:result.roots||c.cancellationTargets?.map(t=>t.ref)||[],target_count:result.roots?.length||0,targets_sha256:digest(c.cancellationTargets||[])}},reason);
+ const recorded={...result,failureReason:reason,message:result.message+'\n'+receipt.message};attachResultIncident(recorded,receipt);return recorded;
+}
+export async function cancelReminderRequest(sql:SQL,request:ReminderRequest,c:ReminderContext):Promise<ReminderResult>{return recordReminderResult(sql,await cancelReminderAttempt(sql,request,c),c,request.scope);}
+export async function cancelApprovedReminderRoots(sql:SQL,bindings:ReadonlyArray<{ref:string;version:number|string;ownerId:string;sourceId:number;topicId:string;revision:number;ruleHash:string}>,c:ReminderContext,scope:'series'|'occurrence'):Promise<ReminderResult>{return recordReminderResult(sql,await cancelApprovedReminderAttempt(sql,bindings,c,scope),c,scope);}

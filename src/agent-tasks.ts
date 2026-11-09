@@ -12,6 +12,7 @@ import {AgentTools,type ToolContext} from './agent-tools.js';
 import {ToolError} from './safe-http.js';
 import {allowRecurringTaskClaim,taskResumeHistory,actualTaskResumeContext,TASK_RESUME_HISTORY_LIMIT} from './recurrence-policy.js';
 import {loadOriginalRequestContext} from './request-context.js';
+import {recordIncident,safeErrorCode,incidentForError} from './incidents.js';
 
 const resourceRefusals=new Set(['worker_memory_busy','worker_queue_busy','worker_queue_timeout','browser_busy']);
 function taskStepEvent(phase:'started'|'resource_blocked',step:number){
@@ -33,7 +34,8 @@ export class AgentTasks {
         const task=a.task_id?await one(sql,'SELECT * FROM agent_tasks WHERE id=$1 AND actor_id=$2 AND topic_id=$3 AND revision=$4 FOR UPDATE',[a.task_id,a.actor_id,a.topic_id,s.memory_revision]):undefined;
         if(task)await sql.query("UPDATE agent_tasks SET status='needs_input',error_code='approval_expired',updated_at=now() WHERE id=$1 AND status='waiting'",[task.id]);
         const audience=a.audience==='private'||Number(s.chat_id)>0?'private':task?await resolveTaskAudience(sql,task,s.chat_id):a.task_id?'private':'group';
-        await queueText(sql,'Час підтвердження дії минув. Її не виконував; можу підготувати актуальний варіант за новим дорученням.',s.memory_revision,'approval-expired:'+a.id,false,{actorId:a.actor_id,audience,threadId:a.topic_id==='0'?undefined:Number(a.topic_id),sourceMessageId:a.source_message_id?Number(a.source_message_id):undefined,...(task?{taskId:task.id,goalVersion:task.goal_version}:{} )});
+        const incident=await recordIncident(sql,{operation:'task',stage:'validation',attemptKey:'approval-expired:'+a.id,actorId:a.actor_id,topicId:a.topic_id,audience,sourceId:a.source_message_id,revision:s.memory_revision,taskId:task?.id,effectState:'not_started'},'approval_expired');
+        await queueText(sql,incident.message,s.memory_revision,'approval-expired:'+a.id,false,{actorId:a.actor_id,audience,threadId:a.topic_id==='0'?undefined:Number(a.topic_id),sourceMessageId:a.source_message_id?Number(a.source_message_id):undefined,...(task?{taskId:task.id,goalVersion:task.goal_version}:{} )});
       }
     });
     if(await this.finalizePending())return true;
@@ -51,7 +53,7 @@ export class AgentTasks {
     const provenance=(await this.db.query("SELECT source_message_id FROM provenance_edges WHERE derived_kind='task' AND derived_key=$1",[job.id])).rows.map(r=>Number(r.source_message_id));
     const context:ToolContext={sourceIds:provenance,audience:await resolveTaskAudience(this.db,job,job.chatId),goalVersion:job.goal_version,actorId:job.actor_id,chatId:job.chatId,topicId:job.topic_id,revision:job.revision,sourceId:job.source_message_id?Number(job.source_message_id):undefined,updateId:`${job.id}:${job.step}`,requested:true,taskId:job.id,background:true};
     try{
-      if(new Date(job.deadline).getTime()<Date.now()||job.step>=job.max_steps){await this.finish(job,'needs_input','Не встиг завершити завдання за цей запуск. Можеш уточнити прохання або попросити продовжити.');return true;}
+      if(new Date(job.deadline).getTime()<Date.now()||job.step>=job.max_steps){await this.finish(job,'needs_input','',new ToolError(new Date(job.deadline).getTime()<Date.now()?'task_deadline_exceeded':'task_step_budget_exhausted'));return true;}
       const results=(await this.db.query('SELECT id,tool,arguments,status,result,error_code FROM tool_runs WHERE task_id=$1 ORDER BY id DESC LIMIT 12',[job.id])).rows.reverse().map(r=>({...r,result:r.result?JSON.stringify(r.result).slice(0,12000):undefined}));
       const feedback=(await this.db.query('SELECT content FROM agent_feedback WHERE actor_id=$1 ORDER BY id DESC LIMIT 5',[job.actor_id])).rows;
       await reserveModelCall(this.db,this.config);
@@ -69,14 +71,14 @@ export class AgentTasks {
           if(!(e instanceof ToolError))throw e;
           if(resourceRefusals.has(e.code)){
             taskStepEvent('resource_blocked',job.step);
-            await this.finish(job,'needs_input','Призупинив завдання через брак вільних ресурсів. Збережений стан залишився; автоматично не повторюватиму крок. Можеш попросити продовжити пізніше.',e.code);
+            await this.finish(job,'needs_input','Завдання призупинено. Автоматично не повторюватиму цей крок.',e);
             return true;
           }
           await this.db.query('UPDATE agent_tasks SET error_code=$1 WHERE id=$2',[e.code,job.id]);
         }
       }
       await this.db.query("UPDATE agent_tasks SET status=$1,step=step+1,available_at=now()+interval '1 second',updated_at=now() WHERE id=$2 AND status='running'",[waiting?'waiting':'pending',job.id]);
-    }catch(e){await this.finish(job,'failed',outcomeMessage([toolOutcome('task.execute',{error:e instanceof ToolError?e.code:'task_failed'})]));}
+    }catch(e){await this.finish(job,'failed','',e);}
     return true;
     });
   }
@@ -102,7 +104,7 @@ export class AgentTasks {
     const source=job.source_message_id?await loadOriginalRequestContext(this.db,{sourceId:Number(job.source_message_id),actorId:job.actor_id,topicId:job.topic_id,namespaceChatId:String(job.chatId),audience:job.audience,revision:job.revision}):undefined;
     return Boolean(source&&!source.forwarded&&!source.viaBot&&diagnosticRequestIntent(source.body,source.entities)==='allow');
   }
-  private async finish(job:any,status:string,text:string,errorCode?:string){
+  private async finish(job:any,status:string,text:string,failure?:unknown){
     job={...job,audience:await resolveTaskAudience(this.db,job,job.chatId)};
     let proof:Awaited<ReturnType<typeof verifyTask>>|undefined;
     if(status==='completed'){
@@ -137,7 +139,18 @@ export class AgentTasks {
       else if(checked.blocked){status='needs_input';text=checked.plan.reply;}
     }
     const finished=await this.db.tx(async sql=>{const s=await state(sql,true);const current=await one(sql,"SELECT status,goal_version FROM agent_tasks WHERE id=$1 FOR UPDATE",[job.id]);if(!current||['cancelled','paused'].includes(current.status)||current.goal_version!==job.goal_version||s.paused||s.memory_revision!==job.revision)return false;
-      await sql.query("UPDATE agent_tasks SET status=$1,result=$2,error_code=COALESCE($4,error_code),verified_at=CASE WHEN $1='delivering' THEN now() ELSE verified_at END,updated_at=now() WHERE id=$3",[status==='completed'?'delivering':status,text.slice(0,10000),job.id,errorCode||null]);
+      let failureRun:any;
+      if(failure===undefined&&status==='needs_input'){
+        failureRun=await one(sql,"SELECT id,error_code,status FROM tool_runs WHERE task_id=$1 AND goal_version=$2 AND status IN ('failed','uncertain') ORDER BY id DESC LIMIT 1",[job.id,job.goal_version||1]);
+        if(failureRun)failure=failureRun.error_code||'task_result_unconfirmed';
+        else if(proof&&!proof.ok&&!/[?？]\s*$/u.test(text.trim()))failure='task_result_unconfirmed';
+      }
+      if(failure!==undefined||status==='failed'){
+        const incidentContext={operation:'task',stage:proof&&!proof.ok?'validation':'tool',attemptKey:`task:${job.id}:${job.goal_version}:${job.step}`,requestId:`${job.id}:${job.step}`,chatId:String(job.chatId),actorId:job.actor_id,topicId:job.topic_id,audience:job.audience,sourceId:job.source_message_id,revision:job.revision,taskId:job.id,toolRunId:failureRun?.id,effectState:(failure as any)?.uncertain||failureRun?.status==='uncertain'?'uncertain' as const:undefined};
+        const incident=incidentForError(failure,incidentContext)||await recordIncident(sql,incidentContext,failure??'task_failed');
+        text=text.trim()?text.trim()+'\n\n'+incident.message:incident.message;
+      }
+      await sql.query("UPDATE agent_tasks SET status=$1,result=$2,error_code=COALESCE($4,error_code),verified_at=CASE WHEN $1='delivering' THEN now() ELSE verified_at END,updated_at=now() WHERE id=$3",[status==='completed'?'delivering':status,text.slice(0,10000),job.id,failure===undefined?null:safeErrorCode(failure)]);
       const card=await layoutMessage(sql,`${job.title}\n\n${text}`,undefined,{actorId:job.actor_id,topicId:job.topic_id,revision:job.revision,sourceId:job.source_message_id?Number(job.source_message_id):undefined,key:`task-result:${job.id}:${job.step}`,audience:job.audience});
       await queueText(sql,card.text,job.revision,`task-result:${job.id}:${job.step}:${status}`,false,{replyMarkup:card.replyMarkup,entities:card.entities,audience:job.audience,threadId:job.topic_id==='0'?undefined:Number(job.topic_id),sourceMessageId:job.source_message_id?Number(job.source_message_id):undefined,actorId:job.actor_id,taskId:job.id,goalVersion:job.goal_version,sourceIds:(await sql.query("SELECT source_message_id FROM provenance_edges WHERE derived_kind='task' AND derived_key=$1",[job.id])).rows.map(r=>Number(r.source_message_id))});
       return true;
@@ -155,7 +168,7 @@ export class AgentTasks {
       else await this.db.tx(async sql=>{const live=await state(sql,true);if(!live.paused&&live.memory_revision===a.revision)await queueText(sql,outcomeMessage([toolOutcome(a.tool,result)])||'Отримав відповідь на погоджену дію.',a.revision,'approval-done:'+a.id,false,{threadId:a.topic_id==='0'?undefined:Number(a.topic_id),actorId:a.actor_id,audience:a.audience==='private'?'private':'group'});});
     }catch(e){
       if(a.task_id)await this.db.query("UPDATE agent_tasks SET status='needs_input',error_code=$1,updated_at=now() WHERE id=$2 AND status='waiting'",[e instanceof ToolError?e.code:'external_action_uncertain',a.task_id]);
-      await this.db.tx(async sql=>{const live=await state(sql,true);if(!live.paused&&live.memory_revision===a.revision)await queueText(sql,'Не отримав підтвердженого результату зовнішньої дії. Автоматично її не повторюю: спершу потрібно перевірити стан у сервісі.',a.revision,'approval-error:'+a.id,false,{threadId:a.topic_id==='0'?undefined:Number(a.topic_id),actorId:a.actor_id,audience:a.audience==='private'?'private':'group'});});
+      await this.db.tx(async sql=>{const live=await state(sql,true);if(!live.paused&&live.memory_revision===a.revision){const context={operation:a.tool,stage:'tool',attemptKey:'approval:'+a.id,requestId:'approval:'+a.id,chatId:String(live.chat_id),actorId:a.actor_id,topicId:a.topic_id,audience:c.audience,sourceId:a.source_message_id,revision:a.revision,taskId:a.task_id,effectState:'uncertain' as const};const incident=incidentForError(e,context)||await recordIncident(sql,context,e);await queueText(sql,incident.message,a.revision,'approval-error:'+a.id,false,{threadId:a.topic_id==='0'?undefined:Number(a.topic_id),actorId:a.actor_id,sourceMessageId:a.source_message_id,audience:a.audience==='private'?'private':'group'});}});
     }
     return true;
     });

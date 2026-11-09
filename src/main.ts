@@ -1,3 +1,4 @@
+import {logIncident,recordIncident} from './incidents.js';
 import {ConnectionChecks} from './connection-checks.js';
 import {PrivateResults} from './private-results.js';
 import {PrivateInbox} from './private-inbox.js';
@@ -9,7 +10,7 @@ import {TaskJournal} from './task-journal.js';
 import { createServer } from 'node:http';
 import { setTimeout as delay } from 'node:timers/promises';
 import { loadConfig, requireRuntime } from './config.js';
-import { Postgres } from './db.js';
+import { Postgres,type Database } from './db.js';
 import { Telegram } from './telegram.js';
 import { errorCode } from './engine.js';
 import { hostId } from './auth.js';
@@ -24,6 +25,7 @@ import {startWorkerTelemetry} from './work-slots.js';
 import {publicRuntimeProbes,runtimeChecks,runtimeDiagnosticsRequested,unrunRuntimeChecks} from './runtime-checks.js';
 import {cancelOperations,runOperation} from './operations.js';
 
+async function runtimeFailure(db:Database|undefined,error:unknown,operation:string,stage=operation):Promise<void>{const context={operation,stage,attemptKey:operation+':'+Date.now()};try{if(db){const receipt=await db.tx(sql=>recordIncident(sql,context,error));console.error(JSON.stringify({event:'diagnostic_incident',code:receipt.code,reason:receipt.reason,operation,stage,persisted:true}));return;}}catch{}logIncident(context,error);}
 let startupStage='configuration';
 async function main(){
   const config=await loadConfig();requireRuntime(config);await prepareCredentials(config);await hostId(config.runtimeDir);
@@ -73,7 +75,7 @@ async function main(){
           await ingress.enqueue(update); // Durable encrypted receipt and offset commit atomically.
         }
         await registry.polled();lastPoll=Date.now();
-      }catch(e){console.error(JSON.stringify({event:'poll_error',code:errorCode(e)}));await delay(3000);}
+      }catch(e){await runtimeFailure(db,e,'ingress','poll');await delay(3000);}
     }
   };
   // Two authors per chat and three answers globally; one author/topic keeps causal order.
@@ -84,22 +86,22 @@ async function main(){
       for(const runtime of order){
         const id=runtime.chat.chat_id;if((busy.get(id)||0)>=2||pending.size>=3)continue;
         busy.set(id,(busy.get(id)||0)+1);workCursor=(active.indexOf(runtime)+1)%active.length;let task:Promise<void>;
-        task=router.operate(runtime,'conversation',()=>runtime.engine.processNext()).then(()=>{}).catch(e=>{console.error(JSON.stringify({event:'worker_error',code:errorCode(e)}));}).finally(()=>{busy.set(id,Math.max(0,(busy.get(id)||1)-1));pending.delete(task);});pending.add(task);
+        task=router.operate(runtime,'conversation',()=>runtime.engine.processNext()).then(()=>{}).catch(async e=>{await runtimeFailure(runtime.db,e,'conversation','worker');}).finally(()=>{busy.set(id,Math.max(0,(busy.get(id)||1)-1));pending.delete(task);});pending.add(task);
       }
       await delay(400);
     }
     await Promise.allSettled(pending);
   };
-  const send=async()=>{const busy=new Set<string>(),jobs=new Set<Promise<void>>();let cursor=0;while(running&&!leaseLost){const active=await router.ready('delivery',Math.max(0,3-jobs.size),busy),order=active.slice(cursor).concat(active.slice(0,cursor));for(const r of order){if(busy.has(r.chat.chat_id)||jobs.size>=3)continue;busy.add(r.chat.chat_id);cursor=(active.indexOf(r)+1)%active.length;let job:Promise<void>;job=router.operate(r,'delivery',async()=>{await r.engine.scheduleDue();await new TaskJournal(r.db).tick();await new SessionEngine(r.db,config.runtimeDir).tick();await new Signals(r.db,config).tick();await r.delivery.next('text');}).then(()=>{}).catch(e=>console.error(JSON.stringify({event:'delivery_error',code:errorCode(e)}))).finally(()=>{busy.delete(r.chat.chat_id);jobs.delete(job);});jobs.add(job);}await delay(1100);}await Promise.allSettled(jobs);};
+  const send=async()=>{const busy=new Set<string>(),jobs=new Set<Promise<void>>();let cursor=0;while(running&&!leaseLost){const active=await router.ready('delivery',Math.max(0,3-jobs.size),busy),order=active.slice(cursor).concat(active.slice(0,cursor));for(const r of order){if(busy.has(r.chat.chat_id)||jobs.size>=3)continue;busy.add(r.chat.chat_id);cursor=(active.indexOf(r)+1)%active.length;let job:Promise<void>;job=router.operate(r,'delivery',async()=>{await r.engine.scheduleDue();await new TaskJournal(r.db).tick();await new SessionEngine(r.db,config.runtimeDir).tick();await new Signals(r.db,config).tick();await r.delivery.next('text');}).then(()=>{}).catch(e=>runtimeFailure(r.db,e,'delivery','delivery')).finally(()=>{busy.delete(r.chat.chat_id);jobs.delete(job);});jobs.add(job);}await delay(1100);}await Promise.allSettled(jobs);};
   const registeredGroups=(await registry.list()).filter(chat=>Number(chat.chat_id)<0);
   console.log(JSON.stringify({event:'lumen_started',username:bot.username,version:RELEASE,groups:registeredGroups.length,runtime_cache_warm:router.all().length}));
-  const compact=async()=>{while(running&&!leaseLost){for(const r of await router.ready('maintenance',2))try{await router.operate(r,'memory',async()=>{await r.memory.compact();await r.engine.cleanupStorage();await new PrivateInbox(r.db,config.runtimeDir).cleanup();await new PrivateResults(r.db,config).cleanup();});}catch(e){console.error(JSON.stringify({event:'memory_error',code:errorCode(e)}));}await router.evictIdle();await delay(1000);}};
+  const compact=async()=>{while(running&&!leaseLost){for(const r of await router.ready('maintenance',2))try{await router.operate(r,'memory',async()=>{await r.memory.compact();await r.engine.cleanupStorage();await new PrivateInbox(r.db,config.runtimeDir).cleanup();await new PrivateResults(r.db,config).cleanup();});}catch(e){await runtimeFailure(r.db,e,'memory','memory');}await router.evictIdle();await delay(1000);}};
   const mediaBusy=new Set<string>();const mediaPending=new Set<Promise<void>>();let mediaCursor=0;
-  const mediaWork=async()=>{while(running&&!leaseLost){const active=await router.ready('media',Math.max(0,2-mediaPending.size),mediaBusy);const order=active.slice(mediaCursor).concat(active.slice(0,mediaCursor));for(const r of order){if(mediaBusy.has(r.chat.chat_id)||mediaBusy.size>=2)continue;mediaBusy.add(r.chat.chat_id);mediaCursor=(active.indexOf(r)+1)%active.length;let task:Promise<void>;task=router.operate(r,'media',async()=>{if(!await r.delivery.next('media')&&!await r.images.next())await r.visual.next();}).then(()=>{}).catch(e=>console.error(JSON.stringify({event:'media_error',code:errorCode(e)}))).finally(()=>{mediaBusy.delete(r.chat.chat_id);mediaPending.delete(task);});mediaPending.add(task);}await delay(1500);}await Promise.allSettled(mediaPending);};
-  const automationWork=async()=>{const busy=new Set<string>(),jobs=new Set<Promise<void>>();let cursor=0;while(running&&!leaseLost){const active=await router.ready('automation',Math.max(0,2-jobs.size),busy),order=active.slice(cursor).concat(active.slice(0,cursor));for(const r of order){if(busy.has(r.chat.chat_id)||jobs.size>=2)continue;busy.add(r.chat.chat_id);cursor=(active.indexOf(r)+1)%active.length;let job:Promise<void>;job=router.operate(r,'automation',async()=>{await r.engine.syncCalendar();if(!await new ConnectionChecks(r.db,config.runtimeDir).next()&&!await new OAuthDevices(r.db,config.runtimeDir).tick()&&!await r.agent.next())await r.monitors.next();}).then(()=>{}).catch(e=>console.error(JSON.stringify({event:'agent_error',code:errorCode(e)}))).finally(()=>{busy.delete(r.chat.chat_id);jobs.delete(job);});jobs.add(job);}await delay(900);}await Promise.allSettled(jobs);};
+  const mediaWork=async()=>{while(running&&!leaseLost){const active=await router.ready('media',Math.max(0,2-mediaPending.size),mediaBusy);const order=active.slice(mediaCursor).concat(active.slice(0,mediaCursor));for(const r of order){if(mediaBusy.has(r.chat.chat_id)||mediaBusy.size>=2)continue;mediaBusy.add(r.chat.chat_id);mediaCursor=(active.indexOf(r)+1)%active.length;let task:Promise<void>;task=router.operate(r,'media',async()=>{if(!await r.delivery.next('media')&&!await r.images.next())await r.visual.next();}).then(()=>{}).catch(e=>runtimeFailure(r.db,e,'media','media')).finally(()=>{mediaBusy.delete(r.chat.chat_id);mediaPending.delete(task);});mediaPending.add(task);}await delay(1500);}await Promise.allSettled(mediaPending);};
+  const automationWork=async()=>{const busy=new Set<string>(),jobs=new Set<Promise<void>>();let cursor=0;while(running&&!leaseLost){const active=await router.ready('automation',Math.max(0,2-jobs.size),busy),order=active.slice(cursor).concat(active.slice(0,cursor));for(const r of order){if(busy.has(r.chat.chat_id)||jobs.size>=2)continue;busy.add(r.chat.chat_id);cursor=(active.indexOf(r)+1)%active.length;let job:Promise<void>;job=router.operate(r,'automation',async()=>{await r.engine.syncCalendar();if(!await new ConnectionChecks(r.db,config.runtimeDir).next()&&!await new OAuthDevices(r.db,config.runtimeDir).tick()&&!await r.agent.next())await r.monitors.next();}).then(()=>{}).catch(e=>runtimeFailure(r.db,e,'task','agent')).finally(()=>{busy.delete(r.chat.chat_id);jobs.delete(job);});jobs.add(job);}await delay(900);}await Promise.allSettled(jobs);};
   const routeWork=async()=>{while(running&&!leaseLost){const received=await ingress.next();await delay(received?10:400);}};
   const check=runOperation(db,'runtime_diagnostics',()=>runtimeChecks(config.runtimeDir,runtimeDiagnosticsRequested(process.argv.slice(2)),()=>publicRuntimeProbes(()=>router.probeNativeSearch(),()=>router.probeFreshnessChoice(),{documents:()=>router.probeDocuments(),interactions:()=>router.probeInteractions(),personalization_scheduling_190:()=>router.probePersonalizationScheduling(),behavior_111_r2:()=>router.probeBehavior111(),companion_113:()=>router.probeCompanion113()}),report=>{checks=report;})).catch(()=>{checks={...checks,status:'failed',code:'diagnostic_report_failed'};console.error(JSON.stringify({event:'runtime_checks_failed'}));});
   await Promise.all([poll(),work(),send(),compact(),mediaWork(),automationWork(),routeWork(),routeWork(),check]);stopMemoryTelemetry();await router.drainAll();await browsers.close();health.close();lease.release();await db.close();
   if(leaseLost)process.exitCode=1;
 }
-main().catch(e=>{console.error(JSON.stringify({event:'startup_failed',stage:startupStage,native_code:/^[A-Za-z0-9_]{1,60}$/.test(e.code||'')?e.code:undefined,frames:typeof e.stack==='string'?e.stack.split('\n').slice(1,4):undefined,code:/^[a-z_]+$/.test(e.message)?e.message:errorCode(e)}));process.exit(1);});
+main().catch(e=>{logIncident({operation:'startup',stage:'startup',attemptKey:'startup:'+Date.now(),facts:{contract:startupStage}},e);process.exit(1);});

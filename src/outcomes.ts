@@ -1,17 +1,19 @@
+import {incidentForResult} from './incidents.js';
 import type {Action,Plan} from './model.js';
 
 type DeliveredFileKind='video'|'album'|'image'|'audio'|'pdf';
-export interface OutcomeFact {capability:string;status:'observed'|'prepared'|'queued'|'needs_consent'|'needs_input'|'failed'|'uncertain'|'cancelled';reference?:string;scope?:string;detail?:string;confirmed?:'delivery'|'completion';targetKind?:'file'|'calendar'|'activity'|'poll'|'message';targets?:string[];fileKinds?:DeliveredFileKind[];items?:OutcomeFact[];mediaKind?:'album'|'story';listOperation?:'add'|'list'|'complete'|'remove';listMessage?:string;listItems?:string[];}
+export interface OutcomeFact {capability:string;status:'observed'|'prepared'|'queued'|'needs_consent'|'needs_input'|'failed'|'uncertain'|'cancelled';reference?:string;scope?:string;detail?:string;failureMessage?:string;incidentCode?:string;confirmed?:'delivery'|'completion';targetKind?:'file'|'calendar'|'activity'|'poll'|'message';targets?:string[];fileKinds?:DeliveredFileKind[];items?:OutcomeFact[];mediaKind?:'album'|'story';listOperation?:'add'|'list'|'complete'|'remove';listMessage?:string;listItems?:string[];}
 const terminalStates=new Set(['repair','stale','failed','blocked','refused','expired']);
 const asRef=(value:unknown)=>typeof value==='string'||typeof value==='number'?String(value):undefined;
 export function toolOutcome(name:string,result:any,request?:any):OutcomeFact {
   // A listing describes its members; it cannot certify that the caller's goal completed.
-  if(Array.isArray(result))return {capability:name,status:'observed',items:result.map(item=>toolOutcome(name,item,request))};
+  if(Array.isArray(result)){const items=result.map(item=>toolOutcome(name,item,request)),receipt=incidentForResult(result);return {capability:name,status:receipt?(items.some(i=>i.status==='uncertain')?'uncertain':'failed'):'observed',items,...(receipt?{failureMessage:receipt.message,incidentCode:receipt.code}:{})};}
   const reference=asRef(result?.job_id||result?.id||result?.asset_id);
   const target=asRef(request?.job_id||request?.id||request?.asset_id||request?.url)||reference;
   const scope=target?name+':'+String(request?.operation||'')+':'+target:request?.operation?name+':'+String(request.operation):name;
   const mediaKind=result?.kind==='album'||name.startsWith('archive.')?'album':result?.kind==='story'||name.startsWith('studio.')?'story':undefined;
-  const fact:OutcomeFact={capability:name,status:'observed',reference,scope,mediaKind};
+  const incident=incidentForResult(result);
+  const fact:OutcomeFact={capability:name,status:'observed',reference,scope,mediaKind,...(incident?{failureMessage:incident.message,incidentCode:incident.code}:{})};
   if(['telegram.delivery','artifact.delivery','document.delivery','library.delivery'].includes(name)&&result?.status==='delivered'&&(result?.deliveryReceipt?.message_id||result?.delivery_receipt?.message_id)){
     const receipt=result.deliveryReceipt||result.delivery_receipt,proof=result.outputProof;
     const typed=proof?.readback_verified===true&&proof.id===(result.asset_id||result.id)&&/^[a-f0-9]{64}$/.test(proof.sha256||'')&&Number(proof.bytes)>0&&Number.isInteger(proof.revision)&&Number(proof.receipt_message_id)===Number(receipt.message_id)&&(!receipt.output||receipt.output.id===proof.id&&receipt.output.sha256===proof.sha256&&Number(receipt.output.bytes)===Number(proof.bytes)&&receipt.output.mime===proof.mime&&Number(receipt.output.revision)===Number(proof.revision)&&(proof.version===undefined?receipt.output.version===undefined:Number(receipt.output.version)===Number(proof.version)));
@@ -45,6 +47,7 @@ export function currentOutcomes(facts:OutcomeFact[]){
 }
 export function outcomeMessage(facts:OutcomeFact[]) {
   const active=currentOutcomes(facts),first=(status:OutcomeFact['status'])=>active.find(x=>x.status===status);
+  const failures=active.filter(f=>['failed','uncertain'].includes(f.status)&&f.failureMessage).map(f=>f.failureMessage!);if(failures.length)return [...new Set(failures)].join('\n\n');
   if(first('uncertain'))return 'Поки не можу підтвердити результат дії. Спершу потрібно перевірити, чи вона відбулася; автоматично повторювати її не буду, щоб не створити дубль.';
   const failed=first('failed')||first('needs_input');
   if(failed){

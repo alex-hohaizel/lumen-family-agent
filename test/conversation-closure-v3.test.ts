@@ -1,3 +1,4 @@
+import {describeFailure} from '../src/incidents.js';
 import {after,afterEach,before,beforeEach,describe,it,test} from 'node:test';
 import assert from 'node:assert/strict';
 import {addressed} from '../src/engine.js';
@@ -224,7 +225,7 @@ describe('V3 actual foreground context, simple confirmations and recovery copy',
  it('unsupported image and voice copy offers an actual simple next step without implementation jargon',async()=>{
   h.brain.replies=[{reply:'',actions:[{kind:'image',prompt:'Намалюй сонячне мишеня'}]}];await h.lumen.receive(message('Люмен, намалюй сонячне мишеня'));await h.lumen.processNext();
   const result=await texts();assert.match(result,/не можу створити нове зображення/u);assert.match(result,/опис/u);assert.doesNotMatch(result,/API|модул|image_not_configured/u);
-  const voice=(h.lumen as any).friendlyError('voice_not_configured');assert.match(voice,/текстом/u);assert.doesNotMatch(voice,/API|модул|розпізнавання потребує/u);
+  const voice=describeFailure('voice_not_configured');assert.match(voice,/текстом/u);assert.doesNotMatch(voice,/API|модул|розпізнавання потребує/u);
  });
  it('actual current user text alone permits a truthful diagnostic code in foreground recovery',async()=>{
   for(const [request,expected] of [['Люмен, зроби відео',false],['Люмен, покажи код помилки',true],['Люмен, поясни вислів «покажи код помилки»',false]] as const){

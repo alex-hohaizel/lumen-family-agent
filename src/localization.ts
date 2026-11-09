@@ -7,7 +7,10 @@ import {languageCode,jsonReply} from './personalization.js';
 export class LocalizationError extends Error {code='localization_unavailable';constructor(){super('localization_unavailable');}}
 type Slot={text:string;limit:number;preserve:string[];put:(s:string)=>void};
 function lexicalFragments(text:string){
-  return [...text.matchAll(/https?:\/\/[^\s<>]+|```[\s\S]*?```|`[^`\n]+`|[\p{L}\p{N}_-][\p{L}\p{N}_.-]*\.(?:docx?|xlsx?|pptx?|pdf|csv|tsv|txt|json|html|md|png|jpe?g|webp|gif|mp[34]|m4a|aac|wav|ogg|webm|zip)(?![\p{L}\p{N}_-]|\.[\p{L}\p{N}_-])|\d+(?:[.,:/-]\d+)*/giu)].map(x=>x[0]);
+  // Incident codes are case-sensitive opaque tokens. Their letters carry the
+  // same identity as their digits; translate only the surrounding explanation.
+  const incidents=[...text.matchAll(/(?<![\p{L}\p{N}_-])LM-[0-9A-HJKMNP-TV-Z]{26}(?![\p{L}\p{N}_-])/gu)].map(x=>x[0]);
+  return [...incidents,...[...text.matchAll(/https?:\/\/[^\s<>]+|```[\s\S]*?```|`[^`\n]+`|[\p{L}\p{N}_-][\p{L}\p{N}_.-]*\.(?:docx?|xlsx?|pptx?|pdf|csv|tsv|txt|json|html|md|png|jpe?g|webp|gif|mp[34]|m4a|aac|wav|ogg|webm|zip)(?![\p{L}\p{N}_-]|\.[\p{L}\p{N}_-])|\d+(?:[.,:/-]\d+)*/giu)].map(x=>x[0])];
 }
 function exactFragments(text:string,entities:any[]=[]){
   const fragments=lexicalFragments(text);

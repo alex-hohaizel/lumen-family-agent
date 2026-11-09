@@ -4,6 +4,13 @@ import {one,type SQL,type Row} from './db.js';
 
 export const ORIGINAL_REQUEST_MAX_BYTES=16*1024;
 export const ORIGINAL_REQUEST_MAX_ENTITIES=128;
+/** Canonicalize an internal DB/job identifier at its boundary. node-postgres
+ * returns BIGSERIAL as decimal text; never coerce arbitrary model/user values. */
+export function storedSourceId(value:unknown):number|undefined {
+ if(typeof value==='number')return Number.isSafeInteger(value)&&value>0?value:undefined;
+ if(typeof value!=='string'||!/^[1-9]\d*$/.test(value))return;
+ const result=Number(value);return Number.isSafeInteger(result)&&result>0&&String(result)===value?result:undefined;
+}
 export type OriginalNativeEntity={type:'blockquote'|'expandable_blockquote'|'code'|'pre';offset:number;length:number};
 export type OriginalReplyRef={chat_id:string;message_id:number;from_id?:string;from_is_bot?:boolean};
 export interface OriginalRequestDescriptor {

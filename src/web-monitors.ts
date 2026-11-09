@@ -4,6 +4,7 @@ import {createHash} from 'node:crypto';
 import {one,state,queueText,type Database} from './db.js';
 import {readWeb} from './web.js';
 import type {Config} from './config.js';
+import {recordIncident,safeErrorCode} from './incidents.js';
 
 export function monitoredNumber(text:string,needle:string){
   if(!needle.trim())return undefined;
@@ -42,8 +43,8 @@ export class WebMonitors {
         if(notify)await queueText(sql,`${row.label}\n${row.condition==='change'?'Змінився погоджений показник.':row.condition==='contains'?'Погоджену умову знайдено без ознак заперечення.':`Показник «${row.needle}»: ${number} ${snapshot.unit||''}, нижче порога ${row.threshold}.`}\nБуло: ${old?.excerpt||row.last_excerpt||'попередній стан не збережений'}\nСтало: ${snapshot.excerpt||'даних недостатньо'}\nПеревірено: ${page.retrieved_at}\n${page.url}`,s.memory_revision,`watch:${row.id}:${hash}`,false,{threadId:row.topic_id==='0'?undefined:Number(row.topic_id),actorId:row.actor_id,sourceMessageId:row.source_message_id?Number(row.source_message_id):undefined});
         await sql.query('UPDATE web_monitors SET last_hash=$1,last_excerpt=$2,last_observation=$5,last_notified_at=CASE WHEN $3 THEN now() ELSE last_notified_at END,error_code=NULL,failures=0 WHERE id=$4',[matched&&!notify?row.last_hash:hash,snapshot.excerpt,notify,row.id,JSON.stringify({...snapshot,checked_at:page.retrieved_at,url:page.url})]);
       });
-    }catch{
-      await this.db.tx(async sql=>{const s=await state(sql,true);if(s.paused||s.memory_revision!==row.revision)return;const failed=await one(sql,"UPDATE web_monitors SET error_code='page_unavailable',failures=failures+1,status=CASE WHEN failures>=4 THEN 'needs_input' ELSE status END WHERE id=$1 AND status='active' RETURNING failures",[row.id]);if(Number(failed?.failures)===5)await queueText(sql,`Не можу перевірити «${row.label}» після п’яти спроб. Спостереження зупинене; сайт може вимагати вхід або бути недоступним.\n${row.url}`,s.memory_revision,'watch-failed:'+row.id,false,{actorId:row.actor_id,threadId:row.topic_id==='0'?undefined:Number(row.topic_id)});});
+    }catch(error){
+      await this.db.tx(async sql=>{const s=await state(sql,true);if(s.paused||s.memory_revision!==row.revision)return;const failed=await one(sql,"UPDATE web_monitors SET error_code=$2,failures=failures+1,status=CASE WHEN failures>=4 THEN 'needs_input' ELSE status END WHERE id=$1 AND status='active' RETURNING failures",[row.id,safeErrorCode(error)]);if(!failed)return;const incident=await recordIncident(sql,{operation:'monitor',stage:'tool',attemptKey:`watch:${row.id}:${failed.failures}`,actorId:row.actor_id,topicId:row.topic_id,audience:'group',sourceId:row.source_message_id,revision:row.revision,effectState:'unchanged',facts:{attempt:Number(failed.failures)}},error);if(Number(failed.failures)===5)await queueText(sql,`Спостереження «${row.label}» зупинене після п’яти невдалих перевірок.\n${incident.message}`,s.memory_revision,'watch-failed:'+row.id,false,{actorId:row.actor_id,sourceMessageId:row.source_message_id,threadId:row.topic_id==='0'?undefined:Number(row.topic_id)});});
     }
     return true;
   }
